@@ -1,0 +1,333 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <smart-dropdown-menu>
+        <wx-view
+          class="smart-dropdown-menu smart-dropdown-menu--top-bottom custom-class"
+        >
+          <wx-view
+            class="smart-dropdown-menu__item"
+            data-index="{{0}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" smart-dropdown-menu__title title-class"
+              style=""
+            >
+              <wx-view
+                class="smart-ellipsis"
+              >
+                
+        全部商品
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="smart-dropdown-menu__item"
+            data-index="{{1}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" smart-dropdown-menu__title title-class"
+              style=""
+            >
+              <wx-view
+                class="smart-ellipsis"
+              >
+                
+        默认排序
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <smart-dropdown-item />
+          <smart-dropdown-item />
+        </wx-view>
+      </smart-dropdown-menu>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义菜单内容
+      </wx-view>
+      <smart-dropdown-menu>
+        <wx-view
+          class="smart-dropdown-menu smart-dropdown-menu--top-bottom custom-class"
+        >
+          <wx-view
+            class="smart-dropdown-menu__item"
+            data-index="{{0}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" smart-dropdown-menu__title title-class"
+              style=""
+            >
+              <wx-view
+                class="smart-ellipsis"
+              >
+                
+        全部商品
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="smart-dropdown-menu__item"
+            data-index="{{1}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" smart-dropdown-menu__title title-class"
+              style=""
+            >
+              <wx-view
+                class="smart-ellipsis"
+              >
+                
+        筛选
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <smart-dropdown-item />
+          <smart-dropdown-item
+            id="item"
+          />
+        </wx-view>
+      </smart-dropdown-menu>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义选中状态颜色
+      </wx-view>
+      <smart-dropdown-menu>
+        <wx-view
+          class="smart-dropdown-menu smart-dropdown-menu--top-bottom custom-class"
+        >
+          <wx-view
+            class="smart-dropdown-menu__item"
+            data-index="{{0}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" smart-dropdown-menu__title title-class"
+              style=""
+            >
+              <wx-view
+                class="smart-ellipsis"
+              >
+                
+        全部商品
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="smart-dropdown-menu__item"
+            data-index="{{1}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" smart-dropdown-menu__title title-class"
+              style=""
+            >
+              <wx-view
+                class="smart-ellipsis"
+              >
+                
+        默认排序
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <smart-dropdown-item />
+          <smart-dropdown-item />
+        </wx-view>
+      </smart-dropdown-menu>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        向上展开
+      </wx-view>
+      <smart-dropdown-menu>
+        <wx-view
+          class="smart-dropdown-menu smart-dropdown-menu--top-bottom custom-class"
+        >
+          <wx-view
+            class="smart-dropdown-menu__item"
+            data-index="{{0}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" smart-dropdown-menu__title smart-dropdown-menu__title--down title-class"
+              style=""
+            >
+              <wx-view
+                class="smart-ellipsis"
+              >
+                
+        全部商品
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="smart-dropdown-menu__item"
+            data-index="{{1}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" smart-dropdown-menu__title smart-dropdown-menu__title--down title-class"
+              style=""
+            >
+              <wx-view
+                class="smart-ellipsis"
+              >
+                
+        默认排序
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <smart-dropdown-item />
+          <smart-dropdown-item />
+        </wx-view>
+      </smart-dropdown-menu>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用菜单
+      </wx-view>
+      <smart-dropdown-menu>
+        <wx-view
+          class="smart-dropdown-menu smart-dropdown-menu--top-bottom custom-class"
+        >
+          <wx-view
+            class="smart-dropdown-menu__item smart-dropdown-menu__item--disabled"
+            data-index="{{0}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" smart-dropdown-menu__title title-class"
+              style=""
+            >
+              <wx-view
+                class="smart-ellipsis"
+              >
+                
+        全部商品
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="smart-dropdown-menu__item smart-dropdown-menu__item--disabled"
+            data-index="{{1}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" smart-dropdown-menu__title title-class"
+              style=""
+            >
+              <wx-view
+                class="smart-ellipsis"
+              >
+                
+        默认排序
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <smart-dropdown-item />
+          <smart-dropdown-item />
+        </wx-view>
+      </smart-dropdown-menu>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        异步打开/关闭
+      </wx-view>
+      <smart-dropdown-menu>
+        <wx-view
+          class="smart-dropdown-menu smart-dropdown-menu--top-bottom custom-class"
+        >
+          <wx-view
+            class="smart-dropdown-menu__item"
+            data-index="{{0}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" smart-dropdown-menu__title title-class"
+              style=""
+            >
+              <wx-view
+                class="smart-ellipsis"
+              >
+                
+        全部商品
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <smart-dropdown-item
+            bind:before-toggle="onBeforeChange"
+          />
+        </wx-view>
+      </smart-dropdown-menu>
+    </wx-view>
+  </demo-block>
+</main>
+`;

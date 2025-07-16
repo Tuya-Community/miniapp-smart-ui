@@ -1,0 +1,8 @@
+<wxs src="./index.wxs" module="computed" />
+
+<view
+  class="smart-grid custom-class {{ border && !gutter ? 'smart-hairline--top' : '' }}"
+  style="{{ computed.rootStyle({ gutter }) }}"
+>
+  <slot />
+</view>

@@ -1,0 +1,17 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+<view
+  wx:if="{{ inited }}"
+  class="custom-class {{ classes }} {{ utils.bem('popup', [position, { round, safeTop: safeAreaInsetTop, safeTabBar: safeAreaTabBar }]) }}"
+  style="{{ computed.popupStyle({ zIndex, currentDuration, display, customStyle, bottomSafeHeight }) }}"
+  bind:transitionend="onTransitionEnd"
+  catch:touchmove="{{ lockScroll ? 'noop' : ''}}"
+>
+  <slot />
+  <smart-icon
+    wx:if="{{ closeable }}"
+    name="{{ closeIcon }}"
+    class="close-icon-class smart-popup__close-icon smart-popup__close-icon--{{ closeIconPosition }}"
+    bind:tap="onClickCloseIcon"
+  />
+</view>

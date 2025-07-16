@@ -1,0 +1,48 @@
+<view class="{{prefix}} {{prefix}}-container" style="{{inputContainerStyle}}">
+  <view class="{{prefix}}-textView" bind:tap="handlePassword">
+    <text class="{{prefix}}-pwdText {{currValue !== '' ? prefix + '-password' : null}}" style="{{valueTextStyle}}">
+      {{currValue || placeholder}}
+    </text>
+  </view>
+  <slot name="custom-button" />
+</view>
+<smart-popup
+  show="{{visible}}"
+  bind:close="onMaskPress"
+  position="bottom"
+  overlay="{{true}}"
+>
+  <view class="{{prefix}}-popup-container">
+    <view class="{{prefix}}-number-wrap" style="height: {{row * 56}}px">
+      <view wx:for="{{numberArray}}" wx:key="index" bind:tap="changeValue" hover-class="{{prefix}}-hover-class" data-item="{{ item }}" class="{{prefix}}-number-item" style="{{(item === 0 || item === 10) && numberArray.length === 11 ? 'width: 175px' : ''}}">
+        <view
+          wx:if="{{item === -2}}"
+          class="{{prefix}}-hidden-image"
+          style="{{img_hidden_light}}"
+        />
+        <text wx:else class="{{prefix}}-number-text">{{ item <= -1 || item > maxNum ? '' : item }}</text>
+      </view>
+    </view>
+    <view class="{{prefix}}-operate-wrap">
+      <button 
+        bind:tap="changeValue" 
+        data-item="-1"
+        style="margin-bottom: 6px"
+        class="{{prefix}}-confirm-btn"
+        hover-class="{{prefix}}-hover-class"
+        >
+        <view style="{{img_delete_light}}" class="{{prefix}}-hidden-image" />
+      </button>
+      <button 
+        class="{{prefix}}-confirm-btn {{prefix}}-confirm-color"
+        style="background-color: {{confirmColor}}"
+        bind:tap="confirm"
+        hover-class="{{prefix}}-hover-class"
+      >
+        <text class="{{prefix}}-confirm-text" style="{{confirmTextStyle}}">
+          {{confirmText}}
+        </text>
+      </button >
+    </view>
+  </view>
+</smart-popup>

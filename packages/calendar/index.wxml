@@ -1,0 +1,27 @@
+<wxs src="./index.wxs" module="computed" />
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<import src="./calendar.wxml" />
+
+<smart-popup
+  wx:if="{{ poppable }}"
+  custom-class="smart-calendar__popup--{{ position }}"
+  close-icon-class="smart-calendar__close-icon"
+  show="{{ show }}"
+  round="{{ round }}"
+  position="{{ position }}"
+  closeable="{{ showTitle || showSubtitle }}"
+  close-on-click-overlay="{{ closeOnClickOverlay }}"
+  safe-area-inset-bottom="{{ safeAreaInsetBottom }}"
+  root-portal="{{ rootPortal }}"
+  bind:enter="onOpen"
+  bind:close="onClose"
+  bind:after-enter="onOpened"
+  bind:after-leave="onClosed"
+>
+  <include src="./calendar.wxml" />
+</smart-popup>
+
+<include wx:else src="./calendar.wxml" />
+
+<smart-toast id="smart-toast" />

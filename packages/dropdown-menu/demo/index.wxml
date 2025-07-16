@@ -1,0 +1,67 @@
+<demo-block custom-class="white" title="基础用法">
+  <smart-dropdown-menu>
+    <smart-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    <smart-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+  </smart-dropdown-menu>
+</demo-block>
+
+<demo-block custom-class="white" title="自定义菜单内容">
+  <smart-dropdown-menu>
+    <smart-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    <smart-dropdown-item id="item" title="{{ itemTitle }}">
+      <smart-cell title="{{ switchTitle1 }}">
+        <smart-switch
+          slot="right-icon"
+          size="24px"
+          style="height: 26px"
+          checked="{{ switch1 }}"
+          active-color="#ee0a24"
+          bind:change="onSwitch1Change"
+        />
+      </smart-cell>
+      <smart-cell title="{{ switchTitle2 }}">
+        <smart-switch
+          slot="right-icon"
+          size="24px"
+          style="height: 26px"
+          checked="{{ switch2 }}"
+          active-color="#ee0a24"
+          bind:change="onSwitch2Change"
+        />
+      </smart-cell>
+      <view style="padding: 5px 16px;">
+        <smart-button type="danger" block round bind:click="onConfirm">
+          确认
+        </smart-button>
+      </view>
+    </smart-dropdown-item>
+  </smart-dropdown-menu>
+</demo-block>
+
+<demo-block custom-class="white" title="自定义选中状态颜色">
+  <smart-dropdown-menu active-color="#1989fa">
+    <smart-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    <smart-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+  </smart-dropdown-menu>
+</demo-block>
+
+<demo-block custom-class="white" title="向上展开">
+  <smart-dropdown-menu direction="up">
+    <smart-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    <smart-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+  </smart-dropdown-menu>
+</demo-block>
+
+<demo-block custom-class="white" title="禁用菜单">
+  <smart-dropdown-menu>
+    <smart-dropdown-item value="{{ value1 }}" disabled options="{{ option1 }}" />
+    <smart-dropdown-item value="{{ value2 }}" disabled options="{{ option2 }}" />
+  </smart-dropdown-menu>
+</demo-block>
+
+<demo-block custom-class="white" title="异步打开/关闭">
+  <smart-dropdown-menu>
+    <smart-dropdown-item value="{{ value1 }}" options="{{ option1 }}" use-before-toggle bind:before-toggle="onBeforeChange" />
+  </smart-dropdown-menu>
+</demo-block>
+

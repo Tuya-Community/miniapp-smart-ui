@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-radio": "../../radio/index",
+    "smart-radio-group": "../../radio-group/index",
+    "smart-cell": "../../cell/index",
+    "smart-cell-group": "../../cell-group/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

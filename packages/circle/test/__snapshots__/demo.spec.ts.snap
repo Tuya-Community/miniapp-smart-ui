@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <wx-view
+    class="contain"
+  >
+    <demo-block>
+      <wx-view
+        class="custom-class demo-block smart-clearfix "
+      >
+        <wx-view
+          class="demo-block__title"
+        >
+          基础用法
+        </wx-view>
+        <smart-circle>
+          <wx-view
+            class="smart-progress-circle"
+            style="width:100px;height:100px;padding:10px;background:#007AFF;"
+          >
+            <wx-view
+              class="smart-progress-circle-box smart-progress-circle-box-left"
+            >
+              <wx-view
+                class="smart-progress-circle-bar smart-progress-circle-bar-left"
+                style="transform:rotate(0deg);background:#d3d3d3;"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-progress-circle-box smart-progress-circle-box-right"
+            >
+              <wx-view
+                class="smart-progress-circle-bar smart-progress-circle-bar-right"
+                style="transform:rotate(72deg);background:#d3d3d3;"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-progress-circle-content"
+              style="background:var(--app-B1);"
+            />
+          </wx-view>
+        </smart-circle>
+      </wx-view>
+    </demo-block>
+  </wx-view>
+</main>
+`;

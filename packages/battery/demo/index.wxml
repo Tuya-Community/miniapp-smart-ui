@@ -1,0 +1,18 @@
+<demo-block title="基础用法">
+  <view class="line">
+    <battery size="20" value="100" />
+    <battery />
+    <battery value="10" />
+    <battery value="3" />
+    <battery value="0" />
+  </view>
+</demo-block>
+<demo-block title="水平">
+  <view class="line">
+    <battery type="horizontal" value="100" />
+    <battery type="horizontal" />
+    <battery type="horizontal" value="10" />
+    <battery type="horizontal" value="3" />
+    <battery type="horizontal" value="0" />
+  </view>
+</demo-block>

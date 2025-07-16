@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-toast": "../../toast/index",
+    "smart-goods-action": "../../goods-action/index",
+    "smart-goods-action-icon": "../../goods-action-icon/index",
+    "smart-goods-action-button": "../../goods-action-button/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

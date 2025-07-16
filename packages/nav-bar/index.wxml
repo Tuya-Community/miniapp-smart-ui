@@ -1,0 +1,43 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<view wx:if="{{ fixed && placeholder }}" style="height: {{ height }}px;" />
+
+<view
+  class="{{ utils.bem('nav-bar', { fixed }) }} custom-class {{ border ? 'smart-hairline--bottom' : '' }}"
+  style="{{ computed.barStyle({ zIndex, statusBarHeight, safeAreaInsetTop }) }}; {{ customStyle }}"
+>
+  <view class="smart-nav-bar__content">
+    <view class="smart-nav-bar__left" bind:tap="onClickLeft">
+      <block wx:if="{{ leftArrow || leftText }}">
+        <smart-icon
+          wx:if="{{ leftArrow }}"
+          size="16px"
+          name="{{ leftArrowIcon }}"
+          custom-class="smart-nav-bar__arrow"
+        />
+        <view
+          wx:if="{{ leftText }}"
+          class="smart-nav-bar__text"
+          hover-class="smart-nav-bar__text--hover"
+          hover-stay-time="70"
+        >{{ leftText }}</view>
+      </block>
+      <slot wx:else name="left" />
+    </view>
+    <view class="smart-nav-bar__title title-class smart-ellipsis">
+      <block wx:if="{{ title }}">{{ title }}</block>
+
+      <slot wx:else name="title" />
+    </view>
+    <view class="smart-nav-bar__right" bind:tap="onClickRight">
+      <view
+        wx:if="{{ rightText }}"
+        class="smart-nav-bar__text"
+        hover-class="smart-nav-bar__text--hover"
+        hover-stay-time="70"
+      >{{ rightText }}</view>
+      <slot wx:else name="right" />
+    </view>
+  </view>
+</view>

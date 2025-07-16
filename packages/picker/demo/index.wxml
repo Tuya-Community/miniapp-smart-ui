@@ -1,0 +1,55 @@
+<demo-block title="基础用法">
+  <smart-picker
+    data-key="demo"
+    active-index="{{ activeIndex }}"
+    columns="{{ column1 }}"
+    bind:change="onChange1"
+  />
+</demo-block>
+
+<demo-block title="多列用法">
+  <smart-picker
+    columns="{{ column5 }}"
+    bind:change="onChange1"
+    custom-class="picker5"
+  />
+</demo-block>
+
+<demo-block title="默认选中项">
+  <smart-picker
+    columns="{{ column1 }}"
+    default-index="{{ 2 }}"
+    bind:change="onChange1"
+  />
+</demo-block>
+
+<demo-block title="展示顶部栏">
+  <smart-picker
+    show-toolbar
+    title="标题"
+    columns="{{ column1 }}"
+    bind:change="onChange1"
+    bind:confirm="onConfirm"
+    bind:cancel="onCancel"
+  />
+</demo-block>
+
+<demo-block title="多列联动">
+  <smart-picker
+    columns="{{ column4 }}"
+    bind:change="onChange2"
+  />
+</demo-block>
+
+<demo-block title="禁用选项">
+  <smart-picker columns="{{ column2 }}" />
+</demo-block>
+
+<demo-block title="加载状态">
+  <smart-picker
+    loading
+    columns="{{ column4 }}"
+  />
+</demo-block>
+
+<smart-toast id="smart-toast" />

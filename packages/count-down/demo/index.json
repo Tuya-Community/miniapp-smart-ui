@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-grid": "../../grid/index",
+    "smart-toast": "../../toast/index",
+    "smart-grid-item": "../../grid-item/index",
+    "smart-count-down": "../../count-down/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

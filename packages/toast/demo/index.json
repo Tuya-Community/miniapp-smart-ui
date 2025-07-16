@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-toast": "../../toast/index",
+    "smart-button": "../../button/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

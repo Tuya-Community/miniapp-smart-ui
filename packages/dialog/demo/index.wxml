@@ -1,0 +1,42 @@
+<demo-block card title="提示弹窗" padding>
+  <smart-cell title="提示弹窗" bind:click="onClickAlert" is-link />
+  <smart-cell title="提示弹窗（无标题）" bind:click="onClickAlert2" is-link />
+  <smart-cell title="确认弹窗" bind:click="onClickConfirm" is-link />
+  <smart-cell title="警告确认弹窗" bind:click="onClickConfirmIcon" is-link />
+</demo-block>
+
+<demo-block card title="圆角按钮样式" padding>
+  <smart-cell title="提示弹窗" bind:click="onClickThemeAlert" is-link />
+  <smart-cell title="提示弹窗（无标题）" bind:click="onClickThemeAlert2" is-link />
+</demo-block>
+
+<demo-block card title="异步关闭" padding>
+  <smart-cell title="异步关闭" bind:click="onClickAsyncClose" />
+</demo-block>
+
+<demo-block card title="组件调用" padding>
+  <smart-cell title="输入确认弹窗" bind:click="onClickInput" />
+  <smart-cell title="图片提示弹窗" bind:click="showCustomDialog" />
+</demo-block>
+
+<smart-dialog
+  use-slot
+  title="Title"
+  show="{{ show }}"
+  show-cancel-button
+  bind:close="onClose"
+  confirm-button-open-type="getUserInfo"
+  bind:getuserinfo="getUserInfo"
+>
+  <view class="demo-imageWrapper">
+    <image
+      class="demo-image"
+      src="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
+    />
+  </view>
+  <view class="demo-text">
+    <text>Body</text>
+  </view>
+</smart-dialog>
+
+<smart-dialog id="smart-dialog" />

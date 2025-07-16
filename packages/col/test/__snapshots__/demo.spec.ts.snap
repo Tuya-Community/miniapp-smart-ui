@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <smart-row>
+        <wx-view
+          class="smart-row custom-class"
+          style=""
+        >
+          <smart-col
+            customClass="dark"
+          >
+            <wx-view
+              class="custom-class smart-col smart-col--8 "
+              style=""
+            >
+              span: 8
+            </wx-view>
+          </smart-col>
+          <smart-col
+            customClass="light"
+          >
+            <wx-view
+              class="custom-class smart-col smart-col--8 "
+              style=""
+            >
+              span: 8
+            </wx-view>
+          </smart-col>
+          <smart-col
+            customClass="dark"
+          >
+            <wx-view
+              class="custom-class smart-col smart-col--8 "
+              style=""
+            >
+              span: 8
+            </wx-view>
+          </smart-col>
+        </wx-view>
+      </smart-row>
+      <smart-row>
+        <wx-view
+          class="smart-row custom-class"
+          style=""
+        >
+          <smart-col
+            customClass="dark"
+          >
+            <wx-view
+              class="custom-class smart-col smart-col--4 "
+              style=""
+            >
+              span: 4
+            </wx-view>
+          </smart-col>
+          <smart-col
+            customClass="light"
+          >
+            <wx-view
+              class="custom-class smart-col smart-col--10 smart-col--offset-4"
+              style=""
+            >
+              offset: 4, span: 10
+            </wx-view>
+          </smart-col>
+        </wx-view>
+      </smart-row>
+      <smart-row>
+        <wx-view
+          class="smart-row custom-class"
+          style=""
+        >
+          <smart-col
+            customClass="dark"
+          >
+            <wx-view
+              class="custom-class smart-col smart-col--12 smart-col--offset-12"
+              style=""
+            >
+              offset: 12, span: 12
+            </wx-view>
+          </smart-col>
+        </wx-view>
+      </smart-row>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        在列元素之间增加间距
+      </wx-view>
+      <smart-row>
+        <wx-view
+          class="smart-row custom-class"
+          style="margin-right:-10px;margin-left:-10px"
+        >
+          <smart-col
+            customClass="dark"
+          >
+            <wx-view
+              class="custom-class smart-col smart-col--8 "
+              style="padding-right:10px;padding-left:10px"
+            >
+              span: 8
+            </wx-view>
+          </smart-col>
+          <smart-col
+            customClass="light"
+          >
+            <wx-view
+              class="custom-class smart-col smart-col--8 "
+              style="padding-right:10px;padding-left:10px"
+            >
+              span: 8
+            </wx-view>
+          </smart-col>
+          <smart-col
+            customClass="dark"
+          >
+            <wx-view
+              class="custom-class smart-col smart-col--8 "
+              style="padding-right:10px;padding-left:10px"
+            >
+              span: 8
+            </wx-view>
+          </smart-col>
+        </wx-view>
+      </smart-row>
+    </wx-view>
+  </demo-block>
+</main>
+`;

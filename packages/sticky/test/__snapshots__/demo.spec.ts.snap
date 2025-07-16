@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <smart-sticky>
+        <wx-view
+          class="custom-class smart-sticky"
+          style="z-index:99"
+        >
+          <wx-view
+            class="smart-sticky-wrap"
+            style="z-index:99"
+          >
+            <smart-button>
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--primary smart-button--normal "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style="margin-left: 15px"
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                >
+                  
+      基础用法
+    
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </wx-view>
+        </wx-view>
+      </smart-sticky>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        吸顶距离
+      </wx-view>
+      <smart-sticky>
+        <wx-view
+          class="custom-class smart-sticky"
+          style="z-index:99"
+        >
+          <wx-view
+            class="smart-sticky-wrap"
+            style="z-index:99"
+          >
+            <smart-button>
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--info smart-button--normal "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style="margin-left: 115px"
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                >
+                  
+      吸顶距离
+    
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </wx-view>
+        </wx-view>
+      </smart-sticky>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        指定容器
+      </wx-view>
+      <wx-view
+        id="container"
+        style="height: 150px; background-color: var(--app-B3);"
+      >
+        <smart-sticky>
+          <wx-view
+            class="custom-class smart-sticky"
+            style="z-index:99"
+          >
+            <wx-view
+              class="smart-sticky-wrap"
+              style="z-index:99"
+            >
+              <smart-button>
+                <wx-button
+                  appParameter=""
+                  ariaLabel=""
+                  businessId="{{0}}"
+                  class="custom-class smart-button smart-button--warning smart-button--normal "
+                  data-detail="{{null}}"
+                  formType=""
+                  hoverClass="smart-button--active hover-class"
+                  id=""
+                  lang=""
+                  openType=""
+                  sendMessageImg=""
+                  sendMessagePath=""
+                  sendMessageTitle=""
+                  sessionFrom=""
+                  showMessageCard="{{false}}"
+                  style="margin-left: 215px;"
+                  bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                  bind:chooseavatar="onChooseAvatar"
+                  bind:contact="onContact"
+                  bind:error="onError"
+                  bind:getphonenumber="onGetPhoneNumber"
+                  bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                  bind:getuserinfo="onGetUserInfo"
+                  bind:launchapp="onLaunchApp"
+                  bind:opensetting="onOpenSetting"
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-button__text"
+                  >
+                    
+        指定容器
+      
+                  </wx-view>
+                </wx-button>
+              </smart-button>
+            </wx-view>
+          </wx-view>
+        </smart-sticky>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        嵌套在 scroll-view 内使用
+      </wx-view>
+      <wx-scroll-view
+        id="scroller"
+        scrollY="{{true}}"
+        style="height: 200px; background-color: var(--app-B3);"
+        bind:scroll="onScroll"
+      >
+        <wx-view
+          style="height: 400px; padding-top: 50px;"
+        >
+          <smart-sticky>
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:99"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:99"
+              >
+                <smart-button>
+                  <wx-button
+                    appParameter=""
+                    ariaLabel=""
+                    businessId="{{0}}"
+                    class="custom-class smart-button smart-button--warning smart-button--normal "
+                    data-detail="{{null}}"
+                    formType=""
+                    hoverClass="smart-button--active hover-class"
+                    id=""
+                    lang=""
+                    openType=""
+                    sendMessageImg=""
+                    sendMessagePath=""
+                    sendMessageTitle=""
+                    sessionFrom=""
+                    showMessageCard="{{false}}"
+                    style=""
+                    bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                    bind:chooseavatar="onChooseAvatar"
+                    bind:contact="onContact"
+                    bind:error="onError"
+                    bind:getphonenumber="onGetPhoneNumber"
+                    bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                    bind:getuserinfo="onGetUserInfo"
+                    bind:launchapp="onLaunchApp"
+                    bind:opensetting="onOpenSetting"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-button__text"
+                    >
+                      
+          嵌套在 scroll-view 内
+        
+                    </wx-view>
+                  </wx-button>
+                </smart-button>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+        </wx-view>
+      </wx-scroll-view>
+    </wx-view>
+  </demo-block>
+</main>
+`;

@@ -1,0 +1,993 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-cell>
+            <wx-view
+              class="custom-class smart-cell smart-cell--clickable"
+              hoverClass="smart-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-cell__title title-class"
+                style=""
+              >
+                单元格
+              </wx-view>
+              <wx-view
+                class="smart-cell__value value-class"
+              >
+                内容
+              </wx-view>
+              <smart-icon
+                class="smart-cell__right-icon-wrap right-icon-class"
+                customClass="smart-cell__right-icon"
+              >
+                <wx-view
+                  class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-icon__svg"
+                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                  />
+                </wx-view>
+              </smart-icon>
+            </wx-view>
+          </smart-cell>
+          <smart-cell>
+            <wx-view
+              class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+              hoverClass="smart-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-cell__title title-class"
+                style=""
+              >
+                单元格
+                <wx-view
+                  class="smart-cell__label label-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-cell__value value-class"
+              >
+                内容
+              </wx-view>
+              <smart-icon
+                class="smart-cell__right-icon-wrap right-icon-class"
+                customClass="smart-cell__right-icon"
+              >
+                <wx-view
+                  class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-icon__svg"
+                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                  />
+                </wx-view>
+              </smart-icon>
+            </wx-view>
+          </smart-cell>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        卡片风格
+      </wx-view>
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group smart-cell-group--inset "
+        >
+          <smart-cell>
+            <wx-view
+              class="custom-class smart-cell smart-cell--clickable"
+              hoverClass="smart-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-cell__title title-class"
+                style=""
+              >
+                单元格
+              </wx-view>
+              <wx-view
+                class="smart-cell__value value-class"
+              >
+                内容
+              </wx-view>
+              <smart-icon
+                class="smart-cell__right-icon-wrap right-icon-class"
+                customClass="smart-cell__right-icon"
+              >
+                <wx-view
+                  class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-icon__svg"
+                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                  />
+                </wx-view>
+              </smart-icon>
+            </wx-view>
+          </smart-cell>
+          <smart-cell>
+            <wx-view
+              class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+              hoverClass="smart-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-cell__title title-class"
+                style=""
+              >
+                单元格
+                <wx-view
+                  class="smart-cell__label label-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-cell__value value-class"
+              >
+                内容
+              </wx-view>
+              <smart-icon
+                class="smart-cell__right-icon-wrap right-icon-class"
+                customClass="smart-cell__right-icon"
+              >
+                <wx-view
+                  class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-icon__svg"
+                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                  />
+                </wx-view>
+              </smart-icon>
+            </wx-view>
+          </smart-cell>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        展示图标
+      </wx-view>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <smart-icon
+            class="smart-cell__left-icon-wrap"
+            customClass="smart-cell__left-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M544.768%20171.52A33.353143%2033.353143%200%200%200%20512%20138.678857a33.060571%2033.060571%200%200%200-32.475429%2032.768v65.28c0%2017.664%2014.811429%2032.438857%2032.475429%2032.438857a33.060571%2033.060571%200%200%200%2032.768-32.438857V171.483429z%20m128.585143%20119.552a32.512%2032.512%200%201%200%2046.299428%2045.641143l46.262858-46.299429c12.544-12.214857%2012.544-33.718857%200-46.262857a33.097143%2033.097143%200%200%200-45.970286%200.329143l-46.592%2046.592zM304.347429%20336.713143a32.512%2032.512%200%200%200%2045.970285%200.329143%2033.097143%2033.097143%200%200%200%200.329143-45.970286L304.347429%20244.48a33.426286%2033.426286%200%200%200-45.970286-0.365714c-12.507429%2012.580571-12.507429%2034.084571-0.292572%2046.006857l46.262858%2046.592zM512%20328.667429c-92.562286%200-169.398857%2076.507429-169.398857%20169.398857%200%2092.891429%2076.8%20169.398857%20169.398857%20169.398857%2092.562286%200%20169.069714-76.507429%20169.069714-169.398857%200-92.891429-76.507429-169.398857-169.069714-169.398857z%20m326.217143%20202.203428a33.060571%2033.060571%200%200%200%2032.512-32.804571%2032.804571%2032.804571%200%200%200-32.475429-32.475429h-65.243428a32.804571%2032.804571%200%200%200-32.475429%2032.475429c0%2017.664%2014.774857%2032.804571%2032.475429%2032.804571h65.243428zM186.112%20465.554286a32.841143%2032.841143%200%200%200-32.804571%2032.475428c0%2017.664%2014.811429%2032.804571%2032.804571%2032.804572h64.914286a33.353143%2033.353143%200%200%200%2032.804571-32.804572%2033.060571%2033.060571%200%200%200-32.804571-32.475428H186.075429z%20m533.211429%20193.828571a32.804571%2032.804571%200%200%200-45.933715%200.329143c-12.544%2012.214857-12.544%2033.097143%200.329143%2045.970286l46.592%2046.262857c12.214857%2012.544%2033.426286%2012.214857%2045.970286-0.292572a33.097143%2033.097143%200%200%200-0.329143-45.970285L719.36%20659.382857zM258.121143%20705.389714c-12.544%2012.544-12.873143%2033.755429-0.658286%2045.970286%2012.544%2012.544%2034.084571%2012.836571%2046.299429%200.621714l46.592-46.262857a33.097143%2033.097143%200%200%200%200.329143-45.970286%2033.499429%2033.499429%200%200%200-46.299429-0.329142l-46.262857%2045.970285z%20m286.72%2054.016a33.060571%2033.060571%200%200%200-32.804572-32.475428%2032.804571%2032.804571%200%200%200-32.475428%2032.475428v65.243429c0%2017.664%2014.811429%2032.768%2032.475428%2032.768a33.353143%2033.353143%200%200%200%2032.768-32.768v-65.243429z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M544.768%20171.52A33.353143%2033.353143%200%200%200%20512%20138.678857a33.060571%2033.060571%200%200%200-32.475429%2032.768v65.28c0%2017.664%2014.811429%2032.438857%2032.475429%2032.438857a33.060571%2033.060571%200%200%200%2032.768-32.438857V171.483429z%20m128.585143%20119.552a32.512%2032.512%200%201%200%2046.299428%2045.641143l46.262858-46.299429c12.544-12.214857%2012.544-33.718857%200-46.262857a33.097143%2033.097143%200%200%200-45.970286%200.329143l-46.592%2046.592zM304.347429%20336.713143a32.512%2032.512%200%200%200%2045.970285%200.329143%2033.097143%2033.097143%200%200%200%200.329143-45.970286L304.347429%20244.48a33.426286%2033.426286%200%200%200-45.970286-0.365714c-12.507429%2012.580571-12.507429%2034.084571-0.292572%2046.006857l46.262858%2046.592zM512%20328.667429c-92.562286%200-169.398857%2076.507429-169.398857%20169.398857%200%2092.891429%2076.8%20169.398857%20169.398857%20169.398857%2092.562286%200%20169.069714-76.507429%20169.069714-169.398857%200-92.891429-76.507429-169.398857-169.069714-169.398857z%20m326.217143%20202.203428a33.060571%2033.060571%200%200%200%2032.512-32.804571%2032.804571%2032.804571%200%200%200-32.475429-32.475429h-65.243428a32.804571%2032.804571%200%200%200-32.475429%2032.475429c0%2017.664%2014.774857%2032.804571%2032.475429%2032.804571h65.243428zM186.112%20465.554286a32.841143%2032.841143%200%200%200-32.804571%2032.475428c0%2017.664%2014.811429%2032.804571%2032.804571%2032.804572h64.914286a33.353143%2033.353143%200%200%200%2032.804571-32.804572%2033.060571%2033.060571%200%200%200-32.804571-32.475428H186.075429z%20m533.211429%20193.828571a32.804571%2032.804571%200%200%200-45.933715%200.329143c-12.544%2012.214857-12.544%2033.097143%200.329143%2045.970286l46.592%2046.262857c12.214857%2012.544%2033.426286%2012.214857%2045.970286-0.292572a33.097143%2033.097143%200%200%200-0.329143-45.970285L719.36%20659.382857zM258.121143%20705.389714c-12.544%2012.544-12.873143%2033.755429-0.658286%2045.970286%2012.544%2012.544%2034.084571%2012.836571%2046.299429%200.621714l46.592-46.262857a33.097143%2033.097143%200%200%200%200.329143-45.970286%2033.499429%2033.499429%200%200%200-46.299429-0.329142l-46.262857%2045.970285z%20m286.72%2054.016a33.060571%2033.060571%200%200%200-32.804572-32.475428%2032.804571%2032.804571%200%200%200-32.475428%2032.475428v65.243429c0%2017.664%2014.811429%2032.768%2032.475428%2032.768a33.353143%2033.353143%200%200%200%2032.768-32.768v-65.243429z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            单元格
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          >
+            内容
+          </wx-view>
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <smart-icon
+            class="cell-icon"
+            slot="icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style="color:#3678E3;font-size:24px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M544.768%20171.52A33.353143%2033.353143%200%200%200%20512%20138.678857a33.060571%2033.060571%200%200%200-32.475429%2032.768v65.28c0%2017.664%2014.811429%2032.438857%2032.475429%2032.438857a33.060571%2033.060571%200%200%200%2032.768-32.438857V171.483429z%20m128.585143%20119.552a32.512%2032.512%200%201%200%2046.299428%2045.641143l46.262858-46.299429c12.544-12.214857%2012.544-33.718857%200-46.262857a33.097143%2033.097143%200%200%200-45.970286%200.329143l-46.592%2046.592zM304.347429%20336.713143a32.512%2032.512%200%200%200%2045.970285%200.329143%2033.097143%2033.097143%200%200%200%200.329143-45.970286L304.347429%20244.48a33.426286%2033.426286%200%200%200-45.970286-0.365714c-12.507429%2012.580571-12.507429%2034.084571-0.292572%2046.006857l46.262858%2046.592zM512%20328.667429c-92.562286%200-169.398857%2076.507429-169.398857%20169.398857%200%2092.891429%2076.8%20169.398857%20169.398857%20169.398857%2092.562286%200%20169.069714-76.507429%20169.069714-169.398857%200-92.891429-76.507429-169.398857-169.069714-169.398857z%20m326.217143%20202.203428a33.060571%2033.060571%200%200%200%2032.512-32.804571%2032.804571%2032.804571%200%200%200-32.475429-32.475429h-65.243428a32.804571%2032.804571%200%200%200-32.475429%2032.475429c0%2017.664%2014.774857%2032.804571%2032.475429%2032.804571h65.243428zM186.112%20465.554286a32.841143%2032.841143%200%200%200-32.804571%2032.475428c0%2017.664%2014.811429%2032.804571%2032.804571%2032.804572h64.914286a33.353143%2033.353143%200%200%200%2032.804571-32.804572%2033.060571%2033.060571%200%200%200-32.804571-32.475428H186.075429z%20m533.211429%20193.828571a32.804571%2032.804571%200%200%200-45.933715%200.329143c-12.544%2012.214857-12.544%2033.097143%200.329143%2045.970286l46.592%2046.262857c12.214857%2012.544%2033.426286%2012.214857%2045.970286-0.292572a33.097143%2033.097143%200%200%200-0.329143-45.970285L719.36%20659.382857zM258.121143%20705.389714c-12.544%2012.544-12.873143%2033.755429-0.658286%2045.970286%2012.544%2012.544%2034.084571%2012.836571%2046.299429%200.621714l46.592-46.262857a33.097143%2033.097143%200%200%200%200.329143-45.970286%2033.499429%2033.499429%200%200%200-46.299429-0.329142l-46.262857%2045.970285z%20m286.72%2054.016a33.060571%2033.060571%200%200%200-32.804572-32.475428%2032.804571%2032.804571%200%200%200-32.475428%2032.475428v65.243429c0%2017.664%2014.811429%2032.768%2032.475428%2032.768a33.353143%2033.353143%200%200%200%2032.768-32.768v-65.243429z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M544.768%20171.52A33.353143%2033.353143%200%200%200%20512%20138.678857a33.060571%2033.060571%200%200%200-32.475429%2032.768v65.28c0%2017.664%2014.811429%2032.438857%2032.475429%2032.438857a33.060571%2033.060571%200%200%200%2032.768-32.438857V171.483429z%20m128.585143%20119.552a32.512%2032.512%200%201%200%2046.299428%2045.641143l46.262858-46.299429c12.544-12.214857%2012.544-33.718857%200-46.262857a33.097143%2033.097143%200%200%200-45.970286%200.329143l-46.592%2046.592zM304.347429%20336.713143a32.512%2032.512%200%200%200%2045.970285%200.329143%2033.097143%2033.097143%200%200%200%200.329143-45.970286L304.347429%20244.48a33.426286%2033.426286%200%200%200-45.970286-0.365714c-12.507429%2012.580571-12.507429%2034.084571-0.292572%2046.006857l46.262858%2046.592zM512%20328.667429c-92.562286%200-169.398857%2076.507429-169.398857%20169.398857%200%2092.891429%2076.8%20169.398857%20169.398857%20169.398857%2092.562286%200%20169.069714-76.507429%20169.069714-169.398857%200-92.891429-76.507429-169.398857-169.069714-169.398857z%20m326.217143%20202.203428a33.060571%2033.060571%200%200%200%2032.512-32.804571%2032.804571%2032.804571%200%200%200-32.475429-32.475429h-65.243428a32.804571%2032.804571%200%200%200-32.475429%2032.475429c0%2017.664%2014.774857%2032.804571%2032.475429%2032.804571h65.243428zM186.112%20465.554286a32.841143%2032.841143%200%200%200-32.804571%2032.475428c0%2017.664%2014.811429%2032.804571%2032.804571%2032.804572h64.914286a33.353143%2033.353143%200%200%200%2032.804571-32.804572%2033.060571%2033.060571%200%200%200-32.804571-32.475428H186.075429z%20m533.211429%20193.828571a32.804571%2032.804571%200%200%200-45.933715%200.329143c-12.544%2012.214857-12.544%2033.097143%200.329143%2045.970286l46.592%2046.262857c12.214857%2012.544%2033.426286%2012.214857%2045.970286-0.292572a33.097143%2033.097143%200%200%200-0.329143-45.970285L719.36%20659.382857zM258.121143%20705.389714c-12.544%2012.544-12.873143%2033.755429-0.658286%2045.970286%2012.544%2012.544%2034.084571%2012.836571%2046.299429%200.621714l46.592-46.262857a33.097143%2033.097143%200%200%200%200.329143-45.970286%2033.499429%2033.499429%200%200%200-46.299429-0.329142l-46.262857%2045.970285z%20m286.72%2054.016a33.060571%2033.060571%200%200%200-32.804572-32.475428%2032.804571%2032.804571%200%200%200-32.475428%2032.475428v65.243429c0%2017.664%2014.811429%2032.768%2032.475428%2032.768a33.353143%2033.353143%200%200%200%2032.768-32.768v-65.243429z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#3678E3"
+              />
+            </wx-view>
+          </smart-icon>
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            自定义 Icon
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          >
+            内容
+          </wx-view>
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        其他展示
+      </wx-view>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            Title
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          >
+            Label
+          </wx-view>
+        </wx-view>
+      </smart-cell>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            Title
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell smart-cell--borderless"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            Title
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          >
+            <smart-stepper>
+              <wx-view
+                class="smart-stepper custom-class"
+              >
+                <wx-view
+                  class="minus-class smart-stepper__minus"
+                  data-type="minus"
+                  hoverClass="smart-stepper__minus--hover"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onTap"
+                  bind:touchend="onTouchEnd"
+                  bind:touchstart="onTouchStart"
+                />
+                <wx-input
+                  alwaysEmbed="{{false}}"
+                  class="input-class smart-stepper__input"
+                  disabled="{{false}}"
+                  focus=""
+                  style=""
+                  type="digit"
+                  value="{{1}}"
+                  bind:blur="onBlur"
+                  bind:focus="onFocus"
+                  bind:input="onInput"
+                />
+                <wx-view
+                  class="plus-class smart-stepper__plus"
+                  data-type="plus"
+                  hoverClass="smart-stepper__plus--hover"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onTap"
+                  bind:touchend="onTouchEnd"
+                  bind:touchstart="onTouchStart"
+                />
+              </wx-view>
+            </smart-stepper>
+          </wx-view>
+        </wx-view>
+      </smart-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        页面跳转
+      </wx-view>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            URL跳转(navigateTo)
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            URL重定向(redirectTo)
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-cell
+        bind:click="onNavTo"
+      >
+        <wx-view
+          class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            打开H5容器(openInnerH5)
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        分组标题
+      </wx-view>
+      <smart-cell-group>
+        <wx-view
+          class="smart-cell-group__title"
+        >
+          
+  分组 1
+
+        </wx-view>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-cell>
+            <wx-view
+              class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+              hoverClass="smart-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-cell__title title-class"
+                style=""
+              >
+                单元格
+              </wx-view>
+              <wx-view
+                class="smart-cell__value value-class"
+              />
+              <smart-icon
+                class="smart-cell__right-icon-wrap right-icon-class"
+                customClass="smart-cell__right-icon"
+              >
+                <wx-view
+                  class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-icon__svg"
+                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                  />
+                </wx-view>
+              </smart-icon>
+            </wx-view>
+          </smart-cell>
+        </wx-view>
+      </smart-cell-group>
+      <smart-cell-group>
+        <wx-view
+          class="smart-cell-group__title"
+        >
+          
+  分组 2
+
+        </wx-view>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-cell>
+            <wx-view
+              class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+              hoverClass="smart-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-cell__title title-class"
+                style=""
+              >
+                单元格
+              </wx-view>
+              <wx-view
+                class="smart-cell__value value-class"
+              />
+              <smart-icon
+                class="smart-cell__right-icon-wrap right-icon-class"
+                customClass="smart-cell__right-icon"
+              >
+                <wx-view
+                  class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-icon__svg"
+                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                  />
+                </wx-view>
+              </smart-icon>
+            </wx-view>
+          </smart-cell>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        其他类型
+      </wx-view>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            Title
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          >
+            <smart-switch>
+              <wx-view
+                class="smart-switch smart-switch--on custom-class"
+                style="font-size:24px"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-switch__node node-class"
+                />
+              </wx-view>
+            </smart-switch>
+          </wx-view>
+        </wx-view>
+      </smart-cell>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            Title
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          >
+            <smart-icon>
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style="color:#3678E3;font-size:28px"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#3678E3"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+        </wx-view>
+      </smart-cell>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            Title
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          >
+            <smart-checkbox>
+              <wx-view
+                class="smart-checkbox custom-class"
+              >
+                <wx-view
+                  class="smart-checkbox__icon-wrap"
+                  bind:tap="toggle"
+                >
+                  <smart-icon
+                    class="smart-checkbox__icon smart-checkbox__icon--square"
+                    customClass="icon-class"
+                    style="font-size:20px"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style="color:none;font-size:0.8em;line-height: 1.25em;"
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="label-class smart-checkbox__label smart-checkbox__label--right"
+                  bind:tap="onClickLabel"
+                />
+              </wx-view>
+            </smart-checkbox>
+          </wx-view>
+        </wx-view>
+      </smart-cell>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            Title
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          >
+            <smart-checkbox>
+              <wx-view
+                class="smart-checkbox custom-class"
+              >
+                <wx-view
+                  class="smart-checkbox__icon-wrap"
+                  bind:tap="toggle"
+                >
+                  <smart-icon
+                    class="smart-checkbox__icon smart-checkbox__icon--round"
+                    customClass="icon-class"
+                    style="font-size:20px"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style="color:none;font-size:0.8em;line-height: 1.25em;"
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="label-class smart-checkbox__label smart-checkbox__label--right"
+                  bind:tap="onClickLabel"
+                />
+              </wx-view>
+            </smart-checkbox>
+          </wx-view>
+        </wx-view>
+      </smart-cell>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <smart-icon
+            class="cell-icon"
+            slot="icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image"
+              style="font-size:50px"
+              bind:tap="onClick"
+            >
+              <wx-image
+                class="smart-icon__image"
+                mode="aspectFit"
+                src="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
+              />
+            </wx-view>
+          </smart-icon>
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            Title
+            <wx-view
+              class="smart-cell__label label-class"
+            >
+              Bedroom
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        使用插槽
+      </wx-view>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <smart-icon
+            class="smart-cell__left-icon-wrap"
+            customClass="smart-cell__left-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M544.768%20171.52A33.353143%2033.353143%200%200%200%20512%20138.678857a33.060571%2033.060571%200%200%200-32.475429%2032.768v65.28c0%2017.664%2014.811429%2032.438857%2032.475429%2032.438857a33.060571%2033.060571%200%200%200%2032.768-32.438857V171.483429z%20m128.585143%20119.552a32.512%2032.512%200%201%200%2046.299428%2045.641143l46.262858-46.299429c12.544-12.214857%2012.544-33.718857%200-46.262857a33.097143%2033.097143%200%200%200-45.970286%200.329143l-46.592%2046.592zM304.347429%20336.713143a32.512%2032.512%200%200%200%2045.970285%200.329143%2033.097143%2033.097143%200%200%200%200.329143-45.970286L304.347429%20244.48a33.426286%2033.426286%200%200%200-45.970286-0.365714c-12.507429%2012.580571-12.507429%2034.084571-0.292572%2046.006857l46.262858%2046.592zM512%20328.667429c-92.562286%200-169.398857%2076.507429-169.398857%20169.398857%200%2092.891429%2076.8%20169.398857%20169.398857%20169.398857%2092.562286%200%20169.069714-76.507429%20169.069714-169.398857%200-92.891429-76.507429-169.398857-169.069714-169.398857z%20m326.217143%20202.203428a33.060571%2033.060571%200%200%200%2032.512-32.804571%2032.804571%2032.804571%200%200%200-32.475429-32.475429h-65.243428a32.804571%2032.804571%200%200%200-32.475429%2032.475429c0%2017.664%2014.774857%2032.804571%2032.475429%2032.804571h65.243428zM186.112%20465.554286a32.841143%2032.841143%200%200%200-32.804571%2032.475428c0%2017.664%2014.811429%2032.804571%2032.804571%2032.804572h64.914286a33.353143%2033.353143%200%200%200%2032.804571-32.804572%2033.060571%2033.060571%200%200%200-32.804571-32.475428H186.075429z%20m533.211429%20193.828571a32.804571%2032.804571%200%200%200-45.933715%200.329143c-12.544%2012.214857-12.544%2033.097143%200.329143%2045.970286l46.592%2046.262857c12.214857%2012.544%2033.426286%2012.214857%2045.970286-0.292572a33.097143%2033.097143%200%200%200-0.329143-45.970285L719.36%20659.382857zM258.121143%20705.389714c-12.544%2012.544-12.873143%2033.755429-0.658286%2045.970286%2012.544%2012.544%2034.084571%2012.836571%2046.299429%200.621714l46.592-46.262857a33.097143%2033.097143%200%200%200%200.329143-45.970286%2033.499429%2033.499429%200%200%200-46.299429-0.329142l-46.262857%2045.970285z%20m286.72%2054.016a33.060571%2033.060571%200%200%200-32.804572-32.475428%2032.804571%2032.804571%200%200%200-32.475428%2032.475428v65.243429c0%2017.664%2014.811429%2032.768%2032.475428%2032.768a33.353143%2033.353143%200%200%200%2032.768-32.768v-65.243429z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M544.768%20171.52A33.353143%2033.353143%200%200%200%20512%20138.678857a33.060571%2033.060571%200%200%200-32.475429%2032.768v65.28c0%2017.664%2014.811429%2032.438857%2032.475429%2032.438857a33.060571%2033.060571%200%200%200%2032.768-32.438857V171.483429z%20m128.585143%20119.552a32.512%2032.512%200%201%200%2046.299428%2045.641143l46.262858-46.299429c12.544-12.214857%2012.544-33.718857%200-46.262857a33.097143%2033.097143%200%200%200-45.970286%200.329143l-46.592%2046.592zM304.347429%20336.713143a32.512%2032.512%200%200%200%2045.970285%200.329143%2033.097143%2033.097143%200%200%200%200.329143-45.970286L304.347429%20244.48a33.426286%2033.426286%200%200%200-45.970286-0.365714c-12.507429%2012.580571-12.507429%2034.084571-0.292572%2046.006857l46.262858%2046.592zM512%20328.667429c-92.562286%200-169.398857%2076.507429-169.398857%20169.398857%200%2092.891429%2076.8%20169.398857%20169.398857%20169.398857%2092.562286%200%20169.069714-76.507429%20169.069714-169.398857%200-92.891429-76.507429-169.398857-169.069714-169.398857z%20m326.217143%20202.203428a33.060571%2033.060571%200%200%200%2032.512-32.804571%2032.804571%2032.804571%200%200%200-32.475429-32.475429h-65.243428a32.804571%2032.804571%200%200%200-32.475429%2032.475429c0%2017.664%2014.774857%2032.804571%2032.475429%2032.804571h65.243428zM186.112%20465.554286a32.841143%2032.841143%200%200%200-32.804571%2032.475428c0%2017.664%2014.811429%2032.804571%2032.804571%2032.804572h64.914286a33.353143%2033.353143%200%200%200%2032.804571-32.804572%2033.060571%2033.060571%200%200%200-32.804571-32.475428H186.075429z%20m533.211429%20193.828571a32.804571%2032.804571%200%200%200-45.933715%200.329143c-12.544%2012.214857-12.544%2033.097143%200.329143%2045.970286l46.592%2046.262857c12.214857%2012.544%2033.426286%2012.214857%2045.970286-0.292572a33.097143%2033.097143%200%200%200-0.329143-45.970285L719.36%20659.382857zM258.121143%20705.389714c-12.544%2012.544-12.873143%2033.755429-0.658286%2045.970286%2012.544%2012.544%2034.084571%2012.836571%2046.299429%200.621714l46.592-46.262857a33.097143%2033.097143%200%200%200%200.329143-45.970286%2033.499429%2033.499429%200%200%200-46.299429-0.329142l-46.262857%2045.970285z%20m286.72%2054.016a33.060571%2033.060571%200%200%200-32.804572-32.475428%2032.804571%2032.804571%200%200%200-32.475428%2032.475428v65.243429c0%2017.664%2014.811429%2032.768%2032.475428%2032.768a33.353143%2033.353143%200%200%200%2032.768-32.768v-65.243429z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            <wx-view
+              slot="title"
+            >
+              <wx-view
+                class="title"
+              >
+                单元格
+              </wx-view>
+              <smart-tag>
+                <wx-view
+                  class="custom-class smart-tag smart-tag--danger"
+                  style=""
+                >
+                  标签
+                </wx-view>
+              </smart-tag>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          >
+            内容
+          </wx-view>
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-cell>
+        <wx-view
+          class="custom-class smart-cell smart-cell--borderless"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          >
+            单元格
+          </wx-view>
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            slot="right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M544.768%20171.52A33.353143%2033.353143%200%200%200%20512%20138.678857a33.060571%2033.060571%200%200%200-32.475429%2032.768v65.28c0%2017.664%2014.811429%2032.438857%2032.475429%2032.438857a33.060571%2033.060571%200%200%200%2032.768-32.438857V171.483429z%20m128.585143%20119.552a32.512%2032.512%200%201%200%2046.299428%2045.641143l46.262858-46.299429c12.544-12.214857%2012.544-33.718857%200-46.262857a33.097143%2033.097143%200%200%200-45.970286%200.329143l-46.592%2046.592zM304.347429%20336.713143a32.512%2032.512%200%200%200%2045.970285%200.329143%2033.097143%2033.097143%200%200%200%200.329143-45.970286L304.347429%20244.48a33.426286%2033.426286%200%200%200-45.970286-0.365714c-12.507429%2012.580571-12.507429%2034.084571-0.292572%2046.006857l46.262858%2046.592zM512%20328.667429c-92.562286%200-169.398857%2076.507429-169.398857%20169.398857%200%2092.891429%2076.8%20169.398857%20169.398857%20169.398857%2092.562286%200%20169.069714-76.507429%20169.069714-169.398857%200-92.891429-76.507429-169.398857-169.069714-169.398857z%20m326.217143%20202.203428a33.060571%2033.060571%200%200%200%2032.512-32.804571%2032.804571%2032.804571%200%200%200-32.475429-32.475429h-65.243428a32.804571%2032.804571%200%200%200-32.475429%2032.475429c0%2017.664%2014.774857%2032.804571%2032.475429%2032.804571h65.243428zM186.112%20465.554286a32.841143%2032.841143%200%200%200-32.804571%2032.475428c0%2017.664%2014.811429%2032.804571%2032.804571%2032.804572h64.914286a33.353143%2033.353143%200%200%200%2032.804571-32.804572%2033.060571%2033.060571%200%200%200-32.804571-32.475428H186.075429z%20m533.211429%20193.828571a32.804571%2032.804571%200%200%200-45.933715%200.329143c-12.544%2012.214857-12.544%2033.097143%200.329143%2045.970286l46.592%2046.262857c12.214857%2012.544%2033.426286%2012.214857%2045.970286-0.292572a33.097143%2033.097143%200%200%200-0.329143-45.970285L719.36%20659.382857zM258.121143%20705.389714c-12.544%2012.544-12.873143%2033.755429-0.658286%2045.970286%2012.544%2012.544%2034.084571%2012.836571%2046.299429%200.621714l46.592-46.262857a33.097143%2033.097143%200%200%200%200.329143-45.970286%2033.499429%2033.499429%200%200%200-46.299429-0.329142l-46.262857%2045.970285z%20m286.72%2054.016a33.060571%2033.060571%200%200%200-32.804572-32.475428%2032.804571%2032.804571%200%200%200-32.475428%2032.475428v65.243429c0%2017.664%2014.811429%2032.768%2032.475428%2032.768a33.353143%2033.353143%200%200%200%2032.768-32.768v-65.243429z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M544.768%20171.52A33.353143%2033.353143%200%200%200%20512%20138.678857a33.060571%2033.060571%200%200%200-32.475429%2032.768v65.28c0%2017.664%2014.811429%2032.438857%2032.475429%2032.438857a33.060571%2033.060571%200%200%200%2032.768-32.438857V171.483429z%20m128.585143%20119.552a32.512%2032.512%200%201%200%2046.299428%2045.641143l46.262858-46.299429c12.544-12.214857%2012.544-33.718857%200-46.262857a33.097143%2033.097143%200%200%200-45.970286%200.329143l-46.592%2046.592zM304.347429%20336.713143a32.512%2032.512%200%200%200%2045.970285%200.329143%2033.097143%2033.097143%200%200%200%200.329143-45.970286L304.347429%20244.48a33.426286%2033.426286%200%200%200-45.970286-0.365714c-12.507429%2012.580571-12.507429%2034.084571-0.292572%2046.006857l46.262858%2046.592zM512%20328.667429c-92.562286%200-169.398857%2076.507429-169.398857%20169.398857%200%2092.891429%2076.8%20169.398857%20169.398857%20169.398857%2092.562286%200%20169.069714-76.507429%20169.069714-169.398857%200-92.891429-76.507429-169.398857-169.069714-169.398857z%20m326.217143%20202.203428a33.060571%2033.060571%200%200%200%2032.512-32.804571%2032.804571%2032.804571%200%200%200-32.475429-32.475429h-65.243428a32.804571%2032.804571%200%200%200-32.475429%2032.475429c0%2017.664%2014.774857%2032.804571%2032.475429%2032.804571h65.243428zM186.112%20465.554286a32.841143%2032.841143%200%200%200-32.804571%2032.475428c0%2017.664%2014.811429%2032.804571%2032.804571%2032.804572h64.914286a33.353143%2033.353143%200%200%200%2032.804571-32.804572%2033.060571%2033.060571%200%200%200-32.804571-32.475428H186.075429z%20m533.211429%20193.828571a32.804571%2032.804571%200%200%200-45.933715%200.329143c-12.544%2012.214857-12.544%2033.097143%200.329143%2045.970286l46.592%2046.262857c12.214857%2012.544%2033.426286%2012.214857%2045.970286-0.292572a33.097143%2033.097143%200%200%200-0.329143-45.970285L719.36%20659.382857zM258.121143%20705.389714c-12.544%2012.544-12.873143%2033.755429-0.658286%2045.970286%2012.544%2012.544%2034.084571%2012.836571%2046.299429%200.621714l46.592-46.262857a33.097143%2033.097143%200%200%200%200.329143-45.970286%2033.499429%2033.499429%200%200%200-46.299429-0.329142l-46.262857%2045.970285z%20m286.72%2054.016a33.060571%2033.060571%200%200%200-32.804572-32.475428%2032.804571%2032.804571%200%200%200-32.475428%2032.475428v65.243429c0%2017.664%2014.811429%2032.768%2032.475428%2032.768a33.353143%2033.353143%200%200%200%2032.768-32.768v-65.243429z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+    </wx-view>
+  </demo-block>
+</main>
+`;

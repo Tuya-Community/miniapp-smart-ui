@@ -1,0 +1,994 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基本用法
+      </wx-view>
+      <smart-checkbox
+        customClass="demo-checkbox"
+        data-key="checkbox1"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-checkbox custom-class"
+        >
+          <wx-view
+            class="smart-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <smart-icon
+              class="smart-checkbox__icon smart-checkbox__icon--round smart-checkbox__icon--checked"
+              customClass="icon-class"
+              style="font-size:20px"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style="color:#fff;font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#fff"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+          <wx-view
+            class="label-class smart-checkbox__label smart-checkbox__label--right"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </smart-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用状态
+      </wx-view>
+      <smart-checkbox
+        customClass="demo-checkbox"
+      >
+        <wx-view
+          class="smart-checkbox custom-class"
+        >
+          <wx-view
+            class="smart-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <smart-icon
+              class="smart-checkbox__icon smart-checkbox__icon--round smart-checkbox__icon--disabled"
+              customClass="icon-class"
+              style="font-size:20px"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style="color:none;font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+          <wx-view
+            class="label-class smart-checkbox__label smart-checkbox__label--right smart-checkbox__label--disabled"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </smart-checkbox>
+      <smart-checkbox
+        customClass="demo-checkbox"
+      >
+        <wx-view
+          class="smart-checkbox custom-class"
+        >
+          <wx-view
+            class="smart-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <smart-icon
+              class="smart-checkbox__icon smart-checkbox__icon--round smart-checkbox__icon--disabled smart-checkbox__icon--checked"
+              customClass="icon-class"
+              style="font-size:20px"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style="color:#fff;font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#fff"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+          <wx-view
+            class="label-class smart-checkbox__label smart-checkbox__label--right smart-checkbox__label--disabled"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </smart-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义形状
+      </wx-view>
+      <smart-checkbox
+        customClass="demo-checkbox"
+        data-key="checkboxShape"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-checkbox custom-class"
+        >
+          <wx-view
+            class="smart-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <smart-icon
+              class="smart-checkbox__icon smart-checkbox__icon--square smart-checkbox__icon--checked"
+              customClass="icon-class"
+              style="font-size:20px"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style="color:#fff;font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#fff"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+          <wx-view
+            class="label-class smart-checkbox__label smart-checkbox__label--right"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </smart-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义颜色
+      </wx-view>
+      <smart-checkbox
+        customClass="demo-checkbox"
+        data-key="checkbox2"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-checkbox custom-class"
+        >
+          <wx-view
+            class="smart-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <smart-icon
+              class="smart-checkbox__icon smart-checkbox__icon--round smart-checkbox__icon--checked"
+              customClass="icon-class"
+              style="font-size:20px;border-color:#07c160;background-color:#07c160"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style="color:#fff;font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#fff"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+          <wx-view
+            class="label-class smart-checkbox__label smart-checkbox__label--right"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </smart-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义大小
+      </wx-view>
+      <smart-checkbox
+        customClass="demo-checkbox"
+        data-key="checkboxSize"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-checkbox custom-class"
+        >
+          <wx-view
+            class="smart-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <smart-icon
+              class="smart-checkbox__icon smart-checkbox__icon--round smart-checkbox__icon--checked"
+              customClass="icon-class"
+              style="font-size:25px"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style="color:#fff;font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#fff"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+          <wx-view
+            class="label-class smart-checkbox__label smart-checkbox__label--right"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </smart-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义图标
+      </wx-view>
+      <smart-checkbox
+        customClass="demo-checkbox"
+        data-key="checkbox3"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-checkbox custom-class"
+        >
+          <wx-view
+            class="smart-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <wx-image
+              class="icon"
+              mode="widthFix"
+              slot="icon"
+              src="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
+            />
+          </wx-view>
+          <wx-view
+            class="label-class smart-checkbox__label smart-checkbox__label--right"
+            bind:tap="onClickLabel"
+          >
+            
+    自定义图标
+    
+          </wx-view>
+        </wx-view>
+      </smart-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用文本点击
+      </wx-view>
+      <smart-checkbox
+        customClass="demo-checkbox"
+        data-key="checkboxLabel"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-checkbox custom-class"
+        >
+          <wx-view
+            class="smart-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <smart-icon
+              class="smart-checkbox__icon smart-checkbox__icon--round smart-checkbox__icon--checked"
+              customClass="icon-class"
+              style="font-size:20px"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style="color:#fff;font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#fff"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+          <wx-view
+            class="label-class smart-checkbox__label smart-checkbox__label--right"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </smart-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        复选框组
+      </wx-view>
+      <smart-checkbox-group
+        data-key="result"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-checkbox-group"
+        >
+          <smart-checkbox
+            customClass="demo-checkbox"
+            data-name="a"
+            name="a"
+          >
+            <wx-view
+              class="smart-checkbox custom-class"
+            >
+              <wx-view
+                class="smart-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <smart-icon
+                  class="smart-checkbox__icon smart-checkbox__icon--round smart-checkbox__icon--checked"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:#fff;font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#fff"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="label-class smart-checkbox__label smart-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 a
+    
+              </wx-view>
+            </wx-view>
+          </smart-checkbox>
+          <smart-checkbox
+            customClass="demo-checkbox"
+            data-name="b"
+            name="b"
+          >
+            <wx-view
+              class="smart-checkbox custom-class"
+            >
+              <wx-view
+                class="smart-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <smart-icon
+                  class="smart-checkbox__icon smart-checkbox__icon--round smart-checkbox__icon--checked"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:#fff;font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#fff"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="label-class smart-checkbox__label smart-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 b
+    
+              </wx-view>
+            </wx-view>
+          </smart-checkbox>
+          <smart-checkbox
+            customClass="demo-checkbox"
+            data-name="c"
+            name="c"
+          >
+            <wx-view
+              class="smart-checkbox custom-class"
+            >
+              <wx-view
+                class="smart-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <smart-icon
+                  class="smart-checkbox__icon smart-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:none;font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="label-class smart-checkbox__label smart-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 c
+    
+              </wx-view>
+            </wx-view>
+          </smart-checkbox>
+        </wx-view>
+      </smart-checkbox-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        水平排列
+      </wx-view>
+      <smart-checkbox-group
+        data-key="result4"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-checkbox-group smart-checkbox-group--horizontal"
+        >
+          <smart-checkbox
+            customClass="demo-checkbox"
+            data-name="a"
+            name="a"
+          >
+            <wx-view
+              class="smart-checkbox smart-checkbox--horizontal custom-class"
+            >
+              <wx-view
+                class="smart-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <smart-icon
+                  class="smart-checkbox__icon smart-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:none;font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="label-class smart-checkbox__label smart-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 a
+    
+              </wx-view>
+            </wx-view>
+          </smart-checkbox>
+          <smart-checkbox
+            customClass="demo-checkbox"
+            data-name="b"
+            name="b"
+          >
+            <wx-view
+              class="smart-checkbox smart-checkbox--horizontal custom-class"
+            >
+              <wx-view
+                class="smart-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <smart-icon
+                  class="smart-checkbox__icon smart-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:none;font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="label-class smart-checkbox__label smart-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 b
+    
+              </wx-view>
+            </wx-view>
+          </smart-checkbox>
+          <smart-checkbox
+            customClass="demo-checkbox"
+            data-name="c"
+            name="c"
+          >
+            <wx-view
+              class="smart-checkbox smart-checkbox--horizontal custom-class"
+            >
+              <wx-view
+                class="smart-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <smart-icon
+                  class="smart-checkbox__icon smart-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:none;font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="label-class smart-checkbox__label smart-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 c
+    
+              </wx-view>
+            </wx-view>
+          </smart-checkbox>
+        </wx-view>
+      </smart-checkbox-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        限制最大可选数
+      </wx-view>
+      <smart-checkbox-group
+        data-key="result2"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-checkbox-group"
+        >
+          <smart-checkbox
+            customClass="demo-checkbox"
+            data-name="a"
+            name="a"
+          >
+            <wx-view
+              class="smart-checkbox custom-class"
+            >
+              <wx-view
+                class="smart-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <smart-icon
+                  class="smart-checkbox__icon smart-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:none;font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="label-class smart-checkbox__label smart-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 a
+    
+              </wx-view>
+            </wx-view>
+          </smart-checkbox>
+          <smart-checkbox
+            customClass="demo-checkbox"
+            data-name="b"
+            name="b"
+          >
+            <wx-view
+              class="smart-checkbox custom-class"
+            >
+              <wx-view
+                class="smart-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <smart-icon
+                  class="smart-checkbox__icon smart-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:none;font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="label-class smart-checkbox__label smart-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 b
+    
+              </wx-view>
+            </wx-view>
+          </smart-checkbox>
+          <smart-checkbox
+            customClass="demo-checkbox"
+            data-name="c"
+            name="c"
+          >
+            <wx-view
+              class="smart-checkbox custom-class"
+            >
+              <wx-view
+                class="smart-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <smart-icon
+                  class="smart-checkbox__icon smart-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:none;font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="label-class smart-checkbox__label smart-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 c
+    
+              </wx-view>
+            </wx-view>
+          </smart-checkbox>
+        </wx-view>
+      </smart-checkbox-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        搭配单元格组件使用
+      </wx-view>
+      <smart-checkbox-group
+        data-key="result3"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-checkbox-group"
+        >
+          <smart-cell-group>
+            <smart-cell
+              data-index="{{0}}"
+              valueClass="value-class"
+              bind:click="toggle"
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--clickable"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style=""
+                >
+                  复选框 a
+                </wx-view>
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <smart-checkbox
+                    class="checkboxes-0"
+                    data-name="a"
+                    name="a"
+                    catch:tap="noop"
+                  >
+                    <wx-view
+                      class="smart-checkbox custom-class"
+                    >
+                      <wx-view
+                        class="smart-checkbox__icon-wrap"
+                        bind:tap="toggle"
+                      >
+                        <smart-icon
+                          class="smart-checkbox__icon smart-checkbox__icon--round"
+                          customClass="icon-class"
+                          style="font-size:20px"
+                        >
+                          <wx-view
+                            class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                            style="color:none;font-size:0.8em;line-height: 1.25em;"
+                            bind:tap="onClick"
+                          >
+                            <wx-view
+                              class="smart-icon__svg"
+                              style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                            />
+                          </wx-view>
+                        </smart-icon>
+                      </wx-view>
+                      <wx-view
+                        class="label-class smart-checkbox__label smart-checkbox__label--right"
+                        bind:tap="onClickLabel"
+                      />
+                    </wx-view>
+                  </smart-checkbox>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+            <smart-cell
+              data-index="{{1}}"
+              valueClass="value-class"
+              bind:click="toggle"
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--clickable"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style=""
+                >
+                  复选框 b
+                </wx-view>
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <smart-checkbox
+                    class="checkboxes-1"
+                    data-name="b"
+                    name="b"
+                    catch:tap="noop"
+                  >
+                    <wx-view
+                      class="smart-checkbox custom-class"
+                    >
+                      <wx-view
+                        class="smart-checkbox__icon-wrap"
+                        bind:tap="toggle"
+                      >
+                        <smart-icon
+                          class="smart-checkbox__icon smart-checkbox__icon--round"
+                          customClass="icon-class"
+                          style="font-size:20px"
+                        >
+                          <wx-view
+                            class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                            style="color:none;font-size:0.8em;line-height: 1.25em;"
+                            bind:tap="onClick"
+                          >
+                            <wx-view
+                              class="smart-icon__svg"
+                              style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                            />
+                          </wx-view>
+                        </smart-icon>
+                      </wx-view>
+                      <wx-view
+                        class="label-class smart-checkbox__label smart-checkbox__label--right"
+                        bind:tap="onClickLabel"
+                      />
+                    </wx-view>
+                  </smart-checkbox>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+            <smart-cell
+              data-index="{{2}}"
+              valueClass="value-class"
+              bind:click="toggle"
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--clickable"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style=""
+                >
+                  复选框 c
+                </wx-view>
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <smart-checkbox
+                    class="checkboxes-2"
+                    data-name="c"
+                    name="c"
+                    catch:tap="noop"
+                  >
+                    <wx-view
+                      class="smart-checkbox custom-class"
+                    >
+                      <wx-view
+                        class="smart-checkbox__icon-wrap"
+                        bind:tap="toggle"
+                      >
+                        <smart-icon
+                          class="smart-checkbox__icon smart-checkbox__icon--round"
+                          customClass="icon-class"
+                          style="font-size:20px"
+                        >
+                          <wx-view
+                            class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                            style="color:none;font-size:0.8em;line-height: 1.25em;"
+                            bind:tap="onClick"
+                          >
+                            <wx-view
+                              class="smart-icon__svg"
+                              style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:none"
+                            />
+                          </wx-view>
+                        </smart-icon>
+                      </wx-view>
+                      <wx-view
+                        class="label-class smart-checkbox__label smart-checkbox__label--right"
+                        bind:tap="onClickLabel"
+                      />
+                    </wx-view>
+                  </smart-checkbox>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-cell-group>
+        </wx-view>
+      </smart-checkbox-group>
+    </wx-view>
+  </demo-block>
+</main>
+`;

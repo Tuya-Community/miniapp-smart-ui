@@ -1,0 +1,44 @@
+<demo-block title="基础用法">
+  <smart-collapse value="{{ active1 }}" data-key="active1" bind:change="onChange">
+    <smart-collapse-item title="{{ title1 }}">{{ content1 }}</smart-collapse-item>
+    <smart-collapse-item title="{{ title2 }}">{{ content2 }}</smart-collapse-item>
+    <smart-collapse-item title="{{ title3 }}" disabled>{{ content3 }}</smart-collapse-item>
+  </smart-collapse>
+</demo-block>
+
+<demo-block title="手风琴">
+  <smart-collapse value="{{ active2 }}" data-key="active2" accordion bind:change="onChange">
+    <smart-collapse-item title="{{ title1 }}">{{ content1 }}</smart-collapse-item>
+    <smart-collapse-item title="{{ title2 }}">{{ content2 }}</smart-collapse-item>
+    <smart-collapse-item title="{{ title3 }}">{{ content3 }}</smart-collapse-item>
+  </smart-collapse>
+</demo-block>
+
+<demo-block title="事件监听">
+  <smart-collapse value="{{ active3 }}" data-key="active3" bind:change="onChange" bind:open="onOpen" bind:close="onClose">
+    <smart-collapse-item title="{{ title1 }}">{{ content1 }}</smart-collapse-item>
+    <smart-collapse-item title="{{ title2 }}">{{ content2 }}</smart-collapse-item>
+    <smart-collapse-item title="{{ title3 }}">{{ content3 }}</smart-collapse-item>
+  </smart-collapse>
+</demo-block>
+
+<demo-block title="自定义标题内容">
+  <smart-collapse value="{{ active4 }}" data-key="active4" bind:change="onChange">
+    <smart-collapse-item>
+      <view slot="title">
+        {{ title1 }}
+        <smart-icon name="question-o" custom-class="smart-icon-question" />
+      </view>
+      {{ content1 }}
+    </smart-collapse-item>
+    <smart-collapse-item
+      title="{{ title2 }}"
+      value="内容"
+      icon="shop-o"
+    >
+      {{ content2 }}
+    </smart-collapse-item>
+  </smart-collapse>
+</demo-block>
+
+<smart-toast id="smart-toast" />

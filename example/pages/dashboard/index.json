@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "Smart UI",
+  "usingComponents": {
+    "demo-home": "../../components/demo-home/index"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-button": "../../button/index",
+    "smart-cell": "../../cell/index",
+    "smart-checkbox": "../../checkbox/index",
+    "smart-checkbox-group": "../../checkbox-group/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

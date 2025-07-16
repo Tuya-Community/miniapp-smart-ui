@@ -1,0 +1,20 @@
+<demo-block title="全局配置样式">
+  <view class="contain">
+    <view class="buttons">
+      <smart-button type="primary" data-color="red" color="red" bind:click="onChange">
+        设置颜色
+      </smart-button>
+      <smart-button type="primary" data-color="green" color="green" bind:click="onChange">
+        设置颜色
+      </smart-button>
+      <smart-button type="primary" data-color="blue" color="blue" bind:click="onChange">
+        设置颜色
+      </smart-button>
+    </view>
+    <smart-config-provider theme-vars="{{ themeVars }}">
+      <smart-button type="primary">
+        主要按钮
+      </smart-button>
+    </smart-config-provider>
+  </view>
+</demo-block>

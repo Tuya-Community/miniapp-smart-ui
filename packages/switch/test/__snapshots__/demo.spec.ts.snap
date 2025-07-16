@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <smart-switch
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-switch smart-switch--on custom-class"
+          style="font-size:30px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-switch__node node-class"
+          />
+        </wx-view>
+      </smart-switch>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用状态
+      </wx-view>
+      <smart-switch
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-switch smart-switch--on smart-switch--disabled custom-class"
+          style="font-size:30px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-switch__node node-class"
+          />
+        </wx-view>
+      </smart-switch>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        加载状态
+      </wx-view>
+      <smart-switch
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-switch smart-switch--on custom-class"
+          style="font-size:30px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-switch__node node-class"
+          >
+            <smart-loading
+              customClass="smart-switch__loading"
+            >
+              <wx-view
+                class="custom-class smart-loading"
+              >
+                <wx-view
+                  class="smart-loading__spinner smart-loading__spinner--circular"
+                  style="color:#1989fa"
+                />
+                <wx-view
+                  class="smart-loading__text"
+                  style=""
+                />
+              </wx-view>
+            </smart-loading>
+          </wx-view>
+        </wx-view>
+      </smart-switch>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义大小
+      </wx-view>
+      <smart-switch
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-switch smart-switch--on custom-class"
+          style="font-size:24px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-switch__node node-class"
+          />
+        </wx-view>
+      </smart-switch>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义颜色
+      </wx-view>
+      <smart-switch
+        bind:change="onChange"
+      >
+        <wx-view
+          class="smart-switch smart-switch--on custom-class"
+          style="font-size:30px;background-color:#07c160"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-switch__node node-class"
+          />
+        </wx-view>
+      </smart-switch>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        异步控制
+      </wx-view>
+      <smart-switch
+        bind:change="onChange2"
+      >
+        <wx-view
+          class="smart-switch smart-switch--on custom-class"
+          style="font-size:36px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-switch__node node-class"
+          />
+        </wx-view>
+      </smart-switch>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        未阻止冒泡
+      </wx-view>
+      <wx-view
+        bind:tap="onClick"
+      >
+        <smart-switch
+          bind:change="onChange"
+        >
+          <wx-view
+            class="smart-switch smart-switch--on custom-class"
+            style="font-size:30px"
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-switch__node node-class"
+            />
+          </wx-view>
+        </smart-switch>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        阻止冒泡
+      </wx-view>
+      <wx-view
+        bind:tap="onClick"
+      >
+        <smart-switch
+          bind:change="onChange"
+        >
+          <wx-view
+            class="smart-switch smart-switch--on custom-class"
+            style="font-size:30px"
+            catch:tap="onClick"
+          >
+            <wx-view
+              class="smart-switch__node node-class"
+            />
+          </wx-view>
+        </smart-switch>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <smart-dialog>
+    <smart-popup
+      customClass="smart-dialog smart-dialog--default custom-class"
+      bind:close="onClickOverlay"
+    >
+      <smart-overlay
+        bind:click="onClickOverlay"
+      >
+        <smart-transition
+          customClass="smart-overlay custom-class"
+          bind:tap="onClick"
+          catch:touchmove="noop"
+        />
+      </smart-overlay>
+    </smart-popup>
+  </smart-dialog>
+</main>
+`;

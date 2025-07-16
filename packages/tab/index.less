@@ -1,0 +1,22 @@
+:host {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.smart-tab__pane {
+  box-sizing: border-box;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: var(--app-B3);
+  color: var(--app-B3-N1);
+
+  &--active {
+    height: auto;
+  }
+
+  &--inactive {
+    height: 0;
+    overflow: visible;
+  }
+}

@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block
+    title="常规用法：点击输入框弹出键盘"
+  >
+    <smart-custom-keyboard
+      bind:change="onChange"
+      bind:confirm="onConfirm"
+    >
+      <wx-view
+        class="keyboard keyboard-container"
+        style="margin-left: 56rpx; margin-yop: 16rpx; margin-bottom: 56rpx"
+      >
+        <wx-view
+          class="keyboard-textView"
+          bind:tap="handlePassword"
+        >
+          <wx-text
+            class="keyboard-pwdText null"
+            style=""
+          >
+            
+      please input
+    
+          </wx-text>
+        </wx-view>
+      </wx-view>
+      <smart-popup
+        bind:close="onMaskPress"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+    </smart-custom-keyboard>
+  </demo-block>
+  <demo-block
+    title="自定义input样式，文案"
+  >
+    <smart-custom-keyboard
+      bind:change="handleValueChange"
+      bind:confirm="onConfirm"
+    >
+      <wx-view
+        class="keyboard keyboard-container"
+        style="marginLeft: 56rpx; marginTop: 16rpx; marginBottom: 56rpx; width: 560rpx; height: 120rpx;"
+      >
+        <wx-view
+          class="keyboard-textView"
+          bind:tap="handlePassword"
+        >
+          <wx-text
+            class="keyboard-pwdText keyboard-password"
+            style=""
+          >
+            
+      222
+    
+          </wx-text>
+        </wx-view>
+        <wx-view
+          slot="custom-button"
+          style="border: 1px solid blue; borderRadius: 4px; marginRight: 4px"
+          bind:tap="handleBtn"
+        >
+          点击
+        </wx-view>
+      </wx-view>
+      <smart-popup
+        bind:close="onMaskPress"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+    </smart-custom-keyboard>
+  </demo-block>
+  <demo-block
+    title="隐藏零, 且进制为6"
+  >
+    <smart-custom-keyboard>
+      <wx-view
+        class="keyboard keyboard-container"
+        style="marginLeft: 56rpx; marginTop: 16rpx; marginBottom: 56rpx;"
+      >
+        <wx-view
+          class="keyboard-textView"
+          bind:tap="handlePassword"
+        >
+          <wx-text
+            class="keyboard-pwdText null"
+            style=""
+          >
+            
+      please input
+    
+          </wx-text>
+        </wx-view>
+      </wx-view>
+      <smart-popup
+        bind:close="onMaskPress"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+    </smart-custom-keyboard>
+  </demo-block>
+  <demo-block
+    title="不隐藏零, 且进制为6"
+  >
+    <smart-custom-keyboard>
+      <wx-view
+        class="keyboard keyboard-container"
+        style="marginLeft: 56rpx; marginTop: 16rpx; marginBottom: 56rpx;"
+      >
+        <wx-view
+          class="keyboard-textView"
+          bind:tap="handlePassword"
+        >
+          <wx-text
+            class="keyboard-pwdText null"
+            style=""
+          >
+            
+      please input
+    
+          </wx-text>
+        </wx-view>
+      </wx-view>
+      <smart-popup
+        bind:close="onMaskPress"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+    </smart-custom-keyboard>
+  </demo-block>
+</main>
+`;

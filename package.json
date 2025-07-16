@@ -1,0 +1,70 @@
+{
+  "name": "@tuya-miniapp/smart-ui",
+  "version": "1.2.4",
+  "author": "MiniApp Team",
+  "license": "MIT",
+  "miniprogram": "lib",
+  "description": "轻量、可靠的智能小程序 UI 组件库",
+  "scripts": {
+    "dev": "NODE_OPTIONS=--no-experimental-fetch node build/dev.mjs",
+    "lint": "eslint ./packages --ext .js,.ts --fix && stylelint \"packages/**/*.less\" --fix",
+    "prepare": "husky install",
+    "release": "sh build/release.sh",
+    "build:icon": "yarn && node build/generate-icon/index.js",
+    "build": "yarn && MODE=build NODE_OPTIONS=--no-experimental-fetch npx gulp -f build/compiler.js --series buildEs buildLib buildExample",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "preMinipackBuild": "yarn && MODE=build NODE_OPTIONS=--no-experimental-fetch npx gulp -f build/compiler.js --series buildEs buildLib buildExample"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,less}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/jest": "^27.0.2",
+    "@vant/eslint-config": "^4.0.0",
+    "@vant/stylelint-config": "^1.4.2",
+    "fs-extra": "^11.2.0",
+    "gulp": "^4.0.2",
+    "gulp-insert": "^0.5.0",
+    "gulp-less": "^5.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "husky": "^8.0.3",
+    "jest": "^27.3.1",
+    "lint-staged": "^13.0.3",
+    "merge2": "^1.4.1",
+    "miniprogram-api-typings": "^3.1.6",
+    "miniprogram-ci": "^1.6.1",
+    "miniprogram-simulate": "^1.4.2",
+    "svgo": "^3.2.0",
+    "ts-jest": "^27.0.7",
+    "tscpaths": "^0.0.9",
+    "typescript": "^4.4.4",
+    "vue": "^3.2.30"
+  },
+  "browserslist": [
+    "Chrome >= 53",
+    "ChromeAndroid >= 53",
+    "iOS >= 9"
+  ],
+  "dependencies": {
+    "@ray-js/components-ty-slider": "^0.2.48",
+    "@tuya-miniapp/icons": "^1.0.0"
+  },
+  "maintainers": []
+}

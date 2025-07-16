@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-popup": "../popup/index",
+    "smart-button": "../button/index",
+    "smart-icon": "../icon/index",
+    "smart-goods-action": "../goods-action/index",
+    "smart-goods-action-button": "../goods-action-button/index"
+  }
+}

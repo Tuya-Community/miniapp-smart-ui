@@ -1,0 +1,902 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__body smart-field__body--text"
+                  >
+                    <wx-view
+                      class="smart-field__control smart-field__control--right smart-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="smart-field__control smart-field__control--right input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      id=""
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder="请输入用户名"
+                      placeholderClass="smart-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:nicknamereview="onBindNicknameReview"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="smart-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="smart-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义类型
+      </wx-view>
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field
+            rightIconClass="custom-icon"
+            bind:click-icon="onClickIcon"
+          >
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--required"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-label
+                    class="label-class smart-field__label"
+                    for=""
+                    slot="title"
+                  >
+                    
+    用户名
+  
+                  </wx-label>
+                </wx-view>
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__body smart-field__body--text"
+                  >
+                    <wx-view
+                      class="smart-field__control smart-field__control--right smart-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="smart-field__control smart-field__control--right input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      id=""
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder="请输入用户名"
+                      placeholderClass="smart-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:nicknamereview="onBindNicknameReview"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="smart-field__icon-container"
+                      bind:tap="onClickIcon"
+                    >
+                      <smart-icon
+                        class="smart-field__icon-root "
+                        customClass="right-icon-class"
+                      >
+                        <wx-view
+                          class="custom-class smart-icon smart-icon-question-o"
+                          style=""
+                          bind:tap="onClick"
+                        />
+                      </smart-icon>
+                    </wx-view>
+                    <wx-view
+                      class="smart-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--required smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-label
+                    class="label-class smart-field__label"
+                    for=""
+                    slot="title"
+                  >
+                    
+    密码
+  
+                  </wx-label>
+                </wx-view>
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__body smart-field__body--password"
+                  >
+                    <wx-view
+                      class="smart-field__control smart-field__control--right smart-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="smart-field__control smart-field__control--right input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      id=""
+                      maxlength="{{-1}}"
+                      password="{{true}}"
+                      placeholder="请输入密码"
+                      placeholderClass="smart-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="password"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:nicknamereview="onBindNicknameReview"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="smart-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="smart-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用输入框
+      </wx-view>
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <smart-icon
+                  class="smart-cell__left-icon-wrap"
+                  customClass="smart-cell__left-icon"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon-contact"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </smart-icon>
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-label
+                    class="label-class smart-field__label smart-field__label--disabled"
+                    for=""
+                    slot="title"
+                  >
+                    
+    用户名
+  
+                  </wx-label>
+                </wx-view>
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__body smart-field__body--text"
+                  >
+                    <wx-view
+                      class="smart-field__control smart-field__control--right smart-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="smart-field__control smart-field__control--right smart-field__control--disabled input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{true}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      id=""
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder=""
+                      placeholderClass="smart-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value="输入框已禁用"
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:nicknamereview="onBindNicknameReview"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="smart-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="smart-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        错误提示
+      </wx-view>
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-label
+                    class="label-class smart-field__label"
+                    for=""
+                    slot="title"
+                  >
+                    
+    用户名
+  
+                  </wx-label>
+                </wx-view>
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__body smart-field__body--text"
+                  >
+                    <wx-view
+                      class="smart-field__control smart-field__control--right smart-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="smart-field__control smart-field__control--right smart-field__control--error input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      id=""
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder="请输入用户名"
+                      placeholderClass="smart-field__placeholder smart-field__placeholder--error"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:nicknamereview="onBindNicknameReview"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="smart-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="smart-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-label
+                    class="label-class smart-field__label"
+                    for=""
+                    slot="title"
+                  >
+                    
+    手机号
+  
+                  </wx-label>
+                </wx-view>
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__body smart-field__body--text"
+                  >
+                    <wx-view
+                      class="smart-field__control smart-field__control--right smart-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="smart-field__control smart-field__control--right input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      id=""
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder="请输入手机号"
+                      placeholderClass="smart-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value="1365577"
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:nicknamereview="onBindNicknameReview"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="smart-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="smart-field__button"
+                    />
+                  </wx-view>
+                  <wx-label
+                    class="smart-field__error-message"
+                    for=""
+                  >
+                    
+    手机号格式错误
+  
+                  </wx-label>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        内容对齐方式
+      </wx-view>
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-label
+                    class="label-class smart-field__label"
+                    for=""
+                    slot="title"
+                  >
+                    
+    用户名
+  
+                  </wx-label>
+                </wx-view>
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__body smart-field__body--text"
+                  >
+                    <wx-view
+                      class="smart-field__control smart-field__control--right smart-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="smart-field__control smart-field__control--right input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      id=""
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder="请输入用户名"
+                      placeholderClass="smart-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:nicknamereview="onBindNicknameReview"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="smart-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="smart-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        高度自适应
+      </wx-view>
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field
+            rows="1"
+          >
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-label
+                    class="label-class smart-field__label"
+                    for=""
+                    slot="title"
+                  >
+                    
+    留言
+  
+                  </wx-label>
+                </wx-view>
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__body smart-field__body--textarea"
+                  >
+                    <wx-view
+                      class="smart-field__control smart-field__control--right smart-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-textarea
+                      adjustPosition="{{true}}"
+                      autoFocus="{{false}}"
+                      autoHeight="{{true}}"
+                      class="smart-field__control smart-field__control--right smart-field__control--textarea input-class"
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      disableDefaultPadding="{{true}}"
+                      fixed="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      id=""
+                      maxlength="{{-1}}"
+                      placeholder="请输入留言"
+                      placeholderClass="smart-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      showConfirmBar="{{true}}"
+                      style=""
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:linechange="onLineChange"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="smart-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="smart-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        插入按钮
+      </wx-view>
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field
+            useButtonSlot="{{true}}"
+          >
+            <smart-cell
+              center="{{true}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-label
+                    class="label-class smart-field__label"
+                    for=""
+                    slot="title"
+                  >
+                    
+    短信验证码
+  
+                  </wx-label>
+                </wx-view>
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__body smart-field__body--text"
+                  >
+                    <wx-view
+                      class="smart-field__control smart-field__control--right smart-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="smart-field__control smart-field__control--right input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      id=""
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder="请输入短信验证码"
+                      placeholderClass="smart-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:nicknamereview="onBindNicknameReview"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="smart-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="smart-field__button"
+                    >
+                      <smart-button
+                        customClass="button"
+                        slot="button"
+                      >
+                        <wx-button
+                          appParameter=""
+                          ariaLabel=""
+                          businessId="{{0}}"
+                          class="custom-class smart-button smart-button--primary smart-button--small "
+                          data-detail="{{null}}"
+                          formType=""
+                          hoverClass="smart-button--active hover-class"
+                          id=""
+                          lang=""
+                          openType=""
+                          sendMessageImg=""
+                          sendMessagePath=""
+                          sendMessageTitle=""
+                          sessionFrom=""
+                          showMessageCard="{{false}}"
+                          style=""
+                          bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                          bind:chooseavatar="onChooseAvatar"
+                          bind:contact="onContact"
+                          bind:error="onError"
+                          bind:getphonenumber="onGetPhoneNumber"
+                          bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                          bind:getuserinfo="onGetUserInfo"
+                          bind:launchapp="onLaunchApp"
+                          bind:opensetting="onOpenSetting"
+                          bind:tap="onClick"
+                        >
+                          <wx-view
+                            class="smart-button__text"
+                          >
+                            发送验证码
+                          </wx-view>
+                        </wx-button>
+                      </smart-button>
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+</main>
+`;

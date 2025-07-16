@@ -1,0 +1,13 @@
+<view class="smart-progress-circle" style="width:{{size}}px;height:{{size}}px;padding:{{trackWidth}}px;background:{{fillColor}};{{style}}">
+  <view class="smart-progress-circle-box smart-progress-circle-box-left">
+    <view class="smart-progress-circle-bar smart-progress-circle-bar-left" style="transform:{{transformLeft}};background:{{trackColor}};">
+    </view>
+  </view>
+  <view class="smart-progress-circle-box smart-progress-circle-box-right">
+    <view class="smart-progress-circle-bar smart-progress-circle-bar-right" style="transform:{{transformRight}};background:{{trackColor}};">
+    </view>
+  </view>
+  <view class="smart-progress-circle-content" style="background:{{maskColor}};">
+    <slot></slot>
+  </view>
+</view>

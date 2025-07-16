@@ -1,0 +1,36 @@
+<smart-overlay
+  wx:if="{{ mask || forbidClick }}"
+  show="{{ show }}"
+  z-index="{{ zIndex }}"
+  custom-style="{{ mask ? '' : 'background-color: transparent;' }}"
+/>
+<smart-transition
+  show="{{ show }}"
+  custom-style="z-index: {{ zIndex }}"
+  custom-class="smart-toast__container"
+>
+  <view
+    class="smart-toast smart-toast--{{ (type === 'text' || type === 'html') ? 'text' : 'icon' }} smart-toast--{{ position }}"
+    catch:touchmove="noop"
+  >
+    <!-- text only -->
+    <text wx:if="{{ type === 'text' }}">{{ message }}</text>
+
+    <!-- html only -->
+    <rich-text wx:elif="{{ type === 'html' }}" nodes="{{ message }}"></rich-text>
+
+    <!-- with icon -->
+    <block wx:else>
+      <smart-loading
+        wx:if="{{ type === 'loading' }}"
+        color="white"
+        type="{{ loadingType }}"
+        custom-class="smart-toast__loading"
+      />
+      <smart-icon  color="white" wx:else class="smart-toast__icon" name="{{ type === 'success' ? success : error }}" />
+      <text wx:if="{{ message }}" class="smart-toast__text">{{ message }}</text>
+    </block>
+
+    <slot />
+  </view>
+</smart-transition>

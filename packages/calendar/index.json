@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "header": "./components/header/index",
+    "month": "./components/month/index",
+    "smart-button": "../button/index",
+    "smart-popup": "../popup/index",
+    "smart-toast": "../toast/index"
+  }
+}

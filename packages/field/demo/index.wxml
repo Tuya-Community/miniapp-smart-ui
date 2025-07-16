@@ -1,0 +1,106 @@
+<demo-block title="基础用法">
+  <smart-cell-group>
+    <smart-field value="{{ value }}" placeholder="请输入用户名" border="{{ false }}" clearable input-align="right" />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="自定义类型">
+  <smart-cell-group>
+    <smart-field
+      value="{{ username }}"
+      label="用户名"
+      placeholder="请输入用户名"
+      clearable
+      right-icon="question-o"
+      right-icon-class="custom-icon"
+      required
+      bind:click-icon="onClickIcon"
+      input-align="right"
+    />
+    <smart-field
+      value="{{ password }}"
+      type="password"
+      label="密码"
+      placeholder="请输入密码"
+      required
+      border="{{ false }}"
+      input-align="right"
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="禁用输入框">
+  <smart-cell-group>
+    <smart-field
+      value="输入框已禁用"
+      label="用户名"
+      left-icon="contact"
+      disabled
+      border="{{ false }}"
+      input-align="right"
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="错误提示">
+  <smart-cell-group>
+    <smart-field
+      value="{{ username2 }}"
+      label="用户名"
+      placeholder="请输入用户名"
+      error
+      input-align="right"
+    />
+    <smart-field
+      value="{{ phone }}"
+      label="手机号"
+      placeholder="请输入手机号"
+      error-message="手机号格式错误"
+      border="{{ false }}"
+      input-align="right"
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="内容对齐方式">
+  <smart-cell-group>
+    <smart-field
+      value="{{ username3 }}"
+      label="用户名"
+      placeholder="请输入用户名"
+      input-align="right"
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="高度自适应">
+  <smart-cell-group>
+    <smart-field
+      value="{{ message }}"
+      label="留言"
+      type="textarea"
+      placeholder="请输入留言"
+      rows="1"
+      autosize
+      border="{{ false }}"
+      input-align="right"
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="插入按钮">
+  <smart-cell-group>
+    <smart-field
+      value="{{ sms }}"
+      center
+      clearable
+      label="短信验证码"
+      placeholder="请输入短信验证码"
+      use-button-slot
+      border="{{ false }}"
+      input-align="right"
+    >
+      <smart-button slot="button" size="small" type="primary" custom-class="button">发送验证码</smart-button>
+    </smart-field>
+  </smart-cell-group>
+</demo-block>

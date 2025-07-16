@@ -1,0 +1,1122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <smart-picker
+        data-key="demo"
+        bind:change="onChange1"
+      >
+        <wx-view
+          class="smart-picker custom-class"
+        >
+          <wx-view
+            class="smart-picker__columns"
+            style="height:220px"
+            catch:touchmove="noop"
+          >
+            <picker-column
+              activeClass="active-class"
+              class="smart-picker__column"
+              customClass="column-class"
+              data-index="{{0}}"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="smart-picker-column custom-class"
+                style="height:220px"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  id="options"
+                  style="text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  bind:transitionend="onTransitionEnd"
+                >
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{0}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    杭州
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{1}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    宁波
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{2}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    温州
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    嘉兴
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    湖州
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </picker-column>
+            <wx-view
+              class="smart-picker__frame smart-hairline--top-bottom"
+              style="height:44px"
+            />
+          </wx-view>
+        </wx-view>
+      </smart-picker>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        多列用法
+      </wx-view>
+      <smart-picker
+        customClass="picker5"
+        bind:change="onChange1"
+      >
+        <wx-view
+          class="smart-picker custom-class"
+        >
+          <wx-view
+            class="smart-picker__columns"
+            style="height:220px"
+            catch:touchmove="noop"
+          >
+            <picker-column
+              activeClass="active-class"
+              class="smart-picker__column"
+              customClass="column-class"
+              data-index="{{0}}"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="smart-picker-column custom-class"
+                style="height:220px"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  id="options"
+                  style="text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  bind:transitionend="onTransitionEnd"
+                >
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{0}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    0
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{1}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    1
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{2}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    2
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    3
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    4
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    5
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    6
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    7
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    8
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    9
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    10
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    11
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    12
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    13
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    14
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    15
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    16
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    17
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{18}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    18
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{19}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    19
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </picker-column>
+            <picker-column
+              activeClass="active-class"
+              class="smart-picker__column"
+              customClass="column-class"
+              data-index="{{1}}"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="smart-picker-column custom-class"
+                style="height:220px"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  id="options"
+                  style="text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  bind:transitionend="onTransitionEnd"
+                >
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{0}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    .
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </picker-column>
+            <picker-column
+              activeClass="active-class"
+              class="smart-picker__column"
+              customClass="column-class"
+              data-index="{{2}}"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="smart-picker-column custom-class"
+                style="height:220px"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  id="options"
+                  style="text-indent:-8rpx;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  bind:transitionend="onTransitionEnd"
+                >
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{0}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    0
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{1}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    1
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{2}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    2
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    3
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    4
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    5
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    6
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    7
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    8
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    9
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="smart-picker-column__unit"
+                  style="height: 44px"
+                >
+                  <wx-view
+                    class="smart-picker-column__unit_text smart-picker-column__unit_hidden"
+                  >
+                    Kg
+                  </wx-view>
+                  <wx-text
+                    class="smart-picker-column__max-text"
+                  >
+                    0
+                  </wx-text>
+                  <wx-view
+                    class="smart-picker-column__unit_text"
+                  >
+                    Kg
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </picker-column>
+            <wx-view
+              class="smart-picker__frame smart-hairline--top-bottom"
+              style="height:44px"
+            />
+          </wx-view>
+        </wx-view>
+      </smart-picker>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        默认选中项
+      </wx-view>
+      <smart-picker
+        bind:change="onChange1"
+      >
+        <wx-view
+          class="smart-picker custom-class"
+        >
+          <wx-view
+            class="smart-picker__columns"
+            style="height:220px"
+            catch:touchmove="noop"
+          >
+            <picker-column
+              activeClass="active-class"
+              class="smart-picker__column"
+              customClass="column-class"
+              data-index="{{0}}"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="smart-picker-column custom-class"
+                style="height:220px"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  id="options"
+                  style="text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  bind:transitionend="onTransitionEnd"
+                >
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{0}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    杭州
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{1}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    宁波
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{2}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    温州
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    嘉兴
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    湖州
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </picker-column>
+            <wx-view
+              class="smart-picker__frame smart-hairline--top-bottom"
+              style="height:44px"
+            />
+          </wx-view>
+        </wx-view>
+      </smart-picker>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        展示顶部栏
+      </wx-view>
+      <smart-picker
+        bind:cancel="onCancel"
+        bind:change="onChange1"
+        bind:confirm="onConfirm"
+      >
+        <wx-view
+          class="smart-picker custom-class"
+        >
+          <wx-view
+            class="smart-picker__toolbar toolbar-class"
+          >
+            <wx-view
+              class="smart-picker__cancel"
+              data-type="cancel"
+              hoverClass="smart-picker__cancel--hover"
+              hoverStayTime="70"
+              bind:tap="emit"
+            >
+              
+    Cancel
+  
+            </wx-view>
+            <wx-view
+              class="smart-picker__title smart-ellipsis"
+            >
+              标题
+            </wx-view>
+            <wx-view
+              class="smart-picker__confirm"
+              data-type="confirm"
+              hoverClass="smart-picker__confirm--hover"
+              hoverStayTime="70"
+              bind:tap="emit"
+            >
+              
+    Confirm
+  
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="smart-picker__columns"
+            style="height:220px"
+            catch:touchmove="noop"
+          >
+            <picker-column
+              activeClass="active-class"
+              class="smart-picker__column"
+              customClass="column-class"
+              data-index="{{0}}"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="smart-picker-column custom-class"
+                style="height:220px"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  id="options"
+                  style="text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  bind:transitionend="onTransitionEnd"
+                >
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{0}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    杭州
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{1}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    宁波
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{2}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    温州
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    嘉兴
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    湖州
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </picker-column>
+            <wx-view
+              class="smart-picker__frame smart-hairline--top-bottom"
+              style="height:44px"
+            />
+          </wx-view>
+        </wx-view>
+      </smart-picker>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        多列联动
+      </wx-view>
+      <smart-picker
+        bind:change="onChange2"
+      >
+        <wx-view
+          class="smart-picker custom-class"
+        >
+          <wx-view
+            class="smart-picker__columns"
+            style="height:220px"
+            catch:touchmove="noop"
+          >
+            <picker-column
+              activeClass="active-class"
+              class="smart-picker__column"
+              customClass="column-class"
+              data-index="{{0}}"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="smart-picker-column custom-class"
+                style="height:220px"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  id="options"
+                  style="text-indent:-8rpx;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  bind:transitionend="onTransitionEnd"
+                >
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{0}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    浙江
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{1}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    福建
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="smart-picker-column__unit"
+                  style="height: 44px"
+                >
+                  <wx-view
+                    class="smart-picker-column__unit_text smart-picker-column__unit_hidden"
+                  >
+                    省
+                  </wx-view>
+                  <wx-text
+                    class="smart-picker-column__max-text"
+                  >
+                    浙江
+                  </wx-text>
+                  <wx-view
+                    class="smart-picker-column__unit_text"
+                  >
+                    省
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </picker-column>
+            <picker-column
+              activeClass="active-class"
+              class="smart-picker__column"
+              customClass="column-class"
+              data-index="{{1}}"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="smart-picker-column custom-class"
+                style="height:220px"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  id="options"
+                  style="text-indent:-8rpx;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  bind:transitionend="onTransitionEnd"
+                >
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{0}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    杭州
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{1}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    宁波
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{2}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    温州
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    嘉兴
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    湖州
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="smart-picker-column__unit"
+                  style="height: 44px"
+                >
+                  <wx-view
+                    class="smart-picker-column__unit_text smart-picker-column__unit_hidden"
+                  >
+                    市
+                  </wx-view>
+                  <wx-text
+                    class="smart-picker-column__max-text"
+                  >
+                    杭州
+                  </wx-text>
+                  <wx-view
+                    class="smart-picker-column__unit_text"
+                  >
+                    市
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </picker-column>
+            <wx-view
+              class="smart-picker__frame smart-hairline--top-bottom"
+              style="height:44px"
+            />
+          </wx-view>
+        </wx-view>
+      </smart-picker>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用选项
+      </wx-view>
+      <smart-picker>
+        <wx-view
+          class="smart-picker custom-class"
+        >
+          <wx-view
+            class="smart-picker__columns"
+            style="height:220px"
+            catch:touchmove="noop"
+          >
+            <picker-column
+              activeClass="active-class"
+              class="smart-picker__column"
+              customClass="column-class"
+              data-index="{{0}}"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="smart-picker-column custom-class"
+                style="height:220px"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  id="options"
+                  style="text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  bind:transitionend="onTransitionEnd"
+                >
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item smart-picker-column__item--disabled "
+                    data-index="{{0}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    杭州
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{1}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    宁波
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{2}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    温州
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </picker-column>
+            <wx-view
+              class="smart-picker__frame smart-hairline--top-bottom"
+              style="height:44px"
+            />
+          </wx-view>
+        </wx-view>
+      </smart-picker>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        加载状态
+      </wx-view>
+      <smart-picker>
+        <wx-view
+          class="smart-picker custom-class"
+        >
+          <wx-view
+            class="smart-picker__loading"
+          >
+            <smart-loading>
+              <wx-view
+                class="custom-class smart-loading"
+              >
+                <wx-view
+                  class="smart-loading__spinner smart-loading__spinner--circular"
+                  style="color:#1989fa"
+                />
+                <wx-view
+                  class="smart-loading__text"
+                  style=""
+                />
+              </wx-view>
+            </smart-loading>
+          </wx-view>
+          <wx-view
+            class="smart-picker__columns"
+            style="height:220px"
+            catch:touchmove="noop"
+          >
+            <picker-column
+              activeClass="active-class"
+              class="smart-picker__column"
+              customClass="column-class"
+              data-index="{{0}}"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="smart-picker-column custom-class"
+                style="height:220px"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  id="options"
+                  style="text-indent:-8rpx;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  bind:transitionend="onTransitionEnd"
+                >
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{0}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    浙江
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{1}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    福建
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="smart-picker-column__unit"
+                  style="height: 44px"
+                >
+                  <wx-view
+                    class="smart-picker-column__unit_text smart-picker-column__unit_hidden"
+                  >
+                    省
+                  </wx-view>
+                  <wx-text
+                    class="smart-picker-column__max-text"
+                  >
+                    浙江
+                  </wx-text>
+                  <wx-view
+                    class="smart-picker-column__unit_text"
+                  >
+                    省
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </picker-column>
+            <picker-column
+              activeClass="active-class"
+              class="smart-picker__column"
+              customClass="column-class"
+              data-index="{{1}}"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="smart-picker-column custom-class"
+                style="height:220px"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  id="options"
+                  style="text-indent:-8rpx;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  bind:transitionend="onTransitionEnd"
+                >
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{0}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    杭州
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{1}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    宁波
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{2}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    温州
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    嘉兴
+                  </wx-view>
+                  <wx-view
+                    class="smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="height: 44px"
+                    bind:tap="onClickItem"
+                  >
+                    湖州
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="smart-picker-column__unit"
+                  style="height: 44px"
+                >
+                  <wx-view
+                    class="smart-picker-column__unit_text smart-picker-column__unit_hidden"
+                  >
+                    市
+                  </wx-view>
+                  <wx-text
+                    class="smart-picker-column__max-text"
+                  >
+                    杭州
+                  </wx-text>
+                  <wx-view
+                    class="smart-picker-column__unit_text"
+                  >
+                    市
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </picker-column>
+            <wx-view
+              class="smart-picker__frame smart-hairline--top-bottom"
+              style="height:44px"
+            />
+          </wx-view>
+        </wx-view>
+      </smart-picker>
+    </wx-view>
+  </demo-block>
+  <smart-toast
+    id="smart-toast"
+  >
+    <smart-transition
+      customClass="smart-toast__container"
+    />
+  </smart-toast>
+</main>
+`;

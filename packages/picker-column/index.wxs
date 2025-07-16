@@ -1,0 +1,47 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function isObj(x) {
+  var type = typeof x;
+  return x !== null && (type === 'object' || type === 'function');
+}
+
+function optionText(option, valueKey) {
+  return isObj(option) && option[valueKey] != null ? option[valueKey] : option;
+}
+
+function rootStyle(data) {
+  return style({
+    height: addUnit(data.itemHeight * data.visibleItemCount),
+  });
+}
+
+function wrapperStyle(data) {
+  var offset =
+    data.offset + (data.itemHeight * (data.visibleItemCount - 1)) / 2;
+  // 长列表优化
+  if (data.renderStart) {
+    offset += data.renderStart * data.itemHeight;
+  }
+  offset = addUnit(offset);
+  if (data.animate) {
+    return style({
+      'text-indent': data.unit ? '-8rpx' : '0',
+      transition: 'transform ' + data.duration + 'ms',
+      'line-height': addUnit(data.itemHeight),
+      transform: 'translate3d(0, ' + offset + ', 0)',
+    });
+  }
+  return style({
+    'text-indent': data.unit ? '-8rpx' : '0',
+    'line-height': addUnit(data.itemHeight),
+    transform: 'translate3d(0, ' + offset + ', 0)',
+  });
+}
+
+module.exports = {
+  optionText: optionText,
+  rootStyle: rootStyle,
+  wrapperStyle: wrapperStyle,
+};

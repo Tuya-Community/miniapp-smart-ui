@@ -1,0 +1,54 @@
+<demo-block title="选择完整时间">
+  <smart-datetime-picker
+    show-toolbar="{{ false }}"
+    type="datetime"
+    data-type="datetime"
+    loading="{{ loading }}"
+    value="{{ currentDate1 }}"
+    min-date="{{ minDate }}"
+    locale="{{ locale }}"
+    bind:input="onInput"
+  />
+</demo-block>
+
+<demo-block title="选择日期（年月日）">
+  <smart-datetime-picker
+    type="date"
+    data-type="date"
+    value="{{ currentDate2 }}"
+    min-date="{{ minDate }}"
+    bind:input="onInput"
+    formatter="{{ formatter }}"
+  />
+</demo-block>
+
+<demo-block title="选择日期（年月）">
+  <smart-datetime-picker
+    type="year-month"
+    data-type="year-month"
+    value="{{ currentDate3 }}"
+    min-date="{{ minDate }}"
+    bind:input="onInput"
+  />
+</demo-block>
+
+<demo-block title="选择时间">
+  <smart-datetime-picker
+    type="time"
+    data-type="time"
+    value="{{ currentDate4 }}"
+    min-hour="{{ minHour }}"
+    max-hour="{{ maxHour }}"
+    bind:input="onInput"
+  />
+</demo-block>
+
+<demo-block title="选项过滤器">
+  <smart-datetime-picker
+    type="time"
+    value="{{ currentDate4 }}"
+    filter="{{ filter }}"
+  />
+</demo-block>
+
+<smart-toast id="smart-toast" />

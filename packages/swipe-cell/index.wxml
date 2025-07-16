@@ -1,0 +1,21 @@
+<view catch:touchmove="{{ catchMove ? 'noop' : '' }}">
+  <view
+    class="smart-swipe-cell custom-class"
+    data-key="cell"
+    catchtap="onClick"
+    bind:touchstart="startDrag"
+    bind:touchmove="onDrag"
+    bind:touchend="endDrag"
+    bind:touchcancel="endDrag"
+  >
+    <view style="{{ wrapperStyle }}">
+      <view wx:if="{{ leftWidth }}" class="smart-swipe-cell__left" data-key="left" catch:tap="onClick">
+        <slot name="left" />
+      </view>
+      <slot />
+      <view wx:if="{{ rightWidth }}" class="smart-swipe-cell__right" data-key="right" catch:tap="onClick">
+        <slot name="right" />
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <smart-area
+        bind:cancel="onCancel"
+        bind:change="onChange"
+        bind:confirm="onConfirm"
+      >
+        <smart-picker
+          activeClass="active-class"
+          class="smart-area__picker"
+          columnClass="column-class"
+          toolbarClass="toolbar-class"
+          bind:cancel="onCancel"
+          bind:change="onChange"
+          bind:confirm="onConfirm"
+        >
+          <wx-view
+            class="smart-picker custom-class"
+          >
+            <wx-view
+              class="smart-picker__toolbar toolbar-class"
+            >
+              <wx-view
+                class="smart-picker__cancel"
+                data-type="cancel"
+                hoverClass="smart-picker__cancel--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    Cancel
+  
+              </wx-view>
+              <wx-view
+                class="smart-picker__confirm"
+                data-type="confirm"
+                hoverClass="smart-picker__confirm--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    Confirm
+  
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="smart-picker__loading"
+            >
+              <loading>
+                <wx-view
+                  class="custom-class smart-loading"
+                >
+                  <wx-view
+                    class="smart-loading__spinner smart-loading__spinner--circular"
+                    style="color:#1989fa"
+                  />
+                  <wx-view
+                    class="smart-loading__text"
+                    style=""
+                  />
+                </wx-view>
+              </loading>
+            </wx-view>
+            <wx-view
+              class="smart-picker__columns"
+              style="height:220px"
+              catch:touchmove="noop"
+            >
+              <picker-column
+                activeClass="active-class"
+                class="smart-picker__column"
+                customClass="column-class"
+                data-index="{{0}}"
+                bind:change="onChange"
+              >
+                <wx-view
+                  class="smart-picker-column custom-class"
+                  style="height:220px"
+                  bind:touchcancel="onTouchEnd"
+                  bind:touchend="onTouchEnd"
+                  catch:touchmove="onTouchMove"
+                  bind:touchstart="onTouchStart"
+                >
+                  <wx-view
+                    id="options"
+                    style="text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                    bind:transitionend="onTransitionEnd"
+                  />
+                </wx-view>
+              </picker-column>
+              <picker-column
+                activeClass="active-class"
+                class="smart-picker__column"
+                customClass="column-class"
+                data-index="{{1}}"
+                bind:change="onChange"
+              >
+                <wx-view
+                  class="smart-picker-column custom-class"
+                  style="height:220px"
+                  bind:touchcancel="onTouchEnd"
+                  bind:touchend="onTouchEnd"
+                  catch:touchmove="onTouchMove"
+                  bind:touchstart="onTouchStart"
+                >
+                  <wx-view
+                    id="options"
+                    style="text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                    bind:transitionend="onTransitionEnd"
+                  />
+                </wx-view>
+              </picker-column>
+              <picker-column
+                activeClass="active-class"
+                class="smart-picker__column"
+                customClass="column-class"
+                data-index="{{2}}"
+                bind:change="onChange"
+              >
+                <wx-view
+                  class="smart-picker-column custom-class"
+                  style="height:220px"
+                  bind:touchcancel="onTouchEnd"
+                  bind:touchend="onTouchEnd"
+                  catch:touchmove="onTouchMove"
+                  bind:touchstart="onTouchStart"
+                >
+                  <wx-view
+                    id="options"
+                    style="text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                    bind:transitionend="onTransitionEnd"
+                  />
+                </wx-view>
+              </picker-column>
+              <wx-view
+                class="smart-picker__frame smart-hairline--top-bottom"
+                style="height:44px"
+              />
+            </wx-view>
+          </wx-view>
+        </smart-picker>
+      </smart-area>
+    </wx-view>
+  </demo-block>
+  <smart-toast
+    id="smart-toast"
+  >
+    <smart-transition
+      customClass="smart-toast__container"
+    />
+  </smart-toast>
+</main>
+`;

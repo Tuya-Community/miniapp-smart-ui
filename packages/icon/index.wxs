@@ -1,0 +1,74 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function isImage(name) {
+  return name.indexOf('/') !== -1;
+}
+
+function isSvg(name) {
+  return name.indexOf('data:image/svg+xml') !== -1;
+}
+
+function rootClass(data) {
+  var classes = ['custom-class'];
+
+  if (data.classPrefix !== 'smart-icon') {
+    classes.push('smart-icon--custom')
+  }
+
+  if (data.classPrefix != null) {
+    classes.push(data.classPrefix);
+  }
+
+  if (isImage(data.name)) {
+    classes.push('smart-icon--image');
+    if (isSvg(data.name)) classes.push('smart-icon--svg');
+  } else if (data.classPrefix != null) {
+    classes.push(data.classPrefix + '-' + data.name);
+  }
+
+  return classes.join(' ');
+}
+
+function rootStyle(data) {
+  return style([
+    {
+      color: data.color,
+      'font-size': addUnit(data.size),
+    },
+    data.customStyle,
+  ]);
+}
+
+function getImageSrc(data) {
+  // if (isSvg(data.name) && data.color) {
+  //   return data.name.replace('currentColor', encodeURIComponent(data.color));
+  // }
+  return data.name;
+}
+
+function svgStyle(data) {
+  var imageBase64Src = 'url(' + getImageSrc(data) + ')';
+  var ret = style([
+    {
+      '-webkit-mask-image': imageBase64Src,
+      '-webkit-mask-size': 'contain',
+      'mask-image': imageBase64Src,
+      'mask-size': 'contain',
+      width: data.size,
+      height: data.size,
+      background: data.color,
+    },
+  ]);
+  return ret;
+}
+
+module.exports = {
+  isImage: isImage,
+  isSvg: isSvg,
+  getImageSrc: getImageSrc,
+  rootClass: rootClass,
+  rootStyle: rootStyle,
+  svgStyle: svgStyle,
+};

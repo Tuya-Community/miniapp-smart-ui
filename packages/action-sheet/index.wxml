@@ -1,0 +1,85 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<smart-popup
+  show="{{ show }}"
+  position="bottom"
+  round="{{ round }}"
+  z-index="{{ zIndex }}"
+  overlay="{{ overlay }}"
+  custom-class="smart-action-sheet custom-class"
+  safe-area-inset-bottom="{{ safeAreaInsetBottom }}"
+  safe-area-inset-bottom-min="{{ safeAreaInsetBottomMin }}"
+  close-on-click-overlay="{{ closeOnClickOverlay }}"
+  root-portal="{{ rootPortal }}"
+  bind:close="onClickOverlay"
+  bind:before-enter="onBeforeEnter"
+  bind:enter="onEnter"
+  bind:after-enter="onAfterEnter"
+  bind:before-leave="onBeforeLeave"
+  bind:leave="onLeave"
+  bind:after-leave="onAfterLeave"
+>
+  <view wx:if="{{ title }}" class="smart-action-sheet__header">
+    {{ title }}
+  </view>
+  <view wx:if="{{ description }}" class="smart-action-sheet__description smart-hairline--bottom">
+    {{ description }}
+  </view>
+  <view wx:if="{{ actions && actions.length }}" class="smart-action-sheet__list list-class">
+    <!-- button外包一层view，防止actions动态变化，导致渲染时button被打散 -->
+    <button
+      wx:for="{{ actions }}"
+      wx:key="index"
+      open-type="{{ item.disabled || item.loading || (canIUseGetUserProfile && item.openType === 'getUserInfo') ? '' : item.openType }}"
+      style="{{ item.color ? 'color: ' + item.color : '' }}"
+      class="{{ utils.bem('action-sheet__item', { disabled: item.disabled || item.loading }) }} {{ item.className || '' }}"
+      hover-class="smart-action-sheet__item--hover"
+      data-index="{{ index }}"
+      bindtap="{{ item.disabled || item.loading ? '' : 'onSelect' }}"
+      bindgetuserinfo="onGetUserInfo"
+      bindcontact="onContact"
+      bindgetphonenumber="onGetPhoneNumber"
+      binderror="onError"
+      bindlaunchapp="onLaunchApp"
+      bindopensetting="onOpenSetting"
+      lang="{{ lang }}"
+      session-from="{{ sessionFrom }}"
+      send-message-title="{{ sendMessageTitle }}"
+      send-message-path="{{ sendMessagePath }}"
+      send-message-img="{{ sendMessageImg }}"
+      show-message-card="{{ showMessageCard }}"
+      app-parameter="{{ appParameter }}"
+    >
+      <block wx:if="{{ !item.loading }}">
+        {{ item.name }}
+        <view wx:if="{{ item.subname }}" class="smart-action-sheet__subname" >{{ item.subname }}</view>
+        <smart-icon wx:if="{{ item.checked }}" name="{{ checkMarkIcon }}" class="smart-action-sheet__icon" color="{{ checkMarkIconColor }}" />
+      </block>
+      <smart-loading wx:else custom-class="smart-action-sheet__loading" size="22px" />
+    </button>
+  </view>
+  <slot />
+  <block wx:if="{{ cancelText || confirmText }}">
+    <view class="smart-action-sheet__gap" />
+    <view class="smart-action-sheet__footer">
+      <view
+        wx:if="{{ cancelText }}"
+        class="smart-action-sheet__cancel"
+        hover-class="smart-action-sheet__cancel--hover"
+        hover-stay-time="70"
+        bind:tap="onCancel"
+      >
+        {{ cancelText }}
+      </view>
+      <view
+        wx:if="{{ confirmText }}"
+        class="smart-action-sheet__confirm"
+        hover-class="smart-action-sheet__confirm--hover"
+        hover-stay-time="70"
+        bind:tap="onConfirm"
+      >
+        {{ confirmText }}
+      </view>
+     </view>
+  </block>
+</smart-popup>

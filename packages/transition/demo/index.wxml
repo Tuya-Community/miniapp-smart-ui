@@ -1,0 +1,35 @@
+<demo-block title="基础用法" padding>
+  <smart-cell title="Fade" bind:click="onClickFade" is-link />
+  <smart-cell title="Fade Up" bind:click="onClickFadeUp" is-link />
+  <smart-cell title="Fade Down" bind:click="onClickFadeDown" is-link />
+  <smart-cell title="Fade Left" bind:click="onClickFadeLeft" is-link />
+  <smart-cell title="Fade Right" bind:click="onClickFadeRight" is-link />
+  <smart-cell title="Slide Up" bind:click="onClickSlideUp" is-link />
+  <smart-cell title="Slide Down" bind:click="onClickSlideDown" is-link />
+  <smart-cell title="Slide Left" bind:click="onClickSlideLeft" is-link />
+  <smart-cell title="Slide Right" bind:click="onClickSlideRight" is-link />
+  <smart-cell title="Custom" bind:click="onClickCustom" is-link />
+
+  <smart-transition
+    show="{{ show }}"
+    name="{{ name }}"
+    custom-class="block"
+  />
+
+  <smart-transition
+    show="{{ showCustom }}"
+    name=""
+    duration="{{ { enter: 300, leave: 1000 } }}"
+    custom-class="block"
+    enter-class="smart-enter-class"
+    enter-active-class="smart-enter-active-class"
+    leave-active-class="smart-leave-active-class"
+    leave-to-class="smart-leave-to-class"
+    bind:before-enter="onBeforeEnter"
+    bind:enter="onEnter"
+    bind:after-enter="onAfterEnter"
+    bind:before-leave="onBeforeLeave"
+    bind:leave="onLeave"
+    bind:after-leave="onAfterLeave"
+  />
+</demo-block>

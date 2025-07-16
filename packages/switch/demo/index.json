@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-switch": "../../switch/index",
+    "smart-dialog": "../../dialog/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

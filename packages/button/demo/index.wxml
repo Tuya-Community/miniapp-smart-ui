@@ -1,0 +1,81 @@
+<demo-block title="按钮类型" padding>
+  <view class="row">
+    <smart-button type="info" class="demo-margin-right">信息按钮</smart-button>
+    <smart-button type="primary" class="demo-margin-right">主要按钮</smart-button>
+    <smart-button class="demo-margin-right">默认按钮</smart-button>
+  </view>
+  <smart-button type="danger" class="demo-margin-right">危险按钮</smart-button>
+  <smart-button type="warning">警告按钮</smart-button>
+</demo-block>
+
+<demo-block title="朴素按钮" padding>
+  <smart-button type="info" plain class="demo-margin-right">朴素按钮</smart-button>
+  <smart-button type="primary" plain>朴素按钮</smart-button>
+</demo-block>
+
+<demo-block title="细边框" padding>
+  <smart-button type="info" plain hairline class="demo-margin-right">细边框按钮</smart-button>
+  <smart-button type="primary" plain hairline>细边框按钮</smart-button>
+</demo-block>
+
+<demo-block title="禁用状态" padding>
+  <smart-button type="info" disabled class="demo-margin-right">禁用状态</smart-button>
+  <smart-button type="primary" disabled class="demo-margin-right">禁用状态</smart-button>
+  <smart-button disabled>默认按钮</smart-button>
+</demo-block>
+
+<demo-block title="加载状态" padding>
+  <smart-button loading type="info" loading-text="加载中..." class="demo-margin-right" />
+  <smart-button loading type="info" class="demo-margin-right" />
+  <smart-button loading type="primary" class="demo-margin-right" />
+  <smart-button loading type="primary" loading-type="spinner" />
+</demo-block>
+
+<demo-block title="按钮形状" padding>
+  <smart-button type="info" square class="demo-margin-right">方形按钮</smart-button>
+  <smart-button type="primary" round>圆形按钮</smart-button>
+</demo-block>
+
+<demo-block title="按钮充满" padding>
+  <smart-row gutter="10">
+    <smart-col span="12">
+      <smart-button type="info" square custom-class="w-full">Button</smart-button>
+    </smart-col>
+    <smart-col span="12">
+      <smart-button type="primary" round custom-class="w-full">Button</smart-button>
+    </smart-col>
+  </smart-row>
+</demo-block>
+
+<demo-block title="图标按钮" padding>
+  <smart-button type="info" icon="{{ iconAdd }}" class="demo-margin-right">按钮</smart-button>
+  <smart-button type="info" icon="{{ iconAdd }}" class="demo-margin-right" />
+  <smart-button type="primary" right-icon="{{ iconRight }}" class="demo-margin-right">按钮</smart-button>
+  <view class="demo-margin-top">
+    <smart-button plain type="primary" icon="{{ iconAdd }}" class="demo-margin-right">按钮</smart-button>
+  <smart-button plain type="primary" icon="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png" custom-class="demo-margin-right">按钮</smart-button>
+  </view>
+</demo-block>
+
+<demo-block title="按钮尺寸" padding>
+  <smart-button type="info" size="large" block custom-class="demo-margin-bottom">大号按钮</smart-button>
+  <smart-button type="info" class="demo-margin-right">普通按钮</smart-button>
+  <smart-button type="info" size="small" class="demo-margin-right">小型按钮</smart-button>
+  <smart-button type="info" size="mini">迷你按钮</smart-button>
+</demo-block>
+
+<demo-block title="块级元素" padding>
+  <smart-button type="primary" custom-class="demo-margin-bottom">普通按钮</smart-button>
+  <smart-button type="primary" block>块级元素</smart-button>
+</demo-block>
+
+<demo-block title="自定义颜色" padding>
+  <smart-button color="#00BEE4" class="demo-margin-right">单色按钮</smart-button>
+  <smart-button color="#3246FF" class="demo-margin-right" plain>单色按钮</smart-button>
+  <smart-button color="linear-gradient(180deg, #0FB3FF 0%, #9DE0FF 100%)">渐变色按钮</smart-button>
+  <smart-button color="linear-gradient(98deg, #0FB3FF 0%, #9DE0FF 100%)" custom-class="demo-margin-top" block>对角渐变</smart-button>
+</demo-block>
+
+<demo-block title="投影" padding>
+  <smart-button color="#006EDE" custom-style="box-shadow: 0px 6px 15px 0px rgba(0, 110, 222, 0.2);" block>投影</smart-button>
+</demo-block>

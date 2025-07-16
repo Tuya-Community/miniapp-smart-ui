@@ -1,0 +1,45 @@
+<smart-cell center title="基础用法">
+  <smart-stepper value="{{ 1 }}" />
+</smart-cell>
+
+<smart-cell center title="步长设置">
+  <smart-stepper value="{{ 1 }}" step="2" />
+</smart-cell>
+
+<smart-cell center title="限制输入范围">
+  <smart-stepper value="{{ 1 }}" min="5" max="8" />
+</smart-cell>
+
+<smart-cell center title="限制输入整数">
+  <smart-stepper value="{{ 1 }}" integer />
+</smart-cell>
+
+<smart-cell center title="禁用状态">
+  <smart-stepper value="{{ 1 }}" disabled />
+</smart-cell>
+
+<smart-cell center title="禁用长按">
+  <smart-stepper value="{{ 1 }}" long-press="{{ false }}" />
+</smart-cell>
+
+<smart-cell center title="固定小数位数">
+  <smart-stepper value="{{ 1 }}" step="0.2" decimal-length="{{ 1 }}" />
+</smart-cell>
+
+<smart-cell center title="异步变更">
+  <smart-stepper
+    value="{{ value }}"
+    async-change
+    bind:change="onChange"
+  />
+</smart-cell>
+
+<smart-cell center title="自定义大小">
+  <smart-stepper value="{{ 1 }}" input-width="40px" button-size="32px" />
+</smart-cell>
+
+<smart-cell center title="圆角风格">
+  <smart-stepper value="{{ 1 }}" theme="round" button-size="22px" />
+</smart-cell>
+
+<smart-toast id="smart-toast" />

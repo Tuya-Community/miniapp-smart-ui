@@ -1,0 +1,11 @@
+<demo-block title="基础用法">
+  <smart-area
+    value="{{ value }}"
+    loading="{{ loading }}"
+    area-list="{{ areaList }}"
+    bind:change="onChange"
+    bind:confirm="onConfirm"
+    bind:cancel="onCancel"
+  />
+</demo-block>
+<smart-toast id="smart-toast" />

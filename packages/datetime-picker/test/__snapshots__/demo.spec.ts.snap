@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        选择完整时间
+      </wx-view>
+      <smart-datetime-picker
+        data-type="datetime"
+        bind:input="onInput"
+      >
+        <smart-picker
+          activeClass="active-class"
+          class="smart-datetime-picker"
+          columnClass="column-class"
+          toolbarClass="toolbar-class"
+          bind:cancel="onCancel"
+          bind:change="onChange"
+          bind:confirm="onConfirm"
+        >
+          <wx-view
+            class="smart-picker custom-class"
+          >
+            <wx-view
+              class="smart-picker__columns"
+              style="height:220px"
+              catch:touchmove="noop"
+            >
+              <wx-view
+                class="smart-picker__frame smart-hairline--top-bottom"
+                style="height:44px"
+              />
+            </wx-view>
+          </wx-view>
+        </smart-picker>
+      </smart-datetime-picker>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        选择日期（年月日）
+      </wx-view>
+      <smart-datetime-picker
+        data-type="date"
+        bind:input="onInput"
+      >
+        <smart-picker
+          activeClass="active-class"
+          class="smart-datetime-picker"
+          columnClass="column-class"
+          toolbarClass="toolbar-class"
+          bind:cancel="onCancel"
+          bind:change="onChange"
+          bind:confirm="onConfirm"
+        >
+          <wx-view
+            class="smart-picker custom-class"
+          >
+            <wx-view
+              class="smart-picker__toolbar toolbar-class"
+            >
+              <wx-view
+                class="smart-picker__cancel"
+                data-type="cancel"
+                hoverClass="smart-picker__cancel--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    Cancel
+  
+              </wx-view>
+              <wx-view
+                class="smart-picker__confirm"
+                data-type="confirm"
+                hoverClass="smart-picker__confirm--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    Confirm
+  
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="smart-picker__columns"
+              style="height:220px"
+              catch:touchmove="noop"
+            >
+              <wx-view
+                class="smart-picker__frame smart-hairline--top-bottom"
+                style="height:44px"
+              />
+            </wx-view>
+          </wx-view>
+        </smart-picker>
+      </smart-datetime-picker>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        选择日期（年月）
+      </wx-view>
+      <smart-datetime-picker
+        data-type="year-month"
+        bind:input="onInput"
+      >
+        <smart-picker
+          activeClass="active-class"
+          class="smart-datetime-picker"
+          columnClass="column-class"
+          toolbarClass="toolbar-class"
+          bind:cancel="onCancel"
+          bind:change="onChange"
+          bind:confirm="onConfirm"
+        >
+          <wx-view
+            class="smart-picker custom-class"
+          >
+            <wx-view
+              class="smart-picker__toolbar toolbar-class"
+            >
+              <wx-view
+                class="smart-picker__cancel"
+                data-type="cancel"
+                hoverClass="smart-picker__cancel--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    Cancel
+  
+              </wx-view>
+              <wx-view
+                class="smart-picker__confirm"
+                data-type="confirm"
+                hoverClass="smart-picker__confirm--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    Confirm
+  
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="smart-picker__columns"
+              style="height:220px"
+              catch:touchmove="noop"
+            >
+              <wx-view
+                class="smart-picker__frame smart-hairline--top-bottom"
+                style="height:44px"
+              />
+            </wx-view>
+          </wx-view>
+        </smart-picker>
+      </smart-datetime-picker>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        选择时间
+      </wx-view>
+      <smart-datetime-picker
+        data-type="time"
+        bind:input="onInput"
+      >
+        <smart-picker
+          activeClass="active-class"
+          class="smart-datetime-picker"
+          columnClass="column-class"
+          toolbarClass="toolbar-class"
+          bind:cancel="onCancel"
+          bind:change="onChange"
+          bind:confirm="onConfirm"
+        >
+          <wx-view
+            class="smart-picker custom-class"
+          >
+            <wx-view
+              class="smart-picker__toolbar toolbar-class"
+            >
+              <wx-view
+                class="smart-picker__cancel"
+                data-type="cancel"
+                hoverClass="smart-picker__cancel--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    Cancel
+  
+              </wx-view>
+              <wx-view
+                class="smart-picker__confirm"
+                data-type="confirm"
+                hoverClass="smart-picker__confirm--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    Confirm
+  
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="smart-picker__columns"
+              style="height:220px"
+              catch:touchmove="noop"
+            >
+              <wx-view
+                class="smart-picker__frame smart-hairline--top-bottom"
+                style="height:44px"
+              />
+            </wx-view>
+          </wx-view>
+        </smart-picker>
+      </smart-datetime-picker>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        选项过滤器
+      </wx-view>
+      <smart-datetime-picker>
+        <smart-picker
+          activeClass="active-class"
+          class="smart-datetime-picker"
+          columnClass="column-class"
+          toolbarClass="toolbar-class"
+          bind:cancel="onCancel"
+          bind:change="onChange"
+          bind:confirm="onConfirm"
+        >
+          <wx-view
+            class="smart-picker custom-class"
+          >
+            <wx-view
+              class="smart-picker__toolbar toolbar-class"
+            >
+              <wx-view
+                class="smart-picker__cancel"
+                data-type="cancel"
+                hoverClass="smart-picker__cancel--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    Cancel
+  
+              </wx-view>
+              <wx-view
+                class="smart-picker__confirm"
+                data-type="confirm"
+                hoverClass="smart-picker__confirm--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    Confirm
+  
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="smart-picker__columns"
+              style="height:220px"
+              catch:touchmove="noop"
+            >
+              <wx-view
+                class="smart-picker__frame smart-hairline--top-bottom"
+                style="height:44px"
+              />
+            </wx-view>
+          </wx-view>
+        </smart-picker>
+      </smart-datetime-picker>
+    </wx-view>
+  </demo-block>
+  <smart-toast
+    id="smart-toast"
+  >
+    <smart-transition
+      customClass="smart-toast__container"
+    />
+  </smart-toast>
+</main>
+`;

@@ -1,0 +1,53 @@
+<demo-block title="基础用法">
+  <smart-goods-action custom-class="goods-action-position" safe-area-inset-bottom="{{ false }}">
+    <smart-goods-action-icon
+      icon="chat-o"
+      text="客服"
+      open-type="contact"
+    />
+    <smart-goods-action-icon
+      icon="cart-o"
+      text="购物车"
+      bind:click="onClickIcon"
+    />
+    <smart-goods-action-button
+      text="加入购物车"
+      type="warning"
+      bind:click="onClickButton"
+    />
+    <smart-goods-action-button
+      text="立即购买"
+      bind:click="onClickButton"
+    />
+  </smart-goods-action>
+</demo-block>
+
+<demo-block title="提示信息">
+  <smart-goods-action custom-class="goods-action-position" safe-area-inset-bottom="{{ false }}">
+    <smart-goods-action-icon icon="chat-o" text="客服" dot />
+    <smart-goods-action-icon icon="cart-o" text="购物车" info="5" />
+    <smart-goods-action-icon icon="shop-o" text="店铺" />
+    <smart-goods-action-button text="加入购物车" type="warning" />
+    <smart-goods-action-button text="立即购买" />
+  </smart-goods-action>
+</demo-block>
+
+<demo-block title="自定义按钮颜色">
+  <smart-goods-action custom-class="goods-action-position" safe-area-inset-bottom="{{ false }}">
+    <smart-goods-action-icon icon="chat-o" text="客服" />
+    <smart-goods-action-icon icon="shop-o" text="店铺" />
+    <smart-goods-action-button color="#be99ff" type="warning" text="加入购物车" />
+    <smart-goods-action-button color="#7232dd" text="立即购买" />
+  </smart-goods-action>
+</demo-block>
+
+<demo-block title="朴素按钮">
+  <smart-goods-action custom-class="goods-action-position" safe-area-inset-bottom="{{ false }}">
+    <smart-goods-action-icon icon="chat-o" text="客服" />
+    <smart-goods-action-icon icon="shop-o" text="店铺" />
+    <smart-goods-action-button color="#7232dd"  text="加入购物车" type="warning" />
+    <smart-goods-action-button plain color="#7232dd" text="立即购买" />
+  </smart-goods-action>
+</demo-block>
+
+<smart-toast id="smart-toast" />

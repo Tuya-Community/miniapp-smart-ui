@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ty-slider": "@ray-js/components-ty-slider/lib/slider/index"
+  }
+}

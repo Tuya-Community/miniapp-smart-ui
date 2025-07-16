@@ -1,0 +1,615 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <smart-cell
+    center="{{true}}"
+  >
+    <wx-view
+      class="custom-class smart-cell"
+      hoverClass="smart-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="smart-cell__title title-class"
+        style=""
+      >
+        基础用法
+      </wx-view>
+      <wx-view
+        class="smart-cell__value value-class"
+      >
+        <smart-stepper>
+          <wx-view
+            class="smart-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class smart-stepper__minus"
+              data-type="minus"
+              hoverClass="smart-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              alwaysEmbed="{{false}}"
+              class="input-class smart-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class smart-stepper__plus"
+              data-type="plus"
+              hoverClass="smart-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </smart-stepper>
+      </wx-view>
+    </wx-view>
+  </smart-cell>
+  <smart-cell
+    center="{{true}}"
+  >
+    <wx-view
+      class="custom-class smart-cell"
+      hoverClass="smart-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="smart-cell__title title-class"
+        style=""
+      >
+        步长设置
+      </wx-view>
+      <wx-view
+        class="smart-cell__value value-class"
+      >
+        <smart-stepper>
+          <wx-view
+            class="smart-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class smart-stepper__minus"
+              data-type="minus"
+              hoverClass="smart-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              alwaysEmbed="{{false}}"
+              class="input-class smart-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class smart-stepper__plus"
+              data-type="plus"
+              hoverClass="smart-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </smart-stepper>
+      </wx-view>
+    </wx-view>
+  </smart-cell>
+  <smart-cell
+    center="{{true}}"
+  >
+    <wx-view
+      class="custom-class smart-cell"
+      hoverClass="smart-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="smart-cell__title title-class"
+        style=""
+      >
+        限制输入范围
+      </wx-view>
+      <wx-view
+        class="smart-cell__value value-class"
+      >
+        <smart-stepper>
+          <wx-view
+            class="smart-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class smart-stepper__minus"
+              data-type="minus"
+              hoverClass="smart-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              alwaysEmbed="{{false}}"
+              class="input-class smart-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="digit"
+              value="{{5}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class smart-stepper__plus"
+              data-type="plus"
+              hoverClass="smart-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </smart-stepper>
+      </wx-view>
+    </wx-view>
+  </smart-cell>
+  <smart-cell
+    center="{{true}}"
+  >
+    <wx-view
+      class="custom-class smart-cell"
+      hoverClass="smart-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="smart-cell__title title-class"
+        style=""
+      >
+        限制输入整数
+      </wx-view>
+      <wx-view
+        class="smart-cell__value value-class"
+      >
+        <smart-stepper>
+          <wx-view
+            class="smart-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class smart-stepper__minus"
+              data-type="minus"
+              hoverClass="smart-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              alwaysEmbed="{{false}}"
+              class="input-class smart-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="number"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class smart-stepper__plus"
+              data-type="plus"
+              hoverClass="smart-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </smart-stepper>
+      </wx-view>
+    </wx-view>
+  </smart-cell>
+  <smart-cell
+    center="{{true}}"
+  >
+    <wx-view
+      class="custom-class smart-cell"
+      hoverClass="smart-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="smart-cell__title title-class"
+        style=""
+      >
+        禁用状态
+      </wx-view>
+      <wx-view
+        class="smart-cell__value value-class"
+      >
+        <smart-stepper>
+          <wx-view
+            class="smart-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
+              data-type="minus"
+              hoverClass="smart-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              alwaysEmbed="{{false}}"
+              class="input-class smart-stepper__input smart-stepper__input--disabled"
+              disabled="{{true}}"
+              focus=""
+              style=""
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class smart-stepper__plus smart-stepper__plus--disabled"
+              data-type="plus"
+              hoverClass="smart-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </smart-stepper>
+      </wx-view>
+    </wx-view>
+  </smart-cell>
+  <smart-cell
+    center="{{true}}"
+  >
+    <wx-view
+      class="custom-class smart-cell"
+      hoverClass="smart-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="smart-cell__title title-class"
+        style=""
+      >
+        禁用长按
+      </wx-view>
+      <wx-view
+        class="smart-cell__value value-class"
+      >
+        <smart-stepper>
+          <wx-view
+            class="smart-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class smart-stepper__minus"
+              data-type="minus"
+              hoverClass="smart-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              alwaysEmbed="{{false}}"
+              class="input-class smart-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class smart-stepper__plus"
+              data-type="plus"
+              hoverClass="smart-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </smart-stepper>
+      </wx-view>
+    </wx-view>
+  </smart-cell>
+  <smart-cell
+    center="{{true}}"
+  >
+    <wx-view
+      class="custom-class smart-cell"
+      hoverClass="smart-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="smart-cell__title title-class"
+        style=""
+      >
+        固定小数位数
+      </wx-view>
+      <wx-view
+        class="smart-cell__value value-class"
+      >
+        <smart-stepper>
+          <wx-view
+            class="smart-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class smart-stepper__minus"
+              data-type="minus"
+              hoverClass="smart-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              alwaysEmbed="{{false}}"
+              class="input-class smart-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="digit"
+              value="1.0"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class smart-stepper__plus"
+              data-type="plus"
+              hoverClass="smart-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </smart-stepper>
+      </wx-view>
+    </wx-view>
+  </smart-cell>
+  <smart-cell
+    center="{{true}}"
+  >
+    <wx-view
+      class="custom-class smart-cell"
+      hoverClass="smart-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="smart-cell__title title-class"
+        style=""
+      >
+        异步变更
+      </wx-view>
+      <wx-view
+        class="smart-cell__value value-class"
+      >
+        <smart-stepper
+          bind:change="onChange"
+        >
+          <wx-view
+            class="smart-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class smart-stepper__minus"
+              data-type="minus"
+              hoverClass="smart-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              alwaysEmbed="{{false}}"
+              class="input-class smart-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class smart-stepper__plus"
+              data-type="plus"
+              hoverClass="smart-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </smart-stepper>
+      </wx-view>
+    </wx-view>
+  </smart-cell>
+  <smart-cell
+    center="{{true}}"
+  >
+    <wx-view
+      class="custom-class smart-cell"
+      hoverClass="smart-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="smart-cell__title title-class"
+        style=""
+      >
+        自定义大小
+      </wx-view>
+      <wx-view
+        class="smart-cell__value value-class"
+      >
+        <smart-stepper>
+          <wx-view
+            class="smart-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class smart-stepper__minus"
+              data-type="minus"
+              hoverClass="smart-stepper__minus--hover"
+              hoverStayTime="70"
+              style="width:32px;height:32px"
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              alwaysEmbed="{{false}}"
+              class="input-class smart-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style="width:40px;height:32px"
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class smart-stepper__plus"
+              data-type="plus"
+              hoverClass="smart-stepper__plus--hover"
+              hoverStayTime="70"
+              style="width:32px;height:32px"
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </smart-stepper>
+      </wx-view>
+    </wx-view>
+  </smart-cell>
+  <smart-cell
+    center="{{true}}"
+  >
+    <wx-view
+      class="custom-class smart-cell"
+      hoverClass="smart-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="smart-cell__title title-class"
+        style=""
+      >
+        圆角风格
+      </wx-view>
+      <wx-view
+        class="smart-cell__value value-class"
+      >
+        <smart-stepper>
+          <wx-view
+            class="smart-stepper smart-stepper--round custom-class"
+          >
+            <wx-view
+              class="minus-class smart-stepper__minus"
+              data-type="minus"
+              hoverClass="smart-stepper__minus--hover"
+              hoverStayTime="70"
+              style="width:22px;height:22px"
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              alwaysEmbed="{{false}}"
+              class="input-class smart-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style="height:22px"
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class smart-stepper__plus"
+              data-type="plus"
+              hoverClass="smart-stepper__plus--hover"
+              hoverStayTime="70"
+              style="width:22px;height:22px"
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </smart-stepper>
+      </wx-view>
+    </wx-view>
+  </smart-cell>
+  <smart-toast
+    id="smart-toast"
+  >
+    <smart-transition
+      customClass="smart-toast__container"
+    />
+  </smart-toast>
+</main>
+`;

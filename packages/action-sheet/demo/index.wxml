@@ -1,0 +1,140 @@
+<demo-block title="基础用法" padding>
+  <smart-button type="primary" bind:click="toggleActionSheetSelect">弹出菜单</smart-button>
+  <smart-action-sheet
+    title="Title"
+    cancel-text="取消"
+    show="{{ showSelect }}"
+    actions="{{ actionSelect }}"
+    bind:select="onSelect"
+    bind:close="toggleActionSheetSelect"
+    bind:cancel="toggleActionSheetSelect"
+  />
+</demo-block>
+
+<demo-block title="自定义选中 icon 颜色" padding>
+  <smart-button type="primary" bind:click="toggleActionSheetSelect2">弹出菜单</smart-button>
+  <smart-action-sheet
+    title="Title"
+    cancel-text="取消"
+    show="{{ showSelect2 }}"
+    actions="{{ actionSelect }}"
+    active-color="#ff0fff"
+    bind:select="onSelect"
+    bind:close="toggleActionSheetSelect2"
+    bind:cancel="toggleActionSheetSelect2"
+  />
+</demo-block>
+
+<demo-block title="无选中列表" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet1">弹出菜单</smart-button>
+  <smart-action-sheet
+    title="Title"
+    cancel-text="取消"
+    show="{{ show1 }}"
+    actions="{{ action1 }}"
+    bind:close="toggleActionSheet1"
+    bind:cancel="toggleActionSheet1"
+  />
+</demo-block>
+
+
+<demo-block title="选项状态" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet2">弹出菜单</smart-button>
+  <smart-action-sheet
+    show="{{ show2 }}"
+    actions="{{ action2 }}"
+    bind:close="toggleActionSheet2"
+  />
+</demo-block>
+
+<demo-block title="展示确认按钮" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet3">弹出菜单</smart-button>
+  <smart-action-sheet
+    show="{{ show3 }}"
+    actions="{{ action1 }}"
+    cancel-text="取消"
+    confirm-text="确认"
+    bind:close="toggleActionSheet3"
+    bind:cancel="toggleActionSheet3"
+    bind:confirm="toggleActionSheet3"
+  >
+  </smart-action-sheet>
+</demo-block>
+
+<demo-block title="展示描述信息" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet4">弹出菜单</smart-button>
+  <smart-action-sheet
+    show="{{ show4 }}"
+    actions="{{ action1 }}"
+    description="这是一段描述信息"
+    bind:close="toggleActionSheet4"
+  >
+  </smart-action-sheet>
+</demo-block>
+
+<demo-block title="自定义" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet5">弹出菜单</smart-button>
+  <smart-action-sheet
+    show="{{ show5 }}"
+    title="Title"
+    cancel-text="Action"
+    confirm-text="Action"
+    bind:close="toggleActionSheet5"
+    bind:cancel="toggleActionSheet5"
+    bind:confirm="toggleActionSheet5"
+  >
+    <view class="content">自定义</view>
+  </smart-action-sheet>
+</demo-block>
+
+<demo-block title="自定义数值" padding>
+  <smart-button type="primary" bind:click="toggleActionSheetNumber">弹出菜单</smart-button>
+  <smart-action-sheet
+    show="{{ showNumber }}"
+    title="Title"
+    cancel-text="Action"
+    confirm-text="Action"
+    bind:close="toggleActionSheetNumber"
+    bind:cancel="toggleActionSheetNumber"
+    bind:confirm="toggleActionSheetNumber"
+  >
+    <view class="content-number">
+      <view class="demo-header">
+        <text class="demo-text">{{ currentNumber }}%</text>
+      </view>
+      <view class="demo-slider">
+        <smart-slider
+          instanceId="action-sheet-slider"
+          trackStyle="height:45px;border-radius:8px;"
+          barStyle="height:45px;border-radius:8px;"
+          thumbStyle="width:15px;height:50px;background:#BBC5D4;border:2px solid #FFFFFF;box-shadow:0px 0px 2px 0px rgba(0, 0, 0, 0.5);border-radius:2px;"
+          value="{{currentNumber}}"
+          bind:change="onChange"
+        />
+      </view>
+    </view>
+  </smart-action-sheet>
+</demo-block>
+
+<demo-block title="自定义滚动 Picker: {{ currentDateStr }}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheetPicker">弹出菜单</smart-button>
+  <smart-action-sheet
+    show="{{ showPicker }}"
+    title="Title"
+    cancel-text="Action"
+    confirm-text="Action"
+    bind:close="toggleActionSheetPicker"
+    bind:cancel="toggleActionSheetPicker"
+    bind:confirm="onPickerConfirm"
+  >
+    <smart-datetime-picker
+      show-toolbar="{{ false }}"
+      type="date"
+      data-type="date"
+      value="{{ currentDate }}"
+      min-date="{{ minDate }}"
+      bind:input="onInput"
+      formatter="{{ formatter }}"
+    />
+  </smart-action-sheet>
+</demo-block>

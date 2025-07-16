@@ -1,0 +1,24 @@
+<demo-block title="基础用法" padding>
+  <smart-row>
+    <smart-col span="8" custom-class="dark">span: 8</smart-col>
+    <smart-col span="8" custom-class="light">span: 8</smart-col>
+    <smart-col span="8" custom-class="dark">span: 8</smart-col>
+  </smart-row>
+
+  <smart-row>
+    <smart-col span="4" custom-class="dark">span: 4</smart-col>
+    <smart-col span="10" offset="4" custom-class="light">offset: 4, span: 10</smart-col>
+  </smart-row>
+
+  <smart-row>
+    <smart-col offset="12" span="12" custom-class="dark">offset: 12, span: 12</smart-col>
+  </smart-row>
+</demo-block>
+
+<demo-block title="在列元素之间增加间距" padding>
+  <smart-row gutter="20">
+    <smart-col span="8" custom-class="dark">span: 8</smart-col>
+    <smart-col span="8" custom-class="light">span: 8</smart-col>
+    <smart-col span="8" custom-class="dark">span: 8</smart-col>
+  </smart-row>
+</demo-block>

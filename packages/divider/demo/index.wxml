@@ -1,0 +1,17 @@
+<demo-block custom-class="white" title="基础用法" padding>
+  <smart-divider />
+</demo-block>
+
+<demo-block custom-class="white" title="内容位置" padding>
+  <smart-divider content-position="center">文本</smart-divider>
+  <smart-divider content-position="left">文本</smart-divider>
+  <smart-divider content-position="right">文本</smart-divider>
+</demo-block>
+
+<demo-block custom-class="white" title="虚线" padding>
+  <smart-divider dashed />
+</demo-block>
+
+<demo-block custom-class="white" title="自定义样式" padding>
+  <smart-divider content-position="center" custom-style="color: #1989fa;border-color: #1989fa;font-size: 18px;">文本</smart-divider>
+</demo-block>

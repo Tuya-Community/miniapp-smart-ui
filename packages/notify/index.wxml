@@ -1,0 +1,22 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<smart-transition
+  name="{{ transition }}"
+  show="{{ show }}"
+  custom-class="smart-notify__container"
+  custom-style="{{ computed.rootStyle({ zIndex, top }) }}"
+  bind:tap="onTap"
+>
+  <view
+    class="smart-notify smart-notify--{{ type }}"
+    style="{{ computed.notifyStyle({ background, color }) }}"
+  >
+    <view
+      wx:if="{{ safeAreaInsetTop }}"
+      style="height: {{ statusBarHeight }}px"
+    />
+    <slot wx:if="{{ useSlot }}" />
+    <text wx:else>{{ message }}</text>
+  </view>
+</smart-transition>

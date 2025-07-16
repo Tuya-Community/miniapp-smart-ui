@@ -1,0 +1,34 @@
+<demo-block title="常规用法：点击输入框弹出键盘">
+  <smart-custom-keyboard
+    input-container-style="margin-left: 56rpx; margin-yop: 16rpx; margin-bottom: 56rpx"
+    bind:change="onChange"
+    bind:confirm="onConfirm"
+  />
+</demo-block>
+<demo-block title="自定义input样式，文案">
+  <smart-custom-keyboard
+    input-container-style="marginLeft: 56rpx; marginTop: 16rpx; marginBottom: 56rpx; width: 560rpx; height: 120rpx;"
+    placeholder="请输入"
+    confirm-text="确认"
+    value="{{value}}"
+    confirm-color="#123321"
+    bind:change="handleValueChange"
+    bind:confirm="onConfirm"
+  >
+    <view slot="custom-button" bind:tap="handleBtn" style="border: 1px solid blue; borderRadius: 4px; marginRight: 4px">点击</view>
+  </smart-custom-keyboard>
+</demo-block>
+
+<demo-block title="隐藏零, 且进制为6">
+  <smart-custom-keyboard
+    input-container-style="marginLeft: 56rpx; marginTop: 16rpx; marginBottom: 56rpx;"
+    is-hide-zero="{{true}}"
+    digital-base="{{6}}"
+  />
+</demo-block>
+<demo-block title="不隐藏零, 且进制为6">
+  <smart-custom-keyboard
+    input-container-style="marginLeft: 56rpx; marginTop: 16rpx; marginBottom: 56rpx;"
+    digital-base="{{6}}"
+  />
+</demo-block>

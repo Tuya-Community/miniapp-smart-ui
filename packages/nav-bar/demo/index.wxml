@@ -1,0 +1,20 @@
+<demo-block title="基础用法">
+  <smart-nav-bar
+    title="标题"
+    right-text="按钮"
+    left-text="返回"
+    left-arrow
+    bind:click-left="onClickLeft"
+    bind:click-right="onClickRight"
+  />
+</demo-block>
+<demo-block title="使用插槽">
+  <smart-nav-bar title="标题" left-text="返回" left-arrow>
+      <smart-icon
+          size="16px"
+          name="{{ iconRight }}"
+          custom-class="smart-nav-bar__arrow"
+          slot="right"
+        />
+  </smart-nav-bar>
+</demo-block>

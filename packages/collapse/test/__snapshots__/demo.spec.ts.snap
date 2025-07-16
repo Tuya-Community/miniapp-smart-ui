@@ -1,0 +1,770 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <smart-collapse
+        data-key="active1"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class smart-collapse smart-hairline--top-bottom"
+        >
+          <smart-collapse-item>
+            <wx-view
+              class="smart-collapse-item custom-class "
+            >
+              <smart-cell
+                class="smart-collapse-item__title smart-collapse-item__title--expanded"
+                customClass="smart-cell"
+                hoverClass="smart-cell--hover"
+                rightIconClass="smart-cell__right-icon"
+                size=""
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class smart-cell smart-cell--clickable"
+                  hoverClass="smart-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-cell__title title-class"
+                    style=""
+                  >
+                    标题1
+                  </wx-view>
+                  <wx-view
+                    class="smart-cell__value value-class"
+                  />
+                  <smart-icon
+                    class="smart-cell__right-icon-wrap right-icon-class"
+                    customClass="smart-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+              </smart-cell>
+              <wx-view
+                animation="{{null}}"
+                class="smart-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="smart-collapse-item__content content-class"
+                >
+                  代码是写出来给人看的，附带能在机器上运行
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-collapse-item>
+          <smart-collapse-item>
+            <wx-view
+              class="smart-collapse-item custom-class smart-hairline--top"
+            >
+              <smart-cell
+                class="smart-collapse-item__title"
+                customClass="smart-cell"
+                hoverClass="smart-cell--hover"
+                rightIconClass="smart-cell__right-icon"
+                size=""
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+                  hoverClass="smart-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-cell__title title-class"
+                    style=""
+                  >
+                    标题2
+                  </wx-view>
+                  <wx-view
+                    class="smart-cell__value value-class"
+                  />
+                  <smart-icon
+                    class="smart-cell__right-icon-wrap right-icon-class"
+                    customClass="smart-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+              </smart-cell>
+              <wx-view
+                animation="{{null}}"
+                class="smart-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="smart-collapse-item__content content-class"
+                >
+                  代码是写出来给人看的，附带能在机器上运行
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-collapse-item>
+          <smart-collapse-item>
+            <wx-view
+              class="smart-collapse-item custom-class smart-hairline--top"
+            >
+              <smart-cell
+                class="smart-collapse-item__title smart-collapse-item__title--disabled"
+                customClass="smart-cell"
+                hoverClass="smart-cell--hover"
+                rightIconClass="smart-cell__right-icon"
+                size=""
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+                  hoverClass="smart-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-cell__title title-class"
+                    style=""
+                  >
+                    标题3
+                  </wx-view>
+                  <wx-view
+                    class="smart-cell__value value-class"
+                  />
+                  <smart-icon
+                    class="smart-cell__right-icon-wrap right-icon-class"
+                    customClass="smart-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+              </smart-cell>
+              <wx-view
+                animation="{{null}}"
+                class="smart-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="smart-collapse-item__content content-class"
+                >
+                  代码是写出来给人看的，附带能在机器上运行
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-collapse-item>
+        </wx-view>
+      </smart-collapse>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        手风琴
+      </wx-view>
+      <smart-collapse
+        data-key="active2"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class smart-collapse smart-hairline--top-bottom"
+        >
+          <smart-collapse-item>
+            <wx-view
+              class="smart-collapse-item custom-class "
+            >
+              <smart-cell
+                class="smart-collapse-item__title smart-collapse-item__title--expanded"
+                customClass="smart-cell"
+                hoverClass="smart-cell--hover"
+                rightIconClass="smart-cell__right-icon"
+                size=""
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class smart-cell smart-cell--clickable"
+                  hoverClass="smart-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-cell__title title-class"
+                    style=""
+                  >
+                    标题1
+                  </wx-view>
+                  <wx-view
+                    class="smart-cell__value value-class"
+                  />
+                  <smart-icon
+                    class="smart-cell__right-icon-wrap right-icon-class"
+                    customClass="smart-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+              </smart-cell>
+              <wx-view
+                animation="{{null}}"
+                class="smart-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="smart-collapse-item__content content-class"
+                >
+                  代码是写出来给人看的，附带能在机器上运行
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-collapse-item>
+          <smart-collapse-item>
+            <wx-view
+              class="smart-collapse-item custom-class smart-hairline--top"
+            >
+              <smart-cell
+                class="smart-collapse-item__title"
+                customClass="smart-cell"
+                hoverClass="smart-cell--hover"
+                rightIconClass="smart-cell__right-icon"
+                size=""
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+                  hoverClass="smart-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-cell__title title-class"
+                    style=""
+                  >
+                    标题2
+                  </wx-view>
+                  <wx-view
+                    class="smart-cell__value value-class"
+                  />
+                  <smart-icon
+                    class="smart-cell__right-icon-wrap right-icon-class"
+                    customClass="smart-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+              </smart-cell>
+              <wx-view
+                animation="{{null}}"
+                class="smart-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="smart-collapse-item__content content-class"
+                >
+                  代码是写出来给人看的，附带能在机器上运行
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-collapse-item>
+          <smart-collapse-item>
+            <wx-view
+              class="smart-collapse-item custom-class smart-hairline--top"
+            >
+              <smart-cell
+                class="smart-collapse-item__title"
+                customClass="smart-cell"
+                hoverClass="smart-cell--hover"
+                rightIconClass="smart-cell__right-icon"
+                size=""
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+                  hoverClass="smart-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-cell__title title-class"
+                    style=""
+                  >
+                    标题3
+                  </wx-view>
+                  <wx-view
+                    class="smart-cell__value value-class"
+                  />
+                  <smart-icon
+                    class="smart-cell__right-icon-wrap right-icon-class"
+                    customClass="smart-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+              </smart-cell>
+              <wx-view
+                animation="{{null}}"
+                class="smart-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="smart-collapse-item__content content-class"
+                >
+                  代码是写出来给人看的，附带能在机器上运行
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-collapse-item>
+        </wx-view>
+      </smart-collapse>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        事件监听
+      </wx-view>
+      <smart-collapse
+        data-key="active3"
+        bind:change="onChange"
+        bind:close="onClose"
+        bind:open="onOpen"
+      >
+        <wx-view
+          class="custom-class smart-collapse smart-hairline--top-bottom"
+        >
+          <smart-collapse-item>
+            <wx-view
+              class="smart-collapse-item custom-class "
+            >
+              <smart-cell
+                class="smart-collapse-item__title"
+                customClass="smart-cell"
+                hoverClass="smart-cell--hover"
+                rightIconClass="smart-cell__right-icon"
+                size=""
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+                  hoverClass="smart-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-cell__title title-class"
+                    style=""
+                  >
+                    标题1
+                  </wx-view>
+                  <wx-view
+                    class="smart-cell__value value-class"
+                  />
+                  <smart-icon
+                    class="smart-cell__right-icon-wrap right-icon-class"
+                    customClass="smart-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+              </smart-cell>
+              <wx-view
+                animation="{{null}}"
+                class="smart-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="smart-collapse-item__content content-class"
+                >
+                  代码是写出来给人看的，附带能在机器上运行
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-collapse-item>
+          <smart-collapse-item>
+            <wx-view
+              class="smart-collapse-item custom-class smart-hairline--top"
+            >
+              <smart-cell
+                class="smart-collapse-item__title"
+                customClass="smart-cell"
+                hoverClass="smart-cell--hover"
+                rightIconClass="smart-cell__right-icon"
+                size=""
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+                  hoverClass="smart-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-cell__title title-class"
+                    style=""
+                  >
+                    标题2
+                  </wx-view>
+                  <wx-view
+                    class="smart-cell__value value-class"
+                  />
+                  <smart-icon
+                    class="smart-cell__right-icon-wrap right-icon-class"
+                    customClass="smart-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+              </smart-cell>
+              <wx-view
+                animation="{{null}}"
+                class="smart-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="smart-collapse-item__content content-class"
+                >
+                  代码是写出来给人看的，附带能在机器上运行
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-collapse-item>
+          <smart-collapse-item>
+            <wx-view
+              class="smart-collapse-item custom-class smart-hairline--top"
+            >
+              <smart-cell
+                class="smart-collapse-item__title"
+                customClass="smart-cell"
+                hoverClass="smart-cell--hover"
+                rightIconClass="smart-cell__right-icon"
+                size=""
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+                  hoverClass="smart-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-cell__title title-class"
+                    style=""
+                  >
+                    标题3
+                  </wx-view>
+                  <wx-view
+                    class="smart-cell__value value-class"
+                  />
+                  <smart-icon
+                    class="smart-cell__right-icon-wrap right-icon-class"
+                    customClass="smart-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+              </smart-cell>
+              <wx-view
+                animation="{{null}}"
+                class="smart-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="smart-collapse-item__content content-class"
+                >
+                  代码是写出来给人看的，附带能在机器上运行
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-collapse-item>
+        </wx-view>
+      </smart-collapse>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义标题内容
+      </wx-view>
+      <smart-collapse
+        data-key="active4"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class smart-collapse smart-hairline--top-bottom"
+        >
+          <smart-collapse-item>
+            <wx-view
+              class="smart-collapse-item custom-class "
+            >
+              <smart-cell
+                class="smart-collapse-item__title"
+                customClass="smart-cell"
+                hoverClass="smart-cell--hover"
+                rightIconClass="smart-cell__right-icon"
+                size=""
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+                  hoverClass="smart-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-cell__title title-class"
+                    style=""
+                  >
+                    <wx-view
+                      slot="title"
+                    >
+                      
+        标题1
+        
+                      <smart-icon
+                        customClass="smart-icon-question"
+                        name="question-o"
+                      />
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="smart-cell__value value-class"
+                  />
+                  <smart-icon
+                    class="smart-cell__right-icon-wrap right-icon-class"
+                    customClass="smart-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+              </smart-cell>
+              <wx-view
+                animation="{{null}}"
+                class="smart-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="smart-collapse-item__content content-class"
+                >
+                  
+      代码是写出来给人看的，附带能在机器上运行
+    
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-collapse-item>
+          <smart-collapse-item>
+            <wx-view
+              class="smart-collapse-item custom-class smart-hairline--top"
+            >
+              <smart-cell
+                class="smart-collapse-item__title"
+                customClass="smart-cell"
+                hoverClass="smart-cell--hover"
+                rightIconClass="smart-cell__right-icon"
+                size=""
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class smart-cell smart-cell--borderless smart-cell--clickable"
+                  hoverClass="smart-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <smart-icon
+                    class="smart-cell__left-icon-wrap"
+                    customClass="smart-cell__left-icon"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-shop-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                  <wx-view
+                    class="smart-cell__title title-class"
+                    style=""
+                  >
+                    标题2
+                  </wx-view>
+                  <wx-view
+                    class="smart-cell__value value-class"
+                  >
+                    内容
+                  </wx-view>
+                  <smart-icon
+                    class="smart-cell__right-icon-wrap right-icon-class"
+                    customClass="smart-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+              </smart-cell>
+              <wx-view
+                animation="{{null}}"
+                class="smart-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="smart-collapse-item__content content-class"
+                >
+                  
+      代码是写出来给人看的，附带能在机器上运行
+    
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-collapse-item>
+        </wx-view>
+      </smart-collapse>
+    </wx-view>
+  </demo-block>
+  <smart-toast
+    id="smart-toast"
+  >
+    <smart-transition
+      customClass="smart-toast__container"
+    />
+  </smart-toast>
+</main>
+`;

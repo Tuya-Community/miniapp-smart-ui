@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-cell": "../cell/index",
+    "smart-icon": "../icon/index"
+  }
+}

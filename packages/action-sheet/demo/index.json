@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-button": "../../button/index",
+    "smart-action-sheet": "../../action-sheet/index",
+    "smart-slider": "../../normal-slider/index",
+    "smart-datetime-picker": "../../datetime-picker/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

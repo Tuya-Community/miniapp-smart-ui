@@ -1,0 +1,278 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        提示
+      </wx-view>
+      <smart-notice-bar
+        useSlot="{{true}}"
+      >
+        <wx-view
+          class="custom-class smart-notice-bar smart-notice-bar--wrapable"
+          style="background:rgba(25, 137, 250, 0.1)"
+          bind:tap="onClick"
+        >
+          <smart-icon
+            class="smart-notice-bar__left-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon-volume-o"
+              style=""
+              bind:tap="onClick"
+            />
+          </smart-icon>
+          <wx-view
+            class="smart-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="smart-notice-bar__content "
+            >
+              
+      
+      
+              <wx-text>
+                如果是家中常住成员，建议您将他设为家庭成员，共享家中所有设备和智能场景。
+              </wx-text>
+              <wx-text
+                style="color: #1989FA"
+              >
+                家庭设置
+              </wx-text>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-notice-bar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        提示
+      </wx-view>
+      <smart-notice-bar>
+        <wx-view
+          class="custom-class smart-notice-bar smart-notice-bar--wrapable"
+          style="color:#1989FA;background:rgba(25, 137, 250, 0.1)"
+          bind:tap="onClick"
+        >
+          <smart-icon
+            class="smart-notice-bar__left-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon-volume-o"
+              style=""
+              bind:tap="onClick"
+            />
+          </smart-icon>
+          <wx-view
+            class="smart-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="smart-notice-bar__content "
+            >
+              
+      如果是家中常住成员，建议您将他设为家庭成员，共享家中所有设备和智能场景。
+      
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-notice-bar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        警告
+      </wx-view>
+      <smart-notice-bar
+        iconColor="#FFA000"
+        useSlot="{{true}}"
+      >
+        <wx-view
+          class="custom-class smart-notice-bar smart-notice-bar--wrapable"
+          style="background:rgba(255, 160, 0, 0.1)"
+          bind:tap="onClick"
+        >
+          <smart-icon
+            class="smart-notice-bar__left-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon-info"
+              style=""
+              bind:tap="onClick"
+            />
+          </smart-icon>
+          <wx-view
+            class="smart-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="smart-notice-bar__content "
+            >
+              
+      
+      
+              <wx-text>
+                如果是家中常住成员，建议您将他设为家庭成员，共享家中所有设备和智能场景。
+              </wx-text>
+              <wx-text
+                style="color: #1989FA"
+              >
+                家庭设置
+              </wx-text>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-notice-bar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        警告
+      </wx-view>
+      <smart-notice-bar>
+        <wx-view
+          class="custom-class smart-notice-bar smart-notice-bar--wrapable"
+          style="color:#FFA000;background:rgba(255, 160, 0, 0.1)"
+          bind:tap="onClick"
+        >
+          <smart-icon
+            class="smart-notice-bar__left-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon-volume-o"
+              style=""
+              bind:tap="onClick"
+            />
+          </smart-icon>
+          <wx-view
+            class="smart-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="smart-notice-bar__content "
+            >
+              
+      如果是家中常住成员，建议您将他设为家庭成员，共享家中所有设备和智能场景。
+      
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-notice-bar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        警告
+      </wx-view>
+      <smart-notice-bar
+        iconColor="#F04C4C"
+        useSlot="{{true}}"
+      >
+        <wx-view
+          class="custom-class smart-notice-bar smart-notice-bar--wrapable"
+          style="background:rgba(240, 76, 76, 0.1)"
+          bind:tap="onClick"
+        >
+          <smart-icon
+            class="smart-notice-bar__left-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon-info"
+              style=""
+              bind:tap="onClick"
+            />
+          </smart-icon>
+          <wx-view
+            class="smart-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="smart-notice-bar__content "
+            >
+              
+      
+      
+              <wx-text>
+                如果是家中常住成员，建议您将他设为家庭成员，共享家中所有设备和智能场景。
+              </wx-text>
+              <wx-text
+                style="color: #1989FA"
+              >
+                家庭设置
+              </wx-text>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-notice-bar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        警告
+      </wx-view>
+      <smart-notice-bar>
+        <wx-view
+          class="custom-class smart-notice-bar smart-notice-bar--wrapable"
+          style="color:#F04C4C;background:rgba(240, 76, 76, 0.1)"
+          bind:tap="onClick"
+        >
+          <smart-icon
+            class="smart-notice-bar__left-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon-volume-o"
+              style=""
+              bind:tap="onClick"
+            />
+          </smart-icon>
+          <wx-view
+            class="smart-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="smart-notice-bar__content "
+            >
+              
+      如果是家中常住成员，建议您将他设为家庭成员，共享家中所有设备和智能场景。
+      
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-notice-bar>
+    </wx-view>
+  </demo-block>
+</main>
+`;

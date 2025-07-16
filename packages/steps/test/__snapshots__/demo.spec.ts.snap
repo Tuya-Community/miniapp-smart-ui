@@ -1,0 +1,550 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <smart-steps
+        customClass="demo-margin-bottom"
+        bind:click-step="onClick"
+      >
+        <wx-view
+          class="custom-class smart-steps smart-steps--horizontal"
+        >
+          <wx-view
+            class="smart-step__wrapper"
+          >
+            <wx-view
+              class="smart-step smart-step--horizontal smart-step--finish smart-hairline"
+              data-index="{{0}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤一
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-step__circle-container"
+              >
+                <wx-view
+                  class="smart-step__circle"
+                  style="background-color: #07c160"
+                />
+              </wx-view>
+              <wx-view
+                class="smart-step__line"
+                style="background-color: #07c160"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-step smart-step--horizontal smart-step--process smart-hairline"
+              data-index="{{1}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-step__title"
+                style="color: #07c160"
+              >
+                <wx-view>
+                  步骤二
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-step__circle-container"
+              >
+                <smart-icon
+                  class="smart-step__icon"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:#07c160"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#07c160"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="smart-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-step smart-step--horizontal smart-step--inactive smart-hairline"
+              data-index="{{2}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤三
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-step__circle-container"
+              >
+                <wx-view
+                  class="smart-step__circle"
+                  style="background-color: #969799"
+                />
+              </wx-view>
+              <wx-view
+                class="smart-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-step smart-step--horizontal smart-step--inactive smart-hairline"
+              data-index="{{3}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤四
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-step__circle-container"
+              >
+                <wx-view
+                  class="smart-step__circle"
+                  style="background-color: #969799"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-steps>
+      <smart-button
+        customClass="demo-margin-left"
+        bind:click="nextStep"
+      >
+        <wx-button
+          appParameter=""
+          ariaLabel=""
+          businessId="{{0}}"
+          class="custom-class smart-button smart-button--default smart-button--normal "
+          data-detail="{{null}}"
+          formType=""
+          hoverClass="smart-button--active hover-class"
+          id=""
+          lang=""
+          openType=""
+          sendMessageImg=""
+          sendMessagePath=""
+          sendMessageTitle=""
+          sessionFrom=""
+          showMessageCard="{{false}}"
+          style=""
+          bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+          bind:chooseavatar="onChooseAvatar"
+          bind:contact="onContact"
+          bind:error="onError"
+          bind:getphonenumber="onGetPhoneNumber"
+          bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+          bind:getuserinfo="onGetUserInfo"
+          bind:launchapp="onLaunchApp"
+          bind:opensetting="onOpenSetting"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-button__text"
+          >
+            下一步
+          </wx-view>
+        </wx-button>
+      </smart-button>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义样式
+      </wx-view>
+      <smart-steps>
+        <wx-view
+          class="custom-class smart-steps smart-steps--horizontal"
+        >
+          <wx-view
+            class="smart-step__wrapper"
+          >
+            <wx-view
+              class="smart-step smart-step--horizontal smart-step--finish smart-hairline"
+              data-index="{{0}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤一
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-step__circle-container"
+              >
+                <smart-icon
+                  class="smart-step__icon"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:#38f"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#38f"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="smart-step__line"
+                style="background-color: #38f"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-step smart-step--horizontal smart-step--process smart-hairline"
+              data-index="{{1}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-step__title"
+                style="color: #38f"
+              >
+                <wx-view>
+                  步骤二
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-step__circle-container"
+              >
+                <smart-icon
+                  class="smart-step__icon"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:#38f"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M639.232%20815.232a315.306667%20315.306667%200%200%201-127.061333%2025.898667%20314.922667%20314.922667%200%200%201-127.232-25.898667%20337.92%20337.92%200%200%201-104.832-71.338667%20337.834667%20337.834667%200%200%201-71.338667-104.832%20314.88%20314.88%200%200%201-25.898667-127.232%20317.013333%20317.013333%200%200%201%2025.728-127.061333%20335.445333%20335.445333%200%200%201%2071.338667-105.173333%20333.653333%20333.653333%200%200%201%20105.002667-71.168c39.68-17.066667%2081.92-25.6%20126.890666-25.6%2044.928%200%2087.296%208.533333%20127.061334%2025.6%2039.722667%2017.066667%2074.752%2040.789333%20105.002666%2071.168a339.2%20339.2%200%200%201%2071.338667%20105.173333c17.28%2039.765333%2025.898667%2082.133333%2025.898667%20127.061333a316.714667%20316.714667%200%200%201-25.728%20127.232%20337.322667%20337.322667%200%200%201-176.213334%20176.213334z%20m-178.901333-149.930667a32.128%2032.128%200%200%200%2016.256%204.053334c11.733333%200%2021.12-5.546667%2028.16-16.597334l150.058666-235.434666c2.261333-3.413333%204.266667-6.954667%205.930667-10.666667a26.453333%2026.453333%200%200%200%202.56-11.050667%2023.466667%2023.466667%200%200%200-8.96-19.114666%2031.146667%2031.146667%200%200%200-20.181333-7.296c-9.728%200-17.877333%205.290667-24.405334%2015.914666l-134.485333%20215.808-63.701333-81.28a35.413333%2035.413333%200%200%200-11.690667-10.88%2028.16%2028.16%200%200%200-13.056-3.029333%2026.325333%2026.325333%200%200%200-19.84%208.32%2028.032%2028.032%200%200%200-7.936%2020.138667c0%207.466667%202.816%2014.677333%208.448%2021.674666l79.274667%2097.28c4.309333%205.376%208.832%209.472%2013.568%2012.16z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M639.232%20815.232a315.306667%20315.306667%200%200%201-127.061333%2025.898667%20314.922667%20314.922667%200%200%201-127.232-25.898667%20337.92%20337.92%200%200%201-104.832-71.338667%20337.834667%20337.834667%200%200%201-71.338667-104.832%20314.88%20314.88%200%200%201-25.898667-127.232%20317.013333%20317.013333%200%200%201%2025.728-127.061333%20335.445333%20335.445333%200%200%201%2071.338667-105.173333%20333.653333%20333.653333%200%200%201%20105.002667-71.168c39.68-17.066667%2081.92-25.6%20126.890666-25.6%2044.928%200%2087.296%208.533333%20127.061334%2025.6%2039.722667%2017.066667%2074.752%2040.789333%20105.002666%2071.168a339.2%20339.2%200%200%201%2071.338667%20105.173333c17.28%2039.765333%2025.898667%2082.133333%2025.898667%20127.061333a316.714667%20316.714667%200%200%201-25.728%20127.232%20337.322667%20337.322667%200%200%201-176.213334%20176.213334z%20m-178.901333-149.930667a32.128%2032.128%200%200%200%2016.256%204.053334c11.733333%200%2021.12-5.546667%2028.16-16.597334l150.058666-235.434666c2.261333-3.413333%204.266667-6.954667%205.930667-10.666667a26.453333%2026.453333%200%200%200%202.56-11.050667%2023.466667%2023.466667%200%200%200-8.96-19.114666%2031.146667%2031.146667%200%200%200-20.181333-7.296c-9.728%200-17.877333%205.290667-24.405334%2015.914666l-134.485333%20215.808-63.701333-81.28a35.413333%2035.413333%200%200%200-11.690667-10.88%2028.16%2028.16%200%200%200-13.056-3.029333%2026.325333%2026.325333%200%200%200-19.84%208.32%2028.032%2028.032%200%200%200-7.936%2020.138667c0%207.466667%202.816%2014.677333%208.448%2021.674666l79.274667%2097.28c4.309333%205.376%208.832%209.472%2013.568%2012.16z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#38f"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="smart-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-step smart-step--horizontal smart-step--inactive smart-hairline"
+              data-index="{{2}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤三
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-step__circle-container"
+              >
+                <smart-icon
+                  class="smart-step__icon"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:#969799"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#969799"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="smart-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-step smart-step--horizontal smart-step--inactive smart-hairline"
+              data-index="{{3}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤四
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-step__circle-container"
+              >
+                <smart-icon
+                  class="smart-step__icon"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:#969799"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#969799"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-steps>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        竖向步骤条
+      </wx-view>
+      <smart-steps>
+        <wx-view
+          class="custom-class smart-steps smart-steps--vertical"
+        >
+          <wx-view
+            class="smart-step__wrapper"
+          >
+            <wx-view
+              class="smart-step smart-step--vertical smart-step--finish smart-hairline"
+              data-index="{{0}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤一
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-step__circle-container"
+              >
+                <wx-view
+                  class="smart-step__circle"
+                  style="background-color: #ee0a24"
+                />
+              </wx-view>
+              <wx-view
+                class="smart-step__line"
+                style="background-color: #ee0a24"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-step smart-step--vertical smart-step--process smart-hairline"
+              data-index="{{1}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-step__title"
+                style="color: #ee0a24"
+              >
+                <wx-view>
+                  步骤二
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-step__circle-container"
+              >
+                <smart-icon
+                  class="smart-step__icon"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="color:#ee0a24"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M453.930667%20774.826667a34.816%2034.816%200%200%200%2030.677333-17.024L771.413333%20306.090667c5.461333-8.789333%207.594667-15.488%207.594667-22.485334%200-16.64-10.922667-27.605333-27.605333-27.605333-12.16%200-18.816%203.925333-26.112%2015.488l-272.64%20434.389333-141.44-185.173333c-7.594667-10.624-15.189333-14.848-26.112-14.848-17.322667%200-29.141333%2011.818667-29.141334%2028.501333%200%206.997333%203.029333%2014.890667%208.789334%2022.186667L422.4%20757.205333c9.088%2011.818667%2018.517333%2017.621333%2031.573333%2017.621334z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#ee0a24"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+              <wx-view
+                class="smart-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-step smart-step--vertical smart-step--inactive smart-hairline"
+              data-index="{{2}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤三
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-step__circle-container"
+              >
+                <wx-view
+                  class="smart-step__circle"
+                  style="background-color: #969799"
+                />
+              </wx-view>
+              <wx-view
+                class="smart-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-step smart-step--vertical smart-step--inactive smart-hairline"
+              data-index="{{3}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤四
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="smart-step__circle-container"
+              >
+                <wx-view
+                  class="smart-step__circle"
+                  style="background-color: #969799"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-steps>
+    </wx-view>
+  </demo-block>
+  <smart-toast
+    id="smart-toast"
+  >
+    <smart-transition
+      customClass="smart-toast__container"
+    />
+  </smart-toast>
+</main>
+`;

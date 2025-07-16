@@ -1,0 +1,80 @@
+<demo-block title="提示">
+  <smart-notice-bar
+    background="rgba(25, 137, 250, 0.1)"
+    wrapable
+    scrollable="{{false}}"
+    left-icon="volume-o"
+    use-slot
+  >
+    <text>如果是家中常住成员，建议您将他设为家庭成员，共享家中所有设备和智能场景。</text>
+    <text style="color: #1989FA">家庭设置</text>
+  </smart-notice-bar>
+</demo-block>
+
+<demo-block title="提示">
+  <smart-notice-bar
+    text="如果是家中常住成员，建议您将他设为家庭成员，共享家中所有设备和智能场景。"
+    color="#1989FA"
+    background="rgba(25, 137, 250, 0.1)"
+    wrapable
+    scrollable="{{false}}"
+    left-icon="volume-o"
+  >
+  </smart-notice-bar>
+</demo-block>
+
+<demo-block title="警告">
+  <smart-notice-bar
+    background="rgba(255, 160, 0, 0.1)"
+    leftIcon="info"
+    iconColor="#FFA000"
+    wrapable
+    scrollable="{{false}}"
+    use-slot
+  >
+    <text>如果是家中常住成员，建议您将他设为家庭成员，共享家中所有设备和智能场景。</text>
+    <text style="color: #1989FA">家庭设置</text>
+  </smart-notice-bar>
+</demo-block>
+
+
+<demo-block title="警告">
+  <smart-notice-bar
+    background="rgba(255, 160, 0, 0.1)"
+    color="#FFA000"
+    text="如果是家中常住成员，建议您将他设为家庭成员，共享家中所有设备和智能场景。"
+    wrapable
+    scrollable="{{false}}"
+    left-icon="volume-o"
+  >
+  </smart-notice-bar>
+</demo-block>
+
+
+<demo-block title="警告">
+  <smart-notice-bar
+    background="rgba(240, 76, 76, 0.1)"
+    leftIcon="info"
+    iconColor="#F04C4C"
+    wrapable
+    scrollable="{{false}}"
+    use-slot
+  >
+    <text>如果是家中常住成员，建议您将他设为家庭成员，共享家中所有设备和智能场景。</text>
+    <text style="color: #1989FA">家庭设置</text>
+  </smart-notice-bar>
+</demo-block>
+
+
+<demo-block title="警告">
+  <smart-notice-bar
+    background="rgba(240, 76, 76, 0.1)"
+    color="#F04C4C"
+    text="如果是家中常住成员，建议您将他设为家庭成员，共享家中所有设备和智能场景。"
+    wrapable
+    scrollable="{{false}}"
+    left-icon="volume-o"
+  >
+  </smart-notice-bar>
+</demo-block>
+

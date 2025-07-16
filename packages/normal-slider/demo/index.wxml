@@ -1,0 +1,100 @@
+<view style="padding: 0 24px;">
+  <demo-block title="普通滑动条">
+    <smart-slider
+    instanceId="slider1"
+      trackStyle="height:4px"
+      barStyle="height:4px"
+      value="{{currentValue}}"
+      bind:change="onChange"
+    />
+  </demo-block>
+
+  <demo-block title="间隔滑动条">
+    <smart-slider
+    instanceId="slider2"
+    trackStyle="height:8px"
+    barStyle="height:8px"
+    thumbStyle="width:18px;height:18px;"
+    stepStyle="width:4px;height:4px;"
+    activeStepStyle="background:#fff;"
+    showSteps="{{true}}"
+    step="{{10}}"
+    min="{{0}}"
+    max="{{100}}"
+    value="{{currentValue}}"
+    bind:change="onChange"
+    />
+  </demo-block>
+
+  <demo-block title="间隔滑动条">
+    <smart-slider
+    instanceId="slider3"
+    trackStyle="height:40px;border-radius:16px;"
+    barStyle="height:40px;border-radius:16px;"
+    thumbStyle="width:18px;height:18px;"
+    stepStyle="width:4px;height:12px;border-radius:4px;"
+    activeStepStyle="width:4px;height:12px;border-radius:4px;background:#fff;"
+    hideThumbButton="{{true}}"
+    showSteps="{{true}}"
+    step="{{30}}"
+    min="{{0}}"
+    max="{{90}}"
+    value="{{currentValue}}"
+    bind:change="onChange"
+    />
+  </demo-block>
+
+    <demo-block title="拖动滑动条">
+    <smart-slider
+    instanceId="slider4"
+    parcel="{{true}}"
+    parcelMargin="{{2}}"
+    trackStyle="height:26px;border-radius:13px;"
+    barStyle="height:22px;border-radius:13px;"
+    thumbStyle="width:20px;height:20px;background:#fff;border-radius:50%;"
+    parcelThumbWidth="{{18}}"
+    parcelThumbHeight="{{18}}"
+    value="{{currentValue}}"
+    bind:change="onChange"
+    />
+  </demo-block>
+
+  <demo-block title="拖动滑动条">
+    <smart-slider
+    instanceId="slider5"
+    trackStyle="height:45px;border-radius:8px;"
+    barStyle="height:45px;border-radius:8px;"
+    thumbStyle="width:15px;height:50px;background:#BBC5D4;border:2px solid #FFFFFF;box-shadow:0px 0px 2px 0px rgba(0, 0, 0, 0.5);border-radius:2px;"
+    value="{{currentValue}}"
+    bind:change="onChange"
+    />
+  </demo-block>
+
+  <demo-block title="拖动滑动条">
+    <smart-slider
+    instanceId="slider6"
+    parcel="{{true}}"
+    parcelMargin="{{2}}"
+    trackStyle="height:26px;border-radius:5px;"
+    barStyle="height:22px;border-radius:5px;"
+    parcelThumbWidth="{{3}}"
+    parcelThumbHeight="{{16}}"
+    thumbStyle="width:5px;height:16px;background:#fff;"
+    value="{{currentValue}}"
+    bind:change="onChange"
+    />
+  </demo-block>
+
+  <demo-block title="双滑块滑动条">
+    <smart-range-slider
+    min="{{0}}"
+    max="{{100}}"
+    value="{{range}}"
+    bind:change="onRangeChange"
+    bar-height="4px"
+    inactive-color="#D8D9DC"
+    active-color="#007AFF"
+    />
+  </demo-block>
+  
+</view>

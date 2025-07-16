@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-icon": "../icon/index",
+    "smart-sidebar": "../sidebar/index",
+    "smart-sidebar-item": "../sidebar-item/index"
+  }
+}

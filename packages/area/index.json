@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-picker": "../picker/index"
+  }
+}

@@ -1,0 +1,37 @@
+<demo-block title="基础用法">
+  <smart-skeleton
+    title
+    row="3"
+    row-width="{{ ['100%', '100%', '80%'] }}"
+  />
+</demo-block>
+
+<demo-block title="显示头像">
+  <smart-skeleton
+    title
+    avatar
+    row="3"
+  />
+</demo-block>
+
+<demo-block title="展示子组件">
+  <smart-switch
+    checked="{{ show }}"
+    size="24px"
+    bind:change="onChange"
+  />
+  <smart-skeleton
+    title
+    avatar
+    row="3"
+    loading="{{ !show }}"
+  >
+    <view class="demo-preview">
+      <image class="demo-preview-img" src="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png" />
+      <view class="demo-content">
+        <view class="demo-content-h3">关于 Tuya Mini App </view>
+        <view class="domo-content-p">Tuya 智能小程序版本，助力开发者快速搭建小程序应用。</view>
+      </view>
+    </view>
+  </smart-skeleton>
+</demo-block>

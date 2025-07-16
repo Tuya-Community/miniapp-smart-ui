@@ -1,0 +1,35 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<view
+  style="{{ computed.rootStyle({ width, height, radius }) }}"
+  class="custom-class {{ utils.bem('image', { round })}}"
+  bind:tap="onClick"
+>
+  <image
+    wx:if="{{ !error }}"
+    src="{{ src }}"
+    mode="{{ computed.mode(fit) }}"
+    lazy-load="{{ lazyLoad }}"
+    webp="{{ webp }}"
+    class="image-class smart-image__img"
+    show-menu-by-longpress="{{ showMenuByLongpress }}"
+    bind:load="onLoad"
+    bind:error="onError"
+  />
+
+  <view
+    wx:if="{{ loading && showLoading }}"
+    class="loading-class smart-image__loading"
+  >
+    <slot wx:if="{{ useLoadingSlot }}" name="loading" />
+    <smart-icon wx:else name="photo" custom-class="smart-image__loading-icon" />
+  </view>
+  <view
+    wx:if="{{ error && showError }}"
+    class="error-class smart-image__error"
+  >
+    <slot wx:if="{{ useErrorSlot }}" name="error" />
+    <smart-icon wx:else name="photo-fail" custom-class="smart-image__error-icon" />
+  </view>
+</view>

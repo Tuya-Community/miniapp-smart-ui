@@ -1,0 +1,380 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        提示弹窗
+      </wx-view>
+      <wx-view
+        class="demo-block__card"
+      >
+        <smart-cell
+          bind:click="onClickAlert"
+        >
+          <wx-view
+            class="custom-class smart-cell smart-cell--clickable"
+            hoverClass="smart-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-cell__title title-class"
+              style=""
+            >
+              提示弹窗
+            </wx-view>
+            <wx-view
+              class="smart-cell__value value-class"
+            />
+            <smart-icon
+              class="smart-cell__right-icon-wrap right-icon-class"
+              customClass="smart-cell__right-icon"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+        </smart-cell>
+        <smart-cell
+          bind:click="onClickAlert2"
+        >
+          <wx-view
+            class="custom-class smart-cell smart-cell--clickable"
+            hoverClass="smart-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-cell__title title-class"
+              style=""
+            >
+              提示弹窗（无标题）
+            </wx-view>
+            <wx-view
+              class="smart-cell__value value-class"
+            />
+            <smart-icon
+              class="smart-cell__right-icon-wrap right-icon-class"
+              customClass="smart-cell__right-icon"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+        </smart-cell>
+        <smart-cell
+          bind:click="onClickConfirm"
+        >
+          <wx-view
+            class="custom-class smart-cell smart-cell--clickable"
+            hoverClass="smart-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-cell__title title-class"
+              style=""
+            >
+              确认弹窗
+            </wx-view>
+            <wx-view
+              class="smart-cell__value value-class"
+            />
+            <smart-icon
+              class="smart-cell__right-icon-wrap right-icon-class"
+              customClass="smart-cell__right-icon"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+        </smart-cell>
+        <smart-cell
+          bind:click="onClickConfirmIcon"
+        >
+          <wx-view
+            class="custom-class smart-cell smart-cell--clickable"
+            hoverClass="smart-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-cell__title title-class"
+              style=""
+            >
+              警告确认弹窗
+            </wx-view>
+            <wx-view
+              class="smart-cell__value value-class"
+            />
+            <smart-icon
+              class="smart-cell__right-icon-wrap right-icon-class"
+              customClass="smart-cell__right-icon"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+        </smart-cell>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        圆角按钮样式
+      </wx-view>
+      <wx-view
+        class="demo-block__card"
+      >
+        <smart-cell
+          bind:click="onClickThemeAlert"
+        >
+          <wx-view
+            class="custom-class smart-cell smart-cell--clickable"
+            hoverClass="smart-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-cell__title title-class"
+              style=""
+            >
+              提示弹窗
+            </wx-view>
+            <wx-view
+              class="smart-cell__value value-class"
+            />
+            <smart-icon
+              class="smart-cell__right-icon-wrap right-icon-class"
+              customClass="smart-cell__right-icon"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+        </smart-cell>
+        <smart-cell
+          bind:click="onClickThemeAlert2"
+        >
+          <wx-view
+            class="custom-class smart-cell smart-cell--clickable"
+            hoverClass="smart-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-cell__title title-class"
+              style=""
+            >
+              提示弹窗（无标题）
+            </wx-view>
+            <wx-view
+              class="smart-cell__value value-class"
+            />
+            <smart-icon
+              class="smart-cell__right-icon-wrap right-icon-class"
+              customClass="smart-cell__right-icon"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+        </smart-cell>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        异步关闭
+      </wx-view>
+      <wx-view
+        class="demo-block__card"
+      >
+        <smart-cell
+          bind:click="onClickAsyncClose"
+        >
+          <wx-view
+            class="custom-class smart-cell"
+            hoverClass="smart-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-cell__title title-class"
+              style=""
+            >
+              异步关闭
+            </wx-view>
+            <wx-view
+              class="smart-cell__value value-class"
+            />
+          </wx-view>
+        </smart-cell>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        组件调用
+      </wx-view>
+      <wx-view
+        class="demo-block__card"
+      >
+        <smart-cell
+          bind:click="onClickInput"
+        >
+          <wx-view
+            class="custom-class smart-cell"
+            hoverClass="smart-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-cell__title title-class"
+              style=""
+            >
+              输入确认弹窗
+            </wx-view>
+            <wx-view
+              class="smart-cell__value value-class"
+            />
+          </wx-view>
+        </smart-cell>
+        <smart-cell
+          bind:click="showCustomDialog"
+        >
+          <wx-view
+            class="custom-class smart-cell"
+            hoverClass="smart-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-cell__title title-class"
+              style=""
+            >
+              图片提示弹窗
+            </wx-view>
+            <wx-view
+              class="smart-cell__value value-class"
+            />
+          </wx-view>
+        </smart-cell>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <smart-dialog
+    bind:close="onClose"
+    bind:getuserinfo="getUserInfo"
+  >
+    <smart-popup
+      customClass="smart-dialog smart-dialog--default custom-class"
+      bind:close="onClickOverlay"
+    >
+      <smart-overlay
+        bind:click="onClickOverlay"
+      >
+        <smart-transition
+          customClass="smart-overlay custom-class"
+          bind:tap="onClick"
+          catch:touchmove="noop"
+        />
+      </smart-overlay>
+    </smart-popup>
+  </smart-dialog>
+  <smart-dialog>
+    <smart-popup
+      customClass="smart-dialog smart-dialog--default custom-class"
+      bind:close="onClickOverlay"
+    >
+      <smart-overlay
+        bind:click="onClickOverlay"
+      >
+        <smart-transition
+          customClass="smart-overlay custom-class"
+          bind:tap="onClick"
+          catch:touchmove="noop"
+        />
+      </smart-overlay>
+    </smart-popup>
+  </smart-dialog>
+</main>
+`;

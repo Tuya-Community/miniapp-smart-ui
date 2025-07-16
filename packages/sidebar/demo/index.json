@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-grid": "../../grid/index",
+    "smart-grid-item": "../../grid-item/index",
+    "smart-sidebar": "../../sidebar/index",
+    "smart-sidebar-item": "../../sidebar-item/index",
+    "smart-toast": "../../toast/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}
