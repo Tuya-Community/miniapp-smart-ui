@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-cell": "../../cell/index",
+    "smart-switch": "../../switch/index",
+    "smart-button": "../../button/index",
+    "smart-dropdown-item": "../../dropdown-item/index",
+    "smart-dropdown-menu": "../../dropdown-menu/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

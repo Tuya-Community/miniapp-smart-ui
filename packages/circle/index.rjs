@@ -1,0 +1,231 @@
+export default Render({
+  canvas: null,
+  lineWidth: 10,
+  maskColor: '#ffffff',
+  trackColor: '#d3d3d3',
+  fillColorStops: null,
+  dpr: 1,
+  fillColor: '#007AFF',
+
+  async init(data) {
+    let canvas = this.canvas;
+    if (!canvas) {
+      canvas = await getCanvasById(data.canvasId);
+      this.canvas = canvas;
+    }
+    if (!canvas) {
+      console.error('canvas not found');
+      return;
+    }
+
+    const canvaswidth = data.width * data.dpr;
+    const canvasheight = data.height * data.dpr;
+    canvas.width = canvaswidth;
+    canvas.height = canvasheight;
+    canvas.style.width = `${data.width}px`;
+    canvas.style.height = `${data.height}px`;
+
+    const ctx = canvas.getContext('2d');
+
+    this.width = data.width;
+    this.height = data.height;
+
+    this.dpr = data.dpr;
+    this.lineWidth = data.trackWidth;
+    this.maskColor = data.maskColor;
+    this.trackColor = data.trackColor;
+    this.fillColorStops = data.fillColorStops;
+    this.dpr = data.dpr;
+    this.fillColor = data.fillColor;
+    this.mode = data.mode;
+    this.gradientColor = data.gradientColor;
+
+    ctx.scale(this.dpr, this.dpr);
+    this.render(data.percent);
+  },
+  percentToDecimal(percent) {
+    percent = percent.replace('%', '');
+    return percent / 100;
+  },
+  renderAll(
+    progress,
+    ops = {
+      lineCap: 'round',
+    }
+  ) {
+    const canvas = this.canvas;
+    const ctx = canvas.getContext('2d');
+
+    const lineWidth = this.lineWidth; // 进度条宽度
+    const radius = ((this.width - lineWidth) * 0.9) / 2; // 圆形半径
+    const startAngle = Math.PI; // 起始角度（3点钟方向）
+    const endAngle = 4 * Math.PI; // 结束角度（360度）
+
+    // 绘制环形进度条的函数
+    const drawProgressBar = (progress, color) => {
+      ctx.clearRect(0, 0, this.width, this.height); // 清除画布
+      // 绘制灰色背景
+      ctx.beginPath();
+      ctx.arc(this.width / 2, this.height / 2, radius, startAngle, endAngle);
+      ctx.lineWidth = lineWidth;
+      // 填充颜色
+      ctx.fillStyle = this.maskColor; // 你想填充的颜色
+      ctx.fill(); // 填充路径
+      ctx.strokeStyle = this.trackColor; // 灰色背景
+      ctx.lineCap = ops.lineCap; // 设置圆角效果
+      ctx.stroke();
+
+      // 绘制进度条
+      const progressAngle = progress * (Math.PI * 2); // 根据进度计算角度
+      ctx.beginPath();
+      ctx.arc(this.width / 2, this.height / 2, radius, startAngle, startAngle + progressAngle);
+      ctx.lineWidth = lineWidth;
+
+      if (this.fillColorStops) {
+        // 创建线性渐变（起点x,y 到 终点x,y）
+        const gradient = ctx.createLinearGradient(0, 0, this.width, 0);
+
+        for (const stop in this.fillColorStops) {
+          // 添加渐变色
+          gradient.addColorStop(this.percentToDecimal(stop), this.fillColorStops[stop]);
+        }
+
+        ctx.strokeStyle = gradient; // 自定义颜色
+      } else {
+        ctx.strokeStyle = color; // 自定义颜色
+      }
+
+      ctx.lineCap = ops.lineCap; // 设置圆角效果
+      ctx.stroke();
+    };
+
+    drawProgressBar(progress, this.fillColor); // 25%的蓝色进度条
+  },
+
+  renderHalf(
+    progress,
+    ops = {
+      lineCap: 'round',
+    }
+  ) {
+    const canvas = this.canvas;
+    const ctx = canvas.getContext('2d');
+
+    const lineWidth = this.lineWidth; // 进度条宽度
+    const radius = ((this.width - lineWidth) * 0.9) / 2; // 圆形半径
+    const startAngle = 1 * Math.PI; // 起始角度（3点钟方向）
+    const endAngle = 2 * Math.PI; // 结束角度（360度）
+
+    // 绘制环形进度条的函数
+    const drawProgressBar = (progress, color) => {
+      ctx.clearRect(0, 0, this.width, this.height); // 清除画布
+
+      // 绘制灰色背景
+      ctx.beginPath();
+      ctx.arc(this.width / 2, this.height / 2, radius, startAngle, endAngle);
+      // 填充颜色
+      ctx.fillStyle = this.maskColor; // 你想填充的颜色
+      ctx.fill(); // 填充路径
+      ctx.lineWidth = lineWidth;
+      ctx.strokeStyle = this.trackColor; // 灰色背景
+      ctx.lineCap = ops.lineCap; // 设置圆角效果
+      ctx.stroke();
+
+      // 绘制进度条
+      const progressAngle = progress * (Math.PI * 2); // 根据进度计算角度
+      ctx.beginPath();
+      ctx.arc(this.width / 2, this.height / 2, radius, startAngle, startAngle + progressAngle);
+      ctx.lineWidth = lineWidth;
+
+      if (this.fillColorStops) {
+        // 创建线性渐变（起点x,y 到 终点x,y）
+        const gradient = ctx.createLinearGradient(0, 0, this.width, 0);
+
+        for (const stop in this.fillColorStops) {
+          // 添加渐变色
+          gradient.addColorStop(this.percentToDecimal(stop), this.fillColorStops[stop]);
+        }
+
+        ctx.strokeStyle = gradient; // 自定义颜色
+      } else {
+        ctx.strokeStyle = color; // 自定义颜色
+      }
+
+      ctx.lineCap = ops.lineCap; // 设置圆角效果
+      ctx.stroke();
+    };
+
+    // 示例：绘制不同的进度条
+    drawProgressBar(progress, this.fillColor); // 25%的蓝色进度条
+  },
+
+  renderHalf2(
+    progress,
+    ops = {
+      lineCap: 'round',
+    }
+  ) {
+    const canvas = this.canvas;
+    const ctx = canvas.getContext('2d');
+
+    const lineWidth = this.lineWidth; // 进度条宽度
+    const radius = ((this.width - lineWidth) * 0.9) / 2; // 圆形半径
+
+    const startAngle = 0.8 * Math.PI; // 起始角度（3点钟方向）
+    const endAngle = 2.2 * Math.PI; // 结束角度（360度）
+
+    // 绘制环形进度条的函数
+    const drawProgressBar = (progress, color) => {
+      ctx.clearRect(0, 0, this.width, this.height); // 清除画布
+
+      // 绘制灰色背景
+      ctx.beginPath();
+      ctx.arc(this.width / 2, this.height / 2, radius, startAngle, endAngle);
+      // 填充颜色
+      ctx.fillStyle = this.maskColor; // 你想填充的颜色
+      ctx.fill(); // 填充路径
+      ctx.lineWidth = lineWidth;
+      ctx.strokeStyle = this.trackColor; // 灰色背景
+      ctx.lineCap = ops.lineCap; // 设置圆角效果
+      ctx.stroke();
+
+      // 绘制进度条
+      const progressAngle = progress * (Math.PI * 2.12); // 根据进度计算角度
+      ctx.beginPath();
+      ctx.arc(this.width / 2, this.height / 2, radius, startAngle, startAngle + progressAngle);
+      ctx.lineWidth = lineWidth;
+
+      if (this.fillColorStops) {
+        // 创建线性渐变（起点x,y 到 终点x,y）
+        const gradient = ctx.createLinearGradient(0, 0, this.width, 0);
+
+        for (const stop in this.fillColorStops) {
+          // 添加渐变色
+          gradient.addColorStop(this.percentToDecimal(stop), this.fillColorStops[stop]);
+        }
+
+        ctx.strokeStyle = gradient; // 自定义颜色
+      } else {
+        ctx.strokeStyle = color; // 自定义颜色
+      }
+
+      ctx.lineCap = ops.lineCap; // 设置圆角效果
+      ctx.stroke();
+    };
+
+    // 示例：绘制不同的进度条
+    drawProgressBar(progress, this.fillColor); // 25%的蓝色进度条
+  },
+  render(val) {
+    val = Math.min(Math.max(0, val), 100)
+    if (this.mode === 'basic') {
+      this.renderAll(val / 100, this.round ? { lineCap: 'round' } : { lineCap: '' });
+    }
+    if (this.mode === 'angle') {
+      this.renderHalf(val / 200, this.round ? { lineCap: 'round' } : { lineCap: '' });
+    }
+    if (this.mode === 'angle2') {
+      this.renderHalf2(val / 150, this.round ? { lineCap: 'round' } : { lineCap: '' });
+    }
+  },
+});

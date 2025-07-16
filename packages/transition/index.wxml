@@ -1,0 +1,9 @@
+<wxs src="./index.wxs" module="computed" />
+
+<view
+  wx:if="{{ inited }}"
+  class="smart-transition custom-class {{ classes }}"
+  style="{{ computed.rootStyle({ currentDuration, display, customStyle }) }}"
+>
+  <slot />
+</view>

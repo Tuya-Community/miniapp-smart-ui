@@ -1,0 +1,98 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function isImage(name) {
+  return name.indexOf('/') !== -1;
+}
+
+function isSvgPath(name) {
+  return name.indexOf(' ') !== -1;
+}
+
+function isSvg(name) {
+  return name.indexOf('data:image/svg+xml') !== -1;
+}
+
+function rootClass(data) {
+  var classes = ['custom-class'];
+
+  if (data.classPrefix !== 'smart-icon') {
+    classes.push('smart-icon--custom');
+  }
+
+  if (data.classPrefix != null) {
+    classes.push(data.classPrefix);
+  }
+  if (isImage(data.name) || isSvgPath(data.name)) {
+    classes.push('smart-icon--image');
+    if (isSvg(data.name) || isSvgPath(data.name)) classes.push('smart-icon--svg');
+  } else if (data.classPrefix != null) {
+    classes.push(data.classPrefix + '-' + data.name);
+  }
+
+  return classes.join(' ');
+}
+
+function rootStyle(data) {
+  return style([
+    {
+      color: data.color,
+      'font-size': addUnit(data.size),
+    },
+    data.customStyle,
+  ]);
+}
+
+function getImageSrc(data) {
+  // if (isSvg(data.name) && data.color) {
+  //   return data.name.replace('currentColor', encodeURIComponent(data.color));
+  // }
+  return data.name;
+}
+
+function svgStyle(data) {
+  var imageBase64Src = 'url(' + getImageSrc(data) + ')';
+  var ret = style([
+    {
+      '-webkit-mask-image': imageBase64Src,
+      '-webkit-mask-size': 'contain',
+      '-webkit-mask-repeat': 'no-repeat',
+      '-webkit-mask-position': 'center',
+      'mask-image': imageBase64Src,
+      'mask-size': 'contain',
+      background: data.color,
+    },
+  ]);
+  return ret;
+}
+
+function svgPathStyle(data) {
+  // 构建SVG字符串
+  var svg = '<svg class="icon" width="100%" height="100%" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="' + data.name + " fill=" + ('currentColor') + '" fill-rule="evenodd"></path></svg>'
+  var imageBase64Src = 'url("data:image/svg+xml,' + encodeURIComponent(svg) + '")';
+  var ret = style([
+    {
+
+      '-webkit-mask-image': imageBase64Src,
+      '-webkit-mask-size': 'contain',
+      '-webkit-mask-repeat': 'no-repeat',
+      '-webkit-mask-position': 'center',
+      'mask-image': imageBase64Src,
+      'mask-size': 'contain',
+      background: data.color,
+    },
+  ]);
+  return ret;
+}
+
+module.exports = {
+  isImage: isImage,
+  isSvg: isSvg,
+  isSvgPath: isSvgPath,
+  getImageSrc: getImageSrc,
+  rootClass: rootClass,
+  rootStyle: rootStyle,
+  svgStyle: svgStyle,
+  svgPathStyle: svgPathStyle,
+};

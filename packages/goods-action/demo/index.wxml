@@ -1,0 +1,53 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-goods-action custom-class="goods-action-position" safe-area-inset-bottom="{{ false }}">
+    <smart-goods-action-icon
+      icon="chat-o"
+      text="{{I18n.t('customerService')}}"
+      open-type="contact"
+    />
+    <smart-goods-action-icon
+      icon="cart-o"
+      text="{{I18n.t('shoppingCart')}}"
+      bind:click="onClickIcon"
+    />
+    <smart-goods-action-button
+      text="{{I18n.t('addToCart')}}"
+      type="warning"
+      bind:click="onClickButton"
+    />
+    <smart-goods-action-button
+      text="{{I18n.t('buyNow')}}"
+      bind:click="onClickButton"
+    />
+  </smart-goods-action>
+</demo-block>
+
+<demo-block title="{{I18n.t('hintInformation')}}">
+  <smart-goods-action custom-class="goods-action-position" safe-area-inset-bottom="{{ false }}">
+    <smart-goods-action-icon icon="chat-o" text="{{I18n.t('customerService')}}" dot />
+    <smart-goods-action-icon icon="cart-o" text="{{I18n.t('shoppingCart')}}" info="5" />
+    <smart-goods-action-icon icon="shop-o" text="{{I18n.t('store')}}" />
+    <smart-goods-action-button text="{{I18n.t('addToCart')}}" type="warning" />
+    <smart-goods-action-button text="{{I18n.t('buyNow')}}" />
+  </smart-goods-action>
+</demo-block>
+
+<demo-block title="{{I18n.t('customButtonColor')}}">
+  <smart-goods-action custom-class="goods-action-position" safe-area-inset-bottom="{{ false }}">
+    <smart-goods-action-icon icon="chat-o" text="{{I18n.t('customerService')}}" />
+    <smart-goods-action-icon icon="shop-o" text="{{I18n.t('shop')}}" />
+    <smart-goods-action-button color="#be99ff" type="warning" text="{{I18n.t('addToCart')}}" />
+    <smart-goods-action-button color="#7232dd" text="{{I18n.t('buyNow')}}" />
+  </smart-goods-action>
+</demo-block>
+
+<demo-block title="{{I18n.t('simpleButton')}}">
+  <smart-goods-action custom-class="goods-action-position" safe-area-inset-bottom="{{ false }}">
+    <smart-goods-action-icon icon="chat-o" text="{{I18n.t('customerService')}}" />
+    <smart-goods-action-icon icon="shop-o" text="{{I18n.t('store')}}" />
+    <smart-goods-action-button color="#7232dd"  text="{{I18n.t('addToCart')}}" type="warning" />
+    <smart-goods-action-button plain color="#7232dd" text="{{I18n.t('buyNow')}}" />
+  </smart-goods-action>
+</demo-block>
+
+<smart-toast id="smart-toast-good-action" />

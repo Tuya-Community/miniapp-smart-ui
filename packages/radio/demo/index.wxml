@@ -1,0 +1,136 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-radio-group
+    value="{{ radioBasic }}"
+    data-key="radioBasic"
+    bind:change="onChange"
+  >
+    <smart-radio name="1" custom-class="demo-radio-inline" />
+    <smart-radio name="2" custom-class="demo-radio-inline" />
+  </smart-radio-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('disabledStatus')}}">
+  <smart-radio-group
+    disabled
+    value="{{ radioDisabled }}"
+    data-key="radioDisabled"
+    bind:change="onChange"
+  >
+    <smart-radio name="1" custom-class="demo-radio-inline" />
+    <smart-radio name="2" custom-class="demo-radio-inline" />
+  </smart-radio-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('customShape')}}">
+  <smart-radio-group
+    value="{{ radioShape }}"
+    data-key="radioShape"
+    bind:change="onChange"
+  >
+    <smart-radio name="1" shape="square" custom-class="demo-radio-inline" />
+    <smart-radio name="2" shape="square" custom-class="demo-radio-inline" />
+  </smart-radio-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('customColor')}}">
+  <smart-radio-group
+    value="{{ radioColor }}"
+    data-key="radioColor"
+    bind:change="onChange"
+  >
+    <smart-radio name="1" custom-class="demo-radio-inline" checked-color="#10D0D0" />
+    <smart-radio name="2" custom-class="demo-radio-inline" checked-color="#10D0D0" />
+  </smart-radio-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('customSize')}}">
+  <smart-radio-group
+    value="{{ radioSize }}"
+    data-key="radioSize"
+    bind:change="onChange"
+  >
+    <smart-radio name="1" icon-size="28px" custom-class="demo-radio-inline" />
+    <smart-radio name="2" icon-size="28px" custom-class="demo-radio-inline" />
+  </smart-radio-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('customText')}}">
+  <smart-radio-group
+    value="{{ radioText }}"
+    data-key="radioText"
+    bind:change="onChange"
+  >
+    <smart-radio name="1" custom-class="demo-radio">{{I18n.t('radioButton')}} 1</smart-radio>
+    <smart-radio name="2" custom-class="demo-radio">{{I18n.t('radioButton')}} 2</smart-radio>
+  </smart-radio-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('horizontalArrangement')}}">
+  <smart-radio-group
+    value="{{ radioHoriz }}"
+    data-key="radioHoriz"
+    bind:change="onChange"
+    direction="horizontal"
+  >
+    <smart-radio name="1" custom-class="demo-radio">{{I18n.t('radioButton')}} 1</smart-radio>
+    <smart-radio name="2" custom-class="demo-radio">{{I18n.t('radioButton')}} 2</smart-radio>
+  </smart-radio-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('customIcons')}}">
+  <smart-radio-group
+    value="{{ radioIcon }}"
+    data-key="radioIcon"
+    bind:change="onChange"
+  >
+    <smart-radio use-icon-slot name="1" custom-class="demo-radio">
+      {{I18n.t('customIcons')}}
+      <image
+        slot="icon"
+        src="{{ radioIcon === '1' ? icon.active : icon.normal }}"
+        class="icon"
+        mode="widthFix"
+      ></image>
+    </smart-radio>
+    <smart-radio use-icon-slot name="2" custom-class="demo-radio">
+      {{I18n.t('customIcons')}}
+      <image
+        slot="icon"
+        src="{{ radioIcon === '2' ? icon.active : icon.normal }}"
+        class="icon"
+        mode="widthFix"
+      ></image>
+    </smart-radio>
+  </smart-radio-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('disableTextClick')}}">
+  <smart-radio-group
+    value="{{ radioLabel }}"
+    data-key="radioLabel"
+    bind:change="onChange"
+  >
+    <smart-radio label-disabled name="1" custom-class="demo-radio">{{I18n.t('radioButton')}} 1</smart-radio>
+    <smart-radio label-disabled name="2" custom-class="demo-radio">{{I18n.t('radioButton')}} 2</smart-radio>
+  </smart-radio-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('useWithTheCellComponent')}}">
+  <smart-radio-group value="{{ radioCell }}">
+    <smart-cell-group>
+      <smart-cell title="{{I18n.t('radioButton')}} 1" clickable data-name="1" bind:click="onClick">
+        <smart-radio slot="right-icon" name="1"></smart-radio>
+      </smart-cell>
+      <smart-cell title="{{I18n.t('radioButton')}} 2" clickable data-name="2" bind:click="onClick">
+        <smart-radio slot="right-icon" name="2"></smart-radio>
+      </smart-cell>
+    </smart-cell-group>
+  </smart-radio-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('preventDefaultUIUpdate')}}">
+  <smart-radio-group preventDefault value="{{ radioPreventDefault }}" bind:change="onPreventDefaultChange">
+    <smart-radio name="1">1</smart-radio>
+    <smart-radio name="2">2</smart-radio>
+  </smart-radio-group>
+</demo-block>

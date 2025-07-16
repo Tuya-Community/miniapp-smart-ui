@@ -1,0 +1,67 @@
+<demo-block custom-class="white" title="{{I18n.t('basicUsage')}}">
+  <smart-dropdown-menu>
+    <smart-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    <smart-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+  </smart-dropdown-menu>
+</demo-block>
+
+<demo-block custom-class="white" title="{{I18n.t('customMenuContent')}}">
+  <smart-dropdown-menu>
+    <smart-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    <smart-dropdown-item id="item" title="{{ itemTitle }}">
+      <smart-cell title="{{ switchTitle1 }}" title-style="{{ switch1 ? 'color: #3678E3;' : '' }}">
+        <smart-switch
+          slot="right-icon"
+          size="24px"
+          style="height: 26px"
+          checked="{{ switch1 }}"
+          active-color="#3678E3"
+          bind:change="onSwitch1Change"
+        />
+      </smart-cell>
+      <smart-cell title="{{ switchTitle2 }}" title-style="{{ switch2 ? 'color: #3678E3;' : '' }}">
+        <smart-switch
+          slot="right-icon"
+          size="24px"
+          style="height: 26px"
+          checked="{{ switch2 }}"
+          active-color="#3678E3"
+          bind:change="onSwitch2Change"
+        />
+      </smart-cell>
+      <view style="padding: 5px 16px;">
+        <smart-button type="info" block round bind:click="onConfirm">
+          {{I18n.t('complete')}}
+        </smart-button>
+      </view>
+    </smart-dropdown-item>
+  </smart-dropdown-menu>
+</demo-block>
+
+<demo-block custom-class="white" title="{{I18n.t('customizeSelectedStateColor')}}">
+  <smart-dropdown-menu active-color="#1989fa">
+    <smart-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    <smart-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+  </smart-dropdown-menu>
+</demo-block>
+
+<demo-block custom-class="white" title="{{I18n.t('expandUpwards')}}">
+  <smart-dropdown-menu direction="up">
+    <smart-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    <smart-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+  </smart-dropdown-menu>
+</demo-block>
+
+<demo-block custom-class="white" title="{{I18n.t('disableMenu')}}">
+  <smart-dropdown-menu>
+    <smart-dropdown-item value="{{ value1 }}" disabled options="{{ option1 }}" />
+    <smart-dropdown-item value="{{ value2 }}" disabled options="{{ option2 }}" />
+  </smart-dropdown-menu>
+</demo-block>
+
+<demo-block custom-class="white" title="{{I18n.t('asynchronousOnOff')}}">
+  <smart-dropdown-menu>
+    <smart-dropdown-item scroll-style="height: 120px;" value="{{ value1 }}" options="{{ option1 }}" use-before-toggle bind:before-toggle="onBeforeChange" />
+  </smart-dropdown-menu>
+</demo-block>
+

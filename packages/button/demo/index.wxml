@@ -1,0 +1,81 @@
+<demo-block title="{{I18n.t('buttonType')}}" padding>
+  <view class="row">
+    <smart-button type="info" class="demo-margin-right">{{I18n.t('informationButton')}}</smart-button>
+    <smart-button type="primary" class="demo-margin-right">{{I18n.t('primaryButton')}}</smart-button>
+    <smart-button class="demo-margin-right">{{I18n.t('defaultButton')}}</smart-button>
+  </view>
+  <smart-button type="danger" class="demo-margin-right">{{I18n.t('dangerousButton')}}</smart-button>
+  <smart-button type="warning">{{I18n.t('warningButton')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('simpleButton')}}" padding>
+  <smart-button type="info" plain class="demo-margin-right">{{I18n.t('simpleButton')}}</smart-button>
+  <smart-button type="primary" plain>{{I18n.t('simpleButton')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('thinBezel')}}" padding>
+  <smart-button type="info" plain hairline class="demo-margin-right">{{I18n.t('thinBorderButton')}}</smart-button>
+  <smart-button type="primary" plain hairline>{{I18n.t('thinFrameButton')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('disabled')}}" padding>
+  <smart-button type="info" disabled class="demo-margin-right">{{I18n.t('disabledStatus')}}</smart-button>
+  <smart-button type="primary" disabled class="demo-margin-right">{{I18n.t('disabledStatus')}}</smart-button>
+  <smart-button disabled>{{I18n.t('defaultButton')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('loadingStatus')}}" padding>
+  <smart-button loading type="info" loading-text="{{I18n.t('loading')}}..." class="demo-margin-right" />
+  <smart-button loading type="info" class="demo-margin-right" />
+  <smart-button loading type="primary" class="demo-margin-right" />
+  <smart-button loading type="primary" loading-type="spinner" />
+</demo-block>
+
+<demo-block title="{{I18n.t('buttonShape')}}" padding>
+  <smart-button type="info" square class="demo-margin-right">{{I18n.t('squareButton')}}</smart-button>
+  <smart-button type="primary" round>{{I18n.t('roundButton')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('buttonIsFull')}}" padding>
+  <smart-row gutter="10">
+    <smart-col span="12">
+      <smart-button type="info" square custom-class="w-full">Button</smart-button>
+    </smart-col>
+    <smart-col span="12">
+      <smart-button type="primary" round custom-class="w-full">Button</smart-button>
+    </smart-col>
+  </smart-row>
+</demo-block>
+
+<demo-block title="{{I18n.t('iconButton')}}" padding>
+  <smart-button type="info" icon="{{ iconAdd }}" class="demo-margin-right">{{I18n.t('button')}}</smart-button>
+  <smart-button type="info" icon="{{ iconAdd }}" class="demo-margin-right" />
+  <smart-button type="primary" right-icon="{{ iconRight }}" class="demo-margin-right">{{I18n.t('button')}}</smart-button>
+  <view class="demo-margin-top">
+    <smart-button plain type="primary" icon="{{ iconAdd }}" class="demo-margin-right">{{I18n.t('button')}}</smart-button>
+  <smart-button plain type="primary" icon="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png" custom-class="demo-margin-right">{{I18n.t('button')}}</smart-button>
+  </view>
+</demo-block>
+
+<demo-block title="{{I18n.t('buttonSize')}}" padding>
+  <smart-button type="info" size="large" block custom-class="demo-margin-bottom">{{I18n.t('largeButton')}}</smart-button>
+  <smart-button type="info" class="demo-margin-right">{{I18n.t('normalButton')}}</smart-button>
+  <smart-button type="info" size="small" class="demo-margin-right">{{I18n.t('smallButton')}}</smart-button>
+  <smart-button type="info" size="mini">{{I18n.t('miniButton')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('blockLevelElement')}}" padding>
+  <smart-button type="primary" custom-class="demo-margin-bottom">{{I18n.t('regularButton')}}</smart-button>
+  <smart-button type="primary" block>{{I18n.t('blockLevelElement')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('customColor')}}" padding>
+  <smart-button color="#00BEE4" class="demo-margin-right">{{I18n.t('monocolorButton')}}</smart-button>
+  <smart-button color="#3246FF" class="demo-margin-right" plain>{{I18n.t('monochromeButton')}}</smart-button>
+  <smart-button color="linear-gradient(180deg, #0FB3FF 0%, #9DE0FF 100%)">{{I18n.t('gradientColorButton')}}</smart-button>
+  <smart-button color="linear-gradient(98deg, #0FB3FF 0%, #9DE0FF 100%)" custom-class="demo-margin-top" block>{{I18n.t('diagonalGradient')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('projection')}}" padding>
+  <smart-button color="#006EDE" custom-style="box-shadow: 0px 6px 15px 0px rgba(0, 110, 222, 0.2);" block>{{I18n.t('projection')}}</smart-button>
+</demo-block>

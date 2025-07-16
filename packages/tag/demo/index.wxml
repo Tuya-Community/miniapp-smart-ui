@@ -1,0 +1,62 @@
+<demo-block title="{{I18n.t('basicUsage')}}" padding>
+  <smart-tag class="demo-margin-right" type="primary">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" type="success">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" type="danger">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" type="warning">{{I18n.t('label')}}</smart-tag>
+</demo-block>
+
+<demo-block title="{{I18n.t('roundedCornerStyle')}}" padding>
+  <smart-tag class="demo-margin-right" round type="primary">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" round type="success">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" round type="danger">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" round type="warning">{{I18n.t('label')}}</smart-tag>
+</demo-block>
+
+<demo-block title="{{I18n.t('markupStyle')}}" padding>
+  <smart-tag class="demo-margin-right" mark type="primary">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" mark type="success">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" mark type="danger">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" mark type="warning">{{I18n.t('label')}}</smart-tag>
+</demo-block>
+
+<demo-block title="{{I18n.t('hollowStyle')}}" padding>
+  <smart-tag class="demo-margin-right" plain type="primary">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" plain type="success">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" plain type="danger">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" plain type="warning">{{I18n.t('label')}}</smart-tag>
+</demo-block>
+
+<demo-block title="{{I18n.t('customColor')}}" padding>
+  <smart-tag class="demo-margin-right" color="rgba(16, 208, 208, 1)">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" color="rgba(16, 208, 208, 0.2)" text-color="rgba(16, 208, 208, 1)">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" color="rgba(16, 208, 208, 1)" plain>{{I18n.t('label')}}</smart-tag>
+</demo-block>
+
+<demo-block title="{{I18n.t('labelSize')}}" padding>
+  <smart-tag class="demo-margin-right" type="danger">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" type="danger" size="medium">{{I18n.t('label')}}</smart-tag>
+  <smart-tag class="demo-margin-right" type="danger" size="large">{{I18n.t('label')}}</smart-tag>
+</demo-block>
+
+<demo-block title="{{I18n.t('closableTab')}}" padding>
+  <smart-tag
+    wx:if="{{ show.primary }}"
+    class="demo-margin-right"
+    type="primary"
+    size="medium"
+    closeable
+    id="primary"
+    bind:close="onClose"
+  >{{I18n.t('label')}}</smart-tag
+  >
+  <smart-tag
+    wx:if="{{ show.success }}"
+    class="demo-margin-right"
+    type="success"
+    size="medium"
+    closeable
+    id="success"
+    bind:close="onClose"
+  >{{I18n.t('label')}}</smart-tag
+  >
+</demo-block>

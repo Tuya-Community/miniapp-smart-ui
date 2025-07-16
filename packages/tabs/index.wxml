@@ -1,0 +1,67 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<view class="custom-class {{ utils.bem('tabs') }}">
+  <smart-sticky
+    disabled="{{ !sticky }}"
+    z-index="{{ zIndex }}"
+    offset-top="{{ offsetTop }}"
+    container="{{ container }}"
+    bind:scroll="onTouchScroll"
+  >
+    <view class="{{ utils.bem('tabs--') + type }} {{ utils.bem('tabs__wrap', { scrollable }) }} {{ type === 'line' && border ? 'smart-hairline--top-bottom' : '' }} {{ hasSubTitle ? 'smart-tabs--line_subtitle' : '' }} wrap-class">
+      <slot name="nav-left" />
+
+      <scroll-view
+        scroll-x="{{ scrollable }}"
+        scroll-with-animation="{{ scrollWithAnimation }}"
+        scroll-left="{{ scrollLeft }}"
+        class="{{ utils.bem('tabs__scroll', [type]) }}"
+        style="{{ color ? 'border-color: ' + color : '' }}"
+      >
+        <view class="{{ utils.bem('tabs__nav', [type, { complete: !ellipsis }]) }} nav-class" style="{{ computed.navStyle(color, type) }}">
+          <view wx:if="{{ type === 'line' }}" class="smart-tabs__line" style="{{ computed.lineStyle({ color, lineOffsetLeft, lineHeight, skipTransition, duration, lineWidth, inited }) }}" />
+          <view wx:if="{{ type === 'card' }}" class="smart-tabs__card" style="{{ computed.cardStyle({ color, lineOffsetLeft, cardHeight, skipTransition, duration, cardWidth, inited }) }}" />
+          <view
+            wx:for="{{ tabs }}"
+            wx:key="index"
+            data-index="{{ index }}"
+            class="{{ computed.tabClass(index === currentIndex, ellipsis) }} {{ utils.bem('tab', { active: index === currentIndex, disabled: item.disabled, complete: !ellipsis }) }}"
+            style="{{ computed.tabStyle({ active: index === currentIndex, ellipsis, color, type, disabled: item.disabled, titleActiveColor, titleInactiveColor, swipeThreshold, scrollable }) }}"
+            bind:tap="onTap"
+          >
+            <view class="{{ ellipsis ? 'smart-ellipsis' : '' }}" style="{{ item.titleStyle }}">
+              {{ item.title }}
+              <smart-info
+                wx:if="{{ item.info !== null || item.dot }}"
+                info="{{ item.info }}"
+                dot="{{ item.dot }}"
+                custom-class="smart-tab__title__info"
+              />
+            </view>
+            <view wx:if="{{!!item.subtitle}}" class="{{ ellipsis ? 'smart-ellipsis' : '' }}" style="{{ item.subtitleStyle }}">
+              {{ item.subtitle }}
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+
+      <slot name="nav-right" />
+    </view>
+  </smart-sticky>
+
+  <view
+    class="smart-tabs__content"
+    bind:touchstart="onTouchStart"
+    bind:touchmove="onTouchMove"
+    bind:touchend="onTouchEnd"
+    bind:touchcancel="onTouchEnd"
+  >
+    <view
+      class="{{ utils.bem('tabs__track', [{ animated }]) }} smart-tabs__track"
+      style="{{ computed.trackStyle({ duration, currentIndex, animated }) }}"
+    >
+      <slot />
+    </view>
+  </view>
+</view>

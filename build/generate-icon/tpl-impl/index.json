@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-icon": "../../icon/index"
+  }
+}

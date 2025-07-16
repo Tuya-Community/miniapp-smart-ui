@@ -1,0 +1,8 @@
+<view class="smart-progress-circle" style="width:{{width}}px;height:{{height}}px;{{customStyle}}">
+  <canvas 
+  type="2d" 
+  wx:if="{{canvasId}}" 
+  canvas-id="{{canvasId}}" 
+  style="width:100%;height:100%;"
+  ></canvas>
+</view>

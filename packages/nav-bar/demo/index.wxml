@@ -1,0 +1,114 @@
+<demo-block title="{{I18n.t('homePage')}}">
+  <smart-nav-bar
+    left-text="Home"
+    left-text-type="home"
+    bind:click-left-text="onClickLeftText"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('secondPage')}}">
+  <smart-nav-bar
+    title="Home"
+    left-arrow
+    bind:click-left="onClickLeft"
+    bind:click-title="onClickTitle"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customIcon')}}">
+  <smart-nav-bar
+    title="Home"
+    left-arrow
+    left-icon="{{ iconHouse }}"
+    left-icon-size="32px"
+    left-icon-class="nav-bar-icon-home"
+    bind:click-left="onClickLeft"
+    bind:click-left-icon="onClickLeftIcon"
+    bind:click-left-text="onClickLeftText"
+    bind:click-title="onClickTitle"
+    bind:click-right="onClickRight"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('leftTitle')}}">
+  <smart-nav-bar
+    left-arrow
+    left-text="Home"
+    left-text-type="title"
+    bind:click-left="onClickLeft"
+    bind:click-left-text="onClickLeftText"
+    bind:click-right="onClickRight"
+  />
+
+  <smart-nav-bar
+    custom-class="demo-nav-bar"
+    left-arrow
+    left-text="Home"
+    left-text-type="title"
+    left-icon="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
+    bind:click-left="onClickLeft"
+    bind:click-left-icon="onClickLeftIcon"
+    bind:click-left-text="onClickLeftText"
+    bind:click-right="onClickRight"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('leftRightText')}}">
+  <smart-nav-bar
+    title="Home"
+    left-text="{{I18n.t('return')}}"
+    right-text="{{I18n.t('save')}}"
+    left-arrow
+    bind:click-left="onClickLeft"
+    bind:click-left-text="onClickLeftText"
+    bind:click-right="onClickRight"
+    bind:click-title="onClickTitle"
+  />
+
+  <smart-nav-bar
+    custom-class="demo-nav-bar"
+    title="{{I18n.t('timerSetting')}}"
+    round="{{true}}"
+    safe-area-inset-top="{{false}}"
+    left-text="{{I18n.t('cancel')}}"
+    right-text="{{I18n.t('save')}}"
+    right-text-class="demo-nav-bar__right"
+    bind:click-left="onClickLeft"
+    bind:click-left-text="onClickLeftText"
+    bind:click-right="onClickRight"
+    bind:click-title="onClickTitle"
+  />
+
+  <smart-nav-bar
+    custom-class="demo-nav-bar"
+    title="{{I18n.t('setting')}}"
+    round="{{true}}"
+    safe-area-inset-top="{{false}}"
+    left-arrow="{{true}}"
+    right-text="{{I18n.t('reset')}}"
+    right-text-class="demo-nav-bar__right"
+    bind:click-left="onClickLeft"
+    bind:click-left-text="onClickLeftText"
+    bind:click-right="onClickRight"
+    bind:click-title="onClickTitle"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('useSlots')}}">
+  <smart-nav-bar
+    title="Home"
+    left-text="{{I18n.t('return')}}"
+    left-arrow
+    bind:click-left="onClickLeft"
+    bind:click-left-text="onClickLeftText"
+    bind:click-title="onClickTitle"
+    bind:click-right="onClickRight"
+    bind:click-title="onClickTitle"
+  >
+    <smart-icon
+      size="32px"
+      name="{{ iconPlus }}"
+      slot="right"
+    />
+  </smart-nav-bar>
+</demo-block>

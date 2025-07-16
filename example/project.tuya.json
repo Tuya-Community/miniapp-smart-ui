@@ -1,0 +1,19 @@
+{
+  "projectname": "@tuya-miniapp/smart-ui-demo",
+  "i18n": false,
+  "description": "Smart UI 小程序组件浏览库",
+  "baseversion": "2.28.6",
+  "projectId": "ty9ciw3aqk1ejohun7",
+  "dependencies": {
+    "BaseKit": "3.0.0",
+    "BizKit": "3.0.1",
+    "MiniKit": "3.0.0"
+  },
+  "compilerOptions": {
+    "compatible": [
+      "wx"
+    ]
+  },
+  "compileType": "miniprogram",
+  "remoteDebug": "lan"
+}

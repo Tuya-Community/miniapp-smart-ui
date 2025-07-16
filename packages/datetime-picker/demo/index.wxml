@@ -1,0 +1,95 @@
+<demo-block title="{{I18n.t('selectFullTime')}}">
+  <smart-datetime-picker
+    show-toolbar="{{ false }}"
+    type="datetime"
+    data-type="datetime"
+    loading="{{ loading }}"
+    value="{{ currentDate1 }}"
+    min-date="{{ minDate }}"
+    locale="{{ locale }}"
+    bind:input="onInput"
+    bind:animation-start="animationStart"
+    bind:animation-end="animationEnd"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('selectDateYyyyMmDd')}}">
+  <smart-datetime-picker
+    type="date"
+    data-type="date"
+    value="{{ currentDate2 }}"
+    columns-order="{{ columnsOrder }}"
+    min-date="{{ minDate }}"
+    bind:input="onInput"
+    formatter-map="{{ formatterMap }}"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('selectDateYearMonth')}}">
+  <smart-datetime-picker
+    type="year-month"
+    data-type="year-month"
+    value="{{ currentDate3 }}"
+    min-date="{{ minDate }}"
+    bind:input="onInput"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('selectTime')}}">
+  <smart-datetime-picker
+    type="time"
+    data-type="time"
+    value="{{ currentDate4 }}"
+    min-hour="{{ minHour }}"
+    max-hour="{{ maxHour }}"
+    bind:input="onInput"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('select12Time')}}">
+  <smart-datetime-picker
+    type="time"
+    data-type="time"
+    is-12-hour-clock
+    value="{{ currentDate5 }}"
+    max-hour="{{ 24 }}"
+    min-hour="{{ 1 }}"
+    fontStyles="{{ fontStyles }}"
+    bind:input="onInputChange"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('closeValueChangeAnimation')}}">
+  <smart-datetime-picker
+    type="time"
+    data-type="time"
+    value="{{ currentDate5 }}"
+    max-hour="{{ 24 }}"
+    min-hour="{{ 1 }}"
+    change-animation="{{ false }}"
+    bind:input="onInput"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('optionFilter')}}">
+  <smart-datetime-picker
+    type="time"
+    value="{{ currentDate4 }}"
+    filter="{{ filter }}"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('style')}}">
+  <smart-datetime-picker
+    show-toolbar="{{ false }}"
+    type="datetime"
+    data-type="datetime"
+    value="{{ currentDate1 }}"
+    active-style="{{ activeStyle }}"
+    column-styles="{{ columnStyles }}"
+    font-styles="{{ fontStyles }}"
+    bind:input="onInput"
+  />
+</demo-block>
+
+<smart-toast id="smart-toast-datetime-picker" />

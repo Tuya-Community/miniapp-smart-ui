@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-overlay": "../overlay/index",
+    "smart-icon": "../icon/index"
+  }
+}

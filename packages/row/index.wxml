@@ -1,0 +1,5 @@
+<wxs src="./index.wxs" module="computed" />
+
+<view class="smart-row custom-class" style="{{ computed.rootStyle({ gutter }) }}">
+  <slot />
+</view>

@@ -1,0 +1,71 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-search
+    model:value="{{ value }}"
+    placeholder="{{I18n.t('pleaseEnterSearchKeywords')}}"
+    bind:search="onSearch"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('simpleStyle')}}">
+  <smart-search
+    custom-class="easy-demo"
+    model:value="{{ value }}"
+    shape="round"
+    search-text="{{I18n.t('searchText')}}"
+    placeholder="{{I18n.t('pleaseEnterSearchKeywords')}}"
+    bind:search="onSearch"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('eventListener')}}">
+  <smart-search
+    model:value="{{ value }}"
+    show-action
+    placeholder="{{I18n.t('pleaseEnterSearchKeywords')}}"
+    action-text="{{I18n.t('cancel')}}"
+    bind:search="onSearch"
+    bind:cancel="onCancel"
+    search-text="{{I18n.t('searchText')}}"
+    bind:clear="onClear"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('alignTheSearchBoxContent')}}">
+  <smart-search
+    model:value="{{ value }}"
+    input-align="center"
+    placeholder="{{I18n.t('pleaseEnterSearchKeywords')}}"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('disableSearchBox')}}">
+  <smart-search
+    disabled
+    model:value="{{ value }}"
+    placeholder="{{I18n.t('pleaseEnterSearchKeywords')}}"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customButton')}}">
+  <smart-search
+    model:value="{{ value }}"
+    label="{{I18n.t('address')}}"
+    shape="round"
+    placeholder="{{I18n.t('pleaseEnterSearchKeywords')}}"
+    use-action-slot
+    bind:search="onSearch"
+    bind:change="onChange"
+  >
+    <view slot="action" class="searchBtn" bind:tap="onClick">{{I18n.t('searchText')}}</view>
+  </smart-search>
+  <smart-search
+    model:value="{{ value }}"
+    shape="round"
+    placeholder="{{I18n.t('pleaseEnterSearchKeywords')}}"
+    bind:search="onSearch"
+    bind:change="onChange"
+  >
+    <view slot="search-button" bind:tap="onClick">{{I18n.t('searchText')}}</view>
+    <view slot="label">{{I18n.t('address')}}<smart-icon class="icon" name="{{icon}}" size="12px" /></view>
+  </smart-search>
+</demo-block>

@@ -1,0 +1,51 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-grid>
+    <smart-grid-item icon="photo-o" text="{{I18n.t('text')}}" wx:for="{{ array4 }}" wx:key="*this" />
+  </smart-grid>
+</demo-block>
+
+<demo-block title="{{I18n.t('customNumberOfColumns')}}">
+  <smart-grid column-num="3">
+    <smart-grid-item icon="photo-o" text="{{I18n.t('text')}}" wx:for="{{ array6 }}" wx:key="*this" />
+  </smart-grid>
+</demo-block>
+
+<demo-block title="{{I18n.t('customContent')}}">
+  <smart-grid column-num="3" border="{{ false }}">
+    <smart-grid-item use-slot wx:for="{{ array3 }}" wx:for-item="index" wx:key="*this">
+      <image style="width: 90px; height: 90px;" src="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png" />
+    </smart-grid-item>
+  </smart-grid>
+</demo-block>
+
+<demo-block title="{{I18n.t('squareGrid')}}">
+  <smart-grid square>
+    <smart-grid-item icon="photo-o" text="{{I18n.t('pleaseProvideTheTextYouWantTranslated')}}" wx:for="{{ array8 }}" wx:key="*this" />
+  </smart-grid>
+</demo-block>
+
+<demo-block title="{{I18n.t('gridSpacing')}}">
+  <smart-grid gutter="{{ 10 }}">
+    <smart-grid-item icon="photo-o" text="{{I18n.t('text')}}" wx:for="{{ array8 }}" wx:key="*this" />
+  </smart-grid>
+</demo-block>
+
+<demo-block title="{{I18n.t('contentArrangedHorizontally')}}">
+  <smart-grid direction="horizontal" column-num="3">
+    <smart-grid-item icon="photo-o" text="{{I18n.t('text')}}" wx:for="{{ array3 }}" wx:key="*this" />
+  </smart-grid>
+</demo-block>
+
+<demo-block title="{{I18n.t('pageRedirect')}}">
+  <smart-grid clickable column-num="2">
+    <smart-grid-item icon="home-o" link-type="navigateTo" url="/pages/dashboard/index" text="Navigate {{I18n.t('jump')}}" />
+    <smart-grid-item icon="search" link-type="reLaunch" url="/pages/dashboard/index" text="ReLaunch {{I18n.t('jump')}}" />
+  </smart-grid>
+</demo-block>
+
+<demo-block title="{{I18n.t('logoPrompt')}}">
+  <smart-grid column-num="2">
+    <smart-grid-item icon="home-o" text="{{I18n.t('text')}}" dot />
+    <smart-grid-item icon="search" text="{{I18n.t('text')}}" badge="99+" />
+  </smart-grid>
+</demo-block>

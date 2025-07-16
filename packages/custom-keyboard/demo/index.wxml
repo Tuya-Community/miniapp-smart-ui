@@ -1,0 +1,34 @@
+<demo-block title="{{I18n.t('customKeyboardBasic1')}}">
+  <smart-custom-keyboard
+    input-container-style="margin-left: 56rpx; margin-yop: 16rpx; margin-bottom: 56rpx"
+    bind:change="onChange"
+    bind:confirm="onConfirm"
+  />
+</demo-block>
+<demo-block title="{{I18n.t('customizeInputStyleText')}}">
+  <smart-custom-keyboard
+    input-container-style="marginLeft: 56rpx; marginTop: 16rpx; marginBottom: 56rpx; width: 560rpx; height: 120rpx;"
+    placeholder="{{I18n.t('pleaseEnter')}}"
+    confirm-text="{{I18n.t('confirm')}}"
+    value="{{value}}"
+    confirm-color="#123321"
+    bind:change="handleValueChange"
+    bind:confirm="onConfirm"
+  >
+    <view slot="custom-button" bind:tap="handleBtn" style="border: 1px solid blue; borderRadius: 4px; marginRight: 4px">{{I18n.t('click')}}</view>
+  </smart-custom-keyboard>
+</demo-block>
+
+<demo-block title="{{I18n.t('hideZeroAndBaseIs6')}}">
+  <smart-custom-keyboard
+    input-container-style="marginLeft: 56rpx; marginTop: 16rpx; marginBottom: 56rpx;"
+    is-hide-zero="{{true}}"
+    digital-base="{{6}}"
+  />
+</demo-block>
+<demo-block title="{{I18n.t('doNotHideZeroAndTheRadixIs6')}}">
+  <smart-custom-keyboard
+    input-container-style="marginLeft: 56rpx; marginTop: 16rpx; marginBottom: 56rpx;"
+    digital-base="{{6}}"
+  />
+</demo-block>

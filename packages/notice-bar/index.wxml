@@ -1,0 +1,52 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<view
+  wx:if="{{ show }}"
+  class="custom-class {{ utils.bem('notice-bar', { wrapable, warning: type === 'warning', error: type === 'error', info: type === 'info' }) }}"
+  hover-class="{{ mode === 'link' ? 'smart-notice-bar--hover' : ''}} {{ customHoverClass }}"
+  style="{{ computed.rootStyle([{ color, background }, customStyle]) }}"
+  bind:tap="onClick"
+>
+  <smart-icon
+    wx:if="{{ leftIcon }}"
+    name="{{ leftIcon }}"
+    class="smart-notice-bar__left-icon"
+    style="{{ computed.rootStyle(leftIconStyle) }}"
+    color="{{ leftIconColor }}"
+  />
+  <slot wx:else name="left-icon" />
+
+  <view class="smart-notice-bar__wrap">
+    <view class="smart-notice-bar__content {{ scrollable === false && !wrapable ? 'smart-ellipsis' : '' }}" animation="{{ animationData }}">
+      {{ text }}
+      <view 
+        wx:if="{{ btnText }}" 
+        class="smart-notice-bar__content__btn" 
+        hover-class="smart-notice-bar--hover"
+        catch:tap="onClickBtnText"
+        style="{{ btnTextColor ? 'color: ' + btnTextColor : ''}}"
+      >
+        {{ btnText }}
+      </view>
+      <slot wx:if="{{ !text }}"></slot>
+    </view>
+  </view>
+
+  <smart-icon
+    wx:if="{{ mode === 'closeable' }}"
+    class="smart-notice-bar__right-icon"
+    name="{{ Xmark }}"
+    style="{{ computed.rootStyle(rightIconStyle) }}"
+    color=" {{ rightIconColor }} "
+    catch:tap="onClickIcon"
+  />
+  <smart-icon 
+    wx:elif="{{ mode === 'link' }}" 
+    color=" {{ rightIconColor }} " 
+    class="smart-notice-bar__right-icon" 
+    name="{{ Right }}" 
+    style="{{ computed.rootStyle(rightIconStyle) }}"
+  />
+  <slot wx:else name="right-icon" />
+</view>

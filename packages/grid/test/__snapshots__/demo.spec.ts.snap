@@ -1,0 +1,1082 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-grid>
+        <wx-view
+          class="smart-grid custom-class smart-hairline--top"
+          style="padding-left:0px"
+        >
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+        </wx-view>
+      </smart-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-grid>
+        <wx-view
+          class="smart-grid custom-class smart-hairline--top"
+          style="padding-left:0px"
+        >
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:33.333333333333336%;padding-right:0px;margin-top:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:33.333333333333336%;padding-right:0px;margin-top:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:33.333333333333336%;padding-right:0px;margin-top:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+        </wx-view>
+      </smart-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-grid>
+        <wx-view
+          class="smart-grid custom-class "
+          style="padding-left:0px"
+        >
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center "
+                style=""
+              >
+                <wx-image
+                  src="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
+                  style="width: 90px; height: 90px;"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center "
+                style=""
+              >
+                <wx-image
+                  src="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
+                  style="width: 90px; height: 90px;"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center "
+                style=""
+              >
+                <wx-image
+                  src="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
+                  style="width: 90px; height: 90px;"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+        </wx-view>
+      </smart-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-grid>
+        <wx-view
+          class="smart-grid custom-class smart-hairline--top"
+          style="padding-left:0px"
+        >
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item smart-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--square smart-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item smart-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--square smart-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item smart-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--square smart-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item smart-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--square smart-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item smart-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--square smart-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item smart-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--square smart-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item smart-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--square smart-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item smart-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--square smart-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+        </wx-view>
+      </smart-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-grid>
+        <wx-view
+          class="smart-grid custom-class "
+          style="padding-left:10px"
+        >
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:25%;padding-right:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--surround smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:25%;padding-right:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--surround smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:25%;padding-right:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--surround smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:25%;padding-right:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--surround smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:25%;padding-right:10px;margin-top:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--surround smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:25%;padding-right:10px;margin-top:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--surround smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:25%;padding-right:10px;margin-top:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--surround smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:25%;padding-right:10px;margin-top:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--surround smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+        </wx-view>
+      </smart-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-grid>
+        <wx-view
+          class="smart-grid custom-class smart-hairline--top"
+          style="padding-left:0px"
+        >
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--horizontal smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--horizontal smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--horizontal smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+        </wx-view>
+      </smart-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-grid>
+        <wx-view
+          class="smart-grid custom-class smart-hairline--top"
+          style="padding-left:0px"
+        >
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:50%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--clickable smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-home-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                >
+                  <wx-text>
+                    Navigate 
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:50%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-grid-item__content--clickable smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-search"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                >
+                  <wx-text>
+                    ReLaunch 
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+        </wx-view>
+      </smart-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-grid>
+        <wx-view
+          class="smart-grid custom-class smart-hairline--top"
+          style="padding-left:0px"
+        >
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:50%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-home-o"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <smart-info
+                        customClass="smart-icon__info info-class"
+                      >
+                        <wx-view
+                          class="smart-info smart-info smart-info--dot custom-class"
+                          style=""
+                        >
+                          
+                        </wx-view>
+                      </smart-info>
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+          <smart-grid-item>
+            <wx-view
+              class="custom-class smart-grid-item"
+              style="width:50%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class smart-grid-item__content smart-grid-item__content--center smart-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="smart-grid-item__icon icon-class"
+                >
+                  <smart-icon>
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-search"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <smart-info
+                        customClass="smart-icon__info info-class"
+                      >
+                        <wx-view
+                          class="smart-info smart-info custom-class"
+                          style=""
+                        >
+                          99+
+                        </wx-view>
+                      </smart-info>
+                    </wx-view>
+                  </smart-icon>
+                </wx-view>
+                <wx-view
+                  class="smart-grid-item__text text-class"
+                />
+              </wx-view>
+            </wx-view>
+          </smart-grid-item>
+        </wx-view>
+      </smart-grid>
+    </wx-view>
+  </demo-block>
+</main>
+`;

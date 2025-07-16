@@ -1,0 +1,243 @@
+@import '../common/style/var.less';
+
+.smart-field {
+  --cell-icon-size: var(--field-icon-size, @field-icon-size);
+
+  &__left__body {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding-right: var(--field-left-body-padding-right, @field-left-body-padding-right);
+  }
+
+  &__left__body--disabled {
+    opacity: var(--field-disabled-opacity, @field-disabled-opacity);
+  }
+
+  &__label {
+    color: var(--field-label-color, @field-label-color);
+    text-align: left;
+    font-size: var(--field-label-font-size, @field-label-font-size);
+    line-height: var(--field-label-line-height, @field-label-line-height);
+
+    &--required {
+      color: var(--field-input-error-text-color, @field-input-error-text-color);
+    }
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__left__icon {
+    display: flex;
+    margin-right: var(--field-left-icon-margin-right, @field-left-icon-margin-right);
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__label__card__subtitle {
+    font-size: var(--field-sub-label-font-size, @field-sub-label-font-size);
+    line-height: var(--field-sub-label-line-height, @field-sub-label-line-height);
+    color: var(--field-subtitle-text-color, @field-subtitle-text-color);
+    margin-top: 4px;
+    &--error {
+      color: var(--field-error-message-color, @field-error-message-color);
+    }
+  }
+
+  &__body__box {
+    flex: 1;
+    &--disabled {
+      opacity: var(--field-disabled-opacity, @field-disabled-opacity);
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__control:empty + &__control {
+    display: block;
+  }
+
+  &__control {
+    position: relative;
+    display: none;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: inherit;
+    text-align: right;
+    background-color: transparent;
+    border: 0;
+    resize: none;
+    height: var(--cell-line-height, @cell-line-height);
+    min-height: var(--cell-line-height, @cell-line-height);
+    font-size: var(--field-input-text-font-size, @field-input-text-font-size);
+    color: var(--field-input-text-color, @field-input-text-color);
+
+    &:empty {
+      display: none;
+    }
+
+    &--textarea {
+      text-align: left;
+      height: var(--field-textarea-min-height, @field-textarea-min-height);
+      min-height: var(
+        --field-textarea-min-height,
+        @field-textarea-min-height
+      );
+      background-color: var(--field-textarea-background, @field-textarea-background);
+      border-radius: var(--field-textarea-border-radius, @field-textarea-border-radius);
+      padding: var(--field-textarea-padding, @field-textarea-padding);
+    }
+
+    &--card {
+      text-align: center;
+      border-radius: var(--field-card-border-radius, @field-card-border-radius);
+      background: var(--field-card-background, @field-card-background);
+      width: var(--field-card-width, @field-card-width);
+      height: var(--field-card-height, @field-card-height);
+      padding: var(--field-card-padding, @field-card-padding);
+    }
+
+    &--limit {
+      padding-bottom: var(--field-textarea-limit-padding-bottom, @field-textarea-limit-padding-bottom);
+    }
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
+
+    &--left {
+      text-align: left;
+    }
+
+    &--custom {
+      display: flex;
+      align-items: center;
+      min-height: var(--cell-line-height, @cell-line-height);
+    }
+
+    &--readonly {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+      }
+    }
+  }
+
+  &__icon-root {
+    display: flex;
+    align-items: center;
+    min-height: var(--cell-line-height, @cell-line-height);
+  }
+
+  &__clear-root,
+  &__icon-container {
+    line-height: inherit;
+    vertical-align: middle;
+    padding: 0 var(--padding-xs, @padding-xs);
+    margin-right: calc(-1 * var(--padding-xs, @padding-xs));
+  }
+
+  &__clear-root,
+  &__icon-container,
+  &__button {
+    flex-shrink: 0;
+  }
+
+  &__clear-root {
+    font-size: var(--field-clear-icon-size, @field-clear-icon-size);
+
+    --icon-color: var(--field-clear-icon-color, @field-clear-icon-color);
+  }
+
+  &__icon-container {
+    --icon-color: var(--field-icon-container-color, @field-icon-container-color);
+
+    font-size: var(--field-icon-size, @field-icon-size);
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__button {
+    padding-left: var(--padding-xs, @padding-xs);
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__error-message {
+    display: block;
+    text-align: right;
+    font-weight: normal;
+    line-height: var(--field-error-message-text-line-height, @field-error-message-text-line-height);
+    font-size: var(
+      --field-error-message-text-font-size,
+      @field-error-message-text-font-size
+    );
+    word-wrap: break-word;
+    white-space: normal;
+    color: var(--field-error-message-color, @field-error-message-color);
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  &--textarea {
+    padding: 0 16px;
+
+    .smart-field__left__body {
+      margin-bottom: 8px;
+      width: 100%;
+    }
+    .smart-field__body__box {
+      position: relative;
+    }
+  }
+
+  &__word-limit {
+    text-align: right;
+    margin-top: var(--padding-base, @padding-base);
+    color: var(--field-word-limit-color, @field-word-limit-color);
+    font-size: var(--field-word-limit-font-size, @field-word-limit-font-size);
+    line-height: var(
+      --field-word-limit-line-height,
+      @field-word-limit-line-height
+    );
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+
+  }
+
+  &__word-num {
+    display: inline;
+
+    &--full {
+      color: var(--field-word-num-full-color, @field-word-num-full-color);
+    }
+  }
+}

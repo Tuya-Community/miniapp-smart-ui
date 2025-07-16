@@ -1,0 +1,1116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-goods-action
+        customClass="goods-action-position"
+      >
+        <wx-view
+          class="custom-class smart-goods-action"
+        >
+          <smart-goods-action-icon>
+            <smart-button
+              customClass="smart-goods-action-icon"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--default smart-button--large smart-button--square "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType="contact"
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  <smart-icon
+                    class="smart-goods-action-icon__icon"
+                    customClass="icon-class"
+                    infoClass="info-class"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-chat-o"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <smart-info
+                        customClass="smart-icon__info info-class"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                  <wx-text
+                    class="text-class"
+                  >
+                    
+                  </wx-text>
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-icon>
+          <smart-goods-action-icon
+            bind:click="onClickIcon"
+          >
+            <smart-button
+              customClass="smart-goods-action-icon"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--default smart-button--large smart-button--square "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  <smart-icon
+                    class="smart-goods-action-icon__icon"
+                    customClass="icon-class"
+                    infoClass="info-class"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-cart-o"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <smart-info
+                        customClass="smart-icon__info info-class"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                  <wx-text
+                    class="text-class"
+                  >
+                    
+                  </wx-text>
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-icon>
+          <smart-goods-action-button
+            bind:click="onClickButton"
+          >
+            <smart-button
+              class="smart-goods-action-button smart-goods-action-button--warning smart-goods-action-button--first"
+              customClass="smart-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getRealTimePhoneNumber="onGetRealTimePhoneNumber"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--warning smart-button--normal "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  
+  
+  
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-button>
+          <smart-goods-action-button
+            bind:click="onClickButton"
+          >
+            <smart-button
+              class="smart-goods-action-button smart-goods-action-button--danger smart-goods-action-button--last"
+              customClass="smart-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getRealTimePhoneNumber="onGetRealTimePhoneNumber"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--danger smart-button--normal "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  
+  
+  
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-button>
+        </wx-view>
+      </smart-goods-action>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-goods-action
+        customClass="goods-action-position"
+      >
+        <wx-view
+          class="custom-class smart-goods-action"
+        >
+          <smart-goods-action-icon>
+            <smart-button
+              customClass="smart-goods-action-icon"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--default smart-button--large smart-button--square "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  <smart-icon
+                    class="smart-goods-action-icon__icon"
+                    customClass="icon-class"
+                    infoClass="info-class"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-chat-o"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <smart-info
+                        customClass="smart-icon__info info-class"
+                      >
+                        <wx-view
+                          class="smart-info smart-info smart-info--dot custom-class"
+                          style=""
+                        >
+                          
+                        </wx-view>
+                      </smart-info>
+                    </wx-view>
+                  </smart-icon>
+                  <wx-text
+                    class="text-class"
+                  >
+                    
+                  </wx-text>
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-icon>
+          <smart-goods-action-icon>
+            <smart-button
+              customClass="smart-goods-action-icon"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--default smart-button--large smart-button--square "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  <smart-icon
+                    class="smart-goods-action-icon__icon"
+                    customClass="icon-class"
+                    infoClass="info-class"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-cart-o"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <smart-info
+                        customClass="smart-icon__info info-class"
+                      >
+                        <wx-view
+                          class="smart-info smart-info custom-class"
+                          style=""
+                        >
+                          5
+                        </wx-view>
+                      </smart-info>
+                    </wx-view>
+                  </smart-icon>
+                  <wx-text
+                    class="text-class"
+                  >
+                    
+                  </wx-text>
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-icon>
+          <smart-goods-action-icon>
+            <smart-button
+              customClass="smart-goods-action-icon"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--default smart-button--large smart-button--square "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  <smart-icon
+                    class="smart-goods-action-icon__icon"
+                    customClass="icon-class"
+                    infoClass="info-class"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-shop-o"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <smart-info
+                        customClass="smart-icon__info info-class"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                  <wx-text
+                    class="text-class"
+                  >
+                    
+                  </wx-text>
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-icon>
+          <smart-goods-action-button>
+            <smart-button
+              class="smart-goods-action-button smart-goods-action-button--warning smart-goods-action-button--first"
+              customClass="smart-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getRealTimePhoneNumber="onGetRealTimePhoneNumber"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--warning smart-button--normal "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  
+  
+  
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-button>
+          <smart-goods-action-button>
+            <smart-button
+              class="smart-goods-action-button smart-goods-action-button--danger smart-goods-action-button--last"
+              customClass="smart-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getRealTimePhoneNumber="onGetRealTimePhoneNumber"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--danger smart-button--normal "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  
+  
+  
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-button>
+        </wx-view>
+      </smart-goods-action>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-goods-action
+        customClass="goods-action-position"
+      >
+        <wx-view
+          class="custom-class smart-goods-action"
+        >
+          <smart-goods-action-icon>
+            <smart-button
+              customClass="smart-goods-action-icon"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--default smart-button--large smart-button--square "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  <smart-icon
+                    class="smart-goods-action-icon__icon"
+                    customClass="icon-class"
+                    infoClass="info-class"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-chat-o"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <smart-info
+                        customClass="smart-icon__info info-class"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                  <wx-text
+                    class="text-class"
+                  >
+                    
+                  </wx-text>
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-icon>
+          <smart-goods-action-icon>
+            <smart-button
+              customClass="smart-goods-action-icon"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--default smart-button--large smart-button--square "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  <smart-icon
+                    class="smart-goods-action-icon__icon"
+                    customClass="icon-class"
+                    infoClass="info-class"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-shop-o"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <smart-info
+                        customClass="smart-icon__info info-class"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                  <wx-text
+                    class="text-class"
+                  >
+                    
+                  </wx-text>
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-icon>
+          <smart-goods-action-button>
+            <smart-button
+              class="smart-goods-action-button smart-goods-action-button--warning smart-goods-action-button--first"
+              customClass="smart-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getRealTimePhoneNumber="onGetRealTimePhoneNumber"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--warning smart-button--normal "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style="color:#fff;background:#be99ff;border-color:#be99ff"
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  
+  
+  
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-button>
+          <smart-goods-action-button>
+            <smart-button
+              class="smart-goods-action-button smart-goods-action-button--danger smart-goods-action-button--last"
+              customClass="smart-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getRealTimePhoneNumber="onGetRealTimePhoneNumber"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--danger smart-button--normal "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style="color:#fff;background:#7232dd;border-color:#7232dd"
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  
+  
+  
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-button>
+        </wx-view>
+      </smart-goods-action>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-goods-action
+        customClass="goods-action-position"
+      >
+        <wx-view
+          class="custom-class smart-goods-action"
+        >
+          <smart-goods-action-icon>
+            <smart-button
+              customClass="smart-goods-action-icon"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--default smart-button--large smart-button--square "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  <smart-icon
+                    class="smart-goods-action-icon__icon"
+                    customClass="icon-class"
+                    infoClass="info-class"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-chat-o"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <smart-info
+                        customClass="smart-icon__info info-class"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                  <wx-text
+                    class="text-class"
+                  >
+                    
+                  </wx-text>
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-icon>
+          <smart-goods-action-icon>
+            <smart-button
+              customClass="smart-goods-action-icon"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--default smart-button--large smart-button--square "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  <smart-icon
+                    class="smart-goods-action-icon__icon"
+                    customClass="icon-class"
+                    infoClass="info-class"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-shop-o"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <smart-info
+                        customClass="smart-icon__info info-class"
+                      />
+                    </wx-view>
+                  </smart-icon>
+                  <wx-text
+                    class="text-class"
+                  >
+                    
+                  </wx-text>
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-icon>
+          <smart-goods-action-button>
+            <smart-button
+              class="smart-goods-action-button smart-goods-action-button--warning smart-goods-action-button--first"
+              customClass="smart-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getRealTimePhoneNumber="onGetRealTimePhoneNumber"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--warning smart-button--normal "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style="color:#fff;background:#7232dd;border-color:#7232dd"
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  
+  
+  
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-button>
+          <smart-goods-action-button>
+            <smart-button
+              class="smart-goods-action-button smart-goods-action-button--danger smart-goods-action-button--last smart-goods-action-button--plain"
+              customClass="smart-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+              bind:click="onClick"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getRealTimePhoneNumber="onGetRealTimePhoneNumber"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class smart-button smart-button--danger smart-button--normal smart-button--plain "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="smart-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style="color:#7232dd;border-color:#7232dd"
+                bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                bind:chooseavatar="onChooseAvatar"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-button__text"
+                  style=""
+                >
+                  
+  
+  
+                </wx-view>
+              </wx-button>
+            </smart-button>
+          </smart-goods-action-button>
+        </wx-view>
+      </smart-goods-action>
+    </wx-view>
+  </demo-block>
+  <smart-toast
+    id="smart-toast-good-action"
+  >
+    <smart-transition
+      customClass="smart-toast__container smart-toast--middle"
+    />
+  </smart-toast>
+</main>
+`;

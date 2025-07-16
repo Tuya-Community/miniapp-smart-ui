@@ -1,0 +1,43 @@
+<smart-tabs
+  active="{{ activeTab }}"
+  bind:change="onChange"
+>
+  <smart-tab title="{{I18n.t('basicUsage')}}">
+    <smart-index-bar
+      wx:if="{{ activeTab === 0 }}"
+    >
+      <view
+        wx:for="{{ indexList }}"
+        wx:for-item="item"
+        wx:key="item"
+      >
+        <smart-index-anchor index="{{ item }}" />
+        <smart-cell title="{{I18n.t('text')}}" />
+        <smart-cell title="{{I18n.t('text')}}" />
+        <smart-cell title="{{I18n.t('text')}}" />
+      </view>
+    </smart-index-bar>
+  </smart-tab>
+
+  <smart-tab title="{{I18n.t('customIndexList')}}">
+    <smart-index-bar
+      wx:if="{{ activeTab === 1 }}"
+      index-list="{{ customIndexList }}"
+    >
+      <view
+        wx:for="{{ customIndexList }}"
+        wx:key="index"
+      >
+        <smart-index-anchor
+          use-slot
+          index="{{ item }}"
+        >
+          <text>{{I18n.t('title')}}{{ item }}</text>
+        </smart-index-anchor>
+        <smart-cell title="{{I18n.t('text')}}" />
+        <smart-cell title="{{I18n.t('text')}}" />
+        <smart-cell title="{{I18n.t('text')}}" />
+      </view>
+    </smart-index-bar>
+  </smart-tab>
+</smart-tabs>

@@ -1,0 +1,154 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-tabbar
+    active="{{ active }}"
+    data-key="active"
+    custom-class="tabbar-position"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="onChange"
+  >
+    <smart-tabbar-item icon="{{defaultIcon1}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon2}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon3}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon4}}">{{I18n.t('label')}}</smart-tabbar-item>
+  </smart-tabbar>
+</demo-block>
+
+<demo-block title="{{I18n.t('matchByName')}}">
+  <smart-tabbar
+    active="{{ active2 }}"
+    data-key="active2"
+    custom-class="tabbar-position"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="onChange"
+  >
+    <smart-tabbar-item name="home" icon="{{defaultIcon1}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item name="search" icon="{{defaultIcon2}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item name="friends" icon="{{defaultIcon3}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item name="setting" icon="{{defaultIcon4}}">{{I18n.t('label')}}</smart-tabbar-item>
+  </smart-tabbar>
+</demo-block>
+
+<demo-block title="{{I18n.t('showLogo')}}">
+  <smart-tabbar
+    active="{{ active3 }}"
+    data-key="active3"
+    custom-class="tabbar-position"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="onChange"
+  >
+    <smart-tabbar-item icon="{{defaultIcon1}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon2}}" dot>{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon3}}" info="5">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon4}}" info="20">{{I18n.t('label')}}</smart-tabbar-item>
+  </smart-tabbar>
+</demo-block>
+
+<demo-block title="{{I18n.t('customIcon')}}">
+  <smart-tabbar
+    active="{{ active4 }}"
+    data-key="active4"
+    custom-class="tabbar-position"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="onChange"
+  >
+    <smart-tabbar-item info="3">
+      <image
+        slot="icon"
+        src="{{ icon.normal }}"
+        mode="aspectFit"
+        style="width: 30px; height: 18px;"
+      />
+      <image
+        slot="icon-active"
+        src="{{ icon.active }}"
+        mode="aspectFit"
+        style="width: 30px; height: 18px;"
+      />
+      {{I18n.t('custom')}}
+    </smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon2}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon3}}">{{I18n.t('label')}}</smart-tabbar-item>
+  </smart-tabbar>
+</demo-block>
+
+<demo-block title="{{I18n.t('customColor')}}">
+  <smart-tabbar
+    active="{{ active5 }}"
+    data-key="active5"
+    custom-class="tabbar-position"
+    active-color="#07c160"
+    inactive-color="@tabbar-item-text-color"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="onChange"
+  >
+    <smart-tabbar-item icon="{{defaultIcon1}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon2}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon3}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon4}}">{{I18n.t('label')}}</smart-tabbar-item>
+  </smart-tabbar>
+</demo-block>
+
+
+<demo-block title="{{I18n.t('tabSwitchEvent')}}">
+  <smart-tabbar
+    active="{{ active6 }}"
+    data-key="active6"
+    custom-class="tabbar-position"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="handleChange"
+  >
+    <smart-tabbar-item icon="{{defaultIcon1}}">{{I18n.t('label')}}1</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon2}}">{{I18n.t('label')}}2</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon3}}">{{I18n.t('label')}}3</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon4}}">{{I18n.t('label')}}4</smart-tabbar-item>
+  </smart-tabbar>
+</demo-block>
+
+<demo-block title="{{I18n.t('useSlots')}}">
+  <smart-tabbar
+    active="{{ active }}"
+    data-key="active"
+    custom-class="tabbar-position"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="onChange"
+  >
+
+    <image style="height: 40px;width:40px;margin: 6px 10px;" src="{{icon.active}}" slot="left" />
+    <smart-tabbar-item>
+      <smart-icon name="{{defaultIcon1}}" slot="icon"  />
+      <smart-icon name="{{defaultIcon1}}" color="red" slot="icon-active"  />
+      {{I18n.t('label')}}1
+    </smart-tabbar-item>
+    <smart-tabbar-item>
+      <smart-icon name="{{defaultIcon2}}" slot="icon"  />
+      <smart-icon name="{{defaultIcon2}}" color="red" slot="icon-active"  />
+      {{I18n.t('label')}}2
+    </smart-tabbar-item>
+    <smart-tabbar-item>
+      <smart-icon name="{{defaultIcon3}}" slot="icon"  />
+      <smart-icon name="{{defaultIcon3}}" color="red" slot="icon-active"  />
+      {{I18n.t('label')}}3
+    </smart-tabbar-item>
+    <smart-tabbar-item>
+      <smart-icon name="{{defaultIcon4}}" slot="icon"  />
+      <smart-icon name="{{defaultIcon4}}" color="red" slot="icon-active"  />
+      {{I18n.t('label')}}4
+    </smart-tabbar-item>
+  </smart-tabbar>
+</demo-block>
+
+<demo-block title="{{I18n.t('upsideDown')}}">
+  <smart-tabbar
+    active="{{ active }}"
+    data-key="active"
+    upside-down
+    custom-class="tabbar-position"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="onChange"
+  >
+    <smart-tabbar-item icon="{{defaultIcon1}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon2}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon3}}">{{I18n.t('label')}}</smart-tabbar-item>
+    <smart-tabbar-item icon="{{defaultIcon4}}">{{I18n.t('label')}}</smart-tabbar-item>
+  </smart-tabbar>
+</demo-block>

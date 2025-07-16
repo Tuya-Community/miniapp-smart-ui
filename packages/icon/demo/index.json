@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-col": "../../col/index",
+    "smart-tab": "../../tab/index",
+    "smart-tabs": "../../tabs/index",
+    "smart-icon": "../../icon/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

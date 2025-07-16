@@ -1,0 +1,59 @@
+/* eslint-disable */
+var utils = require('../calendar-utils/utils.wxs');
+
+function getMonths(minDate, maxDate) {
+  var months = [];
+  var cursor = getDate(minDate);
+
+  cursor.setDate(1);
+
+  do {
+    months.push(cursor.getTime());
+    cursor.setMonth(cursor.getMonth() + 1);
+  } while (utils.compareMonth(cursor, getDate(maxDate)) !== 1);
+
+  return months;
+}
+
+function getButtonDisabled(type, currentDate, minRange) {
+  if (currentDate == null) {
+    return true;
+  }
+
+  if (type === 'range') {
+    return !currentDate[0] || !currentDate[1];
+  }
+
+  if (type === 'multiple') {
+    return currentDate.length < minRange;
+  }
+
+  return !currentDate;
+}
+
+function getVisible(visibleIndex, curIndex) {
+  return visibleIndex === curIndex;
+}
+
+function formatMonthTitle(date, formatter = 'YYYY-MM') {
+  if (!date) return '';
+  date = getDate(date);
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1 + '';
+  return formatter.replace('YYYY', year + '').replace('MM', month);
+}
+
+function formatYearTitle(date, offset, formatter = 'YYYY') {
+  if (!date) return '';
+  date = getDate(date);
+  var year = date.getFullYear();
+  return formatter.replace('YYYY', year + '');
+}
+
+module.exports = {  
+  getMonths: getMonths,
+  getVisible: getVisible,
+  getButtonDisabled: getButtonDisabled,
+  formatMonthTitle: formatMonthTitle,
+  formatYearTitle: formatYearTitle,
+};

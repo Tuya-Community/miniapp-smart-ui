@@ -1,0 +1,92 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-cell title="{{I18n.t('displayPopupLayer')}}" is-link bind:click="showBasic" />
+  <smart-popup
+    show="{{ show.basic }}"
+    custom-style="padding: 30px 50px; color: var(--app-B6-N1)"
+    bind:close="hideBasic"
+    bind:enter="enter"
+    bind:before-enter="beforeEnter"
+    bind:after-enter="afterEnter"
+    bind:leave="leave"
+    bind:before-leave="beforeLeave"
+    bind:after-leave="afterLeave"
+  >
+    {{I18n.t('content')}}
+  </smart-popup>
+</demo-block>
+
+<demo-block title="{{I18n.t('popupPosition')}}">
+  <smart-cell title="{{I18n.t('topPopUp')}}" is-link bind:click="showTop" />
+  <smart-cell title="{{I18n.t('bottomPopUp')}}" is-link bind:click="showBottom" />
+  <smart-cell title="{{I18n.t('popUpFromTheLeft')}}" is-link bind:click="showLeft" />
+  <smart-cell title="{{I18n.t('popUpOnTheRight')}}" is-link bind:click="showRight" />
+
+  <smart-popup
+    show="{{ show.top }}"
+    position="top"
+    custom-style="height: 20%"
+    bind:close="hideTop"
+  />
+  <smart-popup
+    show="{{ show.bottom }}"
+    position="bottom"
+    custom-style="height: 20%"
+    bind:close="hideBottom"
+  />
+  <smart-popup
+    show="{{ show.left }}"
+    position="left"
+    custom-style="width: 20%; height: 100%"
+    bind:close="hideLeft"
+  />
+  <smart-popup
+    show="{{ show.right }}"
+    position="right"
+    custom-style="width: 20%; height: 100%"
+    bind:close="hideRight"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('closeIcon')}}">
+  <smart-cell title="{{I18n.t('closeIcon')}}" is-link bind:click="showCloseIcon" />
+  <smart-cell title="{{I18n.t('customIcon')}}" is-link bind:click="showCustomCloseIcon" />
+  <smart-cell title="{{I18n.t('iconPosition')}}" is-link bind:click="showCustomIconPosition" />
+
+  <smart-popup
+    show="{{ show.closeIcon }}"
+    closeable
+    position="bottom"
+    custom-style="height: 20%"
+    bind:close="hideCloseIcon"
+  />
+
+  <smart-popup
+    show="{{ show.customCloseIcon }}"
+    closeable
+    close-icon="{{ rightIcon }}"
+    position="bottom"
+    custom-style="height: 20%"
+    bind:close="hideCustomCloseIcon"
+  />
+
+  <smart-popup
+    show="{{ show.customIconPosition }}"
+    closeable
+    close-icon-position="top-left"
+    position="bottom"
+    custom-style="height: 20%"
+    bind:close="hideCustomIconPosition"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('roundedCornerPopup')}}">
+  <smart-cell title="{{I18n.t('roundedCornerPopup')}}" is-link bind:click="showRound" />
+
+  <smart-popup
+    show="{{ show.round }}"
+    round
+    position="bottom"
+    custom-style="height: 20%"
+    bind:close="hideRound"
+  />
+</demo-block>

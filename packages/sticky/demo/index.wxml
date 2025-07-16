@@ -1,0 +1,42 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-sticky>
+    <smart-button type="primary" custom-style="margin-left: 15px">
+      {{I18n.t('basicUsage')}}
+    </smart-button>
+  </smart-sticky>
+</demo-block>
+
+<demo-block title="{{I18n.t('ceilingDistance')}}">
+  <smart-sticky offset-top="{{ 50 }}">
+    <smart-button type="info" custom-style="margin-left: 115px">
+      {{I18n.t('ceilingDistance')}}
+    </smart-button>
+  </smart-sticky>
+</demo-block>
+
+<demo-block title="{{I18n.t('specifyTheContainer')}}">
+  <view id="container" style="height: 150px; background-color: var(--app-B3);">
+    <smart-sticky container="{{ container }}">
+      <smart-button type="warning" custom-style="margin-left: 215px;">
+        {{I18n.t('specifiedContainer')}}
+      </smart-button>
+    </smart-sticky>
+  </view>
+</demo-block>
+
+<demo-block title="{{I18n.t('useNestedWithinAScrollView')}}">
+  <scroll-view
+    bind:scroll="onScroll"
+    scroll-y
+    id="scroller"
+    style="height: 200px; background-color: var(--app-B3);"
+  >
+    <view style="height: 400px; padding-top: 50px;">
+      <smart-sticky scroll-top="{{ scrollTop }}" offset-top="{{ offsetTop }}">
+        <smart-button type="warning">
+          {{I18n.t('nestedWithinScrollView')}}
+        </smart-button>
+      </smart-sticky>
+    </view>
+  </scroll-view>
+</demo-block>

@@ -1,0 +1,143 @@
+<demo-block title="{{I18n.t('basicUsage')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheetSelect">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-action-sheet
+    title="Title"
+    cancel-text="{{I18n.t('cancel')}}"
+    show="{{ showSelect }}"
+    actions="{{ actionSelect }}"
+    bind:select="onSelect"
+    bind:close="toggleActionSheetSelect"
+    bind:cancel="toggleActionSheetSelect"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customizeSelectedIconColor')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheetSelect2">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-action-sheet
+    title="Title"
+    cancel-text="{{I18n.t('cancel')}}"
+    show="{{ showSelect2 }}"
+    actions="{{ actionSelect }}"
+    active-color="#ff0fff"
+    bind:select="onSelect"
+    bind:close="toggleActionSheetSelect2"
+    bind:cancel="toggleActionSheetSelect2"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('noSelectedList')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet1">{{I18n.t('popUpMenu')}}</smart-button>
+  <smart-action-sheet
+    title="Title"
+    cancel-text="{{I18n.t('cancel')}}"
+    show="{{ show1 }}"
+    actions="{{ action1 }}"
+    bind:close="toggleActionSheet1"
+    bind:cancel="toggleActionSheet1"
+  />
+</demo-block>
+
+
+<demo-block title="{{I18n.t('optionStatus')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet2">{{I18n.t('popUpMenu')}}</smart-button>
+  <smart-action-sheet
+    show="{{ show2 }}"
+    actions="{{ action2 }}"
+    bind:close="toggleActionSheet2"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('showConfirmButton')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet3">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-action-sheet
+    show="{{ show3 }}"
+    actions="{{ action1 }}"
+    cancel-text="{{I18n.t('cancel')}}"
+    confirm-text="{{I18n.t('confirm')}}"
+    bind:close="toggleActionSheet3"
+    bind:cancel="toggleActionSheet3"
+    bind:confirm="toggleActionSheet3"
+  >
+  </smart-action-sheet>
+</demo-block>
+
+<demo-block title="{{I18n.t('displayDescriptionInformation')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet4">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-action-sheet
+    show="{{ show4 }}"
+    actions="{{ action1 }}"
+    description="{{I18n.t('thisIsADescriptiveMessage')}}"
+    bind:close="toggleActionSheet4"
+  >
+  </smart-action-sheet>
+</demo-block>
+
+<demo-block title="{{I18n.t('customize')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet5">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-action-sheet
+    show="{{ show5 }}"
+    title="Title"
+    cancel-text="Action"
+    confirm-text="Action"
+    bind:close="toggleActionSheet5"
+    bind:cancel="toggleActionSheet5"
+    bind:confirm="toggleActionSheet5"
+  >
+    <view class="content">{{I18n.t('custom')}}</view>
+  </smart-action-sheet>
+</demo-block>
+
+<demo-block title="{{I18n.t('customValue')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheetNumber">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-action-sheet
+    show="{{ showNumber }}"
+    title="Title"
+    cancel-text="Action"
+    confirm-text="Action"
+    bind:close="toggleActionSheetNumber"
+    bind:cancel="toggleActionSheetNumber"
+    bind:confirm="toggleActionSheetNumber"
+    bind:after-enter="onAfterEnter"
+  >
+    <view class="content-number">
+      <view class="demo-header">
+        <text class="demo-text">{{ currentNumber }}%</text>
+      </view>
+      <view class="demo-slider">
+        <smart-slider
+          wx:if="{{ isReady }}"
+          instanceId="action-sheet-slider"
+          trackStyle="height:45px;border-radius:8px;"
+          barStyle="height:45px;border-radius:8px;"
+          thumbStyle="width:15px;height:50px;background:#BBC5D4;border:2px solid #FFFFFF;box-shadow:0px 0px 2px 0px rgba(0, 0, 0, 0.5);border-radius:2px;"
+          value="{{currentNumber}}"
+          bind:change="onChange"
+        />
+        <view wx:else style="height: 45px;" />
+      </view>
+    </view>
+  </smart-action-sheet>
+</demo-block>
+
+<demo-block title="{{I18n.t('customScroll')}} Picker: {{ currentDateStr }}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheetPicker">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-action-sheet
+    show="{{ showPicker }}"
+    title="Title"
+    cancel-text="Action"
+    confirm-text="Action"
+    bind:close="toggleActionSheetPicker"
+    bind:cancel="toggleActionSheetPicker"
+    bind:confirm="onPickerConfirm"
+  >
+    <smart-datetime-picker
+      show-toolbar="{{ false }}"
+      type="date"
+      data-type="date"
+      value="{{ currentDate }}"
+      min-date="{{ minDate }}"
+      bind:input="onInput"
+      formatter="{{ formatter }}"
+    />
+  </smart-action-sheet>
+</demo-block>

@@ -1,0 +1,549 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tree-select
+        bind:click-item="onClickItem"
+        bind:click-nav="onClickNav"
+      >
+        <wx-view
+          class="smart-tree-select"
+          style="height: 300px"
+        >
+          <wx-scroll-view
+            class="smart-tree-select__nav"
+            scrollY="{{true}}"
+          >
+            <smart-sidebar
+              customClass="smart-tree-select__nav__inner"
+              bind:change="onClickNav"
+            >
+              <wx-view
+                class="smart-sidebar custom-class"
+              >
+                <smart-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="smart-sidebar-item smart-sidebar-item--selected active-class  custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info />
+                      <wx-view>
+                        zhejiang
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="smart-sidebar-item   custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info />
+                      <wx-view>
+                        jiangsu
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="smart-sidebar-item smart-sidebar-item--disabled  disabled-class custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info />
+                      <wx-view>
+                        fujian
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+              </wx-view>
+            </smart-sidebar>
+          </wx-scroll-view>
+          <wx-scroll-view
+            class="smart-tree-select__content"
+            scrollY="{{true}}"
+          >
+            <wx-view
+              class="smart-ellipsis content-item-class smart-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 1,
+                  "text": "hangzhou",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      hangzhou
+      
+            </wx-view>
+            <wx-view
+              class="smart-ellipsis content-item-class smart-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 2,
+                  "text": "wenzhou",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      wenzhou
+      
+            </wx-view>
+            <wx-view
+              class="smart-ellipsis content-item-class smart-tree-select__item smart-tree-select__item--disabled  content-disabled-class"
+              data-item="{{
+                Object {
+                  "disabled": true,
+                  "id": 3,
+                  "text": "ningbo",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      ningbo
+      
+            </wx-view>
+            <wx-view
+              class="smart-ellipsis content-item-class smart-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 4,
+                  "text": "yiwu",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      yiwu
+      
+            </wx-view>
+          </wx-scroll-view>
+        </wx-view>
+      </smart-tree-select>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tree-select
+        bind:click-item="onClickItemMulti"
+        bind:click-nav="onClickNavMulti"
+      >
+        <wx-view
+          class="smart-tree-select"
+          style="height: 300px"
+        >
+          <wx-scroll-view
+            class="smart-tree-select__nav"
+            scrollY="{{true}}"
+          >
+            <smart-sidebar
+              customClass="smart-tree-select__nav__inner"
+              bind:change="onClickNav"
+            >
+              <wx-view
+                class="smart-sidebar custom-class"
+              >
+                <smart-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="smart-sidebar-item smart-sidebar-item--selected active-class  custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info />
+                      <wx-view>
+                        zhejiang
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="smart-sidebar-item   custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info />
+                      <wx-view>
+                        jiangsu
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="smart-sidebar-item smart-sidebar-item--disabled  disabled-class custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info />
+                      <wx-view>
+                        fujian
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+              </wx-view>
+            </smart-sidebar>
+          </wx-scroll-view>
+          <wx-scroll-view
+            class="smart-tree-select__content"
+            scrollY="{{true}}"
+          >
+            <wx-view
+              class="smart-ellipsis content-item-class smart-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 1,
+                  "text": "hangzhou",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      hangzhou
+      
+            </wx-view>
+            <wx-view
+              class="smart-ellipsis content-item-class smart-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 2,
+                  "text": "wenzhou",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      wenzhou
+      
+            </wx-view>
+            <wx-view
+              class="smart-ellipsis content-item-class smart-tree-select__item smart-tree-select__item--disabled  content-disabled-class"
+              data-item="{{
+                Object {
+                  "disabled": true,
+                  "id": 3,
+                  "text": "ningbo",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      ningbo
+      
+            </wx-view>
+            <wx-view
+              class="smart-ellipsis content-item-class smart-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 4,
+                  "text": "yiwu",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      yiwu
+      
+            </wx-view>
+          </wx-scroll-view>
+        </wx-view>
+      </smart-tree-select>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tree-select
+        bind:click-item="onClickItem"
+        bind:click-nav="onClickNav"
+      >
+        <wx-view
+          class="smart-tree-select"
+          style="height: 55vw"
+        >
+          <wx-scroll-view
+            class="smart-tree-select__nav"
+            scrollY="{{true}}"
+          >
+            <smart-sidebar
+              customClass="smart-tree-select__nav__inner"
+              bind:change="onClickNav"
+            >
+              <wx-view
+                class="smart-sidebar custom-class"
+              >
+                <smart-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="smart-sidebar-item smart-sidebar-item--selected active-class  custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info />
+                      <wx-view>
+                        undefined 1
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="smart-sidebar-item   custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info />
+                      <wx-view>
+                        undefined 2
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+              </wx-view>
+            </smart-sidebar>
+          </wx-scroll-view>
+          <wx-scroll-view
+            class="smart-tree-select__content"
+            scrollY="{{true}}"
+          >
+            <wx-view
+              slot="content"
+              style="width:100%;height:100%;padding-top:40px;text-align:center;"
+            >
+              <wx-text>
+                1
+              </wx-text>
+            </wx-view>
+          </wx-scroll-view>
+        </wx-view>
+      </smart-tree-select>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tree-select
+        bind:click-item="onClickItem"
+        bind:click-nav="onClickNav"
+      >
+        <wx-view
+          class="smart-tree-select"
+          style="height: 300px"
+        >
+          <wx-scroll-view
+            class="smart-tree-select__nav"
+            scrollY="{{true}}"
+          >
+            <smart-sidebar
+              customClass="smart-tree-select__nav__inner"
+              bind:change="onClickNav"
+            >
+              <wx-view
+                class="smart-sidebar custom-class"
+              >
+                <smart-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="smart-sidebar-item smart-sidebar-item--selected active-class  custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info>
+                        <wx-view
+                          class="smart-info smart-info smart-info--dot custom-class"
+                          style=""
+                        >
+                          
+                        </wx-view>
+                      </smart-info>
+                      <wx-view>
+                        zhejiang
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="smart-sidebar-item   custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info>
+                        <wx-view
+                          class="smart-info smart-info custom-class"
+                          style=""
+                        >
+                          5
+                        </wx-view>
+                      </smart-info>
+                      <wx-view>
+                        jiangsu
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+              </wx-view>
+            </smart-sidebar>
+          </wx-scroll-view>
+          <wx-scroll-view
+            class="smart-tree-select__content"
+            scrollY="{{true}}"
+          >
+            <wx-view
+              class="smart-ellipsis content-item-class smart-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 1,
+                  "text": "hangzhou",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      hangzhou
+      
+            </wx-view>
+            <wx-view
+              class="smart-ellipsis content-item-class smart-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 2,
+                  "text": "wenzhou",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      wenzhou
+      
+            </wx-view>
+            <wx-view
+              class="smart-ellipsis content-item-class smart-tree-select__item smart-tree-select__item--disabled  content-disabled-class"
+              data-item="{{
+                Object {
+                  "disabled": true,
+                  "id": 3,
+                  "text": "ningbo",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      ningbo
+      
+            </wx-view>
+            <wx-view
+              class="smart-ellipsis content-item-class smart-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 4,
+                  "text": "yiwu",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      yiwu
+      
+            </wx-view>
+          </wx-scroll-view>
+        </wx-view>
+      </smart-tree-select>
+    </wx-view>
+  </demo-block>
+</main>
+`;

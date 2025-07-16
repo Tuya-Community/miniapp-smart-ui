@@ -1,0 +1,27 @@
+<view class="smart-calendar__header">
+  <block wx:if="{{ showTitle }}">
+    <view class="smart-calendar__header-title"><slot name="title"></slot></view>
+    <view class="smart-calendar__header-title">
+      {{ title }}
+      <view class="smart-calendar__header-title-save" bind:tap="onSave" wx:if="{{showConfirm}}">{{ rightText }}</view>
+    </view>
+  </block>
+
+  <view class="smart-calendar__header-subtitle_wrap">
+    <view class="smart-calendar__header-subtitle_left" bind:tap="onPrev">
+      <smart-icon class="smart-calendar__header-subtitle_left_icon" name="{{LeftIcon}}" />
+    </view>
+    <view wx:if="{{ showSubtitle }}" class="smart-calendar__header-subtitle" bind:tap="onClickSubtitle">
+      {{ subtitle }}
+    </view>
+    <view class="smart-calendar__header-subtitle_right" bind:tap="onNext">
+      <smart-icon class="smart-calendar__header-subtitle_right_icon" name="{{RightIcon}}" />
+    </view>
+  </view>
+
+  <view class="smart-calendar__weekdays" wx:if="{{!hideWeek}}">
+    <view wx:for="{{ weekdays }}" wx:key="index" class="smart-calendar__weekday">
+      {{ item }}
+    </view>
+  </view>
+</view>

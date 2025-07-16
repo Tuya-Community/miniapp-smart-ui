@@ -1,0 +1,130 @@
+<!-- This file is generated automatically, please edit in ./build/generate-icon/tpl-demo/index.wxml -->
+<smart-tabs
+  active="{{ active }}"
+  color="#1989fa"
+  bind:change="onSwitch"
+>
+  <smart-tab title="Svg {{I18n.t('icon')}}" custom-class="demo-tab-pane">
+    <demo-block title="{{I18n.t('basicUsage')}}">
+      <smart-col
+        custom-class="col"
+        span="6"
+      >
+        <smart-icon
+          name="{{ iconWarning }}"
+          size="36px"
+          custom-class="icon"
+        />
+      </smart-col>
+    </demo-block>
+    <demo-block title="{{I18n.t('promptMessage')}}">
+      <smart-col
+        custom-class="col"
+        span="6"
+      >
+        <smart-icon
+          name="{{ iconWarning }}"
+          size="36px"
+          custom-class="icon"
+          dot
+        />
+      </smart-col>
+      <smart-col
+        custom-class="col"
+        span="6"
+      >
+        <smart-icon
+          name="{{ iconWarning }}"
+          size="36px"
+          custom-class="icon"
+          info="9"
+        />
+      </smart-col>
+      <smart-col
+        custom-class="col"
+        span="6"
+      >
+        <smart-icon
+          name="{{ iconWarning }}"
+          size="36px"
+          custom-class="icon"
+          info="99+"
+        />
+      </smart-col>
+    </demo-block>
+    <demo-block title="{{I18n.t('iconColor')}}">
+      <smart-col
+        custom-class="col"
+        span="6"
+      >
+        <smart-icon
+          name="{{ iconAlarm }}"
+          size="36px"
+          custom-class="icon"
+          color="#1989fa"
+        />
+      </smart-col>
+      <smart-col
+        custom-class="col"
+        span="6"
+      >
+        <smart-icon
+          name="{{ iconWarning }}"
+          size="36px"
+          custom-class="icon"
+          color="#07c160"
+        />
+      </smart-col>
+    </demo-block>
+    <demo-block title="{{I18n.t('iconSize')}}">
+      <smart-col
+        custom-class="col"
+        span="6"
+      >
+        <smart-icon
+          name="{{ iconWarning }}"
+          size="36"
+          custom-class="icon"
+          color="#1989fa"
+        />
+      </smart-col>
+      <smart-col
+        custom-class="col"
+        span="6"
+      >
+        <smart-icon
+          name="{{ iconWarning }}"
+          size="48"
+          custom-class="icon"
+          color="#1989fa"
+        />
+      </smart-col>
+    </demo-block>
+    <demo-block title="{{I18n.t('svgPath')}}">
+      <smart-col
+        custom-class="col"
+        span="6"
+      >
+        <smart-icon
+          name="{{ svgPath }}"
+          size="36"
+          color="#1989fa"
+          custom-class="icon"
+        />
+      </smart-col>
+    </demo-block>
+  </smart-tab>
+  <smart-tab title="{{I18n.t('allIcons')}}" custom-class="demo-tab-pane">
+    <demo-block title="{{I18n.t('basicUsage')}}">
+      <smart-col
+        wx:for="{{ icons }}"
+        wx:key="index"
+        custom-class="col"
+        span="6"
+      >
+        <smart-icon name="{{ item.value }}" size="36px" custom-class="icon" />
+        <view class="text">{{ item.name }}</view>
+      </smart-col>
+    </demo-block>
+  </smart-tab>
+</smart-tabs>

@@ -1,0 +1,39 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<block wx:if="{{stopClickPropagation}}">
+  <view
+    class="{{ utils.bem('switch', { on: checked === activeValue, disabled }) }} custom-class"
+    style="{{ computed.rootStyle({ size, checked, activeColor, inactiveColor, activeValue }) }}"
+    catch:tap="onClick"
+  >
+    <view class="smart-switch__center">
+      <view class="smart-switch__node node-class">
+        <smart-loading
+          wx:if="{{ loading }}"
+          color="{{ computed.loadingColor({ checked, activeColor, inactiveColor, activeValue }) }}"
+          custom-class="smart-switch__loading"
+        />
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view
+    class="{{ utils.bem('switch', { on: checked === activeValue, disabled }) }} custom-class"
+    style="{{ computed.rootStyle({ size, checked, activeColor, inactiveColor, activeValue }) }}"
+    bind:tap="onClick"
+  >
+    <view class="smart-switch__center">
+      <view class="smart-switch__node node-class">
+        <smart-loading
+          wx:if="{{ loading }}"
+          color="{{ computed.loadingColor({ checked, activeColor, inactiveColor, activeValue }) }}"
+          custom-class="smart-switch__loading"
+          size="{{size}}"
+        />
+      </view>
+    </view>
+  </view>
+</block>
+

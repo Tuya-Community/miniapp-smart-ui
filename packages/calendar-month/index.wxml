@@ -1,0 +1,22 @@
+<wxs src="./index.wxs" module="computed"></wxs>
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view class="smart-calendar__month" style="{{ computed.getMonthStyle(visible, date, rowHeight) }}">
+  <view wx:if="{{ visible }}" class="smart-calendar__days">
+    <view
+      wx:for="{{ days }}"
+      wx:key="index"
+      style="{{ computed.getDayStyle(item.type, index, date, rowHeight, color, firstDayOfWeek) }}"
+      class="{{ utils.bem('calendar__day', [item.type]) }} {{ item.className }} {{ item.customClass }}"
+      data-index="{{ index }}"
+      bindtap="onClick"
+    >
+      <view wx:if="{{ item.type === 'selected' }}" class="smart-calendar__selected-day" style="width: {{ rowHeight }}px; height: {{ rowHeight }}px; background: {{ color }}">
+        {{ item.text }}
+      </view>
+      <block wx:else>
+        {{ item.text }}
+      </block>
+    </view>
+  </view>
+</view>

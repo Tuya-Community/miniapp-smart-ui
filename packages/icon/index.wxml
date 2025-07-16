@@ -1,0 +1,30 @@
+<wxs src="./index.wxs" module="computed" />
+
+<view
+  class="{{ computed.rootClass({ classPrefix, name }) }}"
+  style="{{ computed.rootStyle({ customStyle, color, size }) }}"
+  bindtap="onClick"
+>
+  <smart-info
+    wx:if="{{ info !== null || dot }}"
+    dot="{{ dot }}"
+    info="{{ info }}"
+    custom-class="smart-icon__info info-class"
+  />
+  <view
+    wx:if="{{ computed.isSvg(name) }}"
+    style="{{ computed.svgStyle({ customStyle, name, color }) }}"
+    class="smart-icon__svg"
+  />
+  <image
+    wx:elif="{{ computed.isImage(name) }}"
+    src="{{ computed.getImageSrc({ name, color }) }}"
+    mode="aspectFit"
+    class="smart-icon__image"
+  />
+  <view
+    wx:elif="{{ computed.isSvgPath(name) }}"
+    style="{{ computed.svgPathStyle({ customStyle, name, color }) }}"
+    class="smart-icon__svg"
+  />
+</view>

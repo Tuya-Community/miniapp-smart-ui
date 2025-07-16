@@ -1,0 +1,104 @@
+<wxs src="./index.wxs" module="computed"></wxs>
+
+<view class="contain">
+  <demo-block title="{{I18n.t('calendarSelectDay') + ': ' + computed.formatDate(curDayDate)}}">
+    <smart-calendar
+      title="{{I18n.t('calendar')}}"
+      locale="{{ locale }}"
+      min-date="{{ minDayDate }}"
+      max-date="{{ maxDayDate }}"
+      default-date="{{ curDayDate }}"
+      bind:select="setCurDay"
+    />
+  </demo-block>
+
+  <demo-block title="{{I18n.t('customDateFormat') + ': ' + computed.formatDate(curDayDate)}}">
+    <smart-calendar
+      title="{{I18n.t('calendar')}}"
+      locale="{{ locale }}"
+      min-date="{{ minDayDate }}"
+      max-date="{{ maxDayDate }}"
+      default-date="{{ curDayDate }}"
+      bind:select="setCurDay"
+      day-class-map="{{dayClassMap}}"
+    />
+  </demo-block>
+
+  <demo-block title="{{I18n.t('calendarSelectWeek') + ': ' + computed.formatRange(curWeekDayDate)}}">
+    <smart-calendar
+      title="{{I18n.t('calendar')}}"
+      locale="{{ locale }}"
+      type="week"
+      min-date="{{ minWeekDayDate }}"
+      max-date="{{ maxWeekDayDate }}"
+      default-date="{{ curWeekDayDate }}"
+      bind:select="setWeekCurDay"
+    />
+  </demo-block>
+
+  <demo-block title="{{I18n.t('calendarSelectRange') + ': ' + computed.formatRange(curRangeDayDate)}}">
+    <smart-calendar
+      title="{{I18n.t('calendar')}}"
+      locale="{{ locale }}"
+      type="range"
+      min-date="{{ minRangeDayDate }}"
+      max-date="{{ maxRangeDayDate }}"
+      default-date="{{ curRangeDayDate }}"
+      bind:select="setRangeCurDay"
+    />
+  </demo-block>
+
+
+
+<demo-block title="{{I18n.t('calendarSelectMonth') + ': ' + computed.formatFullDate(curMonthDate)}}">
+  <smart-calendar
+    title="{{I18n.t('calendar')}}"
+    locale="{{ locale2 }}"
+    type="month"
+    show-confirm="{{ false }}"
+    min-date="{{ minMonthDate }}"
+    max-date="{{ maxMonthDate }}"
+    default-date="{{ curMonthDate }}"
+    bind:select="setCurMonth"
+  />
+</demo-block>
+
+
+<demo-block title="{{I18n.t('calendarSelectYear') + ': ' + computed.formatFullDate(curYearDate)}}">
+  <smart-calendar
+    title="{{I18n.t('calendar')}}"
+    type="year"
+    min-date="{{ minYearDate }}"
+    max-date="{{ maxYearDate }}"
+    default-date="{{ curYearDate }}"
+    bind:select="setCurYear"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('calendarModalSelectDay') + ': ' + computed.formatFullDate(curDayDate)}}">
+  <view class="controls">
+    <view class="controls_item" data-type="single" bindtap="changeType" style="color: {{type === 'single' ? '#3678e3' : '#000'}}">{{I18n.t('day')}}</view>
+    <view class="controls_item" data-type="month" bindtap="changeType" style="color: {{type === 'month' ? '#3678e3' : '#000'}}">{{I18n.t('month')}}</view>
+    <view class="controls_item" data-type="year" bindtap="changeType" style="color: {{type === 'year' ? '#3678e3' : '#000'}}">{{I18n.t('year')}}</view>
+  </view>
+  <smart-cell
+    is-link
+    title="{{I18n.t('calendarDay')}}"
+    value="{{ computed.formatDate(curDayDate) }}"
+    bind:click="onShowDayPicker"
+  />
+  <smart-calendar
+    title="{{I18n.t('calendar')}}"
+    poppable="{{ true }}"
+    type="{{type}}"
+    show="{{showDayPicker}}"
+    default-date="{{ curDayDate }}"
+    bind:confirm="setCurDay"
+    show-confirm="{{ true }}"
+    confirm-text="{{I18n.t('confirm')}}"
+    bind:close="onShowDayPicker"
+    bind:select="selectDate"
+  />
+</demo-block>
+
+</view>

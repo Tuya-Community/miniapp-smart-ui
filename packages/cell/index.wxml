@@ -1,0 +1,47 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<view
+  class="custom-class {{ utils.bem('cell', [{ required, borderless: !border, clickable: isLink || clickable }]) }}"
+  hover-class="smart-cell--hover hover-class"
+  hover-stay-time="70"
+  style="{{ customStyle }}"
+  bind:tap="onClick"
+>
+  <smart-icon
+    wx:if="{{ icon }}"
+    name="{{ icon }}"
+    class="smart-cell__left-icon-wrap"
+    custom-class="smart-cell__left-icon"
+  />
+  <slot wx:else name="icon" />
+
+  <view
+    style="{{ computed.titleStyle({ titleWidth, titleStyle }) }}"
+    class="smart-cell__title title-class"
+  >
+
+    <block wx:if="{{ title }}">{{ title }}</block>
+    <slot wx:else name="title" />
+
+    <view wx:if="{{ label || useLabelSlot }}" class="smart-cell__label label-class">
+      <slot wx:if="{{ useLabelSlot }}" name="label" />
+      <block wx:elif="{{ label }}">{{ label }}</block>
+    </view>
+  </view>
+
+  <view class="smart-cell__value value-class">
+    <block wx:if="{{ value || value === 0 }}">{{ value }}</block>
+    <slot wx:else />
+  </view>
+
+  <smart-icon
+    wx:if="{{ isLink }}"
+    name="{{ arrowDirection ? arrowIcons[arrowDirection] : arrowIcons.right }}"
+    class="smart-cell__right-icon-wrap right-icon-class"
+    custom-class="smart-cell__right-icon"
+  />
+  <slot wx:else name="right-icon" />
+
+  <slot name="extra" />
+</view>

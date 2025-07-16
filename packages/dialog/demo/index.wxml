@@ -1,0 +1,42 @@
+<demo-block card title="{{I18n.t('promptPopup')}}" padding>
+  <smart-cell title="{{I18n.t('promptPopup')}}" bind:click="onClickAlert" is-link />
+  <smart-cell title="{{I18n.t('hintPopupNoTitle')}}" bind:click="onClickAlert2" is-link />
+  <smart-cell title="{{I18n.t('confirmationPopup')}}" bind:click="onClickConfirm" is-link />
+  <smart-cell title="{{I18n.t('warningConfirmationDialog')}}" bind:click="onClickConfirmIcon" is-link />
+</demo-block>
+
+<demo-block card title="{{I18n.t('roundedButtonStyle')}}" padding>
+  <smart-cell title="{{I18n.t('promptPopup')}}" bind:click="onClickThemeAlert" is-link />
+  <smart-cell title="{{I18n.t('promptPopupNoTitle')}}" bind:click="onClickThemeAlert2" is-link />
+</demo-block>
+
+<demo-block card title="{{I18n.t('asynchronousShutdown')}}" padding>
+  <smart-cell title="{{I18n.t('asynchronousShutdown')}}" bind:click="onClickAsyncClose" />
+  <smart-cell title="{{I18n.t('inputConfirmationPopup')}}" bind:click="onClickInput" />
+</demo-block>
+
+<demo-block card title="{{I18n.t('componentInvocation')}}" padding>
+  <smart-cell title="{{I18n.t('imageTipPopup')}}" bind:click="showCustomDialog" />
+</demo-block>
+
+<smart-dialog
+  use-slot
+  title="Title"
+  show="{{ show }}"
+  show-cancel-button
+  bind:close="onClose"
+  confirm-button-open-type="getUserInfo"
+  bind:getuserinfo="getUserInfo"
+>
+  <view class="demo-imageWrapper">
+    <image
+      class="demo-image"
+      src="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
+    />
+  </view>
+  <view class="demo-text">
+    <text>Body</text>
+  </view>
+</smart-dialog>
+
+<smart-dialog id="smart-dialog" />

@@ -1,0 +1,83 @@
+<wxs src="./index.wxs" module="computed" />
+<wxs src="../wxs/utils.wxs" module="utils" />
+<view class="smart-calendar custom-class">
+  <header
+    title="{{ title }}"
+    showTitle="{{ showTitle }}"
+    subtitle="{{ type === 'year' ? '' : type === 'month' ? computed.formatYearTitle(originCurrentDateMonthly, visibleIndex, locale.yearFormatter) : computed.formatMonthTitle(months[visibleIndex], subFormatter) }}"
+    subFormatter="{{locale.subFormatter || 'YYYY-MM'}}"
+    showSubtitle="{{ showSubtitle }}"
+    firstDayOfWeek="{{ firstDayOfWeek }}"
+    bind:click-subtitle="onClickSubtitle"
+    defaultWeeks="{{locale.shortWeekDays || ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}}"
+    bind:click-prev="onPrev"
+    bind:click-next="onNext"
+    bind:click-save="onConfirm"
+    hideWeek="{{ type === 'year' || type === 'month' }}"
+    right-text="{{confirmText}}"
+    showConfirm="{{showConfirm}}"
+  >
+    <slot name="title" slot="title"></slot>
+  </header>
+
+  <block wx:if="{{ type !== 'year' && type !== 'month' }}">
+    <block wx:for="{{ months }}" wx:key="index">
+      <month
+        id="month{{ index }}"
+        class="smart-calendar-month month"
+        wx:if="{{ computed.getVisible(visibleIndex, index) }}"
+        subFormatter="{{locale.subFormatter || 'YYYY-MM'}}"
+        rangeStart="{{locale.rangeStart || 'Start'}}"
+        rangeEnd="{{locale.rangeEnd || 'End'}}"
+        data-date="{{ item }}"
+        data-index="{{index}}"
+        date="{{ item }}"
+        type="{{ type }}"
+        color="{{ color }}"
+        minDate="{{ minDate }}"
+        maxDate="{{ maxDate }}"
+        showMark="{{ showMark }}"
+        formatter="{{ formatter }}"
+        rowHeight="{{ rowHeight }}"
+        currentDate="{{ currentDate }}"
+        showSubtitle="{{ showSubtitle }}"
+        allowSameDay="{{ allowSameDay }}"
+        showMonthTitle="{{ index !== 0 || !showSubtitle }}"
+        firstDayOfWeek="{{ firstDayOfWeek }}"
+        bind:click="onClickDay"
+        day-class-map="{{dayClassMap}}"
+      />
+    </block>
+  </block>
+  
+  <block wx:if="{{type === 'month'}}">
+    <month-list
+      minDate="{{ minDate }}"
+      maxDate="{{ maxDate }}"
+      monthsFormatter="{{ locale.monthsFormatter }}"
+      bind:click="onClickDate"
+      date="{{currentDate}}"
+      color="{{color}}"
+      readonly="{{readonly}}"
+      visibleIndex="{{visibleIndex}}"
+      bind:changemonthtitle="onChangeMonthTitleDate"
+    />
+  </block>
+
+  <block wx:if="{{type === 'year'}}">
+    <year-list 
+      minDate="{{ minDate }}"
+      maxDate="{{ maxDate }}"
+      yearFormatter="{{ locale.yearFormatter }}"
+      bind:click="onClickDate"
+      date="{{currentDate}}"
+      visibleIndex="{{visibleIndex}}"
+      color="{{color}}"
+      readonly="{{readonly}}"
+     />
+  </block>
+  <smart-toast wx:if="{{showRangePrompt}}" show="{{showToast}}">
+    <text wx:if="{{rangePrompt}}" style="text-align:center;">{{ rangePrompt }}</text>
+    <text style="text-align:center;" wx:else>Days selected over {{maxRange}} days</text>
+  </smart-toast>
+</view>

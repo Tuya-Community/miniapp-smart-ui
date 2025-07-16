@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-icon": "../icon/index",
+    "smart-popup": "../popup/index",
+    "smart-loading": "../loading/index"
+  }
+}

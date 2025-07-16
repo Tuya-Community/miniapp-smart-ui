@@ -1,0 +1,83 @@
+<demo-block title="{{I18n.t('basicUsage')}}" class="cascader-demo">
+  <smart-field
+    value="{{ baseState.result }}"
+    is-link
+    readonly
+    label="{{I18n.t('region')}}"
+    placeholder="{{ selectArea }}"
+    data-state-key="baseState"
+    bind:tap="onClick"
+  />
+  <smart-popup
+    show="{{ baseState.show }}"
+    round
+    position="bottom"
+  >
+    <smart-cascader
+      wx:if="{{ baseState.show }}"
+      value="{{ baseState.value }}"
+      title="{{ selectArea }}"
+      options="{{ options }}"
+      data-state-key="baseState"
+      bind:close="onClose"
+      bind:finish="onFinish"
+    />
+  </smart-popup>
+</demo-block>
+
+<demo-block title="{{I18n.t('customColor')}}" class="cascader-demo">
+  <smart-field
+    value="{{ customColorState.result }}"
+    is-link
+    readonly
+    label="{{I18n.t('region')}}"
+    placeholder="{{ selectArea }}"
+    data-state-key="customColorState"
+    bind:tap="onClick"
+  />
+  <smart-popup
+    show="{{ customColorState.show }}"
+    round
+    position="bottom"
+  >
+    <smart-cascader
+      wx:if="{{ customColorState.show }}"
+      value="{{ customColorState.value }}"
+      title="{{ selectArea }}"
+      options="{{ options }}"
+      data-state-key="customColorState"
+      active-color="#ee0a24"
+      bind:close="onClose"
+      bind:finish="onFinish"
+    />
+  </smart-popup>
+</demo-block>
+
+<demo-block title="{{I18n.t('asynchronousLoadingOptions')}}" class="cascader-demo">
+  <smart-field
+    value="{{ asyncState.result }}"
+    is-link
+    readonly
+    label="{{I18n.t('region')}}"
+    placeholder="{{ selectArea }}"
+    data-state-key="asyncState"
+    bind:tap="onClick"
+  />
+  <smart-popup
+    show="{{ asyncState.show }}"
+    round
+    position="bottom"
+  >
+    <smart-cascader
+      wx:if="{{ asyncState.show }}"
+      value="{{ asyncState.value }}"
+      title="{{ selectArea }}"
+      options="{{ asyncState.options }}"
+      data-state-key="asyncState"
+      bind:close="onClose"
+      bind:change="loadDynamicOptions"
+      bind:finish="onFinish"
+    />
+  </smart-popup>
+</demo-block>
+

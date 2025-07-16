@@ -1,0 +1,110 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-cell-group>
+    <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" is-link />
+    <smart-cell
+      title="{{I18n.t('cell')}}"
+      value="{{I18n.t('content')}}"
+      label="{{I18n.t('descriptionOfInformation')}}"
+      border="{{ false }}"
+      is-link
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('cardStyle')}}">
+  <smart-cell-group inset>
+    <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" is-link />
+    <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" label="{{I18n.t('describeInformation')}}" border="{{ false }}" is-link />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('showIcon')}}">
+  <smart-cell
+    title="{{I18n.t('cell')}}"
+    value="{{I18n.t('content')}}"
+    icon="{{ sunMaxFill }}"
+    border="{{ false }}"
+    is-link
+  />
+  <smart-cell
+    title="{{I18n.t('customization')}} Icon"
+    value="{{I18n.t('content')}}"
+    border="{{ false }}"
+    is-link
+  >
+    <smart-icon class="cell-icon" slot="icon" name="{{ sunMaxFill }}" size="24px" color="#3678E3" />
+  </smart-cell>
+</demo-block>
+
+<demo-block title="{{I18n.t('otherDisplays')}}">
+  <smart-cell
+    title="Title"
+    value="Label"
+  />
+  <smart-cell
+    title="Title"
+    is-link
+  />
+  <smart-cell
+    title="Title"
+    border="{{ false }}"
+  >
+    <smart-stepper value="{{ 1 }}" step="0.1" />
+  </smart-cell>
+</demo-block>
+
+<demo-block title="{{I18n.t('pageRedirect')}}">
+  <smart-cell title="{{I18n.t('urlRedirection')}}(navigateTo)" is-link url="/pages/dashboard/index" />
+  <smart-cell title="{{I18n.t('urlRedirection')}}(redirectTo)" is-link url="/pages/dashboard/index" link-type="redirectTo" />
+  <smart-cell title="{{I18n.t('openTheH5Container')}}(openInnerH5)" is-link bind:click="onNavTo" border="{{ false }}" />
+</demo-block>
+
+<demo-block title="{{I18n.t('groupTitle')}}">
+  <smart-cell-group title="{{I18n.t('group')}} 1">
+    <smart-cell title="{{I18n.t('cell')}}" is-link border="{{ false }}" />
+  </smart-cell-group>
+  <smart-cell-group title="{{I18n.t('group')}} 2">
+    <smart-cell title="{{I18n.t('cell')}}" is-link border="{{ false }}" />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('otherTypes')}}">
+  <smart-cell title="Title">
+    <smart-switch checked="{{ true }}" size="24px" />
+  </smart-cell>
+  <smart-cell title="Title">
+    <smart-icon name="{{ checkMark }}" color="#3678E3" size="28px" />
+  </smart-cell>
+  <smart-cell title="Title">
+    <smart-checkbox value="{{ false }}" shape="square" />
+  </smart-cell>
+  <smart-cell title="Title">
+    <smart-checkbox value="{{ false }}" />
+  </smart-cell>
+  <smart-cell
+    title="Title"
+    label="Bedroom"
+    is-link
+    border="{{ false }}"
+  >
+    <smart-icon
+      class="cell-icon"
+      slot="icon"
+      name="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
+      size="50px"
+    />
+  </smart-cell>
+</demo-block>
+
+<demo-block title="{{I18n.t('useSlots')}}">
+  <smart-cell value="{{I18n.t('content')}}" icon="{{ sunMaxFill }}" is-link>
+    <view slot="title">
+      <view class="title">{{I18n.t('cell')}}</view>
+      <smart-tag type="danger">{{I18n.t('tag')}}</smart-tag>
+    </view>
+  </smart-cell>
+  <smart-cell title="{{I18n.t('cell')}}" border="{{ false }}">
+    <smart-icon slot="right-icon" name="{{ sunMaxFill }}" />
+  </smart-cell>
+</demo-block>
+

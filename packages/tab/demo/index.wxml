@@ -1,0 +1,177 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-tabs active="{{ 1 }}" bind:change="onChange">
+    <smart-tab
+      wx:for="{{ tabs4 }}"
+      wx:key="index"
+      title="{{ I18n.t('tags') + ' '  + item }}"
+    >
+      <view class="content">
+        {{ I18n.t('content') + ' ' + item }}
+      </view>
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+
+<demo-block title="{{I18n.t('throughNameMatching')}}">
+  <smart-tabs active="b">
+    <smart-tab
+      wx:for="{{ tabsWithName }}"
+      wx:key="index"
+      name="{{ item.name }}"
+      title="{{ I18n.t('tags') + ' ' + item.index }}"
+    >
+      <view class="content">
+        {{ I18n.t('content') + ' ' + item.index}}
+      </view>
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+
+<demo-block title="{{I18n.t('horizontalScroll')}}">
+  <smart-tabs>
+    <smart-tab
+      wx:for="{{ tabs6 }}"
+      wx:key="index"
+      title="{{ I18n.t('tags') + ' ' + item }}"
+    >
+      <view class="content">
+        {{ I18n.t('content') + ' ' + item }}
+      </view>
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+
+<demo-block title="{{I18n.t('disableTags')}}">
+  <smart-tabs bind:disabled="onClickDisabled">
+    <smart-tab
+      wx:for="{{ tabs3 }}"
+      wx:key="index"
+      disabled="{{ index === 1 }}"
+      title="{{ I18n.t('tags') + ' ' + item }}"
+    >
+      <view class="content">
+        {{ I18n.t('content') + ' ' + item }}
+      </view>
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+
+<demo-block title="{{I18n.t('style')}}">
+  <smart-tabs type="card" tab-class="special-tab">
+    <smart-tab
+      wx:for="{{ tabs3 }}"
+      wx:key="index"
+      title="{{ I18n.t('tags') + ' ' + item }}"
+    >
+      <view class="content-2">
+        {{ I18n.t('content') + ' ' + item }}
+      </view>
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+
+<demo-block title="{{I18n.t('clickEvent')}}">
+  <smart-tabs bind:click="onClick">
+    <smart-tab
+      wx:for="{{ tabs2 }}"
+      wx:key="index"
+      title="{{ I18n.t('tags') + ' ' + item }}"
+    >
+      <view class="content">
+        {{ I18n.t('content') + ' ' + item }}
+      </view>
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+
+<demo-block title="{{I18n.t('stickyLayout')}}">
+  <smart-tabs sticky>
+    <smart-tab
+      wx:for="{{ tabs4 }}"
+      wx:key="index"
+      title="{{ I18n.t('tags') + ' ' + item }}"
+    >
+      <view class="content">
+        {{ I18n.t('content') + ' ' + item }}
+      </view>
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+
+<demo-block title="{{I18n.t('switchAnimation')}}">
+  <smart-tabs animated>
+    <smart-tab
+      wx:for="{{ tabs4 }}"
+      wx:key="index"
+      title="{{ I18n.t('tags') + ' ' + item }}"
+    >
+      <view class="content">
+        {{ I18n.t('content') + ' ' + item }}
+      </view>
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+
+<demo-block title="{{I18n.t('slideToSwitch')}}">
+  <smart-tabs swipeable>
+    <smart-tab
+      wx:for="{{ tabs4 }}"
+      wx:key="index"
+      title="{{ I18n.t('tags') + ' ' + item }}"
+    >
+      <view class="content">
+        {{ I18n.t('content') + ' ' + item }}
+      </view>
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+
+<demo-block title="{{I18n.t('customTitle')}}">
+  <smart-tabs active="{{ 1 }}" bind:change="onChange" tab-class="special-tab" tab-active-class="special-tab-active">
+    <smart-icon
+      slot="nav-right"
+      name="search"
+      custom-class="right-nav"
+      bind:click="onClickNavRight"
+    />
+    <smart-tab
+      wx:for="{{ tabs4 }}"
+      wx:key="index"
+      title="{{ I18n.t('tags') + ' ' + item }}"
+      dot="{{ index === 1 }}"
+      info="{{ index === 2 ? 99 : null }}"
+    >
+      <view class="content">
+        {{ I18n.t('content') + ' ' + item }}
+      </view>
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+
+<demo-block title="{{I18n.t('asynchronousSwitching')}}">
+  <smart-tabs active="{{ 1 }}" swipeable use-before-change bind:change="onChange" bind:before-change="onBeforeChange" >
+   <smart-tab
+      wx:for="{{ tabs4 }}"
+      wx:key="index"
+      title="{{ I18n.t('tags') + ' ' + item }}"
+    >
+      <view class="content">
+        {{ I18n.t('content') + ' ' + item }}
+      </view>
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+
+<demo-block title="{{I18n.t('subTitle')}}">
+  <smart-tabs active="{{ 1 }}" bind:change="onChange" swipe-threshold="7" title-active-color="#1989FA">
+     <smart-tab
+      wx:for="{{ tabsRenders }}"
+      wx:key="name"
+      title="{{ I18n.t(item.name) }}"
+      subtitle="{{ item.content }}"
+      subtitle-style="color: black;"
+    >
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+

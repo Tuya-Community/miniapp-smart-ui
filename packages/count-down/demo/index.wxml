@@ -1,0 +1,48 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-count-down time="{{ time }}" />
+</demo-block>
+
+<demo-block title="{{I18n.t('customFormat')}}">
+  <smart-count-down
+    time="{{ time }}"
+    format="DD {{I18n.t('day')}} HH {{I18n.t('hour')}} mm {{I18n.t('minute')}} ss {{I18n.t('second')}}"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('millisecondRendering')}}">
+  <smart-count-down
+    millisecond
+    time="{{ time }}"
+    format="HH:mm:ss:SSS"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customStyle')}}">
+  <smart-count-down
+    use-slot
+    time="{{ time }}"
+    bind:change="onChange"
+  >
+    <text class="item">{{ timeData.hours }}</text>
+    <text class="item">{{ timeData.minutes }}</text>
+    <text class="item">{{ timeData.seconds }}</text>
+  </smart-count-down>
+</demo-block>
+
+<demo-block title="{{I18n.t('manualControl')}}">
+  <smart-count-down
+    class="control-count-down"
+    millisecond
+    time="{{ 3000 }}"
+    auto-start="{{ false }}"
+    format="ss:SSS"
+    bind:finish="finished"
+  />
+  <smart-grid clickable column-num="3">
+    <smart-grid-item text="{{I18n.t('start')}}" icon="play-circle-o" bindclick="start" />
+    <smart-grid-item text="{{I18n.t('pause')}}" icon="pause-circle-o" bindclick="pause" />
+    <smart-grid-item text="{{I18n.t('reset')}}" icon="replay" bind:click="reset" />
+  </smart-grid>
+</demo-block>
+
+<smart-toast id="smart-toast-count-down" />

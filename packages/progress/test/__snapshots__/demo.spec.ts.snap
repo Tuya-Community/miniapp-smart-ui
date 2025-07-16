@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-progress
+        customClass="progress-position"
+      >
+        <wx-view
+          class="smart-progress custom-class"
+          style="height:4px"
+        >
+          <wx-view
+            class="smart-progress__portion"
+            style="background:#1989fa"
+          >
+            <wx-view
+              class="smart-progress__pivot"
+              style="color:#fff;right:0px;background:#1989fa"
+            >
+              
+      0%
+    
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-progress>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-progress
+        customClass="progress-position"
+      >
+        <wx-view
+          class="smart-progress custom-class"
+          style="height:8px"
+        >
+          <wx-view
+            class="smart-progress__portion"
+            style="background:#1989fa;width:100%"
+          >
+            <wx-view
+              class="smart-progress__pivot"
+              style="color:#fff;right:0px;background:#1989fa"
+            >
+              
+      100%
+    
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-progress>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-progress
+        customClass="progress-position"
+      >
+        <wx-view
+          class="smart-progress custom-class"
+          style="height:4px"
+        >
+          <wx-view
+            class="smart-progress__portion"
+            style="background:#cacaca;width:50%"
+          >
+            <wx-view
+              class="smart-progress__pivot"
+              style="color:#fff;right:0px;background:#cacaca"
+            >
+              
+      50%
+    
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-progress>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-progress
+        customClass="progress-position"
+      >
+        <wx-view
+          class="smart-progress custom-class"
+          style="height:4px"
+        >
+          <wx-view
+            class="smart-progress__portion"
+            style="background:#f2826a;width:25%"
+          >
+            <wx-view
+              class="smart-progress__pivot"
+              style="color:#fff;right:0px;background:#f2826a"
+            >
+              
+      25%
+    
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-progress>
+      <smart-progress
+        customClass="progress-position"
+      >
+        <wx-view
+          class="smart-progress custom-class"
+          style="height:4px"
+        >
+          <wx-view
+            class="smart-progress__portion"
+            style="background:#ee0a24;width:50%"
+          >
+            <wx-view
+              class="smart-progress__pivot"
+              style="color:#fff;right:0px;background:#ee0a24"
+            >
+              
+      50%
+    
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-progress>
+      <smart-progress
+        customClass="progress-position"
+      >
+        <wx-view
+          class="smart-progress custom-class"
+          style="height:4px"
+        >
+          <wx-view
+            class="smart-progress__portion"
+            style="background:linear-gradient(to right, #be99ff, #7232dd);width:75%"
+          >
+            <wx-view
+              class="smart-progress__pivot"
+              style="color:#fff;right:0px;background:#7232dd"
+            >
+              
+      75%
+    
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-progress>
+    </wx-view>
+  </demo-block>
+</main>
+`;

@@ -1,0 +1,83 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-slider
+    value="50"
+    custom-class="slider"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('doubleSlider')}}">
+  <smart-slider
+    range
+    value="{{ [20, 60 ] }}"
+    custom-class="slider"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('specifySelectionRange')}}">
+  <smart-slider
+    custom-class="slider"
+    min="-50"
+    max="50"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('disabled')}}">
+  <smart-slider
+    custom-class="slider"
+    value="50"
+    disabled
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('specifyStepSize')}}">
+  <smart-slider
+    custom-class="slider"
+    value="50"
+    step="10"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customStyle')}}">
+  <smart-slider
+    value="50"
+    custom-class="slider"
+    bar-height="4px"
+    active-color="#ee0a24"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customButton')}}">
+  <smart-slider
+    value="{{ currentValue }}"
+    custom-class="slider"
+    use-button-slot
+    active-color="#ee0a24"
+    bind:drag="onDrag"
+  >
+    <view class="custom-button" slot="button">
+      {{ currentValue }}
+    </view>
+  </smart-slider>
+</demo-block>
+
+<demo-block title="{{I18n.t('verticalDirection')}}">
+  <view style="height: 150px; padding-left: 30px;">
+    <smart-slider
+      value="{{ 50 }}"
+      vertical
+      custom-class="slider"
+      bind:change="onChange"
+    />
+    <smart-slider
+      value="{{ [20, 60 ] }}"
+      vertical
+      range
+      custom-class="slider"
+      bind:change="onChange"
+    />
+  </view>
+</demo-block>

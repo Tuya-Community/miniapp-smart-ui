@@ -1,0 +1,28 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+<view class="smart-field smart-field--textarea">
+  <view wx:if="{{ !hiddenLabel }}" class="{{ utils.bem('field__left__body', { disabled, card: cardMode }) }}">
+    <view class="smart-field__left__icon">
+      <slot name="left-icon"/>
+    </view>
+    <view class="smart-field__label" >
+      <text wx:if="{{ required }}" class="smart-field__label--required">*</text>
+      <label for="{{ name }}" class="label-class" wx:if="{{ label }}">
+        {{ label }}
+      </label>
+      <slot wx:else name="label" />
+      <view wx:if="{{ subLabel && cardMode }}" class="{{ utils.bem('field__label__card__subtitle', { error: errorMessage }) }}">{{ errorMessage || subLabel }}</view>
+    </view>
+  </view>
+  <view class="{{ utils.bem('field__body__box', { disabled }) }}">
+    <view class="{{ utils.bem('field__body', [type]) }}">
+      <view class="{{ utils.bem('field__control', [inputAlign, 'custom']) }}" bindtap="onClickInput">
+        <slot name="input" />
+      </view>
+      <include src="./textarea.wxml" />
+    </view>
+    <label wx:if="{{ showWordLimit && maxlength }}" class="smart-field__word-limit">
+      <view class="{{ utils.bem('field__word-num', { full: value.length >= maxlength }) }}">{{ value.length >= maxlength ? maxlength : value.length }}</view>/{{ maxlength }}
+    </label>
+  </view>
+</view>

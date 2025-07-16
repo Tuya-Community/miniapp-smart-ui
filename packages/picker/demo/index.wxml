@@ -1,0 +1,64 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-picker
+    data-key="demo"
+    active-index="{{ activeIndex }}"
+    columns="{{ column1 }}"
+    bind:change="onChange1"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('multipleUsage')}}">
+  <smart-picker
+    columns="{{ column5 }}"
+    active-style="color: red;"
+    bind:change="onChange1"
+    custom-class="picker5"
+    bind:animation-start="animationStart"
+    bind:animation-end="animationEnd"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('defaultSelectedItem')}}">
+  <smart-picker
+    columns="{{ column1 }}"
+    default-index="{{ 2 }}"
+    bind:change="onChange1"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('showTheTopBar')}}">
+  <smart-picker
+    show-toolbar
+    title="{{I18n.t('title')}}"
+    columns="{{ column1 }}"
+    bind:change="onChange1"
+    bind:confirm="onConfirm"
+    bind:cancel="onCancel"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('multipleColumnsLinkage')}}">
+  <smart-picker
+    columns="{{ column4 }}"
+    bind:change="onChange2"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('disableOption')}}">
+  <smart-picker columns="{{ column2 }}" />
+</demo-block>
+
+<demo-block title="{{I18n.t('loading')}}">
+  <smart-picker
+    loading
+    columns="{{ column4 }}"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('setTheOrderOfColumnStyles')}}">
+  <smart-picker
+    columns="{{ column6 }}"
+  />
+</demo-block>
+
+<smart-toast id="smart-toast-picker" />

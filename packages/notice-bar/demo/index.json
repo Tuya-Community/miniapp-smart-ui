@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-notice-bar": "../../notice-bar/index",
+    "demo-block": "../../../example/components/demo-block/index",
+    "smart-icon": "../../icon/index"
+  }
+}

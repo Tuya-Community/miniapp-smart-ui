@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="line"
+      >
+        <battery>
+          <wx-view
+            style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22px' height='38px' viewBox='0 0 11 19' %3E %3Cpath d='M6.5,0 C6.77614237,-5.07265313e-17 7,0.223857625 7,0.5 L7,1 L9.5,1 C10.3284271,1 11,1.67157288 11,2.5 L11,17.5 C11,18.3284271 10.3284271,19 9.5,19 L1.5,19 C0.671572875,19 0,18.3284271 0,17.5 L0,2.5 C0,1.67157288 0.671572875,1 1.5,1 L4,1 L4,0.5 C4,0.223857625 4.22385763,5.07265313e-17 4.5,0 L6.5,0 Z M9.5,2 L1.5,2 C1.22385763,2 1,2.22385763 1,2.5 L1,17.5 C1,17.7761424 1.22385763,18 1.5,18 L9.5,18 C9.77614237,18 10,17.7761424 10,17.5 L10,2.5 C10,2.22385763 9.77614237,2 9.5,2 Z' fill='rgba(0, 0, 0, 0.5)' /%3E %3Cpolygon points='2 3 9 3 9 17 2 17' fill='%2370CF98' /%3E %3C/svg%3E\\"); width: 22px; height: 38px; background-repeat: no-repeat; transform: 0"
+          />
+        </battery>
+        <battery>
+          <wx-view
+            style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11px' height='19px' viewBox='0 0 11 19' %3E %3Cpath d='M6.5,0 C6.77614237,-5.07265313e-17 7,0.223857625 7,0.5 L7,1 L9.5,1 C10.3284271,1 11,1.67157288 11,2.5 L11,17.5 C11,18.3284271 10.3284271,19 9.5,19 L1.5,19 C0.671572875,19 0,18.3284271 0,17.5 L0,2.5 C0,1.67157288 0.671572875,1 1.5,1 L4,1 L4,0.5 C4,0.223857625 4.22385763,5.07265313e-17 4.5,0 L6.5,0 Z M9.5,2 L1.5,2 C1.22385763,2 1,2.22385763 1,2.5 L1,17.5 C1,17.7761424 1.22385763,18 1.5,18 L9.5,18 C9.77614237,18 10,17.7761424 10,17.5 L10,2.5 C10,2.22385763 9.77614237,2 9.5,2 Z' fill='rgba(0, 0, 0, 0.5)' /%3E %3Cpolygon points='2 7.199999999999999 9 7.199999999999999 9 17 2 17' fill='%2370CF98' /%3E %3C/svg%3E\\"); width: 11px; height: 19px; background-repeat: no-repeat; transform: 0"
+          />
+        </battery>
+        <battery>
+          <wx-view
+            style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11px' height='19px' viewBox='0 0 11 19' %3E %3Cpath d='M6.5,0 C6.77614237,-5.07265313e-17 7,0.223857625 7,0.5 L7,1 L9.5,1 C10.3284271,1 11,1.67157288 11,2.5 L11,17.5 C11,18.3284271 10.3284271,19 9.5,19 L1.5,19 C0.671572875,19 0,18.3284271 0,17.5 L0,2.5 C0,1.67157288 0.671572875,1 1.5,1 L4,1 L4,0.5 C4,0.223857625 4.22385763,5.07265313e-17 4.5,0 L6.5,0 Z M9.5,2 L1.5,2 C1.22385763,2 1,2.22385763 1,2.5 L1,17.5 C1,17.7761424 1.22385763,18 1.5,18 L9.5,18 C9.77614237,18 10,17.7761424 10,17.5 L10,2.5 C10,2.22385763 9.77614237,2 9.5,2 Z' fill='rgba(0, 0, 0, 0.5)' /%3E %3Cpolygon points='2 15.6 9 15.6 9 17 2 17' fill='%23F5A623' /%3E %3C/svg%3E\\"); width: 11px; height: 19px; background-repeat: no-repeat; transform: 0"
+          />
+        </battery>
+        <battery>
+          <wx-view
+            style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11px' height='19px' viewBox='0 0 11 19' %3E %3Cpath d='M6.5,0 C6.77614237,-5.07265313e-17 7,0.223857625 7,0.5 L7,1 L9.5,1 C10.3284271,1 11,1.67157288 11,2.5 L11,17.5 C11,18.3284271 10.3284271,19 9.5,19 L1.5,19 C0.671572875,19 0,18.3284271 0,17.5 L0,2.5 C0,1.67157288 0.671572875,1 1.5,1 L4,1 L4,0.5 C4,0.223857625 4.22385763,5.07265313e-17 4.5,0 L6.5,0 Z M9.5,2 L1.5,2 C1.22385763,2 1,2.22385763 1,2.5 L1,17.5 C1,17.7761424 1.22385763,18 1.5,18 L9.5,18 C9.77614237,18 10,17.7761424 10,17.5 L10,2.5 C10,2.22385763 9.77614237,2 9.5,2 Z' fill='rgba(0, 0, 0, 0.5)' /%3E %3Cpolygon points='2 16.58 9 16.58 9 17 2 17' fill='%23FF4444' /%3E %3C/svg%3E\\"); width: 11px; height: 19px; background-repeat: no-repeat; transform: 0"
+          />
+        </battery>
+        <battery>
+          <wx-view
+            style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11px' height='19px' viewBox='0 0 11 19' %3E %3Cpath d='M6.5,0 C6.77614237,-5.07265313e-17 7,0.223857625 7,0.5 L7,1 L9.5,1 C10.3284271,1 11,1.67157288 11,2.5 L11,17.5 C11,18.3284271 10.3284271,19 9.5,19 L1.5,19 C0.671572875,19 0,18.3284271 0,17.5 L0,2.5 C0,1.67157288 0.671572875,1 1.5,1 L4,1 L4,0.5 C4,0.223857625 4.22385763,5.07265313e-17 4.5,0 L6.5,0 Z M9.5,2 L1.5,2 C1.22385763,2 1,2.22385763 1,2.5 L1,17.5 C1,17.7761424 1.22385763,18 1.5,18 L9.5,18 C9.77614237,18 10,17.7761424 10,17.5 L10,2.5 C10,2.22385763 9.77614237,2 9.5,2 Z' fill='rgba(0, 0, 0, 0.5)' /%3E %3Cpolygon points='2 17 9 17 9 17 2 17' fill='%23FF4444' /%3E %3C/svg%3E\\"); width: 11px; height: 19px; background-repeat: no-repeat; transform: 0"
+          />
+        </battery>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="line"
+      >
+        <battery>
+          <wx-view
+            style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11px' height='19px' viewBox='0 0 11 19' %3E %3Cpath d='M6.5,0 C6.77614237,-5.07265313e-17 7,0.223857625 7,0.5 L7,1 L9.5,1 C10.3284271,1 11,1.67157288 11,2.5 L11,17.5 C11,18.3284271 10.3284271,19 9.5,19 L1.5,19 C0.671572875,19 0,18.3284271 0,17.5 L0,2.5 C0,1.67157288 0.671572875,1 1.5,1 L4,1 L4,0.5 C4,0.223857625 4.22385763,5.07265313e-17 4.5,0 L6.5,0 Z M9.5,2 L1.5,2 C1.22385763,2 1,2.22385763 1,2.5 L1,17.5 C1,17.7761424 1.22385763,18 1.5,18 L9.5,18 C9.77614237,18 10,17.7761424 10,17.5 L10,2.5 C10,2.22385763 9.77614237,2 9.5,2 Z' fill='rgba(0, 0, 0, 0.5)' /%3E %3Cpolygon points='2 3 9 3 9 17 2 17' fill='%2370CF98' /%3E %3C/svg%3E\\"); width: 11px; height: 19px; background-repeat: no-repeat; transform: rotate(90deg)"
+          />
+        </battery>
+        <battery>
+          <wx-view
+            style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11px' height='19px' viewBox='0 0 11 19' %3E %3Cpath d='M6.5,0 C6.77614237,-5.07265313e-17 7,0.223857625 7,0.5 L7,1 L9.5,1 C10.3284271,1 11,1.67157288 11,2.5 L11,17.5 C11,18.3284271 10.3284271,19 9.5,19 L1.5,19 C0.671572875,19 0,18.3284271 0,17.5 L0,2.5 C0,1.67157288 0.671572875,1 1.5,1 L4,1 L4,0.5 C4,0.223857625 4.22385763,5.07265313e-17 4.5,0 L6.5,0 Z M9.5,2 L1.5,2 C1.22385763,2 1,2.22385763 1,2.5 L1,17.5 C1,17.7761424 1.22385763,18 1.5,18 L9.5,18 C9.77614237,18 10,17.7761424 10,17.5 L10,2.5 C10,2.22385763 9.77614237,2 9.5,2 Z' fill='rgba(0, 0, 0, 0.5)' /%3E %3Cpolygon points='2 7.199999999999999 9 7.199999999999999 9 17 2 17' fill='%2370CF98' /%3E %3C/svg%3E\\"); width: 11px; height: 19px; background-repeat: no-repeat; transform: rotate(90deg)"
+          />
+        </battery>
+        <battery>
+          <wx-view
+            style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11px' height='19px' viewBox='0 0 11 19' %3E %3Cpath d='M6.5,0 C6.77614237,-5.07265313e-17 7,0.223857625 7,0.5 L7,1 L9.5,1 C10.3284271,1 11,1.67157288 11,2.5 L11,17.5 C11,18.3284271 10.3284271,19 9.5,19 L1.5,19 C0.671572875,19 0,18.3284271 0,17.5 L0,2.5 C0,1.67157288 0.671572875,1 1.5,1 L4,1 L4,0.5 C4,0.223857625 4.22385763,5.07265313e-17 4.5,0 L6.5,0 Z M9.5,2 L1.5,2 C1.22385763,2 1,2.22385763 1,2.5 L1,17.5 C1,17.7761424 1.22385763,18 1.5,18 L9.5,18 C9.77614237,18 10,17.7761424 10,17.5 L10,2.5 C10,2.22385763 9.77614237,2 9.5,2 Z' fill='rgba(0, 0, 0, 0.5)' /%3E %3Cpolygon points='2 15.6 9 15.6 9 17 2 17' fill='%23F5A623' /%3E %3C/svg%3E\\"); width: 11px; height: 19px; background-repeat: no-repeat; transform: rotate(90deg)"
+          />
+        </battery>
+        <battery>
+          <wx-view
+            style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11px' height='19px' viewBox='0 0 11 19' %3E %3Cpath d='M6.5,0 C6.77614237,-5.07265313e-17 7,0.223857625 7,0.5 L7,1 L9.5,1 C10.3284271,1 11,1.67157288 11,2.5 L11,17.5 C11,18.3284271 10.3284271,19 9.5,19 L1.5,19 C0.671572875,19 0,18.3284271 0,17.5 L0,2.5 C0,1.67157288 0.671572875,1 1.5,1 L4,1 L4,0.5 C4,0.223857625 4.22385763,5.07265313e-17 4.5,0 L6.5,0 Z M9.5,2 L1.5,2 C1.22385763,2 1,2.22385763 1,2.5 L1,17.5 C1,17.7761424 1.22385763,18 1.5,18 L9.5,18 C9.77614237,18 10,17.7761424 10,17.5 L10,2.5 C10,2.22385763 9.77614237,2 9.5,2 Z' fill='rgba(0, 0, 0, 0.5)' /%3E %3Cpolygon points='2 16.58 9 16.58 9 17 2 17' fill='%23FF4444' /%3E %3C/svg%3E\\"); width: 11px; height: 19px; background-repeat: no-repeat; transform: rotate(90deg)"
+          />
+        </battery>
+        <battery>
+          <wx-view
+            style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11px' height='19px' viewBox='0 0 11 19' %3E %3Cpath d='M6.5,0 C6.77614237,-5.07265313e-17 7,0.223857625 7,0.5 L7,1 L9.5,1 C10.3284271,1 11,1.67157288 11,2.5 L11,17.5 C11,18.3284271 10.3284271,19 9.5,19 L1.5,19 C0.671572875,19 0,18.3284271 0,17.5 L0,2.5 C0,1.67157288 0.671572875,1 1.5,1 L4,1 L4,0.5 C4,0.223857625 4.22385763,5.07265313e-17 4.5,0 L6.5,0 Z M9.5,2 L1.5,2 C1.22385763,2 1,2.22385763 1,2.5 L1,17.5 C1,17.7761424 1.22385763,18 1.5,18 L9.5,18 C9.77614237,18 10,17.7761424 10,17.5 L10,2.5 C10,2.22385763 9.77614237,2 9.5,2 Z' fill='rgba(0, 0, 0, 0.5)' /%3E %3Cpolygon points='2 17 9 17 9 17 2 17' fill='%23FF4444' /%3E %3C/svg%3E\\"); width: 11px; height: 19px; background-repeat: no-repeat; transform: rotate(90deg)"
+          />
+        </battery>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+</main>
+`;

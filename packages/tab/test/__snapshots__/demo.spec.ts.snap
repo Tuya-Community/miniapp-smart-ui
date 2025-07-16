@@ -1,0 +1,1926 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tabs
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class smart-tabs"
+        >
+          <smart-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="smart-tabs--line smart-tabs__wrap   wrap-class"
+                >
+                  <wx-scroll-view
+                    class="smart-tabs__scroll smart-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="smart-tabs__line"
+                        style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 3
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{3}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 4
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+          <wx-view
+            class="smart-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="smart-tabs__track smart-tabs__track"
+              style=""
+            >
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        undefined 2
+      
+                  </wx-view>
+                </wx-view>
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tabs>
+        <wx-view
+          class="custom-class smart-tabs"
+        >
+          <smart-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="smart-tabs--line smart-tabs__wrap   wrap-class"
+                >
+                  <wx-scroll-view
+                    class="smart-tabs__scroll smart-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="smart-tabs__line"
+                        style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 3
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+          <wx-view
+            class="smart-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="smart-tabs__track smart-tabs__track"
+              style=""
+            >
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        undefined 2
+      
+                  </wx-view>
+                </wx-view>
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tabs>
+        <wx-view
+          class="custom-class smart-tabs"
+        >
+          <smart-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="smart-tabs--line smart-tabs__wrap smart-tabs__wrap--scrollable   wrap-class"
+                >
+                  <wx-scroll-view
+                    class="smart-tabs__scroll smart-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{true}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="smart-tabs__line"
+                        style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        data-index="{{0}}"
+                        style="flex-basis:17.6%"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{1}}"
+                        style="flex-basis:17.6%"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{2}}"
+                        style="flex-basis:17.6%"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 3
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{3}}"
+                        style="flex-basis:17.6%"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 4
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{4}}"
+                        style="flex-basis:17.6%"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 5
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{5}}"
+                        style="flex-basis:17.6%"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 6
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+          <wx-view
+            class="smart-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="smart-tabs__track smart-tabs__track"
+              style=""
+            >
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        undefined 1
+      
+                  </wx-view>
+                </wx-view>
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tabs
+        bind:disabled="onClickDisabled"
+      >
+        <wx-view
+          class="custom-class smart-tabs"
+        >
+          <smart-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="smart-tabs--line smart-tabs__wrap   wrap-class"
+                >
+                  <wx-scroll-view
+                    class="smart-tabs__scroll smart-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="smart-tabs__line"
+                        style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab smart-tab--disabled"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 3
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+          <wx-view
+            class="smart-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="smart-tabs__track smart-tabs__track"
+              style=""
+            >
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        undefined 1
+      
+                  </wx-view>
+                </wx-view>
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tabs
+        tabClass="special-tab"
+      >
+        <wx-view
+          class="custom-class smart-tabs"
+        >
+          <smart-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="smart-tabs--card smart-tabs__wrap   wrap-class"
+                >
+                  <wx-scroll-view
+                    class="smart-tabs__scroll smart-tabs__scroll--card"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="smart-tabs__nav smart-tabs__nav--card nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="smart-tabs__card"
+                        style="opacity:0;transform:translateX(0px);-webkit-transform:translate(0px, 0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 3
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+          <wx-view
+            class="smart-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="smart-tabs__track smart-tabs__track"
+              style=""
+            >
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content-2"
+                  >
+                    
+        undefined 1
+      
+                  </wx-view>
+                </wx-view>
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tabs
+        bind:click="onClick"
+      >
+        <wx-view
+          class="custom-class smart-tabs"
+        >
+          <smart-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="smart-tabs--line smart-tabs__wrap   wrap-class"
+                >
+                  <wx-scroll-view
+                    class="smart-tabs__scroll smart-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="smart-tabs__line"
+                        style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 2
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+          <wx-view
+            class="smart-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="smart-tabs__track smart-tabs__track"
+              style=""
+            >
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        undefined 1
+      
+                  </wx-view>
+                </wx-view>
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tabs>
+        <wx-view
+          class="custom-class smart-tabs"
+        >
+          <smart-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="smart-tabs--line smart-tabs__wrap   wrap-class"
+                >
+                  <wx-scroll-view
+                    class="smart-tabs__scroll smart-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="smart-tabs__line"
+                        style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 3
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{3}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 4
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+          <wx-view
+            class="smart-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="smart-tabs__track smart-tabs__track"
+              style=""
+            >
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        undefined 1
+      
+                  </wx-view>
+                </wx-view>
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tabs>
+        <wx-view
+          class="custom-class smart-tabs"
+        >
+          <smart-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="smart-tabs--line smart-tabs__wrap   wrap-class"
+                >
+                  <wx-scroll-view
+                    class="smart-tabs__scroll smart-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="smart-tabs__line"
+                        style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 3
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{3}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 4
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+          <wx-view
+            class="smart-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="smart-tabs__track smart-tabs__track--animated smart-tabs__track"
+              style="left:0%;transition-duration:0.3s;-webkit-transition-duration:0.3s"
+            >
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        undefined 1
+      
+                  </wx-view>
+                </wx-view>
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style=""
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style=""
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style=""
+                />
+              </smart-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tabs>
+        <wx-view
+          class="custom-class smart-tabs"
+        >
+          <smart-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="smart-tabs--line smart-tabs__wrap   wrap-class"
+                >
+                  <wx-scroll-view
+                    class="smart-tabs__scroll smart-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="smart-tabs__line"
+                        style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 3
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{3}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 4
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+          <wx-view
+            class="smart-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="smart-tabs__track smart-tabs__track"
+              style=""
+            >
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        undefined 1
+      
+                  </wx-view>
+                </wx-view>
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tabs
+        tabActiveClass="special-tab-active"
+        tabClass="special-tab"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class smart-tabs"
+        >
+          <smart-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="smart-tabs--line smart-tabs__wrap   wrap-class"
+                >
+                  <wx-scroll-view
+                    class="smart-tabs__scroll smart-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="smart-tabs__line"
+                        style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 2
+              
+                          <smart-info
+                            customClass="smart-tab__title__info"
+                          >
+                            <wx-view
+                              class="smart-info smart-info smart-info--dot custom-class"
+                              style=""
+                            >
+                              
+                            </wx-view>
+                          </smart-info>
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 3
+              
+                          <smart-info
+                            customClass="smart-tab__title__info"
+                          >
+                            <wx-view
+                              class="smart-info smart-info custom-class"
+                              style=""
+                            >
+                              99
+                            </wx-view>
+                          </smart-info>
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{3}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 4
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                  <smart-icon
+                    customClass="right-nav"
+                    slot="nav-right"
+                    bind:click="onClickNavRight"
+                  >
+                    <wx-view
+                      class="custom-class smart-icon smart-icon-search"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </smart-icon>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+          <wx-view
+            class="smart-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="smart-tabs__track smart-tabs__track"
+              style=""
+            >
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        undefined 2
+      
+                  </wx-view>
+                </wx-view>
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tabs
+        bind:before-change="onBeforeChange"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class smart-tabs"
+        >
+          <smart-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="smart-tabs--line smart-tabs__wrap   wrap-class"
+                >
+                  <wx-scroll-view
+                    class="smart-tabs__scroll smart-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="smart-tabs__line"
+                        style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 3
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{3}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              undefined 4
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+          <wx-view
+            class="smart-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="smart-tabs__track smart-tabs__track"
+              style=""
+            >
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        undefined 2
+      
+                  </wx-view>
+                </wx-view>
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-tabs
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class smart-tabs"
+        >
+          <smart-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class smart-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="smart-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="smart-tabs--line smart-tabs__wrap  smart-tabs--line_subtitle wrap-class"
+                >
+                  <wx-scroll-view
+                    class="smart-tabs__scroll smart-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="smart-tabs__line"
+                        style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              
+              
+                        </wx-view>
+                        <wx-view
+                          class="smart-ellipsis"
+                          style="color: black;"
+                        >
+                          
+              12
+            
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        data-index="{{1}}"
+                        style="color:#1989FA"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              
+              
+                        </wx-view>
+                        <wx-view
+                          class="smart-ellipsis"
+                          style="color: black;"
+                        >
+                          
+              13
+            
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              
+              
+                        </wx-view>
+                        <wx-view
+                          class="smart-ellipsis"
+                          style="color: black;"
+                        >
+                          
+              14
+            
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{3}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              
+              
+                        </wx-view>
+                        <wx-view
+                          class="smart-ellipsis"
+                          style="color: black;"
+                        >
+                          
+              15
+            
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{4}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              
+              
+                        </wx-view>
+                        <wx-view
+                          class="smart-ellipsis"
+                          style="color: black;"
+                        >
+                          
+              16
+            
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{5}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              
+              
+                        </wx-view>
+                        <wx-view
+                          class="smart-ellipsis"
+                          style="color: black;"
+                        >
+                          
+              17
+            
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class smart-ellipsis smart-tab"
+                        data-index="{{6}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="smart-ellipsis"
+                          style=""
+                        >
+                          
+              
+              
+                        </wx-view>
+                        <wx-view
+                          class="smart-ellipsis"
+                          style="color: black;"
+                        >
+                          
+              18
+            
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </smart-sticky>
+          <wx-view
+            class="smart-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="smart-tabs__track smart-tabs__track"
+              style=""
+            >
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--active"
+                  style=""
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+              <smart-tab>
+                <wx-view
+                  class="custom-class smart-tab__pane smart-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </smart-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-tabs>
+    </wx-view>
+  </demo-block>
+</main>
+`;

@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-cell": "../../cell/index",
+    "smart-dialog": "../../dialog/index",
+    "smart-toast": "../../toast/index",
+    "smart-swipe-cell": "../../swipe-cell/index",
+    "smart-cell-group": "../../cell-group/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

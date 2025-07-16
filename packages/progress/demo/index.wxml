@@ -1,0 +1,23 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-progress custom-class="progress-position" percentage="0" />
+</demo-block>
+
+<demo-block title="{{I18n.t('lineThickness')}}">
+  <smart-progress custom-class="progress-position" stroke-width="8" percentage="100" />
+</demo-block>
+
+<demo-block title="{{I18n.t('setToGray')}}">
+  <smart-progress custom-class="progress-position" inactive percentage="50" />
+</demo-block>
+
+<demo-block title="{{I18n.t('styleCustomization')}}">
+  <smart-progress custom-class="progress-position" pivot-text="{{I18n.t('orange')}}" color="#f2826a" percentage="25" />
+  <smart-progress custom-class="progress-position" pivot-text="{{I18n.t('red')}}" color="#ee0a24" percentage="50" />
+  <smart-progress
+    custom-class="progress-position"
+    percentage="75"
+    pivot-text="{{I18n.t('purple')}}"
+    pivot-color="#7232dd"
+    color="linear-gradient(to right, #be99ff, #7232dd)"
+  />
+</demo-block>

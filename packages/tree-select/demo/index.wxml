@@ -1,0 +1,56 @@
+<demo-block title="{{I18n.t('singleSelectionMode')}}">
+  <smart-tree-select
+    items="{{ items }}"
+    main-active-index="{{ mainActiveIndex }}"
+    active-id="{{ activeId }}"
+    bind:click-item="onClickItem"
+    bind:click-nav="onClickNav"
+  ></smart-tree-select>
+</demo-block>
+
+<demo-block title="{{I18n.t('multipleChoiceMode')}}">
+  <smart-tree-select
+    max="2"
+    items="{{ items }}"
+    main-active-index="{{ mainActiveIndexMulti }}"
+    active-id="{{ activeIdMulti }}"
+    bind:click-item="onClickItemMulti"
+    bind:click-nav="onClickNavMulti"
+  ></smart-tree-select>
+</demo-block>
+
+<demo-block title="{{I18n.t('customContent')}}">
+  <smart-tree-select
+    items="{{ [{ text: I18n.t('group') + ' 1' }, { text: I18n.t('group') + ' 2' }] }}"
+    height="55vw"
+    main-active-index="{{ mainActiveIndex }}"
+    active-id="{{ activeId }}"
+    bind:click-item="onClickItem"
+    bind:click-nav="onClickNav"
+  >
+    <view 
+      wx:if="{{ mainActiveIndex === 0 }}"
+      style="width:100%;height:100%;padding-top:40px;text-align:center;"
+      slot="content"
+    >
+      <text>{{I18n.t('thisIsCustomContent')}}1</text>
+    </view>
+    <view 
+      wx:if="{{ mainActiveIndex === 1 }}"
+      style="width:100%;height:100%;padding-top:40px;text-align:center;"
+      slot="content"
+    >
+      <text>{{I18n.t('thisIsCustomContent')}}2</text>
+    </view>
+  </smart-tree-select>
+</demo-block>
+
+<demo-block title="{{I18n.t('logoHint')}}">
+  <smart-tree-select
+    items="{{ badgeItems }}"
+    main-active-index="{{ mainActiveIndex }}"
+    active-id="{{ activeId }}"
+    bind:click-item="onClickItem"
+    bind:click-nav="onClickNav"
+  ></smart-tree-select>
+</demo-block>

@@ -1,0 +1,1214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    />
+                    <wx-view
+                      class="smart-field__label"
+                    />
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--text"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--text input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="text"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__body__box"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--text"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--text input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="text"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    />
+                    <wx-view
+                      class="smart-field__label"
+                    />
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--password"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--password input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{true}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="password"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body smart-field__left__body--card"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    />
+                    <wx-view
+                      class="smart-field__label"
+                    />
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--number"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--number smart-field__control--card input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="number"
+                        value="2000"
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body smart-field__left__body--disabled"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    />
+                    <wx-view
+                      class="smart-field__label"
+                    />
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box smart-field__body__box--disabled"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--text"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--text input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{true}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="text"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body smart-field__left__body--disabled smart-field__left__body--card"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    />
+                    <wx-view
+                      class="smart-field__label"
+                    />
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box smart-field__body__box--disabled"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--text"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--text smart-field__control--card input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{true}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="text"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    >
+                      <smart-icon
+                        slot="left-icon"
+                      >
+                        <wx-view
+                          class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                          style="color:#3678E3;font-size:22px"
+                          bind:tap="onClick"
+                        >
+                          <wx-view
+                            class="smart-icon__svg"
+                            style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M544.768%20171.52A33.353143%2033.353143%200%200%200%20512%20138.678857a33.060571%2033.060571%200%200%200-32.475429%2032.768v65.28c0%2017.664%2014.811429%2032.438857%2032.475429%2032.438857a33.060571%2033.060571%200%200%200%2032.768-32.438857V171.483429z%20m128.585143%20119.552a32.512%2032.512%200%201%200%2046.299428%2045.641143l46.262858-46.299429c12.544-12.214857%2012.544-33.718857%200-46.262857a33.097143%2033.097143%200%200%200-45.970286%200.329143l-46.592%2046.592zM304.347429%20336.713143a32.512%2032.512%200%200%200%2045.970285%200.329143%2033.097143%2033.097143%200%200%200%200.329143-45.970286L304.347429%20244.48a33.426286%2033.426286%200%200%200-45.970286-0.365714c-12.507429%2012.580571-12.507429%2034.084571-0.292572%2046.006857l46.262858%2046.592zM512%20328.667429c-92.562286%200-169.398857%2076.507429-169.398857%20169.398857%200%2092.891429%2076.8%20169.398857%20169.398857%20169.398857%2092.562286%200%20169.069714-76.507429%20169.069714-169.398857%200-92.891429-76.507429-169.398857-169.069714-169.398857z%20m326.217143%20202.203428a33.060571%2033.060571%200%200%200%2032.512-32.804571%2032.804571%2032.804571%200%200%200-32.475429-32.475429h-65.243428a32.804571%2032.804571%200%200%200-32.475429%2032.475429c0%2017.664%2014.774857%2032.804571%2032.475429%2032.804571h65.243428zM186.112%20465.554286a32.841143%2032.841143%200%200%200-32.804571%2032.475428c0%2017.664%2014.811429%2032.804571%2032.804571%2032.804572h64.914286a33.353143%2033.353143%200%200%200%2032.804571-32.804572%2033.060571%2033.060571%200%200%200-32.804571-32.475428H186.075429z%20m533.211429%20193.828571a32.804571%2032.804571%200%200%200-45.933715%200.329143c-12.544%2012.214857-12.544%2033.097143%200.329143%2045.970286l46.592%2046.262857c12.214857%2012.544%2033.426286%2012.214857%2045.970286-0.292572a33.097143%2033.097143%200%200%200-0.329143-45.970285L719.36%20659.382857zM258.121143%20705.389714c-12.544%2012.544-12.873143%2033.755429-0.658286%2045.970286%2012.544%2012.544%2034.084571%2012.836571%2046.299429%200.621714l46.592-46.262857a33.097143%2033.097143%200%200%200%200.329143-45.970286%2033.499429%2033.499429%200%200%200-46.299429-0.329142l-46.262857%2045.970285z%20m286.72%2054.016a33.060571%2033.060571%200%200%200-32.804572-32.475428%2032.804571%2032.804571%200%200%200-32.475428%2032.475428v65.243429c0%2017.664%2014.811429%2032.768%2032.475428%2032.768a33.353143%2033.353143%200%200%200%2032.768-32.768v-65.243429z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M544.768%20171.52A33.353143%2033.353143%200%200%200%20512%20138.678857a33.060571%2033.060571%200%200%200-32.475429%2032.768v65.28c0%2017.664%2014.811429%2032.438857%2032.475429%2032.438857a33.060571%2033.060571%200%200%200%2032.768-32.438857V171.483429z%20m128.585143%20119.552a32.512%2032.512%200%201%200%2046.299428%2045.641143l46.262858-46.299429c12.544-12.214857%2012.544-33.718857%200-46.262857a33.097143%2033.097143%200%200%200-45.970286%200.329143l-46.592%2046.592zM304.347429%20336.713143a32.512%2032.512%200%200%200%2045.970285%200.329143%2033.097143%2033.097143%200%200%200%200.329143-45.970286L304.347429%20244.48a33.426286%2033.426286%200%200%200-45.970286-0.365714c-12.507429%2012.580571-12.507429%2034.084571-0.292572%2046.006857l46.262858%2046.592zM512%20328.667429c-92.562286%200-169.398857%2076.507429-169.398857%20169.398857%200%2092.891429%2076.8%20169.398857%20169.398857%20169.398857%2092.562286%200%20169.069714-76.507429%20169.069714-169.398857%200-92.891429-76.507429-169.398857-169.069714-169.398857z%20m326.217143%20202.203428a33.060571%2033.060571%200%200%200%2032.512-32.804571%2032.804571%2032.804571%200%200%200-32.475429-32.475429h-65.243428a32.804571%2032.804571%200%200%200-32.475429%2032.475429c0%2017.664%2014.774857%2032.804571%2032.475429%2032.804571h65.243428zM186.112%20465.554286a32.841143%2032.841143%200%200%200-32.804571%2032.475428c0%2017.664%2014.811429%2032.804571%2032.804571%2032.804572h64.914286a33.353143%2033.353143%200%200%200%2032.804571-32.804572%2033.060571%2033.060571%200%200%200-32.804571-32.475428H186.075429z%20m533.211429%20193.828571a32.804571%2032.804571%200%200%200-45.933715%200.329143c-12.544%2012.214857-12.544%2033.097143%200.329143%2045.970286l46.592%2046.262857c12.214857%2012.544%2033.426286%2012.214857%2045.970286-0.292572a33.097143%2033.097143%200%200%200-0.329143-45.970285L719.36%20659.382857zM258.121143%20705.389714c-12.544%2012.544-12.873143%2033.755429-0.658286%2045.970286%2012.544%2012.544%2034.084571%2012.836571%2046.299429%200.621714l46.592-46.262857a33.097143%2033.097143%200%200%200%200.329143-45.970286%2033.499429%2033.499429%200%200%200-46.299429-0.329142l-46.262857%2045.970285z%20m286.72%2054.016a33.060571%2033.060571%200%200%200-32.804572-32.475428%2032.804571%2032.804571%200%200%200-32.475428%2032.475428v65.243429c0%2017.664%2014.811429%2032.768%2032.475428%2032.768a33.353143%2033.353143%200%200%200%2032.768-32.768v-65.243429z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:#3678E3"
+                          />
+                        </wx-view>
+                      </smart-icon>
+                    </wx-view>
+                    <wx-view
+                      class="smart-field__label"
+                    />
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--text"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--text input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="text"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body smart-field__left__body--card"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    >
+                      <wx-image
+                        slot="left-icon"
+                        src="https://images.tuyacn.com/rms-static/974a30f0-a624-11ef-be03-d1a4feb99779-1731986155903.png?tyName=light-img"
+                        style="height: 50px;width: 50px;"
+                      />
+                    </wx-view>
+                    <wx-view
+                      class="smart-field__label"
+                    />
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--text"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--text smart-field__control--card input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="text"
+                        value="2000"
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    />
+                    <wx-view
+                      class="smart-field__label"
+                    >
+                      <wx-text
+                        class="smart-field__label--required"
+                      >
+                        *
+                      </wx-text>
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--text"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--text input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-input-error-text-color, var(--app-M2, #f04c4c));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="text"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    />
+                    <wx-view
+                      class="smart-field__label"
+                    >
+                      <wx-text
+                        class="smart-field__label--required"
+                      >
+                        *
+                      </wx-text>
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--text"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--text input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="text"
+                        value="12345"
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body smart-field__left__body--card"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    >
+                      <wx-image
+                        slot="left-icon"
+                        src="https://images.tuyacn.com/rms-static/974a30f0-a624-11ef-be03-d1a4feb99779-1731986155903.png?tyName=light-img"
+                        style="height: 50px;width: 50px;"
+                      />
+                    </wx-view>
+                    <wx-view
+                      class="smart-field__label"
+                    >
+                      <wx-text
+                        class="smart-field__label--required"
+                      >
+                        *
+                      </wx-text>
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--text"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--text smart-field__control--card input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="text"
+                        value="2000"
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    class="field-demo-custom-button"
+  >
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+        >
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    />
+                    <wx-view
+                      class="smart-field__label"
+                    />
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--number"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--left smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--left smart-field__control--number input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="number"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      >
+                        <smart-button
+                          customClass="button"
+                          slot="button"
+                        >
+                          <wx-button
+                            appParameter=""
+                            ariaLabel=""
+                            businessId="{{0}}"
+                            class="custom-class smart-button smart-button--info smart-button--normal "
+                            data-detail="{{null}}"
+                            formType=""
+                            hoverClass="smart-button--active hover-class"
+                            id=""
+                            lang=""
+                            openType=""
+                            sendMessageImg=""
+                            sendMessagePath=""
+                            sendMessageTitle=""
+                            sessionFrom=""
+                            showMessageCard="{{false}}"
+                            style=""
+                            bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+                            bind:chooseavatar="onChooseAvatar"
+                            bind:contact="onContact"
+                            bind:error="onError"
+                            bind:getphonenumber="onGetPhoneNumber"
+                            bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+                            bind:getuserinfo="onGetUserInfo"
+                            bind:launchapp="onLaunchApp"
+                            bind:opensetting="onOpenSetting"
+                            bind:tap="onClick"
+                          >
+                            <wx-view
+                              class="smart-button__text"
+                              style=""
+                            >
+                              
+                            </wx-view>
+                          </wx-button>
+                        </smart-button>
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-field>
+        <wx-view
+          class="smart-field smart-field--textarea"
+        >
+          <wx-view
+            class="smart-field__left__body"
+          >
+            <wx-view
+              class="smart-field__left__icon"
+            />
+            <wx-view
+              class="smart-field__label"
+            />
+          </wx-view>
+          <wx-view
+            class="smart-field__body__box"
+          >
+            <wx-view
+              class="smart-field__body smart-field__body--textarea"
+            >
+              <wx-view
+                class="smart-field__control smart-field__control--custom"
+                bind:tap="onClickInput"
+              />
+              <wx-textarea
+                adjustPosition="{{true}}"
+                autoFocus="{{false}}"
+                autoHeight="{{false}}"
+                class="smart-field__control smart-field__control--textarea smart-field__control--textarea smart-field__control--limit input-class"
+                cursor="{{-1}}"
+                cursorSpacing="{{50}}"
+                disabled="{{false}}"
+                disableDefaultPadding="{{true}}"
+                fixed="{{false}}"
+                focus="{{false}}"
+                holdKeyboard="{{false}}"
+                id=""
+                maxlength="{{200}}"
+                placeholder=""
+                placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                selectionEnd="{{-1}}"
+                selectionStart="{{-1}}"
+                showConfirmBar="{{true}}"
+                style=""
+                value=""
+                bind:blur="onBlur"
+                bind:confirm="onConfirm"
+                bind:focus="onFocus"
+                bind:input="onInput"
+                bind:keyboardheightchange="onKeyboardHeightChange"
+                bind:linechange="onLineChange"
+                bind:tap="onClickInput"
+              />
+            </wx-view>
+            <wx-label
+              class="smart-field__word-limit"
+            >
+              <wx-view
+                class="smart-field__word-num"
+              >
+                0
+              </wx-view>
+              /200
+    
+            </wx-label>
+          </wx-view>
+        </wx-view>
+      </smart-field>
+    </wx-view>
+  </demo-block>
+</main>
+`;

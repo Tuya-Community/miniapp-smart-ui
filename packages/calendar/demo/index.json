@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-cell": "../../cell/index",
+    "smart-calendar": "../../calendar/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

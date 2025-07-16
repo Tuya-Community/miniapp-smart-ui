@@ -1,0 +1,32 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<view class="{{ utils.bem('checkbox', [{ horizontal: direction === 'horizontal' }]) }} custom-class">
+  <view
+    wx:if="{{ labelPosition === 'left' }}"
+    class="label-class {{ utils.bem('checkbox__label', [labelPosition, { disabled: disabled || parentDisabled }]) }}"
+    catch:tap="onClickLabel"
+  >
+    <slot />
+  </view>
+  <view class="smart-checkbox__icon-wrap" catch:tap="toggle">
+    <slot wx:if="{{ useIconSlot }}" name="icon" />
+    <smart-icon
+      wx:else
+      name="{{ icon }}"
+      size="1em"
+      color="{{ value ? '#fff' : 'none'}}"
+      class="{{ utils.bem('checkbox__icon', [shape, { disabled: disabled || parentDisabled, checked: value }]) }}"
+      style="{{ computed.iconStyle(checkedColor, value, disabled, parentDisabled, iconSize) }}"
+      custom-class="icon-class"
+      custom-style="line-height: 1.25em;"
+    />
+  </view>
+  <view
+    wx:if="{{ labelPosition === 'right' }}"
+    class="label-class {{ utils.bem('checkbox__label', [labelPosition, { disabled: disabled || parentDisabled }]) }}"
+    catch:tap="onClickLabel"
+  >
+    <slot />
+  </view>
+</view>

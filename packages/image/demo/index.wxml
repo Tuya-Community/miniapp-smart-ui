@@ -1,0 +1,112 @@
+<demo-block title="{{I18n.t('basicUsage')}}" padding>
+  <smart-row>
+    <smart-image
+      width="100"
+      height="100"
+      src="{{ src }}"
+    />
+  </smart-row>
+</demo-block>
+
+<demo-block title="{{I18n.t('fillMode')}}" padding>
+  <smart-row gutter="20">
+    <smart-col
+      wx:for="{{ fits }}"
+      wx:for-item="fit"
+      wx:key="fit"
+      span="8"
+    >
+      <smart-image
+        fit="{{ fit }}"
+        width="100%"
+        height="27vw"
+        src="{{ src }}"
+      />
+      <view class="text">{{ fit }}</view>
+    </smart-col>
+  </smart-row>
+</demo-block>
+
+<demo-block title="{{I18n.t('roundImage')}}" padding>
+  <smart-row gutter="20">
+    <smart-col
+      wx:for="{{ fits }}"
+      wx:for-item="fit"
+      wx:key="fit"
+      span="8"
+    >
+      <smart-image
+        round
+        fit="{{ fit }}"
+        width="100%"
+        height="27vw"
+        src="{{ src }}"
+      />
+      <view class="text">{{ fit }}</view>
+    </smart-col>
+  </smart-row>
+</demo-block>
+
+<demo-block title="{{I18n.t('loading')}}" padding>
+  <smart-row gutter="20">
+    <smart-col span="8">
+      <smart-image
+        width="100%"
+        height="27vw"
+      />
+      <view class="text">{{I18n.t('defaultPrompt')}}</view>
+    </smart-col>
+
+    <smart-col span="8">
+      <smart-image
+        width="100%"
+        height="27vw"
+        use-loading-slot
+      >
+        <smart-loading
+          slot="loading"
+          type="spinner"
+          size="20"
+          vertical
+        />
+      </smart-image>
+      <view class="text">{{I18n.t('customPrompt')}}</view>
+    </smart-col>
+  </smart-row>
+</demo-block>
+
+<demo-block title="{{I18n.t('loadFailed')}}" padding>
+  <smart-row gutter="20">
+    <smart-col span="8">
+      <smart-image
+        width="100%"
+        height="27vw"
+        src="x"
+      />
+      <view class="text">{{I18n.t('defaultPrompt')}}</view>
+    </smart-col>
+
+    <smart-col span="8">
+      <smart-image
+        width="100%"
+        height="27vw"
+        src="x"
+        use-error-slot
+      >
+        <text slot="error">{{I18n.t('loadingFailed')}}</text>
+      </smart-image>
+      <view class="text">{{I18n.t('customPrompt')}}</view>
+    </smart-col>
+  </smart-row>
+</demo-block>
+
+<demo-block title="{{I18n.t('tintColor')}}" padding>
+  <smart-row>
+    <smart-image
+      width="100"
+      height="100"
+      tint-color="{{ tintColor }}"
+      src="{{ src3 }}"
+    />
+  </smart-row>
+</demo-block>

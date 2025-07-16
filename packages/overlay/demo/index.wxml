@@ -1,0 +1,17 @@
+<demo-block title="{{I18n.t('basicUsage')}}" padding>
+  <smart-button type="primary" bind:click="onClickShow">
+    {{I18n.t('showMaskLayer')}}
+  </smart-button>
+  <smart-overlay show="{{ show }}" bind:click="onClickHide" />
+</demo-block>
+
+<demo-block title="{{I18n.t('embedContent')}}" padding>
+  <smart-button type="primary" bind:click="onClickShowEmbedded">
+    {{I18n.t('embedContent')}}
+  </smart-button>
+  <smart-overlay show="{{ showEmbedded }}" bind:click="onClickHideEmbedded">
+    <view class="wrapper">
+      <div class="block" catch:tap="noop" />
+    </view>
+  </smart-overlay>
+</demo-block>

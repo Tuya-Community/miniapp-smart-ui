@@ -1,0 +1,68 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function isObj(x) {
+  var type = typeof x;
+  return x !== null && (type === 'object' || type === 'function');
+}
+
+function optionText(option, valueKey) {
+  return isObj(option) && option[valueKey] != null ? option[valueKey] : option;
+}
+
+function rootStyle(data) {
+  return style({
+    height: addUnit(data.itemHeight * data.visibleItemCount),
+  });
+}
+
+function wrapperStyle(data) {
+  var offset =
+    data.offset + (data.itemHeight * (data.visibleItemCount - 1)) / 2;
+  offset = addUnit(offset);
+  if (data.animate) {
+    return style({
+      'text-indent': data.unit ? '-8rpx' : '0',
+      transition: 'transform ' + data.duration + 'ms ease-out',
+      'line-height': addUnit(data.itemHeight),
+      transform: 'translate3d(0, ' + offset + ', 0)',
+    });
+  }
+  return style({
+    'text-indent': data.unit ? '-8rpx' : '0',
+    'line-height': addUnit(data.itemHeight),
+    transform: 'translate3d(0, ' + offset + ', 0)',
+  });
+}
+
+function wrapperInterStyle(data) {
+  var offset = data.renderStart * data.itemHeight;
+  offset = addUnit(offset);
+  return style({
+    'padding-top': offset,
+  });
+}
+
+function wrapperItemStyle(data) {
+  var heightStyleStr = "height: " + data.itemHeight + 'px;'
+  var fontStyleStr = style(data.fontStyle);
+  var activeStyleStr = style(data.activeStyle);
+
+  // var offsetIndex = data.animationIndex - data.index;
+  // var scale = Math.min(Math.abs(offsetIndex * 0.05), 0.05 * 2)
+  // var rotateX = offsetIndex * 25 > 0 ? Math.min(offsetIndex * 25, 25 * 2) : Math.max(offsetIndex * 25, -25 * 2)
+  // const transStyle = style({
+  //   transform: `rotateX(${rotateX}deg) scale(${1 - scale})`
+  // });
+  // return trans + ';' + heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
+  return heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
+}
+
+module.exports = {
+  optionText: optionText,
+  rootStyle: rootStyle,
+  wrapperStyle: wrapperStyle,
+  wrapperInterStyle: wrapperInterStyle,
+  wrapperItemStyle: wrapperItemStyle
+};

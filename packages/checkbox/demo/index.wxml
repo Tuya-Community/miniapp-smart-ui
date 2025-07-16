@@ -1,0 +1,179 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-checkbox
+    value="{{ checkbox1 }}"
+    data-key="checkbox1"
+    custom-class="demo-checkbox-inline"
+    bind:change="onChange"
+  />
+  <smart-checkbox
+    value="{{ checkbox1 ? false : true }}"
+    data-key="checkbox1"
+    custom-class="demo-checkbox-inline"
+    bind:change="onChange2"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('disabledState')}}">
+  <smart-checkbox
+    disabled
+    value="{{ false }}"
+    custom-class="demo-checkbox-inline"
+  />
+  <smart-checkbox
+    disabled
+    value="{{ true }}"
+    custom-class="demo-checkbox-inline"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customShape')}}">
+  <smart-checkbox
+    value="{{ checkboxShape }}"
+    data-key="checkboxShape"
+    shape="square"
+    custom-class="demo-checkbox-inline"
+    bind:change="onChange"
+  />
+  <smart-checkbox
+    value="{{ checkboxShape ? false : true }}"
+    data-key="checkboxShape"
+    shape="square"
+    custom-class="demo-checkbox-inline"
+    bind:change="onChange2"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customColor')}}">
+  <smart-checkbox
+    value="{{ checkbox2 }}"
+    data-key="checkbox2"
+    checked-color="#10D0D0"
+    custom-class="demo-checkbox-inline"
+    bind:change="onChange"
+  />
+  <smart-checkbox
+    value="{{ checkbox2 ? false : true }}"
+    data-key="checkbox2"
+    checked-color="#10D0D0"
+    custom-class="demo-checkbox-inline"
+    bind:change="onChange2"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customSize')}}">
+  <smart-checkbox
+    icon-size="28px"
+    value="{{ checkboxSize }}"
+    data-key="checkboxSize"
+    custom-class="demo-checkbox-inline"
+    bind:change="onChange"
+  />
+  <smart-checkbox
+    icon-size="28px"
+    value="{{ checkboxSize ? false : true }}"
+    data-key="checkboxSize"
+    custom-class="demo-checkbox-inline"
+    bind:change="onChange2"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('showText')}}">
+  <smart-checkbox
+    value="{{ checkbox1 }}"
+    data-key="checkbox1"
+    custom-class="demo-checkbox"
+    bind:change="onChange"
+  >
+  {{I18n.t('customText')}}
+  </smart-checkbox>
+</demo-block>
+
+<demo-block title="{{I18n.t('customIcon')}}">
+  <smart-checkbox
+    use-icon-slot
+    value="{{ checkbox3 }}"
+    data-key="checkbox3"
+    custom-class="demo-checkbox"
+    bind:change="onChange"
+  >
+    {{I18n.t('customIcon')}}
+    <image
+      slot="icon"
+      class="icon"
+      mode="widthFix"
+      src="{{ checkbox3 ? activeIcon : inactiveIcon }}"
+    />
+  </smart-checkbox>
+</demo-block>
+
+<demo-block title="{{I18n.t('disableTextClick')}}">
+  <smart-checkbox
+    label-disabled
+    value="{{ checkboxLabel }}"
+    data-key="checkboxLabel"
+    custom-class="demo-checkbox"
+    bind:change="onChange"
+  >
+    {{I18n.t('checkbox')}}
+  </smart-checkbox>
+</demo-block>
+
+<demo-block title="{{I18n.t('checkboxGroup')}}">
+  <smart-checkbox-group value="{{ result }}" data-key="result" bind:change="onChange">
+    <smart-checkbox
+      ty:for="{{ list }}"
+      ty:key="*this"
+      name="{{ item }}"
+      data-name="{{item}}"
+      custom-class="demo-checkbox"
+    >
+      {{I18n.t('checkbox')}} {{ item }}
+    </smart-checkbox>
+  </smart-checkbox-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('horizontalAlignment')}}">
+  <smart-checkbox-group direction="horizontal" value="{{ result4 }}" data-key="result4" bind:change="onChange">
+    <smart-checkbox
+      ty:for="{{ list }}"
+      ty:key="*this"
+      name="{{ item }}"
+      data-name="{{item}}"
+      custom-class="demo-checkbox"
+    >
+      {{I18n.t('checkbox')}} {{ item }}
+    </smart-checkbox>
+  </smart-checkbox-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('limitTheMaximumSelectableNumber')}}">
+  <smart-checkbox-group value="{{ result2 }}" data-key="result2" max="2" bind:change="onChange">
+    <smart-checkbox
+      ty:for="{{ list }}"
+      ty:key="*this"
+      name="{{ item }}"
+      data-name="{{item}}"
+      custom-class="demo-checkbox"
+    >
+      {{I18n.t('checkbox')}} {{ item }}
+    </smart-checkbox>
+  </smart-checkbox-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('useWithCellComponents')}}">
+  <smart-checkbox-group value="{{ result3 }}" data-key="result3" bind:change="onChange">
+    <smart-cell-group >
+      <smart-cell
+        wx:for="{{ list }}"
+        wx:key="index"
+        title="{{I18n.t('checkbox')}} {{ item }}"
+        value-class="value-class"
+        clickable
+        data-index="{{ index }}"
+        bind:click="toggle"
+      >
+        <smart-checkbox catch:tap="noop" class="checkboxes-{{ index }}" name="{{ item }}" data-name="{{item}}" />
+      </smart-cell>
+    </smart-cell-group>
+  </smart-checkbox-group>
+</demo-block>

@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "watch": true,
+    "allowJs": true,
+    "outDir": "example/dist"
+  },
+  "exclude": ["packages/**/test/*"]
+}

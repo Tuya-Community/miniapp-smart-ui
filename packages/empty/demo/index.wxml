@@ -1,0 +1,24 @@
+<demo-block title="{{I18n.t('basicUsage')}}" padding>
+    <smart-empty title="{{I18n.t('title')}}" description="{{I18n.t('explanatoryText')}}" />
+</demo-block>
+
+<demo-block title="{{I18n.t('customImage')}}" padding>
+  <smart-empty
+    image="https://images.tuyacn.com/rms-static/ae2ff530-976e-11ef-9ccb-47cdb7db279b-1730368709635.png?tyName=img_custom_empty.png"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('bottomContent')}}" padding>
+  <smart-empty title="{{I18n.t('title')}}" description="{{I18n.t('explanatoryText')}}">
+    <smart-button round type="primary" custom-class="bottom-button">
+      Button
+    </smart-button>
+  </smart-empty>
+</demo-block>
+
+<demo-block title="{{I18n.t('useSlots')}}" padding>
+  <smart-empty>
+    <text slot="title" style="font-weight: normal;">{{I18n.t('useTitleSlot')}}</text>
+    <text slot="description" style="font-weight: normal;">{{I18n.t('useDescriptionSlot')}}</text>
+  </smart-empty>
+</demo-block>

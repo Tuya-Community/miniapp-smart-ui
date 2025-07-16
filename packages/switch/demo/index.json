@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-switch": "../../switch/index",
+    "smart-cell": "../../cell/index",
+    "smart-cell-group": "../../cell-group/index",
+    "smart-dialog": "../../dialog/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

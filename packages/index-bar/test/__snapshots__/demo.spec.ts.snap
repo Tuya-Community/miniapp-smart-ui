@@ -1,0 +1,1879 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <smart-tabs
+    bind:change="onChange"
+  >
+    <wx-view
+      class="custom-class smart-tabs"
+    >
+      <smart-sticky
+        bind:scroll="onTouchScroll"
+      >
+        <wx-view
+          class="custom-class smart-sticky"
+          style="z-index:1"
+        >
+          <wx-view
+            class="smart-sticky-wrap"
+            style="z-index:1"
+          >
+            <wx-view
+              class="smart-tabs--line smart-tabs__wrap   wrap-class"
+            >
+              <wx-scroll-view
+                class="smart-tabs__scroll smart-tabs__scroll--line"
+                scrollLeft="{{0}}"
+                scrollWithAnimation="{{false}}"
+                scrollX="{{false}}"
+                style=""
+              >
+                <wx-view
+                  class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                  style=""
+                >
+                  <wx-view
+                    class="smart-tabs__line"
+                    style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                  />
+                  <wx-view
+                    class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                    data-index="{{0}}"
+                    style=""
+                    bind:tap="onTap"
+                  >
+                    <wx-view
+                      class="smart-ellipsis"
+                      style=""
+                    >
+                      
+              
+              
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="tab-class smart-ellipsis smart-tab"
+                    data-index="{{1}}"
+                    style=""
+                    bind:tap="onTap"
+                  >
+                    <wx-view
+                      class="smart-ellipsis"
+                      style=""
+                    >
+                      
+              
+              
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-scroll-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-sticky>
+      <wx-view
+        class="smart-tabs__content"
+        bind:touchcancel="onTouchEnd"
+        bind:touchend="onTouchEnd"
+        bind:touchmove="onTouchMove"
+        bind:touchstart="onTouchStart"
+      >
+        <wx-view
+          class="smart-tabs__track smart-tabs__track"
+          style=""
+        >
+          <smart-tab>
+            <wx-view
+              class="custom-class smart-tab__pane smart-tab__pane--active"
+              style=""
+            >
+              <smart-index-bar>
+                <wx-view
+                  class="smart-index-bar"
+                >
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            A
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            B
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            C
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            D
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            E
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            F
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            G
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            H
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            I
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            J
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            K
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            L
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            M
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            N
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            O
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            P
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            Q
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            R
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            S
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            T
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            U
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            V
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            W
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            X
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            Y
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                  <wx-view>
+                    <smart-index-anchor>
+                      <wx-view
+                        class="smart-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="smart-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            Z
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </smart-index-anchor>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                    <smart-cell>
+                      <wx-view
+                        class="custom-class smart-cell"
+                        hoverClass="smart-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-cell__title title-class"
+                          style=""
+                        />
+                        <wx-view
+                          class="smart-cell__value value-class"
+                        />
+                      </wx-view>
+                    </smart-cell>
+                  </wx-view>
+                </wx-view>
+              </smart-index-bar>
+            </wx-view>
+          </smart-tab>
+          <smart-tab>
+            <wx-view
+              class="custom-class smart-tab__pane smart-tab__pane--inactive"
+              style="display: none;"
+            />
+          </smart-tab>
+        </wx-view>
+      </wx-view>
+    </wx-view>
+  </smart-tabs>
+</main>
+`;

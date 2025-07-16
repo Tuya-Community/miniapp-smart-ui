@@ -1,0 +1,68 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-rate
+    custom-class="rate-position"
+    model:value="{{ value1 }}"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customIcon')}}">
+  <smart-rate
+    custom-class="rate-position"
+    icon="{{icon}}"
+    void-icon="{{voidIcon}}"
+    model:value="{{ value2 }}"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customStyle')}}">
+  <smart-rate
+    custom-class="rate-position"
+    model:value="{{ value3 }}"
+    size="{{ 25 }}"
+    color="#ffd21e"
+    void-color="#eee"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('halfStar')}}">
+  <smart-rate
+    custom-class="rate-position"
+    model:value="{{ value4 }}"
+    allow-half
+    void-color="#eee"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customQuantity')}}">
+  <smart-rate
+    custom-class="rate-position"
+    model:value="{{ value5 }}"
+    count="{{ 6 }}"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('disabledState')}}">
+  <smart-rate
+    custom-class="rate-position"
+    value="{{ value6 }}"
+    disabled
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('readOnlyState')}}">
+  <smart-rate
+    custom-class="rate-position"
+    value="{{ value6 }}"
+    readonly
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('listenToChangeEvent')}}">
+  <smart-rate
+    custom-class="rate-position"
+    value="{{ value8 }}"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<smart-toast id="smart-toast-rate" />

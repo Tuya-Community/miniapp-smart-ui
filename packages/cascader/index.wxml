@@ -1,0 +1,56 @@
+<wxs src="./index.wxs" module="utils" />
+
+<view wx:if="{{ showHeader }}" class="smart-cascader__header">
+  <slot name="title" wx:if="{{ useTitleSlot }}"></slot>
+  <text class="smart-cascader__title" wx:else>{{ title }}</text>
+  <smart-icon
+    wx:if="{{ closeable }}"
+    name="{{ closeIcon }}"
+    class="smart-cascader__close-icon"
+    bind:tap="onClose"
+  />
+</view>
+
+<smart-tabs
+  active="{{ activeTab }}"
+  custom-class="smart-cascader__tabs"
+  wrap-class="smart-cascader__tabs-wrap"
+  tab-class="smart-cascader__tab"
+  color="{{ activeColor }}"
+  border="{{ false }}"
+  swipeable="{{ swipeable }}"
+  ellipsis="{{ ellipsis }}"
+  swipe-threshold="{{ swipeThreshold }}"
+  bind:click="onClickTab"
+>
+  <smart-tab
+    wx:for="{{ tabs }}"
+    wx:for-item="tab"
+    wx:for-index="tabIndex"
+    wx:key="tabIndex"
+    title="{{ tab.selected ? tab.selected.text : placeholder }}"
+    style="width: 100%;"
+    title-style="{{ !tab.selected ? 'color: var(--cascader-tab-inactive-color, var(--app-B6-N5, rgba(0, 0, 0, 0.3)));font-weight:normal;' : '' }}"
+  >
+    <!-- 暂不支持 -->
+    <!-- <slot name="options-top"></slot> -->
+
+    <view class="smart-cascader__options">
+      <view
+        wx:for="{{ tab.options }}"
+        wx:for-item="option"
+        wx:key="index"
+        class="{{ option.className }} {{ utils.optionClass(tab, option) }}"
+        style="{{ utils.optionStyle({ tab, option, activeColor }) }}"
+        data-option="{{ option }}"
+        data-tab-index="{{ tabIndex }}"
+        bind:tap="onSelect"
+      >
+        <text>{{ option.text }}</text>
+        <smart-icon wx:if="{{ utils.isSelected(tab, option) }}" name="success" size="18" />
+      </view>
+    </view>
+    <!-- 暂不支持 -->
+    <!-- <slot name="options-bottom"></slot> -->
+  </smart-tab>
+</smart-tabs>

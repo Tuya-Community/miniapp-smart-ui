@@ -1,0 +1,4 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+<include wx:if="{{ type === 'textarea' }}" src="./cell-textarea.wxml" />
+<include wx:else src="./cell-input.wxml" />

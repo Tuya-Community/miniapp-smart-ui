@@ -1,0 +1,30 @@
+<view class="contain">
+  <demo-block title="{{I18n.t('basicUsage')}}">
+    <smart-circle percent="{{50}}" trackWidth="{{10}}" >
+    </smart-circle>
+  </demo-block>
+  <demo-block title="{{I18n.t('circle_angle')}}">
+    <view class="flex">
+      <smart-circle percent="{{50}}" mode="angle">
+      </smart-circle>
+      <smart-circle percent="{{50}}" mode="angle2">
+      </smart-circle>
+    </view>
+  </demo-block>
+  <demo-block title="{{I18n.t('circle_noround')}}">
+    <smart-circle percent="{{50}}" mode="angle" round="{{false}}">
+    </smart-circle>
+  </demo-block>
+  <demo-block title="{{I18n.t('circle_color')}}">
+    <view class="flex">
+      <smart-circle percent="{{50}}" mode="angle" round="{{false}}" fillColor="#DE23CB">
+      </smart-circle>
+      <smart-circle percent="{{50}}" mode="angle" round="{{false}}" fillColorStops="{{gradientColor}}">
+      </smart-circle>
+    </view>
+  </demo-block>
+  <demo-block title="{{I18n.t('circle_width')}}">
+    <smart-circle percent="{{60}}" trackWidth="15" mode="angle" round="{{false}}">
+    </smart-circle>
+  </demo-block>
+</view>

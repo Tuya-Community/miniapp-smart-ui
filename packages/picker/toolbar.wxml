@@ -1,0 +1,23 @@
+<view wx:if="{{ showToolbar }}" class="smart-picker__toolbar toolbar-class">
+  <view
+    class="smart-picker__cancel"
+    hover-class="smart-picker__cancel--hover"
+    hover-stay-time="70"
+    data-type="cancel"
+    bindtap="emit"
+  >
+    {{ cancelButtonText }}
+  </view>
+  <view wx:if="{{ title }}" class="smart-picker__title smart-ellipsis">{{
+    title
+  }}</view>
+  <view
+    class="smart-picker__confirm"
+    hover-class="smart-picker__confirm--hover"
+    hover-stay-time="70"
+    data-type="confirm"
+    bindtap="emit"
+  >
+    {{ confirmButtonText }}
+  </view>
+</view>

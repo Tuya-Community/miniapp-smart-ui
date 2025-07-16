@@ -1,0 +1,2632 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <wx-view
+    class="contain"
+  >
+    <demo-block>
+      <wx-view
+        class="custom-class demo-block smart-clearfix "
+      >
+        <wx-view
+          class="demo-block__title"
+        >
+          undefined: 2/1
+        </wx-view>
+        <smart-calendar
+          bind:select="setCurDay"
+        >
+          <wx-view
+            class="smart-calendar custom-class"
+          >
+            <header
+              subFormatter="YYYYyearMMmonth"
+              bind:click-next="onNext"
+              bind:click-prev="onPrev"
+              bind:click-save="onConfirm"
+              bind:click-subtitle="onClickSubtitle"
+            >
+              <wx-view
+                class="smart-calendar__header"
+              >
+                <wx-view
+                  class="smart-calendar__header-title"
+                />
+                <wx-view
+                  class="smart-calendar__header-title"
+                >
+                  
+      
+      
+                </wx-view>
+                <wx-view
+                  class="smart-calendar__header-subtitle_wrap"
+                >
+                  <wx-view
+                    class="smart-calendar__header-subtitle_left"
+                    bind:tap="onPrev"
+                  >
+                    <smart-icon
+                      class="smart-calendar__header-subtitle_left_icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__header-subtitle"
+                    bind:tap="onClickSubtitle"
+                  >
+                    
+      2024-02
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__header-subtitle_right"
+                    bind:tap="onNext"
+                  >
+                    <smart-icon
+                      class="smart-calendar__header-subtitle_right_icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="smart-calendar__weekdays"
+                >
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week0
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week1
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week2
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week3
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week4
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week5
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week6
+    
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </header>
+            <month
+              class="smart-calendar-month month"
+              data-date="{{1706716800000}}"
+              data-index="{{13}}"
+              id="month13"
+              bind:click="onClickDay"
+            >
+              <wx-view
+                class="smart-calendar__month"
+                style=""
+              >
+                <wx-view
+                  class="smart-calendar__days"
+                >
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--selected  "
+                    data-index="{{0}}"
+                    style="margin-left:57.142857142857146%;height:34px"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-calendar__selected-day"
+                      style="width: 34px; height: 34px; background: "
+                    >
+                      
+        1
+      
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{1}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        2
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{2}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        3
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{3}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        4
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{4}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        5
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{5}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        6
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{6}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        7
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{7}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        8
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{8}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        9
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{9}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        10
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{10}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        11
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{11}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        12
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{12}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        13
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{13}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        14
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{14}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        15
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{15}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        16
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{16}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        17
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{17}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        18
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{18}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        19
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{19}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        20
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{20}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        21
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{21}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        22
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{22}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        23
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{23}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        24
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{24}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        25
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{25}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        26
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{26}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        27
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{27}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        28
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{28}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        29
+      
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </month>
+            <smart-toast>
+              <smart-transition
+                customClass="smart-toast__container smart-toast--middle"
+              />
+            </smart-toast>
+          </wx-view>
+        </smart-calendar>
+      </wx-view>
+    </demo-block>
+    <demo-block>
+      <wx-view
+        class="custom-class demo-block smart-clearfix "
+      >
+        <wx-view
+          class="demo-block__title"
+        >
+          undefined: 2/1
+        </wx-view>
+        <smart-calendar
+          bind:select="setCurDay"
+        >
+          <wx-view
+            class="smart-calendar custom-class"
+          >
+            <header
+              subFormatter="YYYYyearMMmonth"
+              bind:click-next="onNext"
+              bind:click-prev="onPrev"
+              bind:click-save="onConfirm"
+              bind:click-subtitle="onClickSubtitle"
+            >
+              <wx-view
+                class="smart-calendar__header"
+              >
+                <wx-view
+                  class="smart-calendar__header-title"
+                />
+                <wx-view
+                  class="smart-calendar__header-title"
+                >
+                  
+      
+      
+                </wx-view>
+                <wx-view
+                  class="smart-calendar__header-subtitle_wrap"
+                >
+                  <wx-view
+                    class="smart-calendar__header-subtitle_left"
+                    bind:tap="onPrev"
+                  >
+                    <smart-icon
+                      class="smart-calendar__header-subtitle_left_icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__header-subtitle"
+                    bind:tap="onClickSubtitle"
+                  >
+                    
+      2024-02
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__header-subtitle_right"
+                    bind:tap="onNext"
+                  >
+                    <smart-icon
+                      class="smart-calendar__header-subtitle_right_icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="smart-calendar__weekdays"
+                >
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week0
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week1
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week2
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week3
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week4
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week5
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week6
+    
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </header>
+            <month
+              class="smart-calendar-month month"
+              data-date="{{1706716800000}}"
+              data-index="{{13}}"
+              id="month13"
+              bind:click="onClickDay"
+            >
+              <wx-view
+                class="smart-calendar__month"
+                style=""
+              >
+                <wx-view
+                  class="smart-calendar__days"
+                >
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--selected  "
+                    data-index="{{0}}"
+                    style="margin-left:57.142857142857146%;height:34px"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-calendar__selected-day"
+                      style="width: 34px; height: 34px; background: "
+                    >
+                      
+        1
+      
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{1}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        2
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{2}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        3
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{3}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        4
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{4}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        5
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{5}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        6
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{6}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        7
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{7}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        8
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{8}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        9
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{9}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        10
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{10}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        11
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{11}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        12
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{12}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        13
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{13}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        14
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{14}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        15
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{15}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        16
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{16}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        17
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{17}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        18
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{18}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        19
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{19}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        20
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{20}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        21
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{21}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        22
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{22}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        23
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{23}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        24
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{24}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        25
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{25}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        26
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{26}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        27
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{27}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        28
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{28}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        29
+      
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </month>
+            <smart-toast>
+              <smart-transition
+                customClass="smart-toast__container smart-toast--middle"
+              />
+            </smart-toast>
+          </wx-view>
+        </smart-calendar>
+      </wx-view>
+    </demo-block>
+    <demo-block>
+      <wx-view
+        class="custom-class demo-block smart-clearfix "
+      >
+        <wx-view
+          class="demo-block__title"
+        >
+          undefined: 1/15 - 1/21
+        </wx-view>
+        <smart-calendar
+          bind:select="setWeekCurDay"
+        >
+          <wx-view
+            class="smart-calendar custom-class"
+          >
+            <header
+              subFormatter="YYYYyearMMmonth"
+              bind:click-next="onNext"
+              bind:click-prev="onPrev"
+              bind:click-save="onConfirm"
+              bind:click-subtitle="onClickSubtitle"
+            >
+              <wx-view
+                class="smart-calendar__header"
+              >
+                <wx-view
+                  class="smart-calendar__header-title"
+                />
+                <wx-view
+                  class="smart-calendar__header-title"
+                >
+                  
+      
+      
+                </wx-view>
+                <wx-view
+                  class="smart-calendar__header-subtitle_wrap"
+                >
+                  <wx-view
+                    class="smart-calendar__header-subtitle_left"
+                    bind:tap="onPrev"
+                  >
+                    <smart-icon
+                      class="smart-calendar__header-subtitle_left_icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__header-subtitle"
+                    bind:tap="onClickSubtitle"
+                  >
+                    
+      2024-01
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__header-subtitle_right"
+                    bind:tap="onNext"
+                  >
+                    <smart-icon
+                      class="smart-calendar__header-subtitle_right_icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="smart-calendar__weekdays"
+                >
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week0
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week1
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week2
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week3
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week4
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week5
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week6
+    
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </header>
+            <month
+              class="smart-calendar-month month"
+              data-date="{{1704038400000}}"
+              data-index="{{0}}"
+              id="month0"
+              bind:click="onClickDay"
+            >
+              <wx-view
+                class="smart-calendar__month"
+                style=""
+              >
+                <wx-view
+                  class="smart-calendar__days"
+                >
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--disabled  "
+                    data-index="{{0}}"
+                    style="margin-left:14.285714285714286%;height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        1
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--disabled  "
+                    data-index="{{1}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        2
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--disabled  "
+                    data-index="{{2}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        3
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{3}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        4
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{4}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        5
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{5}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        6
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{6}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        7
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{7}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        8
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{8}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        9
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{9}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        10
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{10}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        11
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{11}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        12
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{12}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        13
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{13}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        14
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--start  "
+                    data-index="{{14}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        15
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{15}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        16
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{16}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        17
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{17}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        18
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{18}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        19
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{19}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        20
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--end  "
+                    data-index="{{20}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        21
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{21}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        22
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{22}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        23
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{23}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        24
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{24}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        25
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{25}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        26
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{26}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        27
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{27}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        28
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{28}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        29
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{29}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        30
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{30}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        31
+      
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </month>
+            <smart-toast>
+              <smart-transition
+                customClass="smart-toast__container smart-toast--middle"
+              />
+            </smart-toast>
+          </wx-view>
+        </smart-calendar>
+      </wx-view>
+    </demo-block>
+    <demo-block>
+      <wx-view
+        class="custom-class demo-block smart-clearfix "
+      >
+        <wx-view
+          class="demo-block__title"
+        >
+          undefined: 1/10 - 1/20
+        </wx-view>
+        <smart-calendar
+          bind:select="setRangeCurDay"
+        >
+          <wx-view
+            class="smart-calendar custom-class"
+          >
+            <header
+              subFormatter="YYYYyearMMmonth"
+              bind:click-next="onNext"
+              bind:click-prev="onPrev"
+              bind:click-save="onConfirm"
+              bind:click-subtitle="onClickSubtitle"
+            >
+              <wx-view
+                class="smart-calendar__header"
+              >
+                <wx-view
+                  class="smart-calendar__header-title"
+                />
+                <wx-view
+                  class="smart-calendar__header-title"
+                >
+                  
+      
+      
+                </wx-view>
+                <wx-view
+                  class="smart-calendar__header-subtitle_wrap"
+                >
+                  <wx-view
+                    class="smart-calendar__header-subtitle_left"
+                    bind:tap="onPrev"
+                  >
+                    <smart-icon
+                      class="smart-calendar__header-subtitle_left_icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__header-subtitle"
+                    bind:tap="onClickSubtitle"
+                  >
+                    
+      2024-01
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__header-subtitle_right"
+                    bind:tap="onNext"
+                  >
+                    <smart-icon
+                      class="smart-calendar__header-subtitle_right_icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="smart-calendar__weekdays"
+                >
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week0
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week1
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week2
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week3
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week4
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week5
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__weekday"
+                  >
+                    
+      week6
+    
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </header>
+            <month
+              class="smart-calendar-month month"
+              data-date="{{1704038400000}}"
+              data-index="{{0}}"
+              id="month0"
+              bind:click="onClickDay"
+            >
+              <wx-view
+                class="smart-calendar__month"
+                style=""
+              >
+                <wx-view
+                  class="smart-calendar__days"
+                >
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--disabled  "
+                    data-index="{{0}}"
+                    style="margin-left:14.285714285714286%;height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        1
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--disabled  "
+                    data-index="{{1}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        2
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--disabled  "
+                    data-index="{{2}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        3
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{3}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        4
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{4}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        5
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{5}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        6
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{6}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        7
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{7}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        8
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{8}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        9
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--start  "
+                    data-index="{{9}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        10
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{10}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        11
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{11}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        12
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{12}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        13
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{13}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        14
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{14}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        15
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{15}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        16
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{16}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        17
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{17}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        18
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--middle  "
+                    data-index="{{18}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        19
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day smart-calendar__day--end  "
+                    data-index="{{19}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        20
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{20}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        21
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{21}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        22
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{22}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        23
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{23}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        24
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{24}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        25
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{25}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        26
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{26}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        27
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{27}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        28
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{28}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        29
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{29}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        30
+      
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__day  "
+                    data-index="{{30}}"
+                    style="height:34px"
+                    bind:tap="onClick"
+                  >
+                    
+        31
+      
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </month>
+            <smart-toast>
+              <smart-transition
+                customClass="smart-toast__container smart-toast--middle"
+              />
+            </smart-toast>
+          </wx-view>
+        </smart-calendar>
+      </wx-view>
+    </demo-block>
+    <demo-block>
+      <wx-view
+        class="custom-class demo-block smart-clearfix "
+      >
+        <wx-view
+          class="demo-block__title"
+        >
+          undefined: 2024/7/1
+        </wx-view>
+        <smart-calendar
+          bind:select="setCurMonth"
+        >
+          <wx-view
+            class="smart-calendar custom-class"
+          >
+            <header
+              subFormatter="YYYYyear"
+              bind:click-next="onNext"
+              bind:click-prev="onPrev"
+              bind:click-save="onConfirm"
+              bind:click-subtitle="onClickSubtitle"
+            >
+              <wx-view
+                class="smart-calendar__header"
+              >
+                <wx-view
+                  class="smart-calendar__header-title"
+                />
+                <wx-view
+                  class="smart-calendar__header-title"
+                >
+                  
+      
+      
+                </wx-view>
+                <wx-view
+                  class="smart-calendar__header-subtitle_wrap"
+                >
+                  <wx-view
+                    class="smart-calendar__header-subtitle_left"
+                    bind:tap="onPrev"
+                  >
+                    <smart-icon
+                      class="smart-calendar__header-subtitle_left_icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__header-subtitle"
+                    bind:tap="onClickSubtitle"
+                  >
+                    
+      2024
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__header-subtitle_right"
+                    bind:tap="onNext"
+                  >
+                    <smart-icon
+                      class="smart-calendar__header-subtitle_right_icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </header>
+            <month-list
+              bind:changemonthtitle="onChangeMonthTitleDate"
+              bind:click="onClickDate"
+            >
+              <wx-view
+                class="contain"
+              >
+                <smart-row>
+                  <wx-view
+                    class="smart-row custom-class"
+                    style=""
+                  >
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item item_disabled"
+                          data-index="{{0}}"
+                        >
+                          
+        cal_Jan
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item item_disabled"
+                          data-index="{{1}}"
+                        >
+                          
+        cal_Feb
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{2}}"
+                          bind:tap="onClick"
+                        >
+                          
+        cal_Mar
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{3}}"
+                          bind:tap="onClick"
+                        >
+                          
+        cal_Apr
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{4}}"
+                          bind:tap="onClick"
+                        >
+                          
+        cal_May
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{5}}"
+                          bind:tap="onClick"
+                        >
+                          
+        cal_Jun
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item item_active"
+                          data-index="{{6}}"
+                          style="background: ;"
+                          bind:tap="onClick"
+                        >
+                          
+        cal_Jul
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{7}}"
+                          bind:tap="onClick"
+                        >
+                          
+        cal_Aug
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{8}}"
+                          bind:tap="onClick"
+                        >
+                          
+        cal_Sept
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{9}}"
+                          bind:tap="onClick"
+                        >
+                          
+        cal_Oct
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{10}}"
+                          bind:tap="onClick"
+                        >
+                          
+        cal_Nov
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{11}}"
+                          bind:tap="onClick"
+                        >
+                          
+        cal_Dec
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                  </wx-view>
+                </smart-row>
+              </wx-view>
+            </month-list>
+            <smart-toast>
+              <smart-transition
+                customClass="smart-toast__container smart-toast--middle"
+              />
+            </smart-toast>
+          </wx-view>
+        </smart-calendar>
+      </wx-view>
+    </demo-block>
+    <demo-block>
+      <wx-view
+        class="custom-class demo-block smart-clearfix "
+      >
+        <wx-view
+          class="demo-block__title"
+        >
+          undefined: 2025/1/23
+        </wx-view>
+        <smart-calendar
+          bind:select="setCurYear"
+        >
+          <wx-view
+            class="smart-calendar custom-class"
+          >
+            <header
+              subFormatter="YYYY-MM"
+              bind:click-next="onNext"
+              bind:click-prev="onPrev"
+              bind:click-save="onConfirm"
+              bind:click-subtitle="onClickSubtitle"
+            >
+              <wx-view
+                class="smart-calendar__header"
+              >
+                <wx-view
+                  class="smart-calendar__header-title"
+                />
+                <wx-view
+                  class="smart-calendar__header-title"
+                >
+                  
+      
+      
+                </wx-view>
+                <wx-view
+                  class="smart-calendar__header-subtitle_wrap"
+                >
+                  <wx-view
+                    class="smart-calendar__header-subtitle_left"
+                    bind:tap="onPrev"
+                  >
+                    <smart-icon
+                      class="smart-calendar__header-subtitle_left_icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__header-subtitle"
+                    bind:tap="onClickSubtitle"
+                  >
+                    
+      
+    
+                  </wx-view>
+                  <wx-view
+                    class="smart-calendar__header-subtitle_right"
+                    bind:tap="onNext"
+                  >
+                    <smart-icon
+                      class="smart-calendar__header-subtitle_right_icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </header>
+            <year-list
+              bind:click="onClickDate"
+            >
+              <wx-view
+                class="contain"
+              >
+                <smart-row>
+                  <wx-view
+                    class="smart-row custom-class"
+                    style=""
+                  >
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item item_disabled"
+                          data-index="{{0}}"
+                        >
+                          
+        2020
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item item_disabled"
+                          data-index="{{1}}"
+                        >
+                          
+        2021
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item item_disabled"
+                          data-index="{{2}}"
+                        >
+                          
+        2022
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item item_disabled"
+                          data-index="{{3}}"
+                        >
+                          
+        2023
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{4}}"
+                          bind:tap="onClick"
+                        >
+                          
+        2024
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item item_active"
+                          data-index="{{5}}"
+                          style="background: ;"
+                          bind:tap="onClick"
+                        >
+                          
+        2025
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{6}}"
+                          bind:tap="onClick"
+                        >
+                          
+        2026
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{7}}"
+                          bind:tap="onClick"
+                        >
+                          
+        2027
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{8}}"
+                          bind:tap="onClick"
+                        >
+                          
+        2028
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item"
+                          data-index="{{9}}"
+                          bind:tap="onClick"
+                        >
+                          
+        2029
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item item_disabled"
+                          data-index="{{10}}"
+                        >
+                          
+        2030
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                    <smart-col
+                      customClass="col_item"
+                    >
+                      <wx-view
+                        class="custom-class smart-col smart-col--6 "
+                        style=""
+                      >
+                        <wx-view
+                          class="item item_disabled"
+                          data-index="{{11}}"
+                        >
+                          
+        2031
+      
+                        </wx-view>
+                      </wx-view>
+                    </smart-col>
+                  </wx-view>
+                </smart-row>
+              </wx-view>
+            </year-list>
+            <smart-toast>
+              <smart-transition
+                customClass="smart-toast__container smart-toast--middle"
+              />
+            </smart-toast>
+          </wx-view>
+        </smart-calendar>
+      </wx-view>
+    </demo-block>
+    <demo-block>
+      <wx-view
+        class="custom-class demo-block smart-clearfix "
+      >
+        <wx-view
+          class="demo-block__title"
+        >
+          undefined: 2024/2/1
+        </wx-view>
+        <wx-view
+          class="controls"
+        >
+          <wx-view
+            class="controls_item"
+            data-type="single"
+            style="color: #3678e3"
+            bind:tap="changeType"
+          >
+            
+          </wx-view>
+          <wx-view
+            class="controls_item"
+            data-type="month"
+            style="color: #000"
+            bind:tap="changeType"
+          >
+            
+          </wx-view>
+          <wx-view
+            class="controls_item"
+            data-type="year"
+            style="color: #000"
+            bind:tap="changeType"
+          >
+            
+          </wx-view>
+        </wx-view>
+        <smart-cell
+          bind:click="onShowDayPicker"
+        >
+          <wx-view
+            class="custom-class smart-cell smart-cell--clickable"
+            hoverClass="smart-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-cell__title title-class"
+              style=""
+            />
+            <wx-view
+              class="smart-cell__value value-class"
+            >
+              2/1
+            </wx-view>
+            <smart-icon
+              class="smart-cell__right-icon-wrap right-icon-class"
+              customClass="smart-cell__right-icon"
+            >
+              <wx-view
+                class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-icon__svg"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                />
+              </wx-view>
+            </smart-icon>
+          </wx-view>
+        </smart-cell>
+        <smart-calendar
+          bind:close="onShowDayPicker"
+          bind:confirm="setCurDay"
+          bind:select="selectDate"
+        >
+          <smart-popup
+            closeIconClass="smart-calendar__close-icon"
+            customClass="smart-calendar__popup--bottom"
+            bind:after-enter="onOpened"
+            bind:after-leave="onClosed"
+            bind:close="onClose"
+            bind:enter="onOpen"
+          >
+            <smart-overlay
+              bind:click="onClickOverlay"
+            >
+              <smart-transition
+                customClass="smart-overlay custom-class"
+                bind:tap="onClick"
+                catch:touchmove="noop"
+              />
+            </smart-overlay>
+          </smart-popup>
+        </smart-calendar>
+      </wx-view>
+    </demo-block>
+  </wx-view>
+</main>
+`;

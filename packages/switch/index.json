@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-loading": "../loading/index"
+  }
+}

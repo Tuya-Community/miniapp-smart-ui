@@ -1,0 +1,57 @@
+<demo-block title="{{I18n.t('basicUsage')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet1">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    title="Title"
+    show="{{ show1 }}"
+    bind:close="toggleActionSheet1"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customize')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet2">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    show="{{ show2 }}"
+    title="Title"
+    bind:close="toggleActionSheet2"
+  >
+    <view class="content" />
+    <view class="footer">
+      <smart-button type="info" block>{{I18n.t('complete')}}</smart-button>
+    </view>
+  </smart-bottom-sheet>
+</demo-block>
+
+<demo-block title="{{I18n.t('maxHeight')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet3">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    show="{{ show3 }}"
+    title="Title"
+    bind:close="toggleActionSheet3"
+  >
+    <view style="background-color: red; height: 100px;" />
+    <view style="background-color: blue; height: 100px;" />
+    <view style="background-color: black; height: 100px;" />
+    <view style="background-color: yellow; height: 100px;" />
+    <view style="background-color: pink; height: 100px;" />
+  </smart-bottom-sheet>
+</demo-block>
+
+<demo-block title="{{I18n.t('fixedHeight')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet4">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    show="{{ show4 }}"
+    title="Title"
+    bind:close="toggleActionSheet4"
+    content-height="500px"
+  >
+  <scroll-view scroll-y style="height: 300px">
+    <view style="background-color: red; height: 100px;" />
+    <view style="background-color: blue; height: 100px;" />
+    <view style="background-color: black; height: 100px;" />
+    <view style="background-color: yellow; height: 100px;" />
+    <view style="background-color: pink; height: 100px;" />
+  </scroll-view>
+  <view style="background-color: white; height: 100px;" />
+  <view style="background-color: orange; height: 100px;" />
+  </smart-bottom-sheet>
+</demo-block>

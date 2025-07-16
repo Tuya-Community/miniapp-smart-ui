@@ -1,0 +1,12 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-popup": "../../popup/index",
+    "smart-popover": "../../popover/index",
+    "smart-cell-group": "../../cell-group/index",
+    "smart-cell": "../../cell/index",
+    "smart-button": "../../button/index",
+    "smart-icon": "../../icon/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

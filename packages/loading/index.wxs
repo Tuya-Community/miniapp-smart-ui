@@ -1,0 +1,38 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function textStyle(data) {
+  var ret = style({
+    'font-size': addUnit(data.textSize),
+    color: data.color,
+  });
+
+  return ret;
+}
+
+function loadingStyle(data) {
+  var iconSrc = ''
+
+  if (data.type === 'spinner') {
+    iconSrc = data.spinner
+  }
+
+  if (data.type === 'circular') {
+    iconSrc = data.circular
+  }
+
+  var ret = style({
+    'background-image': "url('".concat(iconSrc, "')"),
+    width: addUnit(data.size),
+    height: addUnit(data.size),
+    'background-size': addUnit(data.size)
+  });
+
+  return ret;
+}
+
+module.exports = {
+  textStyle: textStyle,
+  loadingStyle: loadingStyle,
+};

@@ -1,0 +1,42 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<view
+  class="{{ utils.bem('picker-column', { disabled }) }} custom-class"
+  style="{{ computed.rootStyle({ itemHeight, visibleItemCount }) }}"
+  bind:touchstart="onTouchStart"
+  catch:touchmove="onTouchMove"
+  bind:touchend="onTouchEnd"
+  bind:touchcancel="onTouchEnd"
+>
+  <view class="smart-picker-column__offset" style="height: {{ itemHeight * options.length }}px;{{ computed.wrapperStyle({ offset, itemHeight, visibleItemCount, animate, duration, renderStart, unit }) }}" id="options">
+    <view class="smart-picker-column__visual" style="{{ computed.wrapperInterStyle({ offset, itemHeight, visibleItemCount, renderStart }) }}">
+      <view
+        wx:for="{{ optionsV }}"
+        wx:for-item="option"
+        wx:key="index"
+        data-index="{{ renderStart + index }}"
+        style="{{computed.wrapperItemStyle({ itemHeight, fontStyle, activeStyle: renderStart + index === currentIndex ? activeStyle : '', animationIndex, index: renderStart + index })}}"
+        class="smart-ellipsis {{ utils.bem('picker-column__item', { disabled: option && option.disabled, selected: renderStart + index === currentIndex }) }} {{ renderStart + index === currentIndex ? 'active-class' : '' }}"
+      >
+        {{ computed.optionText(option, valueKey) }}
+      </view>
+    </view>
+  </view>
+  <view class="smart-picker-column__mask">
+    <view 
+      wx:for="{{ visibleItemCount }}" 
+      wx:key="index"
+      class="smart-picker-column__mask__item" 
+      data-index="{{ currentIndex + index - 2 }}" 
+      bind:tap="onClickItem" 
+    >
+    </view>
+  </view>
+  <view wx:if="{{unit}}" class="smart-picker-column__unit" style="height: {{ itemHeight }}px">
+    <view class="smart-picker-column__unit_text smart-picker-column__unit_hidden" >{{unit}}</view>
+    <text class="smart-picker-column__max-text">{{ maxText }}</text>
+    <view class="smart-picker-column__unit_text" >{{unit}}</view>
+  </view>
+  
+</view>

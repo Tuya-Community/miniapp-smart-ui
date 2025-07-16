@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-button": "../../button/index",
+    "smart-bottom-sheet": "../../bottom-sheet/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

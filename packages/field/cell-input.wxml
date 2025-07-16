@@ -1,0 +1,59 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<smart-cell
+  size="{{ size }}"
+  icon="{{ leftIcon }}"
+  center="{{ center }}"
+  border="{{ border }}"
+  is-link="{{ isLink }}"
+  clickable="{{ clickable }}"
+  title-width="{{ titleWidth }}"
+  custom-style="{{ customStyle }}"
+  arrow-direction="{{ arrowDirection }}"
+  custom-class="custom-class smart-field"
+>
+  <view wx:if="{{ !hiddenLabel }}" class="{{ utils.bem('field__left__body', { disabled, card: cardMode }) }}">
+    <view class="smart-field__left__icon">
+      <slot name="left-icon" />
+    </view>
+    <view class="smart-field__label" >
+      <text wx:if="{{ required }}" class="smart-field__label--required">*</text>
+      <label for="{{ name }}" class="label-class" wx:if="{{ label }}">
+        {{ label }}
+      </label>
+      <slot wx:else name="label" />
+      <view wx:if="{{ subLabel && cardMode }}" class="{{ utils.bem('field__label__card__subtitle', { error: errorMessage }) }}">{{ errorMessage || subLabel }}</view>
+    </view>
+  </view>
+  <view class="{{ utils.bem('field__body__box', { disabled }) }}">
+    <view class="{{ utils.bem('field__body', [type]) }}">
+      <view class="{{ utils.bem('field__control', [inputAlign, 'custom']) }}" bindtap="onClickInput">
+        <slot name="input" />
+      </view>
+      <include src="./input.wxml" />
+      <smart-icon
+        wx:if="{{ showClear }}"
+        name="{{ clearIcon }}"
+        class="smart-field__clear-root smart-field__icon-root"
+        catch:touchstart="onClear"
+      />
+      <view class="smart-field__icon-container" bind:tap="onClickIcon">
+        <smart-icon
+          wx:if="{{ rightIcon || icon }}"
+          name="{{ rightIcon || icon }}"
+          class="smart-field__icon-root {{ iconClass }}"
+          custom-class="right-icon-class"
+        />
+        <slot name="right-icon" />
+        <slot name="icon" />
+      </view>
+      <view class="smart-field__button">
+        <slot name="button" />
+      </view>
+    </view>
+    <label wx:if="{{ errorMessage && !interError && !cardMode }}" class="{{ utils.bem('field__error-message', [errorMessageAlign, { disabled, error }]) }}">
+      {{ errorMessage }}
+    </label>
+  </view>
+</smart-cell>

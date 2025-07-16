@@ -1,0 +1,23 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+
+function popupStyle(data) {
+  var transformStyle = data.position === 'bottom' ? "transform: translate3d(0, calc(100% + " + data.bottomSafeHeight + "px), 0)" : null;
+
+  
+  return style([
+    {
+      'margin-bottom': data.bottomSafeHeight + 'px',
+      'z-index': data.zIndex,
+      '-webkit-transition-duration': data.currentDuration + 'ms',
+      'transition-duration': data.currentDuration + 'ms',
+    },
+    data.status === 'enter' ? null : transformStyle,
+    data.display ? null : 'display: none',
+    data.customStyle,
+  ]);
+}
+
+module.exports = {
+  popupStyle: popupStyle,
+};

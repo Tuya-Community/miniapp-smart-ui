@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-field": "../../field/index",
+    "smart-button": "../../button/index",
+    "smart-icon": "../../icon/index",
+    "smart-cell-group": "../../cell-group/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

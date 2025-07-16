@@ -1,0 +1,103 @@
+
+
+<demo-block title="{{ I18n.t('basicUsage') }}">
+  <smart-notice-bar
+    wrapable
+    type="info"
+    left-icon="{{ Warning }}"
+    custom-style="margin-bottom: 10px;"
+    text="{{ I18n.t('noticeBarTip1') }}"
+    btn-text="{{ I18n.t('familySettings') }}"
+  >
+  </smart-notice-bar>
+  <smart-notice-bar
+    wrapable
+    type="warning"
+    left-icon="{{ Warning }}"
+    custom-style="margin-bottom: 10px;"
+    text="{{ I18n.t('noticeBarTip1') }}"
+    btn-text="{{ I18n.t('familySettings') }}"
+  >
+  </smart-notice-bar>
+    <smart-notice-bar
+    wrapable
+    type="error"
+    left-icon="{{ Warning }}"
+    text="{{ I18n.t('noticeBarTip1') }}"
+    btn-text="{{ I18n.t('familySettings') }}"
+  >
+  </smart-notice-bar>
+</demo-block>
+
+<demo-block title="{{ I18n.t('close') }}">
+  <smart-notice-bar
+    wrapable
+    left-icon="{{ Warning }}"
+    text="{{ I18n.t('noticeBarTip1') }}"
+    btn-text="{{ I18n.t('familySettings') }}"
+    mode="closeable"
+  >
+  </smart-notice-bar>
+</demo-block>
+
+<demo-block title="{{ I18n.t('overflowScroll') }}">
+  <smart-notice-bar
+    speed="100"
+    custom-style="margin-bottom: 10px;"
+    text="{{ I18n.t('noticeBarTip1') }}"
+  >
+  </smart-notice-bar>
+  <smart-notice-bar
+    scrollable="{{ false }}"
+    text="{{ I18n.t('noticeBarTip1') }}"
+  >
+  </smart-notice-bar>
+  
+</demo-block>
+
+<demo-block title="{{ I18n.t('customStyle') }}">
+  <smart-notice-bar
+    left-icon="{{ Warning }}"
+    wrapable
+    background="rgba(25, 137, 250, 0.1)"
+    color="#1989FA"
+    left-icon-color="#0009FA"
+    text="{{ I18n.t('noticeBarTip1') }}"
+    btn-text="{{ I18n.t('familySettings') }}"
+    btn-text-color="#0009FA"
+  >
+  </smart-notice-bar>
+</demo-block>
+
+<demo-block title="{{ I18n.t('linkMode') }}">
+  <smart-notice-bar
+    scrollable="{{ false }}"
+    mode="link"
+    openType="navigateTo"
+    url="/pages/cell/index"
+    left-icon="{{ Warning }}"
+    text="{{ I18n.t('noticeBarTip1') }}"
+  >
+  </smart-notice-bar>
+</demo-block>
+
+<demo-block title="{{ I18n.t('useSlots') }}">
+  <smart-notice-bar wrapable>
+    <smart-icon 
+      size="16" 
+      color="#1989FA" 
+      style="margin-right: 8px;" 
+      slot="left-icon" 
+      name="{{ SpeakerWaveLoud }}"
+    ></smart-icon>
+    <text>{{ I18n.t('noticeBarTip1') }}</text>
+    <text style="color: #1989FA">{{ I18n.t('familySettings') }}</text>
+    <smart-icon 
+      size="16" 
+      color="#1989FA" 
+      slot="right-icon" 
+      style="margin-left: 8px;" 
+      name="{{ Warning }}"
+    ></smart-icon>
+  </smart-notice-bar>
+</demo-block>

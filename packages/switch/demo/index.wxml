@@ -1,0 +1,82 @@
+<demo-block title="{{I18n.t('basicUsage')}}" padding>
+  <smart-switch
+    checked="{{ checked }}"
+    bind:change="onChange"
+  />
+  <view style="margin-left: 16px;display:inline;">
+    <smart-switch
+      checked="{{ !checked }}"
+    />
+  </view>
+</demo-block>
+
+<demo-block title="{{I18n.t('disabledState')}}" padding>
+  <smart-switch
+    checked="{{ checked }}"
+    disabled
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('loading')}}" padding>
+  <smart-switch
+    checked="{{ checked }}"
+    loading
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customSize')}}" padding>
+  <smart-switch
+    checked="{{ checked }}"
+    size="24px"
+    loading
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customColor')}}" padding>
+  <smart-switch
+    checked="{{ checked }}"
+    active-color="#07c160"
+    inactive-color="#ee0a24"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('gradientColor')}}" padding>
+  <smart-switch
+    checked="{{ checked }}"
+    active-color="linear-gradient(to right, #ff7e5f, #987AFF)"
+    inactive-color="linear-gradient(to right, #407e5f, #841AFF)"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('asynchronousControl')}}" padding>
+  <smart-switch 
+    checked="{{ checked2 }}" 
+    bind:change="onChange2" 
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('stopBubbling')}}" padding>
+  <smart-switch 
+    checked="{{ checked }}" 
+    bind:change="onChange" 
+    stop-click-propagation
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('listUsage')}}" padding>
+  <smart-cell-group>
+    <smart-cell title="{{I18n.t('title')}}">
+      <smart-switch
+        checked="{{ checked }}"
+        bind:change="onChange"
+      />    
+    </smart-cell>
+  </smart-cell-group>
+</demo-block>
+
+<smart-dialog id="smart-dialog" />

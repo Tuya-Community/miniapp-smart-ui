@@ -1,0 +1,19 @@
+<demo-block title="{{I18n.t('loadingType')}}" padding>
+  <smart-loading custom-class="demo-loading" />
+  <smart-loading custom-class="demo-loading" type="spinner" />
+</demo-block>
+
+<demo-block title="{{I18n.t('customColor')}}" padding>
+  <smart-loading custom-class="demo-loading" type="spinner" color="#1989fa" />
+  <smart-loading custom-class="demo-loading" color="#1989fa" />
+</demo-block>
+
+<demo-block title="{{I18n.t('loadingCopy')}}" padding>
+  <smart-loading custom-class="demo-loading" type="spinner" size="24px" color="#1989FA">{{I18n.t('loading')}}...</smart-loading>
+  <smart-loading custom-class="demo-loading" size="24px" color="#1989FA">{{I18n.t('loading')}}...</smart-loading>
+</demo-block>
+
+<demo-block title="{{I18n.t('verticalArrangement')}}" padding>
+  <smart-loading type="spinner" custom-class="demo-loading" size="24px" vertical color="#1989FA">{{I18n.t('loading')}}...</smart-loading>
+
+</demo-block>

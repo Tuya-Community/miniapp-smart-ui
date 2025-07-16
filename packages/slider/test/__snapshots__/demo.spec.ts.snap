@@ -1,0 +1,480 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-slider
+        customClass="slider"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class smart-slider"
+          style="
+          background: ;
+          height: ;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-slider__bar"
+            style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; "
+          >
+            <wx-view
+              class="smart-slider__button-wrapper-left"
+              data-index="{{0}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="smart-slider__button"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-slider__button-wrapper-right"
+              data-index="{{1}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="smart-slider__button"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-slider
+        customClass="slider"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class smart-slider"
+          style="
+          background: ;
+          height: ;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-slider__bar"
+            style="
+          width: 40%;
+          left: 20%;
+          top: 0;
+          
+        ; "
+          >
+            <wx-view
+              class="smart-slider__button-wrapper-left"
+              data-index="{{0}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="smart-slider__button"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-slider__button-wrapper-right"
+              data-index="{{1}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="smart-slider__button"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-slider
+        customClass="slider"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class smart-slider"
+          style="
+          background: ;
+          height: ;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-slider__bar"
+            style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; "
+          >
+            <wx-view
+              class="smart-slider__button-wrapper-left"
+              data-index="{{0}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="smart-slider__button"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-slider__button-wrapper-right"
+              data-index="{{1}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="smart-slider__button"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-slider
+        customClass="slider"
+      >
+        <wx-view
+          class="custom-class smart-slider smart-slider--disabled"
+          style="
+          background: ;
+          height: ;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-slider__bar"
+            style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; "
+          >
+            <wx-view
+              class="smart-slider__button-wrapper-left"
+              data-index="{{0}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="smart-slider__button"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-slider__button-wrapper-right"
+              data-index="{{1}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="smart-slider__button"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-slider
+        customClass="slider"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class smart-slider"
+          style="
+          background: ;
+          height: ;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-slider__bar"
+            style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; "
+          >
+            <wx-view
+              class="smart-slider__button-wrapper-left"
+              data-index="{{0}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="smart-slider__button"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-slider__button-wrapper-right"
+              data-index="{{1}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="smart-slider__button"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-slider
+        customClass="slider"
+      >
+        <wx-view
+          class="custom-class smart-slider"
+          style="
+          background: ;
+          height: 4px;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-slider__bar"
+            style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; background-color:#ee0a24"
+          >
+            <wx-view
+              class="smart-slider__button-wrapper-left"
+              data-index="{{0}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="smart-slider__button"
+              />
+            </wx-view>
+            <wx-view
+              class="smart-slider__button-wrapper-right"
+              data-index="{{1}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="smart-slider__button"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-slider
+        customClass="slider"
+        bind:drag="onDrag"
+      >
+        <wx-view
+          class="custom-class smart-slider"
+          style="
+          background: ;
+          height: ;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-slider__bar"
+            style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; background-color:#ee0a24"
+          >
+            <wx-view
+              class="smart-slider__button-wrapper-left"
+              data-index="{{0}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-view
+              class="smart-slider__button-wrapper-right"
+              data-index="{{1}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </wx-view>
+      </smart-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        style="height: 150px; padding-left: 30px;"
+      >
+        <smart-slider
+          customClass="slider"
+          bind:change="onChange"
+        >
+          <wx-view
+            class="custom-class smart-slider smart-slider--vertical"
+            style="
+          background: ;
+          width: ;
+        "
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-slider__bar"
+              style="
+          height: 50%;
+          left: 0;
+          top: 0%;
+          
+        ; "
+            >
+              <wx-view
+                class="smart-slider__button-wrapper-left"
+                data-index="{{0}}"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  class="smart-slider__button"
+                />
+              </wx-view>
+              <wx-view
+                class="smart-slider__button-wrapper-right"
+                data-index="{{1}}"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  class="smart-slider__button"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </smart-slider>
+        <smart-slider
+          customClass="slider"
+          bind:change="onChange"
+        >
+          <wx-view
+            class="custom-class smart-slider smart-slider--vertical"
+            style="
+          background: ;
+          width: ;
+        "
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-slider__bar"
+              style="
+          height: 40%;
+          left: 0;
+          top: 20%;
+          
+        ; "
+            >
+              <wx-view
+                class="smart-slider__button-wrapper-left"
+                data-index="{{0}}"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  class="smart-slider__button"
+                />
+              </wx-view>
+              <wx-view
+                class="smart-slider__button-wrapper-right"
+                data-index="{{1}}"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  class="smart-slider__button"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </smart-slider>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+</main>
+`;

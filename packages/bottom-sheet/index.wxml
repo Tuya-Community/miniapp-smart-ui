@@ -1,0 +1,35 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<smart-popup
+  show="{{ show }}"
+  position="bottom"
+  round="{{ round }}"
+  z-index="{{ zIndex }}"
+  overlay="{{ overlay }}"
+  custom-class="smart-bottom-sheet custom-class"
+  native-disabled="{{ nativeDisabled }}"
+  customStyle="{{contentHeight ? 'max-height: fit-content;' : ''}}"
+  safe-area-inset-bottom="{{false}}"
+  close-on-click-overlay="{{ closeOnClickOverlay }}"
+  root-portal="{{ rootPortal }}"
+  bind:close="onClickOverlay"
+  bind:before-enter="onBeforeEnter"
+  bind:enter="onEnter"
+  bind:after-enter="onAfterEnter"
+  bind:before-leave="onBeforeLeave"
+  bind:leave="onLeave"
+  bind:after-leave="onAfterLeave"
+>
+  <view wx:if="{{ title }}" class="smart-bottom-sheet__header">
+    {{ title }}
+    <smart-icon bind:click="onClose" name="{{ xmarkIcon }}" class="smart-bottom-sheet__icon" size="{{ iconSize }}" color="{{ xmarkIconColor }}" />
+  </view>
+
+  <view wx:if="{{ contentHeight !== null }}" class="smart-bottom-sheet__content" style="{{computed.getHeight(contentHeight)}}">
+    <slot />
+  </view>
+  <scroll-view wx:else class="smart-bottom-sheet__content">
+    <slot />
+  </scroll-view>
+</smart-popup>

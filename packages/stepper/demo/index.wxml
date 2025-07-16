@@ -1,0 +1,45 @@
+<smart-cell center title="{{I18n.t('basicUsage')}}">
+  <smart-stepper value="{{ 1 }}" />
+</smart-cell>
+
+<smart-cell center title="{{I18n.t('stepLengthSetting')}}">
+  <smart-stepper value="{{ 1 }}" step="2" />
+</smart-cell>
+
+<smart-cell center title="{{I18n.t('limitInputRange')}}">
+  <smart-stepper value="{{ 1 }}" min="5" max="8" />
+</smart-cell>
+
+<smart-cell center title="{{I18n.t('limitInputToIntegers')}}">
+  <smart-stepper value="{{ 1 }}" integer />
+</smart-cell>
+
+<smart-cell center title="{{I18n.t('disabled')}}">
+  <smart-stepper value="{{ 1 }}" disabled />
+</smart-cell>
+
+<smart-cell center title="{{I18n.t('longPressDisabled')}}">
+  <smart-stepper value="{{ 1 }}" long-press="{{ false }}" />
+</smart-cell>
+
+<smart-cell center title="{{I18n.t('fixedDecimalPlaces')}}">
+  <smart-stepper value="{{ 1 }}" step="0.2" decimal-length="{{ 1 }}" />
+</smart-cell>
+
+<smart-cell center title="{{I18n.t('asynchronousChanges')}}">
+  <smart-stepper
+    value="{{ value }}"
+    async-change
+    bind:change="onChange"
+  />
+</smart-cell>
+
+<smart-cell center title="{{I18n.t('customSize')}}">
+  <smart-stepper value="{{ 1 }}" input-width="40px" button-size="32px" />
+</smart-cell>
+
+<smart-cell center title="{{I18n.t('roundedCornerStyle')}}">
+  <smart-stepper value="{{ 1 }}" theme="round" button-size="22px" />
+</smart-cell>
+
+<smart-toast id="smart-toast-stepper" />

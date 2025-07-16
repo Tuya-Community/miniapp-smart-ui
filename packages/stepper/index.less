@@ -1,0 +1,125 @@
+@import '../common/style/var.less';
+
+.smart-stepper {
+  font-size: 0;
+  display: inline-block;
+  background: var(--stepper-container-background-color, @stepper-container-background-color);
+  padding: var(--stepper-padding, @stepper-padding);
+  border-radius: var(
+    --stepper-background-border-radius,
+    @stepper-background-border-radius
+  );
+
+  &__minus,
+  &__plus {
+    --icon-color: currentColor;
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    vertical-align: middle;
+    border: var(--stepper-button-border, @stepper-button-border);
+    background-color: var(
+      --stepper-background-color,
+      @stepper-background-color
+    );
+    color: var(--stepper-button-icon-color, @stepper-button-icon-color);
+    width: var(--stepper-input-height, @stepper-btn-width);
+    height: var(--stepper-input-height, @stepper-btn-height);
+    padding: var(--padding-base, @padding-base);
+    border-radius: var(--stepper-border-radius, @stepper-border-radius);
+    font-size: var(--stepper-button-icon-font-size, @stepper-button-icon-font-size);
+
+    &-icon {
+      display: none;
+    }
+
+    &> &-icon:first-child {
+      display: inline-flex;
+    }
+    
+    &--hover {
+      background-color: var(--stepper-active-color, @stepper-active-color);
+    }
+
+    &--disabled {
+      color: var(
+        --stepper-button-disabled-icon-color,
+        @stepper-button-disabled-icon-color
+      );
+      background-color: var(
+        --stepper-button-disabled-color,
+        @stepper-button-disabled-color
+      );
+    }
+
+    &--disabled&--hover {
+      background-color: var(
+        --stepper-button-disabled-color,
+        @stepper-button-disabled-color
+      );
+    }
+  }
+
+  &--round {
+    .smart-stepper__input {
+      background-color: transparent !important;
+    }
+
+    .smart-stepper__plus,
+    .smart-stepper__minus {
+      border-radius: 100%;
+
+      &:active {
+        opacity: @active-opacity;
+      }
+
+      &--disabled {
+        &,
+        &:active {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    .smart-stepper__plus {
+      color: @white;
+      background-color: var(--stepper-button-round-theme-color, @stepper-button-round-theme-color);
+    }
+
+    .smart-stepper__minus {
+      color: var(--stepper-button-round-theme-color, @stepper-button-round-theme-color);
+      background-color: @white;
+      border: 1px solid var(--stepper-button-round-theme-color, @stepper-button-round-theme-color);
+    }
+  }
+
+  &__input {
+    display: inline-block;
+    box-sizing: border-box;
+    // 覆盖 common style 中 input 的 min-height: 1.4rem;
+    // 避免 button-size 对 input 设置的 height 不生效
+    min-height: 0;
+    // margin: 1px;
+    padding: 1px;
+    text-align: center;
+    vertical-align: middle;
+    border: 0;
+    border-width: 1px 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    font-size: var(--stepper-input-font-size, @stepper-input-font-size);
+    color: var(--stepper-input-text-color, @stepper-input-text-color);
+    width: var(--stepper-input-width, @stepper-input-width);
+    height: var(--stepper-input-height, @stepper-input-height);
+
+    &--disabled {
+      color: var(
+        --stepper-input-disabled-text-color,
+        @stepper-input-disabled-text-color
+      );
+    }
+  }
+}

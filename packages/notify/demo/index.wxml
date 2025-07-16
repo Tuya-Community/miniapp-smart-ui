@@ -1,0 +1,25 @@
+<demo-block padding title="{{I18n.t('basicUsage')}}">
+  <smart-button type="danger" bind:click="showNotify">{{I18n.t('basicUsage')}}</smart-button>
+</demo-block>
+
+<demo-block padding title="{{I18n.t('notificationType')}}">
+  <view class="demo-margin-bottom">
+    <smart-button class="demo-margin-right" type="info" data-type="primary" bind:click="showNotifyByType">{{I18n.t('mainNotification')}}</smart-button>
+    <smart-button type="primary" data-type="success" bind:click="showNotifyByType">{{I18n.t('successNotification')}}</smart-button>
+  </view>
+  <view class="demo-margin-bottom">
+    <smart-button class="demo-margin-right" type="danger" data-type="danger" bind:click="showNotifyByType">{{I18n.t('dangerNotice')}}</smart-button>
+    <smart-button type="warning" data-type="warning" bind:click="showNotifyByType">{{I18n.t('warningNotice')}}</smart-button>
+  </view>
+</demo-block>
+
+<demo-block padding title="{{I18n.t('customNotification')}}">
+  <smart-button type="primary" class="demo-margin-right" bind:click="showCustomColor">{{I18n.t('customColor')}}</smart-button>
+  <smart-button type="primary" bind:click="showCustomDuration">{{I18n.t('customDuration')}}</smart-button>
+</demo-block>
+
+<demo-block padding title="{{I18n.t('insertStatusBarHeight')}}">
+  <smart-button type="primary" class="demo-margin-right" bind:click="showSafe">{{I18n.t('insertStatusBarHeight')}}</smart-button>
+</demo-block>
+
+<smart-notify id="smart-notify" />

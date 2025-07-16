@@ -1,0 +1,15 @@
+<view class="demo-home">
+  <view
+    class="demo-home__title"
+  >
+    <image mode="aspectFit" class="demo-home__image" src="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo.png" />
+    <view class="demo-home__text">Smart UI</view>
+  </view>
+  <view
+    wx:for="{{ list }}"
+    wx:for-item="group"
+    wx:key="index"
+  >
+    <demo-home-nav group="{{ group }}" />
+  </view>
+</view>

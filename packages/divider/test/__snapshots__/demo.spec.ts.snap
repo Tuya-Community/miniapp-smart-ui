@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <smart-divider>
+        <wx-view
+          class="custom-class smart-divider"
+          style=""
+        />
+      </smart-divider>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <smart-divider>
+        <wx-view
+          class="custom-class smart-divider smart-divider--center"
+          style=""
+        >
+          
+        </wx-view>
+      </smart-divider>
+      <smart-divider>
+        <wx-view
+          class="custom-class smart-divider smart-divider--left"
+          style=""
+        >
+          
+        </wx-view>
+      </smart-divider>
+      <smart-divider>
+        <wx-view
+          class="custom-class smart-divider smart-divider--right"
+          style=""
+        >
+          
+        </wx-view>
+      </smart-divider>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <smart-divider>
+        <wx-view
+          class="custom-class smart-divider smart-divider--dashed"
+          style=""
+        />
+      </smart-divider>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <smart-divider>
+        <wx-view
+          class="custom-class smart-divider smart-divider--center"
+          style=";color: #1989fa;border-color: #1989fa;font-size: 18px;"
+        >
+          
+        </wx-view>
+      </smart-divider>
+    </wx-view>
+  </demo-block>
+</main>
+`;

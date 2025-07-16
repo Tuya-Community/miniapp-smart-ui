@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-col": "../../col/index",
+    "smart-tab": "../../tab/index",
+    "smart-tabs": "../../tabs/index",
+    <% _.forEach(icons, function(icon) { %>"smart-icon-<%= icon %>": "../../icon-svg/<%= icon %>/index",
+    <% }); %>
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

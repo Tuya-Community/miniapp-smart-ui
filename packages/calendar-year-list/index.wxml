@@ -1,0 +1,15 @@
+<view class="contain">
+  <smart-row>
+    <smart-col wx:for="{{years}}" wx:key="index" span="6" custom-class="col_item">
+      <view wx:if="{{item.type === 'disabled'}}" class="item item_disabled" data-index="{{index}}">
+        {{item.text}}
+      </view>
+      <view wx:elif="{{currentYear === item.year}}" class="item item_active" data-index="{{index}}" bindtap="onClick" style="background: {{ color }};">
+        {{item.text}}
+      </view>
+      <view wx:else class="item" data-index="{{index}}" bindtap="onClick">
+        {{item.text}}
+      </view>
+    </smart-col>
+  </smart-row>
+</view>

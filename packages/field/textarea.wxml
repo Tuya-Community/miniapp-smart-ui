@@ -1,0 +1,32 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<textarea
+  id="{{ name }}"
+  class="{{ utils.bem('field__control', [inputAlign, type, { textarea: true, limit: showWordLimit && maxlength, readonly }]) }} input-class"
+  fixed="{{ fixed }}"
+  focus="{{ focus }}"
+  cursor="{{ cursor }}"
+  value="{{ innerValue }}"
+  auto-focus="{{ autoFocus }}"
+  disabled="{{ disabled }}"
+  maxlength="{{ maxlength }}"
+  placeholder="{{ !interError ? placeholder : errorMessage || placeholder }}"
+  placeholder-style="{{ interError ? 'color: var(--field-input-error-text-color, var(--app-M2, #f04c4c));' : 'color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));'}}{{ placeholderStyle }}"
+  auto-height="{{ !!autosize }}"
+  style="{{ computed.inputStyle(autosize) }}"
+  cursor-spacing="{{ cursorSpacing }}"
+  adjust-position="{{ adjustPosition }}"
+  show-confirm-bar="{{ showConfirmBar }}"
+  hold-keyboard="{{ holdKeyboard }}"
+  selection-end="{{ selectionEnd }}"
+  selection-start="{{ selectionStart }}"
+  disable-default-padding="{{ disableDefaultPadding }}"
+  bindinput="onInput"
+  bindtap="onClickInput"
+  bindblur="onBlur"
+  bindfocus="onFocus"
+  bindconfirm="onConfirm"
+  bindlinechange="onLineChange"
+  bindkeyboardheightchange="onKeyboardHeightChange"
+/>

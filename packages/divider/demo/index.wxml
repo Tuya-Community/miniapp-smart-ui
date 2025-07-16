@@ -1,0 +1,17 @@
+<demo-block custom-class="white" title="{{I18n.t('basicUsage')}}" padding>
+  <smart-divider />
+</demo-block>
+
+<demo-block custom-class="white" title="{{I18n.t('contentPosition')}}" padding>
+  <smart-divider content-position="center">{{I18n.t('text')}}</smart-divider>
+  <smart-divider content-position="left">{{I18n.t('text')}}</smart-divider>
+  <smart-divider content-position="right">{{I18n.t('text')}}</smart-divider>
+</demo-block>
+
+<demo-block custom-class="white" title="{{I18n.t('dottedLine')}}" padding>
+  <smart-divider dashed />
+</demo-block>
+
+<demo-block custom-class="white" title="{{I18n.t('customStyle')}}" padding>
+  <smart-divider content-position="center" custom-style="color: #1989fa;border-color: #1989fa;font-size: 18px;">{{I18n.t('text')}}</smart-divider>
+</demo-block>

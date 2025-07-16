@@ -1,0 +1,57 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view
+  class="{{ utils.bem('search', { withaction: showAction || useActionSlot }) }} custom-class"
+  style="background: {{ background }}"
+>  
+
+  <view class="{{ utils.bem('search__content', [shape]) }}">
+    <view class="smart-search__label" wx:if="{{ label }}">{{ label }}</view>
+    <slot wx:else name="label" />
+
+    <smart-field
+      type="search"
+      right-icon="{{ !useRightIconSlot ? rightIcon : '' }}"
+      focus="{{ focus }}"
+      error="{{ error }}"
+      border="{{ false }}"
+      confirm-type="search"
+      class="smart-search__field field-class"
+      value="{{ value }}"
+      disabled="{{ disabled }}"
+      readonly="{{ readonly }}"
+      clearable="{{ clearable }}"
+      clear-trigger="{{ clearTrigger }}"
+      clear-icon="{{ clearIcon }}"
+      maxlength="{{ maxlength }}"
+      input-align="{{ inputAlign }}"
+      input-class="smart-search__input input-class"
+      placeholder="{{ placeholder }}"
+      placeholder-style="{{ placeholderStyle }}"
+      cursor-spacing="{{ cursorSpacing }}"
+      custom-style="padding: 0; background-color: transparent;"
+      bind:blur="onBlur"
+      bind:focus="onFocus"
+      bind:change="onChange"
+      bind:confirm="onSearch"
+      bind:clear="onClear"
+      bind:click-input="onClickInput"
+    >
+      <smart-icon wx:if="{{ !useLeftIconSlot && leftIcon }}" size="18" name="{{ leftIcon }}" custom-class="smart-search__field__left-icon" slot="left-icon" />
+      <slot wx:if="{{ useLeftIconSlot }}" name="left-icon" slot="left-icon" />
+      <slot wx:if="{{ useRightIconSlot }}" name="right-icon" slot="right-icon" />
+      <view wx:if="{{ searchText }}" hover-class="smart-search__hover" bind:tap="goSearch" class="smart-search__submit" slot="button" >{{ searchText }}</view>
+      <slot name="search-button" slot="button" />
+    </smart-field>
+  </view>
+
+  <view
+    wx:if="{{ showAction || useActionSlot }}"
+    class="smart-search__action"
+    hover-class="smart-search__action--hover"
+    hover-stay-time="70"
+  >
+    <slot wx:if="{{ useActionSlot }}" name="action" />
+    <view wx:else bind:tap="onCancel" class="smart-search__action-button cancel-class">{{ actionText }}</view>
+  </view>
+</view>

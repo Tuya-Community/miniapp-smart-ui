@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-image": "../../image/index",
+    "smart-tree-select": "../../tree-select/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

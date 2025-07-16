@@ -1,0 +1,33 @@
+<demo-block title="{{I18n.t('textPrompt')}}" padding>
+  <smart-button type="primary" bind:tap="showToast" class="demo-margin-right">{{I18n.t('textPrompt')}}</smart-button>
+  <smart-button type="primary" bind:tap="showLongToast">{{I18n.t('longTextPrompt')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('loadingPrompt')}}" padding>
+  <smart-button type="primary" bind:tap="showLoadingToast" class="demo-margin-right">{{I18n.t('loadingPrompt')}}</smart-button>
+  <smart-button type="primary" bind:tap="showCustomLoadingToast">{{I18n.t('customLoadingIcon')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('successFailurePrompt')}}" padding>
+  <smart-button type="info" bind:tap="showSuccessToast" class="demo-margin-right">{{I18n.t('successMessage')}}</smart-button>
+  <smart-button type="danger" bind:tap="showFailToast">{{I18n.t('failurePrompt')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('warningPrompt')}}" padding>
+  <smart-button type="info" bind:tap="showWarnToast" class="demo-margin-right">{{I18n.t('warningPrompt')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('dynamicUpdateNotification')}}" padding>
+  <smart-button type="primary" bind:tap="showCustomizedToast">{{I18n.t('dynamicUpdateNotification')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('customWidth')}}" padding>
+  <smart-button type="primary" bind:tap="showCustomizedWidthToast">{{I18n.t('customWidth')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('position')}}" padding>
+  <smart-button type="primary" bind:tap="showBottomToast" class="demo-margin-right">{{I18n.t('bottom')}}</smart-button>
+  <smart-button type="primary" bind:tap="showTopToast">{{I18n.t('top')}}</smart-button>
+</demo-block>
+
+<smart-toast id="smart-toast" />

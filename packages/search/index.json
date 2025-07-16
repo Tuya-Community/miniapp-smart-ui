@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-field": "../field/index",
+    "smart-icon": "../icon/index"
+  }
+}

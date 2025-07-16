@@ -1,0 +1,12 @@
+function getHeight(contentHeight) {
+  var height = contentHeight
+    ? typeof contentHeight === 'number'
+      ? contentHeight + 'rpx'
+      : contentHeight
+    : 'undefined';
+  return 'height: ' + height + ';';
+}
+
+module.exports = {
+  getHeight: getHeight,
+};

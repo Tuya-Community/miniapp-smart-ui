@@ -1,0 +1,459 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-cell
+        bind:click="showBasic"
+      >
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          />
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-popup
+        bind:after-enter="afterEnter"
+        bind:after-leave="afterLeave"
+        bind:before-enter="beforeEnter"
+        bind:before-leave="beforeLeave"
+        bind:close="hideBasic"
+        bind:enter="enter"
+        bind:leave="leave"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-cell
+        bind:click="showTop"
+      >
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          />
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-cell
+        bind:click="showBottom"
+      >
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          />
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-cell
+        bind:click="showLeft"
+      >
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          />
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-cell
+        bind:click="showRight"
+      >
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          />
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-popup
+        bind:close="hideTop"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+      <smart-popup
+        bind:close="hideBottom"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+      <smart-popup
+        bind:close="hideLeft"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+      <smart-popup
+        bind:close="hideRight"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-cell
+        bind:click="showCloseIcon"
+      >
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          />
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-cell
+        bind:click="showCustomCloseIcon"
+      >
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          />
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-cell
+        bind:click="showCustomIconPosition"
+      >
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          />
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-popup
+        bind:close="hideCloseIcon"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+      <smart-popup
+        bind:close="hideCustomCloseIcon"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+      <smart-popup
+        bind:close="hideCustomIconPosition"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-cell
+        bind:click="showRound"
+      >
+        <wx-view
+          class="custom-class smart-cell smart-cell--clickable"
+          hoverClass="smart-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-cell__title title-class"
+            style=""
+          />
+          <wx-view
+            class="smart-cell__value value-class"
+          />
+          <smart-icon
+            class="smart-cell__right-icon-wrap right-icon-class"
+            customClass="smart-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class smart-icon smart-icon--image smart-icon--svg"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-icon__svg"
+                style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+              />
+            </wx-view>
+          </smart-icon>
+        </wx-view>
+      </smart-cell>
+      <smart-popup
+        bind:close="hideRound"
+      >
+        <smart-overlay
+          bind:click="onClickOverlay"
+        >
+          <smart-transition
+            customClass="smart-overlay custom-class"
+            bind:tap="onClick"
+            catch:touchmove="noop"
+          />
+        </smart-overlay>
+      </smart-popup>
+    </wx-view>
+  </demo-block>
+</main>
+`;

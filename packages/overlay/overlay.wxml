@@ -1,0 +1,10 @@
+<smart-transition
+  show="{{ show }}"
+  custom-class="smart-overlay custom-class"
+  custom-style="z-index: {{ zIndex }}; {{ customStyle }}"
+  duration="{{ duration }}"
+  bind:tap="onClick"
+  catch:touchmove="{{ lockScroll ? 'noop' : ''}}"
+>
+  <slot></slot>
+</smart-transition>

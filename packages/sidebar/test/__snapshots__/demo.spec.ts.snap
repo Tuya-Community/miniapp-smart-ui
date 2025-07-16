@@ -1,0 +1,308 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <smart-grid>
+    <wx-view
+      class="smart-grid custom-class "
+      style="padding-left:0px"
+    >
+      <smart-grid-item>
+        <wx-view
+          class="custom-class smart-grid-item"
+          style="width:50%;padding-right:0px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="content-class smart-grid-item__content smart-grid-item__content--center "
+            style=""
+          >
+            <h3
+              class="demo-sidebar-title"
+            >
+              
+            </h3>
+            <smart-sidebar
+              customClass="custom-sidebar"
+            >
+              <wx-view
+                class="smart-sidebar custom-class"
+              >
+                <smart-sidebar-item>
+                  <wx-view
+                    class="smart-sidebar-item smart-sidebar-item--selected active-class  custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    />
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item>
+                  <wx-view
+                    class="smart-sidebar-item   custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    />
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item>
+                  <wx-view
+                    class="smart-sidebar-item   custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    />
+                  </wx-view>
+                </smart-sidebar-item>
+              </wx-view>
+            </smart-sidebar>
+          </wx-view>
+        </wx-view>
+      </smart-grid-item>
+      <smart-grid-item>
+        <wx-view
+          class="custom-class smart-grid-item"
+          style="width:50%;padding-right:0px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="content-class smart-grid-item__content smart-grid-item__content--center "
+            style=""
+          >
+            <h3
+              class="demo-sidebar-title"
+            >
+              
+            </h3>
+            <smart-sidebar
+              customClass="custom-sidebar"
+            >
+              <wx-view
+                class="smart-sidebar custom-class"
+              >
+                <smart-sidebar-item>
+                  <wx-view
+                    class="smart-sidebar-item smart-sidebar-item--selected active-class  custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info>
+                        <wx-view
+                          class="smart-info smart-info smart-info--dot custom-class"
+                          style=""
+                        >
+                          
+                        </wx-view>
+                      </smart-info>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item>
+                  <wx-view
+                    class="smart-sidebar-item   custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info>
+                        <wx-view
+                          class="smart-info smart-info custom-class"
+                          style=""
+                        >
+                          5
+                        </wx-view>
+                      </smart-info>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item>
+                  <wx-view
+                    class="smart-sidebar-item   custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <smart-info>
+                        <wx-view
+                          class="smart-info smart-info custom-class"
+                          style=""
+                        >
+                          99+
+                        </wx-view>
+                      </smart-info>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+              </wx-view>
+            </smart-sidebar>
+          </wx-view>
+        </wx-view>
+      </smart-grid-item>
+      <smart-grid-item>
+        <wx-view
+          class="custom-class smart-grid-item"
+          style="width:50%;padding-right:0px;margin-top:0px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="content-class smart-grid-item__content smart-grid-item__content--center "
+            style=""
+          >
+            <h3
+              class="demo-sidebar-title"
+            >
+              
+            </h3>
+            <smart-sidebar
+              customClass="custom-sidebar"
+            >
+              <wx-view
+                class="smart-sidebar custom-class"
+              >
+                <smart-sidebar-item>
+                  <wx-view
+                    class="smart-sidebar-item smart-sidebar-item--selected active-class  custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    />
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item>
+                  <wx-view
+                    class="smart-sidebar-item smart-sidebar-item--disabled  disabled-class custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    />
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item>
+                  <wx-view
+                    class="smart-sidebar-item   custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    />
+                  </wx-view>
+                </smart-sidebar-item>
+              </wx-view>
+            </smart-sidebar>
+          </wx-view>
+        </wx-view>
+      </smart-grid-item>
+      <smart-grid-item>
+        <wx-view
+          class="custom-class smart-grid-item"
+          style="width:50%;padding-right:0px;margin-top:0px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="content-class smart-grid-item__content smart-grid-item__content--center "
+            style=""
+          >
+            <h3
+              class="demo-sidebar-title"
+            >
+              
+            </h3>
+            <smart-sidebar
+              customClass="custom-sidebar"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="smart-sidebar custom-class"
+              >
+                <smart-sidebar-item>
+                  <wx-view
+                    class="smart-sidebar-item smart-sidebar-item--selected active-class  custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <wx-view>
+                         1
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item>
+                  <wx-view
+                    class="smart-sidebar-item   custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <wx-view>
+                         2
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+                <smart-sidebar-item>
+                  <wx-view
+                    class="smart-sidebar-item   custom-class"
+                    hoverClass="smart-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-sidebar-item__text"
+                    >
+                      <wx-view>
+                         3
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </smart-sidebar-item>
+              </wx-view>
+            </smart-sidebar>
+          </wx-view>
+        </wx-view>
+      </smart-grid-item>
+    </wx-view>
+  </smart-grid>
+  <smart-toast
+    id="smart-toast-slider"
+  >
+    <smart-transition
+      customClass="smart-toast__container smart-toast--middle"
+    />
+  </smart-toast>
+</main>
+`;

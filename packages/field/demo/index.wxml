@@ -1,0 +1,131 @@
+<demo-block title="{{I18n.t('basicUsage')}}">
+  <smart-cell-group>
+    <smart-field 
+      value="{{ value }}" 
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}" 
+    />
+    <smart-field 
+      value="{{ value }}"
+      hidden-label
+      placeholder="{{I18n.t('pleaseEnter')}}" 
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('customType')}}">
+  <smart-cell-group>
+    <smart-field
+      value="{{ password }}"
+      type="password"
+      label="{{I18n.t('password')}}"
+      placeholder="{{I18n.t('pleaseEnterThePassword')}}"
+    />
+    <smart-field
+      card-mode
+      sub-label="{{ I18n.t('subTitle') }}"
+      value="{{ num }}"
+      type="number"
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('disableInputBox')}}">
+  <smart-cell-group>
+    <smart-field
+      placeholder="{{I18n.t('inputBoxIsDisabled')}}"
+      label="{{I18n.t('title')}}"
+      disabled
+    />
+    <smart-field
+      card-mode
+      disabled
+      sub-label="{{ I18n.t('subTitle') }}"
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('displayIcon')}}">
+  <smart-cell-group>
+    <smart-field
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+    >
+      <smart-icon name="{{ sunIcon }}" slot="left-icon" color="#3678E3" size="22" />
+    </smart-field>
+    <smart-field
+      value="{{ num }}"
+      card-mode
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+    >
+      <image 
+        slot="left-icon"
+        style="height: 50px;width: 50px;"
+        src="https://images.tuyacn.com/rms-static/974a30f0-a624-11ef-be03-d1a4feb99779-1731986155903.png?tyName=light-img" 
+      />
+    </smart-field>
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('errorMessage')}}">
+  <smart-cell-group>
+    <smart-field
+      label="{{I18n.t('title')}}"
+      error-message="{{I18n.t('pleaseEnterYourUsername')}}"
+      inter-error
+      required
+    />
+    <smart-field
+      value="{{ value2 }}"
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+      error-message="{{I18n.t('formatError')}}"
+      required
+    />
+    <smart-field
+      value="{{ num }}"
+      card-mode
+      label="{{I18n.t('title')}}"
+      sub-label="{{ I18n.t('subTitle') }}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+      error-message="{{I18n.t('formatError')}}"
+      required
+    >
+      <image 
+        slot="left-icon"
+        style="height: 50px;width: 50px;"
+        src="https://images.tuyacn.com/rms-static/974a30f0-a624-11ef-be03-d1a4feb99779-1731986155903.png?tyName=light-img" 
+      />
+    </smart-field>
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('insertButton')}}" class="field-demo-custom-button">
+  <smart-cell-group>
+    <smart-field
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnterTheSmsVerificationCode')}}"
+      type="number"
+      input-align="left"
+    >
+      <smart-button slot="button" type="info" custom-class="button">{{I18n.t('sendVerificationCode')}}</smart-button>
+    </smart-field>
+  </smart-cell-group>
+</demo-block>
+
+
+<demo-block title="{{I18n.t('message')}}" >
+  <smart-field
+    value="{{ message }}"
+    label="{{I18n.t('matter')}}"
+    type="textarea"
+    placeholder="{{I18n.t('pleaseEnterAMessage')}}"
+    show-word-limit
+    maxlength="{{ 200 }}"
+  />
+</demo-block>

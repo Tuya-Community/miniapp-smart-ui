@@ -1,0 +1,39 @@
+<smart-grid column-num="{{ 2 }}" border="{{ false }}">
+  <smart-grid-item use-slot>
+    <h3 class="demo-sidebar-title">{{I18n.t('basicUsage')}}</h3>
+    <smart-sidebar custom-class="custom-sidebar">
+      <smart-sidebar-item title="{{I18n.t('labelName')}}" />
+      <smart-sidebar-item title="{{I18n.t('labelName')}}" />
+      <smart-sidebar-item title="{{I18n.t('labelName')}}" />
+    </smart-sidebar>
+  </smart-grid-item>
+
+  <smart-grid-item use-slot>
+    <h3 class="demo-sidebar-title">{{I18n.t('logoPrompt')}}</h3>
+    <smart-sidebar custom-class="custom-sidebar">
+      <smart-sidebar-item title="{{I18n.t('labelName')}}" dot />
+      <smart-sidebar-item title="{{I18n.t('labelName')}}" badge="5" />
+      <smart-sidebar-item title="{{I18n.t('labelName')}}" badge="99+" />
+    </smart-sidebar>
+  </smart-grid-item>
+
+  <smart-grid-item use-slot>
+    <h3 class="demo-sidebar-title">{{I18n.t('disableOption')}}</h3>
+    <smart-sidebar custom-class="custom-sidebar">
+      <smart-sidebar-item title="{{I18n.t('labelName')}}" />
+      <smart-sidebar-item title="{{I18n.t('labelName')}}" disabled />
+      <smart-sidebar-item title="{{I18n.t('labelName')}}" />
+    </smart-sidebar>
+  </smart-grid-item>
+
+  <smart-grid-item use-slot>
+    <h3 class="demo-sidebar-title">{{I18n.t('listeningForSwitchEvents')}}</h3>
+    <smart-sidebar custom-class="custom-sidebar" bind:change="onChange">
+      <smart-sidebar-item title="{{I18n.t('labelName')}} 1" />
+      <smart-sidebar-item title="{{I18n.t('labelName')}} 2" />
+      <smart-sidebar-item title="{{I18n.t('labelName')}} 3" />
+    </smart-sidebar>
+  </smart-grid-item>
+</smart-grid>
+
+<smart-toast id="smart-toast-slider" />
