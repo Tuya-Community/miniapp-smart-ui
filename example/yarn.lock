@@ -24,6 +24,11 @@
   dependencies:
     lodash "^4.17.21"
 
+"@tuya-miniapp/icons@^2.1.7":
+  version "2.1.7"
+  resolved "https://registry.npmjs.org/@tuya-miniapp/icons/-/icons-2.1.7.tgz#0e3df6f4dd441222a3548c8c6cf957d004b3789b"
+  integrity sha512-XlphVShwI6v1W7ZFAucrsut+iILIM3S2AxqywjDNUMx1/l1yzgCCZoHFWeMOqWox2HmPQfjbT6Nn20BO6/I0CA==
+
 clsx@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
