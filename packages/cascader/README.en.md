@@ -33,7 +33,7 @@ The cascading selector component can be used with Field and Popup components, as
   placeholder="Please select your region"
   bind:tap="onClick"
 />
-<smart-popup show="{{ show }}" round position="bottom">
+<smart-bottom-sheet show="{{ show }}" max-height="100%">
   <smart-cascader
     ty:if="{{ show }}"
     value="{{ cascaderValue }}"
@@ -42,7 +42,7 @@ The cascading selector component can be used with Field and Popup components, as
     bind:close="onClose"
     bind:finish="onFinish"
   />
-</smart-popup>
+</smart-bottom-sheet>
 ```
 
 ```js
@@ -121,7 +121,7 @@ You can listen to the `change` event and dynamically set `options` to achieve as
   placeholder="Please select your region"
   bind:tap="onClick"
 />
-<smart-popup show="{{ show }}" round position="bottom">
+<smart-bottom-sheet show="{{ show }}" max-height="100%">
   <smart-cascader
     ty:if="{{ show }}"
     value="{{ cascaderValue }}"
@@ -131,7 +131,7 @@ You can listen to the `change` event and dynamically set `options` to achieve as
     bind:change="onChange"
     bind:finish="onFinish"
   />
-</smart-popup>
+</smart-bottom-sheet>
 ```
 
 ```js

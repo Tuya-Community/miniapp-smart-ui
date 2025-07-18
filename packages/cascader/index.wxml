@@ -35,7 +35,7 @@
     <!-- 暂不支持 -->
     <!-- <slot name="options-top"></slot> -->
 
-    <view class="smart-cascader__options">
+    <scroll-view class="smart-cascader__options" scroll-y>
       <view
         wx:for="{{ tab.options }}"
         wx:for-item="option"
@@ -49,7 +49,7 @@
         <text>{{ option.text }}</text>
         <smart-icon wx:if="{{ utils.isSelected(tab, option) }}" name="success" size="18" />
       </view>
-    </view>
+    </scroll-view>
     <!-- 暂不支持 -->
     <!-- <slot name="options-bottom"></slot> -->
   </smart-tab>
