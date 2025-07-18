@@ -6,7 +6,7 @@ category: Guide
 
 ### Introduction
 
-Smart UI, based on the smart mini program mechanism, provides developers with the following 3 methods to modify component styles
+Smart UI, based on the smart mini program mechanism, provides developers with the following 3 methods to modify component styles:
 
 ### Removing Style Isolation
 
@@ -14,7 +14,7 @@ For background knowledge on style isolation, please refer to the [Smart Mini Pro
 
 <br />
 
-All components in Smart UI have `addGlobalClass: true` enabled to accept the influence of external styles. You can use the following 2 methods to override component styles
+All components in Smart UI have `addGlobalClass: true` enabled to accept the influence of external styles. You can use the following 2 methods to override component styles:
 
 > When using Smart UI components on a page, you can directly override styles in the page's style file
 

@@ -27,7 +27,7 @@ The CSS Variables used for customization have the same names as Less variables. 
 
 ### Customizing Theme Styles for a Single Component
 
-> Set CSS Variables for the component in tyss
+> Set CSS Variables for the component in TYSS
 
 ```html
 <smart-button class="my-button">
