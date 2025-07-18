@@ -8,6 +8,7 @@ SmartComponent({
     title: String,
     iconColor: String,
     nativeDisabled: Boolean,
+    maxHeight: null,
     iconSize: {
       type: null,
       value: 24,
