@@ -6,7 +6,7 @@ category: 开发指南
 
 ### 介绍
 
-Smart UI 基于智能小程序的机制，为开发者提供了以下 3 种修改组件样式的方法
+Smart UI 基于智能小程序的机制，为开发者提供了以下 3 种修改组件样式的方法：
 
 ### 解除样式隔离
 
@@ -14,9 +14,9 @@ Smart UI 基于智能小程序的机制，为开发者提供了以下 3 种修�
 
 <br />
 
-Smart UI 的所有组件都开启了 `addGlobalClass: true` 以接受外部样式的影响，可以使用如下 2 种方式覆盖组件样式
+SmartUI 的所有组件都开启了 `addGlobalClass: true` 以接受外部样式的影响，可以使用如下 2 种方式覆盖组件样式：
 
-> 在页面中使用 Smart UI 组件时，可直接在页面的样式文件中覆盖样式
+> 在页面中使用 SmartUI 组件时，可直接在页面的样式文件中覆盖样式
 
 ```html
 <smart-button type="primary">主要按钮</smart-button>
@@ -30,7 +30,7 @@ Smart UI 的所有组件都开启了 `addGlobalClass: true` 以接受外部样�
 }
 ```
 
-> 在自定义组件中使用 Smart UI 组件时，需开启`styleIsolation: 'shared'`选项
+> 在自定义组件中使用 SmartUI 组件时，需开启 `styleIsolation: 'shared'` 选项
 
 ```html
 <smart-button type="primary">主要按钮</smart-button>

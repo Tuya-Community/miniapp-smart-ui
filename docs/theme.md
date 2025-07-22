@@ -8,11 +8,11 @@ category: 开发指南
 
 小程序基于 [Shadow DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom?hl=zh-cn) 来实现自定义组件，所以 Smart UI 使用与之配套的 [CSS 变量](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties) 来实现定制主题。链接中的内容可以帮助你对这两个概念有基本的认识，避免许多不必要的困扰。
 
-CSS 变量 的兼容性要求可以在 [这里](https://caniuse.com/#feat=cssmart-variables) 查看。对于不支持 CSS 变量 的设备，定制主题将不会生效，不过不必担心，默认样式仍会生效。
+CSS 变量的兼容性要求可以在 [这里](https://caniuse.com/#feat=cssmart-variables) 查看。对于不支持 CSS 变量的设备，定制主题将不会生效，不过不必担心，默认样式仍会生效。
 
 ### 样式变量
 
-定制使用的 CSS 变量 与 Less 变量 同名，下面是一些基本的样式变量，所有可用的颜色变量请参考配置文件。
+定制使用的 CSS 变量与 Less 变量同名，下面是一些基本的样式变量，所有可用的颜色变量请参考配置文件。
 
 ```less
 // Component Colors
@@ -27,7 +27,7 @@ CSS 变量 的兼容性要求可以在 [这里](https://caniuse.com/#feat=cssmar
 
 ### 定制单个组件的主题样式
 
-> 在 tyss 中为组件设置 CSS 变量
+> 在 TYSS 中为组件设置 CSS 变量
 
 ```html
 <smart-button class="my-button">
@@ -74,7 +74,7 @@ Page({
 
 ### 定制多个组件的主题样式
 
-> 与单个组件的定制方式类似，只需用一个 container 节点包裹住需要定制的组件，并将 CSS 变量 设置在 container 节点上
+> 与单个组件的定制方式类似，只需用一个 container 节点包裹住需要定制的组件，并将 CSS 变量设置在 container 节点上
 
 ```html
 <view class="container">
