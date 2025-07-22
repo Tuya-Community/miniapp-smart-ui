@@ -44,7 +44,7 @@ Page({
 ### Multi-column Usage
 
 ```html
-<smart-picker active-style="color: red;" columns="{{ columns }}" bind:change="onChange" />
+<smart-picker active-style="color: #000;" columns="{{ columns }}" bind:change="onChange" />
 ```
 
 ```javascript
@@ -56,7 +56,7 @@ Page({
       {
         values: new Array(100).fill(1).map((x, i) => i),
         style: 'flex: none;width: auto;min-width: 61px;',
-        fontStyle: 'font-weight: bold;'
+        fontStyle: 'font-size: 16px;'
       },
       {
         values: ['.'],

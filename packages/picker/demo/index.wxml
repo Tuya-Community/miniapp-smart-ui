@@ -10,7 +10,7 @@
 <demo-block title="{{I18n.t('multipleUsage')}}">
   <smart-picker
     columns="{{ column5 }}"
-    active-style="color: red;"
+    active-style="color: #000;"
     bind:change="onChange1"
     custom-class="picker5"
     bind:animation-start="animationStart"

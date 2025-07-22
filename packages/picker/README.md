@@ -45,7 +45,7 @@ Page({
 
 ```html
     
-<smart-picker active-style="color: red;" columns="{{ columns }}" bind:change="onChange" />
+<smart-picker active-style="color: #000;" columns="{{ columns }}" bind:change="onChange" />
 ```
 
 ```javascript
@@ -57,7 +57,7 @@ Page({
       {
         values: new Array(100).fill(1).map((x, i) => i),
         style: 'flex: none;width: auto;min-width: 61px;',
-        fontStyle: 'font-weight: bold;'
+        fontStyle: 'font-size: 16px;'
       },
       {
         values: ['.'],
@@ -215,18 +215,18 @@ Page({
 
 | 参数              | 说明                             | 类型      | 默认值  |
 | ---------------- | -------------------------------- | --------- | ------- |
-| active-index        | 单列选择器的当前选中项索引，<br>多列选择器请参考下方的 Columns 配置 | _number_  | `-1`    |
-| cancel-button-text  | 取消按钮文字                                                        | _string_  | `取消`  |
-| columns             | 对象数组，配置每一列显示的数据                                      | _Array_   | `[]`    |
-| confirm-button-text | 确认按钮文字                                                        | _string_  | `确认`  |
+| active-index      | 单列选择器的当前选中项索引，<br>多列选择器请参考下方的 Columns 配置 | _number_  | `-1`    |
+| cancel-button-text  | 取消按钮文字          | _string_  | `取消`  |
+| columns             | 对象数组，配置每一列显示的数据        | _Array_   | `[]`    |
+| confirm-button-text | 确认按钮文字               | _string_  | `确认`  |
 | default-index       | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | _number_  | `0`     |
-| item-height         | 选项高度                                                            | _number_  | `44`    |
+| item-height         | 选项高度                   | _number_  | `44`    |
 | loading             | 是否显示加载状态                                                    | _boolean_ | `false` |
-| show-toolbar        | 是否显示顶部栏                                                      | _boolean_ | `false` |
-| title               | 顶部栏标题                                                          | _string_  | `''`    |
-| toolbar-position    | 顶部栏位置，可选值为`bottom`                                        | _string_  | `top`   |
+| show-toolbar        | 是否显示顶部栏       | _boolean_ | `false` |
+| title               | 顶部栏标题         | _string_  | `''`    |
+| toolbar-position    | 顶部栏位置，可选值为`bottom`   | _string_  | `top`   |
 | unit                | 单列选择器的默认的单位，<br>多列选择器请参考下方的 Columns 配置     | _number_  | ''      |
-| value-key           | 选项对象中，文字对应的 key                                          | _string_  | `text`  |
+| value-key           | 选项对象中，文字对应的 key        | _string_  | `text`  |
 | visible-item-count  | 可见的选项个数    | _number_  | `5`     |
 | active-style `v2.0.0`  | 选中状态下的样式            | _string_  | `''`     |
 | change-animation `v2.2.0`  | 组件选择值改变时是否需要动画过度效果            | _boolean_  | `true`     |
