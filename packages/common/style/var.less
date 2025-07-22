@@ -1,3 +1,10 @@
+:root {
+  --app-overlay: rgba(0, 0, 0, 0.4);
+  &[theme='dark'] {
+    --app-overlay: rgba(0, 0, 0, 0.7);
+  }
+}
+
 // Theme Palette
 @M1: var(--app-M1, #3678e3); // 用于按钮、品牌露出
 @M2: var(--app-M2, #f04c4c); // 用于强警告、提示信息
@@ -48,6 +55,8 @@
 @B6-N7: var(--app-B6-N7, rgba(0, 0, 0, 0.1)); // 列表 N7 字体色
 @B6-N8: var(--app-B6-N8, rgba(0, 0, 0, 0.4)); // 列表 N8 字体色
 @B6-N9: var(--app-B6-N9, rgba(0, 0, 0, 0.05)); // 列表 N9 字体色
+@overlay: var(--app-overlay, rgba(0, 0, 0, 0.6)); // 遮罩层
+
 
 // Color Palette
 @black: #000;
@@ -462,7 +471,7 @@
 @notify-warning-background-color: @orange;
 
 // Overlay
-@overlay-background-color: rgba(0, 0, 0, 0.7);
+@overlay-background-color: @overlay;
 
 // Picker
 @picker-background-color: @B4;
