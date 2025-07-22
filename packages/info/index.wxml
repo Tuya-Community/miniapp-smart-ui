@@ -2,6 +2,6 @@
 
 <view
   wx:if="{{ info !== null && info !== '' || dot }}"
-  class="smart-info {{ utils.bem('info', { dot }) }} custom-class"
+  class="{{ utils.bem('info', { dot }) }} custom-class"
   style="{{ customStyle }}"
 >{{ dot ? '' : info }}</view>
