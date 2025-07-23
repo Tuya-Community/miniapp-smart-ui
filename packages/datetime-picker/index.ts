@@ -134,9 +134,10 @@ SmartComponent({
 
   created() {
     const innerValue = this.correctValue(this.data.value);
-    this.updateColumnValue(innerValue).then(() => {
+    this.updateColumnValue(innerValue);
+    if (innerValue !== this.data.value) {
       this.$emit('input', innerValue);
-    });
+    }
   },
 
   methods: {
@@ -144,11 +145,10 @@ SmartComponent({
       const { data } = this;
       const val = this.correctValue(data.value);
       const isEqual = val === data.innerValue;
-      this.updateColumnValue(val).then(() => {
-        if (!isEqual) {
-          this.$emit('input', val);
-        }
-      });
+      this.updateColumnValue(val);
+      if (!isEqual) {
+        this.$emit('input', val);
+      }
     },
 
     getPicker() {
@@ -421,11 +421,10 @@ SmartComponent({
       }
       value = this.correctValue(value, true);
 
-      this.updateColumnValue(value).then(() => {
-        picker.value = value;
-        this.$emit('input', value);
-        this.$emit('change', picker);
-      });
+      this.updateColumnValue(value);
+      picker.value = value;
+      this.$emit('input', value);
+      this.$emit('change', picker);
     },
 
     updateColumnValue(value) {
@@ -468,9 +467,12 @@ SmartComponent({
           );
         }
       }
-      return this.set({ innerValue: value })
-        .then(() => this.updateColumns())
-        .then(() => picker.setValues(values));
+      this.setData({ innerValue: value });
+      this.updateColumns();
+      picker.setValues(values);
+      // return this.set({ innerValue: value })
+      //   .then(() => this.updateColumns())
+      //   .then(() => picker.setValues(values));
     },
     onAnimationStart() {
       this.$emit('animation-start');
