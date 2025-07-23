@@ -229,7 +229,7 @@ Page({
 | visible-item-count | Number of visible options  | _number_  | `5`     |
 | active-style `v2.0.0`  | Style in selected state         | _string_  | `''`    |
 | change-animation `v2.2.0`  | Whether animation effect is needed when component selection value changes | _boolean_  | `true`  |
-| animation-time `v2.3.7`  | Transition animation and the delay time for selection callback (Unit: ms)           | _number_  | `800`     |
+| animation-time `v2.3.7`  | Transition animation and the delay time for selection callback (Unit: ms)           | _number_  | `300`     |
 
 ### Events
 

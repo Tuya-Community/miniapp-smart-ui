@@ -53,7 +53,7 @@ SmartComponent({
     },
     animationTime: {
       type: Number,
-      value: 800,
+      value: 300,
     },
   },
   data: {
