@@ -228,8 +228,8 @@ Page({
 | value-key          | Key corresponding to text in option object                                | _string_  | `text`  |
 | visible-item-count | Number of visible options  | _number_  | `5`     |
 | active-style `v2.0.0`  | Style in selected state         | _string_  | `''`    |
-| change-animation `v2.2.0`  | Whether animation effect is needed when component selection value changes | _boolean_  | `true`  |
-| animation-time `v2.3.7`  | Transition animation and the delay time for selection callback (Unit: ms)           | _number_  | `300`     |
+| change-animation `v2.2.0`  | Whether the component requires a transition animation when the value selected by data-driven changes (excluding the animation of finger interactive scrolling). | _boolean_  | `false`  |
+| animation-time `v2.3.7`  | Transition animation and the delay time for selection callback (Unit: ms)           | _number_  | `800` `v2.3.7` `300` `v2.6.0`     |
 
 ### Events
 

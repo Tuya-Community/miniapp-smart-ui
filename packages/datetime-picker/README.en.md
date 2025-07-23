@@ -315,12 +315,12 @@ Page({
 | value                | Current selected value                                                     | _string \| number \| Date_ | -     |
 | visible-item-count   | Number of visible options                                                  | _number_                   | `6`        |
 | formatter-map `v2.2.0` | String replacement (`type` possible values are `year`, `month`, `day`, `hour`, `minute`) | _Record<type, string \| Record<string, string>>_ | -  |
-| change-animation `v2.2.0` | Whether the component needs an animation transition effect when the selected value changes | _boolean_  | `true`     |
+| change-animation `v2.2.0` | Whether the component requires a transition animation when the value selected by data-driven changes (excluding the animation of finger interactive scrolling). | _boolean_  | `true`     |
 | is-12-hour-clock `v2.2.0`  | When setting `type: 'time'`, this property can enable the 12-hour selection mode | _boolean_  | `false`     |
 | am-text `v2.2.0`  | Text for AM in 12-hour selection mode                                         | _string_  | `AM`        |
 | pm-text `v2.2.0`  | Text for PM in 12-hour selection mode                                         | _string_  | `PM`        |
 | columns-order `v2.2.0`  | Set the order of columns, same as the `flex order` property, only changing the order from a styling perspective, not the logic | _string[]_  | `[]`     |
-| animation-time `v2.3.7`  | Transition animation and the delay time for selection callback (Unit: ms)           | _number_  | `800`     |
+| animation-time `v2.3.7`  | Transition animation and the delay time for selection callback (Unit: ms)           | _number_  | `800` `v2.3.7` `300` `v2.6.0`     |
 | columnStyles `v2.3.7`  | Style of any column          | _Record\<string, string>_  | -     |
 | font-styles `v2.3.7`  | Font style of any column           | _Record\<string, string>_  | -     |
 | active-style `v2.3.7`  | Selected Item Style           | _string_  | -     |

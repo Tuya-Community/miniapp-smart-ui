@@ -316,12 +316,12 @@ Page({
 | value               | 当前选中值    | _string \| number \| Date_ | -     |
 | visible-item-count  | 可见的选项个数      | _number_       | `6`        |
 | formatter-map `v2.2.0` | 字符串替换(`type` 可选值为 `year`, `month`, `day`, `hour`, `minute`)      | _Record<type, string \| Record<string, string>>_       | -        |
-| change-animation `v2.2.0`  | 组件选择值改变时是否需要动画过度效果            | _boolean_  | `true`     |
+| change-animation `v2.2.0`  | 组件受数据驱动选择值改变时是否需要动画过度效果（不包含手指交互滚动的动画）            | _boolean_  | `false`     |
 | is-12-hour-clock `v2.2.0`  | 当设置 `type: 'time'` 时，此属性可开启12小时选择模式         | _boolean_  | `false`     |
 | am-text `v2.2.0`  | 12小时选择模式时上午的文案            | _string_  | `AM`     |
 | pm-text `v2.2.0`  | 12小时选择模式时下午的文案            | _string_  | `PM`     |
 | columns-order `v2.2.0`  | 设置列的顺序，同`flex order`属性，只是从样式角度修改列的顺序，逻辑还是不变            | _string[]_  | `[]`     |
-| animation-time `v2.3.7`  | 过渡动画以及选择回调延迟的时间(单位ms)           | _number_  | `800`     |
+| animation-time `v2.3.7`  | 过渡动画以及选择回调延迟的时间(单位ms)           | _number_  | `800` `v2.3.7` `300` `v2.6.0`     |
 | columnStyles `v2.3.7`  | 任意列的样式          | _Record\<string, string>_  | -     |
 | font-styles `v2.3.7`  | 任意列的字体样式           | _Record\<string, string>_  | -     |
 | active-style `v2.3.7`  | 选中项的样式           | _string_  | -     |

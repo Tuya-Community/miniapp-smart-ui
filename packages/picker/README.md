@@ -229,8 +229,8 @@ Page({
 | value-key           | 选项对象中，文字对应的 key        | _string_  | `text`  |
 | visible-item-count  | 可见的选项个数    | _number_  | `5`     |
 | active-style `v2.0.0`  | 选中状态下的样式            | _string_  | `''`     |
-| change-animation `v2.2.0`  | 组件选择值改变时是否需要动画过度效果            | _boolean_  | `true`     |
-| animation-time `v2.3.7`  | 过渡动画以及选择回调延迟的时间(单位ms)           | _number_  | `300`     |
+| change-animation `v2.2.0`  | 组件受数据驱动选择值改变时是否需要动画过度效果（不包含手指交互滚动的动画）            | _boolean_  | `false`     |
+| animation-time `v2.3.7`  | 过渡动画以及选择回调延迟的时间(单位ms)           | _number_  | `800` `v2.3.7` `300` `v2.6.0`    |
 
 ### Events
 
