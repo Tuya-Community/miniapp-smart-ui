@@ -287,7 +287,7 @@ SmartComponent({
       return result;
     },
 
-    correctValue(value: any) {
+    correctValue(value: any, isOutSide?: boolean) {
       const { data } = this;
       // validate value
       const isDateType = data.type !== 'time';
@@ -309,6 +309,10 @@ SmartComponent({
         }
         hour = padZero(range(hour, data.minHour, data.maxHour));
         minute = padZero(range(minute, data.minMinute, data.maxMinute));
+
+        if (isOutSide && Number(hour) === 24) {
+          hour = 0;
+        }
 
         return `${hour}:${minute}`;
       }
@@ -415,7 +419,7 @@ SmartComponent({
         }
         value = new Date(year, month - 1, date, hour, minute);
       }
-      value = this.correctValue(value);
+      value = this.correctValue(value, true);
 
       this.updateColumnValue(value).then(() => {
         picker.value = value;
