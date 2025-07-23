@@ -24,7 +24,7 @@ export const pickerProps = {
   },
   animationTime: {
     type: Number,
-    value: 800,
+    value: 300,
   },
   activeStyle: {
     type: String,
