@@ -129,7 +129,14 @@ SmartComponent({
   data: {
     part: 0,
     innerValue: Date.now(),
-    columns: [],
+    columns: [] as {
+      values: any[];
+      order?: number;
+      unit?: string;
+      style?: string;
+      fontStyle?: string;
+      activeIndex: number;
+    }[],
   },
 
   created() {
@@ -193,7 +200,7 @@ SmartComponent({
           activeIndex,
         };
       });
-      return this.set({ columns: results });
+      return this.setData({ columns: results });
     },
 
     getOriginColumns() {
@@ -425,8 +432,8 @@ SmartComponent({
         value = new Date(year, month - 1, date, hour, minute);
       }
       value = this.correctValue(value, true);
-
-      this.updateColumnValue(value);
+      const innerValue = this.correctValue(value);
+      this.updateColumnValue(innerValue);
       picker.value = value;
       this.$emit('input', value);
       this.$emit('change', picker);
@@ -436,7 +443,6 @@ SmartComponent({
       let values: string[] = [];
       const { type, is12HourClock } = this.data;
       const formatter = this.formatterFunc;
-      const picker = this.getPicker();
       if (type === 'time' && is12HourClock) {
         const [hour, minute] = value.split(':');
         const part = Number(hour) > 0 && Number(hour) < 13 ? 0 : 1;
