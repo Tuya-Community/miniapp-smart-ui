@@ -14,10 +14,10 @@
       <view
         wx:for="{{ optionsV }}"
         wx:for-item="option"
-        wx:key="index"
+        wx:key="*this"
         data-index="{{ renderStart + index }}"
-        style="{{computed.wrapperItemStyle({ itemHeight, fontStyle, activeStyle: renderStart + index === currentIndex ? activeStyle : '', animationIndex, index: renderStart + index })}}"
-        class="smart-ellipsis {{ utils.bem('picker-column__item', { disabled: option && option.disabled, selected: renderStart + index === currentIndex }) }} {{ renderStart + index === currentIndex ? 'active-class' : '' }}"
+        style="{{computed.wrapperItemStyle({ itemHeight, fontStyle, activeStyle: renderStart + index === currentIndex ? activeStyle : '', animationIndex, index: renderStart + index, visibleItemCount })}}"
+        class="{{ computed.wrapperItemClass({ index, renderStart, animationIndex, option })}}"
       >
         {{ computed.optionText(option, valueKey) }}
       </view>

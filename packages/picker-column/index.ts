@@ -44,7 +44,7 @@ SmartComponent({
       value: -1,
       observer(index: number) {
         if (!this.data.isInit) return;
-        this.setIndex(index, false, this.data.changeAnimation);
+        this.setIndex(index, false, this.data.changeAnimation, this.data.animationTime);
       },
     },
     unit: {
@@ -79,7 +79,8 @@ SmartComponent({
     this.setIndex(
       activeIndex !== -1 ? activeIndex : defaultIndex,
       false,
-      this.data.changeAnimation
+      this.data.changeAnimation,
+      this.data.animationTime
     );
     this.setData({
       isInit: true,
@@ -217,19 +218,19 @@ SmartComponent({
 
       // 更新索引
       if (index !== data.currentIndex) {
+        const time = isSameTouch ? 150 : data.animationTime;
+        // if (!isSameTouch) {
+        //   this.timer = setInterval(() => {
+        //     if (Math.abs(this.data.animationIndex - index) < 0.5) return clearInterval(this.timer);
+        //     this.setData({
+        //       animationIndex: this.data.animationIndex + (index - data.currentIndex > 0 ? 1 : -1),
+        //     });
+        //   }, data.animationTime / Math.abs(index - data.currentIndex));
+        // }
         return this.setData({
-          timer: setTimeout(
-            async () => {
-              this.setIndex(index, true, false);
-              // await this.setData({
-              //   timer: null,
-              //   currentIndex: index,
-              //   // animationIndex: index,
-              // });
-              // this.$emit('change', index);
-            },
-            isSameTouch ? 150 : data.animationTime
-          ),
+          timer: setTimeout(async () => {
+            this.setIndex(index, true, false, this.data.animationTime);
+          }, time),
         });
       }
       this.setData({
@@ -249,7 +250,7 @@ SmartComponent({
       return currOffset < preOffset ? 'down' : 'up';
     },
 
-    vibrateShort(count?: number, time = 1000) {
+    vibrateShort(count?: number, time = DEFAULT_DURATION) {
       if (!count) {
         ty.vibrateShort({ type: 'light' });
         return;
@@ -272,7 +273,7 @@ SmartComponent({
         return;
       }
       this.vibrateShort(Math.abs(index - this.data.currentIndex), DEFAULT_DURATION);
-      this.setIndex(index, true, true);
+      this.setIndex(index, true, true, this.data.animationTime);
     },
 
     updateUint(options: any[]) {
@@ -339,6 +340,10 @@ SmartComponent({
       const { data } = this;
       index = this.adjustIndex(index) || 0;
       const offset = -index * data.itemHeight;
+      if (this.timer) {
+        clearTimeout(this.timer);
+        this.timer = null;
+      }
       if (!data.playing) {
         this.$emit('animation-start');
         this.setData({
@@ -403,7 +408,7 @@ SmartComponent({
       const { options } = this.data;
       for (let i = 0; i < options.length; i++) {
         if (this.getOptionText(options[i]) === value) {
-          return this.setIndex(i, false, this.data.changeAnimation);
+          return this.setIndex(i, false, this.data.changeAnimation, this.data.animationTime);
         }
       }
       return Promise.resolve();
