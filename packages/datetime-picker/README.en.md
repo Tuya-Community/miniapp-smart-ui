@@ -161,10 +161,10 @@ Page({
 });
 ```
 
-### Select Time - 12 Hour Mode `v2.3.0`
+### Select Time - 12 Hour Mode `v2.6.0`
 
 When setting `type: 'time'`, you can enable the `is-12-hour-clock` property to implement 12-hour selection mode; `am-text` and `pm-text` can set the text for AM and PM respectively.  
-`font-styles` and `column-styles` contain a `12HourClock` key that can modify styles for the 12-hour time zone in `v2.3.8`.
+`font-styles` and `column-styles` contain a `12HourClock` key that can modify styles for the 12-hour time zone in `v2.6.0`.
 
 ```html
 <smart-datetime-picker
@@ -172,8 +172,6 @@ When setting `type: 'time'`, you can enable the `is-12-hour-clock` property to i
   data-type="time"
   is-12-hour-clock
   value="{{ currentDate }}"
-  max-hour="{{ maxHour }}"
-  min-hour="{{ minHour }}"
   font-styles="{{ fontStyles }}"
   bind:input="onInput"
 />
@@ -183,8 +181,6 @@ When setting `type: 'time'`, you can enable the `is-12-hour-clock` property to i
 Page({
   data: {
     currentDate: '11:00',
-    minHour: 1,
-    maxHour: 24,
     fontStyles: {
       '12HourClock': 'font-size: 14px;'
     },
@@ -316,7 +312,7 @@ Page({
 | visible-item-count   | Number of visible options                                                  | _number_                   | `6`        |
 | formatter-map `v2.2.0` | String replacement (`type` possible values are `year`, `month`, `day`, `hour`, `minute`) | _Record<type, string \| Record<string, string>>_ | -  |
 | change-animation `v2.2.0` | Whether the component requires a transition animation when the value selected by data-driven changes (excluding the animation of finger interactive scrolling). | _boolean_  | `true`     |
-| is-12-hour-clock `v2.2.0`  | When setting `type: 'time'`, this property can enable the 12-hour selection mode | _boolean_  | `false`     |
+| is-12-hour-clock `v2.6.0`  | When setting `type: 'time'`, this property can enable the 12-hour selection mode | _boolean_  | `false`     |
 | am-text `v2.2.0`  | Text for AM in 12-hour selection mode                                         | _string_  | `AM`        |
 | pm-text `v2.2.0`  | Text for PM in 12-hour selection mode                                         | _string_  | `PM`        |
 | columns-order `v2.2.0`  | Set the order of columns, same as the `flex order` property, only changing the order from a styling perspective, not the logic | _string[]_  | `[]`     |
