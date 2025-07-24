@@ -178,16 +178,21 @@ SmartComponent({
       return formatter(type, value);
     },
 
-    updateColumns() {
+    updateColumns(values: Array<string | number>) {
       const { locale, columnStyles, fontStyles } = this.data;
-      const results = this.getOriginColumns().map(column => ({
-        values: column.values.map(value => this.formatterFunc(column.type, value, this.data)),
-        order: column.order,
-        unit: locale?.[column.type],
-        style: columnStyles?.[column.type],
-        fontStyle: fontStyles?.[column.type],
-      }));
-
+      const results = this.getOriginColumns().map((column, index) => {
+        const value = values[index];
+        const list = column.values.map(value => this.formatterFunc(column.type, value, this.data));
+        const activeIndex = list.findIndex(item => item === value);
+        return {
+          values: list,
+          order: column.order,
+          unit: locale?.[column.type],
+          style: columnStyles?.[column.type],
+          fontStyle: fontStyles?.[column.type],
+          activeIndex,
+        };
+      });
       return this.set({ columns: results });
     },
 
@@ -468,8 +473,8 @@ SmartComponent({
         }
       }
       this.setData({ innerValue: value });
-      this.updateColumns();
-      picker.setValues(values);
+      this.updateColumns(values);
+      // picker.setValues(values);
       // return this.set({ innerValue: value })
       //   .then(() => this.updateColumns())
       //   .then(() => picker.setValues(values));
