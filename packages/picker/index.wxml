@@ -38,7 +38,7 @@
     />
 
     <view
-      class="smart-picker__frame smart-hairline--top-bottom"
+      class="smart-picker__frame smart-hairline--top-bottom hairline-class"
       style="{{ computed.frameStyle({ itemHeight }) }}"
     />
   </view>

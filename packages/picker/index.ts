@@ -14,7 +14,7 @@ interface Column {
 }
 
 SmartComponent({
-  classes: ['active-class', 'toolbar-class', 'column-class'],
+  classes: ['hairline-class', 'active-class', 'toolbar-class', 'column-class'],
 
   props: {
     ...pickerProps,

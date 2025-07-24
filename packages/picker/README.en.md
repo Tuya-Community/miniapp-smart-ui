@@ -265,6 +265,7 @@ When passing in multi-column data, `columns` is an array of objects. Each object
 | column-class    | Column style class |
 | custom-class    | Root node style class |
 | toolbar-class   | Top bar style class |
+| hairline-class `v2.6.0` | Style class of the dividing line |
 
 ### Methods
 
