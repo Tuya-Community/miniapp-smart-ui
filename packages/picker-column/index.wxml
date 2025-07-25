@@ -35,7 +35,7 @@
   </view>
   <view wx:if="{{unit}}" class="smart-picker-column__unit" style="height: {{ itemHeight }}px">
     <view class="smart-picker-column__unit_text smart-picker-column__unit_hidden" >{{unit}}</view>
-    <text class="smart-picker-column__max-text">{{ maxText }}</text>
+    <view class="smart-picker-column__max-text">{{ maxText }}</view>
     <view class="smart-picker-column__unit_text" >{{unit}}</view>
   </view>
   

@@ -308,5 +308,5 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数�
 | --picker-loading-mask-color | _var(--app-B4, #ffffff)_ | 加载遮罩颜色 |
 | --picker-option-disabled-opacity | _0.3_ | 禁用选项不透明度 |
 | --picker-option-selected-text-color | _var(--app-B6-N1, rgba(0, 0, 0, 1))_ | 选中选项文本颜色 |
-| --picker-option-unit-mid-size `v2.4.0` | _0_ | 单位和内容文案的间隔 |
+| --picker-option-unit-mid-size `v2.4.0` | _0_  `v2.4.0` _4px_ `v2.6.0` | 单位和内容文案的间隔 |
 | --picker-option-selected-font-weight-bold `v2.6.0` | _700_ | 选中时文案的字重 |
