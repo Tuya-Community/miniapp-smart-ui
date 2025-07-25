@@ -368,4 +368,12 @@ Page({
 
 ### 样式变量
 
-请参考 picker 组件文档说明 - 样式变量
+其他CSS变量请参考 picker 组件文档说明 - 样式变量
+
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider&appType=miniapp)。
+
+| 名称                          | 默认值                                 | 描述 |
+| ----------------------------- | -------------------------------------- | ---- |
+| --hairline-border-image-color `v2.6.0` | _var(--smart-ui-border-image, linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)))_ | 分割线的 border-image 样式 |
+
+

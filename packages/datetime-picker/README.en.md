@@ -366,4 +366,10 @@ In the `change` event, you can get the component instance to perform correspondi
 
 ### Style Variables
 
-Please refer to the picker component documentation for style variable descriptions.
+For other CSS variables, please refer to the documentation of the picker component - Style Variables.
+
+The component provides the following CSS variables that can be used to customize styles. For usage, please refer to the [ConfigProvider component](/material/smartui?comId=config-provider&appType=miniapp).
+
+| Name                          | Default Value                                 | Description |
+| ----------------------------- | -------------------------------------- | ---- |
+| --hairline-border-image-color `v2.6.0` | _var(--smart-ui-border-image, linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)))_ | Border-image style for the dividing line |

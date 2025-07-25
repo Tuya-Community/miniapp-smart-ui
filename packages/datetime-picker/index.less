@@ -1,1 +1,16 @@
-// empty
+@import '../common/style/var.less';
+
+
+.smart-datetime-picker {
+  --hairline-color: transparent;
+
+  &-hairline {
+    border-image-source: var(--hairline-border-image-color, @hairline-border-image-color);
+    border-image-slice: 1;
+    border-style: solid;
+    border-width: 0;
+    border-top-width: 0.5px;
+    border-bottom-width: 0.5px;
+    position: absolute;
+  }
+}

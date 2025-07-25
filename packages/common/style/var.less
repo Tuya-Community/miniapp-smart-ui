@@ -1,7 +1,10 @@
 :root {
-  --app-overlay: rgba(0, 0, 0, 0.4);
+  --smart-ui-overlay: rgba(0, 0, 0, 0.4);
+  --smart-ui-border-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+  
   &[theme='dark'] {
-    --app-overlay: rgba(0, 0, 0, 0.7);
+    --smart-ui-overlay: rgba(0, 0, 0, 0.7);
+    --smart-ui-border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
   }
 }
 
@@ -55,7 +58,8 @@
 @B6-N7: var(--app-B6-N7, rgba(0, 0, 0, 0.1)); // 列表 N7 字体色
 @B6-N8: var(--app-B6-N8, rgba(0, 0, 0, 0.4)); // 列表 N8 字体色
 @B6-N9: var(--app-B6-N9, rgba(0, 0, 0, 0.05)); // 列表 N9 字体色
-@overlay: var(--app-overlay, rgba(0, 0, 0, 0.6)); // 遮罩层
+@overlay: var(--smart-ui-overlay, rgba(0, 0, 0, 0.6)); // 遮罩层
+@border-image: var(--smart-ui-border-image, linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)));
 
 
 // Color Palette
@@ -826,6 +830,7 @@
 @hairline-surround-width: 1px;
 @hairline-top-bottom-width: 1px 0;
 @hairline-color: var(--hairline-color, @B6-N7);
+@hairline-border-image-color: @border-image;
 
 // Popover
 @popover-background-color: @B4;
