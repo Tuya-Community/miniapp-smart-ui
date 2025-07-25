@@ -190,6 +190,25 @@ SmartComponent({
       return this.picker;
     },
 
+    getTimeBoundary() {
+      const { type, is12HourClock, minHour, maxHour, minMinute, maxMinute } = this.data;
+      if (type === 'time' && is12HourClock) {
+        if (minHour === 1 && maxHour === 24) {
+          return {
+            minHour: 0,
+            maxHour: 23,
+            minMinute,
+            maxMinute,
+          };
+        }
+      }
+      return {
+        minHour,
+        maxHour,
+        minMinute,
+        maxMinute,
+      };
+    },
     formatterFunc(type: string, value: string | number, data: any) {
       if (type === 'part') {
         return value === 'am' ? data.amText : data.pmText;
@@ -224,8 +243,8 @@ SmartComponent({
     },
 
     getOriginColumns() {
-      const { part, filter, is12HourClock, type, amText, pmText, columnsOrder, minHour, maxHour } =
-        this.data;
+      const { part, filter, is12HourClock, type, amText, pmText, columnsOrder } = this.data;
+      const { minHour, maxHour } = this.getTimeBoundary();
       const results = this.getRanges().map(({ type: timeType, range }, index) => {
         const order = columnsOrder[index];
         let values = times(range[1] - range[0] + 1, index => {
@@ -263,28 +282,30 @@ SmartComponent({
     getRanges() {
       const { data } = this;
       if (data.type === 'time' && data.is12HourClock) {
+        const { minHour, maxHour, minMinute, maxMinute } = this.getTimeBoundary();
         const { part } = data;
         const time12Range = part === 'pm' ? [12, 23] : [0, 11];
         return [
           {
             type: 'hour',
-            range: findIntersection(time12Range, [data.minHour, data.maxHour]),
+            range: findIntersection(time12Range, [minHour, maxHour]),
           },
           {
             type: 'minute',
-            range: [data.minMinute, data.maxMinute],
+            range: [minMinute, maxMinute],
           },
         ];
       }
       if (data.type === 'time') {
+        const { minHour, maxHour, minMinute, maxMinute } = this.getTimeBoundary();
         return [
           {
             type: 'hour',
-            range: [data.minHour, data.maxHour],
+            range: [minHour, maxHour],
           },
           {
             type: 'minute',
-            range: [data.minMinute, data.maxMinute],
+            range: [minMinute, maxMinute],
           },
         ];
       }
@@ -339,12 +360,13 @@ SmartComponent({
 
       // time type
       if (!isDateType) {
+        const { minHour, maxHour, minMinute, maxMinute } = this.getTimeBoundary();
         let [hour, minute] = value.split(':');
         if (Number(hour) === 24) {
           hour = 0;
         }
-        hour = padZero(range(hour, data.minHour, data.maxHour));
-        minute = padZero(range(minute, data.minMinute, data.maxMinute));
+        hour = padZero(range(hour, minHour, maxHour));
+        minute = padZero(range(minute, minMinute, maxMinute));
 
         return `${hour}:${minute}`;
       }
