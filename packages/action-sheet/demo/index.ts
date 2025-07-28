@@ -1,4 +1,3 @@
-import { getDateString } from '../../common/utils';
 import { SmartComponent } from '../../common/component';
 
 SmartComponent({
@@ -32,7 +31,7 @@ SmartComponent({
     ],
     currentNumber: 0,
     currentDate: new Date(2018, 0, 1),
-    currentDateStr: getDateString(new Date(2018, 0, 1)),
+    currentDateStr: new Date(2018, 0, 1).toLocaleDateString(),
     minDate: new Date(2018, 0, 1).getTime(),
     formatter(type, value) {
       if (type === 'year') {
@@ -129,7 +128,7 @@ SmartComponent({
     onPickerConfirm() {
       this.setData({
         showPicker: false,
-        currentDateStr: getDateString(this.data?.currentDate),
+        currentDateStr: this.data?.currentDate?.toLocaleDateString(),
       });
     },
 
