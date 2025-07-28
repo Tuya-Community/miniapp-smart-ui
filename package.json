@@ -15,7 +15,7 @@
     "build:icon": "yarn && node build/generate-icon/index.js",
     "build": "yarn && MODE=build NODE_OPTIONS=--no-experimental-fetch npx gulp -f build/compiler.js --series buildEs buildLib buildExample",
     "build:wx": "node build/wx.mjs",
-    "test": "jest",
+    "test": "TZ=Asia/Shanghai jest",
     "test:watch": "jest --watch",
     "preMinipackBuild": "yarn && MODE=build NODE_OPTIONS=--no-experimental-fetch npx gulp -f build/compiler.js --series buildEs buildLib buildExample",
     "changelog": "conventional-changelog -p -i CHANGELOG.md -s"
