@@ -1,4 +1,4 @@
-name: Test CI
+name: Merge Check Test CI
 
 on: [push]
 
