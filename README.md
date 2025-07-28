@@ -6,7 +6,7 @@ English | [简体中文](./README-zh_CN.md)
 
 ## Introduction
 
-`@tuya-miniapp/smart-ui` is a **lightweight and reliable smart mini app component library**, implemented based on `vant-weapp`. It provides a complete set of UI components that comply with smart miniapp mobile design specifications (currently does not support WeChat Mini Program, this component library only supports Tuya MiniApp).
+`@tuya-miniapp/smart-ui` is a **lightweight and reliable smart mini app component library**, implemented based on `vant-weapp`. It provides a complete set of UI components that comply with Tuya MiniApp mobile design specifications (currently does not support WeChat Mini Program, this component library only supports Tuya MiniApp).
 
 ## Preview
 
