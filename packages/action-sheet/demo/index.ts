@@ -2,6 +2,7 @@ import { SmartComponent } from '../../common/component';
 
 SmartComponent({
   data: {
+    
     show1: false,
     show2: false,
     show3: false,
