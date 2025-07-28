@@ -11,6 +11,7 @@ SmartComponent({
     showSelect2: false,
     showNumber: false,
     showPicker: false,
+    showDoubleSelector: false,
     isReady: false,
     action1: [{ name: 'Action' }, { name: 'Action' }, { name: 'Action' }],
     action2: [
@@ -41,6 +42,11 @@ SmartComponent({
       }
       return value;
     },
+    current12Date: '12:00',
+    minHour: 0,
+    maxHour: 23,
+    tempColumnIdx: 3,
+    tempColumns: [39, 40, 41, 42, 43, 44, 45],
   },
 
   methods: {
@@ -90,6 +96,10 @@ SmartComponent({
       this.toggle('showPicker');
     },
 
+    toggleActionSheetDoubleSelector() {
+      this.toggle('showDoubleSelector');
+    },
+
     onAfterEnter() {
       this.setData({ isReady: true })
     },
@@ -119,6 +129,27 @@ SmartComponent({
       this.setData({
         showPicker: false,
         currentDateStr: this.data?.currentDate?.toLocaleDateString(),
+      });
+    },
+
+    onDoubleSelectorConfirm() {
+      console.log('Current Double Selector Result', this.data.current12Date, this.data.tempColumnIdx);
+      this.setData({
+        showDoubleSelector: false,
+      });
+    },
+
+    onCurrent12DateInput(event) {
+      this.setData({
+        current12Date: event.detail,
+      });
+    },
+
+    
+    onTempColumnChange(event) {
+      const { index } = event.detail;
+      this.setData({
+        tempColumnIdx: index,
       });
     },
   },
