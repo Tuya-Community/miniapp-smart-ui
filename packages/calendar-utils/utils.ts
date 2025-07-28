@@ -105,6 +105,7 @@ export function getMonths(minDate: number, maxDate: number) {
   do {
     months.push(cursor.getTime());
     cursor.setMonth(cursor.getMonth() + 1);
+    cursor.setHours(0);
   } while (compareMonth(cursor, maxDate) !== 1);
 
   return months;
