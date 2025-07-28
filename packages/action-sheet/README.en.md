@@ -140,7 +140,7 @@ By setting the `title` property, you can display a title bar, and you can use sl
 </smart-action-sheet>
 ```
 
-### Custom Title Slot
+### Custom Double Select `v2.6.0`
 
 When `use-title-slot` is `true`, you can use slots to customize the title content, supporting complex dual-selector scenarios.
 
