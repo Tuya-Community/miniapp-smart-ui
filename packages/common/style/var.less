@@ -1,9 +1,11 @@
 :root {
   --smart-ui-overlay: rgba(0, 0, 0, 0.4);
+  --smart-ui-dialog-background: rgba(255, 255, 255, 1);
   --smart-ui-border-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
   
   &[theme='dark'] {
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
+    --smart-ui-dialog-background: #333;
     --smart-ui-border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
   }
 }
@@ -60,7 +62,7 @@
 @B6-N9: var(--app-B6-N9, rgba(0, 0, 0, 0.05)); // 列表 N9 字体色
 @overlay: var(--smart-ui-overlay, rgba(0, 0, 0, 0.6)); // 遮罩层
 @border-image: var(--smart-ui-border-image, linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)));
-
+@dialog-bg: var(--smart-ui-dialog-background, rgba(255, 255, 255, 1)); // 弹窗背景色
 
 // Color Palette
 @black: #000;
@@ -315,7 +317,7 @@
 @dialog-small-screen-width: 90%;
 @dialog-font-size: @font-size-lg;
 @dialog-border-radius: 16px;
-@dialog-background-color: @B4;
+@dialog-background-color: @dialog-bg;
 @dialog-header-font-color: @B4-N1;
 @dialog-header-font-weight: 400;
 @dialog-header-line-height: 24px;
