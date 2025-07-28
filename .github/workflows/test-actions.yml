@@ -19,3 +19,6 @@ jobs:
       - run: yarn run build
       - run: echo '检查单元测试是否正常'
       - run: yarn run test
+      - run: echo '检查单元测试是否需要更新'
+      - run: npx jest -u
+      
