@@ -14,7 +14,6 @@ import {
   getInitEdgeDate,
 } from '../calendar-utils/utils';
 import { Day } from '../calendar-utils/types';
-import Toast from '../toast/toast';
 
 const dateEdge = getInitEdgeDate('year');
 

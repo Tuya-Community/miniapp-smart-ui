@@ -122,3 +122,12 @@ export function getSafeBottomOffset() {
   const bottomSafeHeight = screenHeight - safeArea?.height - statusBarHeight;
   return bottomSafeHeight + safeAreaInsetBottomMin;
 }
+
+export const getDateString = (date: Date) => {
+  if (!date) return;
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 加1因为月份从0开始
+  const day = date.getDate().toString().padStart(2, '0');
+  const formattedDate = `${year}/${month}/${day}`;
+  return formattedDate;
+};
