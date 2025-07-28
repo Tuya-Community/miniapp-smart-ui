@@ -1,3 +1,4 @@
+import { getDateString } from '../../common/utils';
 import { SmartComponent } from '../../common/component';
 import Toast from '../../toast/toast';
 
@@ -97,7 +98,7 @@ SmartComponent({
         case 'datetime':
           return date.toLocaleString();
         case 'date':
-          return date.toLocaleDateString();
+          return getDateString(date);
         case 'year-month':
           return `${date.getFullYear()}/${date.getMonth() + 1}`;
         case 'time':
