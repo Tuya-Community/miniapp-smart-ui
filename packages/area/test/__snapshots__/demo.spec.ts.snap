@@ -255,8 +255,8 @@ exports[`should render demo and match snapshot 1`] = `
                 </wx-view>
               </picker-column>
               <wx-view
-                class="smart-picker__frame smart-hairline--top-bottom"
-                style="height:44px"
+                class="smart-picker__frame smart-hairline--top-bottom hairline-class"
+                style="height:44px;position:absolute"
               />
             </wx-view>
           </wx-view>

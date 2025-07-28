@@ -143,7 +143,7 @@ exports[`should render demo and match snapshot 1`] = `
                             customClass="smart-icon__info info-class"
                           >
                             <wx-view
-                              class="smart-info smart-info smart-info--dot custom-class"
+                              class="smart-info smart-info--dot custom-class"
                               style=""
                             >
                               
@@ -176,7 +176,7 @@ exports[`should render demo and match snapshot 1`] = `
                             customClass="smart-icon__info info-class"
                           >
                             <wx-view
-                              class="smart-info smart-info custom-class"
+                              class="smart-info custom-class"
                               style=""
                             >
                               9
@@ -209,7 +209,7 @@ exports[`should render demo and match snapshot 1`] = `
                             customClass="smart-icon__info info-class"
                           >
                             <wx-view
-                              class="smart-info smart-info custom-class"
+                              class="smart-info custom-class"
                               style=""
                             >
                               99+

@@ -102,7 +102,7 @@ exports[`should render demo and match snapshot 1`] = `
                     >
                       <smart-info>
                         <wx-view
-                          class="smart-info smart-info smart-info--dot custom-class"
+                          class="smart-info smart-info--dot custom-class"
                           style=""
                         >
                           
@@ -123,7 +123,7 @@ exports[`should render demo and match snapshot 1`] = `
                     >
                       <smart-info>
                         <wx-view
-                          class="smart-info smart-info custom-class"
+                          class="smart-info custom-class"
                           style=""
                         >
                           5
@@ -144,7 +144,7 @@ exports[`should render demo and match snapshot 1`] = `
                     >
                       <smart-info>
                         <wx-view
-                          class="smart-info smart-info custom-class"
+                          class="smart-info custom-class"
                           style=""
                         >
                           99+

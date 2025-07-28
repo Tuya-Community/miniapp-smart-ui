@@ -573,7 +573,7 @@ exports[`should render demo and match snapshot 1`] = `
       <wx-view
         class="demo-block__title"
       >
-         Picker: 1/1/2018
+         Picker: 2018/1/1
       </wx-view>
       <smart-button
         bind:click="toggleActionSheetPicker"
