@@ -140,6 +140,102 @@ By setting the `title` property, you can display a title bar, and you can use sl
 </smart-action-sheet>
 ```
 
+### Custom Double Select `v2.6.0`
+
+When `use-title-slot` is `true`, you can use slots to customize the title content, supporting complex dual-selector scenarios.
+
+```html
+<smart-action-sheet 
+  show="{{ show }}" 
+  use-title-slot="{{ true }}"
+  cancel-text="Cancel"
+  confirm-text="Confirm"
+  bind:close="onClose"
+  bind:cancel="onClose"
+  bind:confirm="onDoubleSelectorConfirm"
+>
+  <view slot="title" class="demo-custom-double-select-header">
+    <view>Time</view>
+    <view>Temperature</view>
+  </view>
+  <view class="demo-custom-double-select-content">
+    <smart-datetime-picker
+      class="flex1"
+      type="time"
+      data-type="time"
+      is-12-hour-clock
+      show-toolbar="{{ false }}"
+      value="{{ current12Date }}"
+      max-hour="{{ maxHour }}"
+      min-hour="{{ minHour }}"
+      bind:input="onCurrent12DateInput"
+    />
+    <smart-picker
+      class="flex1"
+      unit="℃"
+      active-index="{{ tempColumnIdx }}"
+      columns="{{ tempColumns }}"
+      bind:change="onTempColumnChange"
+    />
+  </view>
+</smart-action-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    current12Date: '12:00',
+    minHour: 0,
+    maxHour: 23,
+    tempColumnIdx: 3,
+    tempColumns: [39, 40, 41, 42, 43, 44, 45],
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+
+  onDoubleSelectorConfirm() {
+    console.log('Current Double Selector Result', this.data.current12Date, this.data.tempColumnIdx);
+    this.setData({
+      show: false,
+    });
+  },
+
+  onCurrent12DateInput(event) {
+    this.setData({
+      current12Date: event.detail,
+    });
+  },
+
+  onTempColumnChange(event) {
+    const { index } = event.detail;
+    this.setData({
+      tempColumnIdx: index,
+    });
+  },
+});
+```
+
+```css
+.demo-custom-double-select-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.demo-custom-double-select-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex1 {
+  flex: 1;
+}
+```
+
 ## API
 
 ### Props
@@ -159,6 +255,7 @@ By setting the `title` property, you can display a title bar, and you can use sl
 | safe-area-inset-bottom-min `v1.1.0` | Whether to reserve a minimum bottom safe distance for when safeArea is 0, only effective when safeAreaInsetBottom is true | _number_  | `16`       |
 | show         | Whether to display the action panel                                                                                 | _boolean_ | -                   |
 | title           | Title                                                                                                               | _string_  | -                   |
+| use-title-slot `v2.6.0`        | Whether to enable title slot      | _boolean_  | `false`                   |
 | z-index                           | z-index level                                                                                                       | _number_  | `100`               |
 | native-disabled `v2.5.0`     |  Whether to disable local gestures during the opening of the dialog; it will call `ty.nativeDisabled(true)` when the dialog starts the entrance animation, and call `ty.nativeDisabled(false)` at the end of the closing animation to restore the click ability of components on different layers. Since `ty.nativeDisabled` works globally, pay attention to whether to pass the `native-disabled` attribute and the timing of closing when multiple dialog components are opened simultaneously, to prevent the `native-disabled` attribute from being ineffective.   | _boolean_   | `false`        |
 
@@ -226,7 +323,7 @@ The component provides the following CSS variables for custom styles. For usage,
 | --action-sheet-description-line-height | _20px_ | Line height of the description text |
 | --action-sheet-item-background | _var(--app-B4, #ffffff)_ | Background color of the list |
 | --action-sheet-item-border-radius | _0_ | Border radius of the list |
-| --action-sheet-item-icon-margin | _16px 16px 0 0_ | Icon margin size of the list |
+| --action-sheet-item-icon-margin | _0px 16px 0 0_ | Icon margin size of the list |
 | --action-sheet-item-icon-color | _var(--app-M1, #3678e3)_ | Icon color of the list |
 | --action-sheet-item-icon-size | _28px_ | Icon size of the list |
 | --action-sheet-item-font-size | _16px_ | Font size of the list text |

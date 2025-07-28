@@ -1,7 +1,10 @@
-import { Check as checkMarkIcon } from '@tuya-miniapp/icons';
+import { Checkmark as checkMarkIcon } from '@tuya-miniapp/icons';
 import { SmartComponent } from '../common/component';
 import ty from '../common/ty';
+import { getSafeAreaInsetMin } from '../common/utils';
 import { button } from '../mixins/button';
+
+const SAFE_AREA_INSET_BOTTOM_MIN = getSafeAreaInsetMin();
 
 SmartComponent({
   classes: ['list-class'],
@@ -15,6 +18,10 @@ SmartComponent({
     description: String,
     activeColor: String,
     nativeDisabled: Boolean,
+    useTitleSlot: {
+      type: Boolean,
+      value: false,
+    },
     round: {
       type: Boolean,
       value: true,
@@ -45,7 +52,7 @@ SmartComponent({
     },
     safeAreaInsetBottomMin: {
       type: Number,
-      value: 16,
+      value: SAFE_AREA_INSET_BOTTOM_MIN,
     },
     rootPortal: {
       type: Boolean,

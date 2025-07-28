@@ -18,7 +18,7 @@
     cancel-text="{{I18n.t('cancel')}}"
     show="{{ showSelect2 }}"
     actions="{{ actionSelect }}"
-    active-color="#ff0fff"
+    active-color="#1989FA"
     bind:select="onSelect"
     bind:close="toggleActionSheetSelect2"
     bind:cancel="toggleActionSheetSelect2"
@@ -139,5 +139,43 @@
       bind:input="onInput"
       formatter="{{ formatter }}"
     />
+  </smart-action-sheet>
+</demo-block>
+
+<demo-block title="{{I18n.t('customDoubleSelect')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheetDoubleSelector">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-action-sheet
+    show="{{ showDoubleSelector }}"
+    use-title-slot="{{ true }}"
+    cancel-text="Cancel"
+    confirm-text="Confirm"
+    bind:close="toggleActionSheetDoubleSelector"
+    bind:cancel="toggleActionSheetDoubleSelector"
+    bind:confirm="onDoubleSelectorConfirm"
+  >
+    <view slot="title" class="demo-custom-double-select-header">
+      <view>Time</view>
+      <view>Temp</view>
+    </view>
+    <view class="demo-custom-double-select-content">
+      <smart-datetime-picker
+        class="flex1"
+        type="time"
+        data-type="time"
+        is-12-hour-clock
+        show-toolbar="{{ false }}"
+        value="{{ current12Date }}"
+        max-hour="{{ maxHour }}"
+        min-hour="{{ minHour }}"
+        bind:input="onCurrent12DateInput"
+      />
+      <smart-picker
+        class="flex1"
+        unit="℃"
+        active-index="{{ tempColumnIdx }}"
+        columns="{{ tempColumns }}"
+        bind:change="onTempColumnChange"
+      />
+    </view>
   </smart-action-sheet>
 </demo-block>
