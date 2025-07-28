@@ -14,11 +14,9 @@ jobs:
         with:
           node-version: '22.x'
       - run: echo '安装依赖'
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
       - run: echo '检查源码编译是否正常'
       - run: yarn run build
-      - run: echo '检查单元测试是否需要更新'
-      - run: npx jest -u
       - run: echo '检查单元测试是否正常'
       - run: yarn run test
       
