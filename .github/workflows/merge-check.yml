@@ -1,6 +1,9 @@
 name: Merge Check Test CI
 
-on: [push]
+on: 
+  pull_request:
+    branches:
+      - main # 这里指定要检查的目标分支
 
 jobs:
   build:
@@ -13,6 +16,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.x'
+          cache: 'yarn'
       - run: echo '安装依赖'
       - run: yarn install --frozen-lockfile
       - run: echo '检查源码编译是否正常'
