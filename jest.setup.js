@@ -1,5 +1,5 @@
 // 在运行测试之前设置时区为中国时区
-process.env.TZ = 'Asia/Shanghai';
+process.env.TZ = 'UTC';
 
 const THEME_INFO = {
   '--app-B1': '#F6F7FB',
