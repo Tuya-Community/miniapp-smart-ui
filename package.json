@@ -89,5 +89,14 @@
     "@ray-js/components-ty-slider": "^0.3.4",
     "@tuya-miniapp/icons": "^2.1.7"
   },
-  "maintainers": []
+  "maintainers": [
+    {
+      "name": "tuyafe",
+      "email": "tuyafe@tuya.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tuya-Community/miniapp-smart-ui.git"
+  }
 }
