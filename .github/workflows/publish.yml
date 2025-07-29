@@ -3,7 +3,6 @@ name: Publish Stable Release
 on:
   release:
     types: [published]
-
 jobs:
   publish_release:
     runs-on: ubuntu-latest
