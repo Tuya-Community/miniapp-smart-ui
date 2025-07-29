@@ -1,11 +1,9 @@
 name: Merge Check Jest CI
-
 on: 
   pull_request:
     branches:
       - main
       - release/*
-
 jobs:
   build:
 
