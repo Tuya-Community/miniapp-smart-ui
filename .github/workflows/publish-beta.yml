@@ -1,6 +1,11 @@
 name: Publish Beta Package
 
-on: [push]
+on:
+  pull_request:
+    branches:
+      - 'release/2.x'
+    types:
+      - closed
 
 jobs:
   publish_beta:
