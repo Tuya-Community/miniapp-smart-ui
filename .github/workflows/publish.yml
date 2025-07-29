@@ -42,8 +42,6 @@ jobs:
 
     - name: Commit Changes
       run: |
-        PACKAGE_V=$(node -p "require('./package.json').version")
-        echo "PACKAGE_V=${PACKAGE_V}"
         git add package.json
         git commit -m "chore(release): ${TAG_VERSION}"
         git push origin HEAD:release/2.x
