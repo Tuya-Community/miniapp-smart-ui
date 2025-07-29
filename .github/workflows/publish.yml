@@ -42,6 +42,8 @@ jobs:
 
     - name: Commit Changes
       run: |
+        PACKAGE_V=$(node -p "require('./package.json').version")
+        echo "PACKAGE_V=${PACKAGE_V}"
         git add package.json
         git commit -m "chore(release): ${TAG_VERSION}"
         git push origin HEAD:release/2.x
@@ -51,7 +53,7 @@ jobs:
     - name: Build
       run: yarn build
 
-    # - name: Publish Package
-    #   run: npm publish --access public
-    #   env:
-    #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - name: Publish Package
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
