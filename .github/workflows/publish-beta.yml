@@ -45,7 +45,7 @@ jobs:
         base_version=$(echo "${LATEST_VERSION}" | cut -d '-' -f 1)
         beta_number=$(echo "${LATEST_VERSION}" | tr '-' ' ' | awk '{print $NF}')
         next_beta=$((beta_number + 1))
-        next_version="${base_version}-beta-${next_beta}"
+        next_version="2.6.0-beta-12"
         echo "NEXT_VERSION=${next_version}" >> $GITHUB_ENV
 
     - name: Update Package.json with Next Version
