@@ -36,7 +36,7 @@ jobs:
     - name: Get Latest Beta Version
       id: latest_version
       run: |
-        latest_version=$(npm show $PACKAGE_NAME versions --json | jq -r '.[]' | grep -E 'beta' | sort -V | tail -n 1)
+        latest_version=$(npm show $PACKAGE_NAME versions --json | jq -r '.[]' | grep -E 'beta-' | sort -V | tail -n 1)
         echo "LATEST_VERSION=${latest_version}" >> $GITHUB_ENV
 
     - name: Calculate Next Beta Version
