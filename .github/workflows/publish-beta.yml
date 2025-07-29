@@ -56,7 +56,7 @@ jobs:
       run: |
         git add package.json
         git commit -m "chore(release): ${NEXT_VERSION}"
-        git push origin HEAD:beta
+        git push origin HEAD:${{ github.ref }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
