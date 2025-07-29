@@ -1,0 +1,62 @@
+name: Publish Beta Package
+
+on: [push]
+
+jobs:
+  publish_beta:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Configure Git Identity
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Get Package Name
+      id: package_name
+      run: echo "PACKAGE_NAME=$(node -p "require('./package.json').name")" >> $GITHUB_ENV
+
+    - name: Get Latest Beta Version
+      id: latest_version
+      run: |
+        latest_version=$(npm show $PACKAGE_NAME versions --json | jq -r '.[]' | grep -E 'beta' | sort -V | tail -n 1)
+        echo "LATEST_VERSION=${latest_version}" >> $GITHUB_ENV
+
+    - name: Calculate Next Beta Version
+      id: next_version
+      run: |
+        base_version=$(echo "${LATEST_VERSION}" | cut -d '-' -f 1)
+        beta_number=$(echo "${LATEST_VERSION}" | tr '-' ' ' | awk '{print $NF}')
+        next_beta=$((beta_number + 1))
+        next_version="${base_version}-beta.${next_beta}"
+        echo "NEXT_VERSION=${next_version}" >> $GITHUB_ENV
+
+    - name: Update Package.json with Next Version
+      run: |
+        npm version "${NEXT_VERSION}" --no-git-tag-version
+
+    - name: Commit Changes
+      run: |
+        git add package.json
+        git commit -m "chore(release): ${NEXT_VERSION}"
+        git push origin HEAD:beta
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Publish Package
+      run: npm publish --access public --tag beta
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
