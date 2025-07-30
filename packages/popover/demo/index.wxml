@@ -5,31 +5,16 @@
     <smart-popover show="{{show}}" bind:close="onClose" placement="bottomLeft" custom-style="padding: 0px;width:200px;">
       <smart-button>{{I18n.t('popupOnTheLowerLeft')}}</smart-button>
       <view slot="overlay">
-        <smart-cell-group inset>
-          <smart-cell
-            title="Title"
-          >
-            <smart-icon
-              class="cell-icon"
-              slot="icon"
-              name="{{ sunMaxFill }}"
-              size="24px"
-              color="#3678E3"
-            />
-          </smart-cell>
-          <smart-cell
-            title="Title"
-            border="{{ false }}"
-          >
-            <smart-icon
-              class="cell-icon"
-              slot="icon"
-              name="{{ sunMaxFill }}"
-              size="24px"
-              color="#3678E3"
-            />
-          </smart-cell>
-        </smart-cell-group>
+        <view class="listItem" wx:for="{{[1,2,3]}}">
+          <smart-icon
+            class="cell-icon"
+            slot="icon"
+            name="{{ sunMaxFill }}"
+            size="24px"
+            color="#3678E3"
+          />
+          <text class="listText">Title</text>
+        </view>
       </view>
     </smart-popover>
   </view>
@@ -37,31 +22,16 @@
     <smart-popover placement="bottom" custom-style="padding: 0px;width:200px;">
       <smart-button>{{I18n.t('popUpInTheMiddle')}}</smart-button>
       <view slot="overlay">
-        <smart-cell-group inset>
-          <smart-cell
-            title="Title"
-          >
-            <smart-icon
-              class="cell-icon"
-              slot="icon"
-              name="{{ sunMaxFill }}"
-              size="24px"
-              color="#3678E3"
-            />
-          </smart-cell>
-          <smart-cell
-            title="Title"
-            border="{{ false }}"
-          >
-            <smart-icon
-              class="cell-icon"
-              slot="icon"
-              name="{{ sunMaxFill }}"
-              size="24px"
-              color="#3678E3"
-            />
-          </smart-cell>
-        </smart-cell-group>
+        <view class="listItem" wx:for="{{[1,2,3]}}">
+          <smart-icon
+            class="cell-icon"
+            slot="icon"
+            name="{{ sunMaxFill }}"
+            size="24px"
+            color="#3678E3"
+          />
+          <text class="listText">Title</text>
+        </view>
       </view>
     </smart-popover>
   </view>
@@ -69,31 +39,16 @@
     <smart-popover placement="bottomRight" custom-style="padding: 0px;width:200px;">
       <smart-button>{{I18n.t('popUpAtTheBottomRight')}}</smart-button>
       <view slot="overlay">
-        <smart-cell-group inset>
-          <smart-cell
-            title="Title"
-          >
-            <smart-icon
-              class="cell-icon"
-              slot="icon"
-              name="{{ sunMaxFill }}"
-              size="24px"
-              color="#3678E3"
-            />
-          </smart-cell>
-          <smart-cell
-            title="Title"
-            border="{{ false }}"
-          >
-            <smart-icon
-              class="cell-icon"
-              slot="icon"
-              name="{{ sunMaxFill }}"
-              size="24px"
-              color="#3678E3"
-            />
-          </smart-cell>
-        </smart-cell-group>
+        <view class="listItem" wx:for="{{[1,2,3]}}">
+          <smart-icon
+            class="cell-icon"
+            slot="icon"
+            name="{{ sunMaxFill }}"
+            size="24px"
+            color="#3678E3"
+          />
+          <text class="listText">Title</text>
+        </view>
       </view>
     </smart-popover>
   </view>
