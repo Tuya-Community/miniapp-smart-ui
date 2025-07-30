@@ -367,6 +367,7 @@ Page({
 | title | 日历标题 | _string_ | `日期选择` |
 | day-class-map `v2.1.0` | 日期单元格样式 | Object | null |
 | type | 选择类型:<br>`single`表示选择单个日期，<br>`range`表示选择日期区间，<br>`week`表示选择周，<br>`month`表示选择月，<br>`year`表示选择年 | _string_ | `single` |
+| headerIconColor | 头部栏左右箭头 icon 颜色 | _string_ | `rgba(0, 0, 0, 0.7)` |
 
 ### Range Props
 

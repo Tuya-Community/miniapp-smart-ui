@@ -71,6 +71,7 @@ SmartComponent({
       type: String,
       value: 'Confirm',
     },
+    headerIconColor: String,
     rangePrompt: String,
     showRangePrompt: {
       type: Boolean,

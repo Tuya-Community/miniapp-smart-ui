@@ -17,6 +17,10 @@ SmartComponent({
     showSubtitle: Boolean,
     defaultWeeks: Array,
     hideWeek: Boolean,
+    iconColor: {
+      type: String,
+      value: 'rgba(0, 0, 0, 0.7)',
+    },
     showConfirm: {
       type: Boolean,
       value: true,

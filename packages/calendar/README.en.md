@@ -362,6 +362,7 @@ The default configuration is `en`. For configuration parameters, please refer to
 | title                   | Calendar title                                                                                      | _string_                            | `Date Selection`     |
 | day-class-map `v2.1.0`    | Date cell style                                                                                     | Object                              | null                 |
 | type                    | Selection type: <br>`single` for single date selection, <br>`range` for date range selection, <br>`week` for week selection, <br>`month` for month selection, <br>`year` for year selection | _string_ | `single` |
+| headerIconColor | Header bar left and right arrow icon color | _string_ | `rgba(0, 0, 0, 0.7)` |
 
 ### Range Props
 
