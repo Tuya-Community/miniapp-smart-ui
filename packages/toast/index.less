@@ -23,6 +23,7 @@
     right: -1000px;
     // hack for avoid max-width when use left & fixed
     width: fit-content;
+    min-width: 176rpx;
     transform: translate(-50%, -50%);
     max-width: var(--toast-max-width, @toast-max-width);
   }
@@ -53,9 +54,9 @@
 }
 
 .smart-toast--top {
-  transform: translate(0, -30vh) translate(-50%,-50%);
+  transform: translate(0, -30vh) translate(-50%, -50%);
 }
 
 .smart-toast--bottom {
-  transform: translateY(30vh) translate(-50%,-50%);
+  transform: translateY(30vh) translate(-50%, -50%);
 }
