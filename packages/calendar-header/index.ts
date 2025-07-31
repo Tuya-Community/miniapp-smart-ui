@@ -19,7 +19,7 @@ SmartComponent({
     hideWeek: Boolean,
     iconColor: {
       type: String,
-      value: 'rgba(0, 0, 0, 0.7)',
+      value: 'var(--calendar-header-icon_color)',
     },
     showConfirm: {
       type: Boolean,

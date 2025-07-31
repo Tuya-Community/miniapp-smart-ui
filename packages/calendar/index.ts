@@ -71,7 +71,10 @@ SmartComponent({
       type: String,
       value: 'Confirm',
     },
-    headerIconColor: String,
+    headerIconColor: {
+      type: String,
+      value: 'var(--calendar-header-icon_color)',
+    },
     rangePrompt: String,
     showRangePrompt: {
       type: Boolean,
