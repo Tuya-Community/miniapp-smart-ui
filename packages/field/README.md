@@ -272,7 +272,7 @@ Page({
 | adjust-position               | 键盘弹起时，是否自动上推页面                                                                                   | _boolean_           | `true`  |
 | always-embed `v1.9.2`         | 强制 input 处于同层状态，默认 focus 时 input 会切到非同层状态 (仅在 iOS 下生效)                                | _boolean_           | `false` |
 | arrow-direction               | 箭头方向，可选值为 `left` `up` `down`                                                                          | _string_            | -       |
-| auto-focus                    | 自动聚焦，拉起键盘                                                                                             | _boolean_           | `false` |
+| auto-focus  `@deprecated 小程序不支持`                | 自动聚焦，拉起键盘                                                                                             | _boolean_           | `false` |
 | autosize                      | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px`    | _boolean \| object_ | `false` |
 | border                        | 是否显示内边框                                                                                                 | _boolean_           | `false`  |
 | center                        | 是否使内容垂直居中                                                                                             | _boolean_           | `false` |

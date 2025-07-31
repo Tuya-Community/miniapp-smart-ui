@@ -39,6 +39,7 @@ export default Render({
     this.fillColor = data.fillColor;
     this.mode = data.mode;
     this.gradientColor = data.gradientColor;
+    this.round = data.round;
 
     ctx.scale(this.dpr, this.dpr);
     this.render(data.percent);

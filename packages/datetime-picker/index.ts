@@ -37,6 +37,21 @@ function getMonthEndDay(year: number, month: number): number {
   return 32 - new Date(year, month - 1, 32).getDate();
 }
 
+function findIntersection(range1, range2) {
+  const [start1, end1] = range1;
+  const [start2, end2] = range2;
+
+  // 确定交集的开始和结束
+  const intersectionStart = Math.max(start1, start2);
+  const intersectionEnd = Math.min(end1, end2);
+
+  // 检查是否有交集
+  if (intersectionStart <= intersectionEnd) {
+    return [intersectionStart, intersectionEnd];
+  }
+  return []; // 没有交集
+}
+
 const defaultFormatter = (type: 'year' | 'month' | 'day' | 'hour' | 'minute', value: string) =>
   value;
 
@@ -127,28 +142,40 @@ SmartComponent({
   },
 
   data: {
-    part: 0,
+    part: 'am',
     innerValue: Date.now(),
-    columns: [],
+    isCreated: false,
+    columns: [] as {
+      values: any[];
+      order?: number;
+      unit?: string;
+      style?: string;
+      fontStyle?: string;
+      activeIndex: number;
+    }[],
   },
 
   created() {
     const innerValue = this.correctValue(this.data.value);
-    this.updateColumnValue(innerValue).then(() => {
+    this.updateColumnValue(innerValue);
+    if (innerValue !== this.data.value) {
       this.$emit('input', innerValue);
+    }
+    this.setData({
+      isCreated: true,
     });
   },
 
   methods: {
     updateValue() {
-      const { data } = this;
-      const val = this.correctValue(data.value);
-      const isEqual = val === data.innerValue;
-      this.updateColumnValue(val).then(() => {
-        if (!isEqual) {
-          this.$emit('input', val);
-        }
-      });
+      const { value, innerValue, isCreated } = this.data;
+      if (!isCreated) return;
+      const val = this.correctValue(value);
+      const isEqual = val === innerValue;
+      this.updateColumnValue(val);
+      if (!isEqual) {
+        this.$emit('input', val);
+      }
     },
 
     getPicker() {
@@ -163,9 +190,28 @@ SmartComponent({
       return this.picker;
     },
 
+    getTimeBoundary() {
+      const { type, is12HourClock, minHour, maxHour, minMinute, maxMinute } = this.data;
+      if (type === 'time' && is12HourClock) {
+        if (minHour === 1 && maxHour === 24) {
+          return {
+            minHour: 0,
+            maxHour: 23,
+            minMinute,
+            maxMinute,
+          };
+        }
+      }
+      return {
+        minHour,
+        maxHour,
+        minMinute,
+        maxMinute,
+      };
+    },
     formatterFunc(type: string, value: string | number, data: any) {
       if (type === 'part') {
-        return value === 0 ? data.amText : data.pmText;
+        return value === 'am' ? data.amText : data.pmText;
       }
       const { formatterMap, formatter = defaultFormatter } = this?.data ?? data;
       const mapDetail = formatterMap?.[type];
@@ -178,39 +224,53 @@ SmartComponent({
       return formatter(type, value);
     },
 
-    updateColumns() {
+    updateColumns(values: Array<string | number>) {
       const { locale, columnStyles, fontStyles } = this.data;
-      const results = this.getOriginColumns().map(column => ({
-        values: column.values.map(value => this.formatterFunc(column.type, value, this.data)),
-        order: column.order,
-        unit: locale?.[column.type],
-        style: columnStyles?.[column.type],
-        fontStyle: fontStyles?.[column.type],
-      }));
-
-      return this.set({ columns: results });
+      const results = this.getOriginColumns().map((column, index) => {
+        const value = values[index];
+        const list = column.values.map(value => this.formatterFunc(column.type, value, this.data));
+        const activeIndex = list.findIndex(item => item === value);
+        return {
+          values: list,
+          order: column.order,
+          unit: locale?.[column.type],
+          style: columnStyles?.[column.type],
+          fontStyle: fontStyles?.[column.type],
+          activeIndex,
+        };
+      });
+      return this.setData({ columns: results });
     },
 
     getOriginColumns() {
-      const { filter, is12HourClock, type, amText, pmText, columnsOrder } = this.data;
-      const results = this.getRanges().map(({ type, range }, index) => {
+      const { part, filter, is12HourClock, type, amText, pmText, columnsOrder } = this.data;
+      const { minHour, maxHour } = this.getTimeBoundary();
+      const results = this.getRanges().map(({ type: timeType, range }, index) => {
         const order = columnsOrder[index];
         let values = times(range[1] - range[0] + 1, index => {
           const value = range[0] + index;
-          return type === 'year' ? `${value}` : padZero(value);
+          if (is12HourClock && type === 'time' && timeType === 'hour') {
+            if (part === 'pm') {
+              if (value === 12) return '12';
+              return padZero(value - 12);
+            }
+            if (value === 0) return '12';
+            return padZero(value);
+          }
+          return timeType === 'year' ? `${value}` : padZero(value);
         });
 
         if (filter) {
-          values = filter(type, values);
+          values = filter(timeType, values);
         }
 
-        return { type, values, order };
+        return { type: timeType, values, order };
       });
       if (is12HourClock && type === 'time') {
         return [
           {
             type: '12HourClock',
-            values: [amText, pmText],
+            values: minHour > 11 ? [pmText] : maxHour < 12 ? [amText] : [amText, pmText],
             order: columnsOrder[0],
           },
           ...results.map((item, index) => ({ ...item, order: columnsOrder[index + 1] })),
@@ -222,30 +282,30 @@ SmartComponent({
     getRanges() {
       const { data } = this;
       if (data.type === 'time' && data.is12HourClock) {
+        const { minHour, maxHour, minMinute, maxMinute } = this.getTimeBoundary();
         const { part } = data;
+        const time12Range = part === 'pm' ? [12, 23] : [0, 11];
         return [
           {
             type: 'hour',
-            range: [
-              Math.max(part ? 13 : 1, data.minHour) - (part ? 12 : 0),
-              Math.min(part ? 24 : 12, data.maxHour) - (part ? 12 : 0),
-            ],
+            range: findIntersection(time12Range, [minHour, maxHour]),
           },
           {
             type: 'minute',
-            range: [data.minMinute, data.maxMinute],
+            range: [minMinute, maxMinute],
           },
         ];
       }
       if (data.type === 'time') {
+        const { minHour, maxHour, minMinute, maxMinute } = this.getTimeBoundary();
         return [
           {
             type: 'hour',
-            range: [data.minHour, data.maxHour],
+            range: [minHour, maxHour],
           },
           {
             type: 'minute',
-            range: [data.minMinute, data.maxMinute],
+            range: [minMinute, maxMinute],
           },
         ];
       }
@@ -300,15 +360,13 @@ SmartComponent({
 
       // time type
       if (!isDateType) {
+        const { minHour, maxHour, minMinute, maxMinute } = this.getTimeBoundary();
         let [hour, minute] = value.split(':');
-        if (Number(hour) === 0 && data.minHour > 0) {
-          hour = 24;
-        }
-        if (Number(hour) === 24 && data.maxHour < 24) {
+        if (Number(hour) === 24) {
           hour = 0;
         }
-        hour = padZero(range(hour, data.minHour, data.maxHour));
-        minute = padZero(range(minute, data.minMinute, data.maxMinute));
+        hour = padZero(range(hour, minHour, maxHour));
+        minute = padZero(range(minute, minMinute, maxMinute));
 
         return `${hour}:${minute}`;
       }
@@ -373,25 +431,23 @@ SmartComponent({
       const picker = this.getPicker();
       const indexes = picker.getIndexes();
       if (data.type === 'time' && data.is12HourClock) {
-        const [part, hour, minute] = indexes;
+        const originColumns = this.getOriginColumns();
+        const [partText, hour, minute] = indexes.map(
+          (item, index) => originColumns[index].values[item]
+        );
+        const part = partText === this.data.pmText ? 'pm' : 'am';
         this.setData({
           part,
         });
-        const originColumns = this.getOriginColumns();
         value = `${
-          (part ? 12 : 0) +
-          Number(
-            originColumns[1].values[
-              hour > originColumns[1].values.length - 1 ? originColumns[1].values.length - 1 : hour
-            ]
-          )
-        }:${Number(
-          originColumns[2].values[
-            minute > originColumns[2].values.length - 1
-              ? originColumns[2].values.length - 1
-              : minute
-          ]
-        )}`;
+          part === 'pm'
+            ? hour === '12'
+              ? 12
+              : Number(hour) + 12
+            : hour === '12'
+            ? 0
+            : Number(hour)
+        }:${Number(minute)}`;
       } else if (data.type === 'time') {
         const originColumns = this.getOriginColumns();
         value = `${+originColumns[0].values[indexes[0]]}:${+originColumns[1].values[indexes[1]]}`;
@@ -416,22 +472,24 @@ SmartComponent({
         value = new Date(year, month - 1, date, hour, minute);
       }
       value = this.correctValue(value);
-
-      this.updateColumnValue(value).then(() => {
-        picker.value = value;
-        this.$emit('input', value);
-        this.$emit('change', picker);
-      });
+      this.updateColumnValue(value);
+      picker.value = value;
+      this.$emit('input', value);
+      this.$emit('change', picker);
     },
 
     updateColumnValue(value) {
       let values: string[] = [];
+      const { columns, part, value: outerValue, ...rest } = this.data;
+      rest.innerValue = value;
+      const dataStr = JSON.stringify(rest);
+      if (dataStr === this.preDataStr) return;
+      this.preDataStr = dataStr;
       const { type, is12HourClock } = this.data;
       const formatter = this.formatterFunc;
-      const picker = this.getPicker();
       if (type === 'time' && is12HourClock) {
         const [hour, minute] = value.split(':');
-        const part = Number(hour) > 0 && Number(hour) < 13 ? 0 : 1;
+        const part = Number(hour) < 12 ? 'am' : 'pm';
         this.setData({
           part,
         });
@@ -439,7 +497,13 @@ SmartComponent({
           formatter('part', part, this.data),
           formatter(
             'hour',
-            part ? (!hour ? '12' : (hour - 12).toString().padStart(2, '0')) : hour,
+            part === 'am'
+              ? hour === '0'
+                ? '12'
+                : hour
+              : hour === '12'
+              ? '12'
+              : padZero(Number(hour) - 12),
             this.data
           ),
           formatter('minute', minute, this.data),
@@ -464,9 +528,12 @@ SmartComponent({
           );
         }
       }
-      return this.set({ innerValue: value })
-        .then(() => this.updateColumns())
-        .then(() => picker.setValues(values));
+      this.setData({ innerValue: value });
+      this.updateColumns(values);
+      // picker.setValues(values);
+      // return this.set({ innerValue: value })
+      //   .then(() => this.updateColumns())
+      //   .then(() => picker.setValues(values));
     },
     onAnimationStart() {
       this.$emit('animation-start');

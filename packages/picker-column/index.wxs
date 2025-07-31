@@ -1,6 +1,7 @@
 /* eslint-disable */
 var style = require('../wxs/style.wxs');
 var addUnit = require('../wxs/add-unit.wxs');
+var wxUtils = require('../wxs/utils.wxs');
 
 function isObj(x) {
   var type = typeof x;
@@ -49,14 +50,23 @@ function wrapperItemStyle(data) {
   var fontStyleStr = style(data.fontStyle);
   var activeStyleStr = style(data.activeStyle);
 
+  // var maxSideShow = Math.floor(data.visibleItemCount / 2) + 1;
   // var offsetIndex = data.animationIndex - data.index;
-  // var scale = Math.min(Math.abs(offsetIndex * 0.05), 0.05 * 2)
-  // var rotateX = offsetIndex * 25 > 0 ? Math.min(offsetIndex * 25, 25 * 2) : Math.max(offsetIndex * 25, -25 * 2)
+  // var scale = Math.min(Math.abs(offsetIndex * 0.2), 0.2 * maxSideShow)
+  // var rotateX = offsetIndex * 25 > 0 ? Math.min(offsetIndex * 25, 25 * maxSideShow) : Math.max(offsetIndex * 25, -25 * maxSideShow)
+  // var translateYIndex = offsetIndex > 0 ? Math.min(offsetIndex, maxSideShow) : Math.max(offsetIndex, -maxSideShow)
   // const transStyle = style({
-  //   transform: `rotateX(${rotateX}deg) scale(${1 - scale})`
+  //   transform: `rotateX(${rotateX}deg) scale(${1 - scale}) translateY(${translateYIndex * Math.abs(translateYIndex) * Math.abs(translateYIndex) * data.itemHeight * 0.1}px) translateZ(0)`,
   // });
-  // return trans + ';' + heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
+  // return transStyle + ';' + heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
   return heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
+}
+
+function wrapperItemClass(data) {
+  var staticClass = 'smart-ellipsis';
+  var activeClass = 'active-class';
+  var isActive = Math.abs(data.renderStart + data.index - data.animationIndex) < 0.9;
+  return staticClass + ' ' + wxUtils.bem('picker-column__item', { disabled: data.option && data.option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
 }
 
 module.exports = {
@@ -64,5 +74,6 @@ module.exports = {
   rootStyle: rootStyle,
   wrapperStyle: wrapperStyle,
   wrapperInterStyle: wrapperInterStyle,
-  wrapperItemStyle: wrapperItemStyle
+  wrapperItemStyle: wrapperItemStyle,
+  wrapperItemClass: wrapperItemClass
 };

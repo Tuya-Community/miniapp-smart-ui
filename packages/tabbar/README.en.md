@@ -230,10 +230,6 @@ Page({
 });
 ```
 
-### Custom tabBar Integration
-
-Refer to [WeChat Official Documentation](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html) and [Code Snippets](https://developers.weixin.qq.com/s/vaXgTsmQ7hnm).
-
 ### Upside Down `v2.5.1`
 
 The `upside-down` attribute can achieve the top-bottom inversion of the component style, allowing the title to be above the icon.
@@ -258,6 +254,10 @@ Page({
   },
 });
 ```
+
+### Custom tabBar Integration
+
+Refer to [WeChat Official Documentation](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html) and [Code Snippets](https://developers.weixin.qq.com/s/vaXgTsmQ7hnm).
 
 ## API
 

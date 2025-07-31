@@ -1,3 +1,4 @@
+import { getDateString } from '../../common/utils';
 import { SmartComponent } from '../../common/component';
 import Toast from '../../toast/toast';
 
@@ -57,13 +58,13 @@ SmartComponent({
       second: I18n.t('second'),
     },
     columnStyles: {
-      year: "background: rgba(0, 0, 0, 0.4)",
+      year: "background: rgba(0, 0, 0, 0.1)",
     },
     fontStyles: {
-      month: "color: blue;",
+      month: "color: rgb(23, 138, 237);",
       '12HourClock': 'font-size: 14px;'
     },
-    activeStyle: "color: red;"
+    activeStyle: "color: rgb(235, 87, 41);"
   },
 
   methods: {
@@ -97,7 +98,7 @@ SmartComponent({
         case 'datetime':
           return date.toLocaleString();
         case 'date':
-          return date.toLocaleDateString();
+          return getDateString(date);
         case 'year-month':
           return `${date.getFullYear()}/${date.getMonth() + 1}`;
         case 'time':

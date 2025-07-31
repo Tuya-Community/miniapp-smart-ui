@@ -16,6 +16,7 @@
     hideWeek="{{ type === 'year' || type === 'month' }}"
     right-text="{{confirmText}}"
     showConfirm="{{showConfirm}}"
+    iconColor="{{headerIconColor}}"
   >
     <slot name="title" slot="title"></slot>
   </header>

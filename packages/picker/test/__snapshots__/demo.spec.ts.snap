@@ -124,8 +124,8 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </picker-column>
             <wx-view
-              class="smart-picker__frame smart-hairline--top-bottom"
-              style="height:44px"
+              class="smart-picker__frame smart-hairline--top-bottom hairline-class"
+              style="height:44px;position:absolute"
             />
           </wx-view>
         </wx-view>
@@ -180,7 +180,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
-                      style="height: 44px;font-weight: bold;;color: red;"
+                      style="height: 44px;font-size: 16px;;color: #000;"
                     >
                       
         0
@@ -189,7 +189,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{1}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         1
@@ -198,7 +198,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{2}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         2
@@ -207,7 +207,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{3}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         3
@@ -216,7 +216,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{4}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         4
@@ -225,7 +225,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{5}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         5
@@ -234,7 +234,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{6}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         6
@@ -243,7 +243,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{7}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         7
@@ -252,7 +252,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{8}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         8
@@ -261,7 +261,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{9}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         9
@@ -270,7 +270,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{10}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         10
@@ -279,7 +279,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{11}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         11
@@ -288,7 +288,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{12}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         12
@@ -297,7 +297,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{13}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         13
@@ -306,7 +306,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{14}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         14
@@ -315,7 +315,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{15}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         15
@@ -324,7 +324,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{16}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         16
@@ -333,7 +333,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{17}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         17
@@ -342,7 +342,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{18}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         18
@@ -351,7 +351,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item "
                       data-index="{{19}}"
-                      style="height: 44px;font-weight: bold;;"
+                      style="height: 44px;font-size: 16px;;"
                     >
                       
         19
@@ -420,7 +420,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
-                      style="height: 44px;color: red;"
+                      style="height: 44px;color: #000;"
                     >
                       
         .
@@ -489,7 +489,7 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
-                      style="height: 44px;color: red;"
+                      style="height: 44px;color: #000;"
                     >
                       
         0
@@ -702,26 +702,23 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height: 44px"
                 >
                   <wx-view
-                    class="smart-picker-column__unit_text smart-picker-column__unit_hidden"
-                  >
-                    Kg
-                  </wx-view>
-                  <wx-text
                     class="smart-picker-column__max-text"
                   >
-                    10
-                  </wx-text>
-                  <wx-view
-                    class="smart-picker-column__unit_text"
-                  >
-                    Kg
+                    
+      10
+      
+                    <wx-view
+                      class="smart-picker-column__unit_text"
+                    >
+                      Kg
+                    </wx-view>
                   </wx-view>
                 </wx-view>
               </wx-view>
             </picker-column>
             <wx-view
-              class="smart-picker__frame smart-hairline--top-bottom"
-              style="height:44px"
+              class="smart-picker__frame smart-hairline--top-bottom hairline-class"
+              style="height:44px;position:absolute"
             />
           </wx-view>
         </wx-view>
@@ -849,8 +846,8 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </picker-column>
             <wx-view
-              class="smart-picker__frame smart-hairline--top-bottom"
-              style="height:44px"
+              class="smart-picker__frame smart-hairline--top-bottom hairline-class"
+              style="height:44px;position:absolute"
             />
           </wx-view>
         </wx-view>
@@ -1006,8 +1003,8 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </picker-column>
             <wx-view
-              class="smart-picker__frame smart-hairline--top-bottom"
-              style="height:44px"
+              class="smart-picker__frame smart-hairline--top-bottom hairline-class"
+              style="height:44px;position:absolute"
             />
           </wx-view>
         </wx-view>
@@ -1110,19 +1107,16 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height: 44px"
                 >
                   <wx-view
-                    class="smart-picker-column__unit_text smart-picker-column__unit_hidden"
-                  >
-                    province
-                  </wx-view>
-                  <wx-text
                     class="smart-picker-column__max-text"
                   >
-                    zhejiang
-                  </wx-text>
-                  <wx-view
-                    class="smart-picker-column__unit_text"
-                  >
-                    province
+                    
+      zhejiang
+      
+                    <wx-view
+                      class="smart-picker-column__unit_text"
+                    >
+                      province
+                    </wx-view>
                   </wx-view>
                 </wx-view>
               </wx-view>
@@ -1235,26 +1229,23 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height: 44px"
                 >
                   <wx-view
-                    class="smart-picker-column__unit_text smart-picker-column__unit_hidden"
-                  >
-                    city
-                  </wx-view>
-                  <wx-text
                     class="smart-picker-column__max-text"
                   >
-                    hangzhou
-                  </wx-text>
-                  <wx-view
-                    class="smart-picker-column__unit_text"
-                  >
-                    city
+                    
+      hangzhou
+      
+                    <wx-view
+                      class="smart-picker-column__unit_text"
+                    >
+                      city
+                    </wx-view>
                   </wx-view>
                 </wx-view>
               </wx-view>
             </picker-column>
             <wx-view
-              class="smart-picker__frame smart-hairline--top-bottom"
-              style="height:44px"
+              class="smart-picker__frame smart-hairline--top-bottom hairline-class"
+              style="height:44px;position:absolute"
             />
           </wx-view>
         </wx-view>
@@ -1362,8 +1353,8 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </picker-column>
             <wx-view
-              class="smart-picker__frame smart-hairline--top-bottom"
-              style="height:44px"
+              class="smart-picker__frame smart-hairline--top-bottom hairline-class"
+              style="height:44px;position:absolute"
             />
           </wx-view>
         </wx-view>
@@ -1487,19 +1478,16 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height: 44px"
                 >
                   <wx-view
-                    class="smart-picker-column__unit_text smart-picker-column__unit_hidden"
-                  >
-                    province
-                  </wx-view>
-                  <wx-text
                     class="smart-picker-column__max-text"
                   >
-                    zhejiang
-                  </wx-text>
-                  <wx-view
-                    class="smart-picker-column__unit_text"
-                  >
-                    province
+                    
+      zhejiang
+      
+                    <wx-view
+                      class="smart-picker-column__unit_text"
+                    >
+                      province
+                    </wx-view>
                   </wx-view>
                 </wx-view>
               </wx-view>
@@ -1612,26 +1600,23 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height: 44px"
                 >
                   <wx-view
-                    class="smart-picker-column__unit_text smart-picker-column__unit_hidden"
-                  >
-                    city
-                  </wx-view>
-                  <wx-text
                     class="smart-picker-column__max-text"
                   >
-                    hangzhou
-                  </wx-text>
-                  <wx-view
-                    class="smart-picker-column__unit_text"
-                  >
-                    city
+                    
+      hangzhou
+      
+                    <wx-view
+                      class="smart-picker-column__unit_text"
+                    >
+                      city
+                    </wx-view>
                   </wx-view>
                 </wx-view>
               </wx-view>
             </picker-column>
             <wx-view
-              class="smart-picker__frame smart-hairline--top-bottom"
-              style="height:44px"
+              class="smart-picker__frame smart-hairline--top-bottom hairline-class"
+              style="height:44px;position:absolute"
             />
           </wx-view>
         </wx-view>
@@ -1835,8 +1820,8 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </picker-column>
             <wx-view
-              class="smart-picker__frame smart-hairline--top-bottom"
-              style="height:44px"
+              class="smart-picker__frame smart-hairline--top-bottom hairline-class"
+              style="height:44px;position:absolute"
             />
           </wx-view>
         </wx-view>

@@ -23,8 +23,8 @@
 
     <!-- with icon -->
     <block wx:else>
-      <smart-loading wx:if="{{ type === 'loading' }}" size="60" color="white" type="{{loadingType}}" />
-      <smart-icon wx:else color="white" class="smart-toast__icon" style="transform:scale({{ type === 'success' ? 1.4 : 1 }})" name="{{ type === 'success' ? success : type === 'fail' ? error : type === 'warn' ? warn : success }}" />
+      <smart-loading wx:if="{{ type === 'loading' }}" color="white" style="transform:scale(1.6);" type="{{loadingType}}" />
+      <smart-icon wx:else color="white" class="smart-toast__icon" style="transform:scale({{ type === 'success' ? 1.4 : type === 'fail' ? 1.1 : 1 }})" name="{{ type === 'success' ? success : type === 'fail' ? error : type === 'warn' ? warn : success }}" />
       <text wx:if="{{ message }}" class="smart-toast__text">{{ message }}</text>
     </block>
 

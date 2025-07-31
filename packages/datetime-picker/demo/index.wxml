@@ -52,8 +52,6 @@
     data-type="time"
     is-12-hour-clock
     value="{{ currentDate5 }}"
-    max-hour="{{ 24 }}"
-    min-hour="{{ 1 }}"
     fontStyles="{{ fontStyles }}"
     bind:input="onInputChange"
   />
@@ -64,8 +62,6 @@
     type="time"
     data-type="time"
     value="{{ currentDate5 }}"
-    max-hour="{{ 24 }}"
-    min-hour="{{ 1 }}"
     change-animation="{{ false }}"
     bind:input="onInput"
   />

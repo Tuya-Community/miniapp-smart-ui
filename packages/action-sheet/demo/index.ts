@@ -1,3 +1,4 @@
+import { getDateString } from '../../common/utils';
 import { SmartComponent } from '../../common/component';
 
 SmartComponent({
@@ -11,6 +12,7 @@ SmartComponent({
     showSelect2: false,
     showNumber: false,
     showPicker: false,
+    showDoubleSelector: false,
     isReady: false,
     action1: [{ name: 'Action' }, { name: 'Action' }, { name: 'Action' }],
     action2: [
@@ -30,7 +32,7 @@ SmartComponent({
     ],
     currentNumber: 0,
     currentDate: new Date(2018, 0, 1),
-    currentDateStr: new Date(2018, 0, 1).toLocaleDateString(),
+    currentDateStr: getDateString(new Date(2018, 0, 1)),
     minDate: new Date(2018, 0, 1).getTime(),
     formatter(type, value) {
       if (type === 'year') {
@@ -41,6 +43,11 @@ SmartComponent({
       }
       return value;
     },
+    current12Date: '12:00',
+    minHour: 0,
+    maxHour: 23,
+    tempColumnIdx: 3,
+    tempColumns: [39, 40, 41, 42, 43, 44, 45],
   },
 
   methods: {
@@ -90,6 +97,10 @@ SmartComponent({
       this.toggle('showPicker');
     },
 
+    toggleActionSheetDoubleSelector() {
+      this.toggle('showDoubleSelector');
+    },
+
     onAfterEnter() {
       this.setData({ isReady: true })
     },
@@ -118,7 +129,28 @@ SmartComponent({
     onPickerConfirm() {
       this.setData({
         showPicker: false,
-        currentDateStr: this.data?.currentDate?.toLocaleDateString(),
+        currentDateStr: getDateString(this.data?.currentDate),
+      });
+    },
+
+    onDoubleSelectorConfirm() {
+      console.log('Current Double Selector Result', this.data.current12Date, this.data.tempColumnIdx);
+      this.setData({
+        showDoubleSelector: false,
+      });
+    },
+
+    onCurrent12DateInput(event) {
+      this.setData({
+        current12Date: event.detail,
+      });
+    },
+
+    
+    onTempColumnChange(event) {
+      const { index } = event.detail;
+      this.setData({
+        tempColumnIdx: index,
       });
     },
   },

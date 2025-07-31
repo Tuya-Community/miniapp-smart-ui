@@ -14,7 +14,6 @@ import {
   getInitEdgeDate,
 } from '../calendar-utils/utils';
 import { Day } from '../calendar-utils/types';
-import Toast from '../toast/toast';
 
 const dateEdge = getInitEdgeDate('year');
 
@@ -71,6 +70,10 @@ SmartComponent({
     confirmDisabledText: {
       type: String,
       value: 'Confirm',
+    },
+    headerIconColor: {
+      type: String,
+      value: 'var(--calendar-header-icon_color)',
     },
     rangePrompt: String,
     showRangePrompt: {

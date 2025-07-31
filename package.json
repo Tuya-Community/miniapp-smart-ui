@@ -1,6 +1,6 @@
 {
   "name": "@tuya-miniapp/smart-ui",
-  "version": "2.5.1",
+  "version": "2.6.0-beta-16",
   "author": "MiniApp Team",
   "license": "MIT",
   "miniprogram": "lib",
@@ -15,7 +15,7 @@
     "build:icon": "yarn && node build/generate-icon/index.js",
     "build": "yarn && MODE=build NODE_OPTIONS=--no-experimental-fetch npx gulp -f build/compiler.js --series buildEs buildLib buildExample",
     "build:wx": "node build/wx.mjs",
-    "test": "jest",
+    "test": "TZ=Asia/Shanghai jest",
     "test:watch": "jest --watch",
     "preMinipackBuild": "yarn && MODE=build NODE_OPTIONS=--no-experimental-fetch npx gulp -f build/compiler.js --series buildEs buildLib buildExample",
     "changelog": "conventional-changelog -p -i CHANGELOG.md -s"
@@ -51,7 +51,8 @@
     "@commitlint/config-conventional": "19.1.0",
     "@types/fs-extra": "^11.0.4",
     "@types/jest": "^27.0.2",
-    "@vant/stylelint-config": "^1.4.2",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-standard": "^20.0.0",
     "canvas": "^3.1.0",
     "conventional-changelog-cli": "^5.0.0",
     "eslint-config-tuya-panel": "^0.4.2",
@@ -70,8 +71,8 @@
     "lint-staged": "^13.0.3",
     "merge2": "^1.4.1",
     "miniprogram-api-typings": "^3.1.6",
-    "miniprogram-ci": "^1.6.1",
-    "miniprogram-simulate": "^1.4.2",
+    "miniprogram-ci": "1.9.5",
+    "miniprogram-simulate": "1.5.9",
     "stylelint": "^13.0.0",
     "svgo": "^3.2.0",
     "ts-jest": "^27.0.7",
@@ -88,5 +89,14 @@
     "@ray-js/components-ty-slider": "^0.3.4",
     "@tuya-miniapp/icons": "^2.1.7"
   },
-  "maintainers": []
+  "maintainers": [
+    {
+      "name": "tuyafe",
+      "email": "tuyafe@tuya.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tuya-Community/miniapp-smart-ui.git"
+  }
 }

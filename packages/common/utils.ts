@@ -112,8 +112,22 @@ export function replacePlaceholders(template, values) {
   });
 }
 
+// 默认安全底部最小值为16px
+export const getSafeAreaInsetMin = () => 16;
+
+// 获取安全底部高度，适用于 iOS 和 Android
 export function getSafeBottomOffset() {
+  const safeAreaInsetBottomMin = getSafeAreaInsetMin();
   const { safeArea, screenHeight, statusBarHeight } = getSystemInfoSync() || {};
   const bottomSafeHeight = screenHeight - safeArea?.height - statusBarHeight;
-  return bottomSafeHeight;
+  return bottomSafeHeight + safeAreaInsetBottomMin;
 }
+
+export const getDateString = (date: Date) => {
+  if (!date) return;
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 加1因为月份从0开始
+  const day = date.getDate().toString().padStart(2, '0');
+  const formattedDate = `${year}/${month}/${day}`;
+  return formattedDate;
+};

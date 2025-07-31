@@ -161,10 +161,10 @@ Page({
 });
 ```
 
-### 选择时间-12小时模式 `v2.3.0`
+### 选择时间-12小时模式 `v2.6.0`
 
 当设置`type: 'time'`时，可以开启`is-12-hour-clock`属性实现12小时选择模式；`am-text`、`pm-text` 可以分别设置上午和下午的文案。  
-`font-styles` 和 `column-styles` 内的 `12HourClock` `v2.3.8` 可以修改对应12小时时区的样式。
+`font-styles` 和 `column-styles` 内的 `12HourClock` `v2.6.0` 可以修改对应12小时时区的样式。
 
 ```html
 <smart-datetime-picker
@@ -172,8 +172,6 @@ Page({
   data-type="time"
   is-12-hour-clock
   value="{{ currentDate }}"
-  max-hour="{{ maxHour }}"
-  min-hour="{{ minHour }}"
   font-styles="{{ fontStyles }}"
   bind:input="onInput"
 />
@@ -183,8 +181,6 @@ Page({
 Page({
   data: {
     currentDate: '11:00',
-    minHour: 1,
-    maxHour: 24,
     fontStyles: {
       '12HourClock': 'font-size: 14px;'
     },
@@ -276,12 +272,12 @@ Page({
   data: {
     currentDate: new Date().getTime(),
     columnStyles: {
-      year: "background: rgba(0, 0, 0, 0.4)",
+      year: "background: rgba(0, 0, 0, 0.1)",
     },
     fontStyles: {
-      month: "color: blue;",
+      month: "color: rgb(23, 138, 237);",
     },
-    activeStyle: "color: red;"
+    activeStyle: "color: rgb(235, 87, 41);"
   },
 
   onInput(event) {
@@ -316,12 +312,12 @@ Page({
 | value               | 当前选中值    | _string \| number \| Date_ | -     |
 | visible-item-count  | 可见的选项个数      | _number_       | `6`        |
 | formatter-map `v2.2.0` | 字符串替换(`type` 可选值为 `year`, `month`, `day`, `hour`, `minute`)      | _Record<type, string \| Record<string, string>>_       | -        |
-| change-animation `v2.2.0`  | 组件选择值改变时是否需要动画过度效果            | _boolean_  | `true`     |
-| is-12-hour-clock `v2.2.0`  | 当设置 `type: 'time'` 时，此属性可开启12小时选择模式         | _boolean_  | `false`     |
+| change-animation `v2.2.0`  | 组件受数据驱动选择值改变时是否需要动画过度效果（不包含手指交互滚动的动画）            | _boolean_  | `false`     |
+| is-12-hour-clock `v2.6.0`  | 当设置 `type: 'time'` 时，此属性可开启12小时选择模式         | _boolean_  | `false`     |
 | am-text `v2.2.0`  | 12小时选择模式时上午的文案            | _string_  | `AM`     |
 | pm-text `v2.2.0`  | 12小时选择模式时下午的文案            | _string_  | `PM`     |
 | columns-order `v2.2.0`  | 设置列的顺序，同`flex order`属性，只是从样式角度修改列的顺序，逻辑还是不变            | _string[]_  | `[]`     |
-| animation-time `v2.3.7`  | 过渡动画以及选择回调延迟的时间(单位ms)           | _number_  | `800`     |
+| animation-time `v2.3.7`  | 过渡动画以及选择回调延迟的时间(单位ms)           | _number_  | `800` `v2.3.7` `300` `v2.6.0`     |
 | columnStyles `v2.3.7`  | 任意列的样式          | _Record\<string, string>_  | -     |
 | font-styles `v2.3.7`  | 任意列的字体样式           | _Record\<string, string>_  | -     |
 | active-style `v2.3.7`  | 选中项的样式           | _string_  | -     |
@@ -372,4 +368,12 @@ Page({
 
 ### 样式变量
 
-请参考 picker 组件文档说明 - 样式变量
+其他CSS变量请参考 picker 组件文档说明 - 样式变量
+
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider&appType=miniapp)。
+
+| 名称                          | 默认值                                 | 描述 |
+| ----------------------------- | -------------------------------------- | ---- |
+| --hairline-border-image-color `v2.6.0` | _var(--smart-ui-border-image, linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)))_ | 分割线的 border-image 样式 |
+
+

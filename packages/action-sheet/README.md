@@ -140,6 +140,102 @@ Page({
 </smart-action-sheet>
 ```
 
+### 自定义双列选择器 `v2.6.0`
+
+当 `use-title-slot` 为 `true` 时，可以使用插槽自定义标题内容，支持复杂的双选择器场景。
+
+```html
+<smart-action-sheet 
+  show="{{ show }}" 
+  use-title-slot="{{ true }}"
+  cancel-text="取消"
+  confirm-text="确认"
+  bind:close="onClose"
+  bind:cancel="onClose"
+  bind:confirm="onDoubleSelectorConfirm"
+>
+  <view slot="title" class="demo-custom-double-select-header">
+    <view>时间</view>
+    <view>温度</view>
+  </view>
+  <view class="demo-custom-double-select-content">
+    <smart-datetime-picker
+      class="flex1"
+      type="time"
+      data-type="time"
+      is-12-hour-clock
+      show-toolbar="{{ false }}"
+      value="{{ current12Date }}"
+      max-hour="{{ maxHour }}"
+      min-hour="{{ minHour }}"
+      bind:input="onCurrent12DateInput"
+    />
+    <smart-picker
+      class="flex1"
+      unit="℃"
+      active-index="{{ tempColumnIdx }}"
+      columns="{{ tempColumns }}"
+      bind:change="onTempColumnChange"
+    />
+  </view>
+</smart-action-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    current12Date: '12:00',
+    minHour: 0,
+    maxHour: 23,
+    tempColumnIdx: 3,
+    tempColumns: [39, 40, 41, 42, 43, 44, 45],
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+
+  onDoubleSelectorConfirm() {
+    console.log('当前双选择器结果', this.data.current12Date, this.data.tempColumnIdx);
+    this.setData({
+      show: false,
+    });
+  },
+
+  onCurrent12DateInput(event) {
+    this.setData({
+      current12Date: event.detail,
+    });
+  },
+
+  onTempColumnChange(event) {
+    const { index } = event.detail;
+    this.setData({
+      tempColumnIdx: index,
+    });
+  },
+});
+```
+
+```css
+.demo-custom-double-select-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.demo-custom-double-select-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex1 {
+  flex: 1;
+}
+```
+
 ## API
 
 ### Props
@@ -159,6 +255,7 @@ Page({
 | safe-area-inset-bottom-min `v1.1.0` | 是否需要预留出一个最小的底部安全距离，用于在 safeArea 底部为 0 时进行追加，需要在 safeAreaInsetBottom 为 true 时生效 | _number_  | `16`                |
 | show      | 是否显示动作面板                  | _boolean_ | -                   |
 | title        | 标题      | _string_  | -                   |
+| use-title-slot `v2.6.0`        | 是否启用标题 Slot      | _boolean_  | `false`                   |
 | z-index                            | z-index 层级                                                                                                         | _number_  | `100`               |
 | native-disabled `v2.5.0`     | 开启弹框期间是否禁用本地手势; 会在弹框开始进入动画时调用 `ty.nativeDisabled(true)`, 在弹框关闭动画结束时调用 `ty.nativeDisabled(false)` 恢复异层组件的点击能力；由于`ty.nativeDisabled` 是全局生效的，所以多个弹框组件同时打开时注意是否传 `native-disabled`属性和关闭的时机，防止 `native-disabled` 属性失效     | _boolean_   | `false`        |
 
@@ -225,7 +322,7 @@ Page({
 | --action-sheet-description-line-height | _20px_ | 说明文字的行高 |
 | --action-sheet-item-background | _var(--app-B4, #ffffff)_ | 列表的背景色 |
 | --action-sheet-item-border-radius | _0_ | 列表的边框圆角 |
-| --action-sheet-item-icon-margin | _16px 16px 0 0_ | 列表的图标大小边距 |
+| --action-sheet-item-icon-margin | _0px 16px 0 0_ | 列表的图标大小边距 |
 | --action-sheet-item-icon-color | _var(--app-M1, #3678e3)_ | 列表的图标颜色 |
 | --action-sheet-item-icon-size | _28px_ | 列表的图标大小 |
 | --action-sheet-item-font-size | _16px_ | 列表的文字字体大小 |

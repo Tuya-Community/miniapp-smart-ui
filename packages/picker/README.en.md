@@ -44,7 +44,7 @@ Page({
 ### Multi-column Usage
 
 ```html
-<smart-picker active-style="color: red;" columns="{{ columns }}" bind:change="onChange" />
+<smart-picker active-style="color: #000;" columns="{{ columns }}" bind:change="onChange" />
 ```
 
 ```javascript
@@ -56,7 +56,7 @@ Page({
       {
         values: new Array(100).fill(1).map((x, i) => i),
         style: 'flex: none;width: auto;min-width: 61px;',
-        fontStyle: 'font-weight: bold;'
+        fontStyle: 'font-size: 16px;'
       },
       {
         values: ['.'],
@@ -228,8 +228,8 @@ Page({
 | value-key          | Key corresponding to text in option object                                | _string_  | `text`  |
 | visible-item-count | Number of visible options  | _number_  | `5`     |
 | active-style `v2.0.0`  | Style in selected state         | _string_  | `''`    |
-| change-animation `v2.2.0`  | Whether animation effect is needed when component selection value changes | _boolean_  | `true`  |
-| animation-time `v2.3.7`  | Transition animation and the delay time for selection callback (Unit: ms)           | _number_  | `800`     |
+| change-animation `v2.2.0`  | Whether the component requires a transition animation when the value selected by data-driven changes (excluding the animation of finger interactive scrolling). | _boolean_  | `false`  |
+| animation-time `v2.3.7`  | Transition animation and the delay time for selection callback (Unit: ms)           | _number_  | `800` `v2.3.7` `300` `v2.6.0`     |
 
 ### Events
 
@@ -265,6 +265,7 @@ When passing in multi-column data, `columns` is an array of objects. Each object
 | column-class    | Column style class |
 | custom-class    | Root node style class |
 | toolbar-class   | Top bar style class |
+| hairline-class `v2.6.0` | Style class of the dividing line |
 
 ### Methods
 
@@ -304,4 +305,5 @@ The component provides the following CSS variables for custom styling. For usage
 | --picker-loading-mask-color       | _var(--app-B4, #ffffff)_                     | Loading mask color                |
 | --picker-option-disabled-opacity  | _0.3_      | Disabled option opacity           |
 | --picker-option-selected-text-color | _var(--app-B6-N1, rgba(0, 0, 0, 1))_       | Selected option text color        |
-| --picker-option-unit-mid-size `v2.4.0` | _0_ | Spacing between units and content text |
+| --picker-option-unit-mid-size `v2.4.0` | _0_  `v2.4.0` _4px_ `v2.6.0` | Spacing between units and content text |
+| --picker-option-selected-font-weight-bold `v2.6.0` | _700_ | Font weight of selected text |

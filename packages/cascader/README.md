@@ -33,7 +33,7 @@ category: 数据录入
   placeholder="请选择所在地区"
   bind:tap="onClick"
 />
-<smart-popup show="{{ show }}" round position="bottom">
+<smart-bottom-sheet show="{{ show }}" max-height="100%">
   <smart-cascader
     ty:if="{{ show }}"
     value="{{ cascaderValue }}"
@@ -42,7 +42,7 @@ category: 数据录入
     bind:close="onClose"
     bind:finish="onFinish"
   />
-</smart-popup>
+</smart-bottom-sheet>
 ```
 
 ```js
@@ -121,7 +121,7 @@ Page({
   placeholder="请选择所在地区"
   bind:tap="onClick"
 />
-<smart-popup show="{{ show }}" round position="bottom">
+<smart-bottom-sheet show="{{ show }}" max-height="100%">
   <smart-cascader
     ty:if="{{ show }}"
     value="{{ cascaderValue }}"
@@ -131,7 +131,7 @@ Page({
     bind:change="onChange"
     bind:finish="onFinish"
   />
-</smart-popup>
+</smart-bottom-sheet>
 ```
 
 ```js

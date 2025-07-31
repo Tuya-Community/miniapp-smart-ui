@@ -230,10 +230,6 @@ Page({
 });
 ```
 
-### 结合自定义 tabBar
-
-请参考 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html) 与 [代码片段](https://developers.weixin.qq.com/s/vaXgTsmQ7hnm)。
-
 ### 上下颠倒 `v2.5.1`
 
 `upside-down` 属性可以实现组件的上下样式颠倒，让标题在图标的上方。
@@ -258,6 +254,10 @@ Page({
   },
 });
 ```
+
+### 结合自定义 tabBar
+
+请参考 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html) 与 [代码片段](https://developers.weixin.qq.com/s/vaXgTsmQ7hnm)。
 
 ## API
 

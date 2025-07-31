@@ -31,7 +31,7 @@ SmartComponent({
       {
         values: new Array(100).fill(1).map((x, i) => i),
         style: 'flex: none;width: auto;min-width: 61px;',
-        fontStyle: 'font-weight: bold;'
+        fontStyle: 'font-size: 16px;'
       },
       {
         values: ['.'],

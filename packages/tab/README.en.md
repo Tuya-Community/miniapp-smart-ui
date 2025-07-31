@@ -278,7 +278,7 @@ Page({
 
 | Parameter                   | Description                                                                                      | Type               | Default  |
 | --------------------------- | ------------------------------------------------------------------------------------------------ | ------------------ | -------- |
-| active                      | Identifier of the currently selected tab                                                         | _string \| number_ | `0`      |
+| active                      | Identifier of the currently selected tab                                                         | _string_ | `0`      |
 | animated                    | Whether to enable the transition animation when switching tab content                            | _boolean_          | `false`  |
 | border                      | Whether to show border, only effective in `line` style                                           | _boolean_          | `false`  |
 | color                       | Label theme color, only available in non `card` mode color                                    | _string_           | `#ee0a24` |
@@ -305,7 +305,7 @@ Page({
 | disabled      | Whether to disable the tab  | _boolean_          | `false`     |
 | dot           | Whether to show a small dot | _boolean_          | -           |
 | info          | Message prompt at icon corner | _string \| number_ | -           |
-| name          | Tab name, as a matching identifier | _string \| number_ | Tab index value |
+| name          | Tab name, as a matching identifier | _string_ | Tab index value |
 | title         | Title                       | _string_           | -           |
 | title-style   | Custom title style          | _string_           | -           |
 | subtitle `v2.3.5`       | Secondary Title                       | _string_           | -            |

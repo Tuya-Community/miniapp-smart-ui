@@ -1,4 +1,4 @@
-@import '../common/style/var';
+@import '../common/style/var.less';
 
 .smart-picker-column {
   text-align: center;
@@ -26,7 +26,7 @@
     pointer-events: none;
 
     &--selected {
-      font-weight: var(--font-weight-bold, @font-weight-bold);
+      font-weight: var(--picker-option-selected-font-weight-bold, var(--font-weight-bold, @picker-option-selected-font-weight-bold));
       color: var(
         --picker-option-selected-text-color,
         @picker-option-selected-text-color
@@ -63,12 +63,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(
-      --picker-option-unit-mid-size,
-      @picker-option-unit-mid-size
-    );
 
     &_text {
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
       font-size: var(
         --picker-option-unit-font-size,
         @picker-option-unit-font-size
@@ -77,14 +77,16 @@
         --picker-option-unit-text-color,
         @picker-option-unit-text-color
       );
-    }
-    &_hidden {
-      opacity: 0;
+      margin-left: var(
+        --picker-option-unit-mid-size,
+        @picker-option-unit-mid-size
+      );
     }
   }
 
   &__max-text {
-    opacity: 0;
+    position: relative;
+    color: rgba(0, 0, 0, 0);
     font-weight: var(--font-weight-bold, @font-weight-bold);
   }
 }

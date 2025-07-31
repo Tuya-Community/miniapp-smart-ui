@@ -1,10 +1,9 @@
-name: Merge Check Test CI
-
+name: Merge Check Jest CI
 on: 
   pull_request:
     branches:
-      - main # 这里指定要检查的目标分支
-
+      - main
+      - release/*
 jobs:
   build:
 
