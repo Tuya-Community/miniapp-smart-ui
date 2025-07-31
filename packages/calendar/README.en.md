@@ -421,7 +421,7 @@ The component provides the following CSS variables for custom styles. For usage,
 | --calendar-header-title-height                  | _44px_                                         | Calendar header title height          |
 | --calendar-header-title-font-size               | _16px_                                         | Calendar header title font size       |
 | --calendar-header-title-font-color              | _var(--app-B4-N1, rgba(0, 0, 0, 1))_           | Calendar header title font color      |
-| --calendar-header-subtitle-font-size            | _14px_                                         | Calendar header subtitle font size    |
+| --calendar-header-subtitle-font-size            | _16px_                                         | Calendar header subtitle font size    |
 | --calendar-weekdays-height                      | _30px_                                         | Weekdays bar height                   |
 | --calendar-weekdays-font-size                   | _12px_                                         | Weekdays font size                    |
 | --calendar-weekdays-font-color                  | _var(--app-B4-N1, rgba(0, 0, 0, 1))_           | Weekdays font color                   |

@@ -425,7 +425,7 @@ Page({
 | --calendar-header-title-height                | _44px_                                         | 日历头部标题高度                       |
 | --calendar-header-title-font-size             | _16px_                                         | 日历头部标题字体大小                   |
 | --calendar-header-title-font-color            | _var(--app-B4-N1, rgba(0, 0, 0, 1))_           | 日历头部标题字体颜色                   |
-| --calendar-header-subtitle-font-size          | _14px_                                         | 日历头部副标题字体大小                 |
+| --calendar-header-subtitle-font-size          | _16px_                                         | 日历头部副标题字体大小                 |
 | --calendar-weekdays-height                    | _30px_                                         | 星期栏高度                             |
 | --calendar-weekdays-font-size                 | _12px_                                         | 星期字体大小                           |
 | --calendar-weekdays-font-color                | _var(--app-B4-N1, rgba(0, 0, 0, 1))_           | 星期字体颜色                           |
