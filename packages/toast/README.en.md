@@ -71,6 +71,7 @@ const toast = ToastInstance.loading({
   forbidClick: true,
   message: 'Countdown 3 seconds',
   selector: '#custom-selector',
+  width: 88,
 });
 
 let second = 3;

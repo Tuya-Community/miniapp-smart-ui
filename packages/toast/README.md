@@ -72,6 +72,7 @@ const toast = ToastInstance.loading({
   forbidClick: true,
   message: '倒计时 3 秒',
   selector: '#custom-selector',
+  width: 88,
 });
 
 let second = 3;
