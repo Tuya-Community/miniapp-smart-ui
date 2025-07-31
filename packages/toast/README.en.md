@@ -160,4 +160,3 @@ The component provides the following CSS variables for custom styling. For usage
 | --toast-default-padding | _16px_ | Default notification padding |
 | --toast-default-width | _88px_ | Default notification width |
 | --toast-default-min-height | _88px_ | Default minimum height of the notification |
-| --toast-text-size `v2.6.0` | _12px_ | Text font size when there is an icon |

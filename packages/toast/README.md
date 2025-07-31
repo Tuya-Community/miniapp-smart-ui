@@ -161,4 +161,3 @@ ToastInstance({
 | --toast-default-padding | _16px_ | 提示默认内边距 |
 | --toast-default-width | _88px_ | 提示默认宽度 |
 | --toast-default-min-height | _88px_ | 提示默认最小高度 |
-| --toast-text-size `v2.6.0` | _12px_ | 有 icon 时的文字字体大小 |
