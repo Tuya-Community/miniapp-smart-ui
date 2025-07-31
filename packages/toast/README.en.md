@@ -155,7 +155,6 @@ The component provides the following CSS variables for custom styling. For usage
 | --toast-border-radius | _10px_ | Notification border radius |
 | --toast-background-color | _fade(@black, 70%)_ | Notification background color |
 | --toast-icon-size | _36px_ | Notification icon size |
-| --toast-text-min-width | _96px_ | Minimum width of the notification text |
 | --toast-text-padding | _@padding-xs @padding-sm_ | Notification text padding |
 | --toast-default-padding | _16px_ | Default notification padding |
 | --toast-default-width | _88px_ | Default notification width |

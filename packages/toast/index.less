@@ -29,7 +29,6 @@
   }
 
   &--text {
-    min-width: var(--toast-text-min-width, @toast-text-min-width);
     padding: var(--toast-text-padding, @toast-text-padding);
   }
 
@@ -45,6 +44,7 @@
     .smart-toast__text {
       padding-top: @padding-xs;
       text-align: center;
+      font-size: var(--toast-text-size, @toast-text-size);
     }
   }
 

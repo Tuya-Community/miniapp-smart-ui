@@ -156,7 +156,6 @@ ToastInstance({
 | --toast-border-radius | _10px_ | 提示圆角半径 |
 | --toast-background-color | _fade(@black, 70%)_ | 提示背景颜色 |
 | --toast-icon-size | _36px_ | 提示图标大小 |
-| --toast-text-min-width | _96px_ | 提示文本最小宽度 |
 | --toast-text-padding | _@padding-xs @padding-sm_ | 提示文本内边距 |
 | --toast-default-padding | _16px_ | 提示默认内边距 |
 | --toast-default-width | _88px_ | 提示默认宽度 |

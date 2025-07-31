@@ -717,19 +717,20 @@
 @tag-plain-background-color: transparent;
 
 // Toast
-@toast-min-width: 88px;
-@toast-max-width: 70%;
+@toast-min-width: 56px;
+@toast-max-width: calc(100vw - 48px);
 @toast-font-size: 14px;
 @toast-text-color: @white;
 @toast-line-height: 20px;
-@toast-border-radius: @border-radius-lg;
+@toast-border-radius: 12px;
 @toast-background-color: fade(@black, 70%);
 @toast-icon-size: 36px;
+@toast-text-size: 12px;
 @toast-text-min-width: 96px;
-@toast-text-padding: @padding-xs @padding-sm;
-@toast-default-padding: @padding-md;
-@toast-default-width: 88px;
-@toast-default-min-height: 88px;
+@toast-text-padding: 14px 16px;
+@toast-default-padding: 22px 14px 14px;
+@toast-default-width: 56px;
+@toast-default-min-height: 56px;
 
 // GridItem
 @grid-item-content-padding: @padding-md @padding-xs;
