@@ -47,13 +47,13 @@ SmartComponent({
     },
 
     showCustomizedToast() {
-      const text = (second) =>
-        `${I18n.t('countdown')} ${second} ${I18n.t('second')}`;
+      const text = second => `${I18n.t('countdown')} ${second} ${I18n.t('second')}`;
       const toast = ToastInstance.loading({
         context: this,
         duration: 0,
         forbidClick: true,
         message: text(3),
+        width: 88,
       });
 
       let second = 3;
@@ -89,6 +89,6 @@ SmartComponent({
         position: 'top',
         message: I18n.t('promptContent'),
       });
-    }
+    },
   },
 });

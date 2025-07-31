@@ -1,12 +1,22 @@
 :root {
   --smart-ui-overlay: rgba(0, 0, 0, 0.4);
   --smart-ui-dialog-background: rgba(255, 255, 255, 1);
-  --smart-ui-border-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-  
+  --smart-ui-border-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0)
+  );
+
   &[theme='dark'] {
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
     --smart-ui-dialog-background: #333;
-    --smart-ui-border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    --smart-ui-border-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0)
+    );
   }
 }
 
@@ -61,7 +71,10 @@
 @B6-N8: var(--app-B6-N8, rgba(0, 0, 0, 0.4)); // 列表 N8 字体色
 @B6-N9: var(--app-B6-N9, rgba(0, 0, 0, 0.05)); // 列表 N9 字体色
 @overlay: var(--smart-ui-overlay, rgba(0, 0, 0, 0.6)); // 遮罩层
-@border-image: var(--smart-ui-border-image, linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)));
+@border-image: var(
+  --smart-ui-border-image,
+  linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))
+);
 @dialog-bg: var(--smart-ui-dialog-background, rgba(255, 255, 255, 1)); // 弹窗背景色
 
 // Color Palette
@@ -219,8 +232,9 @@
 @calendar-header-box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16);
 @calendar-header-title-height: 44px;
 @calendar-header-title-font-size: @font-size-lg;
+@calendar-header-title-weight: 600;
 @calendar-header-title-font-color: @B4-N1;
-@calendar-header-subtitle-font-size: @font-size-md;
+@calendar-header-subtitle-font-size: @font-size-lg;
 @calendar-weekdays-height: 30px;
 @calendar-weekdays-font-size: 12px;
 @calendar-weekdays-font-color: @B4-N1;
@@ -231,6 +245,7 @@
 @calendar-cell-item-font-size: 15px;
 @calendar-cell-item-width: 104rpx;
 @calendar-cell-item-height: 104rpx;
+@calendar-cell-item-margin: 14rpx;
 @calendar-cell-item-font-color: @B4-N1;
 @calendar-cell-item-border-radius: 104rpx;
 @calendar-day-font-weight: 500;
@@ -252,6 +267,7 @@
 @calendar-popup-height: 848rpx;
 @calendar-header-save-color: #1989fa;
 @calendar-header-icon-bg-color: @B2-N9;
+@calendar-header-icon-color: @B1-N2;
 
 // Cell
 @cell-font-size: @font-size-lg;
@@ -543,7 +559,10 @@
 @switch-node-size: 0.867em;
 @switch-node-z-index: 1;
 @switch-node-background-color: @white;
-@switch-node-on-background-color: var(--switch-node-background-color, @switch-node-background-color);
+@switch-node-on-background-color: var(
+  --switch-node-background-color,
+  @switch-node-background-color
+);
 @switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.1),
   0 3px 3px 0 rgba(0, 0, 0, 0.05);
 @switch-background-color: @B4-N6;
@@ -698,18 +717,19 @@
 @tag-plain-background-color: transparent;
 
 // Toast
-@toast-max-width: 70%;
+@toast-min-width: 56px;
+@toast-max-width: calc(100vw - 48px);
 @toast-font-size: 14px;
 @toast-text-color: @white;
 @toast-line-height: 20px;
-@toast-border-radius: @border-radius-lg;
+@toast-border-radius: 12px;
 @toast-background-color: fade(@black, 70%);
 @toast-icon-size: 36px;
 @toast-text-min-width: 96px;
-@toast-text-padding: @padding-xs @padding-sm;
-@toast-default-padding: @padding-md;
-@toast-default-width: 88px;
-@toast-default-min-height: 88px;
+@toast-text-padding: 14px 16px;
+@toast-default-padding: 22px 14px 14px;
+@toast-default-width: 56px;
+@toast-default-min-height: 56px;
 
 // GridItem
 @grid-item-content-padding: @padding-md @padding-xs;
