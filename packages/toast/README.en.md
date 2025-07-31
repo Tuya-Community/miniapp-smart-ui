@@ -147,6 +147,7 @@ The component provides the following CSS variables for custom styling. For usage
 
 | Name                          | Default Value                                 | Description |
 | ----------------------------- | -------------------------------------- | ---- |
+| --toast-min-width | _88px_ | Minimum width prompt |
 | --toast-max-width | _70%_ | Maximum width of the notification |
 | --toast-font-size | _14px_ | Notification font size |
 | --toast-text-color | _#fff_ | Notification text color |

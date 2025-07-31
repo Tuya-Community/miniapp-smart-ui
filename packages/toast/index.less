@@ -23,7 +23,7 @@
     right: -1000px;
     // hack for avoid max-width when use left & fixed
     width: fit-content;
-    min-width: 176rpx;
+    min-width: var(--toast-min-width, @toast-min-width);
     transform: translate(-50%, -50%);
     max-width: var(--toast-max-width, @toast-max-width);
   }
