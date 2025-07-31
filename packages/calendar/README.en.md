@@ -453,3 +453,4 @@ The component provides the following CSS variables for custom styles. For usage,
 | --calendar-header-save-color                    | _#1989fa_                                      | Calendar header save button color     |
 | --calendar-header-icon-bg-color                 | _var(--app-B2-N9, rgba(0, 0, 0, 0.05))_        | Calendar header icon background color |
 | --calendar-header-icon-color               | _var(--app-B1-N2, rgba(0, 0, 0, 0.7))_        | Calendar header icon background color                     |
+| --calendar-header-title-weight               | 600        | Calendar Header Title Font Weight                     |

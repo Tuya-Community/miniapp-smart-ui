@@ -457,3 +457,4 @@ Page({
 | --calendar-header-save-color                  | _#1989fa_                                      | 日历头部保存按钮颜色                   |
 | --calendar-header-icon-bg-color               | _var(--app-B2-N9, rgba(0, 0, 0, 0.05))_        | 日历头部图标背景色                     |
 | --calendar-header-icon-color               | _var(--app-B1-N2, rgba(0, 0, 0, 0.7))_        | 日历头部图标背景色                     |
+| --calendar-header-title-weight               | 600        | 日历头部标题字重                     |
