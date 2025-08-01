@@ -75,6 +75,7 @@ jobs:
 
     - name: Commit Changes
       run: |
+        git pull origin HEAD:${{ github.ref }}
         git add .
         git commit -m "chore(release): ${NEXT_VERSION}"
       env:
