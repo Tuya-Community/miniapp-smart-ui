@@ -71,7 +71,7 @@ jobs:
     - name: Commit Changes
       run: |
         git pull origin HEAD:${{ github.ref }}
-        git add .
+        git add package.json
         git commit -m "chore(release): ${NEXT_VERSION}"
 
     - name: Push Changes
