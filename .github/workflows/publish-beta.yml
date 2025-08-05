@@ -85,23 +85,43 @@ jobs:
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-    - name: Commit Changes
+    - name: Commit Changes Push
       run: |
-        git add package.json
-        git commit -m "chore(release): ${NEXT_VERSION}"
-
-    - name: Push Changes
-      run: |
-        git remote set-url origin https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }}
+        git add .
+        git commit -m "chore(release): $NEXT_VERSION"
         git push origin ci/action
       env:
-        GITHUB_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # - name: Push Changes
+    #   run: |
+    #     git remote set-url origin https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }}
+    #     git push origin ci/action
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
+
+    - name: Check for existing pull requests
+      uses: actions/github-script@v3
+      id: check_pr
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const { owner, repo } = context.repo;
+          const prs = await github.pulls.list({
+            owner,
+            repo,
+            state: 'open',
+            head: `${owner}:ci/action`,
+            base: 'release/2.x',
+          });
+          return prs.data.length > 0 ? prs.data[0].number : null;
 
     - name: Create Pull Request
+      if: steps.check_pr.outputs.pull_request_number == null
       uses: peter-evans/create-pull-request@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: "chore(release): ${NEXT_VERSION}"
+        commit-message: "chore(release): $NEXT_VERSION"
         branch: ci/action
         base: release/2.x
         title: "Automated Release PR"
