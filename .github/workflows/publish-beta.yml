@@ -34,9 +34,9 @@ jobs:
         git fetch origin
         git checkout ci/action
 
-    - name: Pull Ref
+    - name: merge release/2.x
       run: |
-        git pull origin HEAD:${{ github.ref }}
+        git merge origin/release/2.x
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
