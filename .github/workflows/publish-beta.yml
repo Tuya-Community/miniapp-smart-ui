@@ -64,6 +64,11 @@ jobs:
         fi
         echo "NEXT_VERSION=${next_version}" >> $GITHUB_ENV
 
+    - name: Checkout CI Action Branch
+      run: |
+        git checkout branch ci/action
+        git pull origin HEAD:${{ github.ref }}
+
     - name: Update Package.json with Next Version
       run: |
         npm version "${NEXT_VERSION}" --no-git-tag-version
@@ -81,7 +86,7 @@ jobs:
     - name: Push Changes
       run: |
         git remote set-url origin https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }}
-        git push origin HEAD:${{ github.ref }}
+        git push origin ci/action
       env:
         GITHUB_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
 
