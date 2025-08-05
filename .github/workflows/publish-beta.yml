@@ -66,8 +66,10 @@ jobs:
 
     - name: Checkout CI Action Branch
       run: |
-        git checkout branch ci/action
+        git checkout ci/action
         git pull origin HEAD:${{ github.ref }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Update Package.json with Next Version
       run: |
