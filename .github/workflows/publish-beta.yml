@@ -94,7 +94,7 @@ jobs:
         git add .
         git commit -m "chore(release): ${NEXT_VERSION}"
         git log -1  # 检查最后的commit结果
-        git push origin HEAD:refs/heads/ci/action
+        git push origin HEAD:refs/heads/actions/ci
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
