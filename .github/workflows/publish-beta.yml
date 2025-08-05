@@ -69,7 +69,7 @@ jobs:
     - name: Calculate Next Beta Version
       id: next_version
       run: |
-        if [ "$LATEST_VERSION" = "${PACKAGE_BASE_VERSION}-beta-0" ]; then
+        if [ -z "$existing_versions" ]; then
           next_version="${PACKAGE_BASE_VERSION}-beta-0"
         else
           beta_number=$(echo "${LATEST_VERSION}" | tr '-' ' ' | awk '{print $NF}')
