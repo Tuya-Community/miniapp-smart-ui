@@ -44,7 +44,7 @@ jobs:
     - name: Get Latest Beta Version
       id: latest_version
       run: |
-        existing_versions=$(npm show $PACKAGE_NAME versions --json | jq -r '.[]' | grep -E "^${PACKAGE_BASE_VERSION}-beta-" )
+        existing_versions=$(npm show $PACKAGE_NAME versions --json | jq -r '.[]' | grep -E "^${PACKAGE_BASE_VERSION}-beta-" || true )
         echo "test"
         if [ -z "$existing_versions" ]; then
           echo "test if"
