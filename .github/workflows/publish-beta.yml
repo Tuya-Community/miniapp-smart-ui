@@ -93,7 +93,7 @@ jobs:
       run: |
         git add .
         git commit -m "chore(release): ${NEXT_VERSION}"
-        git push origin actions/ci
+        git push origin HEAD:actions/ci
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
