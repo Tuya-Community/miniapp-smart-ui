@@ -79,7 +79,7 @@ jobs:
         git add .
         git commit -m "chore(release): ${NEXT_VERSION}"
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
 
     - name: Push Changes
       run: |
