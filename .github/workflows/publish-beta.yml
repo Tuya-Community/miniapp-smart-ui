@@ -79,5 +79,3 @@ jobs:
         git push origin HEAD:${{ github.ref }}
       env:
         GITHUB_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
-
-    
