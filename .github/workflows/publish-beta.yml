@@ -41,6 +41,10 @@ jobs:
       id: latest_version
       run: |
         existing_versions=$(npm show $PACKAGE_NAME versions --json | jq -r '.[]' | grep -E "^${PACKAGE_BASE_VERSION}-beta-" )
+
+        # 打印 existing_versions 以查看其内容
+        echo "Existing versions: $existing_versions"
+
         if [ -z "$existing_versions" ]; then
           echo "LATEST_VERSION=${PACKAGE_BASE_VERSION}-beta-0" >> $GITHUB_ENV
         else
