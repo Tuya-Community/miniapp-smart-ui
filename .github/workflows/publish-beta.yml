@@ -14,6 +14,8 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # 确保完整检出所有历史
 
     - name: Setup Node
       uses: actions/setup-node@v3
@@ -26,12 +28,14 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
-    - name: Checkout CI Action Branch
+    - name: Switch to CI Action Branch
       run: |
-        git fetch --all
+        git fetch origin
         git checkout ci/action
+
+    - name: Pull Ref
+      run: |
         git pull origin HEAD:${{ github.ref }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
