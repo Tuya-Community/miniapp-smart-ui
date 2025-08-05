@@ -6,6 +6,7 @@ on: [push]
   #     - 'release/2.x'
   #   types:
   #     - closed
+  
 jobs:
   publish_beta:
     runs-on: ubuntu-latest
