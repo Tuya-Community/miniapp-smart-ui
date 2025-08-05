@@ -27,6 +27,13 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        
+    - name: Checkout CI Action Branch
+      run: |
+        git checkout ci/action
+        git pull origin HEAD:${{ github.ref }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Install Dependencies
       run: yarn install --frozen-lockfile
@@ -63,13 +70,6 @@ jobs:
           next_version="${PACKAGE_BASE_VERSION}-beta-${next_beta}"
         fi
         echo "NEXT_VERSION=${next_version}" >> $GITHUB_ENV
-
-    - name: Checkout CI Action Branch
-      run: |
-        git checkout ci/action
-        git pull origin HEAD:${{ github.ref }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Update Package.json with Next Version
       run: |
