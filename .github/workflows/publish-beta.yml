@@ -94,17 +94,9 @@ jobs:
         git add .
         git commit -m "chore(release): ${NEXT_VERSION}"
         git log -1  # 检查最后的commit结果
-        git push origin HEAD:refs/heads/actions/ci
+        git push --force origin HEAD:refs/heads/actions/ci
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    # - name: Push Changes
-    #   run: |
-    #     git remote set-url origin https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }}
-    #     git push origin actions/ci
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
-
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
