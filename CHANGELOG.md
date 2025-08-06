@@ -1,6 +1,7 @@
 # 更新日志
 
 ## v2.6.0(2025-07-31)
+
 ### Features ✨
 - nav-bar: 新增 --nav-bar-title-max-width CSS 变量，调整默认值从 `60%` 为 `calc(100% - 360rpx)`([af0d83a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/af0d83ac571e70d9d7b5f934287866c9e37e7f6c))
 - bottom-sheet: 新增 max-height 属性([0ed0ea9](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/0ed0ea9d1f32342f8e87a29c6b5927da4026d3fc))
