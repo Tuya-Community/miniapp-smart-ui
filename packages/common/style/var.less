@@ -1,6 +1,7 @@
 :root {
   --smart-ui-overlay: rgba(0, 0, 0, 0.4);
   --smart-ui-dialog-background: rgba(255, 255, 255, 1);
+  --smart-ui-toast-panel-background: rgba(0, 0, 0, 0.7);
   --smart-ui-border-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
@@ -9,6 +10,7 @@
   );
 
   &[theme='dark'] {
+    --smart-ui-toast-panel-background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), #000;
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
     --smart-ui-dialog-background: #333;
     --smart-ui-border-image: linear-gradient(
@@ -76,6 +78,7 @@
   linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))
 );
 @dialog-bg: var(--smart-ui-dialog-background, rgba(255, 255, 255, 1)); // 弹窗背景色
+@toast-panel-bg: var(--smart-ui-toast-panel-background, rgba(0, 0, 0, 0.7));
 
 // Color Palette
 @black: #000;
@@ -723,7 +726,7 @@
 @toast-text-color: @white;
 @toast-line-height: 20px;
 @toast-border-radius: 12px;
-@toast-background-color: fade(@black, 70%);
+@toast-background-color: @toast-panel-bg;
 @toast-icon-size: 36px;
 @toast-text-min-width: 96px;
 @toast-text-padding: 14px 16px;
