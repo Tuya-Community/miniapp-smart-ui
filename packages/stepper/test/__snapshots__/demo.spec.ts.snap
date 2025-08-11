@@ -24,7 +24,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
-              class="minus-class smart-stepper__minus"
+              class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
@@ -112,7 +112,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
-              class="minus-class smart-stepper__minus"
+              class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
@@ -200,7 +200,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
-              class="minus-class smart-stepper__minus"
+              class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
@@ -288,7 +288,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
-              class="minus-class smart-stepper__minus"
+              class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
@@ -464,7 +464,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
-              class="minus-class smart-stepper__minus"
+              class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
@@ -552,7 +552,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
-              class="minus-class smart-stepper__minus"
+              class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
@@ -642,7 +642,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
-              class="minus-class smart-stepper__minus"
+              class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
@@ -730,7 +730,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
-              class="minus-class smart-stepper__minus"
+              class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
@@ -818,7 +818,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper smart-stepper--round custom-class"
           >
             <wx-view
-              class="minus-class smart-stepper__minus"
+              class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
