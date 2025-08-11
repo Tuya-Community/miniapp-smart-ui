@@ -21,9 +21,17 @@
   bind:leave="onLeave"
   bind:after-leave="onAfterLeave"
 >
-  <view wx:if="{{ title }}" class="smart-bottom-sheet__header">
-    {{ title }}
-    <smart-icon bind:click="onClose" name="{{ xmarkIcon }}" class="smart-bottom-sheet__icon" size="{{ iconSize }}" color="{{ xmarkIconColor }}" />
+  <view class="smart-bottom-sheet__header">
+    <view wx:if="{{ title }}">{{ title }}</view>
+    <smart-icon 
+      wx:if="{{ title && showClose }}" 
+      name="{{ xmarkIcon }}" 
+      class="smart-bottom-sheet__icon" 
+      size="{{ iconSize }}" 
+      color="{{ xmarkIconColor }}" 
+      bind:click="onClose"
+    />
+    <slot name="title" />
   </view>
 
   <view wx:if="{{ contentHeight !== null }}" class="smart-bottom-sheet__content smart-bottom-sheet__content_height" style="{{computed.getHeight(contentHeight)}}">

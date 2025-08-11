@@ -153,6 +153,33 @@ Page({
 });
 ```
 
+
+
+### 使用插槽插入标题 `v2.6.1`
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+>
+  <view slot="title">title</view>
+  <view style="background-color: orange; height: 100px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+});
+```
+
+
 ## API
 
 ### Props
@@ -169,7 +196,9 @@ Page({
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | _boolean_ | `true` |
 | native-disabled `v2.5.0`     | 开启弹框期间是否禁用本地手势; 会在弹框开始进入动画时调用 `ty.nativeDisabled(true)`, 在弹框关闭动画结束时调用 `ty.nativeDisabled(false)` 恢复异层组件的点击能力；由于`ty.nativeDisabled` 是全局生效的，所以多个弹框组件同时打开时注意是否传 `native-disabled`属性和关闭的时机，防止 `native-disabled` 属性失效       | _boolean_   | `false`        |
 | content-height `v2.5.0` | 内容区域高度，当设置此值时，组件的 max-height 将会失效       | _number \| string_   | `false`        |
-| max-height `v2.6.0` | 整个组件的最大高度      | _number \| string_   | -        |
+| max-height `v2.6.0` | 整个组件的最大高度    | _number \| string_   | -     |
+| show-close `v2.6.1` | 是否展示关闭图标      | _boolean_   | -        |
+
 
 
 ### Events
@@ -184,6 +213,13 @@ Page({
 | bind:leave         | 遮罩离开中触发       | -    |
 | bind:after-leave   | 遮罩离开后触发       | -    |
 | bind:click-overlay | 点击遮罩层时触发 | - |
+
+### Slot
+
+| 名称          | 说明           |
+| ------------- | -------------- |
+| - | 内容 |
+| title `v2.6.1` | 标题插槽 |
 
 ### 外部样式类
 
