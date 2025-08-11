@@ -76,6 +76,7 @@ SmartComponent({
     currentValue: '',
     Minus,
     Plus,
+    isInit: false,
   },
 
   watch: {
@@ -85,15 +86,25 @@ SmartComponent({
   },
 
   created() {
+    const currentValue = this.format(this.data.value, true);
+    if (currentValue !== this.data.value) {
+      this.$emit('change', currentValue);
+    }
     this.setData({
-      currentValue: this.format(this.data.value),
+      currentValue,
+      isInit: true,
     });
   },
 
   methods: {
     observeValue() {
-      const { value } = this.data;
-      this.setData({ currentValue: this.format(value) });
+      const { value, isInit } = this.data;
+      if (!isInit) return;
+      const currentValue = this.format(value, true);
+      if (currentValue !== value) {
+        this.$emit('change', currentValue);
+      }
+      this.setData({ currentValue });
     },
 
     check() {
@@ -118,7 +129,7 @@ SmartComponent({
     },
 
     onBlur(event: WechatMiniprogram.InputBlur) {
-      const value = this.format(event.detail.value);
+      const value = this.format(event.detail.value, true);
 
       this.setData({ currentValue: value });
 
@@ -142,15 +153,18 @@ SmartComponent({
     },
 
     // limit value range
-    format(value) {
+    format(value, isFormatAll = false) {
       value = this.filter(value);
 
       // format range
       value = value === '' ? 0 : +value;
-      value = Math.max(Math.min(this.data.max, value), this.data.min);
+      value = Math.min(this.data.max, value);
+      if (isFormatAll) {
+        value = Math.max(value, this.data.min);
+      }
 
       // format decimal
-      if (isDef(this.data.decimalLength)) {
+      if (isDef(this.data.decimalLength) && isFormatAll) {
         value = value.toFixed(this.data.decimalLength);
       }
 
@@ -188,7 +202,7 @@ SmartComponent({
 
       const diff = type === 'minus' ? -this.data.step : +this.data.step;
 
-      const value = this.format(add(+this.data.currentValue, diff));
+      const value = this.format(add(+this.data.currentValue, diff), true);
 
       this.emitChange(value);
       this.$emit(type);
