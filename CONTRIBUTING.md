@@ -34,6 +34,8 @@ $ yarn dev
 
 - 如果你要对历史的 1.0 版本进行迭代修复，请基于 `release/1.x` 分支来做，并提 merge request 到 `release/1.x` 分支
 
+- 所有提的 `MR` 如果会导致 Demo 视图的改动，都需要运行 `npx jest -u` 更新测试快照，否则合并的检查 Action 会不通过！
+
 ## 🐞 报告 Bug
 
 > 我们基于 Issue 来做 bug 追踪和管理
