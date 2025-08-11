@@ -27,19 +27,41 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
 
 ```html
 <smart-row>
-  <smart-col span="8">span: 8</smart-col>
-  <smart-col span="8">span: 8</smart-col>
-  <smart-col span="8">span: 8</smart-col>
+  <smart-col span="8" custom-class="dark">span: 8</smart-col>
+  <smart-col span="8" custom-class="light">span: 8</smart-col>
+  <smart-col span="8" custom-class="dark">span: 8</smart-col>
 </smart-row>
 
 <smart-row>
-  <smart-col span="4">span: 4</smart-col>
-  <smart-col span="10" offset="4">offset: 4, span: 10</smart-col>
+  <smart-col span="4" custom-class="dark">span: 4</smart-col>
+  <smart-col span="10" offset="4" custom-class="light">offset: 4, span: 10</smart-col>
 </smart-row>
 
 <smart-row>
-  <smart-col offset="12" span="12">offset: 12, span: 12</smart-col>
+  <smart-col offset="12" span="12" custom-class="dark">offset: 12, span: 12</smart-col>
 </smart-row>
+```
+
+less样式：
+
+```less
+.dark,
+.light {
+  color: #fff;
+  font-size: 13px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  background-clip: content-box;
+}
+
+.dark {
+  background-color: #39a9ed;
+}
+
+.light {
+  background-color: #66c6f2;
+}
 ```
 
 ### 设置列元素间距
@@ -48,10 +70,32 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
 
 ```html
 <smart-row gutter="20">
-  <smart-col span="8">span: 8</smart-col>
-  <smart-col span="8">span: 8</smart-col>
-  <smart-col span="8">span: 8</smart-col>
+  <smart-col span="8" custom-class="dark">span: 8</smart-col>
+  <smart-col span="8" custom-class="light">span: 8</smart-col>
+  <smart-col span="8" custom-class="dark">span: 8</smart-col>
 </smart-row>
+```
+
+less样式：
+
+```less
+.dark,
+.light {
+  color: #fff;
+  font-size: 13px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  background-clip: content-box;
+}
+
+.dark {
+  background-color: #39a9ed;
+}
+
+.light {
+  background-color: #66c6f2;
+}
 ```
 
 ## API
