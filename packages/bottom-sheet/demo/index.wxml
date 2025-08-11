@@ -55,3 +55,14 @@
   <view style="background-color: orange; height: 100px;" />
   </smart-bottom-sheet>
 </demo-block>
+
+<demo-block title="{{I18n.t('useTitleSlot')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet5">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    show="{{ show5 }}"
+    bind:close="toggleActionSheet5"
+  >
+  <view slot="title">title</view>
+  <view style="background-color: orange; height: 100px;" />
+  </smart-bottom-sheet>
+</demo-block>
