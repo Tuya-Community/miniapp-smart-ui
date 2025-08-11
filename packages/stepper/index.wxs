@@ -16,7 +16,17 @@ function inputStyle(data) {
   });
 }
 
+function checkMin(data) {
+  return data.currentValue <= Number(data.min) || data.disabled || data.disableMinus
+}
+
+function checkMax(data) {
+  return data.currentValue >= Number(data.max) || data.disabled || data.disablePlus
+}
+
 module.exports = {
   buttonStyle: buttonStyle,
   inputStyle: inputStyle,
+  checkMin: checkMin,
+  checkMax: checkMax,
 };
