@@ -88,11 +88,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Comment on PR
-      uses: peter-evans/slash-command-dispatch@v2
+      uses: peter-evans/create-or-update-comment@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        command: |
-          COMMENT_VERSION=${{ env.NEXT_VERSION }}
         issue-number: ${{ github.event.pull_request.number }}
         repository: ${{ github.event.pull_request.head.repo.full_name }}
         body: |
