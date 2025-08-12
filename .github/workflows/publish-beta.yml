@@ -88,10 +88,12 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Comment on PR
-      uses: peter-evans/commit-comment@v2
+      uses: peter-evans/slash-command-dispatch@v2
       with:
-        repository: ${{ github.event.pull_request.base.repo.full_name }}
-        sha: ${{ github.event.pull_request.head.sha }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        command: |
+          COMMENT_VERSION=${{ env.NEXT_VERSION }}
+        issue-number: ${{ github.event.pull_request.number }}
+        repository: ${{ github.event.pull_request.head.repo.full_name }}
         body: |
-          当前PR已经合并成功，并发布了npm包版本： ${NEXT_VERSION}.
-          The current PR has been successfully merged and the npm package version has been released: ${NEXT_VERSION}.
+          The merge has been completed successfully. The current npm version is `${{ env.NEXT_VERSION }}`.
