@@ -26,7 +26,7 @@ The text style on the homepage is left-aligned and bold by default. Clicking the
 
 ```html
 <smart-nav-bar
-  left-text="Home"
+  left-text="HomeHomeHomeHomeHome"
   left-text-type="home"
   bind:click-left-text="onClickLeftText"
 />
