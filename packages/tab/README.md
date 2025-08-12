@@ -61,6 +61,18 @@ Page({
 </smart-tabs>
 ```
 
+### 样式风格
+
+`Tab`支持两种样式风格：`line`和`card`，默认为`line`样式，可以通过`type`属性修改样式风格。
+
+```html
+<smart-tabs type="card">
+  <smart-tab title="标签 1">内容 1</smart-tab>
+  <smart-tab title="标签 2">内容 2</smart-tab>
+  <smart-tab title="标签 3">内容 3</smart-tab>
+</smart-tabs>
+```
+
 ### 横向滚动
 
 多于 5 个标签时，Tab 可以横向滚动。
@@ -97,18 +109,6 @@ Page({
     });
   },
 });
-```
-
-### 样式风格
-
-`Tab`支持两种样式风格：`line`和`card`，默认为`line`样式，可以通过`type`属性修改样式风格。
-
-```html
-<smart-tabs type="card">
-  <smart-tab title="标签 1">内容 1</smart-tab>
-  <smart-tab title="标签 2">内容 2</smart-tab>
-  <smart-tab title="标签 3">内容 3</smart-tab>
-</smart-tabs>
 ```
 
 ### 点击事件

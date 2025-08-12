@@ -61,6 +61,18 @@ When the `name` attribute is specified for a tab, the value of `active` correspo
 </smart-tabs>
 ```
 
+### Style Variations
+
+`Tab` supports two style variations: `line` and `card`. The default is the `line` style, which can be changed using the `type` attribute.
+
+```html
+<smart-tabs type="card">
+  <smart-tab title="Tab 1">Content 1</smart-tab>
+  <smart-tab title="Tab 2">Content 2</smart-tab>
+  <smart-tab title="Tab 3">Content 3</smart-tab>
+</smart-tabs>
+```
+
 ### Horizontal Scrolling
 
 Tabs can scroll horizontally when there are more than 5 tabs.
@@ -97,18 +109,6 @@ Page({
     });
   },
 });
-```
-
-### Style Variations
-
-`Tab` supports two style variations: `line` and `card`. The default is the `line` style, which can be changed using the `type` attribute.
-
-```html
-<smart-tabs type="card">
-  <smart-tab title="Tab 1">Content 1</smart-tab>
-  <smart-tab title="Tab 2">Content 2</smart-tab>
-  <smart-tab title="Tab 3">Content 3</smart-tab>
-</smart-tabs>
 ```
 
 ### Click Events

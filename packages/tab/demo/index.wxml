@@ -27,6 +27,20 @@
   </smart-tabs>
 </demo-block>
 
+<demo-block title="{{I18n.t('style')}}">
+  <smart-tabs type="card" tab-class="special-tab">
+    <smart-tab
+      wx:for="{{ tabs3 }}"
+      wx:key="index"
+      title="{{ I18n.t('tags') + ' ' + item }}"
+    >
+      <view class="content-2">
+        {{ I18n.t('content') + ' ' + item }}
+      </view>
+    </smart-tab>
+  </smart-tabs>
+</demo-block>
+
 <demo-block title="{{I18n.t('horizontalScroll')}}">
   <smart-tabs>
     <smart-tab
@@ -50,20 +64,6 @@
       title="{{ I18n.t('tags') + ' ' + item }}"
     >
       <view class="content">
-        {{ I18n.t('content') + ' ' + item }}
-      </view>
-    </smart-tab>
-  </smart-tabs>
-</demo-block>
-
-<demo-block title="{{I18n.t('style')}}">
-  <smart-tabs type="card" tab-class="special-tab">
-    <smart-tab
-      wx:for="{{ tabs3 }}"
-      wx:key="index"
-      title="{{ I18n.t('tags') + ' ' + item }}"
-    >
-      <view class="content-2">
         {{ I18n.t('content') + ' ' + item }}
       </view>
     </smart-tab>
