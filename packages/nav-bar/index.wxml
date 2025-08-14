@@ -8,7 +8,7 @@
   style="{{ computed.barStyle({ zIndex, statusBarHeight, safeAreaInsetTop }) }}; {{ customStyle }}"
 >
   <view class="smart-nav-bar__content">
-    <view class="smart-nav-bar__left" bind:tap="onClickLeft">
+    <view class="{{ utils.bem('nav-bar__left', { home: leftTextType === 'home', title: leftTextType === 'title' }) }}" bind:tap="onClickLeft">
       <block wx:if="{{ leftArrow || leftText || leftIcon }}">
         <smart-icon
           wx:if="{{ leftArrow }}"
@@ -27,7 +27,7 @@
         </view>
         <view
           wx:if="{{ leftText }}"
-          class="{{ utils.bem('nav-bar__text', { home: leftTextType === 'home', title: leftTextType === 'title' }) }}"
+          class="smart-nav-bar__text"
           catch:tap="onClickLeftText"
           hover-class="{{ leftTextType === 'back' ? 'smart-nav-bar__text--hover' : '' }}"
           hover-stay-time="70"

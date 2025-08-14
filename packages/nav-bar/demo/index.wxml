@@ -1,6 +1,6 @@
 <demo-block title="{{I18n.t('homePage')}}">
   <smart-nav-bar
-    left-text="Home"
+    left-text="HomeHomeHomeHomeHome"
     left-text-type="home"
     bind:click-left-text="onClickLeftText"
   />

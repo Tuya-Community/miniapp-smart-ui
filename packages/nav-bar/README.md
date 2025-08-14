@@ -26,7 +26,7 @@ category: 导航
 
 ```html
 <smart-nav-bar
-  left-text="Home"
+  left-text="HomeHomeHomeHomeHome"
   left-text-type="home"
   bind:click-left-text="onClickLeftText"
 />

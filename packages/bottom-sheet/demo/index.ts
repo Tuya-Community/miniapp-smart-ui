@@ -6,6 +6,7 @@ SmartComponent({
     show2: false,
     show3: false,
     show4: false,
+    show5: false,
   },
 
   methods: {
@@ -28,6 +29,9 @@ SmartComponent({
     },
     toggleActionSheet4() {
       this.toggle('show4');
+    },
+    toggleActionSheet5() {
+      this.toggle('show5');
     },
   },
 });

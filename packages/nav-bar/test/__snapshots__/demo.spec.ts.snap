@@ -17,16 +17,16 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
-              class="smart-nav-bar__left"
+              class="smart-nav-bar__left smart-nav-bar__left--home"
               bind:tap="onClickLeft"
             >
               <wx-view
-                class="smart-nav-bar__text smart-nav-bar__text--home"
+                class="smart-nav-bar__text"
                 hoverClass=""
                 hoverStayTime="70"
                 catch:tap="onClickLeftText"
               >
-                Home
+                HomeHomeHomeHomeHome
               </wx-view>
             </wx-view>
             <wx-view
@@ -184,7 +184,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
-              class="smart-nav-bar__left"
+              class="smart-nav-bar__left smart-nav-bar__left--title"
               bind:tap="onClickLeft"
             >
               <smart-icon
@@ -203,7 +203,7 @@ exports[`should render demo and match snapshot 1`] = `
                 </wx-view>
               </smart-icon>
               <wx-view
-                class="smart-nav-bar__text smart-nav-bar__text--title"
+                class="smart-nav-bar__text"
                 hoverClass=""
                 hoverStayTime="70"
                 catch:tap="onClickLeftText"
@@ -237,7 +237,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
-              class="smart-nav-bar__left"
+              class="smart-nav-bar__left smart-nav-bar__left--title"
               bind:tap="onClickLeft"
             >
               <smart-icon
@@ -278,7 +278,7 @@ exports[`should render demo and match snapshot 1`] = `
                 </smart-icon>
               </wx-view>
               <wx-view
-                class="smart-nav-bar__text smart-nav-bar__text--title"
+                class="smart-nav-bar__text"
                 hoverClass=""
                 hoverStayTime="70"
                 catch:tap="onClickLeftText"

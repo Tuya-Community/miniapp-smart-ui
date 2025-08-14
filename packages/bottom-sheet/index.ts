@@ -13,6 +13,10 @@ SmartComponent({
       type: null,
       value: 24,
     },
+    showClose: {
+      type: Boolean,
+      value: true,
+    },
     contentHeight: null,
     round: {
       type: Boolean,
