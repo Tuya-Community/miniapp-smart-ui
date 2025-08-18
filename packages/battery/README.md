@@ -46,3 +46,5 @@ category: 通用
 | size             | 尺寸                                             | _number_                   | 10         |
 | type             | 电池方向                                         | `vertical` \| `horizontal` | `vertical` |
 | value            | 电量值                                           | _number_                   | 70         |
+| color `v2.6.2` | 电量的颜色（优先级最高）                           | _string_                   | -         |
+

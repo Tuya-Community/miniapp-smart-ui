@@ -31,7 +31,8 @@ SmartComponent({
       value: '#FF4444',
     },
     backgroundColor: String,
-    color: String
+    onCalcColor: null,
+    color: String,
   },
 
   data: {
@@ -90,6 +91,10 @@ SmartComponent({
 
     calcColor(top) {
       // 自定义电量的颜色分配规则
+      const color = typeof this.data.onCalcColor === 'function' && this.data.onCalcColor();
+      if (color) {
+        return color;
+      }
       if (this.data.color) {
         return this.data.color;
       }

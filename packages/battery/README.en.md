@@ -46,3 +46,4 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 | size             | Size                                               | _number_                   | 10          |
 | type             | Battery orientation                                | `vertical` \| `horizontal` | `vertical`  |
 | value            | Battery level                                      | _number_                   | 70          |
+| color `v2.6.2` | Battery color (highest priority)                   | _string_                   | -           |
