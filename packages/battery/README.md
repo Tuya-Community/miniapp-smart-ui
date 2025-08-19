@@ -44,6 +44,7 @@ category: 通用
 | middle-color     | 电量中的颜色                                     | _string_                   | `#F5A623`  |
 | size             | 尺寸                                             | _number_                   | 10         |
 | type             | 电池方向                                         | `vertical` \| `horizontal` | `vertical` |
-| value            | 电量值                                           | _number_                   | 70         |
-| color `v2.6.2` | 电量的颜色（优先级最高）                           | _string_                   | -         |
+| value            | 电量值          | _number_                   | 70         |
+| color `v2.6.2` | 电量的颜色（优先级最高）    | _string_   | -   |
+| filter  `@miniapp`          | 选项过滤函数(`type` 可能值为 `year`, `month`, `day`, `hour`, `minute`)         | _(type, values) => values_ | -          |
 
