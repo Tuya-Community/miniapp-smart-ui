@@ -295,7 +295,7 @@ Page({
 | -------------------- | -------------------------------------------------------------------------- | -------------------------- | ---------- |
 | cancel-button-text   | Cancel button text                                                          | _string_                   | `Cancel`   |
 | confirm-button-text  | Confirm button text                                                         | _string_                   | `Confirm`  |
-| filter               | Option filter function (`type` possible values are `year`, `month`, `day`, `hour`, `minute`) | _(type, values) => values_ | -          |
+| filter    `@miniapp`             | Option filter function (`type` possible values are `year`, `month`, `day`, `hour`, `minute`) | _(type, values) => values_ | -          |
 | item-height          | Option height                                                              | _number_                   | `44`       |
 | loading              | Whether to show loading state                                              | _boolean_                  | `false`    |
 | locale               | Set time unit                                                              | Locale                     |            |
