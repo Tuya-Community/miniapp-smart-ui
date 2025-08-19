@@ -32,6 +32,7 @@ SmartComponent({
     },
     backgroundColor: String,
     onCalcColor: null,
+    color: String,
   },
 
   data: {
@@ -89,11 +90,16 @@ SmartComponent({
     },
 
     calcColor(top) {
+      if (this.data.color) {
+        return this.data.color;
+      }
+      
       // 自定义电量的颜色分配规则
       const color = typeof this.data.onCalcColor === 'function' && this.data.onCalcColor();
       if (color) {
         return color;
       }
+
       if (top <= 14.2 && top >= 3) {
         return this.data.highColor;
       }
@@ -119,11 +125,9 @@ SmartComponent({
         .replace(/>/g, '%3E')
 
         .replace(/\s+/g, ' ');
-      return `background-image: url("data:image/svg+xml,${res}"); width: ${
-        1.1 * this.data.size
-      }px; height: ${1.9 * this.data.size}px; background-repeat: no-repeat; transform: ${
-        this.data.type === 'horizontal' ? 'rotate(90deg)' : '0'
-      }`;
+      return `background-image: url("data:image/svg+xml,${res}"); width: ${1.1 * this.data.size
+        }px; height: ${1.9 * this.data.size}px; background-repeat: no-repeat; transform: ${this.data.type === 'horizontal' ? 'rotate(90deg)' : '0'
+        }`;
     },
   },
 });

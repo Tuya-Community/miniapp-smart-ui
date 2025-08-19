@@ -42,7 +42,7 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 | high-color       | Color when battery level is high                   | _string_                   | `#70CF98`   |
 | low-color        | Color when battery level is low                    | _string_                   | `#FF4444`   |
 | middle-color     | Color when battery level is medium                 | _string_                   | `#F5A623`   |
-| on-calc-color    | Callback function for calculating battery color    | _() => string_             | -           |
 | size             | Size                                               | _number_                   | 10          |
 | type             | Battery orientation                                | `vertical` \| `horizontal` | `vertical`  |
 | value            | Battery level                                      | _number_                   | 70          |
+| color `v2.6.2` | Battery color (highest priority)                   | _string_                   | -           |
