@@ -39,7 +39,6 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 | Property         | Description                                        | Type                       | Default     |
 | ---------------- | -------------------------------------------------- | -------------------------- | ----------  |
 | background-color | Battery background color                           | _string_                   | -           |
-| color            | Battery color (highest priority)                   | _string_                   | -           |
 | high-color       | Color when battery level is high                   | _string_                   | `#70CF98`   |
 | low-color        | Color when battery level is low                    | _string_                   | `#FF4444`   |
 | middle-color     | Color when battery level is medium                 | _string_                   | `#F5A623`   |
