@@ -46,3 +46,4 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 | type             | Battery orientation                                | `vertical` \| `horizontal` | `vertical`  |
 | value            | Battery level                                      | _number_                   | 70          |
 | color `v2.6.2` | Battery color (highest priority)                   | _string_                   | -           |
+| filter  `@miniapp`          | Option filter function (`type` possible values are `year`, `month`, `day`, `hour`, `minute`)      | _(type, values) => values_ | -          |
