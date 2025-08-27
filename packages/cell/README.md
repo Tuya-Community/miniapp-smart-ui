@@ -40,10 +40,10 @@ category: 展示
 
 ### 卡片风格
 
-通过 `CellGroup` 的 `inset` 属性，可以将单元格转换为圆角卡片风格（从 1.7.2 版本开始支持）。
+通过 `CellGroup` 的 `inset` `v1.7.2` 属性，可以将单元格转换为圆角卡片风格, `inset-border-radius` `v2.6.2` 可以设置圆角的值。
 
 ```html
-<smart-cell-group inset>
+<smart-cell-group inset inset-border-radius="{{ 12 }}">
   <smart-cell title="单元格" value="内容" is-link />
   <smart-cell title="单元格" value="内容" label="描述信息" border="{{ false }}" is-link />
 </smart-cell-group>
@@ -167,6 +167,8 @@ category: 展示
 | border | 是否显示外边框         | _boolean_ | `true`  |
 | inset  | 是否展示为圆角卡片风格 | _boolean_ | `false` |
 | title  | 分组标题               | _string_  | `-`     |
+| inset-border-radius `v2.6.2` | 圆角卡片风格时的圆角值  | _string \| number_  | `-`  |
+
 
 ### CellGroup 外部样式类
 

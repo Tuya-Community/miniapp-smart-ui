@@ -9,6 +9,7 @@ exports[`should render demo and match snapshot 1`] = `
       <smart-cell-group>
         <wx-view
           class="custom-class smart-cell-group "
+          style=""
         >
           <smart-cell>
             <wx-view
@@ -85,6 +86,7 @@ exports[`should render demo and match snapshot 1`] = `
       <smart-cell-group>
         <wx-view
           class="custom-class smart-cell-group smart-cell-group--inset "
+          style="border-radius:12px"
         >
           <smart-cell>
             <wx-view
@@ -529,6 +531,7 @@ exports[`should render demo and match snapshot 1`] = `
         </wx-view>
         <wx-view
           class="custom-class smart-cell-group "
+          style=""
         >
           <smart-cell>
             <wx-view
@@ -574,6 +577,7 @@ exports[`should render demo and match snapshot 1`] = `
         </wx-view>
         <wx-view
           class="custom-class smart-cell-group "
+          style=""
         >
           <smart-cell>
             <wx-view

@@ -1,5 +1,5 @@
-import { Sun } from '@tuya-miniapp/icons';
-import { Checkmark } from '@tuya-miniapp/icons';
+import Sun from '@tuya-miniapp/icons/dist/svg/Sun';
+import Checkmark from '@tuya-miniapp/icons/dist/svg/Checkmark';
 import { SmartComponent } from '../../common/component';
 
 SmartComponent({

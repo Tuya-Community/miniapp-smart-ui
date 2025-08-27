@@ -1,4 +1,5 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
 
 <view
   wx:if="{{ title }}"
@@ -6,6 +7,9 @@
 >
   {{ title }}
 </view>
-<view class="custom-class {{ utils.bem('cell-group', { inset }) }} {{ border ? 'smart-hairline--top-bottom' : '' }}">
+<view 
+  class="custom-class {{ utils.bem('cell-group', { inset }) }} {{ border ? 'smart-hairline--top-bottom' : '' }}" 
+  style="{{computed.boxStyle({ inset, insetBorderRadius })}}"
+>
   <slot />
 </view>
