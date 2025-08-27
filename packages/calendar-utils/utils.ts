@@ -1,5 +1,3 @@
-export const ROW_HEIGHT = 34;
-
 export function formatMonthTitle(date: Date, formatter = 'YYYY-MM') {
   if (!(date instanceof Date)) {
     date = new Date(date);

@@ -1,6 +1,5 @@
 import { SmartComponent } from '../common/component';
 import {
-  ROW_HEIGHT,
   getPrevDay,
   getNextDay,
   getToday,
@@ -108,7 +107,6 @@ SmartComponent({
     },
     rowHeight: {
       type: null,
-      value: ROW_HEIGHT,
     },
     round: {
       type: Boolean,
