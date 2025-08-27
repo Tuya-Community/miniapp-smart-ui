@@ -1,4 +1,4 @@
-import { Check } from '@tuya-miniapp/icons';
+import Check from '@tuya-miniapp/icons/dist/svg/Check';
 import { SmartComponent } from '../common/component';
 
 SmartComponent({

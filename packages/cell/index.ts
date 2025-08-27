@@ -1,7 +1,7 @@
-import { Up as upIcon } from '@tuya-miniapp/icons';
-import { Down as downIcon } from '@tuya-miniapp/icons';
-import { Left as leftIcon } from '@tuya-miniapp/icons';
-import { Right as rightIcon } from '@tuya-miniapp/icons';
+import upIcon from '@tuya-miniapp/icons/dist/svg/Up';
+import downIcon from '@tuya-miniapp/icons/dist/svg/Down';
+import leftIcon from '@tuya-miniapp/icons/dist/svg/Left';
+import rightIcon from '@tuya-miniapp/icons/dist/svg/Right';
 import { link } from '../mixins/link';
 import { SmartComponent } from '../common/component';
 

@@ -1,7 +1,7 @@
 import { nextTick } from '../common/utils';
 import { SmartComponent } from '../common/component';
 import { commonProps, inputProps, textareaProps } from './props';
-import { Xmark } from '@tuya-miniapp/icons';
+import Xmark from '@tuya-miniapp/icons/dist/svg/Xmark';
 import { InputDetails } from './types';
 
 SmartComponent({

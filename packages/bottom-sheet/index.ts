@@ -1,4 +1,4 @@
-import { Xmark as xmarkIcon } from '@tuya-miniapp/icons';
+import xmarkIcon from '@tuya-miniapp/icons/dist/svg/Xmark';
 import { SmartComponent } from '../common/component';
 import ty from '../common/ty';
 

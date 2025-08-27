@@ -1,4 +1,4 @@
-import { Checkmark as checkMarkIcon } from '@tuya-miniapp/icons';
+import checkMarkIcon from '@tuya-miniapp/icons/dist/svg/Checkmark';
 import { SmartComponent } from '../common/component';
 import ty from '../common/ty';
 import { getSafeAreaInsetMin } from '../common/utils';

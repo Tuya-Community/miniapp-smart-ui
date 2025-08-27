@@ -1,5 +1,5 @@
 import { SmartComponent } from '../common/component';
-import { Xmark as closeIcon } from '@tuya-miniapp/icons';
+import closeIcon from '@tuya-miniapp/icons/dist/svg/Xmark';
 
 interface Option {
   value: string | number;

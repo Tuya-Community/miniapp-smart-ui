@@ -1,4 +1,4 @@
-import { Checkmark } from '@tuya-miniapp/icons';
+import Checkmark from '@tuya-miniapp/icons/dist/svg/Checkmark';
 import { SmartComponent } from '../common/component';
 import { GREEN, GRAY_DARK } from '../common/color';
 
