@@ -1,4 +1,4 @@
-import { Left } from '@tuya-miniapp/icons';
+import Left from '@tuya-miniapp/icons/dist/svg/Left';
 import { SmartComponent } from '../common/component';
 import { getRect, getSystemInfoSync } from '../common/utils';
 

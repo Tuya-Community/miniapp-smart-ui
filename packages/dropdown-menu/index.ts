@@ -1,7 +1,7 @@
 import { SmartComponent } from '../common/component';
 import { useChildren } from '../common/relation';
 import { addUnit, getRect, getSystemInfoSync } from '../common/utils';
-import { TriangleDown } from '@tuya-miniapp/icons';
+import TriangleDown from '@tuya-miniapp/icons/dist/svg/TriangleDown';
 import ty from '../common/ty';
 let ARRAY: WechatMiniprogram.Component.TrivialInstance[] = [];
 

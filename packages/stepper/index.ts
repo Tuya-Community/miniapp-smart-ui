@@ -1,8 +1,8 @@
 import { SmartComponent } from '../common/component';
 import { isDef } from '../common/validator';
 import ty from '../common/ty';
-import { Minus } from '@tuya-miniapp/icons';
-import { Plus } from '@tuya-miniapp/icons';
+import Minus from '@tuya-miniapp/icons/dist/svg/Minus';
+import Plus from '@tuya-miniapp/icons/dist/svg/Plus';
 
 const LONG_PRESS_START_TIME = 600;
 const LONG_PRESS_INTERVAL = 200;

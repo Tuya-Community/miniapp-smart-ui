@@ -1,4 +1,4 @@
-import { Xmark as closeIcon } from '@tuya-miniapp/icons';
+import closeIcon from '@tuya-miniapp/icons/dist/svg/Xmark';
 import { SmartComponent } from '../common/component';
 import { transition } from '../mixins/transition';
 import { getSafeBottomOffset } from '../common/utils';

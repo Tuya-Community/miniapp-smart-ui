@@ -1,5 +1,5 @@
-import { CheckmarkCircle } from '@tuya-miniapp/icons';
-import { CheckmarkCircleVoid } from '@tuya-miniapp/icons';
+import CheckmarkCircle from '@tuya-miniapp/icons/dist/svg/CheckmarkCircle';
+import CheckmarkCircleVoid from '@tuya-miniapp/icons/dist/svg/CheckmarkCircleVoid';
 import { getAllRect } from '../common/utils';
 import { SmartComponent } from '../common/component';
 import { canIUseModel } from '../common/version';

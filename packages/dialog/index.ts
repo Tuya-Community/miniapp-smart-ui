@@ -1,4 +1,4 @@
-import { Warning as warningIcon } from '@tuya-miniapp/icons';
+import warningIcon from '@tuya-miniapp/icons/dist/svg/Warning';
 import { SmartComponent } from '../common/component';
 import { button } from '../mixins/button';
 import appLog from '../common/appLog';
