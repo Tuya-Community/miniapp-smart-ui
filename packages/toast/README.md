@@ -155,7 +155,7 @@ ToastInstance({
 | --toast-text-color | _#fff_ | 提示文本颜色 |
 | --toast-line-height | _20px_ | 提示行高 |
 | --toast-border-radius | _10px_ | 提示圆角半径 |
-| --toast-background-color | _fade(@black, 70%)_ | 提示背景颜色 |
+| --toast-background-color | _var(--smart-ui-toast-panel-background, rgba(0, 0, 0, 0.7))_ | 提示背景颜色 |
 | --toast-icon-size | _36px_ | 提示图标大小 |
 | --toast-text-min-width `@deprecated v2.6.0` | _96px_ | 提示文本最小宽度 |
 | --toast-text-padding | _@padding-xs @padding-sm_ | 提示文本内边距 |
