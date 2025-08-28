@@ -1,4 +1,4 @@
-import { Check } from '@tuya-miniapp/icons';
+import Check from '@tuya-miniapp/icons/dist/svg/Check';
 import { canIUseModel } from '../common/version';
 import { SmartComponent } from '../common/component';
 import { useParent } from '../common/relation';

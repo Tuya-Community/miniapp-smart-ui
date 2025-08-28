@@ -1,7 +1,7 @@
 import { SmartComponent } from '../common/component';
 import { canIUseModel } from '../common/version';
-import { Search as SearchIcon } from '@tuya-miniapp/icons';
-import { Close as CloseIcon } from '@tuya-miniapp/icons';
+import SearchIcon from '@tuya-miniapp/icons/dist/svg/Search';
+import CloseIcon from '@tuya-miniapp/icons/dist/svg/Close';
 
 SmartComponent({
   field: true,

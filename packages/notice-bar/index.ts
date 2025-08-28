@@ -1,7 +1,7 @@
 import { SmartComponent } from '../common/component';
 import { getRect, requestAnimationFrame } from '../common/utils';
-import { Xmark } from '@tuya-miniapp/icons';
-import { Right } from '@tuya-miniapp/icons';
+import Xmark from '@tuya-miniapp/icons/dist/svg/Xmark';
+import Right from '@tuya-miniapp/icons/dist/svg/Right';
 
 SmartComponent({
   props: {

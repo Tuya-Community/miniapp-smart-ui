@@ -1,6 +1,16 @@
 # 更新日志
 
-## v2.6.0(2025-08-12)
+## v2.6.2(2025-08-28)
+### Features ✨
+- battery: 新增 color 属性可以直接修改颜色([ff99655](https://github.com/Tuya-Community/miniapp-smart-ui/pull/28/commits/ff996558becf5ebe24b711904bc1ae9e0faecedc));
+- cell: 新增 inset-border-radius 属性([09c60be](https://github.com/Tuya-Community/miniapp-smart-ui/pull/29/commits/09c60bef61e8f353bcab90728c2ca509aaf0b94f))
+
+### Bug Fixes 🐛
+- picker: 修复单位对齐问题([fc12155](https://github.com/Tuya-Community/miniapp-smart-ui/pull/28/commits/fc12155f3883d0147cb328c2123442f147fef330));
+- 修改 @tuya-miniapp/icons 资源引入方式([d4921f1](https://github.com/Tuya-Community/miniapp-smart-ui/pull/28/commits/d4921f1763211cb631bcd11a51f8ac0296691b77))
+- calender: 修复 CSS 变量 --calendar-day-height、--calendar-selected-day-size不生效问题([a08cebe](https://github.com/Tuya-Community/miniapp-smart-ui/pull/31/commits/a08cebe8ff8a62c8d544214cfbd5c05b3cce8347), [bfebfa3](https://github.com/Tuya-Community/miniapp-smart-ui/pull/31/commits/bfebfa3a26ec28e9a4a485f9ea1fd73189ed0624))
+
+## v2.6.1(2025-08-14)
 ### Features ✨
 - bottom-sheet: 新增 show-close 属性 和 title 插槽([fef37bf](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/fef37bf51650810a486ca1e0863ffd421d4711f9))
 
@@ -10,6 +20,18 @@
 - picker: 修复单位换行问题([b8075bd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/b8075bd2b48b369db549554bd80c23e5305e9426))
 - stepper: 修复组件到达max或者min时，禁用样式不生效问题([58ce5af](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/58ce5af24c715c9534026fd07121426973578dce))；修改--stepper-button-disabled-color 默认值为 _var(--app-B6, #ffffff)_ ([e0e55fa](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/e0e55fa18f517fafc603a6b9c3035276d6ccaa16))；修复设置 min 或 decimalLength 导致输入框无法删除问题([7cf1cfe](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/7cf1cfe9d0e7ac77db1007d902960b83dde45d9e))
 - image: 修复组件上下多余空隙问题([a42f0ad](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/a42f0ad7e964b0d63de2b5e1dde7aed2efd99b17))
+
+## Engligh
+
+### Features ✨
+- bottom-sheet: Added `show-close` attribute and `title` slot ([fef37bf](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/fef37bf51650810a486ca1e0863ffd421d4711f9))
+
+### Bug Fixes 🐛
+
+- nav-bar: Fixed the issue where long text was not truncated when `left-text-type` was `home` or `title` ([97f91f5](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/97f91f5869860d4cbf8994e11f5a0cffa8ac987e))
+- picker: Fixed the line break issue with units ([b8075bd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/b8075bd2b48b369db549554bd80c23e5305e9426))
+- stepper: Fixed the issue where disabled styles were not applied when reaching `max` or `min` ([58ce5af](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/58ce5af24c715c9534026fd07121426973578dce)); changed the default value of `--stepper-button-disabled-color` to _var(--app-B6, #ffffff)_ ([e0e55fa](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/e0e55fa18f517fafc603a6b9c3035276d6ccaa16)); fixed the issue where the input box could not be cleared when `min` or `decimalLength` was set ([7cf1cfe](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/7cf1cfe9d0e7ac77db1007d902960b83dde45d9e))
+- image: Fixed the issue of extra space above and below the component ([a42f0ad](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/a42f0ad7e964b0d63de2b5e1dde7aed2efd99b17))
 
 
 ## v2.6.0(2025-07-31)

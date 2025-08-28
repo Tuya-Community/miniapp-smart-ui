@@ -166,6 +166,8 @@ category: 通用
 | ------------- | -------------- |
 | custom-class  | 根节点样式类   |
 | loading-class | 加载图标样式类 |
+| hover-class | 按钮按下时的样式 |
+
 
 ### 样式变量
 

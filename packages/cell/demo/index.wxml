@@ -12,7 +12,7 @@
 </demo-block>
 
 <demo-block title="{{I18n.t('cardStyle')}}">
-  <smart-cell-group inset>
+  <smart-cell-group inset inset-border-radius="{{ 12 }}">
     <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" is-link />
     <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" label="{{I18n.t('describeInformation')}}" border="{{ false }}" is-link />
   </smart-cell-group>

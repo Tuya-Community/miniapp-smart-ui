@@ -1,6 +1,6 @@
 import { SmartComponent } from '../common/component';
-import { Left as LeftIcon } from '@tuya-miniapp/icons';
-import { Right as RightIcon } from '@tuya-miniapp/icons';
+import LeftIcon from '@tuya-miniapp/icons/dist/svg/Left';
+import RightIcon from '@tuya-miniapp/icons/dist/svg/Right';
 
 SmartComponent({
   props: {

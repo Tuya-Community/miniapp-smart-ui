@@ -40,10 +40,10 @@ Introduce the component in `app.json` or `index.json`, detailed introduction can
 
 ### Card Style
 
-By using the `inset` attribute of `CellGroup`, cells can be turned into rounded card style (supported from version 1.7.2).
+With the `inset` `v1.7.2` attribute of `CellGroup`, you can convert the cell to a rounded corner card style. The `inset-border-radius` `v2.6.2` attribute allows you to set the value of the rounded corners.
 
 ```html
-<smart-cell-group inset>
+<smart-cell-group inset inset-border-radius="{{ 12 }}">
   <smart-cell title="Cell" value="Content" is-link />
   <smart-cell title="Cell" value="Content" label="Description" border="{{ false }}" is-link />
 </smart-cell-group>
@@ -167,6 +167,7 @@ If the above usage does not meet your needs, you can use slots to customize the 
 | border    | Whether to show the border  | _boolean_ | `true`  |
 | inset     | Show as rounded card style  | _boolean_ | `false` |
 | title     | Group title                 | _string_  | `-`     |
+| inset-border-radius `v2.6.2` | Corner radius value when in rounded card style  | _string \| number_  | `-`  |
 
 ### CellGroup External Classes
 

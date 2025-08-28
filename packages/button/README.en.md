@@ -168,6 +168,8 @@ Customize button color with the `color` attribute.
 | ------------ | ------------------- |
 | custom-class | Root node style     |
 | loading-class| Loading icon style  |
+| hover-class | Style when the button is pressed |
+
 ### Style Variables
 
 The component provides the following CSS variables that can be used for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider&appType=miniapp).

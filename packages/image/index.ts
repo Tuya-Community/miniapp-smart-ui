@@ -1,6 +1,6 @@
 import { SmartComponent } from '../common/component';
 import { button } from '../mixins/button';
-import { Loading } from '@tuya-miniapp/icons';
+import Loading from '@tuya-miniapp/icons/dist/svg/Loading';
 
 SmartComponent({
   mixins: [button],

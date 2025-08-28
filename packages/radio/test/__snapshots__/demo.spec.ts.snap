@@ -760,6 +760,7 @@ exports[`should render demo and match snapshot 1`] = `
           <smart-cell-group>
             <wx-view
               class="custom-class smart-cell-group "
+              style=""
             >
               <smart-cell
                 data-name="1"

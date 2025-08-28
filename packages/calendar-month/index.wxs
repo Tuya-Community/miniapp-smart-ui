@@ -21,7 +21,7 @@ function getDayStyle(type, index, date, rowHeight, color, firstDayOfWeek) {
     style.push(['margin-left', (100 * offset) / 7 + '%']);
   }
 
-  if (rowHeight !== ROW_HEIGHT) {
+  if (rowHeight && rowHeight !== ROW_HEIGHT) {
     style.push(['height', rowHeight + 'px']);
   }
 
@@ -49,7 +49,7 @@ function getDayStyle(type, index, date, rowHeight, color, firstDayOfWeek) {
 function formatMonthTitle(date, formatter = 'YYYY-MM') {
   date = getDate(date);
   var year = date.getFullYear();
-  var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1 + "";
+  var month = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1 + '';
   return formatter.replace('YYYY', year + '').replace('MM', month);
 }
 
@@ -57,10 +57,7 @@ function getMonthStyle(visible, date, rowHeight) {
   if (!visible) {
     date = getDate(date);
 
-    var totalDay = utils.getMonthEndDay(
-      date.getFullYear(),
-      date.getMonth() + 1
-    );
+    var totalDay = utils.getMonthEndDay(date.getFullYear(), date.getMonth() + 1);
     var offset = getDate(date).getDay();
     var padding = Math.ceil((totalDay + offset) / 7) * rowHeight;
 

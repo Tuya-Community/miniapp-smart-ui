@@ -1,6 +1,6 @@
 import { useParent } from '../common/relation';
 import { SmartComponent } from '../common/component';
-import { Check as checkMarkIcon } from '@tuya-miniapp/icons';
+import checkMarkIcon from '@tuya-miniapp/icons/dist/svg/Check';
 import { Option } from './shared';
 import ty from '../common/ty';
 
