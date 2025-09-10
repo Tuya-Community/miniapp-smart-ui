@@ -43,6 +43,10 @@ SmartComponent({
       type: Number,
       value: 2000,
     },
+    autoClose: {
+      type: Boolean,
+      value: false,
+    },
     confirmButtonText: {
       type: String,
       value: 'Confirm',
@@ -132,7 +136,9 @@ SmartComponent({
     },
 
     close(action) {
-      this.setData({ show: false });
+      if (this.data.autoClose) {
+        this.setData({ show: false });
+      }
       this.setData({ actionType: action });
       wx.nextTick(() => {
         this.$emit('close', action);

@@ -29,6 +29,7 @@ interface DialogOptions {
   ariaLabel?: string;
   customStyle?: string;
   transition?: string;
+  autoClose?: boolean;
   beforeClose?: null | ((action: Action, value?: string) => Promise<void | boolean> | void);
   businessId?: number;
   sessionFrom?: string;
@@ -72,6 +73,7 @@ const defaultOptions: DialogOptions = {
   beforeClose: null,
   transition: 'scale',
   customStyle: '',
+  autoClose: true,
   messageAlign: '',
   overlayStyle: '',
   confirmButtonText: '确认',
