@@ -263,6 +263,7 @@ Page({
 | context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | _object_ | 当前页面 |
 | transition | 动画名称，可选值为`fade` `none` | _string_ | `scale` |
 | nativeDisabled `v2.3.8` | 开启弹框期间是否禁用本地手势 | _boolean_ | `false` |
+| autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `true` |
 
 
 ### Props
@@ -300,6 +301,7 @@ Page({
 | use-title-slot | 是否使用自定义标题的插槽 | _boolean_ | `false` |
 | before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(action, value?: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | 动画名称，可选值为`fade` | _string_ | `scale` |
+| autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `false` |
 
 
 ### Events
