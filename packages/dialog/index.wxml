@@ -25,7 +25,7 @@
     wx:if="{{ title || useTitleSlot }}"
     class="{{ utils.bem('dialog__header', { isolated: !(message || useSlot) }) }}"
   >
-    <smart-icon wx:if="{{ icon }}" class="smart-dialog__header-icon" custom-class="header-icon-class" name="{{ warningIcon }}" color="#F04C4C" />
+    <smart-icon wx:if="{{ icon }}" class="smart-dialog__header-icon" custom-class="header-icon-class" name="{{ icon === true ? warningIcon : icon }}" size="{{iconSize}}" color="{{iconColor}}" />
     <slot wx:if="{{ useTitleSlot }}" name="title" />
     <block wx:elif="{{ title }}">{{ title }}</block>
   </view>
