@@ -4,26 +4,42 @@
 <view
   class="{{ utils.bem('picker-column', { disabled }) }} custom-class"
   style="{{ computed.rootStyle({ itemHeight, visibleItemCount }) }}"
-  bind:touchstart="onTouchStart"
-  catch:touchmove="onTouchMove"
-  bind:touchend="onTouchEnd"
-  bind:touchcancel="onTouchEnd"
+  options="{{options}}" 
+  activeindex="{{activeIndex}}"
+  loop="{{loop}}"
+  valuekey="{{valueKey}}"
+  itemheight="{{itemHeight}}"
+  visibleitemcount="{{visibleItemCount}}"
+  change:options="{{computed.updateValue('options')}}" 
+  change:valuekey="{{computed.updateValue('valueKey')}}" 
+  change:itemheight="{{computed.updateValue('itemHeight')}}" 
+  change:visibleitemcount="{{computed.updateValue('visibleItemCount')}}" 
+  change:activeindex="{{computed.updateValue('activeIndex')}}" 
+  change:loop="{{computed.updateValue('loop')}}" 
+  bind:touchstart="{{computed.touchStart}}"
+  catch:touchmove="{{computed.touchMove}}"
+  bind:touchend="{{computed.touchEnd}}"
+  bind:touchcancel="{{computed.touchEnd}}"
 >
-  <view class="smart-picker-column__offset" style="height: {{ itemHeight * options.length }}px;{{ computed.wrapperStyle({ offset, itemHeight, visibleItemCount, animate, duration, renderStart, unit }) }}" id="options">
+  <view 
+    id="options"
+    class="smart-picker-column__offset" 
+    style="height: {{ itemHeight * options.length }}px;{{ computed.wrapperStyle({ offset, itemHeight, visibleItemCount, animate, duration, renderStart, unit, loop }) }}" 
+  >
     <view class="smart-picker-column__visual" style="{{ computed.wrapperInterStyle({ offset, itemHeight, visibleItemCount, renderStart }) }}">
       <view
-        wx:for="{{ optionsV }}"
+        wx:for="{{ viewOptions }}"
         wx:for-item="option"
-        wx:key="*this"
-        data-index="{{ renderStart + index }}"
+        wx:key="index"
+        data-index="{{ index }}"
         style="{{computed.wrapperItemStyle({ itemHeight, fontStyle, activeStyle: renderStart + index === currentIndex ? activeStyle : '', animationIndex, index: renderStart + index, visibleItemCount })}}"
-        class="{{ computed.wrapperItemClass({ index, renderStart, animationIndex, option })}}"
+        class="smart-picker-column__item_{{index}} {{ computed.wrapperItemClass({ index, renderStart, animationIndex, option })}}"
       >
-        {{ computed.optionText(option, valueKey) }}
+        <!-- {{ computed.optionText(option, valueKey) }} -->
       </view>
     </view>
   </view>
-  <view class="smart-picker-column__mask">
+  <!-- <view class="smart-picker-column__mask">
     <view 
       wx:for="{{ visibleItemCount }}" 
       wx:key="index"
@@ -32,7 +48,7 @@
       bind:tap="onClickItem" 
     >
     </view>
-  </view>
+  </view> -->
   <view wx:if="{{unit}}" class="smart-picker-column__unit" style="height: {{ itemHeight }}px">
     <view class="smart-picker-column__max-text">
       {{ maxText }}

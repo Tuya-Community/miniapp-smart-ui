@@ -3,6 +3,18 @@ var style = require('../wxs/style.wxs');
 var addUnit = require('../wxs/add-unit.wxs');
 var wxUtils = require('../wxs/utils.wxs');
 
+let startPo = { y: 0 }; // 记录当前拖动元素的开始的位置
+
+const setStyle = (ownerInstance, style, selector) => {
+  const dom = queryComponent(ownerInstance, selector);
+  dom.setStyle(style);
+};
+
+const queryComponent = function (ownerInstance, selector) {
+  const instance = ownerInstance?.selectComponent(selector);
+  return instance;
+};
+
 function isObj(x) {
   var type = typeof x;
   return x !== null && (type === 'object' || type === 'function');
@@ -27,13 +39,13 @@ function wrapperStyle(data) {
       'text-indent': data.unit ? '-8rpx' : '0',
       transition: 'transform ' + data.duration + 'ms ease-out',
       'line-height': addUnit(data.itemHeight),
-      transform: 'translate3d(0, ' + offset + ', 0)',
+      // transform: 'translate3d(0, ' + offset + ', 0)',
     });
   }
   return style({
     'text-indent': data.unit ? '-8rpx' : '0',
     'line-height': addUnit(data.itemHeight),
-    transform: 'translate3d(0, ' + offset + ', 0)',
+    // transform: 'translate3d(0, ' + offset + ', 0)',
   });
 }
 
@@ -69,11 +81,177 @@ function wrapperItemClass(data) {
   return staticClass + ' ' + wxUtils.bem('picker-column__item', { disabled: data.option && data.option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
 }
 
+var state = {}
+
+var preStateStr = ''
+
+function updateState(key, value) {
+  if (!key) return;
+  preStateStr = JSON.stringify(state)
+  state[key] = value
+}
+
+function getCurrState() {
+  return state
+}
+
+function getPreState() {
+  return preStateStr
+}
+
+const updateValue = (key) => (newOptions, oldOptions, ownerInstance) => {
+  updateState(key, newOptions)
+  updateOffset(ownerInstance)
+}
+
+function updateOffset(ownerInstance) {
+  const state = getCurrState();
+  if(getPreState() === JSON.stringify(state) || !state.itemHeight || !state.visibleItemCount) {
+    return
+  }
+  console.log(state, state.loop, '--updateOffset')
+  const sideCount = Math.floor(state.visibleItemCount / 2)
+  const currActiveIndex = state.activeIndex < 0 ? 0 : state.activeIndex >= state.options.length ? state.options.length - 1 : state.activeIndex;
+  const currList = getCurrList(state.options, currActiveIndex, state.loop, sideCount)
+  const textVarStyle = {}
+  currList.forEach((option, index) => {
+    textVarStyle['--picker-item-content_' + index] = "'" + optionText(option, state.valueKey) + "'"
+  })
+  if (state.loop) { 
+    const offsetCount = 9 - sideCount
+    const offset = -state.itemHeight * offsetCount;
+    updateState('offset', offset)
+    setStyle(ownerInstance, {
+      transform: 'translateY(' + addUnit(offset) + ')',
+      ...textVarStyle,
+    }, '.smart-picker-column__offset');
+  } else {
+    const offset = (state.offset || 0) + state.itemHeight * (sideCount - currActiveIndex);
+    updateState('offset', offset)
+    setStyle(ownerInstance, {
+      transform: 'translateY(' + addUnit(offset) + ')',
+      ...textVarStyle,
+    }, '.smart-picker-column__offset');
+  }
+}
+
+const getCurrList = (options, activeIndex, loop, sideCount) => {
+  if (loop) {
+    return [...options.slice(-9), ...options.slice(0, 10)]
+  } else {
+    const startIndex = activeIndex - sideCount < 0 ? 0 : activeIndex - sideCount;
+    const endIndex = startIndex + 20 > options.length ? options.length : startIndex + 20;
+    return options.slice(startIndex, endIndex)
+  }
+}
+
+const touchStart = function (e, ownerInstance) { 
+  const { pageY } = e.touches[0];
+  startPo.y = pageY;
+  updateState('offsetList', []);
+  updateState('offsetting', state.offset);
+}
+
+const touchMove = function (e, ownerInstance) { 
+  const { pageY } = e.touches[0];
+  let offsetY = pageY - startPo.y;
+  const state = getCurrState();
+  const offset = state.offset + offsetY;
+  console.log(offset, '--offset')
+  const newOffsetList = [...state.offsetList, offset];
+  updateState('offsetting', offset);
+  updateState('offsetList', newOffsetList);
+  setStyle(ownerInstance, {
+    transform: 'translateY(' + addUnit(offset) + ')',
+    transition: 'none',
+  }, '.smart-picker-column__offset');
+}
+
+const touchEnd = function (e, ownerInstance) { 
+  const state = getCurrState();
+  const preOffsetList = state.offsetList;
+  
+  // 计算最后几帧的平均速度，用于惯性滚动
+  let recentVelocity = 0;
+  let scrollDirection = 0; // 1: 向下, -1: 向上, 0: 无滚动
+  
+  if (preOffsetList.length >= 2) {
+    // 计算速度，优先使用最后几帧的数据
+    let recentOffset = 0;
+    let recentTime = 0;
+    
+    if (preOffsetList.length >= 3) {
+      // 有3个或以上数据点，使用最后3个点计算速度
+      recentOffset = preOffsetList[preOffsetList.length - 1] - preOffsetList[preOffsetList.length - 3];
+      recentTime = 2; // 2帧间隔
+    } else if (preOffsetList.length === 2) {
+      // 只有2个数据点，使用这2个点计算速度
+      recentOffset = preOffsetList[1] - preOffsetList[0];
+      recentTime = 1; // 1帧间隔
+    }
+    
+    // 计算速度 (px/ms)
+    recentVelocity = Math.abs(recentOffset) / (recentTime * 16);
+    
+    // 确定滚动方向
+    if (recentOffset > 0) {
+      scrollDirection = 1; // 向下滚动
+    } else if (recentOffset < 0) {
+      scrollDirection = -1; // 向上滚动
+    }
+  }
+  
+  // 惯性滚动参数配置
+  const minVelocity = 0.1; // 最小速度阈值，低于此值停止滚动
+  const maxInertiaDistance = state.itemHeight * 8; // 最大惯性滚动距离
+  
+  // 计算惯性滚动距离
+  let inertiaDistance = 0;
+  if (recentVelocity > minVelocity) {
+    // 使用物理公式计算惯性距离：distance = velocity^2 / (2 * friction)
+    // 这里简化处理，直接使用速度乘以一个系数
+    inertiaDistance = recentVelocity * 200; // 200ms的惯性时间
+    
+    // 限制最大滚动距离
+    if (inertiaDistance > maxInertiaDistance) {
+      inertiaDistance = maxInertiaDistance;
+    }
+    
+    // 根据滚动方向确定正负值
+    inertiaDistance = inertiaDistance * scrollDirection;
+  }
+
+  // 计算最终目标位置
+  const targetOffset = state.offsetting + inertiaDistance;
+  
+  const isNeedTransition = Math.abs(targetOffset - state.offsetting) > 1;
+  updateState('offset', targetOffset);
+  setStyle(ownerInstance, {
+    transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
+    transition: !isNeedTransition ? 'none' : 'transform ' + (state.animationTime/1000 || 0.5) + 's ease-out',
+  }, '.smart-picker-column__offset');
+  console.log(preOffsetList, '--preOffsetList')
+  console.log({
+    isNeedTransition,
+    recentVelocity: recentVelocity.toFixed(3),
+    targetOffset: targetOffset.toFixed(2),
+    offsetting: state.offsetting.toFixed(2),
+  }, '--touchEnd inertia calculation');
+
+  // 这里可以添加动画到最终位置的逻辑
+  // 例如：animateToPosition(ownerInstance, finalOffset);
+}
+
+
 module.exports = {
   optionText: optionText,
   rootStyle: rootStyle,
   wrapperStyle: wrapperStyle,
   wrapperInterStyle: wrapperInterStyle,
   wrapperItemStyle: wrapperItemStyle,
-  wrapperItemClass: wrapperItemClass
+  wrapperItemClass: wrapperItemClass,
+  updateValue: updateValue,
+  touchStart: touchStart,
+  touchMove: touchMove,
+  touchEnd: touchEnd,
 };

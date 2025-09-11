@@ -55,6 +55,10 @@ SmartComponent({
       type: Number,
       value: 300,
     },
+    loop: {
+      type: Boolean,
+      value: false,
+    },
   },
   data: {
     startY: 0,
@@ -71,9 +75,13 @@ SmartComponent({
     maxText: '',
     timer: null as any,
     preOffsetList: [] as number[],
+    viewOptions: [] as any[],
   },
 
   created() {
+    this.setData({
+      viewOptions: this.data.loop ? new Array(20).fill('') : this.data.options.slice(0, 20),
+    });
     const { defaultIndex, activeIndex, options } = this.data;
     this.updateUint(options);
     this.setIndex(
