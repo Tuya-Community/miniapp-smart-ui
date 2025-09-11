@@ -139,10 +139,12 @@ SmartComponent({
       });
     },
 
-    onClose() {
-      this.setData({
-        show: false,
-      });
+    onClose(event) {
+      if(event.detail === 'confirm') {
+        this.setData({
+          show: false,
+        });
+      }
     },
   },
 });
