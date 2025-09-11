@@ -15,9 +15,14 @@
   <smart-cell title="{{I18n.t('inputConfirmationPopup')}}" bind:click="onClickInput" />
 </demo-block>
 
+<demo-block card title="{{I18n.t('customIcon')}}" padding>
+  <smart-cell title="{{I18n.t('imageTipPopup')}}" bind:click="onClickCustomIcon" />
+</demo-block>
+
 <demo-block card title="{{I18n.t('componentInvocation')}}" padding>
   <smart-cell title="{{I18n.t('imageTipPopup')}}" bind:click="showCustomDialog" />
 </demo-block>
+
 
 <smart-dialog
   use-slot

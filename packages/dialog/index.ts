@@ -16,7 +16,12 @@ SmartComponent({
         !show && this.stopLoading();
       },
     },
-    icon: Boolean,
+    icon: null,
+    iconColor: {
+      type: String,
+      value: '#F04C4C',
+    },
+    iconSize: String,
     title: String,
     message: String,
     theme: {

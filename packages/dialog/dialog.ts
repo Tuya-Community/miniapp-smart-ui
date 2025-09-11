@@ -17,7 +17,9 @@ interface DialogOptions {
   lang?: string;
   show?: boolean;
   title?: string;
-  icon?: boolean;
+  icon?: boolean | string;
+  iconColor?: string;
+  iconSize?: string;
   nativeDisabled?: boolean;
   width?: string | number | null;
   zIndex?: number;
