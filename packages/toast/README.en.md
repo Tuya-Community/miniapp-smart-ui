@@ -154,7 +154,7 @@ The component provides the following CSS variables for custom styling. For usage
 | --toast-text-color | _#fff_ | Notification text color |
 | --toast-line-height | _20px_ | Notification line height |
 | --toast-border-radius | _10px_ | Notification border radius |
-| --toast-background-color | _fade(@black, 70%)_ | Notification background color |
+| --toast-background-color | _var(--smart-ui-toast-panel-background, rgba(0, 0, 0, 0.7))_ | Notification background color |
 | --toast-icon-size | _36px_ | Notification icon size |
 | --toast-text-min-width `@deprecated v2.6.0` | _96px_ | Minimum width of the notification text |
 | --toast-text-padding | _@padding-xs @padding-sm_ | Notification text padding |
