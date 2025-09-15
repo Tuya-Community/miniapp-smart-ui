@@ -1164,7 +1164,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-field__body__box"
           >
             <wx-view
-              class="smart-field__body smart-field__body--textarea"
+              class="smart-field__body smart-field__body--textarea smart-field__body--limit"
             >
               <wx-view
                 class="smart-field__control smart-field__control--custom"
@@ -1173,7 +1173,7 @@ exports[`should render demo and match snapshot 1`] = `
               <wx-textarea
                 adjustPosition="{{true}}"
                 autoFocus="{{false}}"
-                autoHeight="{{false}}"
+                autoHeight="{{true}}"
                 class="smart-field__control smart-field__control--textarea smart-field__control--textarea smart-field__control--limit input-class"
                 cursor="{{-1}}"
                 cursorSpacing="{{50}}"
@@ -1189,7 +1189,7 @@ exports[`should render demo and match snapshot 1`] = `
                 selectionEnd="{{-1}}"
                 selectionStart="{{-1}}"
                 showConfirmBar="{{true}}"
-                style=""
+                style="min-height:100px;max-height:200px;overflow:auto"
                 value=""
                 bind:blur="onBlur"
                 bind:confirm="onConfirm"
