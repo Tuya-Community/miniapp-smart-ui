@@ -42,6 +42,11 @@ Page({
       { id: 0, name: 'Action', checked: true },
       { id: 1, name: 'Action', checked: false },
       { id: 2, name: 'Action', checked: false },
+      { id: 3, name: 'Action', checked: false },
+      { id: 4, name: 'Action', checked: false },
+      { id: 5, name: 'Action', checked: false },
+      { id: 6, name: 'Action', checked: false },
+      { id: 7, name: 'Action', checked: false },
     ],
   },
 
@@ -55,6 +60,71 @@ Page({
 
   onSelect(event) {
     console.log(event.detail);
+  },
+});
+```
+
+### Customize selected icon color
+
+You can customize the color of the icon in the selected state through the `active-color` property.
+
+```html
+<smart-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  active-color="#1989FA"
+  cancel-text="Cancel"
+  bind:select="onSelect"
+  bind:close="onClose"
+  bind:cancel="onClose"
+/>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    actions: [
+      { id: 0, name: 'Action', checked: true },
+      { id: 1, name: 'Action', checked: false },
+      { id: 2, name: 'Action', checked: false },
+    ],
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+
+  onSelect(event) {
+    const { id } = event.detail;
+    const newActions = this.data.actions.map((item) => {
+      if (item.id === id) return { ...item, checked: true };
+      return { ...item, checked: false };
+    });
+    this.setData({
+      actions: newActions,
+    });
+  },
+});
+```
+
+### Unchecked List
+
+After setting `actions[idx].checked` property to `false`, an unchecked state list can be displayed.
+
+```html
+<smart-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  cancel-text="Cancel"
+/>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    actions: [{ name: 'Action' }, { name: 'Action' }, { name: 'Action', subname: 'Description' }],
   },
 });
 ```
@@ -80,27 +150,6 @@ Page({
       { loading: true },
       { name: 'Disabled Option', disabled: true },
     ],
-  },
-});
-```
-
-### Unchecked List
-
-After setting `actions[idx].checked` property to `false`, an unchecked state list can be displayed.
-
-```html
-<smart-action-sheet
-  show="{{ show }}"
-  actions="{{ actions }}"
-  cancel-text="Cancel"
-/>
-```
-
-```javascript
-Page({
-  data: {
-    show: false,
-    actions: [{ name: 'Action' }, { name: 'Action' }, { name: 'Action' }],
   },
 });
 ```
@@ -138,6 +187,149 @@ By setting the `title` property, you can display a title bar, and you can use sl
 <smart-action-sheet show="{{ show }}" title="Title">
   <view>Content</view>
 </smart-action-sheet>
+```
+
+### Embedded Slider
+
+You can embed Slider and other components inside ActionSheet. Note that you need to render the Slider after the `onAfterEnter` callback.
+
+```html
+<smart-action-sheet
+  show="{{ show }}"
+  title="Value Adjustment"
+  cancel-text="Cancel"
+  confirm-text="Confirm"
+  bind:close="onClose"
+  bind:cancel="onClose"
+  bind:confirm="onClose"
+  bind:after-enter="onAfterEnter"
+>
+  <view class="content-number">
+    <view class="demo-header">
+      <text class="demo-text">{{ currentNumber }}%</text>
+    </view>
+    <view class="demo-slider">
+      <smart-slider
+        wx:if="{{ isReady }}"
+        instanceId="action-sheet-slider"
+        trackStyle="height:45px;border-radius:8px;"
+        barStyle="height:45px;border-radius:8px;"
+        thumbStyle="width:15px;height:50px;background:#BBC5D4;border:2px solid #FFFFFF;box-shadow:0px 0px 2px 0px rgba(0, 0, 0, 0.5);border-radius:2px;"
+        value="{{ currentNumber }}"
+        bind:change="onChange"
+      />
+      <view wx:else style="height: 45px;" />
+    </view>
+  </view>
+</smart-action-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    isReady: false,
+    currentNumber: 0,
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+  
+  onAfterEnter() {
+    this.setData({ isReady: true })
+  },
+
+  onChange(event) {
+    this.setData({ currentNumber: event.detail.value });
+  },
+});
+```
+
+```css
+.content-number {
+  padding: 10px 39px;
+  background: var(--app-B1, #f6f7fb);
+  text-align: center;
+  color: var(--app-B4-N1, #000);
+}
+
+.demo-header {
+  padding: 10px 39px;
+}
+
+.demo-text {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 46px;
+}
+
+.demo-slider {
+  margin: 23px 0;
+  min-height: 45px;
+}
+```
+
+### Embedded Date Picker
+
+You can embed date picker and other components inside ActionSheet.
+
+```html
+<smart-action-sheet
+  show="{{ show }}"
+  title="Select Date"
+  cancel-text="Cancel"
+  confirm-text="Confirm"
+  bind:close="onClose"
+  bind:cancel="onClose"
+  bind:confirm="onPickerConfirm"
+>
+  <smart-datetime-picker
+    show-toolbar="{{ false }}"
+    type="date"
+    value="{{ currentDate }}"
+    min-date="{{ minDate }}"
+    formatter="{{ formatter }}"
+    bind:input="onInput"
+  />
+</smart-action-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    currentDate: new Date(2018, 0, 1),
+    minDate: new Date(2018, 0, 1).getTime(),
+    formatter(type, value) {
+      if (type === 'year') {
+        return `${value} Year`;
+      }
+      if (type === 'month') {
+        return `${value} Month`;
+      }
+      return value;
+    },
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+
+  onInput(event) {
+    const { detail } = event;
+    const date = new Date(detail);
+    this.setData({ currentDate: date });
+  },
+
+  onPickerConfirm() {
+    this.setData({
+      show: false,
+    });
+    // Handle the confirmed selected date
+    console.log('Selected date:', this.data.currentDate);
+  },
+});
 ```
 
 ### Custom Double Select `v2.6.0`
@@ -284,6 +476,7 @@ Page({
 | ----------- | ----------------------------- | --------- | ------- |
 | className   | Adds an extra class name to the corresponding column | _string_  | -       |
 | color       | Text color of the option      | _string_  | -       |
+| checked     | Whether it's in selected state, shows selected icon | _boolean_ | -       |
 | disabled    | Whether it's in disabled state | _boolean_ | -       |
 | loading     | Whether it's in loading state | _boolean_ | -       |
 | name        | Title                         | _string_  | -       |
