@@ -64,7 +64,7 @@ Page({
 });
 ```
 
-### Custom Selected Icon Color
+### Customize selected icon color
 
 You can customize the color of the icon in the selected state through the `active-color` property.
 
