@@ -106,12 +106,13 @@ const updateValue = (key) => (newOptions, oldOptions, ownerInstance) => {
 
 function updateOffset(ownerInstance) {
   const state = getCurrState();
-  if(getPreState() === JSON.stringify(state) || !state.itemHeight || !state.visibleItemCount) {
+  if(getPreState() === JSON.stringify(state) || !state.itemHeight || !state.visibleItemCount || !Array.isArray(state.options) || state.animationTime === undefined) {
     return
   }
-  console.log(state, state.loop, '--updateOffset')
   const sideCount = Math.floor(state.visibleItemCount / 2)
-  const currActiveIndex = state.activeIndex < 0 ? 0 : state.activeIndex >= state.options.length ? state.options.length - 1 : state.activeIndex;
+  const optionLength = state.options.length;
+  updateState('sideCount', sideCount);
+  const currActiveIndex = state.activeIndex < 0 ? 0 : state.activeIndex >= optionLength ? optionLength - 1 : state.activeIndex;
   const currList = getCurrList(state.options, currActiveIndex, state.loop, sideCount)
   const textVarStyle = {}
   currList.forEach((option, index) => {
@@ -120,19 +121,48 @@ function updateOffset(ownerInstance) {
   if (state.loop) { 
     const offsetCount = 9 - sideCount
     const offset = -state.itemHeight * offsetCount;
+    const activeOffsetIndexMultiplier = Math.round(currActiveIndex / optionLength);
+    updateState('offsetActiveIndex', activeOffsetIndexMultiplier * optionLength + currActiveIndex);
     updateState('offset', offset)
     setStyle(ownerInstance, {
       transform: 'translateY(' + addUnit(offset) + ')',
       ...textVarStyle,
     }, '.smart-picker-column__offset');
   } else {
+
     const offset = (state.offset || 0) + state.itemHeight * (sideCount - currActiveIndex);
     updateState('offset', offset)
+    updateState('offsetActiveIndex', currActiveIndex);
     setStyle(ownerInstance, {
       transform: 'translateY(' + addUnit(offset) + ')',
       ...textVarStyle,
     }, '.smart-picker-column__offset');
+
+    setTimeout(() => { 
+      updateItemStyle(ownerInstance, currActiveIndex);
+    }, 10)
   }
+  console.log(state.offsetActiveIndex, '--state.offsetActiveIndex')
+}
+
+const updateItemStyle = (ownerInstance, currActiveIndex) => {
+  const state = getCurrState();
+  state.options.slice(0, 20).map((item, index) => {
+    const maxSideShow = state.sideCount + 2;
+    const offsetIndex = currActiveIndex - index;
+    if(Math.abs(offsetIndex) > maxSideShow) return;
+    const finOffsetIndex = offsetIndex > 0 ? Math.min(offsetIndex, maxSideShow) : Math.max(offsetIndex, -maxSideShow);
+    const scale = 1 - Math.abs(finOffsetIndex * 0.15);
+    const rotateX = Math.abs(finOffsetIndex * 10);
+    const direction = offsetIndex > 0 ? 1 : -1;
+    const translateYIndex = Math.abs(finOffsetIndex);
+    const translateYOffset = translateYIndex * translateYIndex * direction * state.itemHeight * 0.1
+    const className = `.smart-picker-column__item_${index}`;
+    setStyle(ownerInstance, {
+      transform: `rotateX(${rotateX}deg) scale(${scale}) translateY(${translateYOffset}px) translateZ(0)`,
+      transition: 'none',
+    }, className);
+  })
 }
 
 const getCurrList = (options, activeIndex, loop, sideCount) => {
@@ -146,31 +176,44 @@ const getCurrList = (options, activeIndex, loop, sideCount) => {
 }
 
 const touchStart = function (e, ownerInstance) { 
+  const state = getCurrState();
+  if(state.timer) {
+    clearInterval(state.timer);
+    updateState('timer', null);
+    updateState('offset', state.offsetting);
+  }
   const { pageY } = e.touches[0];
   startPo.y = pageY;
   updateState('offsetList', []);
+  updateState('moving', true);
   updateState('offsetting', state.offset);
 }
 
 const touchMove = function (e, ownerInstance) { 
+  const state = getCurrState();
+  if(!state.moving) return;
   const { pageY } = e.touches[0];
   let offsetY = pageY - startPo.y;
-  const state = getCurrState();
   const offset = state.offset + offsetY;
-  console.log(offset, '--offset')
   const newOffsetList = [...state.offsetList, offset];
+  const currActiveIndex = -offset / state.itemHeight + state.sideCount;
+  updateState('offsetActiveIndex', currActiveIndex);
   updateState('offsetting', offset);
   updateState('offsetList', newOffsetList);
   setStyle(ownerInstance, {
     transform: 'translateY(' + addUnit(offset) + ')',
     transition: 'none',
   }, '.smart-picker-column__offset');
+  updateItemStyle(ownerInstance, currActiveIndex);
 }
 
 const touchEnd = function (e, ownerInstance) { 
   const state = getCurrState();
+  if(!state.moving) return;
   const preOffsetList = state.offsetList;
-  
+
+  const maxUpOptionsDistance = state.loop ? state.itemHeight * 500 : state.sideCount * state.itemHeight;
+  const maxDownOptionsDistance = state.loop ? -state.itemHeight * 500 : -Math.max((state.options.length - state.sideCount - 1) * state.itemHeight, 0);
   // 计算最后几帧的平均速度，用于惯性滚动
   let recentVelocity = 0;
   let scrollDirection = 0; // 1: 向下, -1: 向上, 0: 无滚动
@@ -216,30 +259,62 @@ const touchEnd = function (e, ownerInstance) {
     if (inertiaDistance > maxInertiaDistance) {
       inertiaDistance = maxInertiaDistance;
     }
-    
+        
     // 根据滚动方向确定正负值
     inertiaDistance = inertiaDistance * scrollDirection;
   }
 
   // 计算最终目标位置
-  const targetOffset = state.offsetting + inertiaDistance;
-  
+  let targetOffset = Math.floor((state.offsetting + inertiaDistance) / state.itemHeight) * state.itemHeight;
+  console.log(targetOffset, maxDownOptionsDistance, maxUpOptionsDistance, '---targetOffset')
+  if (targetOffset < 0 && targetOffset < maxDownOptionsDistance) { 
+    targetOffset = maxDownOptionsDistance;
+  } else if (targetOffset > 0 && targetOffset > maxUpOptionsDistance) { 
+    targetOffset = maxUpOptionsDistance;
+  }
+
   const isNeedTransition = Math.abs(targetOffset - state.offsetting) > 1;
-  updateState('offset', targetOffset);
+  const currTargetActiveIndex = -targetOffset / state.itemHeight + state.sideCount;
+  console.log(currTargetActiveIndex, '---end')
+  const time = isNeedTransition ? state.animationTime : 0;
+  console.log(time, '--time')
+  if (time > 150) {
+    const midTime = 16;
+    const count = Math.floor((time - 150) / midTime);
+    const midOffset = (targetOffset - state.offsetting)/ count;
+    let startCount = 0
+    console.log(currTargetActiveIndex, count, '--start animate')
+    const timer = setInterval(() => {
+      startCount++;
+      const currOffset = state.offsetting + midOffset;
+      const currIndex = -currOffset / state.itemHeight + state.sideCount;
+      console.log(currIndex, '--currIndex')
+      if (startCount >= count) {
+        // 动画结束，设置最终状态
+        updateState('offsetActiveIndex', currTargetActiveIndex);
+        clearInterval(timer);
+        updateItemStyle(ownerInstance, currTargetActiveIndex);
+        updateState('offsetting', targetOffset);
+        updateState('offset', targetOffset);
+        updateState('moving', false);
+        return 
+      };
+      updateState('offsetActiveIndex', currIndex);
+      updateState('offsetting', currOffset);
+      updateItemStyle(ownerInstance, currIndex);
+    }, midTime);
+    updateState('timer', timer);
+  } else {
+    updateState('offsetActiveIndex', currTargetActiveIndex);
+    updateState('offsetting', targetOffset);
+    updateState('offset', targetOffset);
+    updateState('moving', false);
+    updateItemStyle(ownerInstance, currTargetActiveIndex);
+  }
   setStyle(ownerInstance, {
     transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
-    transition: !isNeedTransition ? 'none' : 'transform ' + (state.animationTime/1000 || 0.5) + 's ease-out',
+    transition: 'transform ' + (time ? time + 100 : time) + 'ms',
   }, '.smart-picker-column__offset');
-  console.log(preOffsetList, '--preOffsetList')
-  console.log({
-    isNeedTransition,
-    recentVelocity: recentVelocity.toFixed(3),
-    targetOffset: targetOffset.toFixed(2),
-    offsetting: state.offsetting.toFixed(2),
-  }, '--touchEnd inertia calculation');
-
-  // 这里可以添加动画到最终位置的逻辑
-  // 例如：animateToPosition(ownerInstance, finalOffset);
 }
 
 
