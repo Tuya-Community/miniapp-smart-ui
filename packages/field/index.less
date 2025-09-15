@@ -57,6 +57,16 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+    &--textarea {
+      padding: var(--field-textarea-padding, @field-textarea-padding);
+      border-radius: var(--field-textarea-border-radius, @field-textarea-border-radius);
+      background-color: var(--field-textarea-background, @field-textarea-background);
+    }
+
+    &--limit {
+      padding-bottom: var(--field-textarea-limit-padding-bottom, @field-textarea-limit-padding-bottom);
+    }
   }
 
   &__control:empty + &__control {
@@ -91,9 +101,6 @@
         --field-textarea-min-height,
         @field-textarea-min-height
       );
-      background-color: var(--field-textarea-background, @field-textarea-background);
-      border-radius: var(--field-textarea-border-radius, @field-textarea-border-radius);
-      padding: var(--field-textarea-padding, @field-textarea-padding);
     }
 
     &--card {
@@ -103,10 +110,6 @@
       width: var(--field-card-width, @field-card-width);
       height: var(--field-card-height, @field-card-height);
       padding: var(--field-card-padding, @field-card-padding);
-    }
-
-    &--limit {
-      padding-bottom: var(--field-textarea-limit-padding-bottom, @field-textarea-limit-padding-bottom);
     }
 
     &--center {
