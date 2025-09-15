@@ -27,22 +27,32 @@ Clicking the index bar will automatically jump to the corresponding `IndexAnchor
 
 ```html
 <smart-index-bar>
-  <view>
-    <smart-index-anchor index="A" />
+  <view
+    wx:for="{{ indexList }}"
+    wx:for-item="item"
+    wx:key="item"
+  >
+    <smart-index-anchor index="{{ item }}" />
     <smart-cell title="Text" />
     <smart-cell title="Text" />
     <smart-cell title="Text" />
   </view>
-
-  <view>
-    <smart-index-anchor index="B" />
-    <smart-cell title="Text" />
-    <smart-cell title="Text" />
-    <smart-cell title="Text" />
-  </view>
-
-  ...
 </smart-index-bar>
+```
+
+```javascript
+const indexList = [];
+const charCodeOfA = 'A'.charCodeAt(0);
+
+for (let i = 0; i < 26; i++) {
+  indexList.push(String.fromCharCode(charCodeOfA + i));
+}
+
+Page({
+  data: {
+    indexList, // A-Z alphabet list
+  },
+});
 ```
 
 ### Custom Index List
@@ -50,29 +60,28 @@ Clicking the index bar will automatically jump to the corresponding `IndexAnchor
 You can customize the list of index characters displayed through the `index-list` property.
 
 ```html
-<smart-index-bar index-list="{{ indexList }}">
-  <view>
-    <smart-index-anchor index="1">Title 1</smart-index-anchor>
+<smart-index-bar index-list="{{ customIndexList }}">
+  <view
+    wx:for="{{ customIndexList }}"
+    wx:key="index"
+  >
+    <smart-index-anchor
+      use-slot
+      index="{{ item }}"
+    >
+      <text>Title {{ item }}</text>
+    </smart-index-anchor>
     <smart-cell title="Text" />
     <smart-cell title="Text" />
     <smart-cell title="Text" />
   </view>
-
-  <view>
-    <smart-index-anchor index="2">Title 2</smart-index-anchor>
-    <smart-cell title="Text" />
-    <smart-cell title="Text" />
-    <smart-cell title="Text" />
-  </view>
-
-  ...
 </smart-index-bar>
 ```
 
 ```javascript
 Page({
   data: {
-    indexList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10],
   },
 });
 ```

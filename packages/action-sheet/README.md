@@ -42,6 +42,11 @@ Page({
       { id: 0, name: 'Action', checked: true },
       { id: 1, name: 'Action', checked: false },
       { id: 2, name: 'Action', checked: false },
+      { id: 3, name: 'Action', checked: false },
+      { id: 4, name: 'Action', checked: false },
+      { id: 5, name: 'Action', checked: false },
+      { id: 6, name: 'Action', checked: false },
+      { id: 7, name: 'Action', checked: false },
     ],
   },
 
@@ -55,6 +60,71 @@ Page({
 
   onSelect(event) {
     console.log(event.detail);
+  },
+});
+```
+
+### 自定义选中 icon 颜色
+
+通过`active-color`属性可以自定义选中状态下图标的颜色。
+
+```html
+<smart-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  active-color="#1989FA"
+  cancel-text="取消"
+  bind:select="onSelect"
+  bind:close="onClose"
+  bind:cancel="onClose"
+/>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    actions: [
+      { id: 0, name: 'Action', checked: true },
+      { id: 1, name: 'Action', checked: false },
+      { id: 2, name: 'Action', checked: false },
+    ],
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+
+  onSelect(event) {
+    const { id } = event.detail;
+    const newActions = this.data.actions.map((item) => {
+      if (item.id === id) return { ...item, checked: true };
+      return { ...item, checked: false };
+    });
+    this.setData({
+      actions: newActions,
+    });
+  },
+});
+```
+
+### 无选中列表
+
+设置`actions[idx].checked`属性为`false`后，可以展示无选中状态的列表。
+
+```html
+<smart-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  cancel-text="取消"
+/>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    actions: [{ name: 'Action' }, { name: 'Action' }, { name: 'Action', subname: 'Description' }],
   },
 });
 ```
@@ -84,27 +154,6 @@ Page({
 });
 ```
 
-### 无选中列表
-
-设置`actions[idx].checked`属性为`false`后，可以展示无选中状态的列表。
-
-```html
-<smart-action-sheet
-  show="{{ show }}"
-  actions="{{ actions }}"
-  cancel-text="取消"
-/>
-```
-
-```javascript
-Page({
-  data: {
-    show: false,
-    actions: [{ name: 'Action' }, { name: 'Action' }, { name: 'Action' }],
-  },
-});
-```
-
 ### 展示取消/确认按钮
 
 设置`cancel-text`、`confirm-text`属性后，会在底部展示取消或确认按钮，点击后关闭当前菜单。
@@ -130,6 +179,15 @@ Page({
 />
 ```
 
+```javascript
+Page({
+  data: {
+    show: false,
+    actions: [{ name: 'Action' }, { name: 'Action' }, { name: 'Action', subname: 'Description' }],
+  },
+});
+```
+
 ### 自定义面板
 
 通过设置`title`属性展示标题栏，同时可以使用插槽自定义菜单内容。
@@ -138,6 +196,149 @@ Page({
 <smart-action-sheet show="{{ show }}" title="标题">
   <view>内容</view>
 </smart-action-sheet>
+```
+
+### 嵌入数字滑块
+
+ActionSheet 内可以嵌入 Slider 等其他组件，需要注意在 `onAfterEnter` 回调后再渲染 Slider。
+
+```html
+<smart-action-sheet
+  show="{{ show }}"
+  title="数值调节"
+  cancel-text="取消"
+  confirm-text="确认"
+  bind:close="onClose"
+  bind:cancel="onClose"
+  bind:confirm="onClose"
+  bind:after-enter="onAfterEnter"
+>
+  <view class="content-number">
+    <view class="demo-header">
+      <text class="demo-text">{{ currentNumber }}%</text>
+    </view>
+    <view class="demo-slider">
+      <smart-slider
+        wx:if="{{ isReady }}"
+        instanceId="action-sheet-slider"
+        trackStyle="height:45px;border-radius:8px;"
+        barStyle="height:45px;border-radius:8px;"
+        thumbStyle="width:15px;height:50px;background:#BBC5D4;border:2px solid #FFFFFF;box-shadow:0px 0px 2px 0px rgba(0, 0, 0, 0.5);border-radius:2px;"
+        value="{{ currentNumber }}"
+        bind:change="onChange"
+      />
+      <view wx:else style="height: 45px;" />
+    </view>
+  </view>
+</smart-action-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    isReady: false,
+    currentNumber: 0,
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+  
+  onAfterEnter() {
+    this.setData({ isReady: true })
+  },
+
+  onChange(event) {
+    this.setData({ currentNumber: event.detail.value });
+  },
+});
+```
+
+```css
+.content-number {
+  padding: 10px 39px;
+  background: var(--app-B1, #f6f7fb);
+  text-align: center;
+  color: var(--app-B4-N1, #000);
+}
+
+.demo-header {
+  padding: 10px 39px;
+}
+
+.demo-text {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 46px;
+}
+
+.demo-slider {
+  margin: 23px 0;
+  min-height: 45px;
+}
+```
+
+### 嵌入日期选择器
+
+ActionSheet 内可以嵌入日期选择器等其他组件。
+
+```html
+<smart-action-sheet
+  show="{{ show }}"
+  title="选择日期"
+  cancel-text="取消"
+  confirm-text="确认"
+  bind:close="onClose"
+  bind:cancel="onClose"
+  bind:confirm="onPickerConfirm"
+>
+  <smart-datetime-picker
+    show-toolbar="{{ false }}"
+    type="date"
+    value="{{ currentDate }}"
+    min-date="{{ minDate }}"
+    formatter="{{ formatter }}"
+    bind:input="onInput"
+  />
+</smart-action-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    currentDate: new Date(2018, 0, 1),
+    minDate: new Date(2018, 0, 1).getTime(),
+    formatter(type, value) {
+      if (type === 'year') {
+        return `${value}年`;
+      }
+      if (type === 'month') {
+        return `${value}月`;
+      }
+      return value;
+    },
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+
+  onInput(event) {
+    const { detail } = event;
+    const date = new Date(detail);
+    this.setData({ currentDate: date });
+  },
+
+  onPickerConfirm() {
+    this.setData({
+      show: false,
+    });
+    // 处理确认选择的日期
+    console.log('选择的日期:', this.data.currentDate);
+  },
+});
 ```
 
 ### 自定义双列选择器 `v2.6.0`
@@ -283,6 +484,7 @@ Page({
 | --------- | ----------------------------- | --------- | ------ |
 | className | 为对应列添加额外的 class 类名 | _string_  | -      |
 | color     | 选项文字颜色                  | _string_  | -      |
+| checked   | 是否为选中状态，显示选中图标  | _boolean_ | -      |
 | disabled  | 是否为禁用状态                | _boolean_ | -      |
 | loading   | 是否为加载状态                | _boolean_ | -      |
 | name      | 标题                          | _string_  | -      |
