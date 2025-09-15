@@ -126,6 +126,7 @@
     type="textarea"
     placeholder="{{I18n.t('pleaseEnterAMessage')}}"
     show-word-limit
+    autosize="{{autoHeight}}"
     maxlength="{{ 200 }}"
   />
 </demo-block>

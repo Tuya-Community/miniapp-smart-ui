@@ -302,7 +302,7 @@ Page({
 | password                      | 是否是密码类型                                                                                                 | _boolean_           | `false` |
 | placeholder                   | 输入框为空时占位符                                                                                             | _string_            | -       |
 | placeholder-style             | 指定 placeholder 的样式                                                                                        | _string_            | -       |
-| readonly                      | 是否只读                                                                                                       | _boolean_           | `false` |
+| readonly        | 是否只读                              | _boolean_           | `false` |
 | required                      | 是否显示表单必填星号                                                                                           | _boolean_           | `false` |
 | right-icon                    | 右侧图标svg值或图片链接，可选值见 [Icon 组件](/material/smartui?comId=icon&appType=miniapp)                                                           | _string_            | -       |
 | selection-end                 | 光标结束位置，自动聚集时有效，需与 selection-start 搭配使用                                                    | _number_            | `-1`    |

@@ -7,7 +7,11 @@ SmartComponent({
     num: 2000,
     value2: '12345',
     message: '',
-    sunIcon: Sun
+    sunIcon: Sun,
+    autoHeight: {
+      maxHeight: 200,
+      minHeight: 100,
+    }
   },
 
   methods: {
