@@ -32,7 +32,6 @@ category: 展示
     title="单元格"
     value="内容"
     label="描述信息"
-    border="{{ false }}"
     is-link
   />
 </smart-cell-group>
@@ -45,7 +44,7 @@ category: 展示
 ```html
 <smart-cell-group inset inset-border-radius="{{ 12 }}">
   <smart-cell title="单元格" value="内容" is-link />
-  <smart-cell title="单元格" value="内容" label="描述信息" border="{{ false }}" is-link />
+  <smart-cell title="单元格" value="内容" label="描述信息" is-link />
 </smart-cell-group>
 ```
 
@@ -54,27 +53,27 @@ category: 展示
 通过`icon`属性在标题左侧展示图标。
 
 ```html
-<smart-cell
-  title="单元格"
-  value="内容"
-  icon="{{ sunMaxFill }}"
-  border="{{ false }}"
-  is-link
-/>
-<smart-cell
-  title="自定义 Icon"
-  value="内容"
-  border="{{ false }}"
-  is-link
->
-  <smart-icon
-    class="cell-icon"
-    slot="icon"
-    name="{{ sunMaxFill }}"
-    size="24px"
-    color="#3678E3"
+<smart-cell-group>
+  <smart-cell
+    title="单元格"
+    value="内容"
+    icon="{{ sunMaxFill }}"
+    is-link
   />
-</smart-cell>
+  <smart-cell
+    title="自定义 Icon"
+    value="内容"
+    is-link
+  >
+    <smart-icon
+      class="cell-icon"
+      slot="icon"
+      name="{{ sunMaxFill }}"
+      size="24px"
+      color="#3678E3"
+    />
+  </smart-cell>
+</smart-cell-group>
 ```
 
 ### 展示箭头
@@ -82,9 +81,11 @@ category: 展示
 设置`is-link`属性后会在单元格右侧显示箭头，并且可以通过`arrow-direction`属性控制箭头方向。
 
 ```html
-<smart-cell title="单元格" is-link />
-<smart-cell title="单元格" is-link value="内容" />
-<smart-cell title="单元格" is-link value="内容" arrow-direction="down" />
+<smart-cell-group>
+  <smart-cell title="单元格" is-link />
+  <smart-cell title="单元格" is-link value="内容" />
+  <smart-cell title="单元格" is-link value="内容" arrow-direction="down" />
+</smart-cell-group>
 ```
 
 ### 页面跳转
@@ -92,9 +93,11 @@ category: 展示
 可以通过`url`属性进行页面跳转，通过`link-type`属性控制跳转类型。
 
 ```html
-<smart-cell title="URL跳转(navigateTo)" is-link url="/pages/dashboard/index" />
+<smart-cell-group>
+  <smart-cell title="URL跳转(navigateTo)" is-link url="/pages/dashboard/index" />
   <smart-cell title="URL重定向(redirectTo)" is-link url="/pages/dashboard/index" link-type="redirectTo" />
-  <smart-cell title="打开H5容器(openInnerH5)" is-link bind:click="onNavTo" border="{{ false }}" />
+  <smart-cell title="打开H5容器(openInnerH5)" is-link bind:click="onNavTo"/>
+</smart-cell-group>
 ```
 
 ### 分组标题
@@ -103,10 +106,10 @@ category: 展示
 
 ```html
 <smart-cell-group title="分组 1">
-  <smart-cell title="单元格" is-link border="{{ false }}" />
+  <smart-cell title="单元格" is-link />
 </smart-cell-group>
 <smart-cell-group title="分组 2">
-  <smart-cell title="单元格" is-link border="{{ false }}" />
+  <smart-cell title="单元格" is-link />
 </smart-cell-group>
 ```
 
@@ -115,31 +118,32 @@ category: 展示
 也可配合其他组件进行展示
 
 ```html
-<smart-cell title="Title">
-  <smart-switch checked="{{ true }}" size="24px" />
-</smart-cell>
-<smart-cell title="Title">
-  <smart-icon name="{{ checkMark }}" color="#3678E3" size="28px" />
-</smart-cell>
-<smart-cell title="Title">
-  <smart-checkbox value="{{ false }}" shape="square" />
-</smart-cell>
-<smart-cell title="Title">
-  <smart-checkbox value="{{ false }}" />
-</smart-cell>
-<smart-cell
-  title="Title"
-  label="Bedroom"
-  is-link
-  border="{{ false }}"
->
-  <smart-icon
-    class="cell-icon"
-    slot="icon"
-    name="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
-    size="50px"
-  />
-</smart-cell>
+<smart-cell-group>
+  <smart-cell title="Title">
+    <smart-switch checked="{{ true }}" size="24px" />
+  </smart-cell>
+  <smart-cell title="Title">
+    <smart-icon name="{{ checkMark }}" color="#3678E3" size="28px" />
+  </smart-cell>
+  <smart-cell title="Title">
+    <smart-checkbox value="{{ false }}" shape="square" />
+  </smart-cell>
+  <smart-cell title="Title">
+    <smart-checkbox value="{{ false }}" />
+  </smart-cell>
+  <smart-cell
+    title="Title"
+    label="Bedroom"
+    is-link
+  >
+    <smart-icon
+      class="cell-icon"
+      slot="icon"
+      name="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
+      size="50px"
+    />
+  </smart-cell>
+</smart-cell-group>
 ```
 
 ### 使用插槽
@@ -147,15 +151,17 @@ category: 展示
 如以上用法不能满足你的需求，可以使用插槽来自定义内容。
 
 ```html
-<smart-cell value="内容" icon="{{ sunMaxFill }}" is-link>
-  <view slot="title">
-    <view class="title">单元格</view>
-    <smart-tag type="danger">标签</smart-tag>
-  </view>
-</smart-cell>
-<smart-cell title="单元格" border="{{ false }}">
-  <smart-icon slot="right-icon" name="search" />
-</smart-cell>
+<smart-cell-group>
+  <smart-cell value="内容" icon="{{ sunMaxFill }}" is-link>
+    <view slot="title">
+      <view class="title">单元格</view>
+      <smart-tag type="danger">标签</smart-tag>
+    </view>
+  </smart-cell>
+  <smart-cell title="单元格">
+    <smart-icon slot="right-icon" name="search" />
+  </smart-cell>
+</smart-cell-group>
 ```
 
 ## API
