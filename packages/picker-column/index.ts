@@ -299,28 +299,15 @@ SmartComponent({
     },
 
     updateVisibleOptions(targetIndex: number) {
-      const { options, visibleItemCount, currentIndex } = this.data;
-      if (visibleItemCount < 20 && options.length > visibleItemCount) {
-        let renderNum = 0;
-        let renderStart = 0;
-        // 选项多于 20 个时，进行列表优化
-        renderNum = Math.max(visibleItemCount * 2, 20);
-        renderStart = Math.max(0, targetIndex - renderNum / 2);
-        const renderEnd = Math.min(options.length, renderStart + renderNum);
-        if (currentIndex >= 0) {
-          if (currentIndex < targetIndex) {
-            renderStart = Math.max(0, currentIndex - renderNum / 2);
-          }
-        }
-        renderNum = renderEnd - renderStart;
+      const { options, visibleItemCount } = this.data;
+
+      if (options.length > 20) {
+        const renderStart = Math.max(0, targetIndex - 9);
+        const renderEnd = Math.min(options.length, renderStart + 19);
         const optionsV = options.slice(renderStart, renderEnd);
-        return this.set({ optionsV, renderStart, renderNum });
+        return this.set({ optionsV, renderStart });
       }
-      return this.set({
-        optionsV: options,
-        renderStart: 0,
-        renderNum: options.length,
-      });
+      return this.set({ optionsV: options, renderStart: 0 });
     },
     adjustIndex(index: number) {
       const { data } = this;
@@ -425,6 +412,16 @@ SmartComponent({
     getValue() {
       const { data } = this;
       return data.options[data.currentIndex];
+    },
+    renderStartChange(index: number) {
+      this.setData({
+        renderStart: index,
+      });
+    },
+    activeIndexChange(index: number) {
+      this.setData({
+        animationIndex: index,
+      });
     },
   },
 });
