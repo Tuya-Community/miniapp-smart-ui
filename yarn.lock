@@ -2230,10 +2230,10 @@
   resolved "https://registry.npmjs.org/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
-"@tuya-miniapp/icons@^2.1.7":
-  version "2.1.7"
-  resolved "https://registry.npmjs.org/@tuya-miniapp/icons/-/icons-2.1.7.tgz#0e3df6f4dd441222a3548c8c6cf957d004b3789b"
-  integrity sha512-XlphVShwI6v1W7ZFAucrsut+iILIM3S2AxqywjDNUMx1/l1yzgCCZoHFWeMOqWox2HmPQfjbT6Nn20BO6/I0CA==
+"@tuya-miniapp/icons@2.2.0-beta-1":
+  version "2.2.0-beta-1"
+  resolved "https://registry.npmjs.org/@tuya-miniapp/icons/-/icons-2.2.0-beta-1.tgz#1d13e0d27f69a389e9c435b95e90fd711cd8aeff"
+  integrity sha512-OXlTs4iMUruTJysRln/eQRI5yH7E1Zayay14EjHCfr6bu94/DoKDKgvHQySMqeSqbBGeXjwWq2vMGt+PR9eFhA==
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.14", "@types/babel__core@^7.1.7":
   version "7.20.5"
