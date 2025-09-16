@@ -22,6 +22,7 @@
 
     display: inline-block;
     vertical-align: middle;
+    font-weight: var(--nav-bar-text-font-weight, @nav-bar-text-font-weight);
     padding-left: var(--nav-bar-text-padding, @nav-bar-text-padding);
     color: var(--nav-bar-text-color, @nav-bar-text-color);
     font-size: var(--nav-bar-text-font-size, @nav-bar-text-font-size);
@@ -103,7 +104,8 @@
       .smart-nav-bar__text {
         color: var(--nav-bar-title-text-color, @nav-bar-title-text-color);
         font-weight: var(--nav-bar-title-font-weight, @nav-bar-title-font-weight);
-        font-size: var(--nav-bar-title-font-size, @nav-bar-title-font-size);
+        font-size: var(--nav-bar-home-font-size, @nav-bar-home-font-size);
+        padding-left: var(--nav-bar-left-title-padding, @nav-bar-left-title-padding);
       }
     }
 

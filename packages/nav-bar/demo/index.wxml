@@ -17,6 +17,7 @@
   <smart-nav-bar
     title="{{I18n.t('setting')}}"
     left-arrow
+    bind:click-right="onClickRight"
     bind:click-left="onClickLeft"
     bind:click-title="onClickTitle"
   />
@@ -26,6 +27,7 @@
     right-text="{{I18n.t('delete')}}"
     right-text-color="#F04C4C"
     left-arrow
+    bind:click-right-text="onClickRightText"
     bind:click-left="onClickLeft"
     bind:click-title="onClickTitle"
   />
@@ -35,7 +37,8 @@
     right-text="{{I18n.t('delete')}}"
     right-text-color="#F04C4C"
     left-text="{{I18n.t('cancel')}}"
-    bind:click-left="onClickLeft"
+    bind:click-right-text="onClickRightText"
+    bind:click-left-text="onClickLeftText"
     bind:click-title="onClickTitle"
   />
 </demo-block>
@@ -47,7 +50,7 @@
     right-icon="{{ iconMore }}"
     right-icon-size="32px"
     right-icon-color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
-    bind:click-right="onClickRight"
+    bind:click-right-icon="onClickRightIcon"
   />
   <smart-nav-bar
     title="{{I18n.t('setting')}}"
@@ -56,11 +59,12 @@
     right-icon="{{ iconMore }}"
     right-icon-size="32px"
     right-icon-color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
-    bind:click-right="onClickRight"
+    bind:click-right-icon="onClickRightIcon"
   >
     <smart-icon
       slot="right"
       size="32px"
+      style="margin-right: 16px;"
       name="{{ iconHouse }}"
       color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
     />
@@ -86,17 +90,6 @@
 
 <demo-block title="{{I18n.t('leftTitle')}}">
   <smart-nav-bar
-    left-arrow
-    left-text="Home"
-    left-text-type="title"
-    bind:click-left="onClickLeft"
-    bind:click-left-text="onClickLeftText"
-    bind:click-right="onClickRight"
-  />
-
-  <smart-nav-bar
-    custom-class="demo-nav-bar"
-    left-arrow
     left-text="Home"
     left-text-type="title"
     left-icon="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"

@@ -22,10 +22,17 @@ Introduce the component in `app.json` or `index.json`, for details see [Quick St
 
 ### Home Page
 
-The text style on the homepage is left-aligned and bold by default. Clicking the left text triggers an event.
+The text style on the home page is left-aligned by default and bold. Clicking the left text triggers an event; the `background` property from `v2.7.0` can set the background color of the nav-bar.
 
 ```html
 <smart-nav-bar
+  left-text="Home"
+  left-text-type="home"
+  bind:click-left-text="onClickLeftText"
+/>
+<smart-nav-bar
+  background="#E4EDFF"
+  custom-class="demo-nav-bar"
   left-text="HomeHomeHomeHomeHome"
   left-text-type="home"
   bind:click-left-text="onClickLeftText"
@@ -35,19 +42,47 @@ The text style on the homepage is left-aligned and bold by default. Clicking the
 ```js
 Page({
   onClickLeftText() {
-    ty.showToast({ title: I18n.t('clickToReturn'), icon: 'none' });
+    ty.showToast({ title: 'Click the title', icon: 'none' });
   },
 });
 ```
+
+```less
+.demo-nav-bar {
+  margin-top: 16px;
+}
+```
+
 ### Secondary Page
 
-The text style on the secondary page is centered, with a return arrow displayed on the left. Clicking the central text or the left arrow triggers an event.
+Text style on the secondary page is centered, with a back arrow displayed on the left. Clicking the center text or the left arrow triggers an event.
 
 ```html
 <smart-nav-bar
-  title="Home"
+  title="Settings"
   left-arrow
+  bind:click-right="onClickRight"
   bind:click-left="onClickLeft"
+  bind:click-title="onClickTitle"
+/>
+<smart-nav-bar
+  title="Settings"
+  custom-class="demo-nav-bar"
+  right-text="Delete"
+  right-text-color="#F04C4C"
+  left-arrow
+  bind:click-right-text="onClickRightText"
+  bind:click-left="onClickLeft"
+  bind:click-title="onClickTitle"
+/>
+<smart-nav-bar
+  title="Settings"
+  custom-class="demo-nav-bar"
+  right-text="Delete"
+  right-text-color="#F04C4C"
+  left-text="Cancel"
+  bind:click-right-text="onClickRightText"
+  bind:click-left-text="onClickLeftText"
   bind:click-title="onClickTitle"
 />
 ```
@@ -55,18 +90,74 @@ The text style on the secondary page is centered, with a return arrow displayed 
 ```js
 Page({
   onClickLeft() {
-    ty.showToast({ title: I18n.t('clickToReturn'), icon: 'none' });
+    wx.showToast({ title: 'click to return', icon: 'none' });
   },
-
+  onClickLeftText() {
+    wx.showToast({ title: 'click left text', icon: 'none' });
+  },
+  onClickRightText() {
+    wx.showToast({ title: 'click right text', icon: 'none' });
+  },
   onClickTitle() {
-    ty.showToast({ title: I18n.t('clickToTitle'), icon: 'none' });
+    wx.showToast({ title: 'click title', icon: 'none' });
+  },
+  onClickRight() {
+    wx.showToast({ title: 'click right', icon: 'none' });
   },
 });
 ```
 
+## Right Icon
+
+```html
+<smart-nav-bar
+  title="Settings"
+  left-arrow
+  right-icon="{{ iconMore }}"
+  right-icon-size="32px"
+  right-icon-color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
+  bind:click-right-icon="onClickRightIcon"
+/>
+<smart-nav-bar
+  title="Settings"
+  left-arrow
+  custom-class="demo-nav-bar"
+  right-icon="{{ iconMore }}"
+  right-icon-size="32px"
+  right-icon-color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
+  bind:click-right-icon="onClickRightIcon"
+>
+  <smart-icon
+    slot="right"
+    size="32px"
+    name="{{ iconHouse }}"
+    color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
+  />
+</smart-nav-bar>
+```
+
+
+```js
+import iconHouse from '@tuya-miniapp/icons/dist/svg/House';
+import iconMore from '@tuya-miniapp/icons/dist/svg/More';
+
+Page({
+  data: {
+    iconHouse,
+    iconMore,
+  },
+
+  onClickRightIcon() {
+    wx.showToast({ title: 'click right icon', icon: 'none' });
+  },
+});
+```
+
+
+
 ## Custom Icons
 
-You can customize the icon styles for a richer display.
+Customizable icon styles for a richer display.
 
 ```html
 <smart-nav-bar
@@ -92,29 +183,36 @@ Page({
   },
 
   onClickLeft() {
-    ty.showToast({ title: I18n.t('clickToReturn'), icon: 'none' });
+    ty.showToast({ title: 'click to return', icon: 'none' });
   },
 
   onClickLeftIcon() {
-    ty.showToast({ title: I18n.t('clickToLeftIcon'), icon: 'none' });
+    ty.showToast({ title: 'click left icon', icon: 'none' });
   },
 
   onClickLeftText() {
-    ty.showToast({ title: I18n.t('clickToLeftText'), icon: 'none' });
+    ty.showToast({ title: 'click left text', icon: 'none' });
   },
 
   onClickTitle() {
-    ty.showToast({ title: I18n.t('clickToTitle'), icon: 'none' });
+    ty.showToast({ title: 'click title', icon: 'none' });
   },
 
   onClickRight() {
-    ty.showToast({ title: I18n.t('clickToRight'), icon: 'none' });
+    ty.showToast({ title: 'click right', icon: 'none' });
   },
 });
 ```
+
+```less
+.nav-bar-icon-home {
+  margin-left: 16px;
+}
+```
+
 ### Left Title
 
-For some secondary pages, the title is on the left side, sometimes accompanied by an icon.
+Some secondary page titles are on the left, or may be accompanied by an icon.
 
 ```html
 <smart-nav-bar
@@ -142,141 +240,19 @@ For some secondary pages, the title is on the left side, sometimes accompanied b
 ```js
 Page({
   onClickLeft() {
-    ty.showToast({ title: I18n.t('clickToReturn'), icon: 'none' });
+    ty.showToast({ title: 'click to return', icon: 'none' });
   },
 
   onClickLeftIcon() {
-    ty.showToast({ title: I18n.t('clickToLeftIcon'), icon: 'none' });
+    ty.showToast({ title: 'click left icon', icon: 'none' });
   },
 
   onClickLeftText() {
-    ty.showToast({ title: I18n.t('clickToLeftText'), icon: 'none' });
+    ty.showToast({ title: 'click left text', icon: 'none' });
   },
 
   onClickRight() {
-    ty.showToast({ title: I18n.t('clickToRight'), icon: 'none' });
-  },
-});
-```
-
-## Left and Right Text
-
-When both left and right texts are present, you can also use `round` and `safe-area-inset-top` to create a navigation bar suitable for different scenarios.
-
-```html
-<smart-nav-bar
-  title="Home"
-  left-text="Back"
-  right-text="Save"
-  left-arrow
-  bind:click-left="onClickLeft"
-  bind:click-left-text="onClickLeftText"
-  bind:click-right="onClickRight"
-  bind:click-title="onClickTitle"
-/>
-```
-
-```html
-<smart-nav-bar
-  title="Timer Setting"
-  round="{{true}}"
-  left-text="Cancel"
-  right-text="Save"
-  right-text-class="demo-nav-bar__right"
-  safe-area-inset-top="{{false}}"
-  bind:click-left="onClickLeft"
-  bind:click-left-text="onClickLeftText"
-  bind:click-right="onClickRight"
-  bind:click-title="onClickTitle"
-/>
-```
-
-```html
-<smart-nav-bar
-  title="Setting"
-  round="{{true}}"
-  safe-area-inset-top="{{false}}"
-  left-arrow="{{true}}"
-  right-text="Reset"
-  right-text-class="demo-nav-bar__right"
-  bind:click-left="onClickLeft"
-  bind:click-left-text="onClickLeftText"
-  bind:click-right="onClickRight"
-  bind:click-title="onClickTitle"
-/>
-```
-
-```js
-Page({
-  onClickLeft() {
-    ty.showToast({ title: I18n.t('clickToReturn'), icon: 'none' });
-  },
-
-  onClickLeftText() {
-    ty.showToast({ title: I18n.t('clickToLeftText'), icon: 'none' });
-  },
-
-  onClickTitle() {
-    ty.showToast({ title: I18n.t('clickToTitle'), icon: 'none' });
-  },
-
-  onClickRight() {
-    ty.showToast({ title: I18n.t('clickToRight'), icon: 'none' });
-  },
-});
-```
-
-```css
-.demo-nav-bar__right {
-  --nav-bar-text-color: #007AFF;
-}
-```
-
-### Using Slots
-
-Customize content through slots.
-
-```html
-<smart-nav-bar
-  title="Home"
-  left-text="{{I18n.t('return')}}"
-  left-arrow
-  bind:click-left="onClickLeft"
-  bind:click-left-text="onClickLeftText"
-  bind:click-title="onClickTitle"
-  bind:click-right="onClickRight"
-  bind:click-title="onClickTitle"
->
-  <smart-icon
-    size="32px"
-    name="{{ iconPlus }}"
-    slot="right"
-  />
-</smart-nav-bar>
-```
-
-```js
-import iconPlus from '@tuya-miniapp/icons/dist/svg/Plus';
-
-Page({
-  data: {
-    iconPlus,
-  },
-
-  onClickLeft() {
-    ty.showToast({ title: I18n.t('clickToReturn'), icon: 'none' });
-  },
-
-  onClickLeftText() {
-    ty.showToast({ title: I18n.t('clickToLeftText'), icon: 'none' });
-  },
-
-  onClickTitle() {
-    ty.showToast({ title: I18n.t('clickToTitle'), icon: 'none' });
-  },
-
-  onClickRight() {
-    ty.showToast({ title: I18n.t('clickToRight'), icon: 'none' });
+    ty.showToast({ title: 'click right', icon: 'none' });
   },
 });
 ```
@@ -285,55 +261,55 @@ Page({
 
 ### Props
 
-| Parameter           | Description                             | Type      | Default  |
-| ------------------- | --------------------------------------- | --------- | -------  |
-| border              | Whether to show bottom border           | _boolean_ | `true`   |
-| custom-style        | Custom styles for root node             | _string_  | -        |
-| fixed               | Whether to fix at the top               | _boolean_ | `false`  |
-| left-arrow          | Whether to show the left arrow          | _boolean_ | `false`  |
-| left-text           | Text on the left side                   | _string_  | `''`     |
-| left-text-type `v2.0.0`           | The style type of the text on the left side, with a range of `home`、`title`、`back`                           | _string_  | `back`    |
-| left-icon `v2.0.0`         | Left Icon                           | _string_  | `''`    |
-| left-icon-size `v2.0.0`        | Left-side icon size, default is 32                           | _string \| number_  | `32`    |
-| round `v2.1.0`               | Whether to show rounded corners                     | _boolean_ | `false` |
-| placeholder         | Whether to leave space when fixed at top| _boolean_ | `false`  |
-| right-text          | Text on the right side                  | _string_  | `''`     |
-| safe-area-inset-top | Leave top safe distance (status bar height) | _boolean_ | `true`   |
-| title               | Title                                   | _string_  | `''`     |
-| z-index             | Element z-index                         | _number_  | `1`      |
-| right-text-color `v2.7.0` | Color of the text on the right    | _string_  | -   |
-| right-icon `v2.7.0` | Right Icon    | _string_  | -   |
-| right-icon-color `v2.7.0` | Icon color on the right    | _string_  | -   |
-| right-icon-size `v2.7.0` | Icon size on the right    | _number_  | `32px`   |
-| left-icon-color `v2.7.0` | Left Icon Color    | _string_  | -   |
-| background `v2.7.0` | Overall background color    | _string_  | -   |
+| Parameter           | Description                          | Type      | Default  |
+| ------------------- | ------------------------------------ | --------- | -------- |
+| border              | Whether to display the bottom border | _boolean_ | `true`   |
+| custom-style        | Custom style for the root node      | _string_  | -        |
+| fixed               | Whether to fix at the top           | _boolean_ | `false`  |
+| left-arrow          | Whether to show the left arrow       | _boolean_ | `false`  |
+| left-text           | Left text                           | _string_  | `''`     |
+| left-text-type `v2.0.0`     | Left text style type, options: `home`, `title`, `back` | _string_  | `back`   |
+| left-icon `v2.0.0`        | Left icon                             | _string_  | `''`     |
+| left-icon-size `v2.0.0`   | Left icon size, default is 32      | _string \| number_ | `32`    |
+| round `v2.1.0`            | Whether to show rounded corners     | _boolean_ | `false`  |
+| placeholder         | Whether to enable placeholder when fixed at the top | _boolean_ | `false`  |
+| right-text          | Right text                          | _string_  | `''`     |
+| safe-area-inset-top | Whether to leave top safe distance (status bar height) | _boolean_ | `true`   |
+| title               | Title                               | _string_  | `''`     |
+| z-index             | Element z-index                     | _number_  | `1`      |
+| right-text-color `v2.7.0` | Right text color                   | _string_  | -        |
+| right-icon `v2.7.0` | Right icon                          | _string_  | -        |
+| right-icon-color `v2.7.0` | Right icon color                   | _string_  | -        |
+| right-icon-size `v2.7.0` | Right icon size                    | _number_  | `32px`   |
+| left-icon-color `v2.7.0` | Left icon color                    | _string_  | -        |
+| background `v2.7.0` | Overall background color            | _string_  | -        |
 
 ### Slot
 
-| Name  | Description                |
+| Name  | Description               |
 | ----- | -------------------------- |
-| left  | Custom left area content   |
-| right | Custom right area content  |
+| left  | Custom content for the left area |
+| right | Custom content for the right area |
 | title | Custom title               |
 
 ### Events
 
-| Event Name         | Description               | Parameter |
-| ------------------ | ------------------------- | --------- |
-| bind:click-left    | Triggered on clicking left back icon | -         |
-| bind:click-right   | Triggered on clicking right button | -         |
-| bind:click-title `v2.0.0` | Triggered on the central title is clicked | -    |
-| bind:click-left-icon `v2.0.0` | Triggered on clicking left icon | -    |
-| bind:click-left-text `v2.0.0` | Triggered on clicking left text | -    |
-| bind:click-right-icon `v2.7.0` | Triggered when clicking the icon on the right | -    |
-| bind:click-right-text `v2.7.0` | Triggered when the text on the right is clicked | -    |
+| Event Name        | Description              | Parameters |
+| ------------------| -------------------------| ---------- |
+| bind:click-left   | Triggered when clicking the left return icon | -          |
+| bind:click-right  | Triggered when clicking the right button     | -          |
+| bind:click-title `v2.0.0` | Triggered when clicking the center title | -          |
+| bind:click-left-icon `v2.0.0` | Triggered when clicking the left icon | -          |
+| bind:click-left-text `v2.0.0` | Triggered when clicking the left text | -          |
+| bind:click-right-icon `v2.7.0` | Triggered when clicking the right icon | -          |
+| bind:click-right-text `v2.7.0` | Triggered when clicking the right text | -          |
 
 ### External Style Classes
 
-| Class Name     | Description          |
-| -------------- | -------------------- |
+| Class Name     | Description      |
+| ---------------| -----------------|
 | custom-class   | Root node style class |
-| title-class    | Title style class    |
+| title-class    | Title style class |
 | left-icon-class `v2.0.0` | Left icon style class |
 | right-text-class `v2.1.0` | Right text style class |
 | right-icon-class `v2.7.0` | Right icon style class |
@@ -341,30 +317,31 @@ Page({
 
 ### Style Variables
 
-The component offers the following CSS variables for custom styles. For usage, please refer to the [ConfigProvider component](/material/smartui?comId=config-provider&appType=miniapp).
+The component provides the following CSS variables for custom styles. For usage instructions, refer to the [ConfigProvider component](/material/smartui?comId=config-provider&appType=miniapp).
 
-| Name                          | Default Value                            | Description |
-| ----------------------------- | ---------------------------------------- | ----------- |
-| --nav-bar-height | _var(--app-device-navbar-height, 46px)_ | Navigation bar height |
-| --nav-bar-round-min-height `v2.1.0`    | _56px_                               | Minimum height when the navigation bar has rounded corners |
-| --nav-bar-round-border-radius `v2.1.0` | 16px 16px 0px 0px                  | Border radius for the navigation bar rounded corners       |
-| --nav-bar-background-color | _var(--app-B2, #ffffff)_ | Navigation bar background color |
-| --nav-bar-arrow-color | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Navigation bar arrow color |
-| --nav-bar-icon-size `@deprecated v2.7.0` | _32px_ | Navigation bar icon size |
-| --nav-bar-icon-color | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Navigation bar icon color |
-| --nav-bar-icon-margin `@deprecated v2.7.0` | _0_ | Navigation bar icon margin |
-| --nav-bar-text-font-size `v2.1.0`      | _16px_                               | Navigation bar text font size |
-| --nav-bar-text-color | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Navigation bar text color |
-| --nav-bar-title-font-size | _var(--font-size-lg)_ | Navigation bar title font size |
-| --nav-bar-title-font-weight | _600_ | Navigation bar title font weight |
-| --nav-bar-title-text-color | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Navigation bar title text color |
-| --nav-bar-home-font-size | _22px_ | Navigation bar home font size |
-| --nav-bar-home-font-weight | _600_ | Navigation bar home font weight |
-| --nav-bar-home-text-color | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Navigation bar home text color |
-| --nav-bar-right-text-color `v2.5.1`     | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | Text color on the right side of the navigation bar |
-| --nav-bar-title-max-width `v2.6.0` `@deprecated v2.7.0`    | _56%_   | Width of the Navigation Bar Title |
-| --nav-bar-side-width `v2.7.0`    | _98px_   | Side Width |
-| --nav-bar-text-padding `v2.7.0`    | _20px_   | Text padding on both sides |
-| --nav-bar-icon-padding `v2.7.0`    | _16px_   | Icon Inner Padding on Both Sides |
-| --nav-bar-title-margin `v2.7.0`    | _16px_   | Margin Outside the Title |
-| --nav-bar-home-max-width `v2.7.0`    | _calc(100% - 98px - 16px)_   | Maximum width of the left title on the applet homepage |
+| Name                          | Default Value                           | Description |
+| ----------------------------- | --------------------------------------- | ----------- |
+| --nav-bar-height              | _var(--app-device-navbar-height, 46px)_ | Nav bar height |
+| --nav-bar-round-min-height `v2.1.0` | _56px_                              | Minimum height when rounded corners are present |
+| --nav-bar-round-border-radius `v2.1.0` | _16px 16px 0px 0px_              | Whether to show nav bar rounded corners |
+| --nav-bar-background-color     | _var(--app-B2, #ffffff)_             | Nav bar background color |
+| --nav-bar-arrow-color          | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar arrow color |
+| --nav-bar-icon-size `@deprecated v2.7.0` | _32px_                          | Nav bar icon size |
+| --nav-bar-icon-color           | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar icon color |
+| --nav-bar-icon-margin `@deprecated v2.7.0` | _0_                             | Nav bar icon margin |
+| --nav-bar-text-font-size `v2.1.0` | _16px_                            | Nav bar text size |
+| --nav-bar-text-color           | _var(--app-B2-N2, rgba(0, 0, 0, 1))_ | Nav bar text color |
+| --nav-bar-title-font-size      | _var(--font-size-lg)_                | Nav bar title text size |
+| --nav-bar-title-font-weight    | _600_                                 | Nav bar title font weight |
+| --nav-bar-title-text-color     | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar title text color |
+| --nav-bar-home-font-size       | _22px_                                | Nav bar home text size |
+| --nav-bar-home-font-weight     | _600_                                 | Nav bar home font weight |
+| --nav-bar-home-text-color      | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar home text color |
+| --nav-bar-right-text-color `v2.5.1` | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar right text color |
+| --nav-bar-title-max-width `v2.6.0` `@deprecated v2.7.0` | _56%_ | Width of the nav bar title |
+| --nav-bar-side-width `v2.7.0` | _98px_                                 | Side width |
+| --nav-bar-text-padding `v2.7.0` | _20px_                               | Text padding on both sides |
+| --nav-bar-icon-padding `v2.7.0` | _16px_                               | Icon padding on both sides |
+| --nav-bar-title-margin `v2.7.0` | _16px_                               | Title margin |
+| --nav-bar-home-max-width `v2.7.0` | _calc(100% - 98px - 16px)_        | Maximum width of the left title when on the home page |
+| --nav-bar-left-title-padding `v2.7.0`    | _8px_   | Left padding in left title mode |
