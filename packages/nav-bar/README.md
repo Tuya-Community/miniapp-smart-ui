@@ -331,7 +331,7 @@ Page({
 | --nav-bar-icon-margin `@deprecated v2.7.0`    | _0_      | 导航栏图标外边距 |
 | --nav-bar-text-font-size `v2.1.0`         | _16px_   | 导航栏文字大小 |
 | --nav-bar-text-color          | _var(--app-B2-N2, rgba(0, 0, 0, 1))_   | 导航栏文字颜色 |
-| --nav-bar-title-font-size     | _var(--font-size-lg)_                  | 导航栏标题文字大小 |
+| --nav-bar-title-font-size     | _17px_                  | 导航栏标题文字大小 |
 | --nav-bar-title-font-weight   | _600_                                  | 导航栏标题字重 |
 | --nav-bar-title-text-color    | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | 导航栏标题文字颜色 |
 | --nav-bar-home-font-size      | _22px_                                 | 导航栏首页文字大小 |

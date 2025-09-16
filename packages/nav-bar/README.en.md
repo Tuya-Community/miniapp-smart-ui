@@ -322,26 +322,26 @@ The component provides the following CSS variables for custom styles. For usage 
 | Name                          | Default Value                           | Description |
 | ----------------------------- | --------------------------------------- | ----------- |
 | --nav-bar-height              | _var(--app-device-navbar-height, 46px)_ | Nav bar height |
-| --nav-bar-round-min-height `v2.1.0` | _56px_                              | Minimum height when rounded corners are present |
-| --nav-bar-round-border-radius `v2.1.0` | _16px 16px 0px 0px_              | Whether to show nav bar rounded corners |
-| --nav-bar-background-color     | _var(--app-B2, #ffffff)_             | Nav bar background color |
+| --nav-bar-round-min-height `v2.1.0` | _56px_    | Minimum height when rounded corners are present |
+| --nav-bar-round-border-radius `v2.1.0` | _16px 16px 0px 0px_    | Whether to show nav bar rounded corners |
+| --nav-bar-background-color     | _var(--app-B2, #ffffff)_     | Nav bar background color |
 | --nav-bar-arrow-color          | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar arrow color |
-| --nav-bar-icon-size `@deprecated v2.7.0` | _32px_                          | Nav bar icon size |
+| --nav-bar-icon-size `@deprecated v2.7.0` | _32px_       | Nav bar icon size |
 | --nav-bar-icon-color           | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar icon color |
-| --nav-bar-icon-margin `@deprecated v2.7.0` | _0_                             | Nav bar icon margin |
-| --nav-bar-text-font-size `v2.1.0` | _16px_                            | Nav bar text size |
+| --nav-bar-icon-margin `@deprecated v2.7.0` | _0_         | Nav bar icon margin |
+| --nav-bar-text-font-size `v2.1.0` | _16px_     | Nav bar text size |
 | --nav-bar-text-color           | _var(--app-B2-N2, rgba(0, 0, 0, 1))_ | Nav bar text color |
-| --nav-bar-title-font-size      | _var(--font-size-lg)_                | Nav bar title text size |
-| --nav-bar-title-font-weight    | _600_                                 | Nav bar title font weight |
+| --nav-bar-title-font-size      | _17px_    | Nav bar title text size |
+| --nav-bar-title-font-weight    | _600_     | Nav bar title font weight |
 | --nav-bar-title-text-color     | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar title text color |
-| --nav-bar-home-font-size       | _22px_                                | Nav bar home text size |
-| --nav-bar-home-font-weight     | _600_                                 | Nav bar home font weight |
+| --nav-bar-home-font-size       | _22px_    | Nav bar home text size |
+| --nav-bar-home-font-weight     | _600_    | Nav bar home font weight |
 | --nav-bar-home-text-color      | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar home text color |
 | --nav-bar-right-text-color `v2.5.1` | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar right text color |
 | --nav-bar-title-max-width `v2.6.0` `@deprecated v2.7.0` | _56%_ | Width of the nav bar title |
-| --nav-bar-side-width `v2.7.0` | _98px_                                 | Side width |
-| --nav-bar-text-padding `v2.7.0` | _20px_                               | Text padding on both sides |
-| --nav-bar-icon-padding `v2.7.0` | _16px_                               | Icon padding on both sides |
-| --nav-bar-title-margin `v2.7.0` | _16px_                               | Title margin |
-| --nav-bar-home-max-width `v2.7.0` | _calc(100% - 98px - 16px)_        | Maximum width of the left title when on the home page |
-| --nav-bar-left-title-padding `v2.7.0`    | _8px_   | Left padding in left title mode |
+| --nav-bar-side-width `v2.7.0` | _98px_     | Side width |
+| --nav-bar-text-padding `v2.7.0` | _20px_    | Text padding on both sides |
+| --nav-bar-icon-padding `v2.7.0` | _16px_    | Icon padding on both sides |
+| --nav-bar-title-margin `v2.7.0` | _16px_    | Title margin |
+| --nav-bar-home-max-width `v2.7.0` | _calc(100% - 98px - 16px)_  | Maximum width of the left title when on the home page |
+| --nav-bar-left-title-padding `v2.7.0`  | _8px_   | Left padding in left title mode |
