@@ -15,7 +15,7 @@
     </view>
   </view>
   <view class="{{ utils.bem('field__body__box', { disabled }) }}">
-    <view class="{{ utils.bem('field__body', [type]) }}">
+    <view class="{{ utils.bem('field__body', [type, showWordLimit && maxlength ? 'limit' : '']) }}">
       <view class="{{ utils.bem('field__control', [inputAlign, 'custom']) }}" bindtap="onClickInput">
         <slot name="input" />
       </view>

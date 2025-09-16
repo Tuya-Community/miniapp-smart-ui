@@ -282,6 +282,35 @@ exports[`should render demo and match snapshot 1`] = `
         class="demo-block__card"
       >
         <smart-cell
+          bind:click="onClickCustomIcon"
+        >
+          <wx-view
+            class="custom-class smart-cell"
+            hoverClass="smart-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="smart-cell__title title-class"
+              style=""
+            />
+            <wx-view
+              class="smart-cell__value value-class"
+            />
+          </wx-view>
+        </smart-cell>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__card"
+      >
+        <smart-cell
           bind:click="showCustomDialog"
         >
           <wx-view

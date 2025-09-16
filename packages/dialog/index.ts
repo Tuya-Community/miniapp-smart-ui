@@ -16,7 +16,12 @@ SmartComponent({
         !show && this.stopLoading();
       },
     },
-    icon: Boolean,
+    icon: null,
+    iconColor: {
+      type: String,
+      value: '#F04C4C',
+    },
+    iconSize: String,
     title: String,
     message: String,
     theme: {
@@ -42,6 +47,10 @@ SmartComponent({
     zIndex: {
       type: Number,
       value: 2000,
+    },
+    autoClose: {
+      type: Boolean,
+      value: false,
     },
     confirmButtonText: {
       type: String,
@@ -132,7 +141,9 @@ SmartComponent({
     },
 
     close(action) {
-      this.setData({ show: false });
+      if (this.data.autoClose) {
+        this.setData({ show: false });
+      }
       this.setData({ actionType: action });
       wx.nextTick(() => {
         this.$emit('close', action);

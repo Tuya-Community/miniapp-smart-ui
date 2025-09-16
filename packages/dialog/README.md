@@ -163,6 +163,32 @@ DialogInstance.confirm({
 });
 ```
 
+### 自定义图标 `v2.6.3`
+
+icon 属性支持传入svg string，底层用的是 SmartUI 的 Icon 组件，icon 属性就是传入name属性到icon组件上
+
+```html
+<smart-dialog id="smart-dialog" />
+```
+
+```javascript
+import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import AlarmIcon from '@tuya-miniapp/icons/dist/svg/Alarm';
+
+DialogInstance.confirm({
+  context: this,
+  title: 'Title',
+  icon: AlarmIcon,
+  iconColor: '#1989fa',
+  iconSize: '36px',
+  message: 'Body',
+  cancelButtonText: 'Sub Action',
+  confirmButtonText: '确认',
+}).then(() => {
+  // on close
+});
+```
+
 ### 组件调用
 
 如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式。
@@ -191,8 +217,12 @@ Page({
     console.log(event.detail);
   },
 
-  onClose() {
-    this.setData({ show: false });
+  onClose(event) {
+    if(event.detail === 'confirm') {
+      this.setData({
+        show: false,
+      });
+    }
   },
 });
 ```
@@ -235,11 +265,17 @@ Page({
 
 ### Options
 
+icon: AlarmIcon,
+  iconColor: '#1989fa',
+  iconSize: '36px',
+
 通过函数调用 Dialog 时，支持传入以下选项：
 
 | 参数         | 说明  | 类型   | 默认值    |
 | ------------ | --------- | -------------- | --------- |
-| icon         | 是否显示警告图标    | _boolean_          | `false`   |
+| icon         | 是否显示警告图标，或者icon的name值    | _boolean \| string`v2.6.3`_          | `false`   |
+| iconColor `v2.6.3`   | icon的颜色 | _string_           | `#F04C4C`      |
+| iconSize `v2.6.3`   | icon的大小 | _string_           | -      |
 | maxlength    | 最大输入长度，设置为 -1 的时候不限制最大长度 | _number_           | `20`      |
 | message      | 文本内容，支持通过`\n`换行                   | _string_           | -         |
 | messageAlign | 内容对齐方式，可选值为`left` `right`         | _string_           | `center`  |
@@ -263,6 +299,7 @@ Page({
 | context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | _object_ | 当前页面 |
 | transition | 动画名称，可选值为`fade` `none` | _string_ | `scale` |
 | nativeDisabled `v2.3.8` | 开启弹框期间是否禁用本地手势 | _boolean_ | `false` |
+| autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `true` |
 
 
 ### Props
@@ -272,7 +309,9 @@ Page({
 | 参数              | 说明  | 类型   | 默认值    |
 | ----------------- | --------- | ------------ | --------- |
 | confirm-button-id | 确认按钮的标识符，作为底层原生 button 组件的 id 值 | _string_           | -         |
-| icon              | 是否显示警告图标                                   | _boolean_          | `false`   |
+| icon         | 是否显示警告图标，或者icon的name值    | _boolean \| string`v2.6.3`_          | `false`   |
+| icon-color `v2.6.3`   | icon的颜色 | _string_           | `#F04C4C`      |
+| icon-size `v2.6.3`   | icon的大小 | _string_           | -      |
 | maxlength         | 最大输入长度，设置为 -1 的时候不限制最大长度       | _number_           | `20`      |
 | message           | 文本内容，支持通过`\n`换行                         | _string_           | -         |
 | message-align     | 内容对齐方式，可选值为`left` `right`               | _string_           | `center`  |
@@ -300,6 +339,7 @@ Page({
 | use-title-slot | 是否使用自定义标题的插槽 | _boolean_ | `false` |
 | before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(action, value?: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | 动画名称，可选值为`fade` | _string_ | `scale` |
+| autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `false` |
 
 
 ### Events

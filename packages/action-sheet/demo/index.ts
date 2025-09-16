@@ -14,7 +14,7 @@ SmartComponent({
     showPicker: false,
     showDoubleSelector: false,
     isReady: false,
-    action1: [{ name: 'Action' }, { name: 'Action' }, { name: 'Action' }],
+    action1: [{ name: 'Action' }, { name: 'Action' }, { name: 'Action', subname: 'Description' }],
     action2: [
       { name: I18n.t('coloringOptions'), color: '#ee0a24' },
       { loading: true },

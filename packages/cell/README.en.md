@@ -32,7 +32,6 @@ Introduce the component in `app.json` or `index.json`, detailed introduction can
     title="Cell"
     value="Content"
     label="Description"
-    border="{{ false }}"
     is-link
   />
 </smart-cell-group>
@@ -45,7 +44,7 @@ With the `inset` `v1.7.2` attribute of `CellGroup`, you can convert the cell to 
 ```html
 <smart-cell-group inset inset-border-radius="{{ 12 }}">
   <smart-cell title="Cell" value="Content" is-link />
-  <smart-cell title="Cell" value="Content" label="Description" border="{{ false }}" is-link />
+  <smart-cell title="Cell" value="Content" label="Description" is-link />
 </smart-cell-group>
 ```
 
@@ -54,27 +53,27 @@ With the `inset` `v1.7.2` attribute of `CellGroup`, you can convert the cell to 
 Use the `icon` attribute to display an icon on the left side of the title.
 
 ```html
-<smart-cell
-  title="Cell"
-  value="Content"
-  icon="{{ sunMaxFill }}"
-  border="{{ false }}"
-  is-link
-/>
-<smart-cell
-  title="Custom Icon"
-  value="Content"
-  border="{{ false }}"
-  is-link
->
-  <smart-icon
-    class="cell-icon"
-    slot="icon"
-    name="{{ sunMaxFill }}"
-    size="24px"
-    color="#3678E3"
+<smart-cell-group>
+  <smart-cell
+    title="Cell"
+    value="Content"
+    icon="{{ sunMaxFill }}"
+    is-link
   />
-</smart-cell>
+  <smart-cell
+    title="Custom Icon"
+    value="Content"
+    is-link
+  >
+    <smart-icon
+      class="cell-icon"
+      slot="icon"
+      name="{{ sunMaxFill }}"
+      size="24px"
+      color="#3678E3"
+    />
+  </smart-cell>
+</smart-cell-group>
 ```
 
 ### Display Arrow
@@ -82,9 +81,11 @@ Use the `icon` attribute to display an icon on the left side of the title.
 When the `is-link` attribute is set, an arrow will be shown on the right side of the cell, and the arrow direction can be controlled by the `arrow-direction` attribute.
 
 ```html
-<smart-cell title="Cell" is-link />
-<smart-cell title="Cell" is-link value="Content" />
-<smart-cell title="Cell" is-link value="Content" arrow-direction="down" />
+<smart-cell-group>
+  <smart-cell title="Cell" is-link />
+  <smart-cell title="Cell" is-link value="Content" />
+  <smart-cell title="Cell" is-link value="Content" arrow-direction="down" />
+</smart-cell-group>
 ```
 
 ### Page Navigation
@@ -92,9 +93,11 @@ When the `is-link` attribute is set, an arrow will be shown on the right side of
 You can navigate to a page using the `url` attribute and control the type of navigation using the `link-type` attribute.
 
 ```html
-<smart-cell title="URL Navigate (navigateTo)" is-link url="/pages/dashboard/index" />
-<smart-cell title="URL Redirect (redirectTo)" is-link url="/pages/dashboard/index" link-type="redirectTo" />
-<smart-cell title="Open H5 Container (openInnerH5)" is-link bind:click="onNavTo" border="{{ false }}" />
+<smart-cell-group>
+  <smart-cell title="URL Navigate (navigateTo)" is-link url="/pages/dashboard/index" />
+  <smart-cell title="URL Redirect (redirectTo)" is-link url="/pages/dashboard/index" link-type="redirectTo" />
+  <smart-cell title="Open H5 Container (openInnerH5)" is-link bind:click="onNavTo"  />
+</smart-cell-group>
 ```
 
 ### Group Titles
@@ -103,10 +106,10 @@ You can specify group titles using the `title` attribute of `CellGroup`.
 
 ```html
 <smart-cell-group title="Group 1">
-  <smart-cell title="Cell" is-link border="{{ false }}" />
+  <smart-cell title="Cell" is-link />
 </smart-cell-group>
 <smart-cell-group title="Group 2">
-  <smart-cell title="Cell" is-link border="{{ false }}" />
+  <smart-cell title="Cell" is-link />
 </smart-cell-group>
 ```
 
@@ -115,31 +118,32 @@ You can specify group titles using the `title` attribute of `CellGroup`.
 You can also use other components for display
 
 ```html
-<smart-cell title="Title">
-  <smart-switch checked="{{ true }}" size="24px" />
-</smart-cell>
-<smart-cell title="Title">
-  <smart-icon name="{{ checkMark }}" color="#3678E3" size="28px" />
-</smart-cell>
-<smart-cell title="Title">
-  <smart-checkbox value="{{ false }}" shape="square" />
-</smart-cell>
-<smart-cell title="Title">
-  <smart-checkbox value="{{ false }}" />
-</smart-cell>
-<smart-cell
-  title="Title"
-  label="Bedroom"
-  is-link
-  border="{{ false }}"
->
-  <smart-icon
-    class="cell-icon"
-    slot="icon"
-    name="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
-    size="50px"
-  />
-</smart-cell>
+<smart-cell-group>
+  <smart-cell title="Title">
+    <smart-switch checked="{{ true }}" size="24px" />
+  </smart-cell>
+  <smart-cell title="Title">
+    <smart-icon name="{{ checkMark }}" color="#3678E3" size="28px" />
+  </smart-cell>
+  <smart-cell title="Title">
+    <smart-checkbox value="{{ false }}" shape="square" />
+  </smart-cell>
+  <smart-cell title="Title">
+    <smart-checkbox value="{{ false }}" />
+  </smart-cell>
+  <smart-cell
+    title="Title"
+    label="Bedroom"
+    is-link
+  >
+    <smart-icon
+      class="cell-icon"
+      slot="icon"
+      name="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
+      size="50px"
+    />
+  </smart-cell>
+</smart-cell-group>
 ```
 
 ### Using Slots
@@ -147,15 +151,17 @@ You can also use other components for display
 If the above usage does not meet your needs, you can use slots to customize the content.
 
 ```html
-<smart-cell value="Content" icon="{{ sunMaxFill }}" is-link>
-  <view slot="title">
-    <view class="title">Cell</view>
-    <smart-tag type="danger">Tag</smart-tag>
-  </view>
-</smart-cell>
-<smart-cell title="Cell" border="{{ false }}">
-  <smart-icon slot="right-icon" name="search" />
-</smart-cell>
+<smart-cell-group>
+  <smart-cell value="Content" icon="{{ sunMaxFill }}" is-link>
+    <view slot="title">
+      <view class="title">Cell</view>
+      <smart-tag type="danger">Tag</smart-tag>
+    </view>
+  </smart-cell>
+  <smart-cell title="Cell">
+    <smart-icon slot="right-icon" name="search" />
+  </smart-cell>
+</smart-cell-group>
 ```
 
 ## API

@@ -1,5 +1,6 @@
 import { SmartComponent } from '../../common/component';
 import DialogInstance, { Action } from '../../dialog/dialog';
+import AlarmIcon from '@tuya-miniapp/icons/dist/svg/Alarm';
 
 const message = 'Body';
 
@@ -24,7 +25,6 @@ SmartComponent({
         context: this,
         title: 'Title',
         theme: 'round-button',
-        icon: false,
         message,
         confirmButtonText: I18n.t('confirm'),
         cancelButtonText: I18n.t('cancel'),
@@ -47,7 +47,6 @@ SmartComponent({
       DialogInstance.alert({
         context: this,
         title: 'Title',
-        icon: false,
         message,
         confirmButtonText: I18n.t('confirm'),
         cancelButtonText: I18n.t('cancel'),
@@ -67,7 +66,19 @@ SmartComponent({
       DialogInstance.confirm({
         context: this,
         title: 'Title',
-        icon: false,
+        message,
+        cancelButtonText: 'Sub Action',
+        confirmButtonText: I18n.t('confirm'),
+      });
+    },
+
+    onClickCustomIcon() {
+      DialogInstance.confirm({
+        context: this,
+        title: 'Title',
+        icon: AlarmIcon,
+        iconColor: '#1989fa',
+        iconSize: '36px',
         message,
         cancelButtonText: 'Sub Action',
         confirmButtonText: I18n.t('confirm'),
@@ -131,7 +142,6 @@ SmartComponent({
         DialogInstance.confirm({
         context: this,
         title: 'Title',
-        icon: false,
         message,
         beforeClose,
         confirmButtonText: I18n.t('confirm'),
@@ -139,10 +149,12 @@ SmartComponent({
       });
     },
 
-    onClose() {
-      this.setData({
-        show: false,
-      });
+    onClose(event) {
+      if(event.detail === 'confirm') {
+        this.setData({
+          show: false,
+        });
+      }
     },
   },
 });
