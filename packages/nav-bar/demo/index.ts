@@ -1,11 +1,11 @@
-import { Plus } from '@tuya-miniapp/icons';
 import { House } from '@tuya-miniapp/icons';
+import { More } from '@tuya-miniapp/icons';
 import { SmartComponent } from '../../common/component';
 
 SmartComponent({
   data: {
-    iconPlus: Plus,
     iconHouse: House,
+    iconMore: More,
   },
   methods: {
     onClickLeft() {

@@ -1,5 +1,12 @@
 <demo-block title="{{I18n.t('homePage')}}">
   <smart-nav-bar
+    left-text="Home"
+    left-text-type="home"
+    bind:click-left-text="onClickLeftText"
+  />
+  <smart-nav-bar
+    background="#E4EDFF"
+    custom-class="demo-nav-bar"
     left-text="HomeHomeHomeHomeHome"
     left-text-type="home"
     bind:click-left-text="onClickLeftText"
@@ -8,12 +15,59 @@
 
 <demo-block title="{{I18n.t('secondPage')}}">
   <smart-nav-bar
-    title="Home"
+    title="{{I18n.t('setting')}}"
     left-arrow
     bind:click-left="onClickLeft"
     bind:click-title="onClickTitle"
   />
+  <smart-nav-bar
+    title="{{I18n.t('setting')}}"
+    custom-class="demo-nav-bar"
+    right-text="{{I18n.t('delete')}}"
+    right-text-color="#F04C4C"
+    left-arrow
+    bind:click-left="onClickLeft"
+    bind:click-title="onClickTitle"
+  />
+  <smart-nav-bar
+    title="{{I18n.t('setting')}}"
+    custom-class="demo-nav-bar"
+    right-text="{{I18n.t('delete')}}"
+    right-text-color="#F04C4C"
+    left-text="{{I18n.t('cancel')}}"
+    bind:click-left="onClickLeft"
+    bind:click-title="onClickTitle"
+  />
 </demo-block>
+
+<demo-block title="{{I18n.t('rightIcon')}}">
+  <smart-nav-bar
+    title="{{I18n.t('setting')}}"
+    left-arrow
+    right-icon="{{ iconMore }}"
+    right-icon-size="32px"
+    right-icon-color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
+    bind:click-right="onClickRight"
+  />
+  <smart-nav-bar
+    title="{{I18n.t('setting')}}"
+    left-arrow
+    custom-class="demo-nav-bar"
+    right-icon="{{ iconMore }}"
+    right-icon-size="32px"
+    right-icon-color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
+    bind:click-right="onClickRight"
+  >
+    <smart-icon
+      slot="right"
+      size="32px"
+      name="{{ iconHouse }}"
+      color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
+    />
+  </smart-nav-bar>
+</demo-block>
+
+
 
 <demo-block title="{{I18n.t('customIcon')}}">
   <smart-nav-bar
@@ -51,64 +105,4 @@
     bind:click-left-text="onClickLeftText"
     bind:click-right="onClickRight"
   />
-</demo-block>
-
-<demo-block title="{{I18n.t('leftRightText')}}">
-  <smart-nav-bar
-    title="Home"
-    left-text="{{I18n.t('return')}}"
-    right-text="{{I18n.t('save')}}"
-    left-arrow
-    bind:click-left="onClickLeft"
-    bind:click-left-text="onClickLeftText"
-    bind:click-right="onClickRight"
-    bind:click-title="onClickTitle"
-  />
-
-  <smart-nav-bar
-    custom-class="demo-nav-bar"
-    title="{{I18n.t('timerSetting')}}"
-    round="{{true}}"
-    safe-area-inset-top="{{false}}"
-    left-text="{{I18n.t('cancel')}}"
-    right-text="{{I18n.t('save')}}"
-    right-text-class="demo-nav-bar__right"
-    bind:click-left="onClickLeft"
-    bind:click-left-text="onClickLeftText"
-    bind:click-right="onClickRight"
-    bind:click-title="onClickTitle"
-  />
-
-  <smart-nav-bar
-    custom-class="demo-nav-bar"
-    title="{{I18n.t('setting')}}"
-    round="{{true}}"
-    safe-area-inset-top="{{false}}"
-    left-arrow="{{true}}"
-    right-text="{{I18n.t('reset')}}"
-    right-text-class="demo-nav-bar__right"
-    bind:click-left="onClickLeft"
-    bind:click-left-text="onClickLeftText"
-    bind:click-right="onClickRight"
-    bind:click-title="onClickTitle"
-  />
-</demo-block>
-
-<demo-block title="{{I18n.t('useSlots')}}">
-  <smart-nav-bar
-    title="Home"
-    left-text="{{I18n.t('return')}}"
-    left-arrow
-    bind:click-left="onClickLeft"
-    bind:click-left-text="onClickLeftText"
-    bind:click-title="onClickTitle"
-    bind:click-right="onClickRight"
-    bind:click-title="onClickTitle"
-  >
-    <smart-icon
-      size="32px"
-      name="{{ iconPlus }}"
-      slot="right"
-    />
-  </smart-nav-bar>
 </demo-block>

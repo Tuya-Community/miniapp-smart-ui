@@ -5,29 +5,33 @@
 
 <view
   class="{{ utils.bem('nav-bar', { fixed, round, safe: safeAreaInsetTop }) }} custom-class {{ border ? 'smart-hairline--bottom' : '' }}"
-  style="{{ computed.barStyle({ zIndex, statusBarHeight, safeAreaInsetTop }) }}; {{ customStyle }}"
+  style="{{ computed.barStyle({ zIndex, statusBarHeight, safeAreaInsetTop, background }) }}; {{ customStyle }}"
 >
   <view class="smart-nav-bar__content">
-    <view class="{{ utils.bem('nav-bar__left', { home: leftTextType === 'home', title: leftTextType === 'title' }) }}" bind:tap="onClickLeft">
+    <view class="{{ utils.bem('nav-bar__left', { home: leftTextType === 'home', title: leftTextType === 'title', icon: leftArrow || leftIcon }) }}" bind:tap="onClickLeft">
       <block wx:if="{{ leftArrow || leftText || leftIcon }}">
         <smart-icon
           wx:if="{{ leftArrow }}"
           size="32px"
+          hover-class="smart-nav-bar__icon--hover"
+          hover-stay-time="70"
           name="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBmaWxsPSJub25lIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48ZGVmcz48Y2xpcFBhdGggaWQ9Im1hc3Rlcl9zdmcwXzQ1Ml8yODM5NC8wXzgwODgiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgcng9IjAiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjbWFzdGVyX3N2ZzBfNDUyXzI4Mzk0LzBfODA4OCkiPjxnIHN0eWxlPSJvcGFjaXR5OjAuNjk5OTk5OTg4MDc5MDcxOyI+PHBhdGggZD0iTTYuMDkxOTYsMTYuNDk5ODJDNi4wOTE5NiwxNi40OTk4MiwxMy4zMjA4MSwyMy41Mzk3LDEzLjMyMDgxLDIzLjUzOTdDMTMuNDgzOCwyMy43MTU3LDEzLjU2NDgsMjMuOTE5NywxMy41NjQ4LDI0LjE0OTdDMTMuNTY0OCwyNC4zNzk3LDEzLjQ3ODgsMjQuNTc5NiwxMy4zMDY4MSwyNC43NDc2QzEzLjIyNzEyLDI0LjgyODUsMTMuMTMxOTUsMjQuODkyNiwxMy4wMjY5NywyNC45MzU5QzEyLjkyMiwyNC45NzkyLDEyLjgwOTM3LDI1LjAwMDgsMTIuNjk1ODIsMjQuOTk5NkMxMi40NjQ3MywyNS4wMDExLDEyLjI0MTU4LDI0LjkxNTQsMTIuMDcwODMsMjQuNzU5NkMxMi4wNzA4MywyNC43NTk2LDQuMjQ0OTk4LDE3LjEwOTgxLDQuMjQ0OTk4LDE3LjEwOTgxQzQuMDg3MjQ2NCwxNi45NDU5OTAwMDAwMDAwMDIsMy45OTkzODg5MzUsMTYuNzI3MjQwMDAwMDAwMDAyLDQuMDAwMDAzMTk5NDMsMTYuNDk5ODJDNC4wMDAwMDMxOTk0MywxNi4yNjk4Myw0LjA4MjAwMTUsMTYuMDY1ODMsNC4yNDQ5OTgsMTUuODg5ODNDNC4yNDQ5OTgsMTUuODg5ODMsMTIuMDY5ODMsOC4yMzk5OTUsMTIuMDY5ODMsOC4yMzk5OTVDMTIuMjQ5ODMsOC4wNzk5OTgzLDEyLjQ1OTgyLDgsMTIuNjk0ODIsOEMxMi45Mjk4MSw4LDEzLjEzMzgxLDguMDgzOTk4MiwxMy4zMDU4MSw4LjI1MTk5NUMxMy4zODc5NSw4LjMyODMxMywxMy40NTMzMSw4LjQyMDg5MiwxMy40OTc3Miw4LjUyMzg0M0MxMy41NDIxNCw4LjYyNjc5NCwxMy41NjQ2NCw4LjczNzg2MiwxMy41NjM4LDguODQ5OTgyQzEzLjU2MzgsOS4wNzk5Nzk5OTk5OTk5OTksMTMuNDgyOCw5LjI4Mzk3LDEzLjMxOTgxLDkuNDU5OTdDMTMuMzE5ODEsOS40NTk5Nyw2LjA5MTk2LDE2LjQ5OTgyLDYuMDkxOTYsMTYuNDk5ODJaIiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuODk5OTk5OTc2MTU4MTQyMSIvPjwvZz48L2c+PC9zdmc+"
           data-type="leftArrow"
-          custom-class="smart-nav-bar__arrow"
+          custom-class="smart-nav-bar__arrow left-icon-class"
         />
         <view
           wx:if="{{ leftIcon }}"
           data-type="leftIcon"
+          hover-class="smart-nav-bar__icon--hover"
+          hover-stay-time="70"
           class="smart-nav-bar__icon-wrap"
           catch:tap="onClickLeftIcon"
         >
-          <smart-icon class="left-icon-class" custom-class="smart-nav-bar__icon" size="{{ leftIconSize }}" name="{{ leftIcon }}" />
+          <smart-icon class="left-icon-class" custom-class="smart-nav-bar__icon" size="{{ leftIconSize }}" name="{{ leftIcon }}" color="{{ leftIconColor }}" />
         </view>
         <view
           wx:if="{{ leftText }}"
-          class="smart-nav-bar__text"
+          class="smart-nav-bar__text left-text-class"
           catch:tap="onClickLeftText"
           hover-class="{{ leftTextType === 'back' ? 'smart-nav-bar__text--hover' : '' }}"
           hover-stay-time="70"
@@ -42,10 +46,22 @@
     </view>
     <view class="smart-nav-bar__right" bind:tap="onClickRight">
       <view
+        wx:if="{{ rightIcon }}"
+        data-type="rightIcon"
+        hover-class="smart-nav-bar__icon--hover"
+        hover-stay-time="70"
+        class="smart-nav-bar__icon-wrap"
+        catch:tap="onClickRightIcon"
+      >
+        <smart-icon class="right-icon-class" custom-class="smart-nav-bar__icon" size="{{ rightIconSize }}" name="{{ rightIcon }}" color="{{ rightIconColor }}" />
+      </view>
+      <view
         wx:if="{{ rightText }}"
         class="smart-nav-bar__text right-text-class"
+        style="color: {{ rightTextColor }};"
         hover-class="smart-nav-bar__text--hover"
         hover-stay-time="70"
+        catch:tap="onClickRightText"
       >{{ rightText }}</view>
       <slot wx:else name="right" />
     </view>

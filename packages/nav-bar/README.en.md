@@ -301,6 +301,12 @@ Page({
 | safe-area-inset-top | Leave top safe distance (status bar height) | _boolean_ | `true`   |
 | title               | Title                                   | _string_  | `''`     |
 | z-index             | Element z-index                         | _number_  | `1`      |
+| right-text-color `v2.7.0` | Color of the text on the right    | _string_  | -   |
+| right-icon `v2.7.0` | Right Icon    | _string_  | -   |
+| right-icon-color `v2.7.0` | Icon color on the right    | _string_  | -   |
+| right-icon-size `v2.7.0` | Icon size on the right    | _number_  | `32px`   |
+| left-icon-color `v2.7.0` | Left Icon Color    | _string_  | -   |
+| background `v2.7.0` | Overall background color    | _string_  | -   |
 
 ### Slot
 
@@ -319,6 +325,8 @@ Page({
 | bind:click-title `v2.0.0` | Triggered on the central title is clicked | -    |
 | bind:click-left-icon `v2.0.0` | Triggered on clicking left icon | -    |
 | bind:click-left-text `v2.0.0` | Triggered on clicking left text | -    |
+| bind:click-right-icon `v2.7.0` | Triggered when clicking the icon on the right | -    |
+| bind:click-right-text `v2.7.0` | Triggered when the text on the right is clicked | -    |
 
 ### External Style Classes
 
@@ -328,6 +336,8 @@ Page({
 | title-class    | Title style class    |
 | left-icon-class `v2.0.0` | Left icon style class |
 | right-text-class `v2.1.0` | Right text style class |
+| right-icon-class `v2.7.0` | Right icon style class |
+| left-text-class `v2.7.0` | Left text style class |
 
 ### Style Variables
 
@@ -340,9 +350,9 @@ The component offers the following CSS variables for custom styles. For usage, p
 | --nav-bar-round-border-radius `v2.1.0` | 16px 16px 0px 0px                  | Border radius for the navigation bar rounded corners       |
 | --nav-bar-background-color | _var(--app-B2, #ffffff)_ | Navigation bar background color |
 | --nav-bar-arrow-color | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Navigation bar arrow color |
-| --nav-bar-icon-size | _32px_ | Navigation bar icon size |
+| --nav-bar-icon-size `@deprecated v2.7.0` | _32px_ | Navigation bar icon size |
 | --nav-bar-icon-color | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Navigation bar icon color |
-| --nav-bar-icon-margin | _0_ | Navigation bar icon margin |
+| --nav-bar-icon-margin `@deprecated v2.7.0` | _0_ | Navigation bar icon margin |
 | --nav-bar-text-font-size `v2.1.0`      | _16px_                               | Navigation bar text font size |
 | --nav-bar-text-color | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Navigation bar text color |
 | --nav-bar-title-font-size | _var(--font-size-lg)_ | Navigation bar title font size |
@@ -352,4 +362,9 @@ The component offers the following CSS variables for custom styles. For usage, p
 | --nav-bar-home-font-weight | _600_ | Navigation bar home font weight |
 | --nav-bar-home-text-color | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Navigation bar home text color |
 | --nav-bar-right-text-color `v2.5.1`     | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | Text color on the right side of the navigation bar |
-| --nav-bar-title-max-width `v2.6.0`     | _56%_   | Width of the Navigation Bar Title |
+| --nav-bar-title-max-width `v2.6.0` `@deprecated v2.7.0`    | _56%_   | Width of the Navigation Bar Title |
+| --nav-bar-side-width `v2.7.0`    | _98px_   | Side Width |
+| --nav-bar-text-padding `v2.7.0`    | _20px_   | Text padding on both sides |
+| --nav-bar-icon-padding `v2.7.0`    | _16px_   | Icon Inner Padding on Both Sides |
+| --nav-bar-title-margin `v2.7.0`    | _16px_   | Margin Outside the Title |
+| --nav-bar-home-max-width `v2.7.0`    | _calc(100% - 98px - 16px)_   | Maximum width of the left title on the applet homepage |

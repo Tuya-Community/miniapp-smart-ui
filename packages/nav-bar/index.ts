@@ -3,7 +3,13 @@ import { SmartComponent } from '../common/component';
 import { getRect, getSystemInfoSync } from '../common/utils';
 
 SmartComponent({
-  classes: ['title-class', 'right-text-class', 'left-icon-class'],
+  classes: [
+    'title-class',
+    'right-text-class',
+    'left-icon-class',
+    'right-icon-class',
+    'left-text-class',
+  ],
 
   props: {
     title: String,
@@ -15,17 +21,26 @@ SmartComponent({
       type: Boolean,
       observer: 'setHeight',
     },
+    background: String,
     leftTextType: {
       type: String,
       value: 'back',
     },
     leftText: String,
     leftIcon: String,
+    leftIconColor: String,
     leftIconSize: {
       type: null,
       value: 32,
     },
     rightText: String,
+    rightTextColor: String,
+    rightIcon: String,
+    rightIconColor: String,
+    rightIconSize: {
+      type: null,
+      value: 32,
+    },
     customStyle: String,
     leftArrow: Boolean,
     border: {
@@ -77,12 +92,20 @@ SmartComponent({
       this.$emit('click-title');
     },
 
+    onClickRightIcon() {
+      this.$emit('click-right-icon');
+    },
+
     onClickLeftIcon() {
       this.$emit('click-left-icon');
     },
 
     onClickLeftText() {
       this.$emit('click-left-text');
+    },
+
+    onClickRightText() {
+      this.$emit('click-right-text');
     },
 
     setHeight() {
