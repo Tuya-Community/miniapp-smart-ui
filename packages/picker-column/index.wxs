@@ -77,7 +77,7 @@ function wrapperItemStyle(data) {
 function wrapperItemClass(data) {
   var staticClass = 'smart-ellipsis';
   var activeClass = 'active-class';
-  var isActive = Math.abs(data.renderStart + data.index - data.animationIndex) < 0.9;
+  var isActive = Math.abs(data.renderStart + data.index - data.animationIndex) < 0.5;
   return staticClass + ' ' + wxUtils.bem('picker-column__item', { disabled: data.option && data.option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
 }
 
@@ -142,7 +142,6 @@ function updateOffset(ownerInstance) {
       updateItemStyle(ownerInstance, currActiveIndex);
     }, 10)
   }
-  console.log(state.offsetActiveIndex, '--state.offsetActiveIndex')
 }
 
 const updateItemStyle = (ownerInstance, currActiveIndex) => {
@@ -205,6 +204,7 @@ const touchMove = function (e, ownerInstance) {
     transition: 'none',
   }, '.smart-picker-column__offset');
   updateItemStyle(ownerInstance, currActiveIndex);
+  ownerInstance.callMethod('activeIndexChange', currActiveIndex);
 }
 
 const touchEnd = function (e, ownerInstance) { 
@@ -297,6 +297,7 @@ const touchEnd = function (e, ownerInstance) {
         updateState('offsetting', targetOffset);
         updateState('offset', targetOffset);
         updateState('moving', false);
+        ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
         return 
       };
       updateState('offsetActiveIndex', currIndex);
@@ -310,6 +311,7 @@ const touchEnd = function (e, ownerInstance) {
     updateState('offset', targetOffset);
     updateState('moving', false);
     updateItemStyle(ownerInstance, currTargetActiveIndex);
+    ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
   }
   setStyle(ownerInstance, {
     transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
