@@ -388,6 +388,7 @@ const touchEnd = function (e, ownerInstance) {
     updateState('timer', timer);
     ownerInstance.callMethod('vibrateShort', offsetCount);
   } else {
+    Math.abs(currTargetActiveIndex - state.offsetActiveIndex) >= 1 && ownerInstance.callMethod('vibrateShort');
     updateState('offsetActiveIndex', currTargetActiveIndex);
     updateState('offsetting', targetOffset);
     updateState('offset', targetOffset);
@@ -396,10 +397,25 @@ const touchEnd = function (e, ownerInstance) {
       transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
       transition: 'transform ' + (time ? time + 100 : time) + 'ms',
     });
-    Math.abs(currTargetActiveIndex - state.offsetActiveIndex) >= 1 && ownerInstance.callMethod('vibrateShort');
     ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
     return
   }
+}
+
+function tapItem(e, ownerInstance) {
+  const currTargetActiveIndex = e.currentTarget.dataset.index;
+  const targetOffset = -(currTargetActiveIndex - state.sideCount) * state.itemHeight;
+  if(currTargetActiveIndex === state.offsetActiveIndex) return;
+  console.log(currTargetActiveIndex, targetOffset, '--targetOffset')
+  updateState('offsetActiveIndex', currTargetActiveIndex);
+  updateState('offsetting', targetOffset);
+  updateState('offset', targetOffset);
+  updateOptionsStyle(ownerInstance, {
+    transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
+    transition: 'transform 100ms',
+  });
+  ownerInstance.callMethod('vibrateShort');
+  ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
 }
 
 
@@ -414,5 +430,6 @@ module.exports = {
   touchMove: touchMove,
   touchEnd: touchEnd,
   sliceArray: sliceArray,
-  wrapperItemTextStyle: wrapperItemTextStyle
+  wrapperItemTextStyle: wrapperItemTextStyle,
+  tapItem: tapItem,
 };

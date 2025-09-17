@@ -36,6 +36,7 @@
           data-index="{{item}}"
           style="{{computed.wrapperItemStyle({ itemHeight, animationIndex, index: item, visibleItemCount })}}"
           class="smart-picker-column__item_{{index}} {{ computed.wrapperItemClass({ index: item, animationIndex, options })}}"
+          bind:tap="{{computed.tapItem}}" 
         >
           <view
             class="smart-picker-column__item__text"
@@ -50,6 +51,7 @@
           data-index="{{item}}"
           style="{{computed.wrapperItemStyle({ itemHeight, fontStyle, activeStyle: item === currentIndex ? activeStyle : '', animationIndex, index: item, visibleItemCount })}}"
           class="smart-picker-column__item_{{index + 10}} {{ computed.wrapperItemClass({ index: item, animationIndex, options })}}"
+          bind:tap="{{computed.tapItem}}" 
         >
           <view
             class="smart-picker-column__item__text"
@@ -59,16 +61,6 @@
       </view>
     </view>
   </view>
-  <!-- <view class="smart-picker-column__mask">
-    <view 
-      wx:for="{{ visibleItemCount }}" 
-      wx:key="index"
-      class="smart-picker-column__mask__item" 
-      data-index="{{ currentIndex + index - 2 }}" 
-      bind:tap="onClickItem" 
-    >
-    </view>
-  </view> -->
   <view wx:if="{{unit}}" class="smart-picker-column__unit" style="height: {{ itemHeight }}px">
     <view class="smart-picker-column__max-text">
       {{ maxText }}

@@ -23,7 +23,6 @@
   }
 
   &__item {
-    pointer-events: none;
 
     &--selected {
       font-weight: var(--picker-option-selected-font-weight-bold, var(--font-weight-bold, @picker-option-selected-font-weight-bold));
@@ -38,6 +37,7 @@
         --picker-option-disabled-opacity,
         @picker-option-disabled-opacity
       );
+      pointer-events: none;
     }
   }
 
