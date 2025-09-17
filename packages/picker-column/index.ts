@@ -281,7 +281,7 @@ SmartComponent({
       return currOffset < preOffset ? 'down' : 'up';
     },
 
-    vibrateShort(count?: number, time = DEFAULT_DURATION) {
+    vibrateShort(count?: number, time?: number) {
       if (!count) {
         ty.vibrateShort({ type: 'light' });
         return;
@@ -294,7 +294,7 @@ SmartComponent({
         }
         has++;
         this.vibrateShort();
-      }, time / count - 20);
+      }, (time || this.data.animationTime) / count - 20);
     },
 
     onClickItem(event: WechatMiniprogram.TouchEvent) {
@@ -443,7 +443,6 @@ SmartComponent({
       });
     },
     activeIndexChange(index: number) {
-      console.log(index, '--index');
       this.setData({
         animationIndex: index,
       });

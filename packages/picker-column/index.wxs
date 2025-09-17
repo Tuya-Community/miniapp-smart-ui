@@ -262,10 +262,13 @@ const touchMove = function (e, ownerInstance) {
   if(!state.moving) return;
   const { pageY } = e.touches[0];
   let offsetY = pageY - startPo.y;
-  const direction = offsetY < 0 ? 'down' : 'up';
   const offset = state.offset + offsetY;
   const newOffsetList = [...state.offsetList, offset];
   const currActiveIndex = -offset / state.itemHeight + state.sideCount;
+  const preIndexLast = Math.abs(state.offsetActiveIndex % 1);
+  const curIndexLast = Math.abs(currActiveIndex % 1);
+  const offsetCompare = offset - state.offsetting;
+  const direction = offsetCompare < 0 ? 'down' : offsetCompare > 0 ? 'up' : state.movingDirection || 'down';
   updateState('offsetActiveIndex', currActiveIndex);
   updateState('offsetting', offset);
   updateState('offsetList', newOffsetList);
@@ -274,7 +277,10 @@ const touchMove = function (e, ownerInstance) {
     transform: 'translateY(' + addUnit(offset) + ')',
     transition: 'none',
   });
-  ownerInstance.callMethod('activeIndexChange', currActiveIndex);
+  if((direction === 'down' && preIndexLast <= 0.5 && curIndexLast > 0.5) || (direction === 'up' && preIndexLast >= 0.5 && curIndexLast < 0.5)) {
+    ownerInstance.callMethod('activeIndexChange', currActiveIndex);
+    ownerInstance.callMethod('vibrateShort');
+  }
 }
 
 
@@ -348,6 +354,7 @@ const touchEnd = function (e, ownerInstance) {
   const currTargetActiveIndex = -targetOffset / state.itemHeight + state.sideCount;
   const time = isNeedTransition ? state.animationTime : 0;
   const animationOffset = Math.abs(targetOffset - state.offsetting);
+  const offsetCount = Math.floor(Math.abs(currTargetActiveIndex - state.offsetActiveIndex));
   if (time > 150 && animationOffset > state.itemHeight) {
     const midTime = 16;
     const count = Math.floor((time - 150) / midTime);
@@ -379,6 +386,7 @@ const touchEnd = function (e, ownerInstance) {
       });
     }, midTime);
     updateState('timer', timer);
+    ownerInstance.callMethod('vibrateShort', offsetCount);
   } else {
     updateState('offsetActiveIndex', currTargetActiveIndex);
     updateState('offsetting', targetOffset);
@@ -388,6 +396,7 @@ const touchEnd = function (e, ownerInstance) {
       transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
       transition: 'transform ' + (time ? time + 100 : time) + 'ms',
     });
+    Math.abs(currTargetActiveIndex - state.offsetActiveIndex) >= 1 && ownerInstance.callMethod('vibrateShort');
     ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
     return
   }
