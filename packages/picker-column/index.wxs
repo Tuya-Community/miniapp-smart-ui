@@ -343,7 +343,7 @@ const touchEnd = function (e, ownerInstance) {
   }
 
   // 计算最终目标位置
-  let targetOffset = Math.floor((state.offsetting + inertiaDistance) / state.itemHeight) * state.itemHeight;
+  let targetOffset = Math.round((state.offsetting + inertiaDistance) / state.itemHeight) * state.itemHeight;
   if (targetOffset < 0 && targetOffset < maxDownOptionsDistance) { 
     targetOffset = maxDownOptionsDistance;
   } else if (targetOffset > 0 && targetOffset > maxUpOptionsDistance) { 
