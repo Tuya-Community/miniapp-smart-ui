@@ -1,5 +1,5 @@
 import { SmartComponent } from '../common/component';
-import { range } from '../common/utils';
+import { range, generateRangeArray } from '../common/utils';
 import { isObj } from '../common/validator';
 import ty from '../common/ty';
 
@@ -23,6 +23,7 @@ SmartComponent({
       value: [],
       observer(value) {
         if (!this.data.isInit) return;
+        this.updateViewOptions();
         this.updateUint(value);
         this.updateVisibleOptions(this.data.currentIndex);
       },
@@ -44,6 +45,7 @@ SmartComponent({
       value: -1,
       observer(index: number) {
         if (!this.data.isInit) return;
+        this.updateViewOptions();
         this.setIndex(index, false, this.data.changeAnimation, this.data.animationTime);
       },
     },
@@ -79,9 +81,7 @@ SmartComponent({
   },
 
   created() {
-    this.setData({
-      viewOptions: this.data.loop ? new Array(20).fill('') : this.data.options.slice(0, 20),
-    });
+    this.updateViewOptions();
     const { defaultIndex, activeIndex, options } = this.data;
     this.updateUint(options);
     this.setIndex(
@@ -98,6 +98,29 @@ SmartComponent({
   methods: {
     getCount() {
       return this.data.options.length;
+    },
+    updateViewOptions() {
+      const currActiveIndex = this.data.activeIndex < 0 ? 0 : this.data.activeIndex;
+      let partNum = Math.floor(currActiveIndex / 10);
+      const lastNum = this.data.activeIndex - partNum * 10;
+      if (lastNum < 5 && partNum > 0) {
+        partNum -= 1;
+      }
+      const part2Times = Math.floor(partNum / 2);
+      const part2Percent = partNum % 2;
+      const onePartOffset = part2Percent + part2Times;
+      const twoPartOffset = part2Times;
+      const isReverse = onePartOffset > twoPartOffset;
+      const startPart = twoPartOffset + onePartOffset;
+      const viewIndexList = !isReverse
+        ? generateRangeArray(startPart * 10, startPart * 10 + 20)
+        : [
+            ...generateRangeArray(startPart * 10 + 10, startPart * 10 + 20),
+            ...generateRangeArray(startPart * 10, startPart * 10 + 10),
+          ];
+      this.setData({
+        viewOptions: viewIndexList,
+      });
     },
 
     onTouchStart(event: WechatMiniprogram.TouchEvent) {
@@ -413,12 +436,14 @@ SmartComponent({
       const { data } = this;
       return data.options[data.currentIndex];
     },
-    renderStartChange(index: number) {
+    viewOptionsChange(list: number[]) {
+      console.log(list, '--list');
       this.setData({
-        renderStart: index,
+        viewOptions: list,
       });
     },
     activeIndexChange(index: number) {
+      console.log(index, '--index');
       this.setData({
         animationIndex: index,
       });

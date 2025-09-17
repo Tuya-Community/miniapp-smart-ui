@@ -1,0 +1,10 @@
+function strToStyleObject(str = '') {
+  const styleObject = {};
+  str.split(';').forEach(function (item) {
+    const [key, value] = item.split(':');
+    styleObject[key] = value;
+  });
+  return styleObject;
+}
+
+module.exports = strToStyleObject;

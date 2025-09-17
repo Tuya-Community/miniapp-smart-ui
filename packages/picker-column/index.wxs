@@ -10,10 +10,22 @@ const setStyle = (ownerInstance, style, selector) => {
   dom.setStyle(style);
 };
 
+function generateRangeArray(start, end) {
+  const resultArray = [];
+  for (let i = start; i < end; i++) {
+      resultArray.push(i);
+  }
+  return resultArray;
+}
+
 const queryComponent = function (ownerInstance, selector) {
   const instance = ownerInstance?.selectComponent(selector);
   return instance;
 };
+
+function sliceArray(list, start, end) {
+  return list.slice(start, end);
+}
 
 function isObj(x) {
   var type = typeof x;
@@ -39,46 +51,44 @@ function wrapperStyle(data) {
       'text-indent': data.unit ? '-8rpx' : '0',
       transition: 'transform ' + data.duration + 'ms ease-out',
       'line-height': addUnit(data.itemHeight),
-      // transform: 'translate3d(0, ' + offset + ', 0)',
     });
   }
   return style({
     'text-indent': data.unit ? '-8rpx' : '0',
     'line-height': addUnit(data.itemHeight),
-    // transform: 'translate3d(0, ' + offset + ', 0)',
-  });
-}
-
-function wrapperInterStyle(data) {
-  var offset = data.renderStart * data.itemHeight;
-  offset = addUnit(offset);
-  return style({
-    'padding-top': offset,
   });
 }
 
 function wrapperItemStyle(data) {
   var heightStyleStr = "height: " + data.itemHeight + 'px;'
-  var fontStyleStr = style(data.fontStyle);
-  var activeStyleStr = style(data.activeStyle);
+  var maxSideShow = data.visibleItemCount + 2;
+  var offsetIndex = data.animationIndex - data.index;
+  if (Math.abs(offsetIndex) > maxSideShow) heightStyleStr
+  const finOffsetIndex = offsetIndex > 0 ? Math.min(offsetIndex, maxSideShow) : Math.max(offsetIndex, -maxSideShow);
+  var scale = 1 - Math.abs(finOffsetIndex * 0.15);
+  var rotateX = rotateX = Math.abs(finOffsetIndex * 10);
+  var direction = offsetIndex > 0 ? 1 : -1;
+  var translateYIndex = Math.abs(finOffsetIndex);
+  var translateYOffset = translateYIndex * translateYIndex * direction * state.itemHeight * 0.1
+  const transStyle = style({
+    transform: `rotateX(${rotateX}deg) scale(${scale}) translateY(${translateYOffset}px) translateZ(0)`,
+  });
+  return transStyle + ';' + heightStyleStr
+}
 
-  // var maxSideShow = Math.floor(data.visibleItemCount / 2) + 1;
-  // var offsetIndex = data.animationIndex - data.index;
-  // var scale = Math.min(Math.abs(offsetIndex * 0.2), 0.2 * maxSideShow)
-  // var rotateX = offsetIndex * 25 > 0 ? Math.min(offsetIndex * 25, 25 * maxSideShow) : Math.max(offsetIndex * 25, -25 * maxSideShow)
-  // var translateYIndex = offsetIndex > 0 ? Math.min(offsetIndex, maxSideShow) : Math.max(offsetIndex, -maxSideShow)
-  // const transStyle = style({
-  //   transform: `rotateX(${rotateX}deg) scale(${1 - scale}) translateY(${translateYIndex * Math.abs(translateYIndex) * Math.abs(translateYIndex) * data.itemHeight * 0.1}px) translateZ(0)`,
-  // });
-  // return transStyle + ';' + heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
-  return heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
+function wrapperItemTextStyle(data) {
+  var fontStyle = data.fontStyle;
+  var activeStyle = data.activeStyle;
+  var isActive = Math.abs(data.index - data.animationIndex) < 0.5;
+  return fontStyle ? fontStyle + ';' : '' + (isActive ? activeStyle + ';' : '')
 }
 
 function wrapperItemClass(data) {
   var staticClass = 'smart-ellipsis';
   var activeClass = 'active-class';
-  var isActive = Math.abs(data.renderStart + data.index - data.animationIndex) < 0.5;
-  return staticClass + ' ' + wxUtils.bem('picker-column__item', { disabled: data.option && data.option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
+  var isActive = Math.abs(data.index - data.animationIndex) < 0.5;
+  const currOption = data.options[data.index];
+  return staticClass + ' ' + wxUtils.bem('picker-column__item', { disabled: currOption && currOption.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
 }
 
 var state = {}
@@ -113,41 +123,29 @@ function updateOffset(ownerInstance) {
   const optionLength = state.options.length;
   updateState('sideCount', sideCount);
   const currActiveIndex = state.activeIndex < 0 ? 0 : state.activeIndex >= optionLength ? optionLength - 1 : state.activeIndex;
-  const currList = getCurrList(state.options, currActiveIndex, state.loop)
-  updateRenderStartPadding(ownerInstance)
+  const currList = getCurrList(state.options, currActiveIndex, ownerInstance)
+  updateRenderPartOffset(ownerInstance)
   const textVarStyle = {}
   currList.forEach((item, index) => {
     textVarStyle['--picker-item-content_' + index] = "'" + optionText(item, state.valueKey) + "'"
   })
-  if (state.loop) { 
-    const offsetCount = 9 - sideCount
-    const offset = -state.itemHeight * offsetCount;
-    const activeOffsetIndexMultiplier = Math.round(currActiveIndex / optionLength);
-    updateState('offsetActiveIndex', activeOffsetIndexMultiplier * optionLength + currActiveIndex);
-    updateState('offset', offset)
-    setStyle(ownerInstance, {
-      transform: 'translateY(' + addUnit(offset) + ')',
-      ...textVarStyle,
-    }, '.smart-picker-column__offset');
-  } else {
-    const offset = (state.offset || 0) + state.itemHeight * (sideCount - currActiveIndex);
-    updateState('offset', offset)
-    updateState('offsetActiveIndex', currActiveIndex);
-    setStyle(ownerInstance, {
-      transform: 'translateY(' + addUnit(offset) + ')',
-      ...textVarStyle,
-    }, '.smart-picker-column__offset');
+  const offset = (state.offset || 0) + state.itemHeight * (sideCount - currActiveIndex);
+  updateState('offset', offset)
+  updateState('offsetActiveIndex', currActiveIndex);
+  setStyle(ownerInstance, {
+    transform: 'translateY(' + addUnit(offset) + ')',
+    ...textVarStyle,
+  }, '.smart-picker-column__offset');
 
-    setTimeout(() => { 
-      updateItemStyle(ownerInstance, currActiveIndex);
-    }, 10)
-  }
+  setTimeout(() => { 
+    updateItemStyle(ownerInstance, currActiveIndex);
+  }, 10)
 }
 /** 更新聚焦点位样式 */
 const updateItemStyle = (ownerInstance, currActiveIndex) => {
   const state = getCurrState();
-  state.options.slice(0, 20).map((item, index) => {
-    const viewOptionsActiveIndex = state.renderStart + index;
+  state.viewIndexList.slice(0, 20).map((item, index) => {
+    const viewOptionsActiveIndex = item;
     const maxSideShow = state.sideCount + 2;
     const offsetIndex = currActiveIndex - viewOptionsActiveIndex;
     if(Math.abs(offsetIndex) > maxSideShow) return;
@@ -165,62 +163,74 @@ const updateItemStyle = (ownerInstance, currActiveIndex) => {
   })
 }
 
-const getCurrList = (options, activeIndex, loop, sideCount) => {
-  if (loop) {
-    return [...options.slice(-9), ...options.slice(0, 10)]
-  } else {
-    if (options.length > 20) {
-      let renderStart = Math.max(0, Math.round(activeIndex) - 9);
-      const renderEnd = Math.min(options.length, renderStart + 19);
-      if(renderStart + 19 > options.length) {
-        renderStart = options.length - 19;
-      }
-      const optionsV = options.slice(renderStart, renderEnd);
-      updateState('renderStart', renderStart);
-      return optionsV
-    }
-    updateState('renderStart', 0);
-    return options
+const getTwoPartOffset = (activeIndex) => {
+  const currActiveIndex = activeIndex < 0 ? 0 : activeIndex
+  let partNum = Math.floor((currActiveIndex) / 10);
+  const lastNum = activeIndex - partNum * 10;
+  if (lastNum < 5 && partNum > 0) {
+    partNum -= 1;
   }
+  const part2Times = Math.floor(partNum / 2);
+  const part2Percent = partNum % 2;
+  const onePartOffset = part2Percent + part2Times;
+  const twoPartOffset = part2Times;
+  return { onePartOffset , twoPartOffset }
 }
 
-const updateRenderStartPadding = (ownerInstance) => { 
+const getCurrList = (options, activeIndex, ownerInstance) => {
+  const { onePartOffset, twoPartOffset } = getTwoPartOffset(activeIndex);
+  const isReverse = onePartOffset > twoPartOffset;
+  updateState('onePartOffset', onePartOffset)
+  updateState('twoPartOffset', twoPartOffset)
+  const startPart = twoPartOffset + onePartOffset;
+  const viewIndexList = !isReverse ? generateRangeArray(startPart * 10, startPart * 10 + 20) : [...generateRangeArray(startPart * 10 + 10, startPart * 10 + 20), ...generateRangeArray(startPart * 10, startPart * 10 + 10)]
+  updateState('viewIndexList', viewIndexList)
+  ownerInstance.callMethod('viewOptionsChange', viewIndexList);
+  if (!isReverse) return options.slice(startPart * 10, startPart * 10 + 20);
+  let firstList = options.slice(startPart * 10 + 10, startPart * 10 + 20);
+  const scendList = options.slice(startPart * 10, startPart * 10 + 10);
+  if (firstList.length < 10) {
+    // firstList = [...firstList, ...options.slice(0, 10 - firstList.length)];
+    firstList = [...firstList, ...new Array(10 - firstList.length).fill('')];
+  }
+  return [...firstList, ...scendList];
+}
+
+const updateRenderPartOffset = (ownerInstance, direction) => { 
   const state = getCurrState();
-  const offset = state.renderStart * state.itemHeight;
+  const offsetDistance = 20 * state.itemHeight;
   setStyle(ownerInstance, {
-    paddingTop: addUnit(offset),
-  }, '.smart-picker-column__visual');
+    transform: 'translateY(' + addUnit(offsetDistance * state.onePartOffset) + ')',
+  }, '.smart-picker-column__visual__item_1');
+  setStyle(ownerInstance, {
+    transform: 'translateY(' + addUnit(offsetDistance * state.twoPartOffset) + ')',
+  }, '.smart-picker-column__visual__item_2');
 }
 
-const checkNeedUpdateRenderStart = (currActiveIndex, direction) => {
+const checkNeedUpdateItemStyle = (currActiveIndex) => {
   const state = getCurrState();
-  if (
-    (direction === 'up' && currActiveIndex < state.renderStart + 8) ||
-    (direction === 'down' && currActiveIndex > state.renderStart + 20 - 8)
-  ) {
-    return true;
-  }
-  return false;
+  const { onePartOffset, twoPartOffset } = getTwoPartOffset(currActiveIndex);
+  return onePartOffset !== state.onePartOffset || twoPartOffset !== state.twoPartOffset;
 }
 
 const updateOptionsStyle = (ownerInstance, style) => {
   const state = getCurrState();
-  updateItemStyle(ownerInstance, state.offsetActiveIndex);
-  const needUpdateRenderStart = checkNeedUpdateRenderStart(state.offsetActiveIndex, state.movingDirection);
-  if (needUpdateRenderStart) {
-    const currList = getCurrList(state.options, state.offsetActiveIndex, state.loop, state.sideCount)
-    updateRenderStartPadding(ownerInstance);
-    const textVarStyle = getCSSVarText(currList)
-    ownerInstance.callMethod('renderStartChange', state.renderStart);
+  const needUpdateListOption = checkNeedUpdateItemStyle(state.offsetActiveIndex);
+  if (!needUpdateListOption) {
     setStyle(ownerInstance, {
       ...style,
-      ...textVarStyle,
     }, '.smart-picker-column__offset');
-  } else {
-    setStyle(ownerInstance, {
-      ...style
-    }, '.smart-picker-column__offset');
+    updateItemStyle(ownerInstance, state.offsetActiveIndex);
+    return
   }
+  const currList = getCurrList(state.options, state.offsetActiveIndex, ownerInstance)
+  updateRenderPartOffset(ownerInstance);
+  const textVarStyle = getCSSVarText(currList)
+  setStyle(ownerInstance, {
+    ...style,
+    ...textVarStyle,
+  }, '.smart-picker-column__offset');
+  updateItemStyle(ownerInstance, state.offsetActiveIndex);
 }
 
 const getCSSVarText = (currList) => {
@@ -277,7 +287,8 @@ const touchEnd = function (e, ownerInstance) {
   const maxDownOptionsDistance = state.loop ? -state.itemHeight * 500 : -Math.max((state.options.length - state.sideCount - 1) * state.itemHeight, 0);
   // 计算最后几帧的平均速度，用于惯性滚动
   let recentVelocity = 0;
-  let scrollDirection = 0; // 1: 向下, -1: 向上, 0: 无滚动
+  /** -1: 向下, 1: 向上, 0: 无滚动 */
+  let scrollDirection = 0;
   
   if (preOffsetList.length >= 2) {
     // 计算速度，优先使用最后几帧的数据
@@ -299,9 +310,9 @@ const touchEnd = function (e, ownerInstance) {
     
     // 确定滚动方向
     if (recentOffset > 0) {
-      scrollDirection = 1; // 向下滚动
+      scrollDirection = 1; // 向上滚动
     } else if (recentOffset < 0) {
-      scrollDirection = -1; // 向上滚动
+      scrollDirection = -1; // 向下滚动
     }
   }
   
@@ -336,7 +347,8 @@ const touchEnd = function (e, ownerInstance) {
   const isNeedTransition = Math.abs(targetOffset - state.offsetting) > 1;
   const currTargetActiveIndex = -targetOffset / state.itemHeight + state.sideCount;
   const time = isNeedTransition ? state.animationTime : 0;
-  if (time > 150) {
+  const animationOffset = Math.abs(targetOffset - state.offsetting);
+  if (time > 150 && animationOffset > state.itemHeight) {
     const midTime = 16;
     const count = Math.floor((time - 150) / midTime);
     const midOffset = (targetOffset - state.offsetting)/ count;
@@ -379,10 +391,6 @@ const touchEnd = function (e, ownerInstance) {
     ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
     return
   }
-  setStyle(ownerInstance, {
-    transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
-    transition: 'transform ' + (time ? time + 100 : time) + 'ms',
-  }, '.smart-picker-column__offset');
 }
 
 
@@ -390,11 +398,12 @@ module.exports = {
   optionText: optionText,
   rootStyle: rootStyle,
   wrapperStyle: wrapperStyle,
-  wrapperInterStyle: wrapperInterStyle,
   wrapperItemStyle: wrapperItemStyle,
   wrapperItemClass: wrapperItemClass,
   updateValue: updateValue,
   touchStart: touchStart,
   touchMove: touchMove,
   touchEnd: touchEnd,
+  sliceArray: sliceArray,
+  wrapperItemTextStyle: wrapperItemTextStyle
 };
