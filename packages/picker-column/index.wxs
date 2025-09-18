@@ -7,6 +7,10 @@ let startPo = { y: 0 }; // 记录当前拖动元素的开始的位置
 
 const setStyle = (ownerInstance, style, selector) => {
   const dom = queryComponent(ownerInstance, selector);
+  if (!dom) {
+    console.log(selector, '--selector 无法获取');
+    return
+  }
   dom.setStyle(style);
 };
 
@@ -93,57 +97,83 @@ function wrapperItemClass(data) {
 
 var state = {}
 
-var preStateStr = ''
+var preStateObj = {}
 
-function updateState(key, value) {
+function updateState(instanceId, key, value) {
   if (!key) return;
-  preStateStr = JSON.stringify(state)
-  state[key] = value
+  state[instanceId] = state[instanceId] || {}
+  state[instanceId][key] = value
 }
 
-function getCurrState() {
+function getCurrState(instanceId) {
+  return state[instanceId]
+}
+
+function updatePreState(instanceId, state) {
+  const preStateStr = JSON.stringify(state)
+  preStateObj[instanceId] = preStateStr;
+}
+
+function getPreState(instanceId) {
+  return preStateObj[instanceId]
+}
+
+function getDomState(ownerInstance) {
+  const dom = queryComponent(ownerInstance, '.smart-picker-column');
+  const state = dom.getDataset();
   return state
 }
 
-function getPreState() {
-  return preStateStr
+function initDomState(instanceId, ownerInstance) {
+  const state = getDomState(ownerInstance);
+  updateState(instanceId, 'options', state.options)
+  updateState(instanceId, 'valueKey', state.valuekey)
+  updateState(instanceId, 'itemHeight', state.itemheight)
+  updateState(instanceId, 'visibleItemCount', state.visibleitemcount)
+  updateState(instanceId, 'activeIndex', state.activeindex)
+  updateState(instanceId, 'loop', state.loop)
+  updateState(instanceId, 'animationTime', state.animationtime)
 }
 
-const updateValue = (key) => (newOptions, oldOptions, ownerInstance) => {
-  updateState(key, newOptions)
-  updateOffset(ownerInstance)
+const updateValue = (instanceId, key) => (newOptions, oldOptions, ownerInstance) => {
+  if (!instanceId) return;
+  initDomState(instanceId, ownerInstance)
+  updateState(instanceId, key, newOptions)
+  updateOffset(instanceId, ownerInstance)
 }
 
-function updateOffset(ownerInstance) {
-  const state = getCurrState();
-  if(getPreState() === JSON.stringify(state) || !state.itemHeight || !state.visibleItemCount || !Array.isArray(state.options) || state.animationTime === undefined) {
+function updateOffset(instanceId, ownerInstance) {
+  const state = getCurrState(instanceId);
+  const domState = getDomState(ownerInstance);
+  if(getPreState(instanceId) === JSON.stringify(domState) || !state.itemHeight || !state.visibleItemCount || !Array.isArray(state.options) || state.animationTime === undefined) {
     return
   }
+  updatePreState(instanceId, domState)
   const sideCount = Math.floor(state.visibleItemCount / 2)
   const optionLength = state.options.length;
-  updateState('sideCount', sideCount);
+  updateState(instanceId, 'sideCount', sideCount);
   const currActiveIndex = state.activeIndex < 0 ? 0 : state.activeIndex >= optionLength ? optionLength - 1 : state.activeIndex;
-  const currList = getCurrList(state.options, currActiveIndex, ownerInstance)
-  updateRenderPartOffset(ownerInstance)
+  const currList = getCurrList(instanceId, state.options, currActiveIndex, ownerInstance)
+  updateRenderPartOffset(instanceId, ownerInstance)
   const textVarStyle = {}
   currList.forEach((item, index) => {
     textVarStyle['--picker-item-content_' + index] = "'" + optionText(item, state.valueKey) + "'"
   })
-  const offset = (state.offset || 0) + state.itemHeight * (sideCount - currActiveIndex);
-  updateState('offset', offset)
-  updateState('offsetActiveIndex', currActiveIndex);
+  const offset = state.itemHeight * (sideCount - currActiveIndex);
+  updateState(instanceId, 'offset', offset)
+  updateState(instanceId,'offsetActiveIndex', currActiveIndex);
   setStyle(ownerInstance, {
     transform: 'translateY(' + addUnit(offset) + ')',
     ...textVarStyle,
   }, '.smart-picker-column__offset');
 
   setTimeout(() => { 
-    updateItemStyle(ownerInstance, currActiveIndex);
+    updateItemStyle(instanceId, ownerInstance, currActiveIndex);
   }, 10)
 }
 /** 更新聚焦点位样式 */
-const updateItemStyle = (ownerInstance, currActiveIndex) => {
-  const state = getCurrState();
+const updateItemStyle = (instanceId, ownerInstance, currActiveIndex) => {
+  const state = getCurrState(instanceId);
   state.viewIndexList.slice(0, 20).map((item, index) => {
     const viewOptionsActiveIndex = item;
     const maxSideShow = state.sideCount + 2;
@@ -177,15 +207,15 @@ const getTwoPartOffset = (activeIndex) => {
   return { onePartOffset , twoPartOffset }
 }
 
-const getCurrList = (options, activeIndex, ownerInstance) => {
+const getCurrList = (instanceId, options, activeIndex, ownerInstance) => {
   const { onePartOffset, twoPartOffset } = getTwoPartOffset(activeIndex);
   const isReverse = onePartOffset > twoPartOffset;
-  updateState('onePartOffset', onePartOffset)
-  updateState('twoPartOffset', twoPartOffset)
+  updateState(instanceId, 'onePartOffset', onePartOffset)
+  updateState(instanceId, 'twoPartOffset', twoPartOffset)
   const startPart = twoPartOffset + onePartOffset;
   const viewIndexList = !isReverse ? generateRangeArray(startPart * 10, startPart * 10 + 20) : [...generateRangeArray(startPart * 10 + 10, startPart * 10 + 20), ...generateRangeArray(startPart * 10, startPart * 10 + 10)]
-  updateState('viewIndexList', viewIndexList)
-  ownerInstance.callMethod('viewOptionsChange', viewIndexList);
+  updateState(instanceId,'viewIndexList', viewIndexList)
+  // ownerInstance.callMethod('viewOptionsChange', viewIndexList);
   if (!isReverse) return options.slice(startPart * 10, startPart * 10 + 20);
   let firstList = options.slice(startPart * 10 + 10, startPart * 10 + 20);
   const scendList = options.slice(startPart * 10, startPart * 10 + 10);
@@ -196,8 +226,8 @@ const getCurrList = (options, activeIndex, ownerInstance) => {
   return [...firstList, ...scendList];
 }
 
-const updateRenderPartOffset = (ownerInstance, direction) => { 
-  const state = getCurrState();
+const updateRenderPartOffset = (instanceId, ownerInstance, direction) => { 
+  const state = getCurrState(instanceId);
   const offsetDistance = 20 * state.itemHeight;
   setStyle(ownerInstance, {
     transform: 'translateY(' + addUnit(offsetDistance * state.onePartOffset) + ')',
@@ -207,33 +237,34 @@ const updateRenderPartOffset = (ownerInstance, direction) => {
   }, '.smart-picker-column__visual__item_2');
 }
 
-const checkNeedUpdateItemStyle = (currActiveIndex) => {
-  const state = getCurrState();
+const checkNeedUpdateItemStyle = (instanceId, currActiveIndex) => {
+  const state = getCurrState(instanceId);
   const { onePartOffset, twoPartOffset } = getTwoPartOffset(currActiveIndex);
   return onePartOffset !== state.onePartOffset || twoPartOffset !== state.twoPartOffset;
 }
 
-const updateOptionsStyle = (ownerInstance, style) => {
-  const state = getCurrState();
-  const needUpdateListOption = checkNeedUpdateItemStyle(state.offsetActiveIndex);
+const updateOptionsStyle = (instanceId, ownerInstance, style) => {
+  const state = getCurrState(instanceId);
+  const needUpdateListOption = checkNeedUpdateItemStyle(instanceId, state.offsetActiveIndex);
   if (!needUpdateListOption) {
     setStyle(ownerInstance, {
       ...style,
     }, '.smart-picker-column__offset');
-    updateItemStyle(ownerInstance, state.offsetActiveIndex);
+    updateItemStyle(instanceId, ownerInstance, state.offsetActiveIndex);
     return
   }
-  const currList = getCurrList(state.options, state.offsetActiveIndex, ownerInstance)
-  updateRenderPartOffset(ownerInstance);
-  const textVarStyle = getCSSVarText(currList)
+  const currList = getCurrList(instanceId, state.options, state.offsetActiveIndex, ownerInstance)
+  updateRenderPartOffset(instanceId, ownerInstance);
+  const textVarStyle = getCSSVarText(instanceId, currList)
   setStyle(ownerInstance, {
     ...style,
     ...textVarStyle,
   }, '.smart-picker-column__offset');
-  updateItemStyle(ownerInstance, state.offsetActiveIndex);
+  updateItemStyle(instanceId, ownerInstance, state.offsetActiveIndex);
 }
 
-const getCSSVarText = (currList) => {
+const getCSSVarText = (instanceId, currList) => {
+  const state = getCurrState(instanceId);
   const textVarStyle = {}
   currList.forEach((item, index) => {
     textVarStyle['--picker-item-content_' + index] = "'" + optionText(item, state.valueKey) + "'"
@@ -241,27 +272,27 @@ const getCSSVarText = (currList) => {
   return textVarStyle;
 }
 
-const touchStart = function (e, ownerInstance) { 
-  const state = getCurrState();
+const touchStart = (instanceId) =>  (e, ownerInstance) => { 
+  const state = getCurrState(instanceId);
   if(state.timer) {
     clearInterval(state.timer);
-    updateState('timer', null);
-    updateState('offset', state.offsetting);
+    updateState(instanceId, 'timer', null);
+    updateState(instanceId, 'offset', state.offsetting);
   }
   const { pageY } = e.touches[0];
   startPo.y = pageY;
-  updateState('offsetList', []);
-  updateState('moving', true);
-  updateState('offsetting', state.offset);
+  updateState(instanceId, 'offsetList', []);
+  updateState(instanceId,'moving', true);
+  updateState(instanceId, 'offsetting', state.offset);
 }
 
 
 // 滚动期间：1.更新滚动位置 2.更新聚焦点位样式 3.更新列表渲染起始位置 4.更新列表文字CSS 变量
-const touchMove = function (e, ownerInstance) { 
-  const state = getCurrState();
+const touchMove = (instanceId) =>  (e, ownerInstance) => { 
+  const state = getCurrState(instanceId);
   if(!state.moving) return;
   const { pageY } = e.touches[0];
-  let offsetY = pageY - startPo.y;
+  const offsetY = pageY - startPo.y;
   const offset = state.offset + offsetY;
   const newOffsetList = [...state.offsetList, offset];
   const currActiveIndex = -offset / state.itemHeight + state.sideCount;
@@ -269,23 +300,23 @@ const touchMove = function (e, ownerInstance) {
   const curIndexLast = Math.abs(currActiveIndex % 1);
   const offsetCompare = offset - state.offsetting;
   const direction = offsetCompare < 0 ? 'down' : offsetCompare > 0 ? 'up' : state.movingDirection || 'down';
-  updateState('offsetActiveIndex', currActiveIndex);
-  updateState('offsetting', offset);
-  updateState('offsetList', newOffsetList);
-  updateState('movingDirection', direction);
-  updateOptionsStyle(ownerInstance, {
+  updateState(instanceId, 'offsetActiveIndex', currActiveIndex);
+  updateState(instanceId, 'offsetting', offset);
+  updateState(instanceId, 'offsetList', newOffsetList);
+  updateState(instanceId, 'movingDirection', direction);
+  updateOptionsStyle(instanceId, ownerInstance, {
     transform: 'translateY(' + addUnit(offset) + ')',
     transition: 'none',
   });
   if((direction === 'down' && preIndexLast <= 0.5 && curIndexLast > 0.5) || (direction === 'up' && preIndexLast >= 0.5 && curIndexLast < 0.5)) {
-    ownerInstance.callMethod('activeIndexChange', currActiveIndex);
+    ownerInstance.callMethod('animationIndexChange', currActiveIndex);
     ownerInstance.callMethod('vibrateShort');
   }
 }
 
 
-const touchEnd = function (e, ownerInstance) { 
-  const state = getCurrState();
+const touchEnd = (instanceId) => function (e, ownerInstance) { 
+  const state = getCurrState(instanceId);
   if(!state.moving) return;
   const preOffsetList = state.offsetList;
 
@@ -366,34 +397,34 @@ const touchEnd = function (e, ownerInstance) {
       const currIndex = -currOffset / state.itemHeight + state.sideCount;
       if (startCount >= count) {
         // 动画结束，设置最终状态
-        updateState('offsetActiveIndex', currTargetActiveIndex);
+        updateState(instanceId, 'offsetActiveIndex', currTargetActiveIndex);
         clearInterval(timer);
-        updateState('offsetting', targetOffset);
-        updateState('offset', targetOffset);
-        updateState('moving', false);
-        updateOptionsStyle(ownerInstance, {
+        updateState(instanceId, 'offsetting', targetOffset);
+        updateState(instanceId, 'offset', targetOffset);
+        updateState(instanceId, 'moving', false);
+        updateOptionsStyle(instanceId, ownerInstance, {
           transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
           transition: 'transform ' + (time ? time + 100 : time) + 'ms',
         });
         ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
         return 
       };
-      updateState('offsetActiveIndex', currIndex);
-      updateState('offsetting', currOffset);
-      updateOptionsStyle(ownerInstance, {
+      updateState(instanceId, 'offsetActiveIndex', currIndex);
+      updateState(instanceId, 'offsetting', currOffset);
+      updateOptionsStyle(instanceId, ownerInstance, {
         transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
         transition: 'transform ' + (time ? time + 100 : time) + 'ms',
       });
     }, midTime);
-    updateState('timer', timer);
+    updateState(instanceId, 'timer', timer);
     ownerInstance.callMethod('vibrateShort', offsetCount);
   } else {
     Math.abs(currTargetActiveIndex - state.offsetActiveIndex) >= 1 && ownerInstance.callMethod('vibrateShort');
-    updateState('offsetActiveIndex', currTargetActiveIndex);
-    updateState('offsetting', targetOffset);
-    updateState('offset', targetOffset);
-    updateState('moving', false);
-    updateOptionsStyle(ownerInstance, {
+    updateState(instanceId, 'offsetActiveIndex', currTargetActiveIndex);
+    updateState(instanceId, 'offsetting', targetOffset);
+    updateState(instanceId, 'offset', targetOffset);
+    updateState(instanceId, 'moving', false);
+    updateOptionsStyle(instanceId, ownerInstance, {
       transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
       transition: 'transform ' + (time ? time + 100 : time) + 'ms',
     });
@@ -402,15 +433,15 @@ const touchEnd = function (e, ownerInstance) {
   }
 }
 
-function tapItem(e, ownerInstance) {
+const tapItem = (instanceId) => (e, ownerInstance) => {
+  const state = getCurrState(instanceId);
   const currTargetActiveIndex = e.currentTarget.dataset.index;
   const targetOffset = -(currTargetActiveIndex - state.sideCount) * state.itemHeight;
   if(currTargetActiveIndex === state.offsetActiveIndex) return;
-  console.log(currTargetActiveIndex, targetOffset, '--targetOffset')
-  updateState('offsetActiveIndex', currTargetActiveIndex);
-  updateState('offsetting', targetOffset);
-  updateState('offset', targetOffset);
-  updateOptionsStyle(ownerInstance, {
+  updateState(instanceId, 'offsetActiveIndex', currTargetActiveIndex);
+  updateState(instanceId, 'offsetting', targetOffset);
+  updateState(instanceId, 'offset', targetOffset);
+  updateOptionsStyle(instanceId, ownerInstance, {
     transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
     transition: 'transform 100ms',
   });

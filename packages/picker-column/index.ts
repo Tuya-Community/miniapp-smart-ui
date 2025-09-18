@@ -5,6 +5,13 @@ import ty from '../common/ty';
 
 const DEFAULT_DURATION = 400;
 
+const compIdList: string[] = [];
+const getId = () => {
+  const id = 'smart-picker-column-' + compIdList.length;
+  compIdList.push(id);
+  return id;
+};
+
 SmartComponent({
   classes: ['active-class'],
 
@@ -75,12 +82,16 @@ SmartComponent({
     playing: false,
     isInit: false,
     maxText: '',
+    instanceId: '',
     timer: null as any,
     preOffsetList: [] as number[],
     viewOptions: [] as any[],
   },
 
   created() {
+    this.setData({
+      instanceId: getId(),
+    });
     this.updateViewOptions();
     const { defaultIndex, activeIndex, options } = this.data;
     this.updateUint(options);
@@ -437,12 +448,17 @@ SmartComponent({
       return data.options[data.currentIndex];
     },
     viewOptionsChange(list: number[]) {
-      console.log(list, '--list');
       this.setData({
         viewOptions: list,
       });
     },
     activeIndexChange(index: number) {
+      this.setData({
+        animationIndex: index,
+      });
+      this.$emit('change', index);
+    },
+    animationIndexChange(index: number) {
       this.setData({
         animationIndex: index,
       });
