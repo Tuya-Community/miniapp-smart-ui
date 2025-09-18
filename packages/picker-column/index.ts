@@ -167,12 +167,17 @@ SmartComponent({
       const { options } = this.data;
       for (let i = 0; i < options.length; i++) {
         if (this.getOptionText(options[i]) === value) {
-          return this.setIndex(i, false, this.data.changeAnimation, this.data.animationTime);
+          return this.setIndex(i);
         }
       }
       return Promise.resolve();
     },
 
+    setIndex(index: number) {
+      this.setData({
+        activeIndex: index,
+      });
+    },
     getValue() {
       const { data } = this;
       return data.options[data.activeIndex < 0 ? 0 : data.activeIndex];
