@@ -1,5 +1,5 @@
 import { SmartComponent } from '../common/component';
-import { generateRangeArray } from '../common/utils';
+import { generateRangeArray, range } from '../common/utils';
 import { isObj } from '../common/validator';
 import ty from '../common/ty';
 
@@ -88,6 +88,7 @@ SmartComponent({
     this.setData({
       instanceId: getId(),
     });
+    this.checkIndex();
     this.updateViewOptions();
     const { options } = this.data;
     this.updateUint(options);
@@ -97,8 +98,28 @@ SmartComponent({
   },
 
   methods: {
-    getCount() {
-      return this.data.options.length;
+    checkIndex() {
+      const { activeIndex } = this.data;
+      const index = this.adjustIndex(activeIndex);
+      if (activeIndex === index) return;
+      this.setData({
+        activeIndex: index,
+      });
+    },
+    adjustIndex(index: number) {
+      const { data } = this;
+      const count = this.data.options.length;
+      index = range(index, 0, count);
+      for (let i = index; i < count; i++) {
+        if (!this.isDisabled(data.options[i])) return i;
+      }
+      for (let i = index - 1; i >= 0; i--) {
+        if (!this.isDisabled(data.options[i])) return i;
+      }
+    },
+
+    isDisabled(option: any) {
+      return isObj(option) && option.disabled;
     },
     updateViewOptions() {
       const currActiveIndex = this.data.activeIndex < 0 ? 0 : this.data.activeIndex;
@@ -153,11 +174,6 @@ SmartComponent({
         this.setData({ maxText });
       }
     },
-
-    isDisabled(option: any) {
-      return isObj(option) && option.disabled;
-    },
-
     getOptionText(option: any) {
       const { data } = this;
       return isObj(option) && data.valueKey in option ? option[data.valueKey] : option;

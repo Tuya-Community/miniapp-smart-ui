@@ -67,6 +67,11 @@ SmartComponent({
       });
     },
 
+    onChange(event) {
+      const { value, index } = event.detail;
+      console.log(`Value: ${typeof value === 'object' ? JSON.stringify(value) : value}, Index：${index}`);
+    },
+
     onConfirm(event) {
       const { value, index } = event.detail;
       Toast({
@@ -85,7 +90,8 @@ SmartComponent({
     },
 
     onChange2(event) {
-      const { picker, value } = event.detail;
+      const { picker, value, index } = event.detail;
+      console.log(`Value: ${typeof value === 'object' ? JSON.stringify(value) : value}, Index：${index}`);
       picker.setColumnValues(1, this.data.column3[value[0]]);
       getApp().picker = picker;
     },

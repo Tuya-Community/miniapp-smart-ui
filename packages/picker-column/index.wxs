@@ -14,6 +14,25 @@ const setStyle = (ownerInstance, style, selector) => {
   dom.setStyle(style);
 };
 
+function range(num, min, max) {
+  return Math.min(Math.max(num, min), max);
+}
+
+function adjustIndex(index, options) {
+  const count = options.length;
+  index = range(index, 0, count);
+  for (let i = index; i < count; i++) {
+    if (!isDisabled(options[i])) return i;
+  }
+  for (let i = index - 1; i >= 0; i--) {
+    if (!isDisabled(options[i])) return i;
+  }
+}
+
+function isDisabled(option) {
+  return typeof option === 'object' && option.disabled;
+}
+
 function generateRangeArray(start, end) {
   const resultArray = [];
   for (let i = start; i < end; i++) {
@@ -374,16 +393,13 @@ const touchEnd = (instanceId) => function (e, ownerInstance) {
     inertiaDistance = inertiaDistance * scrollDirection;
   }
 
-  // 计算最终目标位置
+  // 计算最终目标位置 和 index
   let targetOffset = Math.round((state.offsetting + inertiaDistance) / state.itemHeight) * state.itemHeight;
-  if (targetOffset < 0 && targetOffset < maxDownOptionsDistance) { 
-    targetOffset = maxDownOptionsDistance;
-  } else if (targetOffset > 0 && targetOffset > maxUpOptionsDistance) { 
-    targetOffset = maxUpOptionsDistance;
-  }
+  let currTargetActiveIndex = -targetOffset / state.itemHeight + state.sideCount;
+  currTargetActiveIndex = adjustIndex(currTargetActiveIndex, state.options);
+  targetOffset = -(currTargetActiveIndex - state.sideCount) * state.itemHeight;
 
   const isNeedTransition = Math.abs(targetOffset - state.offsetting) > 1;
-  const currTargetActiveIndex = -targetOffset / state.itemHeight + state.sideCount;
   const time = isNeedTransition ? state.animationTime : 0;
   const animationOffset = Math.abs(targetOffset - state.offsetting);
   const offsetCount = Math.floor(Math.abs(currTargetActiveIndex - state.offsetActiveIndex));
@@ -407,7 +423,11 @@ const touchEnd = (instanceId) => function (e, ownerInstance) {
           transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
           transition: 'transform ' + (time ? time + 100 : time) + 'ms',
         });
-        ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+        if(currTargetActiveIndex !== state.activeIndex) {
+          ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+        } else {
+          ownerInstance.callMethod('animationIndexChange', currTargetActiveIndex);
+        }
         return 
       };
       updateState(instanceId, 'offsetActiveIndex', currIndex);
@@ -429,7 +449,11 @@ const touchEnd = (instanceId) => function (e, ownerInstance) {
       transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
       transition: 'transform ' + (time ? time + 100 : time) + 'ms',
     });
-    ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+    if(currTargetActiveIndex !== state.activeIndex) {
+      ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+    } else {
+      ownerInstance.callMethod('animationIndexChange', currTargetActiveIndex);
+    }
     return
   }
 }
