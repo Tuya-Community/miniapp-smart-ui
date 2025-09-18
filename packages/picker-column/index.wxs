@@ -436,6 +436,8 @@ const touchEnd = (instanceId) => function (e, ownerInstance) {
 const tapItem = (instanceId) => (e, ownerInstance) => {
   const state = getCurrState(instanceId);
   const currTargetActiveIndex = e.currentTarget.dataset.index;
+  const option = state.options[currTargetActiveIndex];
+  if (!option || option && typeof option === 'object' && option.disabled) return;
   const targetOffset = -(currTargetActiveIndex - state.sideCount) * state.itemHeight;
   if (state.startTimer) {
     clearTimeout(state.startTimer);
