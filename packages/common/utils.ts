@@ -131,3 +131,11 @@ export const getDateString = (date: Date) => {
   const formattedDate = `${year}/${month}/${day}`;
   return formattedDate;
 };
+
+export function generateRangeArray(start: number, end: number) {
+  const resultArray: number[] = [];
+  for (let i = start; i < end; i++) {
+    resultArray.push(i);
+  }
+  return resultArray;
+}

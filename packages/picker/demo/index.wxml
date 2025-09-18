@@ -45,7 +45,7 @@
 </demo-block>
 
 <demo-block title="{{I18n.t('disableOption')}}">
-  <smart-picker columns="{{ column2 }}" />
+  <smart-picker columns="{{ column2 }}" bind:change="onChange" />
 </demo-block>
 
 <demo-block title="{{I18n.t('loading')}}">
