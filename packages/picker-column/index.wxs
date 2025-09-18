@@ -272,25 +272,25 @@ const getCSSVarText = (instanceId, currList) => {
   return textVarStyle;
 }
 
-const touchStart = (instanceId) =>  (e, ownerInstance) => { 
+const touchStart = (instanceId) => (e, ownerInstance) => { 
   const state = getCurrState(instanceId);
-  if(state.timer) {
-    clearInterval(state.timer);
-    updateState(instanceId, 'timer', null);
+  if(state.endTimer) {
+    clearInterval(state.endTimer);
+    updateState(instanceId, 'endTimer', null);
     updateState(instanceId, 'offset', state.offsetting);
   }
   const { pageY } = e.touches[0];
   startPo.y = pageY;
   updateState(instanceId, 'offsetList', []);
-  updateState(instanceId,'moving', true);
+  updateState(instanceId, 'moving', false);
   updateState(instanceId, 'offsetting', state.offset);
 }
 
 
 // 滚动期间：1.更新滚动位置 2.更新聚焦点位样式 3.更新列表渲染起始位置 4.更新列表文字CSS 变量
-const touchMove = (instanceId) =>  (e, ownerInstance) => { 
+const touchMove = (instanceId) => (e, ownerInstance) => { 
   const state = getCurrState(instanceId);
-  if(!state.moving) return;
+  updateState(instanceId, 'moving', true);
   const { pageY } = e.touches[0];
   const offsetY = pageY - startPo.y;
   const offset = state.offset + offsetY;
@@ -391,14 +391,14 @@ const touchEnd = (instanceId) => function (e, ownerInstance) {
     const count = Math.floor((time - 150) / midTime);
     const midOffset = (targetOffset - state.offsetting)/ count;
     let startCount = 0
-    const timer = setInterval(() => {
+    const endTimer = setInterval(() => {
       startCount++;
       const currOffset = state.offsetting + midOffset;
       const currIndex = -currOffset / state.itemHeight + state.sideCount;
       if (startCount >= count) {
         // 动画结束，设置最终状态
         updateState(instanceId, 'offsetActiveIndex', currTargetActiveIndex);
-        clearInterval(timer);
+        clearInterval(endTimer);
         updateState(instanceId, 'offsetting', targetOffset);
         updateState(instanceId, 'offset', targetOffset);
         updateState(instanceId, 'moving', false);
@@ -416,7 +416,7 @@ const touchEnd = (instanceId) => function (e, ownerInstance) {
         transition: 'transform ' + (time ? time + 100 : time) + 'ms',
       });
     }, midTime);
-    updateState(instanceId, 'timer', timer);
+    updateState(instanceId, 'endTimer', endTimer);
     ownerInstance.callMethod('vibrateShort', offsetCount);
   } else {
     Math.abs(currTargetActiveIndex - state.offsetActiveIndex) >= 1 && ownerInstance.callMethod('vibrateShort');
@@ -437,13 +437,17 @@ const tapItem = (instanceId) => (e, ownerInstance) => {
   const state = getCurrState(instanceId);
   const currTargetActiveIndex = e.currentTarget.dataset.index;
   const targetOffset = -(currTargetActiveIndex - state.sideCount) * state.itemHeight;
+  if (state.startTimer) {
+    clearTimeout(state.startTimer);
+    updateState(instanceId, 'startTimer', null);
+  }
   if(currTargetActiveIndex === state.offsetActiveIndex) return;
   updateState(instanceId, 'offsetActiveIndex', currTargetActiveIndex);
   updateState(instanceId, 'offsetting', targetOffset);
   updateState(instanceId, 'offset', targetOffset);
   updateOptionsStyle(instanceId, ownerInstance, {
     transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
-    transition: 'transform 100ms',
+    transition: 'transform 200ms',
   });
   ownerInstance.callMethod('vibrateShort');
   ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
