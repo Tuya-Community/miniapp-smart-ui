@@ -27,22 +27,32 @@ category: 导航
 
 ```html
 <smart-index-bar>
-  <view>
-    <smart-index-anchor index="A" />
+  <view
+    wx:for="{{ indexList }}"
+    wx:for-item="item"
+    wx:key="item"
+  >
+    <smart-index-anchor index="{{ item }}" />
     <smart-cell title="文本" />
     <smart-cell title="文本" />
     <smart-cell title="文本" />
   </view>
-
-  <view>
-    <smart-index-anchor index="B" />
-    <smart-cell title="文本" />
-    <smart-cell title="文本" />
-    <smart-cell title="文本" />
-  </view>
-
-  ...
 </smart-index-bar>
+```
+
+```javascript
+const indexList = [];
+const charCodeOfA = 'A'.charCodeAt(0);
+
+for (let i = 0; i < 26; i++) {
+  indexList.push(String.fromCharCode(charCodeOfA + i));
+}
+
+Page({
+  data: {
+    indexList, // A-Z 字母列表
+  },
+});
 ```
 
 ### 自定义索引列表
@@ -50,29 +60,28 @@ category: 导航
 可以通过`index-list`属性自定义展示的索引字符列表。
 
 ```html
-<smart-index-bar index-list="{{ indexList }}">
-  <view>
-    <smart-index-anchor index="1">标题1</smart-index-anchor>
+<smart-index-bar index-list="{{ customIndexList }}">
+  <view
+    wx:for="{{ customIndexList }}"
+    wx:key="index"
+  >
+    <smart-index-anchor
+      use-slot
+      index="{{ item }}"
+    >
+      <text>标题{{ item }}</text>
+    </smart-index-anchor>
     <smart-cell title="文本" />
     <smart-cell title="文本" />
     <smart-cell title="文本" />
   </view>
-
-  <view>
-    <smart-index-anchor index="2">标题2</smart-index-anchor>
-    <smart-cell title="文本" />
-    <smart-cell title="文本" />
-    <smart-cell title="文本" />
-  </view>
-
-  ...
 </smart-index-bar>
 ```
 
 ```javascript
 Page({
   data: {
-    indexList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10],
   },
 });
 ```

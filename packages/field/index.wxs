@@ -7,6 +7,7 @@ function inputStyle(autosize) {
     return style({
       'min-height': addUnit(autosize.minHeight),
       'max-height': addUnit(autosize.maxHeight),
+      overflow: 'auto',
     });
   }
 
