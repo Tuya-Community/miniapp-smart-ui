@@ -168,12 +168,13 @@ function updateOffset(instanceId, ownerInstance) {
   }, '.smart-picker-column__offset');
 
   setTimeout(() => { 
-    updateItemStyle(instanceId, ownerInstance, currActiveIndex);
+    updateItemStyle(instanceId, ownerInstance);
   }, 10)
 }
 /** 更新聚焦点位样式 */
-const updateItemStyle = (instanceId, ownerInstance, currActiveIndex) => {
+const updateItemStyle = (instanceId, ownerInstance, time) => {
   const state = getCurrState(instanceId);
+  const currActiveIndex = state.offsetActiveIndex;
   state.viewIndexList.slice(0, 20).map((item, index) => {
     const viewOptionsActiveIndex = item;
     const maxSideShow = state.sideCount + 2;
@@ -188,7 +189,7 @@ const updateItemStyle = (instanceId, ownerInstance, currActiveIndex) => {
     const className = `.smart-picker-column__item_${index}`;
     setStyle(ownerInstance, {
       transform: `rotateX(${rotateX}deg) scale(${scale}) translateY(${translateYOffset}px) translateZ(0)`,
-      transition: 'none',
+      transition: !time ? 'none' : 'transform ' + time + 'ms',
     }, className);
   })
 }
@@ -243,14 +244,14 @@ const checkNeedUpdateItemStyle = (instanceId, currActiveIndex) => {
   return onePartOffset !== state.onePartOffset || twoPartOffset !== state.twoPartOffset;
 }
 
-const updateOptionsStyle = (instanceId, ownerInstance, style) => {
+const updateOptionsStyle = (instanceId, ownerInstance, style, time) => {
   const state = getCurrState(instanceId);
   const needUpdateListOption = checkNeedUpdateItemStyle(instanceId, state.offsetActiveIndex);
   if (!needUpdateListOption) {
     setStyle(ownerInstance, {
       ...style,
     }, '.smart-picker-column__offset');
-    updateItemStyle(instanceId, ownerInstance, state.offsetActiveIndex);
+    updateItemStyle(instanceId, ownerInstance, time);
     return
   }
   const currList = getCurrList(instanceId, state.options, state.offsetActiveIndex, ownerInstance)
@@ -260,7 +261,7 @@ const updateOptionsStyle = (instanceId, ownerInstance, style) => {
     ...style,
     ...textVarStyle,
   }, '.smart-picker-column__offset');
-  updateItemStyle(instanceId, ownerInstance, state.offsetActiveIndex);
+  updateItemStyle(instanceId, ownerInstance, time);
 }
 
 const getCSSVarText = (instanceId, currList) => {
@@ -437,22 +438,31 @@ const tapItem = (instanceId) => (e, ownerInstance) => {
   const state = getCurrState(instanceId);
   const currTargetActiveIndex = e.currentTarget.dataset.index;
   const option = state.options[currTargetActiveIndex];
-  if (!option || option && typeof option === 'object' && option.disabled) return;
+  if (option === undefined || option && typeof option === 'object' && option.disabled) return;
   const targetOffset = -(currTargetActiveIndex - state.sideCount) * state.itemHeight;
   if (state.startTimer) {
     clearTimeout(state.startTimer);
     updateState(instanceId, 'startTimer', null);
   }
-  if(currTargetActiveIndex === state.offsetActiveIndex) return;
+  if (currTargetActiveIndex === state.offsetActiveIndex) return;
+  const offsetCount = Math.abs(currTargetActiveIndex - state.offsetActiveIndex);
+  if (state.tapTimer) {
+    clearTimeout(state.tapTimer);
+    updateState(instanceId, 'tapTimer', null);
+  }
   updateState(instanceId, 'offsetActiveIndex', currTargetActiveIndex);
   updateState(instanceId, 'offsetting', targetOffset);
   updateState(instanceId, 'offset', targetOffset);
   updateOptionsStyle(instanceId, ownerInstance, {
     transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
     transition: 'transform 200ms',
-  });
-  ownerInstance.callMethod('vibrateShort');
-  ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+  }, 200);
+  ownerInstance.callMethod('vibrateShort', offsetCount, 150);
+  const tapTimer = setTimeout(() => {
+    ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+    updateState(instanceId, 'tapTimer', null);
+  }, 150);
+  updateState(instanceId, 'tapTimer', tapTimer);
 }
 
 
