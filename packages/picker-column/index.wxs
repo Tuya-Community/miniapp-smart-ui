@@ -3,6 +3,53 @@ var style = require('../wxs/style.wxs');
 var addUnit = require('../wxs/add-unit.wxs');
 var wxUtils = require('../wxs/utils.wxs');
 
+let startPo = { y: 0 }; // 记录当前拖动元素的开始的位置
+
+const setStyle = (ownerInstance, style, selector) => {
+  const dom = queryComponent(ownerInstance, selector);
+  if (!dom) {
+    console.log(selector, '--selector 无法获取');
+    return
+  }
+  dom.setStyle(style);
+};
+
+function range(num, min, max) {
+  return Math.min(Math.max(num, min), max);
+}
+
+function adjustIndex(index, options) {
+  const count = options.length;
+  index = range(index, 0, count);
+  for (let i = index; i < count; i++) {
+    if (!isDisabled(options[i])) return i;
+  }
+  for (let i = index - 1; i >= 0; i--) {
+    if (!isDisabled(options[i])) return i;
+  }
+}
+
+function isDisabled(option) {
+  return typeof option === 'object' && option.disabled;
+}
+
+function generateRangeArray(start, end) {
+  const resultArray = [];
+  for (let i = start; i < end; i++) {
+      resultArray.push(i);
+  }
+  return resultArray;
+}
+
+const queryComponent = function (ownerInstance, selector) {
+  const instance = ownerInstance?.selectComponent(selector);
+  return instance;
+};
+
+function sliceArray(list, start, end) {
+  return list.slice(start, end);
+}
+
 function isObj(x) {
   var type = typeof x;
   return x !== null && (type === 'object' || type === 'function');
@@ -27,53 +74,433 @@ function wrapperStyle(data) {
       'text-indent': data.unit ? '-8rpx' : '0',
       transition: 'transform ' + data.duration + 'ms ease-out',
       'line-height': addUnit(data.itemHeight),
-      transform: 'translate3d(0, ' + offset + ', 0)',
     });
   }
   return style({
     'text-indent': data.unit ? '-8rpx' : '0',
     'line-height': addUnit(data.itemHeight),
-    transform: 'translate3d(0, ' + offset + ', 0)',
-  });
-}
-
-function wrapperInterStyle(data) {
-  var offset = data.renderStart * data.itemHeight;
-  offset = addUnit(offset);
-  return style({
-    'padding-top': offset,
   });
 }
 
 function wrapperItemStyle(data) {
   var heightStyleStr = "height: " + data.itemHeight + 'px;'
-  var fontStyleStr = style(data.fontStyle);
-  var activeStyleStr = style(data.activeStyle);
+  var maxSideShow = data.visibleItemCount + 2;
+  var offsetIndex = data.animationIndex - data.index;
+  if (Math.abs(offsetIndex) > maxSideShow) heightStyleStr
+  const finOffsetIndex = offsetIndex > 0 ? Math.min(offsetIndex, maxSideShow) : Math.max(offsetIndex, -maxSideShow);
+  var scale = 1 - Math.abs(finOffsetIndex * 0.15);
+  var rotateX = rotateX = Math.abs(finOffsetIndex * 10);
+  var direction = offsetIndex > 0 ? 1 : -1;
+  var translateYIndex = Math.abs(finOffsetIndex);
+  var translateYOffset = translateYIndex * translateYIndex * direction * state.itemHeight * 0.1
+  const transStyle = style({
+    transform: `rotateX(${rotateX}deg) scale(${scale}) translateY(${translateYOffset}px) translateZ(0)`,
+  });
+  return transStyle + ';' + heightStyleStr
+}
 
-  // var maxSideShow = Math.floor(data.visibleItemCount / 2) + 1;
-  // var offsetIndex = data.animationIndex - data.index;
-  // var scale = Math.min(Math.abs(offsetIndex * 0.2), 0.2 * maxSideShow)
-  // var rotateX = offsetIndex * 25 > 0 ? Math.min(offsetIndex * 25, 25 * maxSideShow) : Math.max(offsetIndex * 25, -25 * maxSideShow)
-  // var translateYIndex = offsetIndex > 0 ? Math.min(offsetIndex, maxSideShow) : Math.max(offsetIndex, -maxSideShow)
-  // const transStyle = style({
-  //   transform: `rotateX(${rotateX}deg) scale(${1 - scale}) translateY(${translateYIndex * Math.abs(translateYIndex) * Math.abs(translateYIndex) * data.itemHeight * 0.1}px) translateZ(0)`,
-  // });
-  // return transStyle + ';' + heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
-  return heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
+function wrapperItemTextStyle(data) {
+  var fontStyle = data.fontStyle;
+  var activeStyle = data.activeStyle;
+  var isActive = Math.abs(data.index - data.animationIndex) < 0.5;
+  return fontStyle ? fontStyle + ';' : '' + (isActive ? activeStyle + ';' : '')
 }
 
 function wrapperItemClass(data) {
   var staticClass = 'smart-ellipsis';
   var activeClass = 'active-class';
-  var isActive = Math.abs(data.renderStart + data.index - data.animationIndex) < 0.9;
-  return staticClass + ' ' + wxUtils.bem('picker-column__item', { disabled: data.option && data.option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
+  var isActive = Math.abs(data.index - data.animationIndex) < 0.5;
+  const currOption = data.options[data.index];
+  return staticClass + ' ' + wxUtils.bem('picker-column__item', { disabled: currOption && currOption.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
 }
+
+var state = {}
+
+var preStateObj = {}
+
+function updateState(instanceId, key, value) {
+  if (!key) return;
+  state[instanceId] = state[instanceId] || {}
+  state[instanceId][key] = value
+}
+
+function getCurrState(instanceId) {
+  return state[instanceId]
+}
+
+function updatePreState(instanceId, state) {
+  const preStateStr = JSON.stringify(state)
+  preStateObj[instanceId] = preStateStr;
+}
+
+function getPreState(instanceId) {
+  return preStateObj[instanceId]
+}
+
+function getDomState(ownerInstance) {
+  const dom = queryComponent(ownerInstance, '.smart-picker-column');
+  const state = dom.getDataset();
+  return state
+}
+
+function initDomState(instanceId, ownerInstance) {
+  const state = getDomState(ownerInstance);
+  updateState(instanceId, 'options', state.options)
+  updateState(instanceId, 'valueKey', state.valuekey)
+  updateState(instanceId, 'itemHeight', state.itemheight)
+  updateState(instanceId, 'visibleItemCount', state.visibleitemcount)
+  updateState(instanceId, 'activeIndex', state.activeindex)
+  updateState(instanceId, 'loop', state.loop)
+  updateState(instanceId, 'animationTime', state.animationtime)
+}
+
+const updateValue = (instanceId, key) => (newOptions, oldOptions, ownerInstance) => {
+  if (!instanceId) return;
+  initDomState(instanceId, ownerInstance)
+  updateState(instanceId, key, newOptions)
+  updateOffset(instanceId, ownerInstance)
+}
+
+function updateOffset(instanceId, ownerInstance) {
+  const state = getCurrState(instanceId);
+  const domState = getDomState(ownerInstance);
+  if(getPreState(instanceId) === JSON.stringify(domState) || !state.itemHeight || !state.visibleItemCount || !Array.isArray(state.options) || state.animationTime === undefined) {
+    return
+  }
+  updatePreState(instanceId, domState)
+  const sideCount = Math.floor(state.visibleItemCount / 2)
+  const optionLength = state.options.length;
+  updateState(instanceId, 'sideCount', sideCount);
+  const currActiveIndex = state.activeIndex < 0 ? 0 : state.activeIndex >= optionLength ? optionLength - 1 : state.activeIndex;
+  const currList = getCurrList(instanceId, state.options, currActiveIndex, ownerInstance)
+  updateRenderPartOffset(instanceId, ownerInstance)
+  const textVarStyle = {}
+  currList.forEach((item, index) => {
+    textVarStyle['--picker-item-content_' + index] = "'" + optionText(item, state.valueKey) + "'"
+  })
+  const offset = state.itemHeight * (sideCount - currActiveIndex);
+  updateState(instanceId, 'offset', offset)
+  updateState(instanceId,'offsetActiveIndex', currActiveIndex);
+  setStyle(ownerInstance, {
+    transform: 'translateY(' + addUnit(offset) + ')',
+    ...textVarStyle,
+  }, '.smart-picker-column__offset');
+
+  setTimeout(() => { 
+    updateItemStyle(instanceId, ownerInstance);
+  }, 10)
+}
+/** 更新聚焦点位样式 */
+const updateItemStyle = (instanceId, ownerInstance, time) => {
+  const state = getCurrState(instanceId);
+  const currActiveIndex = state.offsetActiveIndex;
+  state.viewIndexList.slice(0, 20).map((item, index) => {
+    const viewOptionsActiveIndex = item;
+    const maxSideShow = state.sideCount + 2;
+    const offsetIndex = currActiveIndex - viewOptionsActiveIndex;
+    if(Math.abs(offsetIndex) > maxSideShow) return;
+    const finOffsetIndex = offsetIndex > 0 ? Math.min(offsetIndex, maxSideShow) : Math.max(offsetIndex, -maxSideShow);
+    const scale = 1 - Math.abs(finOffsetIndex * 0.15);
+    const rotateX = Math.abs(finOffsetIndex * 10);
+    const direction = offsetIndex > 0 ? 1 : -1;
+    const translateYIndex = Math.abs(finOffsetIndex);
+    const translateYOffset = translateYIndex * translateYIndex * direction * state.itemHeight * 0.1
+    const className = `.smart-picker-column__item_${index}`;
+    setStyle(ownerInstance, {
+      transform: `rotateX(${rotateX}deg) scale(${scale}) translateY(${translateYOffset}px) translateZ(0)`,
+      transition: !time ? 'none' : 'transform ' + time + 'ms',
+    }, className);
+  })
+}
+
+const getTwoPartOffset = (activeIndex) => {
+  const currActiveIndex = activeIndex < 0 ? 0 : activeIndex
+  let partNum = Math.floor((currActiveIndex) / 10);
+  const lastNum = activeIndex - partNum * 10;
+  if (lastNum < 5 && partNum > 0) {
+    partNum -= 1;
+  }
+  const part2Times = Math.floor(partNum / 2);
+  const part2Percent = partNum % 2;
+  const onePartOffset = part2Percent + part2Times;
+  const twoPartOffset = part2Times;
+  return { onePartOffset , twoPartOffset }
+}
+
+const getCurrList = (instanceId, options, activeIndex, ownerInstance) => {
+  const { onePartOffset, twoPartOffset } = getTwoPartOffset(activeIndex);
+  const isReverse = onePartOffset > twoPartOffset;
+  updateState(instanceId, 'onePartOffset', onePartOffset)
+  updateState(instanceId, 'twoPartOffset', twoPartOffset)
+  const startPart = twoPartOffset + onePartOffset;
+  const viewIndexList = !isReverse ? generateRangeArray(startPart * 10, startPart * 10 + 20) : [...generateRangeArray(startPart * 10 + 10, startPart * 10 + 20), ...generateRangeArray(startPart * 10, startPart * 10 + 10)]
+  updateState(instanceId,'viewIndexList', viewIndexList)
+  // ownerInstance.callMethod('viewOptionsChange', viewIndexList);
+  if (!isReverse) return options.slice(startPart * 10, startPart * 10 + 20);
+  let firstList = options.slice(startPart * 10 + 10, startPart * 10 + 20);
+  const scendList = options.slice(startPart * 10, startPart * 10 + 10);
+  if (firstList.length < 10) {
+    // firstList = [...firstList, ...options.slice(0, 10 - firstList.length)];
+    firstList = [...firstList, ...new Array(10 - firstList.length).fill('')];
+  }
+  return [...firstList, ...scendList];
+}
+
+const updateRenderPartOffset = (instanceId, ownerInstance, direction) => { 
+  const state = getCurrState(instanceId);
+  const offsetDistance = 20 * state.itemHeight;
+  setStyle(ownerInstance, {
+    transform: 'translateY(' + addUnit(offsetDistance * state.onePartOffset) + ')',
+  }, '.smart-picker-column__visual__item_1');
+  setStyle(ownerInstance, {
+    transform: 'translateY(' + addUnit(offsetDistance * state.twoPartOffset) + ')',
+  }, '.smart-picker-column__visual__item_2');
+}
+
+const checkNeedUpdateItemStyle = (instanceId, currActiveIndex) => {
+  const state = getCurrState(instanceId);
+  const { onePartOffset, twoPartOffset } = getTwoPartOffset(currActiveIndex);
+  return onePartOffset !== state.onePartOffset || twoPartOffset !== state.twoPartOffset;
+}
+
+const updateOptionsStyle = (instanceId, ownerInstance, style, time) => {
+  const state = getCurrState(instanceId);
+  const needUpdateListOption = checkNeedUpdateItemStyle(instanceId, state.offsetActiveIndex);
+  if (!needUpdateListOption) {
+    setStyle(ownerInstance, {
+      ...style,
+    }, '.smart-picker-column__offset');
+    updateItemStyle(instanceId, ownerInstance, time);
+    return
+  }
+  const currList = getCurrList(instanceId, state.options, state.offsetActiveIndex, ownerInstance)
+  updateRenderPartOffset(instanceId, ownerInstance);
+  const textVarStyle = getCSSVarText(instanceId, currList)
+  setStyle(ownerInstance, {
+    ...style,
+    ...textVarStyle,
+  }, '.smart-picker-column__offset');
+  updateItemStyle(instanceId, ownerInstance, time);
+}
+
+const getCSSVarText = (instanceId, currList) => {
+  const state = getCurrState(instanceId);
+  const textVarStyle = {}
+  currList.forEach((item, index) => {
+    textVarStyle['--picker-item-content_' + index] = "'" + optionText(item, state.valueKey) + "'"
+  })
+  return textVarStyle;
+}
+
+const touchStart = (instanceId) => (e, ownerInstance) => { 
+  const state = getCurrState(instanceId);
+  if(state.endTimer) {
+    clearInterval(state.endTimer);
+    updateState(instanceId, 'endTimer', null);
+    updateState(instanceId, 'offset', state.offsetting);
+  }
+  const { pageY } = e.touches[0];
+  startPo.y = pageY;
+  updateState(instanceId, 'offsetList', []);
+  updateState(instanceId, 'moving', false);
+  updateState(instanceId, 'offsetting', state.offset);
+}
+
+
+// 滚动期间：1.更新滚动位置 2.更新聚焦点位样式 3.更新列表渲染起始位置 4.更新列表文字CSS 变量
+const touchMove = (instanceId) => (e, ownerInstance) => { 
+  const state = getCurrState(instanceId);
+  updateState(instanceId, 'moving', true);
+  const { pageY } = e.touches[0];
+  const offsetY = pageY - startPo.y;
+  const offset = state.offset + offsetY;
+  const newOffsetList = [...state.offsetList, offset];
+  const currActiveIndex = -offset / state.itemHeight + state.sideCount;
+  const preIndexLast = Math.abs(state.offsetActiveIndex % 1);
+  const curIndexLast = Math.abs(currActiveIndex % 1);
+  const offsetCompare = offset - state.offsetting;
+  const direction = offsetCompare < 0 ? 'down' : offsetCompare > 0 ? 'up' : state.movingDirection || 'down';
+  updateState(instanceId, 'offsetActiveIndex', currActiveIndex);
+  updateState(instanceId, 'offsetting', offset);
+  updateState(instanceId, 'offsetList', newOffsetList);
+  updateState(instanceId, 'movingDirection', direction);
+  updateOptionsStyle(instanceId, ownerInstance, {
+    transform: 'translateY(' + addUnit(offset) + ')',
+    transition: 'none',
+  });
+  if((direction === 'down' && preIndexLast <= 0.5 && curIndexLast > 0.5) || (direction === 'up' && preIndexLast >= 0.5 && curIndexLast < 0.5)) {
+    ownerInstance.callMethod('animationIndexChange', currActiveIndex);
+    ownerInstance.callMethod('vibrateShort');
+  }
+}
+
+
+const touchEnd = (instanceId) => function (e, ownerInstance) { 
+  const state = getCurrState(instanceId);
+  if(!state.moving) return;
+  const preOffsetList = state.offsetList;
+
+  const maxUpOptionsDistance = state.loop ? state.itemHeight * 500 : state.sideCount * state.itemHeight;
+  const maxDownOptionsDistance = state.loop ? -state.itemHeight * 500 : -Math.max((state.options.length - state.sideCount - 1) * state.itemHeight, 0);
+  // 计算最后几帧的平均速度，用于惯性滚动
+  let recentVelocity = 0;
+  /** -1: 向下, 1: 向上, 0: 无滚动 */
+  let scrollDirection = 0;
+  
+  if (preOffsetList.length >= 2) {
+    // 计算速度，优先使用最后几帧的数据
+    let recentOffset = 0;
+    let recentTime = 0;
+    
+    if (preOffsetList.length >= 3) {
+      // 有3个或以上数据点，使用最后3个点计算速度
+      recentOffset = preOffsetList[preOffsetList.length - 1] - preOffsetList[preOffsetList.length - 3];
+      recentTime = 2; // 2帧间隔
+    } else if (preOffsetList.length === 2) {
+      // 只有2个数据点，使用这2个点计算速度
+      recentOffset = preOffsetList[1] - preOffsetList[0];
+      recentTime = 1; // 1帧间隔
+    }
+    
+    // 计算速度 (px/ms)
+    recentVelocity = Math.abs(recentOffset) / (recentTime * 16);
+    
+    // 确定滚动方向
+    if (recentOffset > 0) {
+      scrollDirection = 1; // 向上滚动
+    } else if (recentOffset < 0) {
+      scrollDirection = -1; // 向下滚动
+    }
+  }
+  
+  // 惯性滚动参数配置
+  const minVelocity = 0.1; // 最小速度阈值，低于此值停止滚动
+  const maxInertiaDistance = state.itemHeight * 8; // 最大惯性滚动距离
+  
+  // 计算惯性滚动距离
+  let inertiaDistance = 0;
+  if (recentVelocity > minVelocity) {
+    // 使用物理公式计算惯性距离：distance = velocity^2 / (2 * friction)
+    // 这里简化处理，直接使用速度乘以一个系数
+    inertiaDistance = recentVelocity * 200; // 200ms的惯性时间
+    
+    // 限制最大滚动距离
+    if (inertiaDistance > maxInertiaDistance) {
+      inertiaDistance = maxInertiaDistance;
+    }
+        
+    // 根据滚动方向确定正负值
+    inertiaDistance = inertiaDistance * scrollDirection;
+  }
+
+  // 计算最终目标位置 和 index
+  let targetOffset = Math.round((state.offsetting + inertiaDistance) / state.itemHeight) * state.itemHeight;
+  let currTargetActiveIndex = -targetOffset / state.itemHeight + state.sideCount;
+  currTargetActiveIndex = adjustIndex(currTargetActiveIndex, state.options);
+  targetOffset = -(currTargetActiveIndex - state.sideCount) * state.itemHeight;
+
+  const isNeedTransition = Math.abs(targetOffset - state.offsetting) > 1;
+  const time = isNeedTransition ? state.animationTime : 0;
+  const animationOffset = Math.abs(targetOffset - state.offsetting);
+  const offsetCount = Math.floor(Math.abs(currTargetActiveIndex - state.offsetActiveIndex));
+  if (time > 150 && animationOffset > state.itemHeight) {
+    const midTime = 16;
+    const count = Math.floor((time - 150) / midTime);
+    const midOffset = (targetOffset - state.offsetting)/ count;
+    let startCount = 0
+    const endTimer = setInterval(() => {
+      startCount++;
+      const currOffset = state.offsetting + midOffset;
+      const currIndex = -currOffset / state.itemHeight + state.sideCount;
+      if (startCount >= count) {
+        // 动画结束，设置最终状态
+        updateState(instanceId, 'offsetActiveIndex', currTargetActiveIndex);
+        clearInterval(endTimer);
+        updateState(instanceId, 'offsetting', targetOffset);
+        updateState(instanceId, 'offset', targetOffset);
+        updateState(instanceId, 'moving', false);
+        updateOptionsStyle(instanceId, ownerInstance, {
+          transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
+          transition: 'transform ' + (time ? time + 100 : time) + 'ms',
+        });
+        if(currTargetActiveIndex !== state.activeIndex) {
+          ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+        } else {
+          ownerInstance.callMethod('animationIndexChange', currTargetActiveIndex);
+        }
+        return 
+      };
+      updateState(instanceId, 'offsetActiveIndex', currIndex);
+      updateState(instanceId, 'offsetting', currOffset);
+      updateOptionsStyle(instanceId, ownerInstance, {
+        transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
+        transition: 'transform ' + (time ? time + 100 : time) + 'ms',
+      });
+    }, midTime);
+    updateState(instanceId, 'endTimer', endTimer);
+    ownerInstance.callMethod('vibrateShort', offsetCount);
+  } else {
+    Math.abs(currTargetActiveIndex - state.offsetActiveIndex) >= 1 && ownerInstance.callMethod('vibrateShort');
+    updateState(instanceId, 'offsetActiveIndex', currTargetActiveIndex);
+    updateState(instanceId, 'offsetting', targetOffset);
+    updateState(instanceId, 'offset', targetOffset);
+    updateState(instanceId, 'moving', false);
+    updateOptionsStyle(instanceId, ownerInstance, {
+      transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
+      transition: 'transform ' + (time ? time + 100 : time) + 'ms',
+    });
+    if(currTargetActiveIndex !== state.activeIndex) {
+      ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+    } else {
+      ownerInstance.callMethod('animationIndexChange', currTargetActiveIndex);
+    }
+    return
+  }
+}
+
+const tapItem = (instanceId) => (e, ownerInstance) => {
+  const state = getCurrState(instanceId);
+  const currTargetActiveIndex = e.currentTarget.dataset.index;
+  const option = state.options[currTargetActiveIndex];
+  if (option === undefined || option && typeof option === 'object' && option.disabled) return;
+  const targetOffset = -(currTargetActiveIndex - state.sideCount) * state.itemHeight;
+  if (state.startTimer) {
+    clearTimeout(state.startTimer);
+    updateState(instanceId, 'startTimer', null);
+  }
+  if (currTargetActiveIndex === state.offsetActiveIndex) return;
+  const offsetCount = Math.abs(currTargetActiveIndex - state.offsetActiveIndex);
+  if (state.tapTimer) {
+    clearTimeout(state.tapTimer);
+    updateState(instanceId, 'tapTimer', null);
+  }
+  updateState(instanceId, 'offsetActiveIndex', currTargetActiveIndex);
+  updateState(instanceId, 'offsetting', targetOffset);
+  updateState(instanceId, 'offset', targetOffset);
+  updateOptionsStyle(instanceId, ownerInstance, {
+    transform: 'translateY(' + addUnit(Math.round(targetOffset)) + ')',
+    transition: 'transform 200ms',
+  }, 200);
+  ownerInstance.callMethod('vibrateShort', offsetCount, 150);
+  const tapTimer = setTimeout(() => {
+    ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+    updateState(instanceId, 'tapTimer', null);
+  }, 150);
+  updateState(instanceId, 'tapTimer', tapTimer);
+}
+
 
 module.exports = {
   optionText: optionText,
   rootStyle: rootStyle,
   wrapperStyle: wrapperStyle,
-  wrapperInterStyle: wrapperInterStyle,
   wrapperItemStyle: wrapperItemStyle,
-  wrapperItemClass: wrapperItemClass
+  wrapperItemClass: wrapperItemClass,
+  updateValue: updateValue,
+  touchStart: touchStart,
+  touchMove: touchMove,
+  touchEnd: touchEnd,
+  sliceArray: sliceArray,
+  wrapperItemTextStyle: wrapperItemTextStyle,
+  tapItem: tapItem,
 };
