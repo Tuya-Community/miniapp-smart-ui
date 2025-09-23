@@ -358,6 +358,9 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
         updateState(instanceId, 'moving', false);
         updateState(instanceId, 'animationIndex', currTargetActiveIndex);
         ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
+        setTimeout(() => {
+          ownerInstance.callMethod('animationEnd');
+        }, 10);
         return;
       }
       updateVisibleOptions(currIndex, instanceId);
