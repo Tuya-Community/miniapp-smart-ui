@@ -8,7 +8,8 @@ function isObj(x) {
   return x !== null && (type === 'object' || type === 'function');
 }
 
-function optionText(option, valueKey) {
+function optionText(options, optionIndex, valueKey) {
+  var option = options[optionIndex];
   return isObj(option) && option[valueKey] != null ? option[valueKey] : option;
 }
 
@@ -20,11 +21,17 @@ function rootStyle(data) {
 
 function wrapperStyle(data) {
   var rotate = 20 * data.animationIndex;
+  var optionsVIndexList = data.optionsVIndexList;
+  var cssVar = optionsVIndexList.reduce((previousValue, currentValue, currentIndex) => {
+    previousValue[`--picker-item-content_${currentIndex}`] = `"${currentValue}"`;
+    return previousValue;
+  }, {});
   return style({
     'text-indent': data.unit ? '-8rpx' : '0',
     transition: data.moving ? 'none' : 'transform ' + (data.duration + 100) + 'ms ease-out',
     'line-height': addUnit(data.itemHeight),
-      transform: `rotateX(${rotate}deg)`
+    transform: `rotateX(${rotate}deg)`,
+    ...cssVar
   });
 }
 
@@ -51,8 +58,16 @@ function wrapperItemClass(data) {
   var staticClass = 'smart-ellipsis';
   var activeClass = 'active-class';
   var isActive = Math.abs(data.renderStart + data.index - data.animationIndex) < 0.9;
-  return staticClass + ' ' + wxUtils.bem('picker-column__item', { disabled: data.option && data.option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
+  return staticClass + ' ' + wxUtils.bem('picker-column__item', { disabled: data.optionIndex && data.optionIndex.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
 }
+
+function wrapperItemTextStyle(data) {
+  var fontStyle = data.fontStyle;
+  var activeStyle = data.activeStyle;
+  var isActive = typeof data.optionIndex === 'number' && Math.abs(data.optionIndex - data.animationIndex) < 0.5;
+  return (fontStyle ? fontStyle.replace(';', '') + ';' : '') + (isActive ? activeStyle.replace(';', '') + ';' : '')
+}
+
 
 module.exports = {
   optionText: optionText,
@@ -60,5 +75,6 @@ module.exports = {
   wrapperStyle: wrapperStyle,
   wrapperInterStyle: wrapperInterStyle,
   wrapperItemStyle: wrapperItemStyle,
-  wrapperItemClass: wrapperItemClass
+  wrapperItemClass: wrapperItemClass,
+  wrapperItemTextStyle: wrapperItemTextStyle
 };

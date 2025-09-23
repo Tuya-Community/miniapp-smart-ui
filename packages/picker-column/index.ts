@@ -44,7 +44,7 @@ SmartComponent({
       value: -1,
       observer(index: number) {
         if (!this.data.isInit) return;
-        this.setIndex(index, false, this.data.changeAnimation, this.data.animationTime);
+        this.setIndex(index);
       },
     },
     unit: {
@@ -74,6 +74,7 @@ SmartComponent({
     timer: null as any,
     preOffsetList: [] as number[],
 
+    optionsVIndexList: [] as any[], // 渲染的 options index 列表
     offsetActiveIndex: 0,
     endTimer: null as any,
     offsetList: [] as number[],
@@ -90,7 +91,6 @@ SmartComponent({
     const animationIndex = activeIndex !== -1 ? activeIndex : defaultIndex;
     this.updateVisibleOptions(animationIndex);
     this.setData({
-      // optionsV: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
       animationIndex: animationIndex,
       isInit: true,
     });
@@ -257,17 +257,6 @@ SmartComponent({
         this.$emit('animation-end');
       }, this.data.animationTime);
     },
-    checkIsDown(curr?: number) {
-      const { data } = this;
-      const { preOffsetList } = data;
-      const currOffset = curr === undefined ? preOffsetList[preOffsetList.length - 1] : curr;
-      const preOffset =
-        curr === undefined
-          ? preOffsetList[preOffsetList.length - 2]
-          : preOffsetList[preOffsetList.length - 1];
-      if (currOffset === undefined || preOffset === undefined || currOffset === preOffset) return;
-      return currOffset < preOffset ? 'down' : 'up';
-    },
 
     vibrateShort(count?: number, time = DEFAULT_DURATION) {
       if (!count) {
@@ -292,7 +281,7 @@ SmartComponent({
         return;
       }
       this.vibrateShort(Math.abs(index - this.data.currentIndex), DEFAULT_DURATION);
-      this.setIndex(index, true, true, this.data.animationTime);
+      this.setIndex(index);
     },
 
     updateUint(options: any[]) {
@@ -313,22 +302,13 @@ SmartComponent({
       let animationIndex = Math.round(
         currentIndex !== undefined ? currentIndex : this.data.animationIndex
       );
+      const newArr = new Array(18).fill('');
+      const newValueArr = new Array(10).fill('');
       if (this.data.loop) {
-        let startIndex = animationIndex - 9;
-        let endIndex = animationIndex + 10;
-        if (endIndex > this.data.options.length) {
-          endIndex = this.data.options.length;
-          startIndex = endIndex - 18;
-        }
-        if (startIndex < 0) {
-          startIndex = 0;
-          endIndex = Math.min(this.data.options.length, 18);
-        }
-
-        this.set({
-          optionsV: this.data.options.slice(startIndex, endIndex),
-          renderStart: 0,
-          renderNum: 10,
+        newValueArr.forEach((item, index) => {
+          const valueIndex = (animationIndex - 5 + index) % this.data.options.length;
+          const listIndex = valueIndex < 0 ? this.data.options.length - 1 + valueIndex : valueIndex;
+          newValueArr[index] = listIndex;
         });
       } else {
         if (animationIndex < 0) {
@@ -337,8 +317,6 @@ SmartComponent({
         if (animationIndex > this.data.options.length - 1) {
           animationIndex = this.data.options.length - 1;
         }
-        const newArr = new Array(18).fill('');
-        const newValueArr = new Array(10).fill('');
         newValueArr.forEach((item, index) => {
           const valueIndex =
             animationIndex - 5 + index >= 0 ? animationIndex - 5 + index : undefined;
@@ -347,25 +325,22 @@ SmartComponent({
           }
           newValueArr[index] = this.data.options[valueIndex] ?? '';
         });
-        const rotate = (animationIndex * 20) % 360;
-        const rotateIndex = Math.round(rotate / 20);
-
-        // 环形结构填充：以rotateIndex为中心，向两边扩展填充newValueArr
-        const centerIndex = rotateIndex; // 中心位置
-        const halfLength = Math.floor(newValueArr.length / 2); // newValueArr的一半长度
-
-        // 从中心位置开始，向两边填充
-        for (let i = 0; i < newValueArr.length; i++) {
-          const targetIndex = (centerIndex - halfLength + i + 18) % 18; // 确保索引在0-17范围内
-          newArr[targetIndex] = newValueArr[i];
-        }
-        console.log('move: ', rotateIndex, newValueArr);
-        this.set({
-          optionsV: newArr,
-          renderStart: 0,
-          renderNum: 10,
-        });
       }
+      const rotate = (animationIndex * 20) % 360;
+      const rotateIndex = Math.round(rotate / 20);
+
+      // 环形结构填充：以rotateIndex为中心，向两边扩展填充newValueArr
+      const centerIndex = rotateIndex; // 中心位置
+      const halfLength = Math.floor(newValueArr.length / 2); // newValueArr的一半长度
+
+      // 从中心位置开始，向两边填充
+      for (let i = 0; i < newValueArr.length; i++) {
+        const targetIndex = (centerIndex - halfLength + i + 18) % 18; // 确保索引在0-17范围内
+        newArr[targetIndex] = newValueArr[i];
+      }
+      this.set({
+        optionsVIndexList: newArr,
+      });
     },
     adjustIndex(index: number) {
       const { data } = this;
@@ -394,10 +369,17 @@ SmartComponent({
       const { options } = this.data;
       for (let i = 0; i < options.length; i++) {
         if (this.getOptionText(options[i]) === value) {
-          return this.setIndex(i, false, this.data.changeAnimation, this.data.animationTime);
+          return this.setIndex(i);
         }
       }
       return Promise.resolve();
+    },
+
+    setIndex(index: number) {
+      this.setData({
+        activeIndex: index,
+        animationIndex: index,
+      });
     },
 
     getValue() {
