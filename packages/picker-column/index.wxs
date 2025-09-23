@@ -131,7 +131,7 @@ function initDomState(instanceId, ownerInstance) {
   updateState(instanceId, 'valueKey', state.valuekey)
   updateState(instanceId, 'itemHeight', state.itemheight)
   updateState(instanceId, 'visibleItemCount', state.visibleitemcount)
-  updateState(instanceId, 'animationIndex', state.activeindex)
+  updateState(instanceId, 'animationIndex', state.animationindex)
   updateState(instanceId, 'loop', state.loop)
   updateState(instanceId, 'animationTime', state.animationtime)
 }
