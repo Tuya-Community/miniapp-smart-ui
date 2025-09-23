@@ -19,21 +19,12 @@ function rootStyle(data) {
 }
 
 function wrapperStyle(data) {
-  var offset =
-    data.offset + (data.itemHeight * (data.visibleItemCount - 1)) / 2;
-  offset = addUnit(offset);
-  if (data.animate) {
-    return style({
-      'text-indent': data.unit ? '-8rpx' : '0',
-      transition: 'transform ' + data.duration + 'ms ease-out',
-      'line-height': addUnit(data.itemHeight),
-      transform: 'translate3d(0, ' + offset + ', 0)',
-    });
-  }
+  var rotate = 20 * data.animationIndex;
   return style({
     'text-indent': data.unit ? '-8rpx' : '0',
+    transition: data.moving ? 'none' : 'transform ' + (data.duration + 100) + 'ms ease-out',
     'line-height': addUnit(data.itemHeight),
-    transform: 'translate3d(0, ' + offset + ', 0)',
+      transform: `rotateX(${rotate}deg)`
   });
 }
 
@@ -49,17 +40,11 @@ function wrapperItemStyle(data) {
   var heightStyleStr = "height: " + data.itemHeight + 'px;'
   var fontStyleStr = style(data.fontStyle);
   var activeStyleStr = style(data.activeStyle);
-
-  // var maxSideShow = Math.floor(data.visibleItemCount / 2) + 1;
-  // var offsetIndex = data.animationIndex - data.index;
-  // var scale = Math.min(Math.abs(offsetIndex * 0.2), 0.2 * maxSideShow)
-  // var rotateX = offsetIndex * 25 > 0 ? Math.min(offsetIndex * 25, 25 * maxSideShow) : Math.max(offsetIndex * 25, -25 * maxSideShow)
-  // var translateYIndex = offsetIndex > 0 ? Math.min(offsetIndex, maxSideShow) : Math.max(offsetIndex, -maxSideShow)
-  // const transStyle = style({
-  //   transform: `rotateX(${rotateX}deg) scale(${1 - scale}) translateY(${translateYIndex * Math.abs(translateYIndex) * Math.abs(translateYIndex) * data.itemHeight * 0.1}px) translateZ(0)`,
-  // });
-  // return transStyle + ';' + heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
-  return heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
+  var transformStyleStr = style({
+    transform: `rotateX(${360 - data.index * 20}deg) translateZ(${data.itemHeight * data.visibleItemCount / 2}px) translateX(-50%);`,
+    top: `calc(50% - ${data.itemHeight / 2}px)`,
+  });
+  return transformStyleStr + ';' + heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
 }
 
 function wrapperItemClass(data) {

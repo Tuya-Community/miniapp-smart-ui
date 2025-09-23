@@ -9,28 +9,16 @@
   bind:touchend="onTouchEnd"
   bind:touchcancel="onTouchEnd"
 >
-  <view class="smart-picker-column__offset" style="height: {{ itemHeight * options.length }}px;{{ computed.wrapperStyle({ offset, itemHeight, visibleItemCount, animate, duration, renderStart, unit }) }}" id="options">
-    <view class="smart-picker-column__visual" style="{{ computed.wrapperInterStyle({ offset, itemHeight, visibleItemCount, renderStart }) }}">
-      <view
-        wx:for="{{ optionsV }}"
-        wx:for-item="option"
-        wx:key="*this"
-        data-index="{{ renderStart + index }}"
-        style="{{computed.wrapperItemStyle({ itemHeight, fontStyle, activeStyle: renderStart + index === currentIndex ? activeStyle : '', animationIndex, index: renderStart + index, visibleItemCount })}}"
-        class="{{ computed.wrapperItemClass({ index, renderStart, animationIndex, option })}}"
-      >
-        {{ computed.optionText(option, valueKey) }}
-      </view>
-    </view>
-  </view>
-  <view class="smart-picker-column__mask">
-    <view 
-      wx:for="{{ visibleItemCount }}" 
+  <view class="smart-picker-column__offset" style="{{ computed.wrapperStyle({ animationIndex, itemHeight, visibleItemCount, duration, unit, moving }) }}" id="options">
+    <view
+      wx:for="{{ optionsV }}"
+      wx:for-item="option"
       wx:key="index"
-      class="smart-picker-column__mask__item" 
-      data-index="{{ currentIndex + index - 2 }}" 
-      bind:tap="onClickItem" 
+      data-index="{{ renderStart + index }}"
+      style="{{computed.wrapperItemStyle({ itemHeight, fontStyle, activeStyle: renderStart + index === currentIndex ? activeStyle : '', animationIndex, index: renderStart + index, visibleItemCount })}}"
+      class="{{ computed.wrapperItemClass({ index, renderStart, animationIndex, option })}}"
     >
+      {{ computed.optionText(option, valueKey) }}
     </view>
   </view>
   <view wx:if="{{unit}}" class="smart-picker-column__unit" style="height: {{ itemHeight }}px">
