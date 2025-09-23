@@ -33,14 +33,15 @@
   bind:touchend="{{computed.touchEnd(instanceId)}}"
   bind:touchcancel="{{computed.touchEnd(instanceId)}}"
 >
-  <view class="smart-picker-column__offset" style="{{ computed.wrapperStyle({ animationIndex, itemHeight, duration, unit, moving, optionsVIndexList }) }}" id="options">
+  <view class="smart-picker-column__offset" style="{{ computed.wrapperStyle({ animationIndex, itemHeight, animationTime, unit, moving, optionsVIndexList }) }}" id="options">
     <view
       wx:for="{{ optionsVIndexList }}"
       wx:for-item="optionIndex"
       wx:key="index"
-      data-index="{{optionIndex}}"
+      data-index="{{index}}"
       style="{{computed.wrapperItemStyle({ itemHeight, index, visibleItemCount })}}"
-      class="smart-picker-column__item_{{index}} {{ computed.wrapperItemClass({ index, renderStart, animationIndex, optionIndex })}}"
+      class="smart-picker-column__item_{{index}} smart-ellipsis {{ computed.wrapperItemClass({ index, animationIndex, optionsVIndexList, instanceId, options })}}"
+      bind:tap="{{computed.tapItem(instanceId)}}" 
     >
       <view
         class="smart-picker-column__item__text"

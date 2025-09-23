@@ -57,7 +57,7 @@ function wrapperStyle(data) {
   }, {});
   return style({
     'text-indent': data.unit ? '-8rpx' : '0',
-    transition: data.moving ? 'none' : 'transform ' + (data.duration + 100) + 'ms ease-out',
+    transition: data.moving ? 'none' : 'transform ' + (data.animationTime + 100) + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
     'line-height': addUnit(data.itemHeight),
     transform: `rotateX(${rotate}deg)`,
     ...cssVar
@@ -98,10 +98,14 @@ function wrapperItemStyle(data) {
 }
 
 function wrapperItemClass(data) {
-  var staticClass = 'smart-ellipsis';
+  const state = getCurrState(data.instanceId);
+  const optionsVIndexList = state?.optionsVIndexList || data.optionsVIndexList;
+  const animationIndex = state?.animationIndex ?? data.animationIndex;
+  const optionIndex = optionsVIndexList[data.index];
+  const option = data.options[optionIndex];
+  var isActive = typeof optionIndex === 'number' && Math.abs(optionIndex - animationIndex) < 0.5;
   var activeClass = 'active-class';
-  var isActive = Math.abs(data.renderStart + data.index - data.animationIndex) < 0.9;
-  return staticClass + ' ' + wxUtils.bem('picker-column__item', { disabled: data.optionIndex && data.optionIndex.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
+  return wxUtils.bem('picker-column__item', { disabled: wxUtils.isObj(option) && option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
 }
 
 function wrapperItemTextStyle(data) {
@@ -111,7 +115,7 @@ function wrapperItemTextStyle(data) {
   const optionIndex = optionsVIndexList[data.index];
   var fontStyle = data.fontStyle;
   var activeStyle = data.activeStyle;
-  var isActive = typeof optionIndex === 'number' && Math.abs(optionIndex - animationIndex) < 0.5;
+  var isActive = typeof optionIndex === 'number' && Math.round(animationIndex) === optionIndex;
   return (fontStyle ? fontStyle.replace(';', '') + ';' : '') + (isActive ? activeStyle.replace(';', '') + ';' : '')
 }
 
@@ -147,6 +151,8 @@ const updateListView = (instanceId, ownerInstance) => {
     return
   }
   updatePreState(instanceId, domState)
+  updateVisibleOptions(state.animationIndex, instanceId);
+
 }
 
 const touchStart = (instanceId) => (event) => {
@@ -178,18 +184,19 @@ const touchMove = (instanceId) => (event, ownerInstance) => {
   const offsetCompare = offsetting - state.preOffsetting;
   const direction =
     offsetCompare < 0 ? 'down' : offsetCompare > 0 ? 'up' : state.movingDirection;
-  const optionsVIndexList = updateVisibleOptions(animationIndex, instanceId);
+  updateVisibleOptions(animationIndex, instanceId);
   if (
-    (direction === 'down' && preIndexLast <= 0.5 && curIndexLast > 0.5) ||
+    (direction === 'down' && preIndexLast < 0.5 && curIndexLast >= 0.5) ||
     (direction === 'up' && preIndexLast >= 0.5 && curIndexLast < 0.5)
   ) {
-    ownerInstance.callMethod('animationIndexChange', animationIndex, optionsVIndexList);
+    console.log('first')
+    ownerInstance.callMethod('animationIndexChange', animationIndex);
     // ownerInstance.callMethod('vibrateShort');
   }
 
-  // if (!state.moving) {
-  //   this.$emit('animation-start');
-  // }
+  if (!state.moving) {
+    ownerInstance.callMethod('animationStart');
+  }
 
   updateState(instanceId, 'moving', true);
   updateState(instanceId, 'animationIndex', animationIndex);
@@ -259,7 +266,7 @@ function updateWrapperStyle(instanceId, ownerInstance, style = {}) {
   var rotate = 20 * state.animationIndex;
   var cssVar = getWrapperCSSVar(instanceId);
   setStyle(ownerInstance, {
-    transition: state.moving ? 'none' : 'transform ' + (state.animationTime + 100) + 'ms ease-out',
+    transition: state.moving ? 'none' : 'transform ' + (state.animationTime + 100) + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
     transform: `rotateX(${rotate}deg)`,
     ...style,
     ...cssVar
@@ -350,7 +357,7 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
         clearInterval(endTimer);
         updateState(instanceId, 'endTimer', null);
         updateState(instanceId, 'animationIndex', currTargetActiveIndex);
-        ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+        ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
         return;
       }
       updateVisibleOptions(currIndex, instanceId);
@@ -363,7 +370,7 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
     }, midTime);
     const rotate = 20 * currTargetActiveIndex;
     setStyle(ownerInstance, {
-      transition: 'transform ' + state.animationTime + 'ms ease-out',
+      transition: 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
       transform: `rotateX(${rotate}deg)`,
     }, '.smart-picker-column__offset');
     updateState(instanceId, 'endTimer', endTimer);
@@ -371,9 +378,9 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
     updateVisibleOptions(currTargetActiveIndex, instanceId);
     updateState(instanceId, 'animationIndex', currTargetActiveIndex);
     updateWrapperStyle(instanceId, ownerInstance, {
-      transition: 'transform ' + 100 + 'ms ease-out'
+      transition: 'transform ' + 100 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
     });
-    ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+    ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
   }
 
   // updateState(instanceId, 'moving', false);
@@ -382,6 +389,35 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
   //   // this.$emit('animation-end');
   //   ownerInstance.callMethod('animationIndexChange', animationIndex, optionsVIndexList);
   // }, state.animationTime);
+}
+
+const tapItem = (instanceId) => (e, ownerInstance) => {
+  const state = getCurrState(instanceId);
+  const rotateIndex = e.currentTarget.dataset.index;
+  const currTargetActiveIndex = state.optionsVIndexList[rotateIndex];
+  const option = state.options[currTargetActiveIndex];
+  if (option === undefined || option && typeof option === 'object' && option.disabled) return;
+  if (state.startTimer) {
+    clearTimeout(state.startTimer);
+    updateState(instanceId, 'startTimer', null);
+  }
+  if (currTargetActiveIndex === state.animationIndex) return;
+  const offsetCount = Math.abs(currTargetActiveIndex - state.animationIndex);
+  if (state.tapTimer) {
+    clearTimeout(state.tapTimer);
+    updateState(instanceId, 'tapTimer', null);
+  }
+  updateVisibleOptions(currTargetActiveIndex, instanceId);
+  updateState(instanceId, 'animationIndex', currTargetActiveIndex);
+  updateWrapperStyle(instanceId, ownerInstance, {
+    transition: 'transform ' + 200 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+  });
+  ownerInstance.callMethod('vibrateShort', offsetCount, 150);
+  const tapTimer = setTimeout(() => {
+    ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+    updateState(instanceId, 'tapTimer', null);
+  }, 150);
+  updateState(instanceId, 'tapTimer', tapTimer);
 }
 
 
@@ -397,4 +433,5 @@ module.exports = {
   touchStart: touchStart,
   touchMove: touchMove,
   touchEnd: touchEnd,
+  tapItem: tapItem,
 };

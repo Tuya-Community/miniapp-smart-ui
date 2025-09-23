@@ -67,19 +67,8 @@ SmartComponent({
     },
   },
   data: {
-    duration: 0,
-    startOffset: 0,
-    optionsV: [] as any[], // 渲染的 options
-    currentIndex: -1,
-    renderNum: 0,
-    renderStart: 0,
-    animate: false,
-    playing: false,
     isInit: false,
     maxText: '',
-    timer: null as any,
-    preOffsetList: [] as number[],
-
     optionsVIndexList: [] as any[], // 渲染的 options index 列表
     offsetActiveIndex: 0,
     endTimer: null as any,
@@ -118,163 +107,6 @@ SmartComponent({
       return this.data.options.length;
     },
 
-    onTouchStart(event: WechatMiniprogram.TouchEvent) {
-      if (this.data.disabled) {
-        return;
-      }
-
-      if (this.data.endTimer) {
-        clearInterval(this.data.endTimer);
-      }
-      const { pageY } = event.touches[0];
-      this.setData({
-        startY: pageY,
-        moving: false,
-        startOffset: this.data.animationIndex * this.data.itemHeight,
-        preOffsetting: this.data.animationIndex * this.data.itemHeight,
-        offsetList: [],
-        endTimer: null,
-      });
-    },
-
-    onTouchMove(event: WechatMiniprogram.TouchEvent) {
-      if (this.data.disabled) {
-        return;
-      }
-      const { pageY } = event.touches[0];
-      const offsetY = pageY - this.data.startY;
-      const offsetting = -this.data.startOffset + offsetY;
-      const newOffsetList = [...this.data.offsetList, offsetting];
-      const animationIndex = -offsetting / this.data.itemHeight;
-      const preIndexLast = Math.abs(this.data.animationIndex % 1);
-      const curIndexLast = Math.abs(animationIndex % 1);
-      const offsetCompare = offsetting - this.data.preOffsetting;
-      const direction =
-        offsetCompare < 0 ? 'down' : offsetCompare > 0 ? 'up' : this.data.movingDirection;
-      if (
-        (direction === 'down' && preIndexLast <= 0.5 && curIndexLast > 0.5) ||
-        (direction === 'up' && preIndexLast >= 0.5 && curIndexLast < 0.5)
-      ) {
-        this.updateVisibleOptions(animationIndex);
-        // ownerInstance.callMethod('vibrateShort');
-      }
-
-      if (!this.data.moving) {
-        this.$emit('animation-start');
-      }
-
-      this.updateVisibleOptions(animationIndex);
-
-      this.setData({
-        moving: true,
-        animationIndex,
-        preOffsetting: offsetting,
-        offsetList: newOffsetList,
-        movingDirection: direction,
-      });
-    },
-
-    async onTouchEnd() {
-      if (this.data.disabled || !this.data.moving) {
-        return;
-      }
-      const preOffsetList = this.data.offsetList;
-      // 计算最后几帧的平均速度，用于惯性滚动
-      let recentVelocity = 0;
-      /** -1: 向下, 1: 向上, 0: 无滚动 */
-      let scrollDirection = 0;
-
-      if (preOffsetList.length >= 2) {
-        // 计算速度，优先使用最后几帧的数据
-        let recentOffset = 0;
-        let recentTime = 0;
-
-        if (preOffsetList.length >= 3) {
-          // 有3个或以上数据点，使用最后3个点计算速度
-          recentOffset =
-            preOffsetList[preOffsetList.length - 1] - preOffsetList[preOffsetList.length - 3];
-          recentTime = 2; // 2帧间隔
-        } else if (preOffsetList.length === 2) {
-          // 只有2个数据点，使用这2个点计算速度
-          recentOffset = preOffsetList[1] - preOffsetList[0];
-          recentTime = 1; // 1帧间隔
-        }
-
-        // 计算速度 (px/ms)
-        recentVelocity = Math.abs(recentOffset) / (recentTime * 16);
-        // 确定滚动方向
-        if (recentOffset > 0) {
-          scrollDirection = 1; // 向上滚动
-        } else if (recentOffset < 0) {
-          scrollDirection = -1; // 向下滚动
-        }
-      }
-
-      // 惯性滚动参数配置
-      const minVelocity = 0.1; // 最小速度阈值，低于此值停止滚动
-      const maxInertiaDistance = this.data.itemHeight * 8; // 最大惯性滚动距离
-
-      // 计算惯性滚动距离
-      let inertiaDistance = 0;
-      if (recentVelocity > minVelocity) {
-        // 使用物理公式计算惯性距离：distance = velocity^2 / (2 * friction)
-        // 这里简化处理，直接使用速度乘以一个系数
-        inertiaDistance = recentVelocity * 200; // 200ms的惯性时间
-
-        // 限制最大滚动距离
-        if (inertiaDistance > maxInertiaDistance) {
-          inertiaDistance = maxInertiaDistance;
-        }
-
-        // 根据滚动方向确定正负值
-        inertiaDistance *= scrollDirection;
-      }
-
-      const sideCount = Math.floor(this.data.visibleItemCount / 2);
-
-      // 计算最终目标位置 和 index
-      let targetOffset =
-        Math.round((this.data.preOffsetting + inertiaDistance) / this.data.itemHeight) *
-        this.data.itemHeight;
-      let currTargetActiveIndex = -targetOffset / this.data.itemHeight + sideCount;
-      currTargetActiveIndex = this.adjustIndex(currTargetActiveIndex);
-      targetOffset = -(currTargetActiveIndex - sideCount) * this.data.itemHeight;
-      const animationOffset = Math.abs(targetOffset - this.data.preOffsetting);
-
-      // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
-      if (this.data.animationTime > 150 && animationOffset > this.data.itemHeight) {
-        const midTime = 20;
-        const count = Math.floor((this.data.animationTime - 150) / midTime);
-        const midOffset = (targetOffset - this.data.preOffsetting) / count;
-        let startCount = 0;
-        const endTimer = setInterval(() => {
-          startCount++;
-          const currOffset = this.data.preOffsetting + midOffset;
-          const currIndex = -currOffset / this.data.itemHeight + sideCount;
-          if (startCount >= count) {
-            this.updateVisibleOptions(currTargetActiveIndex);
-            clearInterval(endTimer);
-            return;
-          }
-          this.updateVisibleOptions(currIndex);
-        }, midTime);
-        this.setData({
-          endTimer,
-        });
-      } else {
-        this.updateVisibleOptions(currTargetActiveIndex);
-      }
-      this.setData({
-        animationIndex: currTargetActiveIndex,
-        moving: false,
-        duration: this.data.animationTime,
-      });
-
-      setTimeout(() => {
-        this.$emit('animation-end');
-      }, this.data.animationTime);
-    },
-
     vibrateShort(count?: number, time = DEFAULT_DURATION) {
       if (!count) {
         ty.vibrateShort({ type: 'light' });
@@ -289,16 +121,6 @@ SmartComponent({
         has++;
         this.vibrateShort();
       }, time / count - 20);
-    },
-
-    onClickItem(event: WechatMiniprogram.TouchEvent) {
-      if (this.data.disabled) return;
-      const { index } = event.currentTarget.dataset;
-      if (index === this.data.currentIndex || index < 0 || index > this.data.options.length - 1) {
-        return;
-      }
-      this.vibrateShort(Math.abs(index - this.data.currentIndex), DEFAULT_DURATION);
-      this.setIndex(index);
     },
 
     updateUint(options: any[]) {
@@ -416,6 +238,15 @@ SmartComponent({
       this.setData({
         animationIndex: index,
       });
+    },
+
+    animationStart() {
+      console.log('animationStart');
+      this.$emit('animation-start');
+    },
+    animationEnd() {
+      console.log('animationEnd');
+      this.$emit('animation-end');
     },
   },
 });
