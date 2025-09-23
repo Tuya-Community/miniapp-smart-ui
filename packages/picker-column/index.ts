@@ -5,6 +5,13 @@ import ty from '../common/ty';
 
 const DEFAULT_DURATION = 400;
 
+const compIdList: string[] = [];
+const getId = () => {
+  const id = 'smart-picker-column-' + compIdList.length;
+  compIdList.push(id);
+  return id;
+};
+
 SmartComponent({
   classes: ['active-class'],
 
@@ -41,7 +48,6 @@ SmartComponent({
     },
     activeIndex: {
       type: Number,
-      value: -1,
       observer(index: number) {
         if (!this.data.isInit) return;
         this.setIndex(index);
@@ -86,17 +92,28 @@ SmartComponent({
   },
 
   created() {
-    const { defaultIndex, activeIndex, options } = this.data;
-    this.updateUint(options);
-    const animationIndex = activeIndex !== -1 ? activeIndex : defaultIndex;
+    this.setData({
+      instanceId: getId(),
+    });
+    this.updateUint(this.data.options);
+    const animationIndex = this.checkIndex();
     this.updateVisibleOptions(animationIndex);
     this.setData({
-      animationIndex: animationIndex,
       isInit: true,
     });
   },
 
   methods: {
+    checkIndex() {
+      const { activeIndex, defaultIndex } = this.data;
+      const animationIndex = activeIndex !== undefined ? activeIndex : defaultIndex;
+      const index = this.adjustIndex(animationIndex);
+      if (activeIndex === index) return index;
+      this.setData({
+        activeIndex: index,
+      });
+      return index;
+    },
     getCount() {
       return this.data.options.length;
     },
@@ -338,7 +355,7 @@ SmartComponent({
         const targetIndex = (centerIndex - halfLength + i + 18) % 18; // 确保索引在0-17范围内
         newArr[targetIndex] = newValueArr[i];
       }
-      this.set({
+      this.setData({
         optionsVIndexList: newArr,
       });
     },
@@ -384,7 +401,21 @@ SmartComponent({
 
     getValue() {
       const { data } = this;
-      return data.options[data.currentIndex];
+      return data.options[data.activeIndex];
+    },
+
+    activeIndexChange(index: number) {
+      this.setData({
+        activeIndex: index,
+        animationIndex: index,
+      });
+      this.$emit('change', index);
+    },
+
+    animationIndexChange(index: number) {
+      this.setData({
+        animationIndex: index,
+      });
     },
   },
 });

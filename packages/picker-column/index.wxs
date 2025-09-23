@@ -3,6 +3,17 @@ var style = require('../wxs/style.wxs');
 var addUnit = require('../wxs/add-unit.wxs');
 var wxUtils = require('../wxs/utils.wxs');
 
+var startPo = { y: 0 }; // 记录当前拖动元素的开始的位置
+
+const setStyle = (ownerInstance, style, selector) => {
+  const dom = wxUtils.queryComponent(ownerInstance, selector);
+  if (!dom) {
+    console.log(selector, '--selector 无法获取');
+    return
+  }
+  dom.setStyle(style);
+};
+
 function isObj(x) {
   var type = typeof x;
   return x !== null && (type === 'object' || type === 'function');
@@ -17,6 +28,29 @@ function rootStyle(data) {
   return style({
     height: addUnit(data.itemHeight * data.visibleItemCount),
   });
+}
+
+var state = {}
+
+var preStateObj = {}
+
+function updateState(instanceId, key, value) {
+  if (!key) return;
+  state[instanceId] = state[instanceId] || {}
+  state[instanceId][key] = value
+}
+
+function getCurrState(instanceId) {
+  return state[instanceId]
+}
+
+function updatePreState(instanceId, state) {
+  const preStateStr = JSON.stringify(state)
+  preStateObj[instanceId] = preStateStr;
+}
+
+function getPreState(instanceId) {
+  return preStateObj[instanceId]
 }
 
 function wrapperStyle(data) {
@@ -35,6 +69,25 @@ function wrapperStyle(data) {
   });
 }
 
+function range(num, min, max) {
+  return Math.min(Math.max(num, min), max);
+}
+
+function adjustIndex(index, options) {
+  const count = options.length;
+  index = range(index, 0, count);
+  for (let i = index; i < count; i++) {
+    if (!isDisabled(options[i])) return i;
+  }
+  for (let i = index - 1; i >= 0; i--) {
+    if (!isDisabled(options[i])) return i;
+  }
+}
+
+function isDisabled(option) {
+  return typeof option === 'object' && option.disabled;
+}
+
 function wrapperInterStyle(data) {
   var offset = data.renderStart * data.itemHeight;
   offset = addUnit(offset);
@@ -45,13 +98,11 @@ function wrapperInterStyle(data) {
 
 function wrapperItemStyle(data) {
   var heightStyleStr = "height: " + data.itemHeight + 'px;'
-  var fontStyleStr = style(data.fontStyle);
-  var activeStyleStr = style(data.activeStyle);
   var transformStyleStr = style({
     transform: `rotateX(${360 - data.index * 20}deg) translateZ(${data.itemHeight * data.visibleItemCount / 2}px) translateX(-50%);`,
     top: `calc(50% - ${data.itemHeight / 2}px)`,
   });
-  return transformStyleStr + ';' + heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
+  return transformStyleStr + ';' + heightStyleStr
 }
 
 function wrapperItemClass(data) {
@@ -62,10 +113,282 @@ function wrapperItemClass(data) {
 }
 
 function wrapperItemTextStyle(data) {
+  const state = getCurrState(data.instanceId);
+  const optionsVIndexList = state?.optionsVIndexList || data.optionsVIndexList;
+  const animationIndex = state?.animationIndex ?? data.animationIndex;
+  const optionIndex = optionsVIndexList[data.index];
   var fontStyle = data.fontStyle;
   var activeStyle = data.activeStyle;
-  var isActive = typeof data.optionIndex === 'number' && Math.abs(data.optionIndex - data.animationIndex) < 0.5;
+  var isActive = typeof optionIndex === 'number' && Math.abs(optionIndex - animationIndex) < 0.5;
   return (fontStyle ? fontStyle.replace(';', '') + ';' : '') + (isActive ? activeStyle.replace(';', '') + ';' : '')
+}
+
+function getDomState(ownerInstance) {
+  const dom = wxUtils.queryComponent(ownerInstance, '.smart-picker-column');
+  const state = dom.getDataset();
+  return state
+}
+
+function initDomState(instanceId, ownerInstance) {
+  const state = getDomState(ownerInstance);
+  updateState(instanceId, 'options', state.options)
+  updateState(instanceId, 'valueKey', state.valuekey)
+  updateState(instanceId, 'itemHeight', state.itemheight)
+  updateState(instanceId, 'visibleItemCount', state.visibleitemcount)
+  updateState(instanceId, 'animationIndex', state.activeindex)
+  updateState(instanceId, 'loop', state.loop)
+  updateState(instanceId, 'animationTime', state.animationtime)
+}
+
+
+const updateValue = (instanceId, key) => (newOptions, oldOptions, ownerInstance) => {
+  if (!instanceId) return;
+  initDomState(instanceId, ownerInstance)
+  updateState(instanceId, key, newOptions)
+  updateListView(instanceId, ownerInstance)
+}
+
+const updateListView = (instanceId, ownerInstance) => {
+  const state = getCurrState(instanceId);
+  const domState = getDomState(ownerInstance);
+  if(getPreState(instanceId) === JSON.stringify(domState) || !state.itemHeight || !state.visibleItemCount || !Array.isArray(state.options) || state.animationTime === undefined) {
+    return
+  }
+  updatePreState(instanceId, domState)
+}
+
+const touchStart = (instanceId) => (event) => {
+  const state = getCurrState(instanceId);
+  if (state.endTimer) {
+    clearInterval(state.endTimer);
+    clearTimeout(state.endTimer);
+    updateState(instanceId, 'endTimer', null);
+  }
+  const { pageY } = event.touches[0];
+  startPo.y = pageY;
+  updateState(instanceId, 'moving', false);
+  updateState(instanceId, 'startOffset', state.animationIndex * state.itemHeight);
+  updateState(instanceId, 'preOffsetting', state.animationIndex * state.itemHeight);
+  updateState(instanceId, 'preOffsetList', []);
+}
+
+const touchMove = (instanceId) => (event, ownerInstance) => {
+  const state = getCurrState(instanceId);
+  const { pageY } = event.touches[0];
+  const offsetY = pageY - startPo.y;
+  const offsetting = -state.startOffset + offsetY;
+  const newOffsetList = [...state.preOffsetList, offsetting];
+  const animationIndex = -offsetting / state.itemHeight;
+  const preIndexLast = Math.abs(state.animationIndex % 1);
+  const curIndexLast = Math.abs(animationIndex % 1);
+  const offsetCompare = offsetting - state.preOffsetting;
+  const direction =
+    offsetCompare < 0 ? 'down' : offsetCompare > 0 ? 'up' : state.movingDirection;
+  const optionsVIndexList = updateVisibleOptions(animationIndex, instanceId);
+  if (
+    (direction === 'down' && preIndexLast <= 0.5 && curIndexLast > 0.5) ||
+    (direction === 'up' && preIndexLast >= 0.5 && curIndexLast < 0.5)
+  ) {
+    ownerInstance.callMethod('animationIndexChange', animationIndex, optionsVIndexList);
+    // ownerInstance.callMethod('vibrateShort');
+  }
+
+  // if (!state.moving) {
+  //   this.$emit('animation-start');
+  // }
+
+  updateState(instanceId, 'moving', true);
+  updateState(instanceId, 'animationIndex', animationIndex);
+  updateState(instanceId, 'preOffsetting', offsetting);
+  updateState(instanceId, 'preOffsetList', newOffsetList);
+  updateState(instanceId, 'movingDirection', direction);
+
+  updateWrapperStyle(instanceId, ownerInstance);
+}
+
+function updateVisibleOptions(currentIndex, instanceId) {
+  const state = getCurrState(instanceId);
+  let animationIndex = Math.round(
+    currentIndex !== undefined ? currentIndex : state.animationIndex
+  );
+  const newArr = new Array(18).fill('');
+  const newValueArr = new Array(10).fill('');
+  if (state.loop) {
+    newValueArr.forEach((item, index) => {
+      const valueIndex = (animationIndex - 5 + index) % state.options.length;
+      const listIndex = valueIndex < 0 ? state.options.length - 1 + valueIndex : valueIndex;
+      newValueArr[index] = listIndex;
+    });
+  } else {
+    if (animationIndex < 0) {
+      animationIndex = 0;
+    }
+    if (animationIndex > state.options.length - 1) {
+      animationIndex = state.options.length - 1;
+    }
+    newValueArr.forEach((item, index) => {
+      const valueIndex =
+        animationIndex - 5 + index >= 0 ? animationIndex - 5 + index : undefined;
+      if (valueIndex === undefined) {
+        return;
+      }
+      newValueArr[index] = state.options[valueIndex] ?? '';
+    });
+  }
+  const rotate = (animationIndex * 20) % 360;
+  const rotateIndex = Math.round(rotate / 20);
+
+  // 环形结构填充：以rotateIndex为中心，向两边扩展填充newValueArr
+  const centerIndex = rotateIndex; // 中心位置
+  const halfLength = Math.floor(newValueArr.length / 2); // newValueArr的一半长度
+
+  // 从中心位置开始，向两边填充
+  for (let i = 0; i < newValueArr.length; i++) {
+    const targetIndex = (centerIndex - halfLength + i + 18) % 18; // 确保索引在0-17范围内
+    newArr[targetIndex] = newValueArr[i];
+  }
+  updateState(instanceId, 'optionsVIndexList', newArr);
+  return newArr
+}
+
+function getWrapperCSSVar(instanceId) {
+  const state = getCurrState(instanceId);
+  const optionsVIndexList = state.optionsVIndexList;
+  return optionsVIndexList.reduce((previousValue, currentValue, currentIndex) => {
+    previousValue[`--picker-item-content_${currentIndex}`] = `"${currentValue}"`;
+    return previousValue;
+  }, {});
+}
+
+function updateWrapperStyle(instanceId, ownerInstance, style = {}) {
+  const state = getCurrState(instanceId);
+  var rotate = 20 * state.animationIndex;
+  var cssVar = getWrapperCSSVar(instanceId);
+  setStyle(ownerInstance, {
+    transition: state.moving ? 'none' : 'transform ' + (state.animationTime + 100) + 'ms ease-out',
+    transform: `rotateX(${rotate}deg)`,
+    ...style,
+    ...cssVar
+  }, '.smart-picker-column__offset');
+}
+
+const touchEnd = (instanceId) => (event, ownerInstance) => {
+  const state = getCurrState(instanceId);
+  if (!state.moving) {
+    return;
+  }
+  const preOffsetList = state.preOffsetList;
+  // 计算最后几帧的平均速度，用于惯性滚动
+  let recentVelocity = 0;
+  /** -1: 向下, 1: 向上, 0: 无滚动 */
+  let scrollDirection = 0;
+
+  if (preOffsetList.length >= 2) {
+    // 计算速度，优先使用最后几帧的数据
+    let recentOffset = 0;
+    let recentTime = 0;
+
+    if (preOffsetList.length >= 3) {
+      // 有3个或以上数据点，使用最后3个点计算速度
+      recentOffset =
+        preOffsetList[preOffsetList.length - 1] - preOffsetList[preOffsetList.length - 3];
+      recentTime = 2; // 2帧间隔
+    } else if (preOffsetList.length === 2) {
+      // 只有2个数据点，使用这2个点计算速度
+      recentOffset = preOffsetList[1] - preOffsetList[0];
+      recentTime = 1; // 1帧间隔
+    }
+
+    // 计算速度 (px/ms)
+    recentVelocity = Math.abs(recentOffset) / (recentTime * 16);
+    // 确定滚动方向
+    if (recentOffset > 0) {
+      scrollDirection = 1; // 向上滚动
+    } else if (recentOffset < 0) {
+      scrollDirection = -1; // 向下滚动
+    }
+  }
+
+  // 惯性滚动参数配置
+  const minVelocity = 0.1; // 最小速度阈值，低于此值停止滚动
+  const maxInertiaDistance = state.itemHeight * 8; // 最大惯性滚动距离
+
+  // 计算惯性滚动距离
+  let inertiaDistance = 0;
+  if (recentVelocity > minVelocity) {
+    // 使用物理公式计算惯性距离：distance = velocity^2 / (2 * friction)
+    // 这里简化处理，直接使用速度乘以一个系数
+    inertiaDistance = recentVelocity * 200; // 200ms的惯性时间
+
+    // 限制最大滚动距离
+    if (inertiaDistance > maxInertiaDistance) {
+      inertiaDistance = maxInertiaDistance;
+    }
+
+    // 根据滚动方向确定正负值
+    inertiaDistance *= scrollDirection;
+  }
+
+  // 计算最终目标位置 和 index
+  let targetOffset =
+    Math.round((state.preOffsetting + inertiaDistance) / state.itemHeight) *
+    state.itemHeight;
+  let currTargetActiveIndex = -targetOffset / state.itemHeight;
+  currTargetActiveIndex = adjustIndex(currTargetActiveIndex, state.options);
+  targetOffset = -currTargetActiveIndex * state.itemHeight;
+  const animationOffset = Math.abs(targetOffset - state.preOffsetting);
+
+  // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
+  if (state.animationTime > 150 && animationOffset > state.itemHeight) {
+    const midTime = 16;
+    const count = Math.floor((state.animationTime - 150) / midTime);
+    const midOffset = (targetOffset - state.preOffsetting) / count;
+    let startCount = 0;
+    const endTimer = setInterval(() => {
+      startCount++;
+      const currOffset = state.preOffsetting + midOffset * startCount;
+      const currIndex = -currOffset / state.itemHeight;
+      if (startCount >= count) {
+        updateVisibleOptions(currIndex, instanceId);
+        const wrapperCSSStyle = getWrapperCSSVar(instanceId);
+        setStyle(ownerInstance, {
+          ...wrapperCSSStyle,
+        }, '.smart-picker-column__offset');
+        clearInterval(endTimer);
+        updateState(instanceId, 'endTimer', null);
+        updateState(instanceId, 'animationIndex', currTargetActiveIndex);
+        ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+        return;
+      }
+      updateVisibleOptions(currIndex, instanceId);
+      updateState(instanceId, 'animationIndex', currIndex);
+      ownerInstance.callMethod('animationIndexChange', currIndex);
+      const wrapperCSSStyle = getWrapperCSSVar(instanceId);
+        setStyle(ownerInstance, {
+          ...wrapperCSSStyle,
+      }, '.smart-picker-column__offset');
+    }, midTime);
+    const rotate = 20 * currTargetActiveIndex;
+    setStyle(ownerInstance, {
+      transition: 'transform ' + state.animationTime + 'ms ease-out',
+      transform: `rotateX(${rotate}deg)`,
+    }, '.smart-picker-column__offset');
+    updateState(instanceId, 'endTimer', endTimer);
+  } else {
+    updateVisibleOptions(currTargetActiveIndex, instanceId);
+    updateState(instanceId, 'animationIndex', currTargetActiveIndex);
+    updateWrapperStyle(instanceId, ownerInstance, {
+      transition: 'transform ' + 100 + 'ms ease-out'
+    });
+    ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+  }
+
+  // updateState(instanceId, 'moving', false);
+
+  // setTimeout(() => {
+  //   // this.$emit('animation-end');
+  //   ownerInstance.callMethod('animationIndexChange', animationIndex, optionsVIndexList);
+  // }, state.animationTime);
 }
 
 
@@ -76,5 +399,9 @@ module.exports = {
   wrapperInterStyle: wrapperInterStyle,
   wrapperItemStyle: wrapperItemStyle,
   wrapperItemClass: wrapperItemClass,
-  wrapperItemTextStyle: wrapperItemTextStyle
+  wrapperItemTextStyle: wrapperItemTextStyle,
+  updateValue: updateValue,
+  touchStart: touchStart,
+  touchMove: touchMove,
+  touchEnd: touchEnd,
 };
