@@ -4,7 +4,7 @@
   <header
     title="{{ title }}"
     showTitle="{{ showTitle }}"
-    subtitle="{{ type === 'year' ? '' : type === 'month' ? computed.formatYearTitle(originCurrentDateMonthly, visibleIndex, locale.yearFormatter) : computed.formatMonthTitle(months[visibleIndex], subFormatter) }}"
+    subtitle="{{ type === 'year' ? '' : type === 'month' ? computed.formatYearTitle(originCurrentDateMonthly, visibleIndex, locale.yearFormatter) : computed.formatMonthTitle(months[visibleIndex], locale.subFormatter) }}"
     subFormatter="{{locale.subFormatter || 'YYYY-MM'}}"
     showSubtitle="{{ showSubtitle }}"
     firstDayOfWeek="{{ firstDayOfWeek }}"
