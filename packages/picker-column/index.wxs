@@ -189,9 +189,8 @@ const touchMove = (instanceId) => (event, ownerInstance) => {
     (direction === 'down' && preIndexLast < 0.5 && curIndexLast >= 0.5) ||
     (direction === 'up' && preIndexLast >= 0.5 && curIndexLast < 0.5)
   ) {
-    console.log('first')
     ownerInstance.callMethod('animationIndexChange', animationIndex);
-    // ownerInstance.callMethod('vibrateShort');
+    ownerInstance.callMethod('vibrateShort');
   }
 
   if (!state.moving) {
@@ -356,6 +355,7 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
         }, '.smart-picker-column__offset');
         clearInterval(endTimer);
         updateState(instanceId, 'endTimer', null);
+        updateState(instanceId, 'moving', false);
         updateState(instanceId, 'animationIndex', currTargetActiveIndex);
         ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
         return;
@@ -378,17 +378,14 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
     updateVisibleOptions(currTargetActiveIndex, instanceId);
     updateState(instanceId, 'animationIndex', currTargetActiveIndex);
     updateWrapperStyle(instanceId, ownerInstance, {
-      transition: 'transform ' + 100 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+      transition: 'transform ' + 150 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
     });
+    setTimeout(() => {
+      updateState(instanceId, 'moving', false);
+      ownerInstance.callMethod('animationEnd');
+    }, 150);
     ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
   }
-
-  // updateState(instanceId, 'moving', false);
-
-  // setTimeout(() => {
-  //   // this.$emit('animation-end');
-  //   ownerInstance.callMethod('animationIndexChange', animationIndex, optionsVIndexList);
-  // }, state.animationTime);
 }
 
 const tapItem = (instanceId) => (e, ownerInstance) => {

@@ -241,11 +241,9 @@ SmartComponent({
     },
 
     animationStart() {
-      console.log('animationStart');
       this.$emit('animation-start');
     },
     animationEnd() {
-      console.log('animationEnd');
       this.$emit('animation-end');
     },
   },
