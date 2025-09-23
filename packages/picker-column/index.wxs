@@ -14,14 +14,9 @@ const setStyle = (ownerInstance, style, selector) => {
   dom.setStyle(style);
 };
 
-function isObj(x) {
-  var type = typeof x;
-  return x !== null && (type === 'object' || type === 'function');
-}
-
 function optionText(options, optionIndex, valueKey) {
   var option = options[optionIndex];
-  return isObj(option) && option[valueKey] != null ? option[valueKey] : option;
+  return wxUtils.isObj(option) && option[valueKey] != null ? option[valueKey] : option;
 }
 
 function rootStyle(data) {
@@ -69,13 +64,10 @@ function wrapperStyle(data) {
   });
 }
 
-function range(num, min, max) {
-  return Math.min(Math.max(num, min), max);
-}
 
 function adjustIndex(index, options) {
   const count = options.length;
-  index = range(index, 0, count);
+  index = wxUtils.range(index, 0, count);
   for (let i = index; i < count; i++) {
     if (!isDisabled(options[i])) return i;
   }
@@ -163,6 +155,8 @@ const touchStart = (instanceId) => (event) => {
     clearInterval(state.endTimer);
     clearTimeout(state.endTimer);
     updateState(instanceId, 'endTimer', null);
+  } else {
+    updateState(instanceId, 'recentVelocity', 0);
   }
   const { pageY } = event.touches[0];
   startPo.y = pageY;
@@ -300,7 +294,8 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
     }
 
     // 计算速度 (px/ms)
-    recentVelocity = Math.abs(recentOffset) / (recentTime * 16);
+    recentVelocity = state.recentVelocity + Math.abs(recentOffset) / (recentTime * 16);
+    updateState(instanceId, 'recentVelocity', recentVelocity);
     // 确定滚动方向
     if (recentOffset > 0) {
       scrollDirection = 1; // 向上滚动
@@ -311,8 +306,7 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
 
   // 惯性滚动参数配置
   const minVelocity = 0.1; // 最小速度阈值，低于此值停止滚动
-  const maxInertiaDistance = state.itemHeight * 8; // 最大惯性滚动距离
-
+  const maxInertiaDistance = state.itemHeight * Math.max(Math.floor(state.options.length/4), 10); // 最大惯性滚动距离
   // 计算惯性滚动距离
   let inertiaDistance = 0;
   if (recentVelocity > minVelocity) {
@@ -337,7 +331,6 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
   currTargetActiveIndex = adjustIndex(currTargetActiveIndex, state.options);
   targetOffset = -currTargetActiveIndex * state.itemHeight;
   const animationOffset = Math.abs(targetOffset - state.preOffsetting);
-
   // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
   if (state.animationTime > 150 && animationOffset > state.itemHeight) {
     const midTime = 16;
