@@ -5,7 +5,7 @@ var array = require('../wxs/array.wxs');
 
 function columnsStyle(data) {
   return style({
-    height: addUnit(data.itemHeight * data.visibleItemCount),
+    height: addUnit(data.itemHeight * data.visibleItemCount * (data.showSidePart ? 1 : 0.9)),
   });
 }
 

@@ -142,11 +142,14 @@ SmartComponent({
       let animationIndex = Math.round(
         currentIndex !== undefined ? currentIndex : this.data.animationIndex
       );
-      const newArr = new Array(18).fill('');
-      const newValueArr = new Array(10).fill('');
+      const vOptionLength = this.data.visibleItemCount * 4 - 2;
+      const rotateAngle = 360 / vOptionLength;
+      const partCount = Math.floor(this.data.visibleItemCount / 2) + 3;
+      const newArr = new Array(vOptionLength).fill('');
+      const newValueArr = new Array(partCount * 2 + 1).fill('');
       if (this.data.loop) {
         newValueArr.forEach((item, index) => {
-          const valueIndex = (animationIndex - 5 + index) % this.data.options.length;
+          const valueIndex = (animationIndex - partCount + index) % this.data.options.length;
           const listIndex = valueIndex < 0 ? this.data.options.length - 1 + valueIndex : valueIndex;
           newValueArr[index] = listIndex;
         });
@@ -159,15 +162,17 @@ SmartComponent({
         }
         newValueArr.forEach((item, index) => {
           const valueIndex =
-            animationIndex - 5 + index >= 0 ? animationIndex - 5 + index : undefined;
+            animationIndex - partCount + index >= 0
+              ? animationIndex - partCount + index
+              : undefined;
           if (valueIndex === undefined) {
             return;
           }
           newValueArr[index] = valueIndex;
         });
       }
-      const rotate = (animationIndex * 20) % 360;
-      const rotateIndex = Math.round(rotate / 20);
+      const rotate = (animationIndex * rotateAngle) % 360;
+      const rotateIndex = Math.round(rotate / rotateAngle);
 
       // 环形结构填充：以rotateIndex为中心，向两边扩展填充newValueArr
       const centerIndex = rotateIndex; // 中心位置
@@ -175,7 +180,7 @@ SmartComponent({
 
       // 从中心位置开始，向两边填充
       for (let i = 0; i < newValueArr.length; i++) {
-        const targetIndex = (centerIndex - halfLength + i + 18) % 18; // 确保索引在0-17范围内
+        const targetIndex = (centerIndex - halfLength + i + vOptionLength) % vOptionLength; // 确保索引在0-17范围内
         newArr[targetIndex] = newValueArr[i];
       }
       this.setData({

@@ -26,6 +26,10 @@ SmartComponent({
       type: String,
       value: 'top',
     },
+    showSidePart: {
+      type: Boolean,
+      value: false,
+    },
     defaultIndex: {
       type: Number,
       value: 0,
@@ -58,6 +62,12 @@ SmartComponent({
     Object.defineProperty(this, 'children', {
       get: () => this.selectAllComponents('.smart-picker__column') || [],
     });
+  },
+
+  mounted() {
+    if (![3, 5, 7, 9].includes(this.data.visibleItemCount)) {
+      console.error('visibleItemCount 的值必须为 3, 5, 7, 9');
+    }
   },
 
   methods: {

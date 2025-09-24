@@ -10,6 +10,9 @@ export const pickerProps = {
     type: String,
     value: 'Confirm',
   },
+  /**
+   * 可见的选项个数 3 5 7 9
+   */
   visibleItemCount: {
     type: Number,
     value: 5,

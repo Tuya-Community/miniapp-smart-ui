@@ -49,7 +49,8 @@ function getPreState(instanceId) {
 }
 
 function wrapperStyle(data) {
-  var rotate = 20 * data.animationIndex;
+  var perAngle = 360 / (data.visibleItemCount * 4 - 2)
+  var rotate = perAngle * data.animationIndex;
   var optionsVIndexList = data.optionsVIndexList;
   var cssVar = optionsVIndexList.reduce((previousValue, currentValue, currentIndex) => {
     if (currentValue === '' || currentValue === undefined) return previousValue;
@@ -93,8 +94,9 @@ function wrapperInterStyle(data) {
 
 function wrapperItemStyle(data) {
   var heightStyleStr = "height: " + data.itemHeight + 'px;'
+  var perAngle = 360 / (data.visibleItemCount * 4 - 2)
   var transformStyleStr = style({
-    transform: `rotateX(${360 - data.index * 20}deg) translateZ(${data.itemHeight * data.visibleItemCount / 2}px) translateX(-50%) scale(0.88);`, //  scale(0.88)
+    transform: `rotateX(${360 - data.index * perAngle}deg) translateZ(${data.itemHeight * data.visibleItemCount / 2}px) translateX(-50%) scale(0.88);`, //  scale(0.88)
     top: `calc(50% - ${data.itemHeight / 2}px)`,
   });
   return transformStyleStr + ';' + heightStyleStr
@@ -220,11 +222,14 @@ function updateVisibleOptions(currentIndex, instanceId) {
   let animationIndex = Math.round(
     currentIndex !== undefined ? currentIndex : state.animationIndex
   );
-  const newArr = new Array(18).fill('');
-  const newValueArr = new Array(10).fill('');
+  const vOptionLength = state.visibleItemCount * 4 - 2;
+  const rotateAngle = 360 / vOptionLength;
+  const newArr = new Array(vOptionLength).fill('');
+  const partCount = Math.floor(state.visibleItemCount / 2) + 3;
+  const newValueArr = new Array(partCount * 2 + 1).fill('');
   if (state.loop) {
     newValueArr.forEach((item, index) => {
-      const valueIndex = (animationIndex - 5 + index) % state.options.length;
+      const valueIndex = (animationIndex - partCount + index) % state.options.length;
       const listIndex = valueIndex < 0 ? state.options.length - 1 + valueIndex : valueIndex;
       newValueArr[index] = listIndex;
     });
@@ -237,15 +242,15 @@ function updateVisibleOptions(currentIndex, instanceId) {
     }
     newValueArr.forEach((item, index) => {
       const valueIndex =
-        animationIndex - 5 + index >= 0 ? animationIndex - 5 + index : undefined;
+        animationIndex - partCount + index >= 0 ? animationIndex - partCount + index : undefined;
       if (valueIndex === undefined) {
         return;
       }
       newValueArr[index] = valueIndex;
     });
   }
-  const rotate = (animationIndex * 20) % 360;
-  const rotateIndex = Math.round(rotate / 20);
+  const rotate = (animationIndex * rotateAngle) % 360;
+  const rotateIndex = Math.round(rotate / rotateAngle);
 
   // 环形结构填充：以rotateIndex为中心，向两边扩展填充newValueArr
   const centerIndex = rotateIndex; // 中心位置
@@ -253,7 +258,7 @@ function updateVisibleOptions(currentIndex, instanceId) {
 
   // 从中心位置开始，向两边填充
   for (let i = 0; i < newValueArr.length; i++) {
-    const targetIndex = (centerIndex - halfLength + i + 18) % 18; // 确保索引在0-17范围内
+    const targetIndex = (centerIndex - halfLength + i + vOptionLength) % vOptionLength; // 确保索引在0-17范围内
     newArr[targetIndex] = newValueArr[i];
   }
   updateState(instanceId, 'optionsVIndexList', newArr);
@@ -274,7 +279,8 @@ function getWrapperCSSVar(instanceId) {
 
 function updateWrapperStyle(instanceId, ownerInstance, style = {}) {
   const state = getCurrState(instanceId);
-  var rotate = 20 * state.animationIndex;
+  var perAngle = 360 / (state.visibleItemCount * 4 - 2)
+  var rotate = perAngle * state.animationIndex;
   var cssVar = getWrapperCSSVar(instanceId);
   setStyle(ownerInstance, {
     transition: state.moving ? 'none' : 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
@@ -330,7 +336,7 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
   if (recentVelocity > minVelocity) {
     // 使用物理公式计算惯性距离：distance = velocity^2 / (2 * friction)
     // 这里简化处理，直接使用速度乘以一个系数
-    inertiaDistance = recentVelocity * 200; // 200ms的惯性时间
+    inertiaDistance = recentVelocity * 100; // 200ms的惯性时间
 
     // 限制最大滚动距离
     if (inertiaDistance > maxInertiaDistance) {
@@ -351,11 +357,12 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
   const animationOffset = Math.abs(targetOffset - state.preOffsetting);
   const isOverOptions = state.loop ? false : state.animationIndex < 0 || state.animationIndex > state.options.length - 1;
   // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
-  if (state.animationTime > 150 && animationOffset > state.itemHeight && !isOverOptions) {
-    const midTime = 16;
-    const count = Math.floor((state.animationTime - 100) / midTime);
+  if (state.animationTime > 200 && animationOffset > state.itemHeight && !isOverOptions) {
+    const midTime = 30;
+    const count = Math.floor((state.animationTime - 60) / midTime);
     const midOffset = (targetOffset - state.preOffsetting) / count;
     const countOffsetIndex = Math.abs(Math.round(currTargetActiveIndex - state.animationIndex));
+    const maxVibrateShort = Math.floor(state.animationTime / 30);
     let startCount = 0;
     const endTimer = setInterval(() => {
       startCount++;
@@ -385,8 +392,9 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
           ...wrapperCSSStyle,
       }, '.smart-picker-column__offset');
     }, midTime);
-    const rotate = 20 * currTargetActiveIndex;
-    ownerInstance.callMethod('vibrateShort', countOffsetIndex, state.animationTime);
+    const perAngle = 360 / (state.visibleItemCount * 4 - 2);
+    const rotate = perAngle * currTargetActiveIndex;
+    ownerInstance.callMethod('vibrateShort', Math.min(countOffsetIndex, maxVibrateShort), state.animationTime);
     setStyle(ownerInstance, {
       transition: 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
       transform: `rotateX(${rotate}deg)`,
