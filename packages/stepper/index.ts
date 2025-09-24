@@ -130,14 +130,15 @@ SmartComponent({
 
     onBlur(event: WechatMiniprogram.InputBlur) {
       const value = this.format(event.detail.value, true);
+      const stepValue = Math.round(value / this.data.step) * this.data.step;
+      const strStepValue = stepValue.toString();
+      this.setData({ currentValue: strStepValue });
 
-      this.setData({ currentValue: value });
-
-      this.emitChange(value);
+      this.emitChange(strStepValue);
 
       this.$emit('blur', {
         ...event.detail,
-        value,
+        value: strStepValue,
       });
     },
 
