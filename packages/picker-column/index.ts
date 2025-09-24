@@ -109,6 +109,12 @@ SmartComponent({
     },
 
     vibrateShort(count?: number, time = DEFAULT_DURATION) {
+      if (this.data.vibrateTimer) {
+        clearInterval(this.data.vibrateTimer);
+        this.setData({
+          vibrateTimer: null,
+        });
+      }
       if (!count) {
         ty.vibrateShort({ type: 'light' });
         return;
@@ -120,8 +126,11 @@ SmartComponent({
           return;
         }
         has++;
-        this.vibrateShort();
+        ty.vibrateShort({ type: 'light' });
       }, time / count - 20);
+      this.setData({
+        vibrateTimer: timer,
+      });
     },
 
     updateUint(options: any[]) {
