@@ -52,7 +52,10 @@ function wrapperStyle(data) {
   var rotate = 20 * data.animationIndex;
   var optionsVIndexList = data.optionsVIndexList;
   var cssVar = optionsVIndexList.reduce((previousValue, currentValue, currentIndex) => {
-    previousValue[`--picker-item-content_${currentIndex}`] = `"${currentValue}"`;
+    if (currentValue === '' || currentValue === undefined) return previousValue;
+    const text = optionText(data.options, currentValue, data.valueKey);
+    if(text === undefined) return previousValue;
+    previousValue[`--picker-item-content_${currentIndex}`] = `"${text}"`;
     return previousValue;
   }, {});
   return style({
@@ -91,7 +94,7 @@ function wrapperInterStyle(data) {
 function wrapperItemStyle(data) {
   var heightStyleStr = "height: " + data.itemHeight + 'px;'
   var transformStyleStr = style({
-    transform: `rotateX(${360 - data.index * 20}deg) translateZ(${data.itemHeight * data.visibleItemCount / 2}px) translateX(-50%);`,
+    transform: `rotateX(${360 - data.index * 20}deg) translateZ(${data.itemHeight * data.visibleItemCount / 2}px) translateX(-50%) scale(0.88);`, //  scale(0.88)
     top: `calc(50% - ${data.itemHeight / 2}px)`,
   });
   return transformStyleStr + ';' + heightStyleStr
@@ -131,7 +134,7 @@ function initDomState(instanceId, ownerInstance) {
   updateState(instanceId, 'valueKey', state.valuekey)
   updateState(instanceId, 'itemHeight', state.itemheight)
   updateState(instanceId, 'visibleItemCount', state.visibleitemcount)
-  updateState(instanceId, 'animationIndex', state.animationindex)
+  updateState(instanceId, 'activeIndex', state.activeindex)
   updateState(instanceId, 'loop', state.loop)
   updateState(instanceId, 'animationTime', state.animationtime)
 }
@@ -151,8 +154,9 @@ const updateListView = (instanceId, ownerInstance) => {
     return
   }
   updatePreState(instanceId, domState)
+  updateState(instanceId, 'animationIndex', state.activeIndex)
   updateVisibleOptions(state.animationIndex, instanceId);
-
+  updateWrapperStyle(instanceId, ownerInstance);
 }
 
 const touchStart = (instanceId) => (event) => {
@@ -232,7 +236,7 @@ function updateVisibleOptions(currentIndex, instanceId) {
       if (valueIndex === undefined) {
         return;
       }
-      newValueArr[index] = state.options[valueIndex] ?? '';
+      newValueArr[index] = valueIndex;
     });
   }
   const rotate = (animationIndex * 20) % 360;
@@ -255,7 +259,10 @@ function getWrapperCSSVar(instanceId) {
   const state = getCurrState(instanceId);
   const optionsVIndexList = state.optionsVIndexList;
   return optionsVIndexList.reduce((previousValue, currentValue, currentIndex) => {
-    previousValue[`--picker-item-content_${currentIndex}`] = `"${currentValue}"`;
+    if (currentValue === '' || currentValue === undefined) return previousValue;
+    const text = optionText(state.options, currentValue, state.valueKey);
+    if(text === undefined) return previousValue;
+    previousValue[`--picker-item-content_${currentIndex}`] = `"${text}"`;
     return previousValue;
   }, {});
 }
@@ -386,8 +393,8 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
     setTimeout(() => {
       updateState(instanceId, 'moving', false);
       ownerInstance.callMethod('animationEnd');
+      ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
     }, 150);
-    ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
   }
 }
 

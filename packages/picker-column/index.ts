@@ -51,6 +51,7 @@ SmartComponent({
       observer(index: number) {
         if (!this.data.isInit) return;
         this.setIndex(index);
+        this.updateVisibleOptions(index);
       },
     },
     unit: {
@@ -97,9 +98,9 @@ SmartComponent({
       const { activeIndex, defaultIndex } = this.data;
       const animationIndex = activeIndex !== undefined ? activeIndex : defaultIndex;
       const index = this.adjustIndex(animationIndex);
-      if (activeIndex === index) return index;
       this.setData({
         activeIndex: index,
+        animationIndex: index,
       });
       return index;
     },
@@ -162,7 +163,7 @@ SmartComponent({
           if (valueIndex === undefined) {
             return;
           }
-          newValueArr[index] = this.data.options[valueIndex] ?? '';
+          newValueArr[index] = valueIndex;
         });
       }
       const rotate = (animationIndex * 20) % 360;

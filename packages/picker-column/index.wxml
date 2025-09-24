@@ -10,11 +10,11 @@
   data-valuekey="{{valueKey}}"
   data-itemheight="{{itemHeight}}"
   data-visibleitemcount="{{visibleItemCount}}"
-  data-animationindex="{{animationIndex}}"
+  data-activeindex="{{activeIndex}}"
   data-loop="{{loop}}"
   data-animationtime="{{animationTime}}"
   options="{{options}}" 
-  animationindex="{{animationIndex}}"
+  activeindex="{{activeIndex}}"
   loop="{{loop}}"
   valuekey="{{valueKey}}"
   itemheight="{{itemHeight}}"
@@ -24,7 +24,7 @@
   change:valuekey="{{computed.updateValue(instanceId,'valueKey')}}" 
   change:itemheight="{{computed.updateValue(instanceId,'itemHeight')}}" 
   change:visibleitemcount="{{computed.updateValue(instanceId, 'visibleItemCount')}}" 
-  change:animationindex="{{computed.updateValue(instanceId,'animationIndex')}}" 
+  change:activeindex="{{computed.updateValue(instanceId,'activeIndex')}}" 
   change:loop="{{computed.updateValue(instanceId,'loop')}}" 
   change:animationtime="{{computed.updateValue(instanceId,'animationTime')}}" 
   change:instanceid="{{computed.updateValue(instanceId,'instanceId')}}" 
@@ -33,7 +33,7 @@
   bind:touchend="{{computed.touchEnd(instanceId)}}"
   bind:touchcancel="{{computed.touchEnd(instanceId)}}"
 >
-  <view class="smart-picker-column__offset" style="{{ computed.wrapperStyle({ animationIndex, itemHeight, animationTime, unit, moving, optionsVIndexList }) }}" id="options">
+  <view class="smart-picker-column__offset" style="{{ computed.wrapperStyle({ animationIndex, itemHeight, animationTime, unit, moving, optionsVIndexList, options, valueKey }) }}" id="options">
     <view
       wx:for="{{ optionsVIndexList }}"
       wx:for-item="optionIndex"
