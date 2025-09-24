@@ -9,40 +9,39 @@
 >
   <view class="smart-nav-bar__content">
     <view class="{{ utils.bem('nav-bar__left', { home: leftTextType === 'home', title: leftTextType === 'title', icon: leftArrow || leftIcon }) }}" bind:tap="onClickLeft">
-      <block wx:if="{{ leftArrow || leftText || leftIcon }}">
-        <smart-icon
-          wx:if="{{ leftArrow }}"
-          size="24px"
-          hover-class="smart-nav-bar__icon--hover"
-          hover-stay-time="70"
-          name="{{ leftArrowIcon }}"
-          data-type="leftArrow"
-          custom-class="smart-nav-bar__arrow"
-        />
-        <view
-          wx:if="{{ leftIcon }}"
-          data-type="leftIcon"
-          hover-class="smart-nav-bar__icon--hover"
-          hover-stay-time="70"
-          class="smart-nav-bar__icon-wrap"
-          catch:tap="onClickLeftIcon"
-        >
-          <smart-icon class="left-icon-class" custom-class="smart-nav-bar__icon" size="{{ leftIconSize }}" name="{{ leftIcon }}" color="{{ leftIconColor }}" />
-        </view>
-        <view
-          wx:if="{{ leftText }}"
-          class="smart-nav-bar__text left-text-class"
-          catch:tap="onClickLeftText"
-          hover-class="{{ leftTextType === 'back' ? 'smart-nav-bar__text--hover' : '' }}"
-          hover-stay-time="70"
-        >{{ leftText }}</view>
-      </block>
-      <slot wx:else name="left" />
+      <smart-icon
+        wx:if="{{ leftArrow }}"
+        size="24px"
+        hover-class="smart-nav-bar__icon--hover"
+        hover-stay-time="70"
+        name="{{ leftArrowIcon }}"
+        data-type="leftArrow"
+        custom-class="smart-nav-bar__arrow"
+      />
+      <view
+        wx:if="{{ leftIcon }}"
+        data-type="leftIcon"
+        hover-class="smart-nav-bar__icon--hover"
+        hover-stay-time="70"
+        class="smart-nav-bar__icon-wrap"
+        catch:tap="onClickLeftIcon"
+      >
+        <smart-icon class="left-icon-class" custom-class="smart-nav-bar__icon" size="{{ leftIconSize }}" name="{{ leftIcon }}" color="{{ leftIconColor }}" />
+      </view>
+      <view
+        wx:if="{{ leftText }}"
+        class="smart-nav-bar__text left-text-class"
+        catch:tap="onClickLeftText"
+        hover-class="{{ leftTextType === 'back' ? 'smart-nav-bar__text--hover' : '' }}"
+        hover-stay-time="70"
+      >
+        {{ leftText }}
+      </view>
+      <slot name="left" />
     </view>
     <view class="smart-nav-bar__title title-class smart-ellipsis" bind:tap="onClickTitle">
-      <block wx:if="{{ title }}">{{ title }}</block>
-
-      <slot wx:else name="title" />
+      <block>{{ title }}</block>
+      <slot name="title" />
     </view>
     <view class="smart-nav-bar__right" bind:tap="onClickRight">
       <view
@@ -62,8 +61,10 @@
         hover-class="smart-nav-bar__text--hover"
         hover-stay-time="70"
         catch:tap="onClickRightText"
-      >{{ rightText }}</view>
-      <slot wx:else name="right" />
+      >
+        {{ rightText }}
+      </view>
+      <slot name="right" />
     </view>
   </view>
 </view>
