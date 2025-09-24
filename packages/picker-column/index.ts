@@ -47,7 +47,7 @@ SmartComponent({
       value: '',
     },
     activeIndex: {
-      type: Number,
+      type: null,
       observer(index: number) {
         if (!this.data.isInit) return;
         this.setIndex(index);
@@ -96,7 +96,7 @@ SmartComponent({
   methods: {
     checkIndex() {
       const { activeIndex, defaultIndex } = this.data;
-      const animationIndex = activeIndex !== undefined ? activeIndex : defaultIndex;
+      const animationIndex = activeIndex !== null ? activeIndex : defaultIndex;
       const index = this.adjustIndex(animationIndex);
       this.setData({
         activeIndex: index,

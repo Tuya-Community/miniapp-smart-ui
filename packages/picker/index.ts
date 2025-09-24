@@ -31,8 +31,7 @@ SmartComponent({
       value: 0,
     },
     activeIndex: {
-      type: Number,
-      value: -1,
+      type: null,
     },
     unit: {
       type: String,
