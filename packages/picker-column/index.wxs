@@ -189,9 +189,14 @@ const touchMove = (instanceId) => (event, ownerInstance) => {
   const direction =
     offsetCompare < 0 ? 'down' : offsetCompare > 0 ? 'up' : state.movingDirection;
   updateVisibleOptions(animationIndex, instanceId);
+  const isOverOptions = state.loop ? false : animationIndex < 0 || animationIndex > state.options.length - 1;
+  const activeIndex = Math.round(animationIndex);
+  const isDisabled = wxUtils.isObj(state.options[activeIndex]) && state.options[activeIndex].disabled;
   if (
-    (direction === 'down' && preIndexLast < 0.5 && curIndexLast >= 0.5) ||
-    (direction === 'up' && preIndexLast >= 0.5 && curIndexLast < 0.5)
+    ((direction === 'down' && preIndexLast < 0.5 && curIndexLast >= 0.5) ||
+      (direction === 'up' && preIndexLast >= 0.5 && curIndexLast < 0.5))
+    && !isOverOptions
+    && !isDisabled
   ) {
     ownerInstance.callMethod('animationIndexChange', animationIndex);
     ownerInstance.callMethod('vibrateShort');
@@ -350,6 +355,7 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
     const midTime = 16;
     const count = Math.floor((state.animationTime - 100) / midTime);
     const midOffset = (targetOffset - state.preOffsetting) / count;
+    const countOffsetIndex = Math.abs(Math.round(currTargetActiveIndex - state.animationIndex));
     let startCount = 0;
     const endTimer = setInterval(() => {
       startCount++;
@@ -380,6 +386,7 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
       }, '.smart-picker-column__offset');
     }, midTime);
     const rotate = 20 * currTargetActiveIndex;
+    ownerInstance.callMethod('vibrateShort', countOffsetIndex, state.animationTime);
     setStyle(ownerInstance, {
       transition: 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
       transform: `rotateX(${rotate}deg)`,
