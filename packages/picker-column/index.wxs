@@ -60,7 +60,7 @@ function wrapperStyle(data) {
   }, {});
   return style({
     'text-indent': data.unit ? '-8rpx' : '0',
-    transition: data.moving ? 'none' : 'transform ' + (data.animationTime + 100) + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
+    transition: data.moving ? 'none' : 'transform ' + data.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
     'line-height': addUnit(data.itemHeight),
     transform: `rotateX(${rotate}deg)`,
     ...cssVar
@@ -272,7 +272,7 @@ function updateWrapperStyle(instanceId, ownerInstance, style = {}) {
   var rotate = 20 * state.animationIndex;
   var cssVar = getWrapperCSSVar(instanceId);
   setStyle(ownerInstance, {
-    transition: state.moving ? 'none' : 'transform ' + (state.animationTime + 100) + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
+    transition: state.moving ? 'none' : 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
     transform: `rotateX(${rotate}deg)`,
     ...style,
     ...cssVar
@@ -344,10 +344,11 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
   currTargetActiveIndex = adjustIndex(currTargetActiveIndex, state.options);
   targetOffset = -currTargetActiveIndex * state.itemHeight;
   const animationOffset = Math.abs(targetOffset - state.preOffsetting);
+  const isOverOptions = state.loop ? false : state.animationIndex < 0 || state.animationIndex > state.options.length - 1;
   // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
-  if (state.animationTime > 150 && animationOffset > state.itemHeight) {
+  if (state.animationTime > 150 && animationOffset > state.itemHeight && !isOverOptions) {
     const midTime = 16;
-    const count = Math.floor((state.animationTime - 150) / midTime);
+    const count = Math.floor((state.animationTime - 100) / midTime);
     const midOffset = (targetOffset - state.preOffsetting) / count;
     let startCount = 0;
     const endTimer = setInterval(() => {
@@ -388,13 +389,13 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
     updateVisibleOptions(currTargetActiveIndex, instanceId);
     updateState(instanceId, 'animationIndex', currTargetActiveIndex);
     updateWrapperStyle(instanceId, ownerInstance, {
-      transition: 'transform ' + 150 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+      transition: 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
     });
     setTimeout(() => {
       updateState(instanceId, 'moving', false);
       ownerInstance.callMethod('animationEnd');
       ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
-    }, 150);
+    }, state.animationTime);
   }
 }
 
@@ -417,13 +418,13 @@ const tapItem = (instanceId) => (e, ownerInstance) => {
   updateVisibleOptions(currTargetActiveIndex, instanceId);
   updateState(instanceId, 'animationIndex', currTargetActiveIndex);
   updateWrapperStyle(instanceId, ownerInstance, {
-    transition: 'transform ' + 200 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+    transition: 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
   });
-  ownerInstance.callMethod('vibrateShort', offsetCount, 150);
+  ownerInstance.callMethod('vibrateShort', offsetCount, state.animationTime);
   const tapTimer = setTimeout(() => {
     ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
     updateState(instanceId, 'tapTimer', null);
-  }, 150);
+  }, state.animationTime);
   updateState(instanceId, 'tapTimer', tapTimer);
 }
 

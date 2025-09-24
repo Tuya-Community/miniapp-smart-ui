@@ -228,11 +228,12 @@ SmartComponent({
     },
 
     activeIndexChange(index: number) {
+      const isSame = index === this.data.activeIndex;
       this.setData({
         activeIndex: index,
         animationIndex: index,
       });
-      this.$emit('change', index);
+      !isSame && this.$emit('change', index);
     },
 
     animationIndexChange(index: number) {
