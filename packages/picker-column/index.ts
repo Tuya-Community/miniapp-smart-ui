@@ -263,9 +263,10 @@ SmartComponent({
     },
 
     activeIndexChange(index: number) {
-      const isSame = index === this.data.activeIndex;
+      const activeIndex = Math.abs(index % this.data.options.length);
+      const isSame = index === activeIndex;
       this.setData({
-        activeIndex: Math.abs(index % this.data.options.length),
+        activeIndex: activeIndex,
         animationIndex: index,
       });
       !isSame && this.$emit('change', index);

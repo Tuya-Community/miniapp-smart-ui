@@ -169,7 +169,7 @@ const updateListView = (instanceId, ownerInstance) => {
 const touchStart = (instanceId) => (event) => {
   const state = getCurrState(instanceId);
   if (state.endTimer) {
-    clearInterval(state.endTimer);
+    cancelAnimationFrame(state.endTimer);
     clearTimeout(state.endTimer);
     updateState(instanceId, 'endTimer', null);
   } else {
@@ -391,18 +391,15 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
   const totalDistance = targetOffset - state.preOffsetting;
     // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
   if (state.animationTime > 200 && animationOffset > state.itemHeight && !isOverOptions) {
-    const midTime = 20;
     const countOffsetIndex = Math.abs(Math.round(currTargetActiveIndex - state.animationIndex));
     const maxVibrateShort = Math.floor(state.animationTime / 30);
     
     // 基于时间的减速动画参数
-    const totalFrames = Math.floor(state.animationTime / midTime); // 总帧数
     const startOffset = state.preOffsetting;
-    let frameCount = 0;
     const startTime = Date.now();
     
-    const endTimer = setInterval(() => {
-      frameCount++;
+    // 使用 requestAnimationFrame 实现动画
+    const animate = () => {
       const elapsedTime = Date.now() - startTime;
       const progress = Math.min(elapsedTime / state.animationTime, 1); // 进度 0-1
       
@@ -413,11 +410,10 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
       // 计算当前偏移量
       const currentOffset = startOffset + totalDistance * easedProgress;
       
-      if (progress >= 1 || frameCount >= totalFrames) {
+      if (progress >= 1) {
         // 动画完成，设置为精确的目标位置
         updateVisibleOptions(currTargetActiveIndex, instanceId);
         updateWrapperStyle(instanceId, ownerInstance);
-        clearInterval(endTimer);
         updateState(instanceId, 'endTimer', null);
         updateState(instanceId, 'moving', false);
         updateState(instanceId, 'animationIndex', currTargetActiveIndex);
@@ -433,9 +429,16 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
       updateState(instanceId, 'animationIndex', currIndex);
       ownerInstance.callMethod('animationIndexChange', currIndex);
       updateWrapperStyle(instanceId, ownerInstance);
-    }, midTime);
+      
+      // 继续下一帧动画
+      const animationId = requestAnimationFrame(animate);
+      updateState(instanceId, 'endTimer', animationId);
+    };
+    
+    // 启动动画
+    const animationId = requestAnimationFrame(animate);
     ownerInstance.callMethod('vibrateShort', Math.min(countOffsetIndex, maxVibrateShort), state.animationTime);
-    updateState(instanceId, 'endTimer', endTimer);
+    updateState(instanceId, 'endTimer', animationId);
   } else {
     updateVisibleOptions(currTargetActiveIndex, instanceId);
     updateState(instanceId, 'animationIndex', currTargetActiveIndex);
