@@ -99,7 +99,7 @@ SmartComponent({
       const animationIndex = activeIndex !== null ? activeIndex : defaultIndex;
       const index = this.adjustIndex(animationIndex);
       this.setData({
-        activeIndex: index,
+        activeIndex: Math.abs(index % this.data.options.length),
         animationIndex: index,
       });
       return index;
@@ -157,11 +157,30 @@ SmartComponent({
       const newArr = new Array(vOptionLength).fill('');
       const newValueArr = new Array(partCount * 2 + 1).fill('');
       if (this.data.loop) {
-        newValueArr.forEach((item, index) => {
-          const valueIndex = (animationIndex - partCount + index) % this.data.options.length;
-          const listIndex = valueIndex < 0 ? this.data.options.length - 1 + valueIndex : valueIndex;
-          newValueArr[index] = listIndex;
-        });
+        // 循环模式：根据 options 首尾填充 newValueArr 数组
+        const optionsLength = this.data.options.length;
+        if (optionsLength === 0) {
+          // 如果没有选项，填充空值
+          newValueArr.fill('');
+        } else {
+          newValueArr.forEach((item, index) => {
+            // 计算相对于中心的偏移量
+            const offset = index - partCount;
+            // 计算目标索引，支持循环
+            let targetIndex = animationIndex + offset;
+
+            // 处理循环逻辑
+            if (targetIndex < 0) {
+              // 向前循环：从末尾开始
+              targetIndex = ((targetIndex % optionsLength) + optionsLength) % optionsLength;
+            } else if (targetIndex >= optionsLength) {
+              // 向后循环：从开头开始
+              targetIndex %= optionsLength;
+            }
+
+            newValueArr[index] = targetIndex;
+          });
+        }
       } else {
         if (animationIndex < 0) {
           animationIndex = 0;
@@ -200,12 +219,14 @@ SmartComponent({
       const { data } = this;
       const count = this.getCount();
 
-      index = range(index, 0, count);
+      index = this.data.loop ? index : range(index, 0, count);
       for (let i = index; i < count; i++) {
-        if (!this.isDisabled(data.options[i])) return i;
+        const targetIndex = this.data.loop ? Math.abs(i % count) : i;
+        if (!this.isDisabled(data.options[targetIndex])) return i;
       }
       for (let i = index - 1; i >= 0; i--) {
-        if (!this.isDisabled(data.options[i])) return i;
+        const targetIndex = this.data.loop ? Math.abs(i % count) : i;
+        if (!this.isDisabled(data.options[targetIndex])) return i;
       }
       return 0;
     },
@@ -231,7 +252,7 @@ SmartComponent({
 
     setIndex(index: number) {
       this.setData({
-        activeIndex: index,
+        activeIndex: Math.abs(index % this.data.options.length),
         animationIndex: index,
       });
     },
@@ -244,7 +265,7 @@ SmartComponent({
     activeIndexChange(index: number) {
       const isSame = index === this.data.activeIndex;
       this.setData({
-        activeIndex: index,
+        activeIndex: Math.abs(index % this.data.options.length),
         animationIndex: index,
       });
       !isSame && this.$emit('change', index);

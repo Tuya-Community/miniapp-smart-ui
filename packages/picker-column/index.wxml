@@ -33,7 +33,7 @@
   bind:touchend="{{computed.touchEnd(instanceId)}}"
   bind:touchcancel="{{computed.touchEnd(instanceId)}}"
 >
-  <view class="smart-picker-column__offset" style="{{ computed.wrapperStyle({ animationIndex, itemHeight, animationTime, unit, moving, optionsVIndexList, options, valueKey, visibleItemCount }) }}" id="options">
+  <view class="smart-picker-column__offset" style="{{ computed.wrapperStyle({ animationIndex, itemHeight, animationTime, unit, moving, optionsVIndexList, options, valueKey, visibleItemCount, loop }) }}" id="options">
     <view
       wx:for="{{ optionsVIndexList }}"
       wx:for-item="optionIndex"

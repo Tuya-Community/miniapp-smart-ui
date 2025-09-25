@@ -54,7 +54,8 @@ function wrapperStyle(data) {
   var optionsVIndexList = data.optionsVIndexList;
   var cssVar = optionsVIndexList.reduce((previousValue, currentValue, currentIndex) => {
     if (currentValue === '' || currentValue === undefined) return previousValue;
-    const text = optionText(data.options, currentValue, data.valueKey);
+    const index = data.loop ? Math.abs(currentValue % data.options.length) : currentValue;
+    const text = optionText(data.options, index, data.valueKey);
     if(text === undefined) return previousValue;
     previousValue[`--picker-item-content_${currentIndex}`] = `"${text}"`;
     return previousValue;
@@ -69,14 +70,14 @@ function wrapperStyle(data) {
 }
 
 
-function adjustIndex(index, options) {
+function adjustIndex(index, options, loop) {
   const count = options.length;
-  index = wxUtils.range(index, 0, count);
+  index = loop ? index : wxUtils.range(index, 0, count);
   for (let i = index; i < count; i++) {
-    if (!isDisabled(options[i])) return i;
+    if (!isDisabled(options[loop ? Math.abs(i % count) : i])) return i;
   }
   for (let i = index - 1; i >= 0; i--) {
-    if (!isDisabled(options[i])) return i;
+    if (!isDisabled(options[loop ? Math.abs(i % count) : i])) return i;
   }
 }
 
@@ -156,9 +157,13 @@ const updateListView = (instanceId, ownerInstance) => {
     return
   }
   updatePreState(instanceId, domState)
-  updateState(instanceId, 'animationIndex', state.activeIndex)
+  const newAnimationIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1)) * state.options.length + state.activeIndex;
+  const isSame = newAnimationIndex === state.animationIndex;
+  updateState(instanceId, 'animationIndex', newAnimationIndex)
   updateVisibleOptions(state.animationIndex, instanceId);
-  updateWrapperStyle(instanceId, ownerInstance);
+  updateWrapperStyle(instanceId, ownerInstance, {
+    transition: isSame ? 'none' : 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+  });
 }
 
 const touchStart = (instanceId) => (event) => {
@@ -232,11 +237,30 @@ function updateVisibleOptions(currentIndex, instanceId) {
   const partCount = Math.floor(state.visibleItemCount / 2) + 3;
   const newValueArr = new Array(partCount * 2 + 1).fill('');
   if (state.loop) {
-    newValueArr.forEach((item, index) => {
-      const valueIndex = (animationIndex - partCount + index) % state.options.length;
-      const listIndex = valueIndex < 0 ? state.options.length - 1 + valueIndex : valueIndex;
-      newValueArr[index] = listIndex;
-    });
+    // 循环模式：根据 options 首尾填充 newValueArr 数组
+    const optionsLength = state.options.length;
+    if (optionsLength === 0) {
+      // 如果没有选项，填充空值
+      newValueArr.fill('');
+    } else {
+      newValueArr.forEach((item, index) => {
+        // 计算相对于中心的偏移量
+        const offset = index - partCount;
+        // 计算目标索引，支持循环
+        let targetIndex = animationIndex + offset;
+
+        // 处理循环逻辑
+        if (targetIndex < 0) {
+          // 向前循环：从末尾开始
+          targetIndex = ((targetIndex % optionsLength) + optionsLength) % optionsLength;
+        } else if (targetIndex >= optionsLength) {
+          // 向后循环：从开头开始
+          targetIndex %= optionsLength;
+        }
+
+        newValueArr[index] = targetIndex;
+      });
+    }
   } else {
     if (animationIndex < 0) {
       animationIndex = 0;
@@ -276,7 +300,8 @@ function getWrapperCSSVar(instanceId) {
     if (currentValue === '' || currentValue === undefined) {
       previousValue[`--picker-item-content_${currentIndex}`] = `""`;
     } else {
-      const text = optionText(state.options, currentValue, state.valueKey);
+      const index = state.loop ? Math.abs(currentValue % state.options.length) : currentValue;
+      const text = optionText(state.options, index, state.valueKey);
       previousValue[`--picker-item-content_${currentIndex}`] = `"${text === undefined ? '' : text}"`;
     }
     return previousValue;
@@ -359,7 +384,7 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
     Math.round((state.preOffsetting + inertiaDistance) / state.itemHeight) *
     state.itemHeight;
   let currTargetActiveIndex = -targetOffset / state.itemHeight;
-  currTargetActiveIndex = adjustIndex(currTargetActiveIndex, state.options);
+  currTargetActiveIndex = adjustIndex(currTargetActiveIndex, state.options, state.loop);
   targetOffset = -currTargetActiveIndex * state.itemHeight;
   const animationOffset = Math.abs(targetOffset - state.preOffsetting);
   const isOverOptions = state.loop ? false : state.animationIndex < 0 || state.animationIndex > state.options.length - 1;

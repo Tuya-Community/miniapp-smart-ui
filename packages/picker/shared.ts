@@ -33,4 +33,8 @@ export const pickerProps = {
     type: String,
     value: '',
   },
+  loop: {
+    type: Boolean,
+    value: false,
+  },
 };

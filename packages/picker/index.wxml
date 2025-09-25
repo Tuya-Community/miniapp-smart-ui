@@ -30,6 +30,7 @@
       default-index="{{ item.defaultIndex || defaultIndex }}"
       active-index="{{ item.activeIndex || activeIndex }}"
       item-height="{{ itemHeight }}"
+      loop="{{ loop || item.loop || false }}"
       visible-item-count="{{ visibleItemCount }}"
       active-class="active-class"
       bind:change="onChange"
