@@ -170,6 +170,10 @@ const touchStart = (instanceId) => (event) => {
   } else {
     updateState(instanceId, 'recentVelocity', 0);
   }
+  if(state.tapTimer) {
+    clearTimeout(state.tapTimer);
+    updateState(instanceId, 'tapTimer', null);
+  }
   const { pageY } = event.touches[0];
   startPo.y = pageY;
   updateState(instanceId, 'moving', false);
@@ -269,10 +273,12 @@ function getWrapperCSSVar(instanceId) {
   const state = getCurrState(instanceId);
   const optionsVIndexList = state.optionsVIndexList;
   return optionsVIndexList.reduce((previousValue, currentValue, currentIndex) => {
-    if (currentValue === '' || currentValue === undefined) return previousValue;
-    const text = optionText(state.options, currentValue, state.valueKey);
-    if(text === undefined) return previousValue;
-    previousValue[`--picker-item-content_${currentIndex}`] = `"${text}"`;
+    if (currentValue === '' || currentValue === undefined) {
+      previousValue[`--picker-item-content_${currentIndex}`] = `""`;
+    } else {
+      const text = optionText(state.options, currentValue, state.valueKey);
+      previousValue[`--picker-item-content_${currentIndex}`] = `"${text === undefined ? '' : text}"`;
+    }
     return previousValue;
   }, {});
 }
@@ -336,10 +342,11 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
   if (recentVelocity > minVelocity) {
     // 使用物理公式计算惯性距离：distance = velocity^2 / (2 * friction)
     // 这里简化处理，直接使用速度乘以一个系数
-    inertiaDistance = recentVelocity * 100; // 200ms的惯性时间
+    inertiaDistance = recentVelocity * 150; // 200ms的惯性时间
 
     // 限制最大滚动距离
     if (inertiaDistance > maxInertiaDistance) {
+      console.log('first')
       inertiaDistance = maxInertiaDistance;
     }
 
@@ -356,24 +363,35 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
   targetOffset = -currTargetActiveIndex * state.itemHeight;
   const animationOffset = Math.abs(targetOffset - state.preOffsetting);
   const isOverOptions = state.loop ? false : state.animationIndex < 0 || state.animationIndex > state.options.length - 1;
-  // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
+  const totalDistance = targetOffset - state.preOffsetting;
+    // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
   if (state.animationTime > 200 && animationOffset > state.itemHeight && !isOverOptions) {
-    const midTime = 30;
-    const count = Math.floor((state.animationTime - 60) / midTime);
-    const midOffset = (targetOffset - state.preOffsetting) / count;
+    const midTime = 20;
     const countOffsetIndex = Math.abs(Math.round(currTargetActiveIndex - state.animationIndex));
     const maxVibrateShort = Math.floor(state.animationTime / 30);
-    let startCount = 0;
+    
+    // 基于时间的减速动画参数
+    const totalFrames = Math.floor(state.animationTime / midTime); // 总帧数
+    const startOffset = state.preOffsetting;
+    let frameCount = 0;
+    const startTime = Date.now();
+    
     const endTimer = setInterval(() => {
-      startCount++;
-      const currOffset = state.preOffsetting + midOffset * startCount;
-      const currIndex = -currOffset / state.itemHeight;
-      if (startCount >= count) {
-        updateVisibleOptions(currIndex, instanceId);
-        const wrapperCSSStyle = getWrapperCSSVar(instanceId);
-        setStyle(ownerInstance, {
-          ...wrapperCSSStyle,
-        }, '.smart-picker-column__offset');
+      frameCount++;
+      const elapsedTime = Date.now() - startTime;
+      const progress = Math.min(elapsedTime / state.animationTime, 1); // 进度 0-1
+      
+      // 使用缓动函数实现减速效果：easeOutCubic
+      // f(t) = 1 - (1-t)^3，开始快，结束慢
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      
+      // 计算当前偏移量
+      const currentOffset = startOffset + totalDistance * easedProgress;
+      
+      if (progress >= 1 || frameCount >= totalFrames) {
+        // 动画完成，设置为精确的目标位置
+        updateVisibleOptions(currTargetActiveIndex, instanceId);
+        updateWrapperStyle(instanceId, ownerInstance);
         clearInterval(endTimer);
         updateState(instanceId, 'endTimer', null);
         updateState(instanceId, 'moving', false);
@@ -381,36 +399,29 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
         ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
         setTimeout(() => {
           ownerInstance.callMethod('animationEnd');
-        }, 10);
+        }, 0);
         return;
       }
+      
+      const currIndex = -currentOffset / state.itemHeight;
       updateVisibleOptions(currIndex, instanceId);
       updateState(instanceId, 'animationIndex', currIndex);
       ownerInstance.callMethod('animationIndexChange', currIndex);
-      const wrapperCSSStyle = getWrapperCSSVar(instanceId);
-        setStyle(ownerInstance, {
-          ...wrapperCSSStyle,
-      }, '.smart-picker-column__offset');
+      updateWrapperStyle(instanceId, ownerInstance);
     }, midTime);
-    const perAngle = 360 / (state.visibleItemCount * 4 - 2);
-    const rotate = perAngle * currTargetActiveIndex;
     ownerInstance.callMethod('vibrateShort', Math.min(countOffsetIndex, maxVibrateShort), state.animationTime);
-    setStyle(ownerInstance, {
-      transition: 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
-      transform: `rotateX(${rotate}deg)`,
-    }, '.smart-picker-column__offset');
     updateState(instanceId, 'endTimer', endTimer);
   } else {
     updateVisibleOptions(currTargetActiveIndex, instanceId);
     updateState(instanceId, 'animationIndex', currTargetActiveIndex);
     updateWrapperStyle(instanceId, ownerInstance, {
-      transition: 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+      transition: 'transform ' + 200 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
     });
     setTimeout(() => {
       updateState(instanceId, 'moving', false);
       ownerInstance.callMethod('animationEnd');
       ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
-    }, state.animationTime);
+    }, 150);
   }
 }
 
@@ -433,13 +444,13 @@ const tapItem = (instanceId) => (e, ownerInstance) => {
   updateVisibleOptions(currTargetActiveIndex, instanceId);
   updateState(instanceId, 'animationIndex', currTargetActiveIndex);
   updateWrapperStyle(instanceId, ownerInstance, {
-    transition: 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+    transition: 'transform ' + 300 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
   });
-  ownerInstance.callMethod('vibrateShort', offsetCount, state.animationTime);
+  ownerInstance.callMethod('vibrateShort', offsetCount, 200);
   const tapTimer = setTimeout(() => {
     ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
     updateState(instanceId, 'tapTimer', null);
-  }, state.animationTime);
+  }, 200);
   updateState(instanceId, 'tapTimer', tapTimer);
 }
 
