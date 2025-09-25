@@ -264,7 +264,7 @@ SmartComponent({
 
     activeIndexChange(index: number) {
       const activeIndex = Math.abs(index % this.data.options.length);
-      const isSame = index === activeIndex;
+      const isSame = activeIndex === this.data.activeIndex;
       this.setData({
         activeIndex: activeIndex,
         animationIndex: index,
