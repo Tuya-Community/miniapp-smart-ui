@@ -22,7 +22,7 @@
       value-key="{{ valueKey }}"
       style="order: {{ item.order }}; {{ computed.style(item.style) }}"
       active-style="{{ activeStyle }}"
-      font-style="{{computed.style(item.fontStyle)}}"
+      font-style="{{fontStyle || computed.style(item.fontStyle)}}"
       options="{{ item.values }}"
       disabled="{{ item.disabled || false }}"
       unit="{{ item.unit || unit }}"

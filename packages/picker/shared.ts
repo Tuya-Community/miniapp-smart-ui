@@ -33,6 +33,10 @@ export const pickerProps = {
     type: String,
     value: '',
   },
+  fontStyle: {
+    type: String,
+    value: '',
+  },
   loop: {
     type: Boolean,
     value: false,

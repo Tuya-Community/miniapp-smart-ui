@@ -141,13 +141,6 @@ function calculateCenterIndex(arr) {
 
 }
 
-function wrapperInterStyle(data) {
-  var offset = data.renderStart * data.itemHeight;
-  offset = addUnit(offset);
-  return style({
-    'padding-top': offset,
-  });
-}
 
 function wrapperItemStyle(data) {
   var heightStyleStr = "height: " + data.itemHeight + 'px;'
@@ -156,7 +149,8 @@ function wrapperItemStyle(data) {
     transform: `rotateX(${360 - data.index * perAngle}deg) translateZ(${data.itemHeight * data.visibleItemCount / 2}px) translateX(-50%) scale(0.88);`, //  scale(0.88)
     top: `calc(50% - ${data.itemHeight / 2}px)`,
   });
-  return transformStyleStr + ';' + heightStyleStr
+  const textStyle = wrapperItemTextStyle(data);
+  return transformStyleStr.replace(';', '') + ';' + heightStyleStr.replace(';', '') + ';' + textStyle.replace(';', '');
 }
 
 function wrapperItemClass(data) {
@@ -570,10 +564,8 @@ module.exports = {
   optionText: optionText,
   rootStyle: rootStyle,
   wrapperStyle: wrapperStyle,
-  wrapperInterStyle: wrapperInterStyle,
   wrapperItemStyle: wrapperItemStyle,
   wrapperItemClass: wrapperItemClass,
-  wrapperItemTextStyle: wrapperItemTextStyle,
   updateValue: updateValue,
   touchStart: touchStart,
   touchMove: touchMove,
