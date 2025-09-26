@@ -209,11 +209,19 @@ const updateListView = (instanceId, ownerInstance) => {
     return
   }
   updatePreState(instanceId, domState)
-  const preOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1) - 1) * state.options.length + state.activeIndex
-  const curOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1)) * state.options.length + state.activeIndex;
-  const afterOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1) + 1) * state.options.length + state.activeIndex;
-  const newAnimationIndex = !state.loop ? state.activeIndex : Math.abs(preOptionsNewIndex - state.animationIndex) > Math.abs(curOptionsNewIndex - state.animationIndex) ? Math.abs(curOptionsNewIndex - state.animationIndex) > Math.abs(afterOptionsNewIndex - state.animationIndex) ? afterOptionsNewIndex : curOptionsNewIndex : Math.abs(preOptionsNewIndex - state.animationIndex) > Math.abs(afterOptionsNewIndex - state.animationIndex) ? afterOptionsNewIndex : preOptionsNewIndex;
-  const isSame = newAnimationIndex === state.animationIndex;
+  const animationIndex = state.animationIndex || 0;
+  const preOptionsNewIndex = Math.floor(animationIndex / (state.options.length || 1) - 1) * state.options.length + state.activeIndex
+  const curOptionsNewIndex = Math.floor(animationIndex / (state.options.length || 1)) * state.options.length + state.activeIndex;
+  const afterOptionsNewIndex = Math.floor(animationIndex / (state.options.length || 1) + 1) * state.options.length + state.activeIndex;
+  const newAnimationIndex = !state.loop ?
+    state.activeIndex :
+    Math.abs(preOptionsNewIndex - animationIndex) > Math.abs(curOptionsNewIndex - animationIndex)
+      ? Math.abs(curOptionsNewIndex - animationIndex) > Math.abs(afterOptionsNewIndex - animationIndex)
+        ? afterOptionsNewIndex : curOptionsNewIndex
+      : Math.abs(preOptionsNewIndex - state.animationIndex) > Math.abs(afterOptionsNewIndex - state.animationIndex)
+        ? afterOptionsNewIndex
+        : preOptionsNewIndex;
+  const isSame = newAnimationIndex === animationIndex;
   updateState(instanceId, 'animationIndex', newAnimationIndex)
   updateVisibleOptions(state.animationIndex, instanceId);
   updateWrapperStyle(instanceId, ownerInstance, {
@@ -437,7 +445,7 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
     Math.round((state.preOffsetting + inertiaDistance) / state.itemHeight) *
     state.itemHeight;
   let currTargetActiveIndex = -targetOffset / state.itemHeight;
-  currTargetActiveIndex = adjustIndex(currTargetActiveIndex, state.options, state.loop);
+  currTargetActiveIndex = adjustIndex(Math.round(currTargetActiveIndex), state.options, state.loop);
   targetOffset = -currTargetActiveIndex * state.itemHeight;
   const animationOffset = Math.abs(targetOffset - state.preOffsetting);
   const isOverOptions = state.loop ? false : state.animationIndex < 0 || state.animationIndex > state.options.length - 1;
@@ -518,11 +526,6 @@ const tapItem = (instanceId) => (e, ownerInstance) => {
     updateState(instanceId, 'startTimer', null);
   }
   if (rotateIndex === activeRotateIndex) return;
-  const offsetCount = Math.min(
-    Math.abs(activeRotateIndex - rotateIndex),
-    Math.abs(activeRotateIndex + state.optionsVIndexList.length - rotateIndex),
-    Math.abs(rotateIndex + state.optionsVIndexList.length - activeRotateIndex)
-  );
   if (state.tapTimer) {
     clearTimeout(state.tapTimer);
     updateState(instanceId, 'tapTimer', null);
@@ -531,6 +534,7 @@ const tapItem = (instanceId) => (e, ownerInstance) => {
   const curOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1)) * state.options.length + currOptionsActiveIndex;
   const afterOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1) + 1) * state.options.length + currOptionsActiveIndex;
   const currTargetActiveIndex = !state.loop ? currOptionsActiveIndex : Math.abs(preOptionsNewIndex - state.animationIndex) > Math.abs(curOptionsNewIndex - state.animationIndex) ? Math.abs(curOptionsNewIndex - state.animationIndex) > Math.abs(afterOptionsNewIndex - state.animationIndex) ? afterOptionsNewIndex : curOptionsNewIndex : Math.abs(preOptionsNewIndex - state.animationIndex) > Math.abs(afterOptionsNewIndex - state.animationIndex) ? afterOptionsNewIndex : preOptionsNewIndex;
+  const offsetCount = Math.abs(currTargetActiveIndex - state.animationIndex);
   updateVisibleOptions(currTargetActiveIndex, instanceId);
   updateState(instanceId, 'animationIndex', currTargetActiveIndex);
   updateWrapperStyle(instanceId, ownerInstance, {
