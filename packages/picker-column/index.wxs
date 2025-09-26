@@ -35,6 +35,10 @@ function updateState(instanceId, key, value) {
   state[instanceId][key] = value
 }
 
+function clearCurrState(instanceId) {
+  delete state[instanceId]
+}
+
 function getCurrState(instanceId) {
   return state[instanceId]
 }
@@ -205,6 +209,10 @@ const updateValue = (instanceId, key) => (newOptions, oldOptions, ownerInstance)
 const updateListView = (instanceId, ownerInstance) => {
   const state = getCurrState(instanceId);
   const domState = getDomState(ownerInstance);
+  if (domState.isdestroy) {
+    clearCurrState(instanceId)
+    return
+  }
   if(getPreState(instanceId) === JSON.stringify(domState) || !state.itemHeight || !state.visibleItemCount || !Array.isArray(state.options) || state.animationTime === undefined) {
     return
   }

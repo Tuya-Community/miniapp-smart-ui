@@ -79,6 +79,7 @@ SmartComponent({
     startY: 0,
     offsetting: 0,
     animationIndex: 0,
+    isDestroy: false,
   },
 
   created() {
@@ -90,6 +91,11 @@ SmartComponent({
     this.updateVisibleOptions(activeIndex);
     this.setData({
       isInit: true,
+    });
+  },
+  destroyed() {
+    this.setData({
+      isDestroy: true,
     });
   },
 
