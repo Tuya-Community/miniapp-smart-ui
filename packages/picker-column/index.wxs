@@ -534,6 +534,7 @@ const tapItem = (instanceId) => (e, ownerInstance) => {
     updateState(instanceId, 'startTimer', null);
   }
   if (rotateIndex === activeRotateIndex) return;
+  ownerInstance.callMethod('animationStart');
   if (state.tapTimer) {
     clearTimeout(state.tapTimer);
     updateState(instanceId, 'tapTimer', null);
@@ -552,6 +553,9 @@ const tapItem = (instanceId) => (e, ownerInstance) => {
   const tapTimer = setTimeout(() => {
     ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
     updateState(instanceId, 'tapTimer', null);
+    setTimeout(() => {
+      ownerInstance.callMethod('animationEnd');
+    }, 0);
   }, 200);
   updateState(instanceId, 'tapTimer', tapTimer);
 }
