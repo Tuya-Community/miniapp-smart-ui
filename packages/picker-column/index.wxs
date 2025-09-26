@@ -174,10 +174,14 @@ function wrapperItemTextStyle(data) {
   const state = getCurrState(data.instanceId);
   const optionsVIndexList = state?.optionsVIndexList || data.optionsVIndexList;
   const animationIndex = state?.animationIndex ?? data.animationIndex;
+  const activeIndex = (animationIndex + 1)
+    % data.options.length - 1 < 0
+    ? (animationIndex + 1) % data.options.length - 1 + data.options.length
+    : (animationIndex + 1) % data.options.length - 1;
   const optionIndex = optionsVIndexList[data.index];
   var fontStyle = data.fontStyle;
   var activeStyle = data.activeStyle;
-  var isActive = typeof optionIndex === 'number' && Math.round(animationIndex) === optionIndex;
+  var isActive = typeof optionIndex === 'number' && Math.round(activeIndex) === optionIndex;
   return (fontStyle ? fontStyle.replace(';', '') + ';' : '') + (isActive ? activeStyle.replace(';', '') + ';' : '')
 }
 
@@ -196,6 +200,7 @@ function initDomState(instanceId, ownerInstance) {
   updateState(instanceId, 'activeIndex', state.activeindex)
   updateState(instanceId, 'loop', state.loop)
   updateState(instanceId, 'animationTime', state.animationtime)
+  updateState(instanceId, 'changeAnimation', state.changeanimation)
 }
 
 
@@ -233,7 +238,7 @@ const updateListView = (instanceId, ownerInstance) => {
   updateState(instanceId, 'animationIndex', newAnimationIndex)
   updateVisibleOptions(state.animationIndex, instanceId);
   updateWrapperStyle(instanceId, ownerInstance, {
-    transition: isSame ? 'none' : 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+    transition: (!state.changeAnimation || isSame) ? 'none' : 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
   });
 }
 

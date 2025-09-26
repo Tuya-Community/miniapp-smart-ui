@@ -283,7 +283,9 @@ SmartComponent({
 
     getValue() {
       const { data } = this;
-      return data.options[data.activeIndex];
+      return isObj(data.options[data.activeIndex])
+        ? data.options[data.activeIndex][data.valueKey]
+        : data.options[data.activeIndex];
     },
 
     activeIndexChange(index: number) {

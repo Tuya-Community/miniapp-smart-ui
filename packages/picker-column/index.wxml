@@ -7,6 +7,7 @@
   instanceId="{{instanceId}}"
   id="{{instanceId}}"
   data-isdestroy="{{isDestroy}}"
+  data-changeanimation="{{changeAnimation}}"
   data-options="{{options}}"
   data-valuekey="{{valueKey}}"
   data-itemheight="{{itemHeight}}"
@@ -17,6 +18,7 @@
   isdestroy="{{isDestroy}}"
   options="{{options}}" 
   activeindex="{{activeIndex}}"
+  changeanimation="{{changeAnimation}}"
   loop="{{loop}}"
   valuekey="{{valueKey}}"
   itemheight="{{itemHeight}}"
@@ -48,7 +50,7 @@
     >
       <view
         class="smart-picker-column__item__text"
-        style="{{computed.wrapperItemTextStyle({ fontStyle, activeStyle, instanceId, index, optionsVIndexList, animationIndex })}}"
+        style="{{computed.wrapperItemTextStyle({ fontStyle, activeStyle, instanceId, index, optionsVIndexList, animationIndex, options })}}"
       ></view>
     </view>
   </view>
