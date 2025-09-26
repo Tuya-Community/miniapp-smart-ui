@@ -23,7 +23,11 @@ category: 反馈
 ### 基础用法
 
 ```html
-<smart-picker columns="{{ columns }}" bind:change="onChange" />
+<smart-picker 
+  columns="{{ columns }}"
+  change-animation
+  bind:change="onChange" 
+/>
 ```
 
 ```javascript

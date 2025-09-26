@@ -23,7 +23,11 @@ Import the component in `app.json` or `index.json`. For a detailed introduction,
 ### Basic Usage
 
 ```html
-<smart-picker columns="{{ columns }}" bind:change="onChange" />
+<smart-picker 
+  columns="{{ columns }}"
+  change-animation
+  bind:change="onChange" 
+/>
 ```
 
 ```javascript

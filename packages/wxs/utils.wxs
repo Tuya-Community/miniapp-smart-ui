@@ -3,8 +3,25 @@ var bem = require('./bem.wxs');
 var memoize = require('./memoize.wxs');
 var addUnit = require('./add-unit.wxs');
 
+function queryComponent (ownerInstance, selector) {
+  var instance = ownerInstance && ownerInstance.selectComponent(selector);
+  return instance;
+};
+
+function isObj(x) {
+  var type = typeof x;
+  return x !== null && (type === 'object' || type === 'function');
+}
+
+function range(num, min, max) {
+  return Math.min(Math.max(num, min), max);
+}
+
 module.exports = {
   bem: memoize(bem),
   memoize: memoize,
-  addUnit: addUnit
+  addUnit: addUnit,
+  queryComponent: queryComponent,
+  isObj: isObj,
+  range: range
 };
