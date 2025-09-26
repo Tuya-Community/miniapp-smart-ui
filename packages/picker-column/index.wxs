@@ -60,9 +60,10 @@ function wrapperStyle(data) {
     previousValue[`--picker-item-content_${currentIndex}`] = `"${text}"`;
     return previousValue;
   }, {});
+
   return style({
     'text-indent': data.unit ? '-8rpx' : '0',
-    transition: data.moving ? 'none' : 'transform ' + data.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
+    transition: !data.changeAnimation ? 'none' : 'transform ' + data.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
     'line-height': addUnit(data.itemHeight),
     transform: `rotateX(${rotate}deg)`,
     ...cssVar
@@ -72,17 +73,68 @@ function wrapperStyle(data) {
 
 function adjustIndex(index, options, loop) {
   const count = options.length;
-  index = loop ? index : wxUtils.range(index, 0, count);
-  for (let i = index; i < count; i++) {
-    if (!isDisabled(options[loop ? Math.abs(i % count) : i])) return i;
+  if (loop) {
+    for (let i = 0; i < count; i++) {
+      const targetIndex = index + i;
+      const optionIndex = Math.abs(((targetIndex + 1) % count) - 1);
+      if (
+        !isDisabled(options[optionIndex]) &&
+        options[optionIndex] !== undefined
+      ) {
+        return targetIndex;
+      }
+    }
+    return 0;
   }
-  for (let i = index - 1; i >= 0; i--) {
-    if (!isDisabled(options[loop ? Math.abs(i % count) : i])) return i;
+  const activeIndex = wxUtils.range(index, 0, count);
+  for (let i = activeIndex; i < count; i++) {
+    if (!isDisabled(options[i]) && options[i] !== undefined) return i;
+  }
+  for (let i = activeIndex - 1; i >= 0; i--) {
+    if (!isDisabled(options[i]) && options[i] !== undefined) return i;
   }
 }
 
 function isDisabled(option) {
   return typeof option === 'object' && option.disabled;
+}
+
+/**
+ * 计算有数据的列表的中心索引值（首位相连的环形数组）
+ * @param {Array} arr - 输入数组
+ * @returns {number} 中心索引值
+ */
+function calculateCenterIndex(arr) {
+
+  let noDataStartIndex = -1;  
+  let noDataEndIndex = -1;
+
+  let newNoDataStartIndex = -1;
+
+  arr.forEach((item, index) => {
+    if (item === '' && noDataStartIndex === -1) {
+      noDataStartIndex = index;
+    }
+    if (item !== '' && noDataEndIndex === -1 && noDataStartIndex !== -1) {
+      noDataEndIndex = index - 1;
+    }
+
+    if(item === '' && newNoDataStartIndex === -1 && noDataStartIndex !== -1 && noDataEndIndex !== -1) {
+      newNoDataStartIndex = index;
+    }
+  })
+
+  if (noDataStartIndex === 0 && noDataEndIndex === arr.length - 1) {
+    return (noDataEndIndex + arr.length) / 2
+  } else if(noDataStartIndex === 0 || noDataEndIndex === 0) {
+    return (newNoDataStartIndex - noDataEndIndex) / 2 + noDataEndIndex
+  } else {
+    const startCount = noDataStartIndex;
+    const endCount = arr.length - 1 - noDataEndIndex;
+    const mid = Math.abs(startCount - endCount);
+    return startCount > endCount ? noDataStartIndex - Math.floor(mid/2) -1 - endCount : noDataEndIndex + Math.floor(mid/2) + startCount + 1;
+  }
+
 }
 
 function wrapperInterStyle(data) {
@@ -157,7 +209,10 @@ const updateListView = (instanceId, ownerInstance) => {
     return
   }
   updatePreState(instanceId, domState)
-  const newAnimationIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1)) * state.options.length + state.activeIndex;
+  const preOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1) - 1) * state.options.length + state.activeIndex
+  const curOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1)) * state.options.length + state.activeIndex;
+  const afterOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1) + 1) * state.options.length + state.activeIndex;
+  const newAnimationIndex = !state.loop ? state.activeIndex : Math.abs(preOptionsNewIndex - state.animationIndex) > Math.abs(curOptionsNewIndex - state.animationIndex) ? Math.abs(curOptionsNewIndex - state.animationIndex) > Math.abs(afterOptionsNewIndex - state.animationIndex) ? afterOptionsNewIndex : curOptionsNewIndex : Math.abs(preOptionsNewIndex - state.animationIndex) > Math.abs(afterOptionsNewIndex - state.animationIndex) ? afterOptionsNewIndex : preOptionsNewIndex;
   const isSame = newAnimationIndex === state.animationIndex;
   updateState(instanceId, 'animationIndex', newAnimationIndex)
   updateVisibleOptions(state.animationIndex, instanceId);
@@ -216,7 +271,6 @@ const touchMove = (instanceId) => (event, ownerInstance) => {
   if (!state.moving) {
     ownerInstance.callMethod('animationStart');
   }
-
   updateState(instanceId, 'moving', true);
   updateState(instanceId, 'animationIndex', animationIndex);
   updateState(instanceId, 'preOffsetting', offsetting);
@@ -371,7 +425,6 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
 
     // 限制最大滚动距离
     if (inertiaDistance > maxInertiaDistance) {
-      console.log('first')
       inertiaDistance = maxInertiaDistance;
     }
 
@@ -456,19 +509,28 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
 const tapItem = (instanceId) => (e, ownerInstance) => {
   const state = getCurrState(instanceId);
   const rotateIndex = e.currentTarget.dataset.index;
-  const currTargetActiveIndex = state.optionsVIndexList[rotateIndex];
-  const option = state.options[currTargetActiveIndex];
-  if (option === undefined || option && typeof option === 'object' && option.disabled) return;
+  const currOptionsActiveIndex = state.optionsVIndexList[rotateIndex];
+  const activeRotateIndex = calculateCenterIndex(state.optionsVIndexList);
+  const option = state.options[currOptionsActiveIndex];
+  if (option === undefined || (option && typeof option === 'object' && option.disabled)) return;
   if (state.startTimer) {
     clearTimeout(state.startTimer);
     updateState(instanceId, 'startTimer', null);
   }
-  if (currTargetActiveIndex === state.animationIndex) return;
-  const offsetCount = Math.abs(currTargetActiveIndex - state.animationIndex);
+  if (rotateIndex === activeRotateIndex) return;
+  const offsetCount = Math.min(
+    Math.abs(activeRotateIndex - rotateIndex),
+    Math.abs(activeRotateIndex + state.optionsVIndexList.length - rotateIndex),
+    Math.abs(rotateIndex + state.optionsVIndexList.length - activeRotateIndex)
+  );
   if (state.tapTimer) {
     clearTimeout(state.tapTimer);
     updateState(instanceId, 'tapTimer', null);
   }
+  const preOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1) - 1) * state.options.length + currOptionsActiveIndex
+  const curOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1)) * state.options.length + currOptionsActiveIndex;
+  const afterOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1) + 1) * state.options.length + currOptionsActiveIndex;
+  const currTargetActiveIndex = !state.loop ? currOptionsActiveIndex : Math.abs(preOptionsNewIndex - state.animationIndex) > Math.abs(curOptionsNewIndex - state.animationIndex) ? Math.abs(curOptionsNewIndex - state.animationIndex) > Math.abs(afterOptionsNewIndex - state.animationIndex) ? afterOptionsNewIndex : curOptionsNewIndex : Math.abs(preOptionsNewIndex - state.animationIndex) > Math.abs(afterOptionsNewIndex - state.animationIndex) ? afterOptionsNewIndex : preOptionsNewIndex;
   updateVisibleOptions(currTargetActiveIndex, instanceId);
   updateState(instanceId, 'animationIndex', currTargetActiveIndex);
   updateWrapperStyle(instanceId, ownerInstance, {

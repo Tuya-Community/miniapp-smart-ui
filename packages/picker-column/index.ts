@@ -40,7 +40,7 @@ SmartComponent({
     },
     changeAnimation: {
       type: Boolean,
-      value: true,
+      value: false,
     },
     fontStyle: {
       type: String,
@@ -48,10 +48,10 @@ SmartComponent({
     },
     activeIndex: {
       type: null,
-      observer(index: number) {
+      observer() {
         if (!this.data.isInit) return;
-        this.setIndex(index);
-        this.updateVisibleOptions(index);
+        const activeIndex = this.checkIndex();
+        this.updateVisibleOptions(activeIndex);
       },
     },
     unit: {
@@ -86,8 +86,8 @@ SmartComponent({
       instanceId: getId(),
     });
     this.updateUint(this.data.options);
-    const animationIndex = this.checkIndex();
-    this.updateVisibleOptions(animationIndex);
+    const activeIndex = this.checkIndex();
+    this.updateVisibleOptions(activeIndex);
     this.setData({
       isInit: true,
     });
@@ -96,13 +96,21 @@ SmartComponent({
   methods: {
     checkIndex() {
       const { activeIndex, defaultIndex } = this.data;
-      const animationIndex = activeIndex !== null ? activeIndex : defaultIndex;
-      const index = this.adjustIndex(animationIndex);
+      const currIndex = activeIndex !== null ? activeIndex : defaultIndex;
+      const animationIndex = this.adjustIndex(currIndex);
+      let currActiveIndex = this.data.loop
+        ? ((animationIndex + 1) % this.data.options.length) - 1
+        : animationIndex;
+      if (currActiveIndex < 0) {
+        currActiveIndex += this.data.options.length;
+      }
       this.setData({
-        activeIndex: Math.abs(index % this.data.options.length),
-        animationIndex: index,
+        activeIndex: currActiveIndex,
+        animationIndex: animationIndex,
       });
-      return index;
+      return currActiveIndex > this.data.options.length - 1
+        ? this.data.options.length - 1
+        : currActiveIndex;
     },
     getCount() {
       return this.data.options.length;
@@ -218,15 +226,25 @@ SmartComponent({
     adjustIndex(index: number) {
       const { data } = this;
       const count = this.getCount();
-
-      index = this.data.loop ? index : range(index, 0, count);
-      for (let i = index; i < count; i++) {
-        const targetIndex = this.data.loop ? Math.abs(i % count) : i;
-        if (!this.isDisabled(data.options[targetIndex])) return i;
+      if (this.data.loop) {
+        for (let i = 0; i < count; i++) {
+          const targetIndex = index + i;
+          const optionIndex = Math.abs(((targetIndex + 1) % count) - 1);
+          if (
+            !this.isDisabled(data.options[optionIndex]) &&
+            data.options[optionIndex] !== undefined
+          ) {
+            return targetIndex;
+          }
+        }
+        return 0;
       }
-      for (let i = index - 1; i >= 0; i--) {
-        const targetIndex = this.data.loop ? Math.abs(i % count) : i;
-        if (!this.isDisabled(data.options[targetIndex])) return i;
+      const activeIndex = range(index, 0, count);
+      for (let i = activeIndex; i < count; i++) {
+        if (!this.isDisabled(data.options[i]) && data.options[i] !== undefined) return i;
+      }
+      for (let i = activeIndex - 1; i >= 0; i--) {
+        if (!this.isDisabled(data.options[i]) && data.options[i] !== undefined) return i;
       }
       return 0;
     },
@@ -263,7 +281,10 @@ SmartComponent({
     },
 
     activeIndexChange(index: number) {
-      const activeIndex = Math.abs(index % this.data.options.length);
+      let activeIndex = ((index + 1) % this.data.options.length) - 1;
+      if (activeIndex < 0) {
+        activeIndex += this.data.options.length;
+      }
       const isSame = activeIndex === this.data.activeIndex;
       this.setData({
         activeIndex: activeIndex,
