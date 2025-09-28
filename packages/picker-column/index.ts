@@ -50,8 +50,8 @@ SmartComponent({
       type: null,
       observer() {
         if (!this.data.isInit) return;
-        const activeIndex = this.checkIndex();
-        this.updateVisibleOptions(activeIndex);
+        const animationIndex = this.checkIndex();
+        this.updateVisibleOptions(animationIndex);
       },
     },
     unit: {
@@ -87,8 +87,8 @@ SmartComponent({
       instanceId: getId(),
     });
     this.updateUint(this.data.options);
-    const activeIndex = this.checkIndex();
-    this.updateVisibleOptions(activeIndex);
+    const animationIndex = this.checkIndex();
+    this.updateVisibleOptions(animationIndex);
     this.setData({
       isInit: true,
     });
@@ -102,21 +102,33 @@ SmartComponent({
   methods: {
     checkIndex() {
       const { activeIndex, defaultIndex } = this.data;
+      const count = this.data.options.length;
       const currIndex = activeIndex !== null ? activeIndex : defaultIndex;
-      const animationIndex = this.adjustIndex(currIndex);
-      let currActiveIndex = this.data.loop
-        ? ((animationIndex + 1) % this.data.options.length) - 1
-        : animationIndex;
+      let animationIndex = this.getAnimationIndex(currIndex);
+      animationIndex = this.adjustIndex(animationIndex);
+      let currActiveIndex = this.data.loop ? ((animationIndex + 1) % count) - 1 : animationIndex;
       if (currActiveIndex < 0) {
-        currActiveIndex += this.data.options.length;
+        currActiveIndex += count;
       }
       this.setData({
         activeIndex: currActiveIndex,
         animationIndex: animationIndex,
       });
-      return currActiveIndex > this.data.options.length - 1
-        ? this.data.options.length - 1
-        : currActiveIndex;
+      return animationIndex;
+    },
+    getAnimationIndex(activeIndex) {
+      const { animationIndex } = this.data;
+      const length = this.data.options.length || 1;
+      if (this.data.loop) {
+        const newAnimationIndex = this.getNewAnimationIndex(
+          animationIndex,
+          activeIndex,
+          length,
+          this.data.loop
+        );
+        return newAnimationIndex;
+      }
+      return activeIndex;
     },
     getCount() {
       return this.data.options.length;
@@ -181,15 +193,10 @@ SmartComponent({
             // 计算相对于中心的偏移量
             const offset = index - partCount;
             // 计算目标索引，支持循环
-            let targetIndex = animationIndex + offset;
-
-            // 处理循环逻辑
+            const targetAnimationIndex = animationIndex + offset;
+            let targetIndex = ((targetAnimationIndex + 1) % optionsLength) - 1;
             if (targetIndex < 0) {
-              // 向前循环：从末尾开始
-              targetIndex = ((targetIndex % optionsLength) + optionsLength) % optionsLength;
-            } else if (targetIndex >= optionsLength) {
-              // 向后循环：从开头开始
-              targetIndex %= optionsLength;
+              targetIndex += optionsLength;
             }
 
             newValueArr[index] = targetIndex;
@@ -213,7 +220,10 @@ SmartComponent({
           newValueArr[index] = valueIndex;
         });
       }
-      const rotate = (animationIndex * rotateAngle) % 360;
+      let rotate = (animationIndex * rotateAngle) % 360;
+      if (rotate < 0) {
+        rotate += 360;
+      }
       const rotateIndex = Math.round(rotate / rotateAngle);
 
       // 环形结构填充：以rotateIndex为中心，向两边扩展填充newValueArr
@@ -225,9 +235,28 @@ SmartComponent({
         const targetIndex = (centerIndex - halfLength + i + vOptionLength) % vOptionLength; // 确保索引在0-17范围内
         newArr[targetIndex] = newValueArr[i];
       }
+      console.log(newArr, '--newArr');
       this.setData({
         optionsVIndexList: newArr,
       });
+    },
+    getNewAnimationIndex(animationIndex, activeIndex, length, loop) {
+      const curOptionsNewIndex = Math.floor((animationIndex + 1) / length) * length + activeIndex;
+      const preOptionsNewIndex = curOptionsNewIndex - length;
+      const afterOptionsNewIndex = curOptionsNewIndex + length;
+      const newAnimationIndex = !loop
+        ? activeIndex
+        : Math.abs(preOptionsNewIndex - animationIndex) >
+          Math.abs(curOptionsNewIndex - animationIndex)
+        ? Math.abs(curOptionsNewIndex - animationIndex) >
+          Math.abs(afterOptionsNewIndex - animationIndex)
+          ? afterOptionsNewIndex
+          : curOptionsNewIndex
+        : Math.abs(preOptionsNewIndex - animationIndex) >
+          Math.abs(afterOptionsNewIndex - animationIndex)
+        ? afterOptionsNewIndex
+        : preOptionsNewIndex;
+      return newAnimationIndex;
     },
     adjustIndex(index: number) {
       const { data } = this;
@@ -235,7 +264,10 @@ SmartComponent({
       if (this.data.loop) {
         for (let i = 0; i < count; i++) {
           const targetIndex = index + i;
-          const optionIndex = Math.abs(((targetIndex + 1) % count) - 1);
+          let optionIndex = ((targetIndex + 1) % count) - 1;
+          if (optionIndex < 0) {
+            optionIndex += count;
+          }
           if (
             !this.isDisabled(data.options[optionIndex]) &&
             data.options[optionIndex] !== undefined

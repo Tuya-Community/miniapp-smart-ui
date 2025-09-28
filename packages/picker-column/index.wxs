@@ -164,19 +164,37 @@ function wrapperItemClass(data) {
   return wxUtils.bem('picker-column__item', { disabled: wxUtils.isObj(option) && option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
 }
 
+
+const animationMap = {}
 function wrapperItemTextStyle(data) {
   const state = getCurrState(data.instanceId);
   const optionsVIndexList = state?.optionsVIndexList || data.optionsVIndexList;
   const animationIndex = state?.animationIndex ?? data.animationIndex;
-  const activeIndex = (animationIndex + 1)
-    % data.options.length - 1 < 0
-    ? (animationIndex + 1) % data.options.length - 1 + data.options.length
-    : (animationIndex + 1) % data.options.length - 1;
+  const intAnimationIndex = Math.round(animationIndex);
+  let activeIndex = (intAnimationIndex + 1) % data.options.length - 1;
+  if(activeIndex < 0) {
+    activeIndex += data.options.length;
+  }
   const optionIndex = optionsVIndexList[data.index];
   var fontStyle = data.fontStyle;
   var activeStyle = data.activeStyle;
-  var isActive = typeof optionIndex === 'number' && Math.round(activeIndex) === optionIndex;
+  var isActive = typeof optionIndex === 'number' && activeIndex === optionIndex;
   return (fontStyle ? fontStyle.replace(';', '') + ';' : '') + (isActive ? activeStyle.replace(';', '') + ';' : '')
+}
+
+function getNewAnimationIndex(animationIndex, activeIndex, length, loop) {
+  const curOptionsNewIndex = Math.floor((animationIndex + 1) / length) * length + activeIndex;
+  const preOptionsNewIndex = curOptionsNewIndex - length;
+  const afterOptionsNewIndex = curOptionsNewIndex + length;
+  const newAnimationIndex = !loop ?
+    activeIndex :
+    Math.abs(preOptionsNewIndex - animationIndex) > Math.abs(curOptionsNewIndex - animationIndex)
+      ? Math.abs(curOptionsNewIndex - animationIndex) > Math.abs(afterOptionsNewIndex - animationIndex)
+        ? afterOptionsNewIndex : curOptionsNewIndex
+      : Math.abs(preOptionsNewIndex - animationIndex) > Math.abs(afterOptionsNewIndex - animationIndex)
+        ? afterOptionsNewIndex
+        : preOptionsNewIndex;
+  return newAnimationIndex;
 }
 
 function getDomState(ownerInstance) {
@@ -216,18 +234,10 @@ const updateListView = (instanceId, ownerInstance) => {
     return
   }
   updatePreState(instanceId, domState)
+  const activeIndex = state.activeIndex;
+  const length = state.options.length || 1;
   const animationIndex = state.animationIndex || 0;
-  const preOptionsNewIndex = Math.floor(animationIndex / (state.options.length || 1) - 1) * state.options.length + state.activeIndex
-  const curOptionsNewIndex = Math.floor(animationIndex / (state.options.length || 1)) * state.options.length + state.activeIndex;
-  const afterOptionsNewIndex = Math.floor(animationIndex / (state.options.length || 1) + 1) * state.options.length + state.activeIndex;
-  const newAnimationIndex = !state.loop ?
-    state.activeIndex :
-    Math.abs(preOptionsNewIndex - animationIndex) > Math.abs(curOptionsNewIndex - animationIndex)
-      ? Math.abs(curOptionsNewIndex - animationIndex) > Math.abs(afterOptionsNewIndex - animationIndex)
-        ? afterOptionsNewIndex : curOptionsNewIndex
-      : Math.abs(preOptionsNewIndex - state.animationIndex) > Math.abs(afterOptionsNewIndex - state.animationIndex)
-        ? afterOptionsNewIndex
-        : preOptionsNewIndex;
+  const newAnimationIndex = getNewAnimationIndex(animationIndex, activeIndex, length, state.loop);
   const isSame = newAnimationIndex === animationIndex;
   updateState(instanceId, 'animationIndex', newAnimationIndex)
   updateVisibleOptions(state.animationIndex, instanceId);
@@ -264,8 +274,8 @@ const touchMove = (instanceId) => (event, ownerInstance) => {
   const offsetting = -state.startOffset + offsetY;
   const newOffsetList = [...state.preOffsetList, offsetting];
   const animationIndex = -offsetting / state.itemHeight;
-  const preIndexLast = Math.abs(state.animationIndex % 1);
-  const curIndexLast = Math.abs(animationIndex % 1);
+  const intPreIndex = Math.round(state.animationIndex);
+  const intCurIndex = Math.round(animationIndex);
   const offsetCompare = offsetting - state.preOffsetting;
   const direction =
     offsetCompare < 0 ? 'down' : offsetCompare > 0 ? 'up' : state.movingDirection;
@@ -274,8 +284,7 @@ const touchMove = (instanceId) => (event, ownerInstance) => {
   const activeIndex = Math.round(animationIndex);
   const isDisabled = wxUtils.isObj(state.options[activeIndex]) && state.options[activeIndex].disabled;
   if (
-    ((direction === 'down' && preIndexLast < 0.5 && curIndexLast >= 0.5) ||
-      (direction === 'up' && preIndexLast >= 0.5 && curIndexLast < 0.5))
+    intPreIndex !== intCurIndex
     && !isOverOptions
     && !isDisabled
   ) {
@@ -316,15 +325,10 @@ function updateVisibleOptions(currentIndex, instanceId) {
         // 计算相对于中心的偏移量
         const offset = index - partCount;
         // 计算目标索引，支持循环
-        let targetIndex = animationIndex + offset;
-
-        // 处理循环逻辑
-        if (targetIndex < 0) {
-          // 向前循环：从末尾开始
-          targetIndex = ((targetIndex % optionsLength) + optionsLength) % optionsLength;
-        } else if (targetIndex >= optionsLength) {
-          // 向后循环：从开头开始
-          targetIndex %= optionsLength;
+        const targetAnimationIndex = animationIndex + offset;
+        let targetIndex = (targetAnimationIndex + 1) % optionsLength - 1;
+        if(targetIndex < 0) {
+          targetIndex += optionsLength;
         }
 
         newValueArr[index] = targetIndex;
@@ -346,7 +350,10 @@ function updateVisibleOptions(currentIndex, instanceId) {
       newValueArr[index] = valueIndex;
     });
   }
-  const rotate = (animationIndex * rotateAngle) % 360;
+  let rotate = (animationIndex * rotateAngle) % 360;
+  if(rotate < 0) {
+    rotate += 360;
+  }
   const rotateIndex = Math.round(rotate / rotateAngle);
 
   // 环形结构填充：以rotateIndex为中心，向两边扩展填充newValueArr
@@ -358,6 +365,7 @@ function updateVisibleOptions(currentIndex, instanceId) {
     const targetIndex = (centerIndex - halfLength + i + vOptionLength) % vOptionLength; // 确保索引在0-17范围内
     newArr[targetIndex] = newValueArr[i];
   }
+  console.log(newArr, '--newArr-sjs')
   updateState(instanceId, 'optionsVIndexList', newArr);
   return newArr
 }
@@ -538,10 +546,7 @@ const tapItem = (instanceId) => (e, ownerInstance) => {
     clearTimeout(state.tapTimer);
     updateState(instanceId, 'tapTimer', null);
   }
-  const preOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1) - 1) * state.options.length + currOptionsActiveIndex
-  const curOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1)) * state.options.length + currOptionsActiveIndex;
-  const afterOptionsNewIndex = Math.floor((state.animationIndex || 0) / (state.options.length || 1) + 1) * state.options.length + currOptionsActiveIndex;
-  const currTargetActiveIndex = !state.loop ? currOptionsActiveIndex : Math.abs(preOptionsNewIndex - state.animationIndex) > Math.abs(curOptionsNewIndex - state.animationIndex) ? Math.abs(curOptionsNewIndex - state.animationIndex) > Math.abs(afterOptionsNewIndex - state.animationIndex) ? afterOptionsNewIndex : curOptionsNewIndex : Math.abs(preOptionsNewIndex - state.animationIndex) > Math.abs(afterOptionsNewIndex - state.animationIndex) ? afterOptionsNewIndex : preOptionsNewIndex;
+  const currTargetActiveIndex = getNewAnimationIndex(state.animationIndex, currOptionsActiveIndex, state.options.length || 1, state.loop);
   const offsetCount = Math.abs(currTargetActiveIndex - state.animationIndex);
   updateVisibleOptions(currTargetActiveIndex, instanceId);
   updateState(instanceId, 'animationIndex', currTargetActiveIndex);
