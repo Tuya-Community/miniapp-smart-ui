@@ -235,7 +235,6 @@ SmartComponent({
         const targetIndex = (centerIndex - halfLength + i + vOptionLength) % vOptionLength; // 确保索引在0-17范围内
         newArr[targetIndex] = newValueArr[i];
       }
-      console.log(newArr, '--newArr');
       this.setData({
         optionsVIndexList: newArr,
       });

@@ -179,6 +179,13 @@ function wrapperItemTextStyle(data) {
   var fontStyle = data.fontStyle;
   var activeStyle = data.activeStyle;
   var isActive = typeof optionIndex === 'number' && activeIndex === optionIndex;
+  // if (!animationMap[animationIndex]) {
+  //   animationMap[animationIndex] = true;
+  //   console.log(optionsVIndexList, activeIndex, intAnimationIndex, '--optionsVIndexList-sjs');
+  // }
+  // if (isActive) {
+  //   console.log(optionIndex, '--isActive-sjs');
+  // }
   return (fontStyle ? fontStyle.replace(';', '') + ';' : '') + (isActive ? activeStyle.replace(';', '') + ';' : '')
 }
 
@@ -365,7 +372,6 @@ function updateVisibleOptions(currentIndex, instanceId) {
     const targetIndex = (centerIndex - halfLength + i + vOptionLength) % vOptionLength; // 确保索引在0-17范围内
     newArr[targetIndex] = newValueArr[i];
   }
-  console.log(newArr, '--newArr-sjs')
   updateState(instanceId, 'optionsVIndexList', newArr);
   return newArr
 }
