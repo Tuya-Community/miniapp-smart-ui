@@ -150,7 +150,7 @@ function wrapperItemStyle(data) {
     top: `calc(50% - ${data.itemHeight / 2}px)`,
   });
   const textStyle = wrapperItemTextStyle(data);
-  return transformStyleStr.replace(';', '') + ';' + heightStyleStr.replace(';', '') + ';' + textStyle.replace(';', '');
+  return transformStyleStr.replace(';;', ';') + ';' + heightStyleStr + textStyle;
 }
 
 function wrapperItemClass(data) {
