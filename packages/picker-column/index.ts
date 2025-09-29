@@ -31,7 +31,10 @@ SmartComponent({
       observer(value) {
         if (!this.data.isInit) return;
         this.updateUint(value);
-        this.updateVisibleOptions();
+        const optionsVIndexList = this.getVisibleOptions(this.data.animationIndex);
+        this.setData({
+          optionsVIndexList: optionsVIndexList,
+        });
       },
     },
     defaultIndex: {
@@ -50,8 +53,7 @@ SmartComponent({
       type: null,
       observer() {
         if (!this.data.isInit) return;
-        const animationIndex = this.checkIndex();
-        this.updateVisibleOptions(animationIndex);
+        this.checkIndexUpdateList();
       },
     },
     unit: {
@@ -87,8 +89,7 @@ SmartComponent({
       instanceId: getId(),
     });
     this.updateUint(this.data.options);
-    const animationIndex = this.checkIndex();
-    this.updateVisibleOptions(animationIndex);
+    this.checkIndexUpdateList();
     this.setData({
       isInit: true,
     });
@@ -100,7 +101,7 @@ SmartComponent({
   },
 
   methods: {
-    checkIndex() {
+    checkIndexUpdateList() {
       const { activeIndex, defaultIndex } = this.data;
       const count = this.data.options.length;
       const currIndex = activeIndex !== null ? activeIndex : defaultIndex;
@@ -110,9 +111,11 @@ SmartComponent({
       if (currActiveIndex < 0) {
         currActiveIndex += count;
       }
+      const optionsVIndexList = this.getVisibleOptions(animationIndex);
       this.setData({
         activeIndex: currActiveIndex,
         animationIndex: animationIndex,
+        optionsVIndexList: optionsVIndexList,
       });
       return animationIndex;
     },
@@ -173,7 +176,7 @@ SmartComponent({
       }
     },
 
-    updateVisibleOptions(currentIndex?: number) {
+    getVisibleOptions(currentIndex?: number) {
       let animationIndex = Math.round(
         currentIndex !== undefined ? currentIndex : this.data.animationIndex
       );
@@ -235,9 +238,7 @@ SmartComponent({
         const targetIndex = (centerIndex - halfLength + i + vOptionLength) % vOptionLength; // 确保索引在0-17范围内
         newArr[targetIndex] = newValueArr[i];
       }
-      this.setData({
-        optionsVIndexList: newArr,
-      });
+      return newArr;
     },
     getNewAnimationIndex(animationIndex, activeIndex, length, loop) {
       const curOptionsNewIndex = Math.floor((animationIndex + 1) / length) * length + activeIndex;

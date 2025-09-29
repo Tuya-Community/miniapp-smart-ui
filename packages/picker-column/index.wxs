@@ -165,11 +165,10 @@ function wrapperItemClass(data) {
 }
 
 
-const animationMap = {}
 function wrapperItemTextStyle(data) {
   const state = getCurrState(data.instanceId);
   const optionsVIndexList = state?.optionsVIndexList || data.optionsVIndexList;
-  const animationIndex = state?.animationIndex ?? data.animationIndex;
+  const animationIndex = data.animationIndex;
   const intAnimationIndex = Math.round(animationIndex);
   let activeIndex = (intAnimationIndex + 1) % data.options.length - 1;
   if(activeIndex < 0) {
@@ -179,14 +178,7 @@ function wrapperItemTextStyle(data) {
   var fontStyle = data.fontStyle;
   var activeStyle = data.activeStyle;
   var isActive = typeof optionIndex === 'number' && activeIndex === optionIndex;
-  // if (!animationMap[animationIndex]) {
-  //   animationMap[animationIndex] = true;
-  //   console.log(optionsVIndexList, activeIndex, intAnimationIndex, '--optionsVIndexList-sjs');
-  // }
-  // if (isActive) {
-  //   console.log(optionIndex, '--isActive-sjs');
-  // }
-  return (fontStyle ? fontStyle.replace(';', '') + ';' : '') + (isActive ? activeStyle.replace(';', '') + ';' : '')
+  return (fontStyle ? fontStyle.replace(';', '') + ';' : '') + (isActive ? activeStyle.replace(';;', ';') + ';' : '')
 }
 
 function getNewAnimationIndex(animationIndex, activeIndex, length, loop) {
