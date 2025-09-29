@@ -236,7 +236,7 @@ SmartComponent({
           unit: locale?.[column.type],
           style: columnStyles?.[column.type],
           fontStyle: fontStyles?.[column.type],
-          activeIndex,
+          activeIndex: activeIndex === -1 ? 0 : activeIndex,
           loop: !['12HourClock', 'year'].includes(column.type),
         };
       });
