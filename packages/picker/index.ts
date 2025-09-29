@@ -26,7 +26,7 @@ SmartComponent({
       type: String,
       value: 'top',
     },
-    showSidePart: {
+    fullHeight: {
       type: Boolean,
       value: false,
     },

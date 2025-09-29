@@ -231,10 +231,14 @@ Page({
 | toolbar-position    | 顶部栏位置，可选值为`bottom`   | _string_  | `top`   |
 | unit                | 单列选择器的默认的单位，<br>多列选择器请参考下方的 Columns 配置     | _number_  | ''      |
 | value-key           | 选项对象中，文字对应的 key        | _string_  | `text`  |
-| visible-item-count  | 可见的选项个数    | _number_  | `5`     |
+| visible-item-count  | 可见的选项个数    | _3 \| 5 \| 7 \| 9_   | `5`     |
 | active-style `v2.0.0`  | 选中状态下的样式            | _string_  | `''`     |
 | change-animation `v2.2.0`  | 组件受数据驱动选择值改变时是否需要动画过度效果（不包含手指交互滚动的动画）            | _boolean_  | `false`     |
-| animation-time `v2.3.7`  | 过渡动画以及选择回调延迟的时间(单位ms)           | _number_  | `800` `v2.3.7` `300` `v2.6.0`    |
+| animation-time `v2.3.7`  | 过渡动画以及选择回调延迟的时间(单位ms)   | _number_  | `800` `v2.3.7` `300` `v2.6.0`    |
+| loop `v2.7.0`  | 循环列表           | _boolean_  | `false`    |
+| font-style `v2.7.0`  | 字体样式，优先级低于 columns 内的           | _string_  | -    |
+| full-height `v2.7.0`  | 是否高度直接等于 `visibleItemCount * itemHeight`, 组件默认会再 `* 0.9` 缩小最外层的高度     | _boolean_  | `false`   |
+
 
 ### Events
 

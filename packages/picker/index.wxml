@@ -9,7 +9,7 @@
 
   <view
     class="smart-picker__columns"
-    style="{{ computed.columnsStyle({ itemHeight, visibleItemCount, showSidePart }) }}"
+    style="{{ computed.columnsStyle({ itemHeight, visibleItemCount, fullHeight }) }}"
     catch:touchmove="noop"
   >
     <picker-column
