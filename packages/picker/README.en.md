@@ -212,6 +212,34 @@ Page({
 });
 ```
 
+### Loop List `2.7.0`
+
+`loop` can enable loop rendering of lists, which will be connected end-to-end and loop infinitely
+
+```html
+    
+<smart-picker loop columns="{{ columns }}" bind:change="onChange" />
+```
+
+```javascript
+import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+
+Page({
+  data: {
+    columns: [
+      {
+        values: new Array(100).fill(1).map((x, i) => i),
+      },
+    ],
+  },
+
+  onChange(event) {
+    const { picker, value, index } = event.detail;
+    Toast(`Current value: ${value}, current index: ${index}`);
+  },
+});
+```
+
 ## API
 
 ### Props
@@ -234,8 +262,8 @@ Page({
 | active-style `v2.0.0`  | Style in selected state         | _string_  | `''`    |
 | change-animation `v2.2.0`  | Whether the component requires a transition animation when the value selected by data-driven changes (excluding the animation of finger interactive scrolling). | _boolean_  | `false`  |
 | animation-time `v2.3.7`  | Transition animation and the delay time for selection callback (Unit: ms)           | _number_  | `800` `v2.3.7` `300` `v2.6.0`     |
-| loop `v2.7.0`  | circular list           | _boolean_  | `false`    |
-| font-style `v2.7.0`  | font style has lower priority than within columns           | _string_  | -    |
+| loop `v2.7.0`  | Loop List           | _boolean_  | `false`    |
+| font-style `v2.7.0`  | Font style has lower priority than within columns           | _string_  | -    |
 | full-height `v2.7.0`  | Is the height directly equal to `visibleItemCount * itemHeight`, or does the component default to further reducing the outermost height by multiplying it by 0.9     | _boolean_  | `false`   |
 
 ### Events

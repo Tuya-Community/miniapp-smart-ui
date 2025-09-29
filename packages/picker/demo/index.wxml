@@ -45,7 +45,7 @@
 </demo-block>
 
 <demo-block title="{{I18n.t('disableOption')}}">
-  <smart-picker columns="{{ column2 }}" />
+  <smart-picker columns="{{ column2 }}" bind:change="onChange1" />
 </demo-block>
 
 <demo-block title="{{I18n.t('loading')}}">
@@ -58,6 +58,14 @@
 <demo-block title="{{I18n.t('setTheOrderOfColumnStyles')}}">
   <smart-picker
     columns="{{ column6 }}"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('loop')}}">
+  <smart-picker
+    loop
+    columns="{{ column7 }}"
+    bind:change="onChange1"
   />
 </demo-block>
 
