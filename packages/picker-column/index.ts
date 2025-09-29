@@ -117,7 +117,9 @@ SmartComponent({
         animationIndex: animationIndex,
         optionsVIndexList: optionsVIndexList,
       });
-      return animationIndex;
+      if (currActiveIndex !== activeIndex) {
+        this.$emit('change', currActiveIndex);
+      }
     },
     getAnimationIndex(activeIndex) {
       const { animationIndex } = this.data;
@@ -307,8 +309,12 @@ SmartComponent({
     },
 
     setIndex(index: number) {
+      let activeIndex = ((index + 1) % this.data.options.length) - 1;
+      if (activeIndex < 0) {
+        activeIndex += this.data.options.length;
+      }
       this.setData({
-        activeIndex: Math.abs(index % this.data.options.length),
+        activeIndex: activeIndex,
         animationIndex: index,
       });
     },

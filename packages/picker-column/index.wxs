@@ -217,8 +217,8 @@ function initDomState(instanceId, ownerInstance) {
 
 const updateValue = (instanceId, key) => (newOptions, oldOptions, ownerInstance) => {
   if (!instanceId) return;
-  initDomState(instanceId, ownerInstance)
   updateState(instanceId, key, newOptions)
+  initDomState(instanceId, ownerInstance)
   updateListView(instanceId, ownerInstance)
 }
 
