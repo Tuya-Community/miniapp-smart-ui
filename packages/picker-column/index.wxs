@@ -436,7 +436,7 @@ const touchEnd = (instanceId) => (event, ownerInstance) => {
 
   // 惯性滚动参数配置
   const minVelocity = 0.1; // 最小速度阈值，低于此值停止滚动
-  const maxInertiaDistance = state.itemHeight * Math.max(Math.floor(state.options.length/4), 10); // 最大惯性滚动距离
+  const maxInertiaDistance = state.itemHeight * Math.max(Math.floor(state.options.length/4), 6); // 最大惯性滚动距离
   // 计算惯性滚动距离
   let inertiaDistance = 0;
   if (recentVelocity > minVelocity) {

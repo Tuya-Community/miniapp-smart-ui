@@ -192,7 +192,9 @@ SmartComponent({
 
     // get indexes of all columns
     getIndexes() {
-      return this.children.map(child => child.data.activeIndex);
+      return this.children.map(child =>
+        child.data.activeIndex === null ? child.data.defaultIndex : child.data.activeIndex
+      );
     },
 
     // set indexes of all columns
