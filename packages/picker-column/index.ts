@@ -117,9 +117,9 @@ SmartComponent({
         animationIndex: animationIndex,
         optionsVIndexList: optionsVIndexList,
       });
-      if (currActiveIndex !== activeIndex) {
-        this.$emit('change', currActiveIndex);
-      }
+      // if (currActiveIndex !== activeIndex) {
+      //   this.$emit('change', currActiveIndex);
+      // }
     },
     getAnimationIndex(activeIndex) {
       const { animationIndex } = this.data;
