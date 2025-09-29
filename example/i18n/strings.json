@@ -558,7 +558,8 @@
     "popUpOnTheRightSide": "Right",
     "popOutFromTheTop": "Top",
     "svgPath": "Svg Path",
-    "upsideDown": "Upside Down"
+    "upsideDown": "Upside Down",
+    "loop": "Loop List"
   },
   "zh": {
     "calendarSelectDay": "选择某天，当前选中的日期是",
@@ -1120,6 +1121,7 @@
     "popOutFromTheTop": "上侧弹出",
     "popUpOnTheRightSide": "右侧弹出",
     "svgPath": "Svg Path",
-    "upsideDown": "上下颠倒"
+    "upsideDown": "上下颠倒",
+    "loop": "循环列表"
   }
 }
