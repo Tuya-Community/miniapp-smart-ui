@@ -67,7 +67,11 @@ SmartComponent({
     },
 
     close() {
+      if (this.data.position !== 'close') {
+        this.$emit('tabClose', this.data.position);
+      }
       this.swipeMove(0);
+      this.setData({ position: 'close' });
     },
 
     swipeMove(offset = 0) {
@@ -95,11 +99,7 @@ SmartComponent({
       } else if (leftWidth > 0 && offset > leftWidth * THRESHOLD) {
         this.open('left');
       } else {
-        if (this.data.position !== 'close') {
-          this.$emit('tabClose', this.data.position);
-        }
-        this.swipeMove(0);
-        this.setData({ position: 'close' });
+        this.close();
       }
       this.setData({ catchMove: false });
     },
@@ -158,11 +158,7 @@ SmartComponent({
           name: this.data.name,
         });
       } else {
-        if (this.data.position !== 'close') {
-          this.$emit('tabClose', this.data.position);
-        }
-        this.swipeMove(0);
-        this.setData({ position: 'close' });
+        this.close();
       }
     },
   },
