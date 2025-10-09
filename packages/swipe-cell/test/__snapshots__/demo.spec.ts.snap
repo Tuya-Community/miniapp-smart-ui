@@ -6,7 +6,9 @@ exports[`should render demo and match snapshot 1`] = `
     <wx-view
       class="custom-class demo-block smart-clearfix "
     >
-      <smart-swipe-cell>
+      <smart-swipe-cell
+        bind:tabClose="onTabClose"
+      >
         <wx-view
           catch:touchmove=""
         >
@@ -82,7 +84,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <smart-swipe-cell
         id="swipe-cell"
-        bind:close="onClose"
+        bind:close="onAsyncClose"
       >
         <wx-view
           catch:touchmove=""
