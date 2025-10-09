@@ -17,11 +17,35 @@ function range(num, min, max) {
   return Math.min(Math.max(num, min), max);
 }
 
+// 创建指定长度并填充默认值的数组
+function createArray(length, defaultValue) {
+  var arr = [];
+  for (var i = 0; i < length; i++) {
+    arr[i] = defaultValue;
+  }
+  return arr;
+}
+
+// 填充数组的所有元素为指定值
+function fillArray(arr, value) {
+  for (var i = 0; i < arr.length; i++) {
+    arr[i] = value;
+  }
+  return arr;
+}
+
+function isArray(array) {
+  return array && typeof array === 'object' && typeof array.length === 'number';
+}
+
 module.exports = {
   bem: memoize(bem),
   memoize: memoize,
   addUnit: addUnit,
   queryComponent: queryComponent,
   isObj: isObj,
-  range: range
+  range: range,
+  createArray: createArray,
+  fillArray: fillArray,
+  isArray: isArray
 };

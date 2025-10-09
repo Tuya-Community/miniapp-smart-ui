@@ -5,14 +5,14 @@ var wxUtils = require('../wxs/utils.wxs');
 
 var startPo = { y: 0 }; // 记录当前拖动元素的开始的位置
 
-const setStyle = (ownerInstance, style, selector) => {
-  const dom = wxUtils.queryComponent(ownerInstance, selector);
+function setStyle(ownerInstance, style, selector) {
+  var dom = wxUtils.queryComponent(ownerInstance, selector);
   if (!dom) {
     console.log(selector, '--selector 无法获取');
     return
   }
   dom.setStyle(style);
-};
+}
 
 function optionText(options, optionIndex, valueKey) {
   var option = options[optionIndex];
@@ -44,7 +44,7 @@ function getCurrState(instanceId) {
 }
 
 function updatePreState(instanceId, state) {
-  const preStateStr = JSON.stringify(state)
+  var preStateStr = JSON.stringify(state)
   preStateObj[instanceId] = preStateStr;
 }
 
@@ -56,31 +56,32 @@ function wrapperStyle(data) {
   var perAngle = 360 / (data.visibleItemCount * 4 - 2)
   var rotate = perAngle * data.animationIndex;
   var optionsVIndexList = data.optionsVIndexList;
-  var cssVar = optionsVIndexList.reduce((previousValue, currentValue, currentIndex) => {
+  var cssVar = optionsVIndexList.reduce(function(previousValue, currentValue, currentIndex) {
     if (currentValue === '' || currentValue === undefined) return previousValue;
-    const index = data.loop ? Math.abs(currentValue % data.options.length) : currentValue;
-    const text = optionText(data.options, index, data.valueKey);
+    var index = data.loop ? Math.abs(currentValue % data.options.length) : currentValue;
+    var text = optionText(data.options, index, data.valueKey);
     if(text === undefined) return previousValue;
-    previousValue[`--picker-item-content_${currentIndex}`] = `"${text}"`;
+    previousValue['--picker-item-content_' + currentIndex] = '"' + text + '"';
     return previousValue;
   }, {});
 
-  return style({
+  var styleObj = {
     'text-indent': data.unit ? '-8rpx' : '0',
     transition: !data.changeAnimation ? 'none' : 'transform ' + data.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
     'line-height': addUnit(data.itemHeight),
-    transform: `rotateX(${rotate}deg)`,
-    ...cssVar
-  });
+    transform: 'rotateX(' + rotate + 'deg)'
+  };
+ 
+  return style(Object.assign(styleObj, cssVar));
 }
 
 
 function adjustIndex(index, options, loop) {
-  const count = options.length;
+  var count = options.length;
   if (loop) {
-    for (let i = 0; i < count; i++) {
-      const targetIndex = index + i;
-      const optionIndex = Math.abs(((targetIndex + 1) % count) - 1);
+    for (var i = 0; i < count; i++) {
+      var targetIndex = index + i;
+      var optionIndex = Math.abs(((targetIndex + 1) % count) - 1);
       if (
         !isDisabled(options[optionIndex]) &&
         options[optionIndex] !== undefined
@@ -90,11 +91,11 @@ function adjustIndex(index, options, loop) {
     }
     return 0;
   }
-  const activeIndex = wxUtils.range(index, 0, count);
-  for (let i = activeIndex; i < count; i++) {
+  var activeIndex = wxUtils.range(index, 0, count);
+  for (var i = activeIndex; i < count; i++) {
     if (!isDisabled(options[i]) && options[i] !== undefined) return i;
   }
-  for (let i = activeIndex - 1; i >= 0; i--) {
+  for (var i = activeIndex - 1; i >= 0; i--) {
     if (!isDisabled(options[i]) && options[i] !== undefined) return i;
   }
 }
@@ -110,12 +111,12 @@ function isDisabled(option) {
  */
 function calculateCenterIndex(arr) {
 
-  let noDataStartIndex = -1;  
-  let noDataEndIndex = -1;
+  var noDataStartIndex = -1;  
+  var noDataEndIndex = -1;
 
-  let newNoDataStartIndex = -1;
+  var newNoDataStartIndex = -1;
 
-  arr.forEach((item, index) => {
+  arr.forEach(function(item, index) {
     if (item === '' && noDataStartIndex === -1) {
       noDataStartIndex = index;
     }
@@ -133,9 +134,9 @@ function calculateCenterIndex(arr) {
   } else if(noDataStartIndex === 0 || noDataEndIndex === 0) {
     return (newNoDataStartIndex - noDataEndIndex) / 2 + noDataEndIndex
   } else {
-    const startCount = noDataStartIndex;
-    const endCount = arr.length - 1 - noDataEndIndex;
-    const mid = Math.abs(startCount - endCount);
+    var startCount = noDataStartIndex;
+    var endCount = arr.length - 1 - noDataEndIndex;
+    var mid = Math.abs(startCount - endCount);
     return startCount > endCount ? noDataStartIndex - Math.floor(mid/2) -1 - endCount : noDataEndIndex + Math.floor(mid/2) + startCount + 1;
   }
 
@@ -146,19 +147,19 @@ function wrapperItemStyle(data) {
   var heightStyleStr = "height: " + data.itemHeight + 'px;'
   var perAngle = 360 / (data.visibleItemCount * 4 - 2)
   var transformStyleStr = style({
-    transform: `rotateX(${360 - data.index * perAngle}deg) translateZ(${data.itemHeight * data.visibleItemCount / 2}px) translateX(-50%) scale(0.88);`, //  scale(0.88)
-    top: `calc(50% - ${data.itemHeight / 2}px)`,
+    transform: 'rotateX(' + (360 - data.index * perAngle) + 'deg) translateZ(' + (data.itemHeight * data.visibleItemCount / 2) + 'px) translateX(-50%) scale(0.88);', //  scale(0.88)
+    top: 'calc(50% - ' + (data.itemHeight / 2) + 'px)',
   });
-  const textStyle = wrapperItemTextStyle(data);
+  var textStyle = wrapperItemTextStyle(data);
   return transformStyleStr.replace(';;', ';') + ';' + heightStyleStr + textStyle;
 }
 
 function wrapperItemClass(data) {
-  const state = getCurrState(data.instanceId);
-  const optionsVIndexList = state?.optionsVIndexList || data.optionsVIndexList;
-  const animationIndex = state?.animationIndex ?? data.animationIndex;
-  const optionIndex = optionsVIndexList[data.index];
-  const option = data.options[optionIndex];
+  var state = getCurrState(data.instanceId);
+  var optionsVIndexList = state && state.optionsVIndexList ? state.optionsVIndexList : data.optionsVIndexList;
+  var animationIndex = data.animationIndex;
+  var optionIndex = optionsVIndexList[data.index];
+  var option = data.options[optionIndex];
   var isActive = typeof optionIndex === 'number' && Math.abs(optionIndex - animationIndex) < 0.5;
   var activeClass = 'active-class';
   return wxUtils.bem('picker-column__item', { disabled: wxUtils.isObj(option) && option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
@@ -166,15 +167,15 @@ function wrapperItemClass(data) {
 
 
 function wrapperItemTextStyle(data) {
-  const state = getCurrState(data.instanceId);
-  const optionsVIndexList = state?.optionsVIndexList || data.optionsVIndexList;
-  const animationIndex = data.animationIndex;
-  const intAnimationIndex = Math.round(animationIndex);
-  let activeIndex = (intAnimationIndex + 1) % data.options.length - 1;
+  var state = getCurrState(data.instanceId);
+  var optionsVIndexList = state && state.optionsVIndexList ? state.optionsVIndexList : data.optionsVIndexList;
+  var animationIndex = data.animationIndex;
+  var intAnimationIndex = Math.round(animationIndex);
+  var activeIndex = (intAnimationIndex + 1) % data.options.length - 1;
   if(activeIndex < 0) {
     activeIndex += data.options.length;
   }
-  const optionIndex = optionsVIndexList[data.index];
+  var optionIndex = optionsVIndexList[data.index];
   var fontStyle = data.fontStyle;
   var activeStyle = data.activeStyle;
   var isActive = typeof optionIndex === 'number' && activeIndex === optionIndex;
@@ -182,10 +183,10 @@ function wrapperItemTextStyle(data) {
 }
 
 function getNewAnimationIndex(animationIndex, activeIndex, length, loop) {
-  const curOptionsNewIndex = Math.floor((animationIndex + 1) / length) * length + activeIndex;
-  const preOptionsNewIndex = curOptionsNewIndex - length;
-  const afterOptionsNewIndex = curOptionsNewIndex + length;
-  const newAnimationIndex = !loop ?
+  var curOptionsNewIndex = Math.floor((animationIndex + 1) / length) * length + activeIndex;
+  var preOptionsNewIndex = curOptionsNewIndex - length;
+  var afterOptionsNewIndex = curOptionsNewIndex + length;
+  var newAnimationIndex = !loop ?
     activeIndex :
     Math.abs(preOptionsNewIndex - animationIndex) > Math.abs(curOptionsNewIndex - animationIndex)
       ? Math.abs(curOptionsNewIndex - animationIndex) > Math.abs(afterOptionsNewIndex - animationIndex)
@@ -197,13 +198,13 @@ function getNewAnimationIndex(animationIndex, activeIndex, length, loop) {
 }
 
 function getDomState(ownerInstance) {
-  const dom = wxUtils.queryComponent(ownerInstance, '.smart-picker-column');
-  const state = dom.getDataset();
+  var dom = wxUtils.queryComponent(ownerInstance, '.smart-picker-column');
+  var state = dom.getDataset();
   return state
 }
 
 function initDomState(instanceId, ownerInstance) {
-  const state = getDomState(ownerInstance);
+  var state = getDomState(ownerInstance);
   updateState(instanceId, 'options', state.options)
   updateState(instanceId, 'valueKey', state.valuekey)
   updateState(instanceId, 'itemHeight', state.itemheight)
@@ -215,29 +216,32 @@ function initDomState(instanceId, ownerInstance) {
 }
 
 
-const updateValue = (instanceId, key) => (newOptions, oldOptions, ownerInstance) => {
-  if (!instanceId) return;
-  updateState(instanceId, key, newOptions)
-  initDomState(instanceId, ownerInstance)
-  updateListView(instanceId, ownerInstance)
+function updateValue(instanceId, key) {
+  return function(newOptions, oldOptions, ownerInstance) {
+    if (!instanceId) return;
+    updateState(instanceId, key, newOptions)
+    initDomState(instanceId, ownerInstance)
+    updateListView(instanceId, ownerInstance)
+  }
 }
 
-const updateListView = (instanceId, ownerInstance) => {
-  const state = getCurrState(instanceId);
-  const domState = getDomState(ownerInstance);
+function updateListView(instanceId, ownerInstance) {
+  var state = getCurrState(instanceId);
+  var domState = getDomState(ownerInstance);
   if (domState.isdestroy) {
     clearCurrState(instanceId)
     return
   }
-  if(getPreState(instanceId) === JSON.stringify(domState) || !state.itemHeight || !state.visibleItemCount || !Array.isArray(state.options) || state.animationTime === undefined) {
+  if(getPreState(instanceId) === JSON.stringify(domState) || !state.itemHeight || !state.visibleItemCount || !wxUtils.isArray(state.options) || state.animationTime === undefined) {
     return
   }
   updatePreState(instanceId, domState)
-  const activeIndex = state.activeIndex;
-  const length = state.options.length || 1;
-  const animationIndex = state.animationIndex || 0;
-  const newAnimationIndex = getNewAnimationIndex(animationIndex, activeIndex, length, state.loop);
-  const isSame = newAnimationIndex === animationIndex;
+  var activeIndex = state.activeIndex;
+  var length = state.options.length || 1;
+  var animationIndex = state.animationIndex || 0;
+  var newAnimationIndex = getNewAnimationIndex(animationIndex, activeIndex, length, state.loop);
+  console.log(newAnimationIndex, '--newAnimationIndex')
+  var isSame = newAnimationIndex === animationIndex;
   updateState(instanceId, 'animationIndex', newAnimationIndex)
   updateVisibleOptions(state.animationIndex, instanceId);
   updateWrapperStyle(instanceId, ownerInstance, {
@@ -245,87 +249,226 @@ const updateListView = (instanceId, ownerInstance) => {
   });
 }
 
-const touchStart = (instanceId) => (event) => {
-  const state = getCurrState(instanceId);
-  if (state.endTimer) {
-    cancelAnimationFrame(state.endTimer);
-    clearTimeout(state.endTimer);
-    updateState(instanceId, 'endTimer', null);
-  } else {
-    updateState(instanceId, 'recentVelocity', 0);
+function touchMove(instanceId) {
+  return function(event, ownerInstance) {
+    var state = getCurrState(instanceId);
+    var pageY = event.touches[0].pageY;
+    var offsetY = pageY - startPo.y;
+    var offsetting = -state.startOffset + offsetY;
+    var newOffsetList = state.preOffsetList.slice();
+    newOffsetList.push(offsetting);
+    var animationIndex = -offsetting / state.itemHeight;
+    var intPreIndex = Math.round(state.animationIndex);
+    var intCurIndex = Math.round(animationIndex);
+    var offsetCompare = offsetting - state.preOffsetting;
+    var direction =
+      offsetCompare < 0 ? 'down' : offsetCompare > 0 ? 'up' : state.movingDirection;
+    updateVisibleOptions(animationIndex, instanceId);
+    var isOverOptions = state.loop ? false : animationIndex < 0 || animationIndex > state.options.length - 1;
+    var activeIndex = Math.round(animationIndex);
+    var isDisabled = wxUtils.isObj(state.options[activeIndex]) && state.options[activeIndex].disabled;
+    if (
+      intPreIndex !== intCurIndex
+      && !isOverOptions
+      && !isDisabled
+    ) {
+      ownerInstance.callMethod('animationIndexChange', animationIndex);
+      ownerInstance.callMethod('vibrateShort');
+    }
+
+    if (!state.moving) {
+      ownerInstance.callMethod('animationStart');
+    }
+    updateState(instanceId, 'moving', true);
+    updateState(instanceId, 'animationIndex', animationIndex);
+    updateState(instanceId, 'preOffsetting', offsetting);
+    updateState(instanceId, 'preOffsetList', newOffsetList);
+    updateState(instanceId, 'movingDirection', direction);
+
+    updateWrapperStyle(instanceId, ownerInstance);
   }
-  if(state.tapTimer) {
-    clearTimeout(state.tapTimer);
-    updateState(instanceId, 'tapTimer', null);
-  }
-  const { pageY } = event.touches[0];
-  startPo.y = pageY;
-  updateState(instanceId, 'moving', false);
-  updateState(instanceId, 'startOffset', state.animationIndex * state.itemHeight);
-  updateState(instanceId, 'preOffsetting', state.animationIndex * state.itemHeight);
-  updateState(instanceId, 'preOffsetList', []);
 }
 
-const touchMove = (instanceId) => (event, ownerInstance) => {
-  const state = getCurrState(instanceId);
-  const { pageY } = event.touches[0];
-  const offsetY = pageY - startPo.y;
-  const offsetting = -state.startOffset + offsetY;
-  const newOffsetList = [...state.preOffsetList, offsetting];
-  const animationIndex = -offsetting / state.itemHeight;
-  const intPreIndex = Math.round(state.animationIndex);
-  const intCurIndex = Math.round(animationIndex);
-  const offsetCompare = offsetting - state.preOffsetting;
-  const direction =
-    offsetCompare < 0 ? 'down' : offsetCompare > 0 ? 'up' : state.movingDirection;
-  updateVisibleOptions(animationIndex, instanceId);
-  const isOverOptions = state.loop ? false : animationIndex < 0 || animationIndex > state.options.length - 1;
-  const activeIndex = Math.round(animationIndex);
-  const isDisabled = wxUtils.isObj(state.options[activeIndex]) && state.options[activeIndex].disabled;
-  if (
-    intPreIndex !== intCurIndex
-    && !isOverOptions
-    && !isDisabled
-  ) {
-    ownerInstance.callMethod('animationIndexChange', animationIndex);
-    ownerInstance.callMethod('vibrateShort');
+function touchStart(instanceId) {
+  return function(event) {
+    var state = getCurrState(instanceId);
+    if (state.endTimer) {
+      cancelAnimationFrame(state.endTimer);
+      clearTimeout(state.endTimer);
+      updateState(instanceId, 'endTimer', null);
+    } else {
+      updateState(instanceId, 'recentVelocity', 0);
+    }
+    if(state.tapTimer) {
+      clearTimeout(state.tapTimer);
+      updateState(instanceId, 'tapTimer', null);
+    }
+    var pageY = event.touches[0].pageY;
+    startPo.y = pageY;
+    updateState(instanceId, 'moving', false);
+    updateState(instanceId, 'startOffset', state.animationIndex * state.itemHeight);
+    updateState(instanceId, 'preOffsetting', state.animationIndex * state.itemHeight);
+    updateState(instanceId, 'preOffsetList', []);
   }
+}
 
-  if (!state.moving) {
-    ownerInstance.callMethod('animationStart');
+
+function touchEnd(instanceId) {
+  return function(event, ownerInstance) {
+    var state = getCurrState(instanceId);
+    if (!state.moving) {
+      return;
+    }
+    var preOffsetList = state.preOffsetList;
+    // 计算最后几帧的平均速度，用于惯性滚动
+    var recentVelocity = 0;
+    /** -1: 向下, 1: 向上, 0: 无滚动 */
+    var scrollDirection = 0;
+
+    if (preOffsetList.length >= 2) {
+      // 计算速度，优先使用最后几帧的数据
+      var recentOffset = 0;
+      var recentTime = 0;
+
+      if (preOffsetList.length >= 3) {
+        // 有3个或以上数据点，使用最后3个点计算速度
+        recentOffset =
+          preOffsetList[preOffsetList.length - 1] - preOffsetList[preOffsetList.length - 3];
+        recentTime = 2; // 2帧间隔
+      } else if (preOffsetList.length === 2) {
+        // 只有2个数据点，使用这2个点计算速度
+        recentOffset = preOffsetList[1] - preOffsetList[0];
+        recentTime = 1; // 1帧间隔
+      }
+
+      // 计算速度 (px/ms)
+      recentVelocity = state.recentVelocity + Math.abs(recentOffset) / (recentTime * 16);
+      updateState(instanceId, 'recentVelocity', recentVelocity);
+      // 确定滚动方向
+      if (recentOffset > 0) {
+        scrollDirection = 1; // 向上滚动
+      } else if (recentOffset < 0) {
+        scrollDirection = -1; // 向下滚动
+      }
+    }
+
+    // 惯性滚动参数配置
+    var minVelocity = 0.1; // 最小速度阈值，低于此值停止滚动
+    var maxInertiaDistance = state.itemHeight * Math.max(Math.floor(state.options.length/4), 6); // 最大惯性滚动距离
+    // 计算惯性滚动距离
+    var inertiaDistance = 0;
+    if (recentVelocity > minVelocity) {
+      // 使用物理公式计算惯性距离：distance = velocity^2 / (2 * friction)
+      // 这里简化处理，直接使用速度乘以一个系数
+      inertiaDistance = recentVelocity * 150; // 200ms的惯性时间
+
+      // 限制最大滚动距离
+      if (inertiaDistance > maxInertiaDistance) {
+        inertiaDistance = maxInertiaDistance;
+      }
+
+      // 根据滚动方向确定正负值
+      inertiaDistance *= scrollDirection;
+    }
+
+    // 计算最终目标位置 和 index
+    var targetOffset =
+      Math.round((state.preOffsetting + inertiaDistance) / state.itemHeight) *
+      state.itemHeight;
+    var currTargetActiveIndex = -targetOffset / state.itemHeight;
+    currTargetActiveIndex = adjustIndex(Math.round(currTargetActiveIndex), state.options, state.loop);
+    targetOffset = -currTargetActiveIndex * state.itemHeight;
+    var animationOffset = Math.abs(targetOffset - state.preOffsetting);
+    var isOverOptions = state.loop ? false : state.animationIndex < 0 || state.animationIndex > state.options.length - 1;
+    var totalDistance = targetOffset - state.preOffsetting;
+      // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
+    if (state.animationTime > 200 && animationOffset > state.itemHeight && !isOverOptions) {
+      var countOffsetIndex = Math.abs(Math.round(currTargetActiveIndex - state.animationIndex));
+      var maxVibrateShort = Math.floor(state.animationTime / 30);
+      
+      // 基于时间的减速动画参数
+      var startOffset = state.preOffsetting;
+      var startTime = Date.now();
+      
+      // 使用 requestAnimationFrame 实现动画
+      var animate = function() {
+        var elapsedTime = Date.now() - startTime;
+        var progress = Math.min(elapsedTime / state.animationTime, 1); // 进度 0-1
+        
+        // 使用缓动函数实现减速效果：easeOutCubic
+        // f(t) = 1 - (1-t)^3，开始快，结束慢
+        var easedProgress = 1 - Math.pow(1 - progress, 3);
+        
+        // 计算当前偏移量
+        var currentOffset = startOffset + totalDistance * easedProgress;
+        
+        if (progress >= 1) {
+          // 动画完成，设置为精确的目标位置
+          updateVisibleOptions(currTargetActiveIndex, instanceId);
+          updateWrapperStyle(instanceId, ownerInstance);
+          updateState(instanceId, 'endTimer', null);
+          updateState(instanceId, 'moving', false);
+          updateState(instanceId, 'animationIndex', currTargetActiveIndex);
+          ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
+          setTimeout(function() {
+            ownerInstance.callMethod('animationEnd');
+          }, 0);
+          return;
+        }
+        
+        var currIndex = -currentOffset / state.itemHeight;
+        updateVisibleOptions(currIndex, instanceId);
+        updateState(instanceId, 'animationIndex', currIndex);
+        ownerInstance.callMethod('animationIndexChange', currIndex);
+        updateWrapperStyle(instanceId, ownerInstance);
+        
+        // 继续下一帧动画
+        var animationId = requestAnimationFrame(animate);
+        updateState(instanceId, 'endTimer', animationId);
+      };
+      
+      // 启动动画
+      var animationId = requestAnimationFrame(animate);
+      ownerInstance.callMethod('vibrateShort', Math.min(countOffsetIndex, maxVibrateShort), state.animationTime);
+      updateState(instanceId, 'endTimer', animationId);
+    } else {
+      updateVisibleOptions(currTargetActiveIndex, instanceId);
+      updateState(instanceId, 'animationIndex', currTargetActiveIndex);
+      updateWrapperStyle(instanceId, ownerInstance, {
+        transition: 'transform ' + 200 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+      });
+      setTimeout(function() {
+        updateState(instanceId, 'moving', false);
+        ownerInstance.callMethod('animationEnd');
+        ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
+      }, 150);
+    }
   }
-  updateState(instanceId, 'moving', true);
-  updateState(instanceId, 'animationIndex', animationIndex);
-  updateState(instanceId, 'preOffsetting', offsetting);
-  updateState(instanceId, 'preOffsetList', newOffsetList);
-  updateState(instanceId, 'movingDirection', direction);
-
-  updateWrapperStyle(instanceId, ownerInstance);
 }
 
 function updateVisibleOptions(currentIndex, instanceId) {
-  const state = getCurrState(instanceId);
-  let animationIndex = Math.round(
+  var state = getCurrState(instanceId);
+  var animationIndex = Math.round(
     currentIndex !== undefined ? currentIndex : state.animationIndex
   );
-  const vOptionLength = state.visibleItemCount * 4 - 2;
-  const rotateAngle = 360 / vOptionLength;
-  const newArr = new Array(vOptionLength).fill('');
-  const partCount = Math.floor(state.visibleItemCount / 2) + 3;
-  const newValueArr = new Array(partCount * 2 + 1).fill('');
+  var vOptionLength = state.visibleItemCount * 4 - 2;
+  var rotateAngle = 360 / vOptionLength;
+  var newArr = wxUtils.createArray(vOptionLength, '');
+  var partCount = Math.floor(state.visibleItemCount / 2) + 3;
+  var newValueArr = wxUtils.createArray(partCount * 2 + 1, '');
   if (state.loop) {
     // 循环模式：根据 options 首尾填充 newValueArr 数组
-    const optionsLength = state.options.length;
+    var optionsLength = state.options.length;
     if (optionsLength === 0) {
       // 如果没有选项，填充空值
-      newValueArr.fill('');
+      wxUtils.fillArray(newValueArr, '');
     } else {
-      newValueArr.forEach((item, index) => {
+      newValueArr.forEach(function(item, index) {
         // 计算相对于中心的偏移量
-        const offset = index - partCount;
+        var offset = index - partCount;
         // 计算目标索引，支持循环
-        const targetAnimationIndex = animationIndex + offset;
-        let targetIndex = (targetAnimationIndex + 1) % optionsLength - 1;
+        var targetAnimationIndex = animationIndex + offset;
+        var targetIndex = (targetAnimationIndex + 1) % optionsLength - 1;
         if(targetIndex < 0) {
           targetIndex += optionsLength;
         }
@@ -340,8 +483,8 @@ function updateVisibleOptions(currentIndex, instanceId) {
     if (animationIndex > state.options.length - 1) {
       animationIndex = state.options.length - 1;
     }
-    newValueArr.forEach((item, index) => {
-      const valueIndex =
+    newValueArr.forEach(function(item, index) {
+      var valueIndex =
         animationIndex - partCount + index >= 0 ? animationIndex - partCount + index : undefined;
       if (valueIndex === undefined) {
         return;
@@ -349,19 +492,19 @@ function updateVisibleOptions(currentIndex, instanceId) {
       newValueArr[index] = valueIndex;
     });
   }
-  let rotate = (animationIndex * rotateAngle) % 360;
+  var rotate = (animationIndex * rotateAngle) % 360;
   if(rotate < 0) {
     rotate += 360;
   }
-  const rotateIndex = Math.round(rotate / rotateAngle);
+  var rotateIndex = Math.round(rotate / rotateAngle);
 
   // 环形结构填充：以rotateIndex为中心，向两边扩展填充newValueArr
-  const centerIndex = rotateIndex; // 中心位置
-  const halfLength = Math.floor(newValueArr.length / 2); // newValueArr的一半长度
+  var centerIndex = rotateIndex; // 中心位置
+  var halfLength = Math.floor(newValueArr.length / 2); // newValueArr的一半长度
 
   // 从中心位置开始，向两边填充
-  for (let i = 0; i < newValueArr.length; i++) {
-    const targetIndex = (centerIndex - halfLength + i + vOptionLength) % vOptionLength; // 确保索引在0-17范围内
+  for (var i = 0; i < newValueArr.length; i++) {
+    var targetIndex = (centerIndex - halfLength + i + vOptionLength) % vOptionLength; // 确保索引在0-17范围内
     newArr[targetIndex] = newValueArr[i];
   }
   updateState(instanceId, 'optionsVIndexList', newArr);
@@ -369,199 +512,73 @@ function updateVisibleOptions(currentIndex, instanceId) {
 }
 
 function getWrapperCSSVar(instanceId) {
-  const state = getCurrState(instanceId);
-  const optionsVIndexList = state.optionsVIndexList;
-  return optionsVIndexList.reduce((previousValue, currentValue, currentIndex) => {
+  var state = getCurrState(instanceId);
+  var optionsVIndexList = state.optionsVIndexList;
+  return optionsVIndexList.reduce(function(previousValue, currentValue, currentIndex) {
     if (currentValue === '' || currentValue === undefined) {
-      previousValue[`--picker-item-content_${currentIndex}`] = `""`;
+      previousValue['--picker-item-content_' + currentIndex] = '""';
     } else {
-      const index = state.loop ? Math.abs(currentValue % state.options.length) : currentValue;
-      const text = optionText(state.options, index, state.valueKey);
-      previousValue[`--picker-item-content_${currentIndex}`] = `"${text === undefined ? '' : text}"`;
+      var index = state.loop ? Math.abs(currentValue % state.options.length) : currentValue;
+      var text = optionText(state.options, index, state.valueKey);
+      previousValue['--picker-item-content_' + currentIndex] = '"' + (text === undefined ? '' : text) + '"';
     }
     return previousValue;
   }, {});
 }
 
-function updateWrapperStyle(instanceId, ownerInstance, style = {}) {
-  const state = getCurrState(instanceId);
+function updateWrapperStyle(instanceId, ownerInstance, style) {
+  style = style || {};
+  var state = getCurrState(instanceId);
   var perAngle = 360 / (state.visibleItemCount * 4 - 2)
   var rotate = perAngle * state.animationIndex;
   var cssVar = getWrapperCSSVar(instanceId);
-  setStyle(ownerInstance, {
+  var styleObj = {
     transition: state.moving ? 'none' : 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
-    transform: `rotateX(${rotate}deg)`,
-    ...style,
-    ...cssVar
-  }, '.smart-picker-column__offset');
+    transform: 'rotateX(' + rotate + 'deg)'
+  };
+
+  const newStyleObject = Object.assign(Object.assign(styleObj, style), cssVar);
+  
+  setStyle(ownerInstance, newStyleObject, '.smart-picker-column__offset');
 }
 
-const touchEnd = (instanceId) => (event, ownerInstance) => {
-  const state = getCurrState(instanceId);
-  if (!state.moving) {
-    return;
-  }
-  const preOffsetList = state.preOffsetList;
-  // 计算最后几帧的平均速度，用于惯性滚动
-  let recentVelocity = 0;
-  /** -1: 向下, 1: 向上, 0: 无滚动 */
-  let scrollDirection = 0;
-
-  if (preOffsetList.length >= 2) {
-    // 计算速度，优先使用最后几帧的数据
-    let recentOffset = 0;
-    let recentTime = 0;
-
-    if (preOffsetList.length >= 3) {
-      // 有3个或以上数据点，使用最后3个点计算速度
-      recentOffset =
-        preOffsetList[preOffsetList.length - 1] - preOffsetList[preOffsetList.length - 3];
-      recentTime = 2; // 2帧间隔
-    } else if (preOffsetList.length === 2) {
-      // 只有2个数据点，使用这2个点计算速度
-      recentOffset = preOffsetList[1] - preOffsetList[0];
-      recentTime = 1; // 1帧间隔
+function tapItem(instanceId) {
+  return function(e, ownerInstance) {
+    var state = getCurrState(instanceId);
+    var rotateIndex = e.currentTarget.dataset.index;
+    var currOptionsActiveIndex = state.optionsVIndexList[rotateIndex];
+    var activeRotateIndex = calculateCenterIndex(state.optionsVIndexList);
+    var option = state.options[currOptionsActiveIndex];
+    if (option === undefined || (option && typeof option === 'object' && option.disabled)) return;
+    if (state.startTimer) {
+      clearTimeout(state.startTimer);
+      updateState(instanceId, 'startTimer', null);
     }
-
-    // 计算速度 (px/ms)
-    recentVelocity = state.recentVelocity + Math.abs(recentOffset) / (recentTime * 16);
-    updateState(instanceId, 'recentVelocity', recentVelocity);
-    // 确定滚动方向
-    if (recentOffset > 0) {
-      scrollDirection = 1; // 向上滚动
-    } else if (recentOffset < 0) {
-      scrollDirection = -1; // 向下滚动
+    if (rotateIndex === activeRotateIndex) return;
+    ownerInstance.callMethod('animationStart');
+    if (state.tapTimer) {
+      clearTimeout(state.tapTimer);
+      updateState(instanceId, 'tapTimer', null);
     }
-  }
-
-  // 惯性滚动参数配置
-  const minVelocity = 0.1; // 最小速度阈值，低于此值停止滚动
-  const maxInertiaDistance = state.itemHeight * Math.max(Math.floor(state.options.length/4), 6); // 最大惯性滚动距离
-  // 计算惯性滚动距离
-  let inertiaDistance = 0;
-  if (recentVelocity > minVelocity) {
-    // 使用物理公式计算惯性距离：distance = velocity^2 / (2 * friction)
-    // 这里简化处理，直接使用速度乘以一个系数
-    inertiaDistance = recentVelocity * 150; // 200ms的惯性时间
-
-    // 限制最大滚动距离
-    if (inertiaDistance > maxInertiaDistance) {
-      inertiaDistance = maxInertiaDistance;
-    }
-
-    // 根据滚动方向确定正负值
-    inertiaDistance *= scrollDirection;
-  }
-
-  // 计算最终目标位置 和 index
-  let targetOffset =
-    Math.round((state.preOffsetting + inertiaDistance) / state.itemHeight) *
-    state.itemHeight;
-  let currTargetActiveIndex = -targetOffset / state.itemHeight;
-  currTargetActiveIndex = adjustIndex(Math.round(currTargetActiveIndex), state.options, state.loop);
-  targetOffset = -currTargetActiveIndex * state.itemHeight;
-  const animationOffset = Math.abs(targetOffset - state.preOffsetting);
-  const isOverOptions = state.loop ? false : state.animationIndex < 0 || state.animationIndex > state.options.length - 1;
-  const totalDistance = targetOffset - state.preOffsetting;
-    // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
-  if (state.animationTime > 200 && animationOffset > state.itemHeight && !isOverOptions) {
-    const countOffsetIndex = Math.abs(Math.round(currTargetActiveIndex - state.animationIndex));
-    const maxVibrateShort = Math.floor(state.animationTime / 30);
-    
-    // 基于时间的减速动画参数
-    const startOffset = state.preOffsetting;
-    const startTime = Date.now();
-    
-    // 使用 requestAnimationFrame 实现动画
-    const animate = () => {
-      const elapsedTime = Date.now() - startTime;
-      const progress = Math.min(elapsedTime / state.animationTime, 1); // 进度 0-1
-      
-      // 使用缓动函数实现减速效果：easeOutCubic
-      // f(t) = 1 - (1-t)^3，开始快，结束慢
-      const easedProgress = 1 - Math.pow(1 - progress, 3);
-      
-      // 计算当前偏移量
-      const currentOffset = startOffset + totalDistance * easedProgress;
-      
-      if (progress >= 1) {
-        // 动画完成，设置为精确的目标位置
-        updateVisibleOptions(currTargetActiveIndex, instanceId);
-        updateWrapperStyle(instanceId, ownerInstance);
-        updateState(instanceId, 'endTimer', null);
-        updateState(instanceId, 'moving', false);
-        updateState(instanceId, 'animationIndex', currTargetActiveIndex);
-        ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
-        setTimeout(() => {
-          ownerInstance.callMethod('animationEnd');
-        }, 0);
-        return;
-      }
-      
-      const currIndex = -currentOffset / state.itemHeight;
-      updateVisibleOptions(currIndex, instanceId);
-      updateState(instanceId, 'animationIndex', currIndex);
-      ownerInstance.callMethod('animationIndexChange', currIndex);
-      updateWrapperStyle(instanceId, ownerInstance);
-      
-      // 继续下一帧动画
-      const animationId = requestAnimationFrame(animate);
-      updateState(instanceId, 'endTimer', animationId);
-    };
-    
-    // 启动动画
-    const animationId = requestAnimationFrame(animate);
-    ownerInstance.callMethod('vibrateShort', Math.min(countOffsetIndex, maxVibrateShort), state.animationTime);
-    updateState(instanceId, 'endTimer', animationId);
-  } else {
+    var currTargetActiveIndex = getNewAnimationIndex(state.animationIndex, currOptionsActiveIndex, state.options.length || 1, state.loop);
+    var offsetCount = Math.abs(currTargetActiveIndex - state.animationIndex);
     updateVisibleOptions(currTargetActiveIndex, instanceId);
     updateState(instanceId, 'animationIndex', currTargetActiveIndex);
     updateWrapperStyle(instanceId, ownerInstance, {
-      transition: 'transform ' + 200 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+      transition: 'transform ' + 300 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
     });
-    setTimeout(() => {
-      updateState(instanceId, 'moving', false);
-      ownerInstance.callMethod('animationEnd');
-      ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
-    }, 150);
+    ownerInstance.callMethod('animationIndexChange', currTargetActiveIndex);
+    ownerInstance.callMethod('vibrateShort', offsetCount, 200);
+    var tapTimer = setTimeout(function() {
+      ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+      updateState(instanceId, 'tapTimer', null);
+      setTimeout(function() {
+        ownerInstance.callMethod('animationEnd');
+      }, 0);
+    }, 200);
+    updateState(instanceId, 'tapTimer', tapTimer);
   }
 }
-
-const tapItem = (instanceId) => (e, ownerInstance) => {
-  const state = getCurrState(instanceId);
-  const rotateIndex = e.currentTarget.dataset.index;
-  const currOptionsActiveIndex = state.optionsVIndexList[rotateIndex];
-  const activeRotateIndex = calculateCenterIndex(state.optionsVIndexList);
-  const option = state.options[currOptionsActiveIndex];
-  if (option === undefined || (option && typeof option === 'object' && option.disabled)) return;
-  if (state.startTimer) {
-    clearTimeout(state.startTimer);
-    updateState(instanceId, 'startTimer', null);
-  }
-  if (rotateIndex === activeRotateIndex) return;
-  ownerInstance.callMethod('animationStart');
-  if (state.tapTimer) {
-    clearTimeout(state.tapTimer);
-    updateState(instanceId, 'tapTimer', null);
-  }
-  const currTargetActiveIndex = getNewAnimationIndex(state.animationIndex, currOptionsActiveIndex, state.options.length || 1, state.loop);
-  const offsetCount = Math.abs(currTargetActiveIndex - state.animationIndex);
-  updateVisibleOptions(currTargetActiveIndex, instanceId);
-  updateState(instanceId, 'animationIndex', currTargetActiveIndex);
-  updateWrapperStyle(instanceId, ownerInstance, {
-    transition: 'transform ' + 300 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
-  });
-  ownerInstance.callMethod('vibrateShort', offsetCount, 200);
-  const tapTimer = setTimeout(() => {
-    ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
-    updateState(instanceId, 'tapTimer', null);
-    setTimeout(() => {
-      ownerInstance.callMethod('animationEnd');
-    }, 0);
-  }, 200);
-  updateState(instanceId, 'tapTimer', tapTimer);
-}
-
 
 module.exports = {
   optionText: optionText,
