@@ -263,7 +263,7 @@ Page({
 
 | 参数                | 说明                               | 类型      | 默认值  |
 | ------------------- | ---------------------------------- | --------- | ------- |
-| border              | 是否显示下边框                     | _boolean_ | `true`  |
+| border              | 是否显示下边框                     | _boolean_ | `true` `v2.0.0` `false` `v2.7.0`  |
 | custom-style        | 根节点自定义样式                   | _string_  | -       |
 | fixed               | 是否固定在顶部                     | _boolean_ | `false` |
 | left-arrow          | 是否显示左侧箭头                   | _boolean_ | `false` |

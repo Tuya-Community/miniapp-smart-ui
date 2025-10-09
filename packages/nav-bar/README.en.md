@@ -263,7 +263,7 @@ Page({
 
 | Parameter           | Description                          | Type      | Default  |
 | ------------------- | ------------------------------------ | --------- | -------- |
-| border              | Whether to display the bottom border | _boolean_ | `true`   |
+| border              | Whether to display the bottom border | _boolean_ | `true` `v2.0.0` `false` `v2.7.0`   |
 | custom-style        | Custom style for the root node      | _string_  | -        |
 | fixed               | Whether to fix at the top           | _boolean_ | `false`  |
 | left-arrow          | Whether to show the left arrow       | _boolean_ | `false`  |
