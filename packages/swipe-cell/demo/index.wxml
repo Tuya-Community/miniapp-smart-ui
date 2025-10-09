@@ -1,5 +1,5 @@
 <demo-block title="{{I18n.t('basicUsage')}}">
-  <smart-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
+  <smart-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" bind:tabClose="onTabClose">
     <view slot="left" class="smart-swipe-cell__left">{{I18n.t('choose')}}</view>
     <smart-cell-group>
       <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" />
@@ -9,7 +9,7 @@
 </demo-block>
 
 <demo-block title="{{I18n.t('asynchronousClose')}}">
-  <smart-swipe-cell id="swipe-cell" right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onClose">
+  <smart-swipe-cell id="swipe-cell" right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onAsyncClose">
     <view slot="left" class="smart-swipe-cell__left">{{I18n.t('choose')}}</view>
     <smart-cell-group>
       <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" />
