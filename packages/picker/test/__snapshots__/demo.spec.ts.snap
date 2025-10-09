@@ -15,7 +15,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <wx-view
             class="smart-picker__columns"
-            style="height:220px"
+            style="height:198px"
             catch:touchmove="noop"
           >
             <picker-column
@@ -29,96 +29,170 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    "hangzhou",
+                    "ningbo",
+                    "wenzhou",
+                    "jiaxing",
+                    "huzhou",
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-0"
+                instanceId="smart-picker-column-0"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    "hangzhou",
+                    "ningbo",
+                    "wenzhou",
+                    "jiaxing",
+                    "huzhou",
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 220px;text-indent:0;line-height:44px;transform:translate3d(0, -44px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{0}}"
-                      style="height: 44px;"
-                    >
-                      
-        hangzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{1}}"
-                      style="height: 44px;"
-                    >
-                      
-        ningbo
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{2}}"
-                      style="height: 44px;"
-                    >
-                      
-        wenzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{3}}"
-                      style="height: 44px;"
-                    >
-                      
-        jiaxing
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{4}}"
-                      style="height: 44px;"
-                    >
-                      
-        huzhou
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
+                    data-index="{{0}}"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    bind:tap=null
+                  />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
                     data-index="{{3}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
                     data-index="{{4}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
                     data-index="{{5}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                 </wx-view>
               </wx-view>
@@ -147,7 +221,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <wx-view
             class="smart-picker__columns"
-            style="height:220px"
+            style="height:198px"
             catch:touchmove="noop"
           >
             <picker-column
@@ -161,231 +235,360 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93,
+                    94,
+                    95,
+                    96,
+                    97,
+                    98,
+                    99,
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-1"
+                instanceId="smart-picker-column-1"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93,
+                    94,
+                    95,
+                    96,
+                    97,
+                    98,
+                    99,
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 4400px;text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{0}}"
-                      style="height: 44px;font-size: 16px;;color: #000;"
-                    >
-                      
-        0
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{1}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        1
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{2}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        2
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{3}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        3
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{4}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        4
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{5}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        5
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{6}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        6
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{7}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        7
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{8}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        8
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{9}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        9
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{10}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        10
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{11}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        11
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{12}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        12
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{13}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        13
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{14}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        14
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{15}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        15
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{16}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        16
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{17}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        17
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{18}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        18
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{19}}"
-                      style="height: 44px;font-size: 16px;;"
-                    >
-                      
-        19
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-2}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-1}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;color: #000;;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;"
+                    bind:tap=null
                   />
                 </wx-view>
               </wx-view>
@@ -401,60 +604,162 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column smart-picker-column--disabled custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    ".",
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-2"
+                instanceId="smart-picker-column-2"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    ".",
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 44px;text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{0}}"
-                      style="height: 44px;color: #000;"
-                    >
-                      
-        .
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-2}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-1}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: #000;;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                 </wx-view>
               </wx-view>
@@ -470,231 +775,200 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-3"
+                instanceId="smart-picker-column-3"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 880px;text-indent:-8rpx;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{0}}"
-                      style="height: 44px;color: #000;"
-                    >
-                      
-        0
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{1}}"
-                      style="height: 44px;"
-                    >
-                      
-        1
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{2}}"
-                      style="height: 44px;"
-                    >
-                      
-        2
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{3}}"
-                      style="height: 44px;"
-                    >
-                      
-        3
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{4}}"
-                      style="height: 44px;"
-                    >
-                      
-        4
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{5}}"
-                      style="height: 44px;"
-                    >
-                      
-        5
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{6}}"
-                      style="height: 44px;"
-                    >
-                      
-        6
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{7}}"
-                      style="height: 44px;"
-                    >
-                      
-        7
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{8}}"
-                      style="height: 44px;"
-                    >
-                      
-        8
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{9}}"
-                      style="height: 44px;"
-                    >
-                      
-        9
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{10}}"
-                      style="height: 44px;"
-                    >
-                      
-        10
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{11}}"
-                      style="height: 44px;"
-                    >
-                      
-        11
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{12}}"
-                      style="height: 44px;"
-                    >
-                      
-        12
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{13}}"
-                      style="height: 44px;"
-                    >
-                      
-        13
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{14}}"
-                      style="height: 44px;"
-                    >
-                      
-        14
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{15}}"
-                      style="height: 44px;"
-                    >
-                      
-        15
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{16}}"
-                      style="height: 44px;"
-                    >
-                      
-        16
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{17}}"
-                      style="height: 44px;"
-                    >
-                      
-        17
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{18}}"
-                      style="height: 44px;"
-                    >
-                      
-        18
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{19}}"
-                      style="height: 44px;"
-                    >
-                      
-        19
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-2}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-1}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: #000;;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                 </wx-view>
                 <wx-view
@@ -737,7 +1011,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <wx-view
             class="smart-picker__columns"
-            style="height:220px"
+            style="height:198px"
             catch:touchmove="noop"
           >
             <picker-column
@@ -751,96 +1025,170 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    "hangzhou",
+                    "ningbo",
+                    "wenzhou",
+                    "jiaxing",
+                    "huzhou",
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-4"
+                instanceId="smart-picker-column-4"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    "hangzhou",
+                    "ningbo",
+                    "wenzhou",
+                    "jiaxing",
+                    "huzhou",
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 220px;text-indent:0;line-height:44px;transform:translate3d(0, 0px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{0}}"
-                      style="height: 44px;"
-                    >
-                      
-        hangzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{1}}"
-                      style="height: 44px;"
-                    >
-                      
-        ningbo
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{2}}"
-                      style="height: 44px;"
-                    >
-                      
-        wenzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{3}}"
-                      style="height: 44px;"
-                    >
-                      
-        jiaxing
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{4}}"
-                      style="height: 44px;"
-                    >
-                      
-        huzhou
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
-                  <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
                     data-index="{{3}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
                     data-index="{{4}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                 </wx-view>
               </wx-view>
@@ -894,7 +1242,7 @@ exports[`should render demo and match snapshot 1`] = `
           </wx-view>
           <wx-view
             class="smart-picker__columns"
-            style="height:220px"
+            style="height:198px"
             catch:touchmove="noop"
           >
             <picker-column
@@ -908,96 +1256,170 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    "hangzhou",
+                    "ningbo",
+                    "wenzhou",
+                    "jiaxing",
+                    "huzhou",
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-5"
+                instanceId="smart-picker-column-5"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    "hangzhou",
+                    "ningbo",
+                    "wenzhou",
+                    "jiaxing",
+                    "huzhou",
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 220px;text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{0}}"
-                      style="height: 44px;"
-                    >
-                      
-        hangzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{1}}"
-                      style="height: 44px;"
-                    >
-                      
-        ningbo
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{2}}"
-                      style="height: 44px;"
-                    >
-                      
-        wenzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{3}}"
-                      style="height: 44px;"
-                    >
-                      
-        jiaxing
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{4}}"
-                      style="height: 44px;"
-                    >
-                      
-        huzhou
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-2}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-1}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                 </wx-view>
               </wx-view>
@@ -1023,7 +1445,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <wx-view
             class="smart-picker__columns"
-            style="height:220px"
+            style="height:198px"
             catch:touchmove="noop"
           >
             <picker-column
@@ -1037,69 +1459,164 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    "zhejiang",
+                    "fujian",
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-6"
+                instanceId="smart-picker-column-6"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    "zhejiang",
+                    "fujian",
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 88px;text-indent:-8rpx;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{0}}"
-                      style="height: 44px;"
-                    >
-                      
-        zhejiang
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{1}}"
-                      style="height: 44px;"
-                    >
-                      
-        fujian
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-2}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-1}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                 </wx-view>
                 <wx-view
@@ -1132,96 +1649,170 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    "hangzhou",
+                    "ningbo",
+                    "wenzhou",
+                    "jiaxing",
+                    "huzhou",
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-7"
+                instanceId="smart-picker-column-7"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    "hangzhou",
+                    "ningbo",
+                    "wenzhou",
+                    "jiaxing",
+                    "huzhou",
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 220px;text-indent:-8rpx;line-height:44px;transform:translate3d(0, 0px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{0}}"
-                      style="height: 44px;"
-                    >
-                      
-        hangzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{1}}"
-                      style="height: 44px;"
-                    >
-                      
-        ningbo
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{2}}"
-                      style="height: 44px;"
-                    >
-                      
-        wenzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{3}}"
-                      style="height: 44px;"
-                    >
-                      
-        jiaxing
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{4}}"
-                      style="height: 44px;"
-                    >
-                      
-        huzhou
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
-                  <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
                     data-index="{{3}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
                     data-index="{{4}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                 </wx-view>
                 <wx-view
@@ -1256,13 +1847,15 @@ exports[`should render demo and match snapshot 1`] = `
     <wx-view
       class="custom-class demo-block smart-clearfix "
     >
-      <smart-picker>
+      <smart-picker
+        bind:change="onChange1"
+      >
         <wx-view
           class="smart-picker custom-class"
         >
           <wx-view
             class="smart-picker__columns"
-            style="height:220px"
+            style="height:198px"
             catch:touchmove="noop"
           >
             <picker-column
@@ -1276,78 +1869,180 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{1}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
+                data-activeindex="{{1}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    Object {
+                      "disabled": true,
+                      "text": "hangzhou",
+                    },
+                    Object {
+                      "text": "ningbo",
+                    },
+                    Object {
+                      "text": "wenzhou",
+                    },
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-8"
+                instanceId="smart-picker-column-8"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    Object {
+                      "disabled": true,
+                      "text": "hangzhou",
+                    },
+                    Object {
+                      "text": "ningbo",
+                    },
+                    Object {
+                      "text": "wenzhou",
+                    },
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 132px;text-indent:0;line-height:44px;transform:translate3d(0, 44px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--disabled "
-                      data-index="{{0}}"
-                      style="height: 44px;"
-                    >
-                      
-        hangzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{1}}"
-                      style="height: 44px;"
-                    >
-                      
-        ningbo
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{2}}"
-                      style="height: 44px;"
-                    >
-                      
-        wenzhou
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-1}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--disabled "
                     data-index="{{0}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
                     data-index="{{3}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                 </wx-view>
               </wx-view>
@@ -1394,7 +2089,7 @@ exports[`should render demo and match snapshot 1`] = `
           </wx-view>
           <wx-view
             class="smart-picker__columns"
-            style="height:220px"
+            style="height:198px"
             catch:touchmove="noop"
           >
             <picker-column
@@ -1408,69 +2103,164 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    "zhejiang",
+                    "fujian",
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-9"
+                instanceId="smart-picker-column-9"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    "zhejiang",
+                    "fujian",
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 88px;text-indent:-8rpx;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{0}}"
-                      style="height: 44px;"
-                    >
-                      
-        zhejiang
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{1}}"
-                      style="height: 44px;"
-                    >
-                      
-        fujian
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-2}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-1}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                 </wx-view>
                 <wx-view
@@ -1503,96 +2293,170 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    "hangzhou",
+                    "ningbo",
+                    "wenzhou",
+                    "jiaxing",
+                    "huzhou",
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-10"
+                instanceId="smart-picker-column-10"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    "hangzhou",
+                    "ningbo",
+                    "wenzhou",
+                    "jiaxing",
+                    "huzhou",
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 220px;text-indent:-8rpx;line-height:44px;transform:translate3d(0, 0px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{0}}"
-                      style="height: 44px;"
-                    >
-                      
-        hangzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{1}}"
-                      style="height: 44px;"
-                    >
-                      
-        ningbo
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{2}}"
-                      style="height: 44px;"
-                    >
-                      
-        wenzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{3}}"
-                      style="height: 44px;"
-                    >
-                      
-        jiaxing
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{4}}"
-                      style="height: 44px;"
-                    >
-                      
-        huzhou
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
-                  <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
                     data-index="{{3}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
                     data-index="{{4}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                 </wx-view>
                 <wx-view
@@ -1633,7 +2497,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <wx-view
             class="smart-picker__columns"
-            style="height:220px"
+            style="height:198px"
             catch:touchmove="noop"
           >
             <picker-column
@@ -1647,69 +2511,164 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    "zhejiang",
+                    "fujian",
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-11"
+                instanceId="smart-picker-column-11"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    "zhejiang",
+                    "fujian",
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 88px;text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{0}}"
-                      style="height: 44px;"
-                    >
-                      
-        zhejiang
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{1}}"
-                      style="height: 44px;"
-                    >
-                      
-        fujian
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-2}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-1}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                 </wx-view>
               </wx-view>
@@ -1725,96 +2684,563 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{false}}"
+                data-options="{{
+                  Array [
+                    "hangzhou",
+                    "ningbo",
+                    "wenzhou",
+                    "jiaxing",
+                    "huzhou",
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-12"
+                instanceId="smart-picker-column-12"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{false}}"
+                options="{{
+                  Array [
+                    "hangzhou",
+                    "ningbo",
+                    "wenzhou",
+                    "jiaxing",
+                    "huzhou",
+                  ]
+                }}"
                 style="height:220px"
-                bind:touchcancel="onTouchEnd"
-                bind:touchend="onTouchEnd"
-                catch:touchmove="onTouchMove"
-                bind:touchstart="onTouchStart"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
               >
                 <wx-view
                   class="smart-picker-column__offset"
                   id="options"
-                  style="height: 220px;text-indent:0;line-height:44px;transform:translate3d(0, 88px, 0)"
+                  style=""
                 >
                   <wx-view
-                    class="smart-picker-column__visual"
-                    style="padding-top:0px"
-                  >
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
-                      data-index="{{0}}"
-                      style="height: 44px;"
-                    >
-                      
-        hangzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{1}}"
-                      style="height: 44px;"
-                    >
-                      
-        ningbo
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{2}}"
-                      style="height: 44px;"
-                    >
-                      
-        wenzhou
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{3}}"
-                      style="height: 44px;"
-                    >
-                      
-        jiaxing
-      
-                    </wx-view>
-                    <wx-view
-                      class="smart-ellipsis smart-picker-column__item "
-                      data-index="{{4}}"
-                      style="height: 44px;"
-                    >
-                      
-        huzhou
-      
-                    </wx-view>
-                  </wx-view>
-                </wx-view>
-                <wx-view
-                  class="smart-picker-column__mask"
-                >
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-2}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
-                    data-index="{{-1}}"
-                    bind:tap="onClickItem"
-                  />
-                  <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
                     data-index="{{1}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__mask__item"
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
                     data-index="{{2}}"
-                    bind:tap="onClickItem"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                </wx-view>
+              </wx-view>
+            </picker-column>
+            <wx-view
+              class="smart-picker__frame smart-hairline--top-bottom hairline-class"
+              style="height:44px;position:absolute"
+            />
+          </wx-view>
+        </wx-view>
+      </smart-picker>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-picker
+        bind:change="onChange1"
+      >
+        <wx-view
+          class="smart-picker custom-class"
+        >
+          <wx-view
+            class="smart-picker__columns"
+            style="height:198px"
+            catch:touchmove="noop"
+          >
+            <picker-column
+              activeClass="active-class"
+              class="smart-picker__column"
+              customClass="column-class"
+              data-index="{{0}}"
+              style="order: ; "
+              bind:animation-end="animationEnd"
+              bind:animation-start="animationStart"
+              bind:change="onChange"
+            >
+              <wx-view
+                activeindex="{{0}}"
+                animationtime="{{300}}"
+                change:activeindex="{{null}}"
+                change:animationtime="{{null}}"
+                change:instanceid="{{null}}"
+                change:isdestroy="{{null}}"
+                change:itemheight="{{null}}"
+                change:loop="{{null}}"
+                change:options="{{null}}"
+                change:valuekey="{{null}}"
+                change:visibleitemcount="{{null}}"
+                changeanimation="{{false}}"
+                class="smart-picker-column custom-class"
+                data-activeindex="{{0}}"
+                data-animationtime="{{300}}"
+                data-changeanimation="{{false}}"
+                data-isdestroy="{{false}}"
+                data-itemheight="{{44}}"
+                data-loop="{{true}}"
+                data-options="{{
+                  Array [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93,
+                    94,
+                    95,
+                    96,
+                    97,
+                    98,
+                    99,
+                  ]
+                }}"
+                data-valuekey="text"
+                data-visibleitemcount="{{5}}"
+                id="smart-picker-column-13"
+                instanceId="smart-picker-column-13"
+                isdestroy="{{false}}"
+                itemheight="{{44}}"
+                loop="{{true}}"
+                options="{{
+                  Array [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93,
+                    94,
+                    95,
+                    96,
+                    97,
+                    98,
+                    99,
+                  ]
+                }}"
+                style="height:220px"
+                valuekey="text"
+                visibleitemcount="{{5}}"
+                bind:touchcancel=null
+                bind:touchend=null
+                catch:touchmove=null
+                bind:touchstart=null
+              >
+                <wx-view
+                  class="smart-picker-column__offset"
+                  id="options"
+                  style=""
+                >
+                  <wx-view
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
+                    data-index="{{0}}"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_1 smart-ellipsis smart-picker-column__item "
+                    data-index="{{1}}"
+                    style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
+                    data-index="{{2}}"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
+                    data-index="{{3}}"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_4 smart-ellipsis smart-picker-column__item "
+                    data-index="{{4}}"
+                    style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_5 smart-ellipsis smart-picker-column__item "
+                    data-index="{{5}}"
+                    style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_6 smart-ellipsis smart-picker-column__item "
+                    data-index="{{6}}"
+                    style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_7 smart-ellipsis smart-picker-column__item "
+                    data-index="{{7}}"
+                    style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_8 smart-ellipsis smart-picker-column__item "
+                    data-index="{{8}}"
+                    style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_9 smart-ellipsis smart-picker-column__item "
+                    data-index="{{9}}"
+                    style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_10 smart-ellipsis smart-picker-column__item "
+                    data-index="{{10}}"
+                    style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_11 smart-ellipsis smart-picker-column__item "
+                    data-index="{{11}}"
+                    style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_12 smart-ellipsis smart-picker-column__item "
+                    data-index="{{12}}"
+                    style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_13 smart-ellipsis smart-picker-column__item "
+                    data-index="{{13}}"
+                    style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_14 smart-ellipsis smart-picker-column__item "
+                    data-index="{{14}}"
+                    style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_15 smart-ellipsis smart-picker-column__item "
+                    data-index="{{15}}"
+                    style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_16 smart-ellipsis smart-picker-column__item "
+                    data-index="{{16}}"
+                    style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
+                  />
+                  <wx-view
+                    class="smart-picker-column__item_17 smart-ellipsis smart-picker-column__item "
+                    data-index="{{17}}"
+                    style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    bind:tap=null
                   />
                 </wx-view>
               </wx-view>
