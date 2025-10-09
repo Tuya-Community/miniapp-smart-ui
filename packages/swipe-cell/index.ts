@@ -56,7 +56,7 @@ SmartComponent({
       const offset = position === 'left' ? leftWidth : -rightWidth;
       this.swipeMove(offset);
       if (position !== this.data.position && this.data.position !== 'close') {
-        this.$emit('tabClose', this.data.position);
+        this.$emit('tab-close', this.data.position);
       }
       this.setData({ position });
 
@@ -68,7 +68,7 @@ SmartComponent({
 
     close() {
       if (this.data.position !== 'close') {
-        this.$emit('tabClose', this.data.position);
+        this.$emit('tab-close', this.data.position);
       }
       this.swipeMove(0);
       this.setData({ position: 'close' });
