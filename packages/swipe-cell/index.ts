@@ -38,6 +38,7 @@ SmartComponent({
   data: {
     catchMove: false,
     wrapperStyle: '',
+    position: 'close',
   },
 
   created() {
@@ -54,6 +55,10 @@ SmartComponent({
       const { leftWidth, rightWidth } = this.data;
       const offset = position === 'left' ? leftWidth : -rightWidth;
       this.swipeMove(offset);
+      if (position !== this.data.position && this.data.position !== 'close') {
+        this.$emit('tabClose', this.data.position);
+      }
+      this.setData({ position });
 
       this.$emit('open', {
         position,
@@ -90,7 +95,11 @@ SmartComponent({
       } else if (leftWidth > 0 && offset > leftWidth * THRESHOLD) {
         this.open('left');
       } else {
+        if (this.data.position !== 'close') {
+          this.$emit('tabClose', this.data.position);
+        }
         this.swipeMove(0);
+        this.setData({ position: 'close' });
       }
       this.setData({ catchMove: false });
     },
@@ -149,7 +158,11 @@ SmartComponent({
           name: this.data.name,
         });
       } else {
+        if (this.data.position !== 'close') {
+          this.$emit('tabClose', this.data.position);
+        }
         this.swipeMove(0);
+        this.setData({ position: 'close' });
       }
     },
   },
