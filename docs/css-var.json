@@ -433,6 +433,11 @@
     "value": "16px",
     "decs": ""
   },
+  "font-title-lg": {
+    "name": "@font-title-lg",
+    "value": "22px",
+    "decs": ""
+  },
   "font-weight-bold": {
     "name": "@font-weight-bold",
     "value": "500",
@@ -1832,9 +1837,9 @@
     "value": "0.8s",
     "decs": ""
   },
-  "nav-bar-title-max-width": {
-    "name": "@nav-bar-title-max-width",
-    "value": "calc(100% - 360rpx)",
+  "nav-bar-home-max-width": {
+    "name": "@nav-bar-home-max-width",
+    "value": "calc(100% - 98px - 16px)",
     "decs": ""
   },
   "nav-bar-height": {
@@ -1862,24 +1867,14 @@
     "value": "var(--app-B2-N1, rgba(0, 0, 0, 1))",
     "decs": ""
   },
-  "nav-bar-icon-size": {
-    "name": "@nav-bar-icon-size",
-    "value": "32px",
-    "decs": ""
-  },
   "nav-bar-icon-color": {
     "name": "@nav-bar-icon-color",
     "value": "var(--app-B2-N1, rgba(0, 0, 0, 1))",
     "decs": ""
   },
-  "nav-bar-icon-margin": {
-    "name": "@nav-bar-icon-margin",
-    "value": "0",
-    "decs": ""
-  },
   "nav-bar-text-color": {
     "name": "@nav-bar-text-color",
-    "value": "var(--app-B2-N1, rgba(0, 0, 0, 1))",
+    "value": "var(--app-B2-N2, rgba(0, 0, 0, 0.7))",
     "decs": ""
   },
   "nav-bar-text-font-size": {
@@ -1889,7 +1884,7 @@
   },
   "nav-bar-title-font-size": {
     "name": "@nav-bar-title-font-size",
-    "value": "16px",
+    "value": "17px",
     "decs": ""
   },
   "nav-bar-title-font-weight": {
@@ -1920,6 +1915,36 @@
   "nav-bar-home-text-color": {
     "name": "@nav-bar-home-text-color",
     "value": "var(--app-B2-N1, rgba(0, 0, 0, 1))",
+    "decs": ""
+  },
+  "nav-bar-text-font-weight": {
+    "name": "@nav-bar-text-font-weight",
+    "value": "600",
+    "decs": ""
+  },
+  "nav-bar-side-width": {
+    "name": "@nav-bar-side-width",
+    "value": "98px",
+    "decs": ""
+  },
+  "nav-bar-text-padding": {
+    "name": "@nav-bar-text-padding",
+    "value": "20px",
+    "decs": ""
+  },
+  "nav-bar-icon-padding": {
+    "name": "@nav-bar-icon-padding",
+    "value": "16px",
+    "decs": ""
+  },
+  "nav-bar-title-margin": {
+    "name": "@nav-bar-title-margin",
+    "value": "0 16px",
+    "decs": ""
+  },
+  "nav-bar-left-title-padding": {
+    "name": "@nav-bar-left-title-padding",
+    "value": "8px",
     "decs": ""
   },
   "notice-bar-height": {
