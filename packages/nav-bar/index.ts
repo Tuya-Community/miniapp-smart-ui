@@ -45,7 +45,7 @@ SmartComponent({
     leftArrow: Boolean,
     border: {
       type: Boolean,
-      value: true,
+      value: false,
     },
     round: {
       type: Boolean,
