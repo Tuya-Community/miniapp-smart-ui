@@ -10,7 +10,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click-left-text="onClickLeftText"
       >
         <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class smart-hairline--bottom"
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
           style="z-index:1;padding-top:20px; "
         >
           <wx-view
@@ -49,7 +49,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click-left-text="onClickLeftText"
       >
         <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class smart-hairline--bottom"
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
           style="z-index:1;padding-top:20px;background:#E4EDFF; "
         >
           <wx-view
@@ -95,7 +95,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click-title="onClickTitle"
       >
         <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class smart-hairline--bottom"
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
           style="z-index:1;padding-top:20px; "
         >
           <wx-view
@@ -143,7 +143,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click-title="onClickTitle"
       >
         <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class smart-hairline--bottom"
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
           style="z-index:1;padding-top:20px; "
         >
           <wx-view
@@ -191,7 +191,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click-title="onClickTitle"
       >
         <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class smart-hairline--bottom"
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
           style="z-index:1;padding-top:20px; "
         >
           <wx-view
@@ -224,7 +224,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click-right-icon="onClickRightIcon"
       >
         <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class smart-hairline--bottom"
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
           style="z-index:1;padding-top:20px; "
         >
           <wx-view
@@ -294,7 +294,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click-right-icon="onClickRightIcon"
       >
         <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class smart-hairline--bottom"
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
           style="z-index:1;padding-top:20px; "
         >
           <wx-view
@@ -389,7 +389,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click-title="onClickTitle"
       >
         <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class smart-hairline--bottom"
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
           style="z-index:1;padding-top:20px; "
         >
           <wx-view
@@ -466,7 +466,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click-right="onClickRight"
       >
         <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class smart-hairline--bottom"
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
           style="z-index:1;padding-top:20px; "
         >
           <wx-view
