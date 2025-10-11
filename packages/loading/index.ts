@@ -4,7 +4,7 @@ SmartComponent({
   props: {
     color: {
       type: String,
-      value: '#1989FA'
+      value: 'var(--loading-text-color, #1989FA)',
     },
     vertical: Boolean,
     type: {
