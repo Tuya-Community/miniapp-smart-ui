@@ -156,19 +156,23 @@ function wrapperItemStyle(data) {
 
 function wrapperItemClass(data) {
   var state = getCurrState(data.instanceId);
-  var optionsVIndexList = state && state.optionsVIndexList ? state.optionsVIndexList : data.optionsVIndexList;
+  var optionsVIndexList = state && state.moving ? state.optionsVIndexList : data.optionsVIndexList;
   var animationIndex = data.animationIndex;
+  var intAnimationIndex = Math.round(animationIndex);
+  var activeIndex = (intAnimationIndex + 1) % data.options.length - 1;
+  if(activeIndex < 0) {
+    activeIndex += data.options.length;
+  }
   var optionIndex = optionsVIndexList[data.index];
   var option = data.options[optionIndex];
-  var isActive = typeof optionIndex === 'number' && Math.abs(optionIndex - animationIndex) < 0.5;
+  var isActive = typeof optionIndex === 'number' && activeIndex === optionIndex;
   var activeClass = 'active-class';
   return wxUtils.bem('picker-column__item', { disabled: wxUtils.isObj(option) && option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
 }
 
-
 function wrapperItemTextStyle(data) {
   var state = getCurrState(data.instanceId);
-  var optionsVIndexList = state && state.optionsVIndexList ? state.optionsVIndexList : data.optionsVIndexList;
+  var optionsVIndexList = state && state.moving ? state.optionsVIndexList : data.optionsVIndexList;
   var animationIndex = data.animationIndex;
   var intAnimationIndex = Math.round(animationIndex);
   var activeIndex = (intAnimationIndex + 1) % data.options.length - 1;
@@ -240,7 +244,6 @@ function updateListView(instanceId, ownerInstance) {
   var length = state.options.length || 1;
   var animationIndex = state.animationIndex || 0;
   var newAnimationIndex = getNewAnimationIndex(animationIndex, activeIndex, length, state.loop);
-  console.log(newAnimationIndex, '--newAnimationIndex')
   var isSame = newAnimationIndex === animationIndex;
   updateState(instanceId, 'animationIndex', newAnimationIndex)
   updateVisibleOptions(state.animationIndex, instanceId);
@@ -564,6 +567,7 @@ function tapItem(instanceId) {
     var offsetCount = Math.abs(currTargetActiveIndex - state.animationIndex);
     updateVisibleOptions(currTargetActiveIndex, instanceId);
     updateState(instanceId, 'animationIndex', currTargetActiveIndex);
+    updateState(instanceId, 'moving', true);
     updateWrapperStyle(instanceId, ownerInstance, {
       transition: 'transform ' + 300 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
     });
@@ -571,6 +575,7 @@ function tapItem(instanceId) {
     ownerInstance.callMethod('vibrateShort', offsetCount, 200);
     var tapTimer = setTimeout(function() {
       ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+      updateState(instanceId, 'moving', false);
       updateState(instanceId, 'tapTimer', null);
       setTimeout(function() {
         ownerInstance.callMethod('animationEnd');

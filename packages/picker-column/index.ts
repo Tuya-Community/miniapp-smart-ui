@@ -31,10 +31,7 @@ SmartComponent({
       observer(value) {
         if (!this.data.isInit) return;
         this.updateUint(value);
-        const optionsVIndexList = this.getVisibleOptions(this.data.animationIndex);
-        this.setData({
-          optionsVIndexList: optionsVIndexList,
-        });
+        this.checkIndexUpdateList();
       },
     },
     defaultIndex: {
