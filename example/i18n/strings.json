@@ -203,7 +203,7 @@
     "customFormat": "Custom format",
     "day": "Day",
     "hour": "Hour",
-    "minute": "Minute",
+    "minute": "min",
     "second": "Second",
     "millisecondRendering": "Millisecond Rendering",
     "customStyle": "Custom Style",
