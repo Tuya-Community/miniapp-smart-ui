@@ -3,8 +3,6 @@ var style = require('../wxs/style.wxs');
 var addUnit = require('../wxs/add-unit.wxs');
 var wxUtils = require('../wxs/utils.wxs');
 
-var startPo = { y: 0 }; // 记录当前拖动元素的开始的位置
-
 function setStyle(ownerInstance, style, selector) {
   var dom = wxUtils.queryComponent(ownerInstance, selector);
   if (!dom) {
@@ -256,7 +254,7 @@ function touchMove(instanceId) {
   return function(event, ownerInstance) {
     var state = getCurrState(instanceId);
     var pageY = event.touches[0].pageY;
-    var offsetY = pageY - startPo.y;
+    var offsetY = pageY - state.startY;
     var offsetting = -state.startOffset + offsetY;
     var newOffsetList = state.preOffsetList.slice();
     newOffsetList.push(offsetting);
@@ -307,7 +305,7 @@ function touchStart(instanceId) {
       updateState(instanceId, 'tapTimer', null);
     }
     var pageY = event.touches[0].pageY;
-    startPo.y = pageY;
+    updateState(instanceId, 'startY', pageY);
     updateState(instanceId, 'moving', false);
     updateState(instanceId, 'startOffset', state.animationIndex * state.itemHeight);
     updateState(instanceId, 'preOffsetting', state.animationIndex * state.itemHeight);
