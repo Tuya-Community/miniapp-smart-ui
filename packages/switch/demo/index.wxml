@@ -79,4 +79,13 @@
   </smart-cell-group>
 </demo-block>
 
+<demo-block title="{{I18n.t('switchLabel')}}" padding>
+  <smart-switch
+    checked="{{ checked }}"
+    bind:change="onChange"
+    activeText="{{I18n.t('switchLabel_on')}}"
+    inactiveText="{{I18n.t('switchLabel_off')}}"
+  />   
+</demo-block>
+
 <smart-dialog id="smart-dialog" />

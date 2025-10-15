@@ -131,6 +131,15 @@ The `stop-click-propagation` attribute can prevent bubbling.
 </smart-cell-group>
 ```
 
+### Support copy
+
+```html
+<smart-switch
+  activeText="ON"
+  inactiveText="OFF"
+/>
+```
+
 ## API
 
 ### Props
@@ -181,5 +190,5 @@ The component provides the following CSS variables for custom styling. See [Conf
 | --switch-node-on-background-color `v2.4.0` | _var(--switch-node-background-color, #fff)_ | Background color of the sphere when turned on |
 | --switch-padding `v2.5.0` | _0.08em_ | Internal padding |
 | --switch-label-font-size | `12px` | Font Size |
-| --switch-label-active-color | `#fff` | Text color on open |
-| --switch-label-inactive-color | `#fff` | Text color when turned off |
+| --switch-label-active-color | `var(--app-B3, #ffffff)` | Text color on open |
+| --switch-label-inactive-color | `var(--app-B3, #ffffff)` | Text color when turned off |

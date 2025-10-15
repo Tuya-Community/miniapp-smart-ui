@@ -131,6 +131,15 @@ Page({
 </smart-cell-group>
 ```
 
+### 支持文案
+
+```html
+<smart-switch
+  activeText="开"
+  inactiveText="关"
+/>
+```
+
 ## API
 
 ### Props
@@ -181,5 +190,5 @@ Page({
 | --switch-node-on-background-color `v2.4.0` | _var(--switch-node-background-color, #fff)_ | 开启时圆球的背景色 |
 | --switch-padding `v2.5.0` | _0.08em_ | 内部边距 |
 | --switch-label-font-size | `12px` | 文字大小 |
-| --switch-label-active-color | `#fff` | 开时文字颜色 |
-| --switch-label-inactive-color | `#fff` | 关时文字颜色 |
+| --switch-label-active-color | `var(--app-B3, #ffffff)` | 开时文字颜色 |
+| --switch-label-inactive-color | `var(--app-B3, #ffffff)` | 关时文字颜色 |
