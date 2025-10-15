@@ -10,6 +10,20 @@ exports[`switch should allow to custom active-value and inactive-value 1`] = `
     class="smart-switch__center"
   >
     <wx-view
+      class="smart-switch__label"
+    >
+      <wx-view
+        class="smart-switch__label_active"
+      >
+        
+      </wx-view>
+      <wx-view
+        class="smart-switch__label_inactive"
+      >
+        
+      </wx-view>
+    </wx-view>
+    <wx-view
       class="smart-switch__node node-class"
     />
   </wx-view>
@@ -25,6 +39,20 @@ exports[`switch should allow to custom active-value and inactive-value 2`] = `
   <wx-view
     class="smart-switch__center"
   >
+    <wx-view
+      class="smart-switch__label"
+    >
+      <wx-view
+        class="smart-switch__label_active"
+      >
+        
+      </wx-view>
+      <wx-view
+        class="smart-switch__label_inactive"
+      >
+        
+      </wx-view>
+    </wx-view>
     <wx-view
       class="smart-switch__node node-class"
     />
