@@ -1,3 +1,4 @@
+<view class="contain">
 <demo-block title="{{I18n.t('loadingType')}}" padding>
   <smart-loading custom-class="demo-loading" />
   <smart-loading custom-class="demo-loading" type="spinner" />
@@ -17,3 +18,5 @@
   <smart-loading type="spinner" custom-class="demo-loading" size="24px" vertical>{{I18n.t('loading')}}...</smart-loading>
 
 </demo-block>
+
+</view>
