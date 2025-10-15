@@ -4,7 +4,7 @@
     show="{{ currentShow }}"
     z-index="{{ zIndex }}"
     bind:click="onClose"
-    transition="{{ transition }}"
+    duration="{{ 1 }}"
     close-on-click-overlay
     bind:close="onClose"
     z-index="{{zIndex}}"
