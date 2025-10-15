@@ -10,6 +10,25 @@
   </view>
 </demo-block>
 
+
+<demo-block title="{{I18n.t('switchLabel')}}" padding>
+  <view class="switch_label">
+    <smart-switch
+      checked="{{ checked }}"
+      bind:change="onChange"
+      activeText="{{I18n.t('switchLabel_on')}}"
+      inactiveText="{{I18n.t('switchLabel_off')}}"
+    />   
+    <view style="margin-left: 16px;display:inline;">
+      <smart-switch
+        checked="{{ !checked }}"
+        activeText="{{I18n.t('switchLabel_on')}}"
+        inactiveText="{{I18n.t('switchLabel_off')}}"
+      />   
+    </view>
+  </view>
+</demo-block>
+
 <demo-block title="{{I18n.t('disabledState')}}" padding>
   <smart-switch
     checked="{{ checked }}"
@@ -77,15 +96,6 @@
       />    
     </smart-cell>
   </smart-cell-group>
-</demo-block>
-
-<demo-block title="{{I18n.t('switchLabel')}}" padding>
-  <smart-switch
-    checked="{{ checked }}"
-    bind:change="onChange"
-    activeText="{{I18n.t('switchLabel_on')}}"
-    inactiveText="{{I18n.t('switchLabel_off')}}"
-  />   
 </demo-block>
 
 <smart-dialog id="smart-dialog" />
