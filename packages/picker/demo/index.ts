@@ -54,6 +54,11 @@ SmartComponent({
         order: 1
       },
     ],
+    column7: [
+      {
+        values: new Array(100).fill(1).map((x, i) => i),
+      },
+    ]
   },
 
   methods: {

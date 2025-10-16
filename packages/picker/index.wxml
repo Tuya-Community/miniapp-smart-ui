@@ -9,7 +9,7 @@
 
   <view
     class="smart-picker__columns"
-    style="{{ computed.columnsStyle({ itemHeight, visibleItemCount }) }}"
+    style="{{ computed.columnsStyle({ itemHeight, visibleItemCount, fullHeight }) }}"
     catch:touchmove="noop"
   >
     <picker-column
@@ -22,14 +22,15 @@
       value-key="{{ valueKey }}"
       style="order: {{ item.order }}; {{ computed.style(item.style) }}"
       active-style="{{ activeStyle }}"
-      font-style="{{computed.style(item.fontStyle)}}"
+      font-style="{{fontStyle ? fontStyle + ';' + computed.style(item.fontStyle): computed.style(item.fontStyle)}}"
       options="{{ item.values }}"
       disabled="{{ item.disabled || false }}"
       unit="{{ item.unit || unit }}"
       changeAnimation="{{ changeAnimation }}"
       default-index="{{ item.defaultIndex || defaultIndex }}"
-      active-index="{{ item.activeIndex || activeIndex }}"
+      active-index="{{ item.activeIndex === null ? activeIndex : item.activeIndex }}"
       item-height="{{ itemHeight }}"
+      loop="{{ loop || item.loop || false }}"
       visible-item-count="{{ visibleItemCount }}"
       active-class="active-class"
       bind:change="onChange"

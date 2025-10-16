@@ -203,7 +203,7 @@
     "customFormat": "Custom format",
     "day": "Day",
     "hour": "Hour",
-    "minute": "Minute",
+    "minute": "min",
     "second": "Second",
     "millisecondRendering": "Millisecond Rendering",
     "customStyle": "Custom Style",
@@ -527,6 +527,7 @@
     "countdown": "Countdown",
     "yiwu": "Yiwu",
     "jiangsu": "Jiangsu",
+    "more3d": "More 3D",
     "warningPrompt": "Warning Prompt",
     "listUsage": "List usage",
     "suzhou": "Suzhou",
@@ -561,7 +562,8 @@
     "popUpOnTheRightSide": "Right",
     "popOutFromTheTop": "Top",
     "svgPath": "Svg Path",
-    "upsideDown": "Upside Down"
+    "upsideDown": "Upside Down",
+    "loop": "Loop List"
   },
   "zh": {
     "calendarSelectDay": "选择某天，当前选中的日期是",
@@ -1091,6 +1093,7 @@
     "countdown": "倒计时",
     "yiwu": "义乌",
     "jiangsu": "江苏",
+    "more3d": "更多3D",
     "warningPrompt": "警告提示",
     "suzhou": "苏州",
     "customWidth": "自定义宽度",
@@ -1126,6 +1129,7 @@
     "popOutFromTheTop": "上侧弹出",
     "popUpOnTheRightSide": "右侧弹出",
     "svgPath": "Svg Path",
-    "upsideDown": "上下颠倒"
+    "upsideDown": "上下颠倒",
+    "loop": "循环列表"
   }
 }

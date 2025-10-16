@@ -22,8 +22,15 @@ Import the component in `app.json` or `index.json`. For a detailed introduction,
 
 ### Basic Usage
 
+In single column mode, the `active-index` attribute can control the selected item of the picker; `change-animation` can enable the transition animation effect for the selected value change of the picker.
+
 ```html
-<smart-picker columns="{{ columns }}" bind:change="onChange" />
+<smart-picker 
+  columns="{{ columns }}"
+  active-index="{{3}}"
+  change-animation
+  bind:change="onChange" 
+/>
 ```
 
 ```javascript
@@ -42,6 +49,8 @@ Page({
 ```
 
 ### Multi-column Usage
+
+`disabled` `v2.3.5` attribute can disable this column; `style` attribute can set the style of this column; `fontStyle` `v2.3.5` attribute can set the font style of this column; `activeIndex` can set the selected item of the column.
 
 ```html
 <smart-picker active-style="color: #000;" columns="{{ columns }}" bind:change="onChange" />
@@ -208,6 +217,62 @@ Page({
 });
 ```
 
+### Loop List `2.7.0`
+
+`loop` can enable loop rendering of lists, which will be connected end-to-end and loop infinitely
+
+```html
+    
+<smart-picker loop columns="{{ columns }}" bind:change="onChange" />
+```
+
+```javascript
+import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+
+Page({
+  data: {
+    columns: [
+      {
+        values: new Array(100).fill(1).map((x, i) => i),
+      },
+    ],
+  },
+
+  onChange(event) {
+    const { picker, value, index } = event.detail;
+    Toast(`Current value: ${value}, current index: ${index}`);
+  },
+});
+```
+
+### More 3D `2.7.0`
+
+`full-height` property allows for more space to display and see more 3D-flipped items; of course, you can also override the component's height style to customize the visible space you need.
+
+```html
+    
+<smart-picker loop full-height columns="{{ columns }}" bind:change="onChange" />
+```
+
+```javascript
+import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+
+Page({
+  data: {
+    columns: [
+      {
+        values: new Array(100).fill(1).map((x, i) => i),
+      },
+    ],
+  },
+
+  onChange(event) {
+    const { picker, value, index } = event.detail;
+    Toast(`Current value: ${value}, current index: ${index}`);
+  },
+});
+```
+
 ## API
 
 ### Props
@@ -226,10 +291,13 @@ Page({
 | toolbar-position   | Top bar position, optional value is `bottom`                              | _string_  | `top`   |
 | unit               | Default unit for single-column picker,<br>refer to Columns configuration for multi-column picker | _number_  | ''      |
 | value-key          | Key corresponding to text in option object                                | _string_  | `text`  |
-| visible-item-count | Number of visible options  | _number_  | `5`     |
+| visible-item-count | Number of visible options  | _3 \| 5 \| 7 \| 9_  | `5`     |
 | active-style `v2.0.0`  | Style in selected state         | _string_  | `''`    |
 | change-animation `v2.2.0`  | Whether the component requires a transition animation when the value selected by data-driven changes (excluding the animation of finger interactive scrolling). | _boolean_  | `false`  |
 | animation-time `v2.3.7`  | Transition animation and the delay time for selection callback (Unit: ms)           | _number_  | `800` `v2.3.7` `300` `v2.6.0`     |
+| loop `v2.7.0`  | Loop List           | _boolean_  | `false`    |
+| font-style `v2.7.0`  | Font style has lower priority than within columns           | _string_  | -    |
+| full-height `v2.7.0`  | Does the height directly equal `visibleItemCount * itemHeight`, the component will default to reduce the outer visible height by `* 0.9`.     | _boolean_  | `false`   |
 
 ### Events
 

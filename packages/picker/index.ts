@@ -26,13 +26,16 @@ SmartComponent({
       type: String,
       value: 'top',
     },
+    fullHeight: {
+      type: Boolean,
+      value: false,
+    },
     defaultIndex: {
       type: Number,
       value: 0,
     },
     activeIndex: {
-      type: Number,
-      value: -1,
+      type: null,
     },
     unit: {
       type: String,
@@ -59,6 +62,12 @@ SmartComponent({
     Object.defineProperty(this, 'children', {
       get: () => this.selectAllComponents('.smart-picker__column') || [],
     });
+  },
+
+  mounted() {
+    if (![3, 5, 7, 9].includes(this.data.visibleItemCount)) {
+      console.error('visibleItemCount 的值必须为 3, 5, 7, 9');
+    }
   },
 
   methods: {
@@ -128,7 +137,7 @@ SmartComponent({
 
     // get column option index by column index
     getColumnIndex(columnIndex: number) {
-      return (this.getColumn(columnIndex) || {}).data.currentIndex;
+      return (this.getColumn(columnIndex) || {}).data.activeIndex;
     },
 
     // set column option index by column index
@@ -183,7 +192,9 @@ SmartComponent({
 
     // get indexes of all columns
     getIndexes() {
-      return this.children.map(child => child.data.currentIndex);
+      return this.children.map(child =>
+        child.data.activeIndex === null ? child.data.defaultIndex : child.data.activeIndex
+      );
     },
 
     // set indexes of all columns
