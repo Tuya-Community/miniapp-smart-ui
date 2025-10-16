@@ -11,6 +11,13 @@ exports[`switch should allow to custom active-value and inactive-value 1`] = `
   >
     <wx-view
       class="smart-switch__label_active"
+      style="opacity: 1"
+    >
+      
+    </wx-view>
+    <wx-view
+      class="smart-switch__label_inactive"
+      style="opacity: 0"
     >
       
     </wx-view>
@@ -36,6 +43,13 @@ exports[`switch should allow to custom active-value and inactive-value 2`] = `
   >
     <wx-view
       class="smart-switch__label_active"
+      style="opacity: 1"
+    >
+      
+    </wx-view>
+    <wx-view
+      class="smart-switch__label_inactive"
+      style="opacity: 0"
     >
       
     </wx-view>
