@@ -247,7 +247,7 @@ Page({
 
 ```html
     
-<smart-picker loop fullHeight columns="{{ columns }}" bind:change="onChange" />
+<smart-picker loop full-height columns="{{ columns }}" bind:change="onChange" />
 ```
 
 ```javascript
