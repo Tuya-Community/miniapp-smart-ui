@@ -137,7 +137,7 @@ SmartComponent({
 
     // get column option index by column index
     getColumnIndex(columnIndex: number) {
-      return (this.getColumn(columnIndex) || {}).data.activeIndex;
+      return (this.getColumn(columnIndex) || {}).data.currentIndex;
     },
 
     // set column option index by column index
@@ -192,9 +192,7 @@ SmartComponent({
 
     // get indexes of all columns
     getIndexes() {
-      return this.children.map(child =>
-        child.data.activeIndex === null ? child.data.defaultIndex : child.data.activeIndex
-      );
+      return this.children.map(child => child.data.currentIndex);
     },
 
     // set indexes of all columns

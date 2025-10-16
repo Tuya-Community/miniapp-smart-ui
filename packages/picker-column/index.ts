@@ -31,7 +31,8 @@ SmartComponent({
       observer(value) {
         if (!this.data.isInit) return;
         this.updateUint(value);
-        this.checkIndexUpdateList();
+        this.updateCurrentIndex(this.data.currentIndex);
+        this.updateVisibleOptions();
       },
     },
     defaultIndex: {
@@ -48,9 +49,10 @@ SmartComponent({
     },
     activeIndex: {
       type: null,
-      observer() {
+      observer(activeIndex) {
         if (!this.data.isInit) return;
-        this.checkIndexUpdateList();
+        this.updateCurrentIndex(activeIndex);
+        this.updateVisibleOptions();
       },
     },
     unit: {
@@ -70,14 +72,8 @@ SmartComponent({
     isInit: false,
     maxText: '',
     optionsVIndexList: [] as any[], // 渲染的 options index 列表
-    offsetActiveIndex: 0,
-    endTimer: null as any,
-    offsetList: [] as number[],
-    moving: false,
-    movingDirection: 'down',
-    startY: 0,
-    offsetting: 0,
     animationIndex: 0,
+    currentIndex: 0,
     isDestroy: false,
   },
 
@@ -86,7 +82,10 @@ SmartComponent({
       instanceId: getId(),
     });
     this.updateUint(this.data.options);
-    this.checkIndexUpdateList();
+    const { activeIndex, defaultIndex } = this.data;
+    const currIndex = activeIndex !== null ? activeIndex : defaultIndex;
+    this.updateCurrentIndex(currIndex);
+    this.updateVisibleOptions();
     this.setData({
       isInit: true,
     });
@@ -98,39 +97,38 @@ SmartComponent({
   },
 
   methods: {
-    checkIndexUpdateList() {
-      const { activeIndex, defaultIndex } = this.data;
+    updateCurrentIndex(currIndex) {
       const count = this.data.options.length;
-      const currIndex = activeIndex !== null ? activeIndex : defaultIndex;
       let animationIndex = this.getAnimationIndex(currIndex);
       animationIndex = this.adjustIndex(animationIndex);
       let currActiveIndex = this.data.loop ? ((animationIndex + 1) % count) - 1 : animationIndex;
       if (currActiveIndex < 0) {
         currActiveIndex += count;
       }
-      const optionsVIndexList = this.getVisibleOptions(animationIndex);
       this.setData({
-        activeIndex: currActiveIndex,
+        currentIndex: currActiveIndex,
         animationIndex: animationIndex,
+      });
+    },
+    updateVisibleOptions() {
+      const optionsVIndexList = this.getVisibleOptions(this.data.animationIndex);
+      this.setData({
         optionsVIndexList: optionsVIndexList,
       });
-      // if (currActiveIndex !== activeIndex) {
-      //   this.$emit('change', currActiveIndex);
-      // }
     },
-    getAnimationIndex(activeIndex) {
+    getAnimationIndex(currentIndex) {
       const { animationIndex } = this.data;
       const length = this.data.options.length || 1;
       if (this.data.loop) {
         const newAnimationIndex = this.getNewAnimationIndex(
           animationIndex,
-          activeIndex,
+          currentIndex,
           length,
           this.data.loop
         );
         return newAnimationIndex;
       }
-      return activeIndex;
+      return currentIndex;
     },
     getCount() {
       return this.data.options.length;
@@ -239,12 +237,12 @@ SmartComponent({
       }
       return newArr;
     },
-    getNewAnimationIndex(animationIndex, activeIndex, length, loop) {
-      const curOptionsNewIndex = Math.floor((animationIndex + 1) / length) * length + activeIndex;
+    getNewAnimationIndex(animationIndex, currentIndex, length, loop) {
+      const curOptionsNewIndex = Math.floor((animationIndex + 1) / length) * length + currentIndex;
       const preOptionsNewIndex = curOptionsNewIndex - length;
       const afterOptionsNewIndex = curOptionsNewIndex + length;
       const newAnimationIndex = !loop
-        ? activeIndex
+        ? currentIndex
         : Math.abs(preOptionsNewIndex - animationIndex) >
           Math.abs(curOptionsNewIndex - animationIndex)
         ? Math.abs(curOptionsNewIndex - animationIndex) >
@@ -276,11 +274,11 @@ SmartComponent({
         }
         return 0;
       }
-      const activeIndex = range(index, 0, count);
-      for (let i = activeIndex; i < count; i++) {
+      const currentIndex = range(index, 0, count);
+      for (let i = currentIndex; i < count; i++) {
         if (!this.isDisabled(data.options[i]) && data.options[i] !== undefined) return i;
       }
-      for (let i = activeIndex - 1; i >= 0; i--) {
+      for (let i = currentIndex - 1; i >= 0; i--) {
         if (!this.isDisabled(data.options[i]) && data.options[i] !== undefined) return i;
       }
       return 0;
@@ -306,31 +304,31 @@ SmartComponent({
     },
 
     setIndex(index: number) {
-      let activeIndex = ((index + 1) % this.data.options.length) - 1;
-      if (activeIndex < 0) {
-        activeIndex += this.data.options.length;
+      let currentIndex = ((index + 1) % this.data.options.length) - 1;
+      if (currentIndex < 0) {
+        currentIndex += this.data.options.length;
       }
       this.setData({
-        activeIndex: activeIndex,
+        currentIndex,
         animationIndex: index,
       });
     },
 
     getValue() {
       const { data } = this;
-      return isObj(data.options[data.activeIndex])
-        ? data.options[data.activeIndex][data.valueKey]
-        : data.options[data.activeIndex];
+      return isObj(data.options[data.currentIndex])
+        ? data.options[data.currentIndex][data.valueKey]
+        : data.options[data.currentIndex];
     },
 
     activeIndexChange(index: number) {
-      let activeIndex = ((index + 1) % this.data.options.length) - 1;
-      if (activeIndex < 0) {
-        activeIndex += this.data.options.length;
+      let currentIndex = ((index + 1) % this.data.options.length) - 1;
+      if (currentIndex < 0) {
+        currentIndex += this.data.options.length;
       }
-      const isSame = activeIndex === this.data.activeIndex;
+      const isSame = currentIndex === this.data.activeIndex;
       this.setData({
-        activeIndex: activeIndex,
+        currentIndex,
         animationIndex: index,
       });
       !isSame && this.$emit('change', index);
