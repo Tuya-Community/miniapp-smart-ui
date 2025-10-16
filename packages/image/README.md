@@ -113,7 +113,7 @@ category: 展示
 | radius                 | 圆角大小，默认单位为`px`             | _string \| number_ | `0`     |
 | round                  | 是否显示为圆形                       | _boolean_          | `false` |
 | show-error             | 是否展示图片加载失败提示             | _boolean_          | `true`  |
-| show-loading           | 是否展示图片加载中提示               | _boolean_          | `true`  |
+| show-loading           | 是否展示图片加载中提示               | _boolean_          | `true` `v2.0.0` `false` `v2.7.0`  |
 | show-menu-by-longpress | 是否开启长按图片显示识别小程序码菜单 | _boolean_          | `false` |
 | src                    | 图片链接                             | _string_           | -       |
 | use-error-slot         | 是否使用 error 插槽                  | _boolean_          | `false` |

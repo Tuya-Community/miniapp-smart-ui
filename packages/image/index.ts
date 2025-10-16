@@ -39,7 +39,7 @@ SmartComponent({
     },
     showLoading: {
       type: Boolean,
-      value: true,
+      value: false,
     },
     tintColor: {
       type: String,
