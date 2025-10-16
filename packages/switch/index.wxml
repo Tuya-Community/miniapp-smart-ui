@@ -7,11 +7,11 @@
     style="{{ computed.rootStyle({ size, checked, activeColor, inactiveColor, activeValue }) }}"
     catch:tap="onClick"
   >
+    <view class="smart-switch__label">
+      <view wx:if="{{checked}}" class="smart-switch__label_active">{{ activeText }}</view>
+      <view wx:if="{{!checked}}" class="smart-switch__label_inactive">{{ inactiveText }}</view>
+    </view>
     <view class="smart-switch__center">
-      <view class="smart-switch__label">
-        <view class="smart-switch__label_active">{{ activeText }}</view>
-        <view class="smart-switch__label_inactive">{{ inactiveText }}</view>
-      </view>
       <view class="smart-switch__node node-class">
         <smart-loading
           wx:if="{{ loading }}"
@@ -28,11 +28,11 @@
     style="{{ computed.rootStyle({ size, checked, activeColor, inactiveColor, activeValue }) }}"
     bind:tap="onClick"
   >
+    <view class="smart-switch__label">
+      <view wx:if="{{checked}}" class="smart-switch__label_active">{{ activeText }}</view>
+      <view wx:if="{{!checked}}" class="smart-switch__label_inactive">{{ inactiveText }}</view>
+    </view>
     <view class="smart-switch__center">
-      <view class="smart-switch__label">
-        <view class="smart-switch__label_active">{{ activeText }}</view>
-        <view class="smart-switch__label_inactive">{{ inactiveText }}</view>
-      </view>
       <view class="smart-switch__node node-class">
         <smart-loading
           wx:if="{{ loading }}"
