@@ -64,7 +64,7 @@
 </demo-block>
 
 
-<demo-block title="{{I18n.t('calendarSelectYear') + ': ' + computed.formatFullDate(curYearDate)}}">
+<demo-block title="{{I18n.t('calendarSelect_Year') + ': ' + computed.formatFullDate(curYearDate)}}">
   <smart-calendar
     title="{{I18n.t('calendar')}}"
     type="year"
