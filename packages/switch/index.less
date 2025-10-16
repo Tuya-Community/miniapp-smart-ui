@@ -1,6 +1,6 @@
 @import '../common/style/var.less';
 
-:host{
+:host {
   display: inline-flex;
 }
 
@@ -34,17 +34,28 @@
     align-items: center;
     justify-content: space-between;
     font-size: var(--switch-label-font-size, @switch-label-font-size);
+    padding: var(--switch-border, var(--switch-padding, @switch-padding));
 
     &_active {
       position: absolute;
-      left: 25%;
-      transform: translateX(-50%);
+      left: 0;
+      width: calc(
+        var(--switch-width, @switch-width) -
+          var(--switch-border, var(--switch-padding, @switch-padding)) * 2 -
+          var(--switch-node-size, @switch-node-size) * 2
+      );
+      text-align: center;
       color: var(--switch-label-active-color, @switch-label-active-color);
     }
     &_inactive {
       position: absolute;
-      right: 25%;
-      transform: translateX(50%);
+      right: 0;
+      width: calc(
+        var(--switch-width, @switch-width) -
+          var(--switch-border, var(--switch-padding, @switch-padding)) * 2 -
+          var(--switch-node-size, @switch-node-size) * 2
+      );
+      text-align: center;
       color: var(--switch-label-inactive-color, @switch-label-inactive-color);
     }
   }

@@ -8,8 +8,8 @@
     catch:tap="onClick"
   >
     <view class="smart-switch__label">
-      <view wx:if="{{checked}}" class="smart-switch__label_active">{{ activeText }}</view>
-      <view wx:if="{{!checked}}" class="smart-switch__label_inactive">{{ inactiveText }}</view>
+      <view style="opacity: {{checked ? '1' : '0'}}" class="smart-switch__label_active">{{ activeText }}</view>
+      <view style="opacity: {{!checked ? '1' : '0'}}" class="smart-switch__label_inactive">{{ inactiveText }}</view>
     </view>
     <view class="smart-switch__center">
       <view class="smart-switch__node node-class">
@@ -29,8 +29,8 @@
     bind:tap="onClick"
   >
     <view class="smart-switch__label">
-      <view wx:if="{{checked}}" class="smart-switch__label_active">{{ activeText }}</view>
-      <view wx:if="{{!checked}}" class="smart-switch__label_inactive">{{ inactiveText }}</view>
+      <view style="opacity: {{checked ? '1' : '0'}}" class="smart-switch__label_active">{{ activeText }}</view>
+      <view style="opacity: {{!checked ? '1' : '0'}}" class="smart-switch__label_inactive">{{ inactiveText }}</view>
     </view>
     <view class="smart-switch__center">
       <view class="smart-switch__node node-class">
