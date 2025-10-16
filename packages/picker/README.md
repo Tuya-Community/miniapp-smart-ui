@@ -22,9 +22,12 @@ category: 反馈
 
 ### 基础用法
 
+单列时 `active-index` 属性可以控制picker的选中项; `change-animation` 可以开启picker的选中值变化过度动画效果。
+
 ```html
 <smart-picker 
   columns="{{ columns }}"
+  active-index="{{3}}"
   change-animation
   bind:change="onChange" 
 />
@@ -47,8 +50,9 @@ Page({
 
 ### 多列用法
 
+`disabled` `v2.3.5` 属性可以禁用此列；`style` 属性可以设置此列的样式；`fontStyle` `v2.3.5` 属性可以设置此列的字体样式; `activeIndex` 可以设置列的选中项。
+
 ```html
-    
 <smart-picker active-style="color: #000;" columns="{{ columns }}" bind:change="onChange" />
 ```
 
@@ -243,7 +247,7 @@ Page({
 
 ### 更多3D `2.7.0`
 
-`fullHeight` 属性可以展示更多的空间，看到更多3D翻转的项；当然你也可以覆盖组件的高度样式，来自定义需要可视的空间
+`full-height` 属性可以展示更多的空间，看到更多3D翻转的项；当然你也可以覆盖组件的高度样式，来自定义需要可视的空间
 
 ```html
     

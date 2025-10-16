@@ -1,7 +1,7 @@
 <demo-block title="{{I18n.t('basicUsage')}}">
   <smart-picker
-    data-key="demo"
     active-index="{{ activeIndex }}"
+    change-animation
     columns="{{ column1 }}"
     bind:change="onChange1"
   />

@@ -7,7 +7,6 @@ exports[`should render demo and match snapshot 1`] = `
       class="custom-class demo-block smart-clearfix "
     >
       <smart-picker
-        data-key="demo"
         bind:change="onChange1"
       >
         <wx-view
@@ -40,11 +39,11 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
-                changeanimation="{{false}}"
+                changeanimation="{{true}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{0}}"
                 data-animationtime="{{300}}"
-                data-changeanimation="{{false}}"
+                data-changeanimation="{{true}}"
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"

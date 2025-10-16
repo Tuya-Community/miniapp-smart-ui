@@ -22,9 +22,12 @@ Import the component in `app.json` or `index.json`. For a detailed introduction,
 
 ### Basic Usage
 
+In single column mode, the `active-index` attribute can control the selected item of the picker; `change-animation` can enable the transition animation effect for the selected value change of the picker.
+
 ```html
 <smart-picker 
   columns="{{ columns }}"
+  active-index="{{3}}"
   change-animation
   bind:change="onChange" 
 />
@@ -46,6 +49,8 @@ Page({
 ```
 
 ### Multi-column Usage
+
+`disabled` `v2.3.5` attribute can disable this column; `style` attribute can set the style of this column; `fontStyle` `v2.3.5` attribute can set the font style of this column; `activeIndex` can set the selected item of the column.
 
 ```html
 <smart-picker active-style="color: #000;" columns="{{ columns }}" bind:change="onChange" />
@@ -242,7 +247,7 @@ Page({
 
 ### More 3D `2.7.0`
 
-`fullHeight` property allows for more space to display and see more 3D-flipped items; of course, you can also override the component's height style to customize the visible space you need.
+`full-height` property allows for more space to display and see more 3D-flipped items; of course, you can also override the component's height style to customize the visible space you need.
 
 ```html
     
