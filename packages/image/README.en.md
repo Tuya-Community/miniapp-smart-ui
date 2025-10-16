@@ -113,7 +113,7 @@ The `Image` component provides a default error prompt, with support for custom c
 | radius                 | Corner size, default unit is `px`       | _string \| number_ | `0`     |
 | round                  | Whether to display as circular          | _boolean_          | `false` |
 | show-error             | Whether to show image load failure prompt | _boolean_          | `true`  |
-| show-loading           | Whether to show image loading prompt    | _boolean_          | `true`  |
+| show-loading           | Whether to show image loading prompt    | _boolean_          | `true` `v2.0.0` `false` `v2.7.0`  |
 | show-menu-by-longpress | Whether to enable long press image to display recognition mini-program code menu | _boolean_          | `false` |
 | src                    | Image link                              | _string_           | -       |
 | use-error-slot         | Whether to use error slot               | _boolean_          | `false` |
