@@ -15,22 +15,6 @@ exports[`should render demo and match snapshot 1`] = `
           bind:tap="onClick"
         >
           <wx-view
-            class="smart-switch__label"
-          >
-            <wx-view
-              class="smart-switch__label_active"
-              style="opacity: 1"
-            >
-              
-            </wx-view>
-            <wx-view
-              class="smart-switch__label_inactive"
-              style="opacity: 0"
-            >
-              
-            </wx-view>
-          </wx-view>
-          <wx-view
             class="smart-switch__center"
           >
             <wx-view
@@ -48,22 +32,6 @@ exports[`should render demo and match snapshot 1`] = `
             style="font-size:30px"
             bind:tap="onClick"
           >
-            <wx-view
-              class="smart-switch__label"
-            >
-              <wx-view
-                class="smart-switch__label_active"
-                style="opacity: 0"
-              >
-                
-              </wx-view>
-              <wx-view
-                class="smart-switch__label_inactive"
-                style="opacity: 1"
-              >
-                
-              </wx-view>
-            </wx-view>
             <wx-view
               class="smart-switch__center"
             >
@@ -92,22 +60,6 @@ exports[`should render demo and match snapshot 1`] = `
             bind:tap="onClick"
           >
             <wx-view
-              class="smart-switch__label"
-            >
-              <wx-view
-                class="smart-switch__label_active"
-                style="opacity: 1"
-              >
-                
-              </wx-view>
-              <wx-view
-                class="smart-switch__label_inactive"
-                style="opacity: 0"
-              >
-                
-              </wx-view>
-            </wx-view>
-            <wx-view
               class="smart-switch__center"
             >
               <wx-view
@@ -125,22 +77,6 @@ exports[`should render demo and match snapshot 1`] = `
               style="font-size:30px"
               bind:tap="onClick"
             >
-              <wx-view
-                class="smart-switch__label"
-              >
-                <wx-view
-                  class="smart-switch__label_active"
-                  style="opacity: 0"
-                >
-                  
-                </wx-view>
-                <wx-view
-                  class="smart-switch__label_inactive"
-                  style="opacity: 1"
-                >
-                  
-                </wx-view>
-              </wx-view>
               <wx-view
                 class="smart-switch__center"
               >
@@ -165,22 +101,6 @@ exports[`should render demo and match snapshot 1`] = `
             bind:tap="onClick"
           >
             <wx-view
-              class="smart-switch__label"
-            >
-              <wx-view
-                class="smart-switch__label_active"
-                style="opacity: 1"
-              >
-                
-              </wx-view>
-              <wx-view
-                class="smart-switch__label_inactive"
-                style="opacity: 0"
-              >
-                
-              </wx-view>
-            </wx-view>
-            <wx-view
               class="smart-switch__center"
             >
               <wx-view
@@ -198,22 +118,6 @@ exports[`should render demo and match snapshot 1`] = `
               style="font-size:30px"
               bind:tap="onClick"
             >
-              <wx-view
-                class="smart-switch__label"
-              >
-                <wx-view
-                  class="smart-switch__label_active"
-                  style="opacity: 0"
-                >
-                  
-                </wx-view>
-                <wx-view
-                  class="smart-switch__label_inactive"
-                  style="opacity: 1"
-                >
-                  
-                </wx-view>
-              </wx-view>
               <wx-view
                 class="smart-switch__center"
               >
@@ -240,22 +144,6 @@ exports[`should render demo and match snapshot 1`] = `
           bind:tap="onClick"
         >
           <wx-view
-            class="smart-switch__label"
-          >
-            <wx-view
-              class="smart-switch__label_active"
-              style="opacity: 1"
-            >
-              
-            </wx-view>
-            <wx-view
-              class="smart-switch__label_inactive"
-              style="opacity: 0"
-            >
-              
-            </wx-view>
-          </wx-view>
-          <wx-view
             class="smart-switch__center"
           >
             <wx-view
@@ -278,22 +166,6 @@ exports[`should render demo and match snapshot 1`] = `
           style="font-size:30px"
           bind:tap="onClick"
         >
-          <wx-view
-            class="smart-switch__label"
-          >
-            <wx-view
-              class="smart-switch__label_active"
-              style="opacity: 1"
-            >
-              
-            </wx-view>
-            <wx-view
-              class="smart-switch__label_inactive"
-              style="opacity: 0"
-            >
-              
-            </wx-view>
-          </wx-view>
           <wx-view
             class="smart-switch__center"
           >
@@ -340,22 +212,6 @@ exports[`should render demo and match snapshot 1`] = `
           bind:tap="onClick"
         >
           <wx-view
-            class="smart-switch__label"
-          >
-            <wx-view
-              class="smart-switch__label_active"
-              style="opacity: 1"
-            >
-              
-            </wx-view>
-            <wx-view
-              class="smart-switch__label_inactive"
-              style="opacity: 0"
-            >
-              
-            </wx-view>
-          </wx-view>
-          <wx-view
             class="smart-switch__center"
           >
             <wx-view
@@ -401,22 +257,6 @@ exports[`should render demo and match snapshot 1`] = `
           bind:tap="onClick"
         >
           <wx-view
-            class="smart-switch__label"
-          >
-            <wx-view
-              class="smart-switch__label_active"
-              style="opacity: 1"
-            >
-              
-            </wx-view>
-            <wx-view
-              class="smart-switch__label_inactive"
-              style="opacity: 0"
-            >
-              
-            </wx-view>
-          </wx-view>
-          <wx-view
             class="smart-switch__center"
           >
             <wx-view
@@ -439,22 +279,6 @@ exports[`should render demo and match snapshot 1`] = `
           style="font-size:30px;background:linear-gradient(to right, #ff7e5f, #987AFF)"
           bind:tap="onClick"
         >
-          <wx-view
-            class="smart-switch__label"
-          >
-            <wx-view
-              class="smart-switch__label_active"
-              style="opacity: 1"
-            >
-              
-            </wx-view>
-            <wx-view
-              class="smart-switch__label_inactive"
-              style="opacity: 0"
-            >
-              
-            </wx-view>
-          </wx-view>
           <wx-view
             class="smart-switch__center"
           >
@@ -479,22 +303,6 @@ exports[`should render demo and match snapshot 1`] = `
           bind:tap="onClick"
         >
           <wx-view
-            class="smart-switch__label"
-          >
-            <wx-view
-              class="smart-switch__label_active"
-              style="opacity: 1"
-            >
-              
-            </wx-view>
-            <wx-view
-              class="smart-switch__label_inactive"
-              style="opacity: 0"
-            >
-              
-            </wx-view>
-          </wx-view>
-          <wx-view
             class="smart-switch__center"
           >
             <wx-view
@@ -517,22 +325,6 @@ exports[`should render demo and match snapshot 1`] = `
           style="font-size:30px"
           catch:tap="onClick"
         >
-          <wx-view
-            class="smart-switch__label"
-          >
-            <wx-view
-              class="smart-switch__label_active"
-              style="opacity: 1"
-            >
-              
-            </wx-view>
-            <wx-view
-              class="smart-switch__label_inactive"
-              style="opacity: 0"
-            >
-              
-            </wx-view>
-          </wx-view>
           <wx-view
             class="smart-switch__center"
           >
@@ -576,22 +368,6 @@ exports[`should render demo and match snapshot 1`] = `
                     style="font-size:30px"
                     bind:tap="onClick"
                   >
-                    <wx-view
-                      class="smart-switch__label"
-                    >
-                      <wx-view
-                        class="smart-switch__label_active"
-                        style="opacity: 1"
-                      >
-                        
-                      </wx-view>
-                      <wx-view
-                        class="smart-switch__label_inactive"
-                        style="opacity: 0"
-                      >
-                        
-                      </wx-view>
-                    </wx-view>
                     <wx-view
                       class="smart-switch__center"
                     >

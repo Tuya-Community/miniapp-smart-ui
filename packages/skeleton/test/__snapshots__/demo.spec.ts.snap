@@ -83,22 +83,6 @@ exports[`should render demo and match snapshot 1`] = `
           bind:tap="onClick"
         >
           <wx-view
-            class="smart-switch__label"
-          >
-            <wx-view
-              class="smart-switch__label_active"
-              style="opacity: 0"
-            >
-              
-            </wx-view>
-            <wx-view
-              class="smart-switch__label_inactive"
-              style="opacity: 1"
-            >
-              
-            </wx-view>
-          </wx-view>
-          <wx-view
             class="smart-switch__center"
           >
             <wx-view
