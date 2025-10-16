@@ -35,6 +35,8 @@ function updateState(instanceId, key, value) {
 
 function clearCurrState(instanceId) {
   delete state[instanceId]
+  delete preStateObj[instanceId]
+  delete Cache[instanceId]
 }
 
 function getCurrState(instanceId) {
@@ -153,8 +155,7 @@ function wrapperItemStyle(data) {
 }
 
 function wrapperItemClass(data) {
-  var state = getCurrState(data.instanceId);
-  var optionsVIndexList = state && state.moving ? state.optionsVIndexList : data.optionsVIndexList;
+  var optionsVIndexList = getVisibleOptions(data.animationIndex, data.instanceId) || data.optionsVIndexList;
   var animationIndex = data.animationIndex;
   var intAnimationIndex = Math.round(animationIndex);
   var activeIndex = (intAnimationIndex + 1) % data.options.length - 1;
@@ -169,8 +170,7 @@ function wrapperItemClass(data) {
 }
 
 function wrapperItemTextStyle(data) {
-  var state = getCurrState(data.instanceId);
-  var optionsVIndexList = state && state.moving ? state.optionsVIndexList : data.optionsVIndexList;
+  var optionsVIndexList = getVisibleOptions(data.animationIndex, data.instanceId) || data.optionsVIndexList;
   var animationIndex = data.animationIndex;
   var intAnimationIndex = Math.round(animationIndex);
   var activeIndex = (intAnimationIndex + 1) % data.options.length - 1;
@@ -250,6 +250,29 @@ function updateListView(instanceId, ownerInstance) {
   });
 }
 
+function touchStart(instanceId) {
+  return function(event) {
+    var state = getCurrState(instanceId);
+    if (state.endTimer) {
+      cancelAnimationFrame(state.endTimer);
+      clearTimeout(state.endTimer);
+      updateState(instanceId, 'endTimer', null);
+    } else {
+      updateState(instanceId, 'recentVelocity', 0);
+    }
+    if(state.tapTimer) {
+      clearTimeout(state.tapTimer);
+      updateState(instanceId, 'tapTimer', null);
+    }
+    var pageY = event.touches[0].pageY;
+    updateState(instanceId, 'startY', pageY);
+    updateState(instanceId, 'moving', false);
+    updateState(instanceId, 'startOffset', state.animationIndex * state.itemHeight);
+    updateState(instanceId, 'preOffsetting', state.animationIndex * state.itemHeight);
+    updateState(instanceId, 'preOffsetList', []);
+  }
+}
+
 function touchMove(instanceId) {
   return function(event, ownerInstance) {
     var state = getCurrState(instanceId);
@@ -289,30 +312,6 @@ function touchMove(instanceId) {
     updateWrapperStyle(instanceId, ownerInstance);
   }
 }
-
-function touchStart(instanceId) {
-  return function(event) {
-    var state = getCurrState(instanceId);
-    if (state.endTimer) {
-      cancelAnimationFrame(state.endTimer);
-      clearTimeout(state.endTimer);
-      updateState(instanceId, 'endTimer', null);
-    } else {
-      updateState(instanceId, 'recentVelocity', 0);
-    }
-    if(state.tapTimer) {
-      clearTimeout(state.tapTimer);
-      updateState(instanceId, 'tapTimer', null);
-    }
-    var pageY = event.touches[0].pageY;
-    updateState(instanceId, 'startY', pageY);
-    updateState(instanceId, 'moving', false);
-    updateState(instanceId, 'startOffset', state.animationIndex * state.itemHeight);
-    updateState(instanceId, 'preOffsetting', state.animationIndex * state.itemHeight);
-    updateState(instanceId, 'preOffsetList', []);
-  }
-}
-
 
 function touchEnd(instanceId) {
   return function(event, ownerInstance) {
@@ -447,11 +446,27 @@ function touchEnd(instanceId) {
   }
 }
 
-function updateVisibleOptions(currentIndex, instanceId) {
+var Cache = {}
+
+function getVisibleOptions(currentIndex, instanceId) {
   var state = getCurrState(instanceId);
+  if(!state) return
   var animationIndex = Math.round(
     currentIndex !== undefined ? currentIndex : state.animationIndex
   );
+  var newCheckData = {
+    visibleItemCount: state.visibleItemCount,
+    animationIndex: animationIndex,
+    loop: state.loop,
+    optionsLength: state.options.length,
+  }
+  if (!Cache[instanceId]) {
+    Cache[instanceId] = {}
+  }
+  if (JSON.stringify(newCheckData) === Cache[instanceId].check) {
+    return Cache[instanceId].result;
+  }
+  Cache[instanceId].check = JSON.stringify(newCheckData);
   var vOptionLength = state.visibleItemCount * 4 - 2;
   var rotateAngle = 360 / vOptionLength;
   var newArr = wxUtils.createArray(vOptionLength, '');
@@ -508,6 +523,13 @@ function updateVisibleOptions(currentIndex, instanceId) {
     var targetIndex = (centerIndex - halfLength + i + vOptionLength) % vOptionLength; // 确保索引在0-17范围内
     newArr[targetIndex] = newValueArr[i];
   }
+
+  Cache[instanceId].result = newArr;
+  return newArr
+}
+
+function updateVisibleOptions(currentIndex, instanceId) {
+  var newArr = getVisibleOptions(currentIndex, instanceId);
   updateState(instanceId, 'optionsVIndexList', newArr);
   return newArr
 }
@@ -565,7 +587,6 @@ function tapItem(instanceId) {
     var offsetCount = Math.abs(currTargetActiveIndex - state.animationIndex);
     updateVisibleOptions(currTargetActiveIndex, instanceId);
     updateState(instanceId, 'animationIndex', currTargetActiveIndex);
-    updateState(instanceId, 'moving', true);
     updateWrapperStyle(instanceId, ownerInstance, {
       transition: 'transform ' + 300 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
     });
@@ -573,7 +594,6 @@ function tapItem(instanceId) {
     ownerInstance.callMethod('vibrateShort', offsetCount, 200);
     var tapTimer = setTimeout(function() {
       ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
-      updateState(instanceId, 'moving', false);
       updateState(instanceId, 'tapTimer', null);
       setTimeout(function() {
         ownerInstance.callMethod('animationEnd');
