@@ -241,6 +241,34 @@ Page({
 });
 ```
 
+### 更多3D `2.7.0`
+
+`fullHeight` 属性可以展示更多的空间，看到更多3D翻转的项；当然你也可以覆盖组件的高度样式，来自定义需要可视的空间
+
+```html
+    
+<smart-picker loop fullHeight columns="{{ columns }}" bind:change="onChange" />
+```
+
+```javascript
+import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+
+Page({
+  data: {
+    columns: [
+      {
+        values: new Array(100).fill(1).map((x, i) => i),
+      },
+    ],
+  },
+
+  onChange(event) {
+    const { picker, value, index } = event.detail;
+    Toast(`当前值：${value}, 当前索引：${index}`);
+  },
+});
+```
+
 ## API
 
 ### Props
@@ -265,7 +293,7 @@ Page({
 | animation-time `v2.3.7`  | 过渡动画以及选择回调延迟的时间(单位ms)   | _number_  | `800` `v2.3.7` `300` `v2.6.0`    |
 | loop `v2.7.0`  | 循环列表           | _boolean_  | `false`    |
 | font-style `v2.7.0`  | 字体样式，优先级低于 columns 内的           | _string_  | -    |
-| full-height `v2.7.0`  | 是否高度直接等于 `visibleItemCount * itemHeight`, 组件默认会再 `* 0.9` 缩小最外层的高度     | _boolean_  | `false`   |
+| full-height `v2.7.0`  | 是否高度直接等于 `visibleItemCount * itemHeight`, 组件默认会再 `* 0.9` 缩小最外层可视的高度     | _boolean_  | `false`   |
 
 
 ### Events

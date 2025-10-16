@@ -69,4 +69,14 @@
   />
 </demo-block>
 
+
+<demo-block title="{{I18n.t('more3d')}}">
+  <smart-picker
+    loop
+    fullHeight
+    columns="{{ column7 }}"
+    bind:change="onChange1"
+  />
+</demo-block>
+
 <smart-toast id="smart-toast-picker" />

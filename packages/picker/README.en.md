@@ -240,6 +240,34 @@ Page({
 });
 ```
 
+### More 3D `2.7.0`
+
+`fullHeight` property allows for more space to display and see more 3D-flipped items; of course, you can also override the component's height style to customize the visible space you need.
+
+```html
+    
+<smart-picker loop fullHeight columns="{{ columns }}" bind:change="onChange" />
+```
+
+```javascript
+import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+
+Page({
+  data: {
+    columns: [
+      {
+        values: new Array(100).fill(1).map((x, i) => i),
+      },
+    ],
+  },
+
+  onChange(event) {
+    const { picker, value, index } = event.detail;
+    Toast(`Current value: ${value}, current index: ${index}`);
+  },
+});
+```
+
 ## API
 
 ### Props
@@ -264,7 +292,7 @@ Page({
 | animation-time `v2.3.7`  | Transition animation and the delay time for selection callback (Unit: ms)           | _number_  | `800` `v2.3.7` `300` `v2.6.0`     |
 | loop `v2.7.0`  | Loop List           | _boolean_  | `false`    |
 | font-style `v2.7.0`  | Font style has lower priority than within columns           | _string_  | -    |
-| full-height `v2.7.0`  | Is the height directly equal to `visibleItemCount * itemHeight`, or does the component default to further reducing the outermost height by multiplying it by 0.9     | _boolean_  | `false`   |
+| full-height `v2.7.0`  | Does the height directly equal `visibleItemCount * itemHeight`, the component will default to reduce the outer visible height by `* 0.9`.     | _boolean_  | `false`   |
 
 ### Events
 
