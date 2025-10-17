@@ -109,13 +109,14 @@ SmartComponent({
           }, 1000);
         });
         DialogInstance.input({
-        context: this,
-        title: 'Title',
-        value: this.data.inputValue,
-        cancelButtonText: 'Sub Action',
-        beforeClose,
-        confirmButtonText: I18n.t('confirm'),
-      })
+          context: this,
+          title: 'Title',
+          value: this.data.inputValue,
+          cancelButtonText: 'Sub Action',
+          beforeClose,
+          confirmButtonText: I18n.t('confirm'),
+          emptyDisabled: true,
+        })
         .then((res) => {
           console.log('=== onConfirm', res);
           const inputValue = res?.data?.inputValue;
