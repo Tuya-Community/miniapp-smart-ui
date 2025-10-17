@@ -3,11 +3,10 @@
     checked="{{ checked }}"
     bind:change="onChange"
   />
-  <view style="display:inline;margin-left: 16px;">
-    <smart-switch
-      checked="{{ !checked }}"
-    />
-  </view>
+  <smart-switch
+    checked="{{ !checked }}"
+    custom-class="demo-right"
+  />
 </demo-block>
 
 
@@ -18,27 +17,25 @@
       activeText="{{I18n.t('switchLabel_on')}}"
       inactiveText="{{I18n.t('switchLabel_off')}}"
     />   
-    <view style="display:inline;margin-left: 16px;">
-      <smart-switch
-        checked="{{ !checked }}"
-        activeText="{{I18n.t('switchLabel_on')}}"
-        inactiveText="{{I18n.t('switchLabel_off')}}"
-      /> 
-    </view>  
-  <view class="switch_label switch_label_2" style="margin-top: 16px;">
+    <smart-switch
+      checked="{{ !checked }}"
+      custom-class="demo-right"
+      activeText="{{I18n.t('switchLabel_on')}}"
+      inactiveText="{{I18n.t('switchLabel_off')}}"
+    /> 
+  <view class="switch_label" style="margin-top: 16px;">
     <smart-switch
       checked="{{ checked }}"
       bind:change="onChange"
       activeText="{{I18n.t('show')}}"
       inactiveText="{{I18n.t('hide')}}"
     />   
-    <view style="display:inline;margin-left: 16px;">
-      <smart-switch
-        checked="{{ !checked }}"
-        activeText="{{I18n.t('show')}}"
-        inactiveText="{{I18n.t('hide')}}"
-      /> 
-    </view>  
+    <smart-switch
+      custom-class="demo-right"
+      checked="{{ !checked }}"
+      activeText="{{I18n.t('show')}}"
+      inactiveText="{{I18n.t('hide')}}"
+    /> 
   </view>
 </demo-block>
 
