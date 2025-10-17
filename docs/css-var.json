@@ -1842,6 +1842,11 @@
     "value": "calc(100% - 98px - 16px)",
     "decs": ""
   },
+  "nav-bar-title-max-width": {
+    "name": "@nav-bar-title-max-width",
+    "value": "calc(100% - 98px - 16px)",
+    "decs": ""
+  },
   "nav-bar-height": {
     "name": "@nav-bar-height",
     "value": "46px",
