@@ -28,6 +28,7 @@ SmartComponent({
       type: String,
       value: 'default',
     },
+    emptyDisabled: Boolean,
     confirmButtonId: String,
     className: String,
     customStyle: String,

@@ -117,6 +117,10 @@
 
   &__confirm {
     font-weight: var(--dialog-confirm-font-weight, @dialog-confirm-font-weight);
+    &--disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
   }
 
   &__cancel {
