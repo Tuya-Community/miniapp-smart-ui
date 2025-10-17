@@ -131,13 +131,19 @@ Page({
 </smart-cell-group>
 ```
 
-### 支持文案
+### 开关文案 `v2.7.0`
 
 ```html
 <smart-switch
-  activeText="开"
-  inactiveText="关"
+  active-text="开"
+  inactive-text="关"
 />
+<view style="--switch-label-font-size: 10px;">
+  <smart-switch
+    active-text="显示"
+    inactive-text="隐藏"
+  />
+</view>
 ```
 
 ## API
@@ -156,6 +162,8 @@ Page({
 | name                            | 在表单内提交时的标识符 | _string_  | -         |
 | size                            | 开关尺寸               | _string_  | `30px`    |
 | stop-click-propagation `v1.0.2` | 是否阻止冒泡           | _boolean_ | `false`   |
+| active-text `v2.7.0` | 打开时的文案           | _string_ | -   |
+| inactive-text `v2.7.0` | 关闭时的文案           | _string_ | -   |
 
 ### Events
 

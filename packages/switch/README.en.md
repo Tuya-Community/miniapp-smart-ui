@@ -131,13 +131,19 @@ The `stop-click-propagation` attribute can prevent bubbling.
 </smart-cell-group>
 ```
 
-### Support copy
+### Switch Label  `v2.7.0`
 
 ```html
 <smart-switch
-  activeText="ON"
-  inactiveText="OFF"
+  active-text="ON"
+  inactive-text="OFF"
 />
+<view style="--switch-label-font-size: 10px;">
+  <smart-switch
+    active-text="show"
+    inactive-text="hide"
+  />
+</view>
 ```
 
 ## API
@@ -156,6 +162,8 @@ The `stop-click-propagation` attribute can prevent bubbling.
 | name                           | Identifier when submitting | _string_  | -         |
 | size                           | Switch size                | _string_  | `30px`    |
 | stop-click-propagation `v1.0.2`| Whether to prevent bubbling| _boolean_ | `false`   |
+| active-text `v2.7.0` | Text when opening           | _string_ | -   |
+| inactive-text `v2.7.0` | Text when closed           | _string_ | -   |
 
 ### Events
 
