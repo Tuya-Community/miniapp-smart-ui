@@ -28,7 +28,7 @@
       unit="{{ item.unit || unit }}"
       changeAnimation="{{ changeAnimation }}"
       default-index="{{ item.defaultIndex || defaultIndex }}"
-      active-index="{{ item.activeIndex === null ? activeIndex : item.activeIndex }}"
+      active-index="{{ (item.activeIndex === null || item.activeIndex === undefined) ? activeIndex : item.activeIndex }}"
       item-height="{{ itemHeight }}"
       loop="{{ loop || item.loop || false }}"
       visible-item-count="{{ visibleItemCount }}"

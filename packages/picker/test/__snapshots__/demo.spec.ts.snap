@@ -28,7 +28,7 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
-                activeindex="{{0}}"
+                activeindex="{{3}}"
                 animationtime="{{300}}"
                 change:activeindex="{{null}}"
                 change:animationtime="{{null}}"
@@ -41,7 +41,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:visibleitemcount="{{null}}"
                 changeanimation="{{true}}"
                 class="smart-picker-column custom-class"
-                data-activeindex="{{0}}"
+                data-activeindex="{{3}}"
                 data-animationtime="{{300}}"
                 data-changeanimation="{{true}}"
                 data-isdestroy="{{false}}"
@@ -86,9 +86,9 @@ exports[`should render demo and match snapshot 1`] = `
                   style=""
                 >
                   <wx-view
-                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item "
                     data-index="{{0}}"
-                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
@@ -104,9 +104,9 @@ exports[`should render demo and match snapshot 1`] = `
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item "
+                    class="smart-picker-column__item_3 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{3}}"
-                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                     bind:tap=null
                   />
                   <wx-view
@@ -1024,7 +1024,7 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
-                activeindex="{{0}}"
+                activeindex="{{2}}"
                 animationtime="{{300}}"
                 change:activeindex="{{null}}"
                 change:animationtime="{{null}}"
@@ -1037,7 +1037,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:visibleitemcount="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
-                data-activeindex="{{0}}"
+                data-activeindex="{{2}}"
                 data-animationtime="{{300}}"
                 data-changeanimation="{{false}}"
                 data-isdestroy="{{false}}"
@@ -1082,9 +1082,9 @@ exports[`should render demo and match snapshot 1`] = `
                   style=""
                 >
                   <wx-view
-                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item "
                     data-index="{{0}}"
-                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
@@ -1094,9 +1094,9 @@ exports[`should render demo and match snapshot 1`] = `
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{2}}"
-                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                     bind:tap=null
                   />
                   <wx-view
@@ -1648,7 +1648,7 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
-                activeindex="{{0}}"
+                activeindex="{{2}}"
                 animationtime="{{300}}"
                 change:activeindex="{{null}}"
                 change:animationtime="{{null}}"
@@ -1661,7 +1661,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:visibleitemcount="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
-                data-activeindex="{{0}}"
+                data-activeindex="{{2}}"
                 data-animationtime="{{300}}"
                 data-changeanimation="{{false}}"
                 data-isdestroy="{{false}}"
@@ -1706,9 +1706,9 @@ exports[`should render demo and match snapshot 1`] = `
                   style=""
                 >
                   <wx-view
-                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item "
                     data-index="{{0}}"
-                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
@@ -1718,9 +1718,9 @@ exports[`should render demo and match snapshot 1`] = `
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{2}}"
-                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                     bind:tap=null
                   />
                   <wx-view
@@ -2292,7 +2292,7 @@ exports[`should render demo and match snapshot 1`] = `
               bind:change="onChange"
             >
               <wx-view
-                activeindex="{{0}}"
+                activeindex="{{2}}"
                 animationtime="{{300}}"
                 change:activeindex="{{null}}"
                 change:animationtime="{{null}}"
@@ -2305,7 +2305,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:visibleitemcount="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
-                data-activeindex="{{0}}"
+                data-activeindex="{{2}}"
                 data-animationtime="{{300}}"
                 data-changeanimation="{{false}}"
                 data-isdestroy="{{false}}"
@@ -2350,9 +2350,9 @@ exports[`should render demo and match snapshot 1`] = `
                   style=""
                 >
                   <wx-view
-                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
+                    class="smart-picker-column__item_0 smart-ellipsis smart-picker-column__item "
                     data-index="{{0}}"
-                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
@@ -2362,9 +2362,9 @@ exports[`should render demo and match snapshot 1`] = `
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item "
+                    class="smart-picker-column__item_2 smart-ellipsis smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{2}}"
-                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                    style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                     bind:tap=null
                   />
                   <wx-view
