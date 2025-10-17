@@ -170,7 +170,7 @@ SmartComponent({
     },
 
     onClickBtnText(event) {
-      this.$emit('btnClick', event);
+      this.$emit('btn-click', event);
     },
 
     onClick(event: WechatMiniprogram.TouchEvent) {
