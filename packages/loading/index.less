@@ -20,16 +20,16 @@
     max-height: 100%;
     height: var(--loading-spinner-size, @loading-spinner-size);
     animation: smart-rotate
-      var(
-        --loading-spinner-animation-duration,
-        @loading-spinner-animation-duration
-      )
-      linear infinite;
+      var(--loading-spinner-animation-duration, @loading-spinner-animation-duration) linear infinite;
+    background: var(--loading-spinner-color, @loading-spinner-color);
 
     &--spinner {
       animation-timing-function: steps(8);
     }
+  }
 
+  &__loading {
+    background: var(--loading-spinner-color, @loading-spinner-color);
   }
 
   &__text {

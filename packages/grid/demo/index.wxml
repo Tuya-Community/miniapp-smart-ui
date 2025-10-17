@@ -20,7 +20,7 @@
 
 <demo-block title="{{I18n.t('squareGrid')}}">
   <smart-grid square>
-    <smart-grid-item icon="photo-o" text="{{I18n.t('pleaseProvideTheTextYouWantTranslated')}}" wx:for="{{ array8 }}" wx:key="*this" />
+    <smart-grid-item icon="photo-o" text="{{I18n.t('pleaseProvideTheText_YouWantTranslated')}}" wx:for="{{ array8 }}" wx:key="*this" />
   </smart-grid>
 </demo-block>
 

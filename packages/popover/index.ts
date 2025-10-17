@@ -61,7 +61,7 @@ SmartComponent({
     },
     duration: {
       type: Number,
-      value: 20000,
+      value: 3000,
     },
   },
 
@@ -225,6 +225,11 @@ SmartComponent({
       }
     },
     onClose() {
+      if (this.data.cancel_timer) {
+        clearTimeout(this.data.cancel_timer);
+        this.data.cancel_timer = null as any;
+      }
+
       this.setData({
         showStyle: 'opacity: 0;',
       });

@@ -131,6 +131,21 @@ Page({
 </smart-cell-group>
 ```
 
+### 开关文案 `v2.7.0`
+
+```html
+<smart-switch
+  active-text="开"
+  inactive-text="关"
+/>
+<view style="--switch-label-font-size: 10px;">
+  <smart-switch
+    active-text="显示"
+    inactive-text="隐藏"
+  />
+</view>
+```
+
 ## API
 
 ### Props
@@ -147,6 +162,8 @@ Page({
 | name                            | 在表单内提交时的标识符 | _string_  | -         |
 | size                            | 开关尺寸               | _string_  | `30px`    |
 | stop-click-propagation `v1.0.2` | 是否阻止冒泡           | _boolean_ | `false`   |
+| active-text `v2.7.0` | 打开时的文案           | _string_ | -   |
+| inactive-text `v2.7.0` | 关闭时的文案           | _string_ | -   |
 
 ### Events
 
@@ -180,4 +197,6 @@ Page({
 | --switch-border `@deprecated v2.5.0` | _0.08em solid rgba(0, 0, 0, 0.1)_ | 开关边框 |
 | --switch-node-on-background-color `v2.4.0` | _var(--switch-node-background-color, #fff)_ | 开启时圆球的背景色 |
 | --switch-padding `v2.5.0` | _0.08em_ | 内部边距 |
-
+| --switch-label-font-size | `12px` | 文字大小 |
+| --switch-label-active-color | `var(--app-B3, #ffffff)` | 开时文字颜色 |
+| --switch-label-inactive-color | `var(--app-B3, #ffffff)` | 关时文字颜色 |

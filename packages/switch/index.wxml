@@ -3,11 +3,17 @@
 
 <block wx:if="{{stopClickPropagation}}">
   <view
-    class="{{ utils.bem('switch', { on: checked === activeValue, disabled }) }} custom-class"
+    class="{{ utils.bem('switch', { on: checked === activeValue, disabled, label: activeText || inactiveText }) }} custom-class"
     style="{{ computed.rootStyle({ size, checked, activeColor, inactiveColor, activeValue }) }}"
     catch:tap="onClick"
   >
     <view class="smart-switch__center">
+      <view wx:if="{{ activeText }}" style="opacity: {{checked ? '1' : '0'}}" class="smart-switch__label_active">
+        <text class="smart-switch__label_text">{{ activeText }}</text>
+      </view>
+      <view wx:if="{{ inactiveText }}" style="opacity: {{!checked ? '1' : '0'}}" class="smart-switch__label_inactive">
+        <text class="smart-switch__label_text">{{ inactiveText }}</text>
+      </view>
       <view class="smart-switch__node node-class">
         <smart-loading
           wx:if="{{ loading }}"
@@ -20,11 +26,17 @@
 </block>
 <block wx:else>
   <view
-    class="{{ utils.bem('switch', { on: checked === activeValue, disabled }) }} custom-class"
+    class="{{ utils.bem('switch', { on: checked === activeValue, disabled, label: activeText || inactiveText }) }} custom-class"
     style="{{ computed.rootStyle({ size, checked, activeColor, inactiveColor, activeValue }) }}"
     bind:tap="onClick"
   >
     <view class="smart-switch__center">
+      <view wx:if="{{ activeText }}" style="opacity: {{checked ? '1' : '0'}}" class="smart-switch__label_active">
+        <text class="smart-switch__label_text">{{ activeText }}</text>
+      </view>
+      <view wx:if="{{ inactiveText }}" style="opacity: {{!checked ? '1' : '0'}}" class="smart-switch__label_inactive">
+        <text class="smart-switch__label_text">{{ inactiveText }}</text>
+      </view>
       <view class="smart-switch__node node-class">
         <smart-loading
           wx:if="{{ loading }}"
