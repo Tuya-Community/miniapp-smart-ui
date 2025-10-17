@@ -40,6 +40,21 @@ Page({
 });
 ```
 
+### Switch Label  `v2.7.0`
+
+```html
+<smart-switch
+  active-text="ON"
+  inactive-text="OFF"
+/>
+<view style="--switch-label-font-size: 10px;">
+  <smart-switch
+    active-text="show"
+    inactive-text="hide"
+  />
+</view>
+```
+
 ### Disabled State
 
 ```html
@@ -129,21 +144,6 @@ The `stop-click-propagation` attribute can prevent bubbling.
     />    
   </smart-cell>
 </smart-cell-group>
-```
-
-### Switch Label  `v2.7.0`
-
-```html
-<smart-switch
-  active-text="ON"
-  inactive-text="OFF"
-/>
-<view style="--switch-label-font-size: 10px;">
-  <smart-switch
-    active-text="show"
-    inactive-text="hide"
-  />
-</view>
 ```
 
 ## API

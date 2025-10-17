@@ -40,6 +40,22 @@ Page({
 });
 ```
 
+
+### 开关文案 `v2.7.0`
+
+```html
+<smart-switch
+  active-text="开"
+  inactive-text="关"
+/>
+<view style="--switch-label-font-size: 10px;">
+  <smart-switch
+    active-text="显示"
+    inactive-text="隐藏"
+  />
+</view>
+```
+
 ### 禁用状态
 
 ```html
@@ -129,21 +145,6 @@ Page({
     />    
   </smart-cell>
 </smart-cell-group>
-```
-
-### 开关文案 `v2.7.0`
-
-```html
-<smart-switch
-  active-text="开"
-  inactive-text="关"
-/>
-<view style="--switch-label-font-size: 10px;">
-  <smart-switch
-    active-text="显示"
-    inactive-text="隐藏"
-  />
-</view>
 ```
 
 ## API
