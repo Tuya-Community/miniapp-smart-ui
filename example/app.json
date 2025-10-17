@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/notice-bar/index",
     "pages/dashboard/index",
     "pages/field/index",
     "pages/tabbar/index",
@@ -26,7 +27,6 @@
     "pages/icon/index",
     "pages/image/index",
     "pages/loading/index",
-    "pages/notice-bar/index",
     "pages/popup/index",
     "pages/popover/index",
     "pages/sticky/index",
