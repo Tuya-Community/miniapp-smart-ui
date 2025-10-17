@@ -23,73 +23,65 @@ exports[`should render demo and match snapshot 1`] = `
           </wx-view>
         </wx-view>
       </smart-switch>
-      <wx-view
-        style="display:inline;margin-left: 16px;"
+      <smart-switch
+        customClass="demo-right"
       >
-        <smart-switch>
+        <wx-view
+          class="smart-switch custom-class"
+          style="font-size:30px"
+          bind:tap="onClick"
+        >
           <wx-view
-            class="smart-switch custom-class"
-            style="font-size:30px"
-            bind:tap="onClick"
+            class="smart-switch__center"
           >
             <wx-view
-              class="smart-switch__center"
-            >
-              <wx-view
-                class="smart-switch__node node-class"
-              />
-            </wx-view>
+              class="smart-switch__node node-class"
+            />
           </wx-view>
-        </smart-switch>
-      </wx-view>
+        </wx-view>
+      </smart-switch>
     </wx-view>
   </demo-block>
   <demo-block>
     <wx-view
       class="custom-class demo-block smart-clearfix demo-block--padding"
     >
-      <wx-view
-        class="switch_label"
+      <smart-switch
+        bind:change="onChange"
       >
-        <smart-switch
-          bind:change="onChange"
+        <wx-view
+          class="smart-switch smart-switch--on custom-class"
+          style="font-size:30px"
+          bind:tap="onClick"
         >
           <wx-view
-            class="smart-switch smart-switch--on custom-class"
-            style="font-size:30px"
-            bind:tap="onClick"
+            class="smart-switch__center"
           >
             <wx-view
-              class="smart-switch__center"
-            >
-              <wx-view
-                class="smart-switch__node node-class"
-              />
-            </wx-view>
+              class="smart-switch__node node-class"
+            />
           </wx-view>
-        </smart-switch>
-        <wx-view
-          style="display:inline;margin-left: 16px;"
-        >
-          <smart-switch>
-            <wx-view
-              class="smart-switch custom-class"
-              style="font-size:30px"
-              bind:tap="onClick"
-            >
-              <wx-view
-                class="smart-switch__center"
-              >
-                <wx-view
-                  class="smart-switch__node node-class"
-                />
-              </wx-view>
-            </wx-view>
-          </smart-switch>
         </wx-view>
-      </wx-view>
+      </smart-switch>
+      <smart-switch
+        customClass="demo-right"
+      >
+        <wx-view
+          class="smart-switch custom-class"
+          style="font-size:30px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-switch__center"
+          >
+            <wx-view
+              class="smart-switch__node node-class"
+            />
+          </wx-view>
+        </wx-view>
+      </smart-switch>
       <wx-view
-        class="switch_label switch_label_2"
+        class="switch_label"
         style="margin-top: 16px;"
       >
         <smart-switch
@@ -109,25 +101,23 @@ exports[`should render demo and match snapshot 1`] = `
             </wx-view>
           </wx-view>
         </smart-switch>
-        <wx-view
-          style="display:inline;margin-left: 16px;"
+        <smart-switch
+          customClass="demo-right"
         >
-          <smart-switch>
+          <wx-view
+            class="smart-switch custom-class"
+            style="font-size:30px"
+            bind:tap="onClick"
+          >
             <wx-view
-              class="smart-switch custom-class"
-              style="font-size:30px"
-              bind:tap="onClick"
+              class="smart-switch__center"
             >
               <wx-view
-                class="smart-switch__center"
-              >
-                <wx-view
-                  class="smart-switch__node node-class"
-                />
-              </wx-view>
+                class="smart-switch__node node-class"
+              />
             </wx-view>
-          </smart-switch>
-        </wx-view>
+          </wx-view>
+        </smart-switch>
       </wx-view>
     </wx-view>
   </demo-block>
