@@ -172,7 +172,7 @@ import Warning from '@tuya-miniapp/icons/dist/svg/Warning';
 | ---------- | ---------------- | -------------- |
 | bind:click | 点击通知栏时触发 | _event: Event_ |
 | bind:close | 关闭通知栏时触发 | _event: Event_ |
-| bind:btnClick | 按钮文案点击时触发 | _event: Event_ |
+| bind:btn-click `v2.7.0` | 按钮文案点击时触发 | _event: Event_ |
 
 
 ### Slot

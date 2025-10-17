@@ -1,19 +1,25 @@
 # 更新日志
 
 ## v2.7.0(2025-10-21)
+
 ### Features ✨
+
 - picker: 重构picker实现原理，增加3D视觉效果，新增 loop 循环滚动 和 full-height 属性，优化性能([]())
 - datetime-picker: 新增循环滚动能力([]())
 - nav-bar: 样式优化，新增 right-text-color、right-icon-color、right-icon-size、left-icon-color、background、right-icon-class、left-text-class属性；新增 click-right-icon、click-right-text事件；新增和修改 --nav-bar-side-width、--nav-bar-text-padding、--nav-bar-icon-padding、--nav-bar-title-margin、--nav-bar-home-max-width、--nav-bar-left-title-padding、--nav-bar-title-max-width CSS 变量；删除--nav-bar-icon-size、--nav-bar-icon-margin CSS 变量([]())
 - swipe-cell: 新增 tabClose 事件 ([]())
 - switch: 新增 active-text、inactive-text 属性；新增--switch-label-font-size、--switch-label-active-color、--switch-label-inactive-color、switch-label-width CSS 变量([]())
+- dialog: 新增 emptyDisabled 属性，input 模式下 输入内容为空时禁用提交([]())
+
 ### Bug Fixes 🐛
+
 - image: 修改show-loading默认值为false([]())
 - loading: 修复CSS 变量 --loading-spinner-color 无效问题([]())
 - popover: 修复连续点击无法弹出问题([]())
 - stepper: 修复键盘主动输入时，内部值不与 step 成比例问题([]())
 - switch: 修复居中问题([]())
 - tab: 修复 color 属性 在 card 模式下的问题([]())
+- notice-bar: 修复 btn-click 事件点击问题([]())
 
 
 ## v2.6.3(2025-09-16)
