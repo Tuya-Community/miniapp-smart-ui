@@ -12,7 +12,6 @@
 
 
 <demo-block title="{{I18n.t('switchLabel')}}" padding>
-  <view class="switch_label">
     <smart-switch
       checked="{{ checked }}"
       bind:change="onChange"
@@ -26,7 +25,6 @@
         inactiveText="{{I18n.t('switchLabel_off')}}"
       /> 
     </view>  
-  </view>
   <view class="switch_label switch_label_2" style="margin-top: 16px;">
     <smart-switch
       checked="{{ checked }}"

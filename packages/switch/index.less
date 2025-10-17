@@ -16,6 +16,10 @@
   border-radius: var(--switch-node-size, @switch-node-size);
   transition: background-color var(--switch-transition-duration, @switch-transition-duration);
 
+  &--label {
+    width: var(--switch-label-width, @switch-label-width);
+  }
+
   &__center {
     height: 100%;
     width: 100%;
@@ -23,40 +27,37 @@
     position: relative;
   }
 
-  &__label {
-    width: 100%;
-    height: 100%;
+  &__label_active {
     position: absolute;
     top: 0;
-    left: 0;
-    pointer-events: none;
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    font-size: var(--switch-label-font-size, @switch-label-font-size);
-    padding: var(--switch-border, var(--switch-padding, @switch-padding));
-
-    &_active {
-      position: absolute;
-      left: 0;
-      width: calc(
-        var(--switch-width, @switch-width) -
-          var(--switch-border, var(--switch-padding, @switch-padding)) * 2 -
-          var(--switch-node-size, @switch-node-size) * 2
-      );
-      text-align: center;
-      color: var(--switch-label-active-color, @switch-label-active-color);
+    justify-content: center;
+    left: 0;
+    padding-left: var(--switch-border, var(--switch-padding, @switch-padding));
+    width: calc(100% - var(--switch-node-size, @switch-node-size));
+    text-align: center;
+    color: var(--switch-label-active-color, @switch-label-active-color);
+    .smart-switch__label_text {
+      font-size: var(--switch-label-font-size, @switch-label-font-size);
     }
-    &_inactive {
-      position: absolute;
-      right: 0;
-      width: calc(
-        var(--switch-width, @switch-width) -
-          var(--switch-border, var(--switch-padding, @switch-padding)) * 2 -
-          var(--switch-node-size, @switch-node-size) * 2
-      );
-      text-align: center;
-      color: var(--switch-label-inactive-color, @switch-label-inactive-color);
+  }
+
+  &__label_inactive {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: var(--switch-border, var(--switch-padding, @switch-padding));
+    width: calc(100% - var(--switch-node-size, @switch-node-size));
+    text-align: center;
+    color: var(--switch-label-inactive-color, @switch-label-inactive-color);
+    .smart-switch__label_text {
+      font-size: var(--switch-label-font-size, @switch-label-font-size);
     }
   }
 
@@ -85,9 +86,7 @@
     background-color: var(--switch-on-background-color, @switch-on-background-color);
 
     .smart-switch__node {
-      transform: translateX(
-        calc(var(--switch-width, @switch-width) - var(--switch-node-size, @switch-node-size))
-      );
+      left: calc(100% - var(--switch-node-size, @switch-node-size));
       background-color: var(--switch-node-on-background-color, @switch-node-on-background-color);
     }
   }
