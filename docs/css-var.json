@@ -1824,7 +1824,7 @@
   },
   "loading-spinner-color": {
     "name": "@loading-spinner-color",
-    "value": "#c8c9cc",
+    "value": "#1989fa",
     "decs": ""
   },
   "loading-spinner-size": {
@@ -2317,6 +2317,11 @@
     "value": "1.5338em",
     "decs": ""
   },
+  "switch-label-width": {
+    "name": "@switch-label-width",
+    "value": "2em",
+    "decs": ""
+  },
   "switch-height": {
     "name": "@switch-height",
     "value": "0.867em",
@@ -2360,6 +2365,21 @@
     "value": "0.3s",
     "decs": ""
   },
+  "switch-label-font-size": {
+    "name": "@switch-label-font-size",
+    "value": "13px",
+    "decs": ""
+  },
+  "switch-label-active-color": {
+    "name": "@switch-label-active-color",
+    "value": "var(--app-B3, #ffffff)",
+    "decs": ""
+  },
+  "switch-label-inactive-color": {
+    "name": "@switch-label-inactive-color",
+    "value": "var(--app-B3, #ffffff)",
+    "decs": ""
+  },
   "switch-disabled-opacity": {
     "name": "@switch-disabled-opacity",
     "value": "0.4",
@@ -2367,7 +2387,7 @@
   },
   "switch-padding": {
     "name": "@switch-padding",
-    "value": "0.08em",
+    "value": "0.067em",
     "decs": ""
   },
   "switch-border": {
