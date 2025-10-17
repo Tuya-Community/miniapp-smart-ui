@@ -403,7 +403,7 @@ When the `poppable` of Calendar is `true`, the following props are supported:
 
 ### Methods
 
-You can get the Calendar instance via selectComponent and call instance methods.
+You can get the Calendar instance via [selectComponent](/material/smartui?comId=faq&appType=miniapp) and call instance methods.
 
 | Method Name | Description                        | Parameter | Return Value |
 | ------------| ---------------------------------- | ----------| -------------|

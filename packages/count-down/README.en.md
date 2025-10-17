@@ -167,7 +167,7 @@ Page({
 
 ### Methods
 
-You can get the CountDown instance through `selectComponent` and call instance methods.
+You can get the CountDown instance through [selectComponent](/material/smartui?comId=faq&appType=miniapp) and call instance methods.
 
 | Method Name | Parameter | Return Value | Description                                          |
 | ----------- | --------- | ------------ | ---------------------------------------------------- |

@@ -337,7 +337,7 @@ When passing in multi-column data, `columns` is an array of objects. Each object
 
 ### Methods
 
-You can get the picker instance through selectComponent and call its instance methods.
+You can get the picker instance through [selectComponent](/material/smartui?comId=faq&appType=miniapp) and call its instance methods.
 
 | Method Name     | Parameter          | Return Value | Description                  |
 | --------------- | ------------------ | ------------ | ---------------------------- |

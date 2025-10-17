@@ -337,7 +337,7 @@ Page({
 
 ### Checkbox Method
 
-Get a checkbox instance with selectComponent and call its methods.
+Get a checkbox instance with [selectComponent](/material/smartui?comId=faq&appType=miniapp) and call its methods.
 
 | Method Name | Parameters | Return Value | Description      |
 | ----------- | ---------- | ------------ | ---------------- |

@@ -150,7 +150,7 @@ db.collection('region')
 
 ### Methods
 
-You can get the Area instance and call instance methods through selectComponent.
+You can get the Area instance and call instance methods through [selectComponent](/material/smartui?comId=faq&appType=miniapp).
 
 | Method Name | Parameter    | Return Value | Description |
 | ----------- | ------------ | ------------ | ----------- |
