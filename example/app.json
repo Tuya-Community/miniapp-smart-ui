@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/dialog/index",
     "pages/dashboard/index",
     "pages/field/index",
     "pages/tabbar/index",
+    "pages/dialog/index",
     "pages/nav-bar/index",
     "pages/checkbox/index",
     "pages/bottom-sheet/index",
