@@ -134,7 +134,7 @@ SmartComponent({
     },
     safeAreaInsetBottom: {
       type: Boolean,
-      value: true,
+      value: false,
     },
     closeOnClickOverlay: {
       type: Boolean,
