@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/notice-bar/index",
     "pages/dashboard/index",
+    "pages/notice-bar/index",
     "pages/field/index",
     "pages/tabbar/index",
     "pages/dialog/index",
