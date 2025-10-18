@@ -45,13 +45,13 @@
       wx:key="index"
       data-index="{{index}}"
       style="{{computed.wrapperItemStyle({ itemHeight, index, visibleItemCount, fontStyle, activeStyle, instanceId, index, optionsVIndexList, animationIndex, options })}}"
-      class="smart-picker-column__item_{{index}} smart-ellipsis {{ computed.wrapperItemClass({ index, animationIndex, optionsVIndexList, instanceId, options })}}"
+      class="smart-picker-column__item_{{index}} {{ computed.wrapperItemClass({ index, animationIndex, optionsVIndexList, instanceId, options })}}"
       bind:tap="{{computed.tapItem(instanceId)}}" 
     >
     </view>
   </view>
   <view wx:if="{{unit}}" class="smart-picker-column__unit" style="height: {{ itemHeight }}px">
-    <view class="smart-picker-column__max-text">
+    <view class="smart-picker-column__max-text" style="{{fontStyle}}">
       {{ maxText }}
       <view class="smart-picker-column__unit_text" >{{unit}}</view>
     </view>

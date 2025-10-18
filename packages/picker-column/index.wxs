@@ -181,7 +181,7 @@ function wrapperItemTextStyle(data) {
   var fontStyle = data.fontStyle;
   var activeStyle = data.activeStyle;
   var isActive = typeof optionIndex === 'number' && activeIndex === optionIndex;
-  return (fontStyle ? fontStyle.replace(';', '') + ';' : '') + (isActive ? activeStyle.replace(';;', ';') + ';' : '')
+  return (fontStyle ? fontStyle.replace(';;', '') + ';' : '') + (isActive ? activeStyle.replace(';;', ';') + ';' : '')
 }
 
 function getNewAnimationIndex(animationIndex, activeIndex, length, loop) {
