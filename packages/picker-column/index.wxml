@@ -45,7 +45,7 @@
       wx:key="index"
       data-index="{{index}}"
       style="{{computed.wrapperItemStyle({ itemHeight, index, visibleItemCount, fontStyle, activeStyle, instanceId, index, optionsVIndexList, animationIndex, options })}}"
-      class="smart-picker-column__item_{{index}} smart-ellipsis {{ computed.wrapperItemClass({ index, animationIndex, optionsVIndexList, instanceId, options })}}"
+      class="smart-picker-column__item_{{index}} {{ computed.wrapperItemClass({ index, animationIndex, optionsVIndexList, instanceId, options })}}"
       bind:tap="{{computed.tapItem(instanceId)}}" 
     >
     </view>
