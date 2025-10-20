@@ -88,7 +88,7 @@ Page({
 ```
 
 
-### Loop List `2.7.0`
+### Loop List `v2.7.0`
 
 `loop` can enable loop rendering of lists, which will be connected end-to-end and loop infinitely
 
@@ -246,7 +246,7 @@ Page({
 });
 ```
 
-### More 3D `2.7.0`
+### More 3D `v2.7.0`
 
 `full-height` property allows for more space to display and see more 3D-flipped items; of course, you can also override the component's height style to customize the visible space you need.
 
