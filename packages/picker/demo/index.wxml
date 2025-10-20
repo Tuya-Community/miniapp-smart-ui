@@ -18,6 +18,14 @@
   />
 </demo-block>
 
+<demo-block title="{{I18n.t('loop')}}">
+  <smart-picker
+    loop
+    columns="{{ column7 }}"
+    bind:change="onChange1"
+  />
+</demo-block>
+
 <demo-block title="{{I18n.t('defaultSelectedItem')}}">
   <smart-picker
     columns="{{ column1 }}"
@@ -58,14 +66,6 @@
 <demo-block title="{{I18n.t('setTheOrderOfColumnStyles')}}">
   <smart-picker
     columns="{{ column6 }}"
-  />
-</demo-block>
-
-<demo-block title="{{I18n.t('loop')}}">
-  <smart-picker
-    loop
-    columns="{{ column7 }}"
-    bind:change="onChange1"
   />
 </demo-block>
 

@@ -29,7 +29,9 @@ var preStateObj = {}
 
 function updateState(instanceId, key, value) {
   if (!key) return;
-  state[instanceId] = state[instanceId] || {}
+  if (!state[instanceId]) {
+    state[instanceId] = {}
+  }
   state[instanceId][key] = value
 }
 
@@ -288,12 +290,12 @@ function touchMove(instanceId) {
     var direction =
       offsetCompare < 0 ? 'down' : offsetCompare > 0 ? 'up' : state.movingDirection;
     updateVisibleOptions(animationIndex, instanceId);
-    var isOverOptions = state.loop ? false : animationIndex < 0 || animationIndex > state.options.length - 1;
+    var isOverOptionsItem = state.loop ? false : animationIndex < 0 || animationIndex > state.options.length - 1;
     var activeIndex = Math.round(animationIndex);
     var isDisabled = wxUtils.isObj(state.options[activeIndex]) && state.options[activeIndex].disabled;
     if (
       intPreIndex !== intCurIndex
-      && !isOverOptions
+      && !isOverOptionsItem
       && !isDisabled
     ) {
       ownerInstance.callMethod('animationIndexChange', animationIndex);
@@ -379,10 +381,10 @@ function touchEnd(instanceId) {
     currTargetActiveIndex = adjustIndex(Math.round(currTargetActiveIndex), state.options, state.loop);
     targetOffset = -currTargetActiveIndex * state.itemHeight;
     var animationOffset = Math.abs(targetOffset - state.preOffsetting);
-    var isOverOptions = state.loop ? false : state.animationIndex < 0 || state.animationIndex > state.options.length - 1;
+    var isOverOptionsLimit = state.loop ? false : state.animationIndex < 0 || state.animationIndex > state.options.length - 1;
     var totalDistance = targetOffset - state.preOffsetting;
       // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
-    if (state.animationTime > 200 && animationOffset > state.itemHeight && !isOverOptions) {
+    if (state.animationTime > 200 && animationOffset > state.itemHeight && !isOverOptionsLimit) {
       var countOffsetIndex = Math.abs(Math.round(currTargetActiveIndex - state.animationIndex));
       var maxVibrateShort = Math.floor(state.animationTime / 30);
       
@@ -444,6 +446,13 @@ function touchEnd(instanceId) {
       }, 150);
     }
   }
+}
+
+
+function updateVisibleOptions(currentIndex, instanceId) {
+  var newArr = getVisibleOptions(currentIndex, instanceId);
+  updateState(instanceId, 'optionsVIndexList', newArr);
+  return newArr
 }
 
 var Cache = {}
@@ -528,12 +537,6 @@ function getVisibleOptions(currentIndex, instanceId) {
   return newArr
 }
 
-function updateVisibleOptions(currentIndex, instanceId) {
-  var newArr = getVisibleOptions(currentIndex, instanceId);
-  updateState(instanceId, 'optionsVIndexList', newArr);
-  return newArr
-}
-
 function getWrapperCSSVar(instanceId) {
   var state = getCurrState(instanceId);
   var optionsVIndexList = state.optionsVIndexList;
@@ -541,7 +544,7 @@ function getWrapperCSSVar(instanceId) {
     if (currentValue === '' || currentValue === undefined) {
       previousValue['--picker-item-content_' + currentIndex] = '""';
     } else {
-      var index = state.loop ? Math.abs(currentValue % state.options.length) : currentValue;
+      var index = currentValue;
       var text = optionText(state.options, index, state.valueKey);
       previousValue['--picker-item-content_' + currentIndex] = '"' + (text === undefined ? '' : text) + '"';
     }
@@ -583,17 +586,17 @@ function tapItem(instanceId) {
       clearTimeout(state.tapTimer);
       updateState(instanceId, 'tapTimer', null);
     }
-    var currTargetActiveIndex = getNewAnimationIndex(state.animationIndex, currOptionsActiveIndex, state.options.length || 1, state.loop);
-    var offsetCount = Math.abs(currTargetActiveIndex - state.animationIndex);
-    updateVisibleOptions(currTargetActiveIndex, instanceId);
-    updateState(instanceId, 'animationIndex', currTargetActiveIndex);
+    var targetAnimationIndex = getNewAnimationIndex(state.animationIndex, currOptionsActiveIndex, state.options.length || 1, state.loop);
+    var offsetCount = Math.abs(targetAnimationIndex - state.animationIndex);
+    updateVisibleOptions(targetAnimationIndex, instanceId);
+    updateState(instanceId, 'animationIndex', targetAnimationIndex);
     updateWrapperStyle(instanceId, ownerInstance, {
       transition: 'transform ' + 300 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
     });
-    ownerInstance.callMethod('animationIndexChange', currTargetActiveIndex);
+    ownerInstance.callMethod('animationIndexChange', targetAnimationIndex);
     ownerInstance.callMethod('vibrateShort', offsetCount, 200);
     var tapTimer = setTimeout(function() {
-      ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex);
+      ownerInstance.callMethod('activeIndexChange', targetAnimationIndex);
       updateState(instanceId, 'tapTimer', null);
       setTimeout(function() {
         ownerInstance.callMethod('animationEnd');

@@ -87,6 +87,35 @@ Page({
 });
 ```
 
+
+### Loop List `2.7.0`
+
+`loop` can enable loop rendering of lists, which will be connected end-to-end and loop infinitely
+
+```html
+    
+<smart-picker loop columns="{{ columns }}" bind:change="onChange" />
+```
+
+```javascript
+import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+
+Page({
+  data: {
+    columns: [
+      {
+        values: new Array(100).fill(1).map((x, i) => i),
+      },
+    ],
+  },
+
+  onChange(event) {
+    const { picker, value, index } = event.detail;
+    Toast(`Current value: ${value}, current index: ${index}`);
+  },
+});
+```
+
 ### Default Selected Item
 
 A single-column picker can set the initial selected item's index directly through the `default-index` property.
@@ -213,34 +242,6 @@ Page({
         order: 1
       },
     ],
-  },
-});
-```
-
-### Loop List `2.7.0`
-
-`loop` can enable loop rendering of lists, which will be connected end-to-end and loop infinitely
-
-```html
-    
-<smart-picker loop columns="{{ columns }}" bind:change="onChange" />
-```
-
-```javascript
-import Toast from '@tuya-miniapp/smart-ui/toast/toast';
-
-Page({
-  data: {
-    columns: [
-      {
-        values: new Array(100).fill(1).map((x, i) => i),
-      },
-    ],
-  },
-
-  onChange(event) {
-    const { picker, value, index } = event.detail;
-    Toast(`Current value: ${value}, current index: ${index}`);
   },
 });
 ```
