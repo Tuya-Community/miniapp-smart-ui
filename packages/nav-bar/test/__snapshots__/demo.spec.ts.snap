@@ -17,7 +17,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
-              class="smart-nav-bar__left smart-nav-bar__left--home"
+              class="smart-nav-bar__left smart-nav-bar__left--home smart-nav-bar__left--text"
               bind:tap="onClickLeft"
             >
               <wx-view
@@ -56,7 +56,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
-              class="smart-nav-bar__left smart-nav-bar__left--home"
+              class="smart-nav-bar__left smart-nav-bar__left--home smart-nav-bar__left--text"
               bind:tap="onClickLeft"
             >
               <wx-view
@@ -473,7 +473,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
-              class="smart-nav-bar__left smart-nav-bar__left--title smart-nav-bar__left--icon"
+              class="smart-nav-bar__left smart-nav-bar__left--title smart-nav-bar__left--text smart-nav-bar__left--icon"
               bind:tap="onClickLeft"
             >
               <wx-view
