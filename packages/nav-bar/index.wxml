@@ -8,7 +8,7 @@
   style="{{ computed.barStyle({ zIndex, statusBarHeight, safeAreaInsetTop, background }) }}; {{ customStyle }}"
 >
   <view class="smart-nav-bar__content">
-    <view class="{{ utils.bem('nav-bar__left', { home: leftTextType === 'home', title: leftTextType === 'title', icon: leftArrow || leftIcon }) }}" bind:tap="onClickLeft">
+    <view class="{{ utils.bem('nav-bar__left', { home: leftTextType === 'home', title: leftTextType === 'title', text: !!leftText, icon: leftArrow || leftIcon }) }}" bind:tap="onClickLeft">
       <smart-icon
         wx:if="{{ leftArrow }}"
         size="24px"
@@ -43,7 +43,7 @@
       <block>{{ title }}</block>
       <slot name="title" />
     </view>
-    <view class="smart-nav-bar__right" bind:tap="onClickRight">
+    <view class="{{utils.bem('nav-bar__right', { text: !!rightText })}}" bind:tap="onClickRight">
       <view
         wx:if="{{ rightIcon }}"
         data-type="rightIcon"

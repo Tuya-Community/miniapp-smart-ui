@@ -23,7 +23,6 @@
     display: inline-block;
     vertical-align: middle;
     font-weight: var(--nav-bar-text-font-weight, @nav-bar-text-font-weight);
-    padding-left: var(--nav-bar-text-padding, @nav-bar-text-padding);
     color: var(--nav-bar-text-color, @nav-bar-text-color);
     font-size: var(--nav-bar-text-font-size, @nav-bar-text-font-size);
   }
@@ -88,6 +87,7 @@
   }
 
   &__left {
+    padding-left: var(--nav-bar-icon-padding, @nav-bar-icon-padding);
     &--home {
       width: auto;
       max-width: var(--nav-bar-home-max-width, @nav-bar-home-max-width);
@@ -109,6 +109,9 @@
       }
     }
 
+    &--text {
+      padding-left: var(--nav-bar-text-padding, @nav-bar-text-padding);
+    }
     &--icon {
       padding-left: var(--nav-bar-icon-padding, @nav-bar-icon-padding);
     }
@@ -116,14 +119,14 @@
 
   &__right {
     flex-direction: row-reverse;
+    padding-right: var(--nav-bar-icon-padding, @nav-bar-icon-padding);
+
     .smart-nav-bar__text {
       text-align: right;
       color: var(--nav-bar-right-text-color, var(--nav-bar-text-color, @nav-bar-text-color));
-      padding-right: var(--nav-bar-text-padding, @nav-bar-text-padding);
-      padding-left: 0;
     }
-    .smart-nav-bar__icon-wrap {
-      padding-right: var(--nav-bar-icon-padding, @nav-bar-icon-padding);
+    &--text {
+      padding-right: var(--nav-bar-text-padding, @nav-bar-text-padding);
     }
   }
 }
