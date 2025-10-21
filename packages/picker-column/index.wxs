@@ -157,7 +157,7 @@ function wrapperItemStyle(data) {
 }
 
 function wrapperItemClass(data) {
-  var optionsVIndexList = getVisibleOptions(data.animationIndex, data.instanceId) || data.optionsVIndexList;
+  var optionsVIndexList = getVisibleOptions(data.animationIndex, data.instanceId, data.options) || data.optionsVIndexList;
   var animationIndex = data.animationIndex;
   var intAnimationIndex = Math.round(animationIndex);
   var activeIndex = (intAnimationIndex + 1) % data.options.length - 1;
@@ -172,7 +172,7 @@ function wrapperItemClass(data) {
 }
 
 function wrapperItemTextStyle(data) {
-  var optionsVIndexList = getVisibleOptions(data.animationIndex, data.instanceId) || data.optionsVIndexList;
+  var optionsVIndexList = getVisibleOptions(data.animationIndex, data.instanceId, data.options) || data.optionsVIndexList;
   var animationIndex = data.animationIndex;
   var intAnimationIndex = Math.round(animationIndex);
   var activeIndex = (intAnimationIndex + 1) % data.options.length - 1;
@@ -457,9 +457,12 @@ function updateVisibleOptions(currentIndex, instanceId) {
 
 var Cache = {}
 
-function getVisibleOptions(currentIndex, instanceId) {
+function getVisibleOptions(currentIndex, instanceId, options) {
   var state = getCurrState(instanceId);
-  if(!state) return
+  if (!state) return
+  if (!options) {
+    options = state.options;
+  }
   var animationIndex = Math.round(
     currentIndex !== undefined ? currentIndex : state.animationIndex
   );
@@ -467,7 +470,7 @@ function getVisibleOptions(currentIndex, instanceId) {
     visibleItemCount: state.visibleItemCount,
     animationIndex: animationIndex,
     loop: state.loop,
-    optionsLength: state.options.length,
+    optionsLength: options.length,
   }
   if (!Cache[instanceId]) {
     Cache[instanceId] = {}
@@ -483,7 +486,7 @@ function getVisibleOptions(currentIndex, instanceId) {
   var newValueArr = wxUtils.createArray(partCount * 2 + 1, '');
   if (state.loop) {
     // 循环模式：根据 options 首尾填充 newValueArr 数组
-    var optionsLength = state.options.length;
+    var optionsLength = options.length;
     if (optionsLength === 0) {
       // 如果没有选项，填充空值
       wxUtils.fillArray(newValueArr, '');
@@ -505,8 +508,8 @@ function getVisibleOptions(currentIndex, instanceId) {
     if (animationIndex < 0) {
       animationIndex = 0;
     }
-    if (animationIndex > state.options.length - 1) {
-      animationIndex = state.options.length - 1;
+    if (animationIndex > options.length - 1) {
+      animationIndex = options.length - 1;
     }
     newValueArr.forEach(function(item, index) {
       var valueIndex =
