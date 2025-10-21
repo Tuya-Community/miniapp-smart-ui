@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/datetime-picker/index",
+    "pages/picker/index",
     "pages/dashboard/index",
     "pages/notice-bar/index",
     "pages/field/index",
@@ -12,8 +14,6 @@
     "pages/toast/index",
     "pages/switch/index",
     "pages/radio/index",
-    "pages/datetime-picker/index",
-    "pages/picker/index",
     "pages/tab/index",
     "pages/button/index",
     "pages/cascader/index",
