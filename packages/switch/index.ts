@@ -11,6 +11,8 @@ SmartComponent({
     disabled: Boolean,
     activeColor: String,
     inactiveColor: String,
+    activeText: String,
+    inactiveText: String,
     stopClickPropagation: {
       type: Boolean,
       value: false,

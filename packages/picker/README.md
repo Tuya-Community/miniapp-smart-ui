@@ -22,8 +22,15 @@ category: 反馈
 
 ### 基础用法
 
+单列时 `active-index` 属性可以控制picker的选中项; `change-animation` 可以开启picker的选中值变化过度动画效果。
+
 ```html
-<smart-picker columns="{{ columns }}" bind:change="onChange" />
+<smart-picker 
+  columns="{{ columns }}"
+  active-index="{{3}}"
+  change-animation
+  bind:change="onChange" 
+/>
 ```
 
 ```javascript
@@ -43,8 +50,9 @@ Page({
 
 ### 多列用法
 
+`disabled` `v2.3.5` 属性可以禁用此列；`style` 属性可以设置此列的样式；`fontStyle` `v2.3.5` 属性可以设置此列的字体样式; `activeIndex` 可以设置列的选中项。
+
 ```html
-    
 <smart-picker active-style="color: #000;" columns="{{ columns }}" bind:change="onChange" />
 ```
 
@@ -68,6 +76,35 @@ Page({
         values: new Array(20).fill(1).map((x, i) => i),
         style: 'flex: none;width: auto;min-width: 61px;',
         unit: 'Kg',
+      },
+    ],
+  },
+
+  onChange(event) {
+    const { picker, value, index } = event.detail;
+    Toast(`当前值：${value}, 当前索引：${index}`);
+  },
+});
+```
+
+
+### 循环列表 `v2.7.0`
+
+`loop` 属性可以开启列表的循环渲染，列表会首尾相连，无限循环
+
+```html
+    
+<smart-picker loop columns="{{ columns }}" bind:change="onChange" />
+```
+
+```javascript
+import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+
+Page({
+  data: {
+    columns: [
+      {
+        values: new Array(100).fill(1).map((x, i) => i),
       },
     ],
   },
@@ -209,6 +246,34 @@ Page({
 });
 ```
 
+### 更多3D `v2.7.0`
+
+`full-height` 属性可以展示更多的空间，看到更多3D翻转的项；当然你也可以覆盖组件的高度样式，来自定义需要可视的空间
+
+```html
+    
+<smart-picker loop full-height columns="{{ columns }}" bind:change="onChange" />
+```
+
+```javascript
+import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+
+Page({
+  data: {
+    columns: [
+      {
+        values: new Array(100).fill(1).map((x, i) => i),
+      },
+    ],
+  },
+
+  onChange(event) {
+    const { picker, value, index } = event.detail;
+    Toast(`当前值：${value}, 当前索引：${index}`);
+  },
+});
+```
+
 ## API
 
 ### Props
@@ -227,10 +292,14 @@ Page({
 | toolbar-position    | 顶部栏位置，可选值为`bottom`   | _string_  | `top`   |
 | unit                | 单列选择器的默认的单位，<br>多列选择器请参考下方的 Columns 配置     | _number_  | ''      |
 | value-key           | 选项对象中，文字对应的 key        | _string_  | `text`  |
-| visible-item-count  | 可见的选项个数    | _number_  | `5`     |
+| visible-item-count  | 可见的选项个数    | _3 \| 5 \| 7 \| 9_   | `5`     |
 | active-style `v2.0.0`  | 选中状态下的样式            | _string_  | `''`     |
 | change-animation `v2.2.0`  | 组件受数据驱动选择值改变时是否需要动画过度效果（不包含手指交互滚动的动画）            | _boolean_  | `false`     |
-| animation-time `v2.3.7`  | 过渡动画以及选择回调延迟的时间(单位ms)           | _number_  | `800` `v2.3.7` `300` `v2.6.0`    |
+| animation-time `v2.3.7`  | 过渡动画以及选择回调延迟的时间(单位ms)   | _number_  | `800` `v2.3.7` `300` `v2.6.0`    |
+| loop `v2.7.0`  | 循环列表           | _boolean_  | `false`    |
+| font-style `v2.7.0`  | 字体样式，优先级低于 columns 内的           | _string_  | -    |
+| full-height `v2.7.0`  | 是否高度直接等于 `visibleItemCount * itemHeight`, 组件默认会再 `* 0.9` 缩小最外层可视的高度     | _boolean_  | `false`   |
+
 
 ### Events
 
@@ -258,6 +327,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数�
 | values        | 列中对应的备选值            |
 | order `v2.2.0`  | 设置列的顺序，同`flex order`属性，只是从样式角度修改列的顺序，逻辑还是不变            | _number_  | -     |
 | disabled `v2.3.5`  | 禁用此列   | _boolean_  | `false`     |
+| loop `v2.7.0`  | 循环列表           | _boolean_  | `false`    |
 
 ### 外部样式类
 
@@ -271,7 +341,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数�
 
 ### 方法
 
-通过 selectComponent 可以获取到 picker 实例并调用实例方法。
+通过 [selectComponent](/material/smartui?comId=faq&appType=miniapp) 可以获取到 picker 实例并调用实例方法。
 
 | 方法名          | 参数                     | 返回值      | 介绍                       |
 | --------------- | ------------------------ | ----------- | -------------------------- |

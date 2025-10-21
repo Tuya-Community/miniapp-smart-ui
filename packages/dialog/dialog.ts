@@ -61,6 +61,7 @@ interface DialogInputOptions extends DialogOptions {
   password?: boolean;
   placeholder?: string;
   maxlength?: number;
+  emptyDisabled?: boolean;
 }
 
 const defaultOptions: DialogOptions = {

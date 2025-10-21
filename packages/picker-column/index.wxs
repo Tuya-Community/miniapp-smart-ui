@@ -3,13 +3,18 @@ var style = require('../wxs/style.wxs');
 var addUnit = require('../wxs/add-unit.wxs');
 var wxUtils = require('../wxs/utils.wxs');
 
-function isObj(x) {
-  var type = typeof x;
-  return x !== null && (type === 'object' || type === 'function');
+function setStyle(ownerInstance, style, selector) {
+  var dom = wxUtils.queryComponent(ownerInstance, selector);
+  if (!dom) {
+    console.log(selector, '--selector 无法获取');
+    return
+  }
+  dom.setStyle(style);
 }
 
-function optionText(option, valueKey) {
-  return isObj(option) && option[valueKey] != null ? option[valueKey] : option;
+function optionText(options, optionIndex, valueKey) {
+  var option = options[optionIndex];
+  return wxUtils.isObj(option) && option[valueKey] != null ? option[valueKey] : option;
 }
 
 function rootStyle(data) {
@@ -18,62 +23,598 @@ function rootStyle(data) {
   });
 }
 
-function wrapperStyle(data) {
-  var offset =
-    data.offset + (data.itemHeight * (data.visibleItemCount - 1)) / 2;
-  offset = addUnit(offset);
-  if (data.animate) {
-    return style({
-      'text-indent': data.unit ? '-8rpx' : '0',
-      transition: 'transform ' + data.duration + 'ms ease-out',
-      'line-height': addUnit(data.itemHeight),
-      transform: 'translate3d(0, ' + offset + ', 0)',
-    });
+var state = {}
+
+var preStateObj = {}
+
+function updateState(instanceId, key, value) {
+  if (!key) return;
+  if (!state[instanceId]) {
+    state[instanceId] = {}
   }
-  return style({
-    'text-indent': data.unit ? '-8rpx' : '0',
-    'line-height': addUnit(data.itemHeight),
-    transform: 'translate3d(0, ' + offset + ', 0)',
-  });
+  state[instanceId][key] = value
 }
 
-function wrapperInterStyle(data) {
-  var offset = data.renderStart * data.itemHeight;
-  offset = addUnit(offset);
-  return style({
-    'padding-top': offset,
-  });
+function clearCurrState(instanceId) {
+  delete state[instanceId]
+  delete preStateObj[instanceId]
+  delete Cache[instanceId]
 }
+
+function getCurrState(instanceId) {
+  return state[instanceId]
+}
+
+function updatePreState(instanceId, state) {
+  var preStateStr = JSON.stringify(state)
+  preStateObj[instanceId] = preStateStr;
+}
+
+function getPreState(instanceId) {
+  return preStateObj[instanceId]
+}
+
+function wrapperStyle(data) {
+  var perAngle = 360 / (data.visibleItemCount * 4 - 2)
+  var rotate = perAngle * data.animationIndex;
+  var optionsVIndexList = data.optionsVIndexList;
+  var cssVar = optionsVIndexList.reduce(function(previousValue, currentValue, currentIndex) {
+    if (currentValue === '' || currentValue === undefined) return previousValue;
+    var index = data.loop ? Math.abs(currentValue % data.options.length) : currentValue;
+    var text = optionText(data.options, index, data.valueKey);
+    if(text === undefined) return previousValue;
+    previousValue['--picker-item-content_' + currentIndex] = '"' + text + '"';
+    return previousValue;
+  }, {});
+
+  var styleObj = {
+    'text-indent': data.unit ? '-8rpx' : '0',
+    transition: !data.changeAnimation ? 'none' : 'transform ' + data.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
+    'line-height': addUnit(data.itemHeight),
+    transform: 'rotateX(' + rotate + 'deg)'
+  };
+ 
+  return style(Object.assign(styleObj, cssVar));
+}
+
+
+function adjustIndex(index, options, loop) {
+  var count = options.length;
+  if (loop) {
+    for (var i = 0; i < count; i++) {
+      var targetIndex = index + i;
+      var optionIndex = Math.abs(((targetIndex + 1) % count) - 1);
+      if (
+        !isDisabled(options[optionIndex]) &&
+        options[optionIndex] !== undefined
+      ) {
+        return targetIndex;
+      }
+    }
+    return 0;
+  }
+  var activeIndex = wxUtils.range(index, 0, count);
+  for (var i = activeIndex; i < count; i++) {
+    if (!isDisabled(options[i]) && options[i] !== undefined) return i;
+  }
+  for (var i = activeIndex - 1; i >= 0; i--) {
+    if (!isDisabled(options[i]) && options[i] !== undefined) return i;
+  }
+}
+
+function isDisabled(option) {
+  return typeof option === 'object' && option.disabled;
+}
+
+/**
+ * 计算有数据的列表的中心索引值（首位相连的环形数组）
+ * @param {Array} arr - 输入数组
+ * @returns {number} 中心索引值
+ */
+function calculateCenterIndex(arr) {
+
+  var noDataStartIndex = -1;  
+  var noDataEndIndex = -1;
+
+  var newNoDataStartIndex = -1;
+
+  arr.forEach(function(item, index) {
+    if (item === '' && noDataStartIndex === -1) {
+      noDataStartIndex = index;
+    }
+    if (item !== '' && noDataEndIndex === -1 && noDataStartIndex !== -1) {
+      noDataEndIndex = index - 1;
+    }
+
+    if(item === '' && newNoDataStartIndex === -1 && noDataStartIndex !== -1 && noDataEndIndex !== -1) {
+      newNoDataStartIndex = index;
+    }
+  })
+
+  if (noDataStartIndex === 0 && noDataEndIndex === arr.length - 1) {
+    return (noDataEndIndex + arr.length) / 2
+  } else if(noDataStartIndex === 0 || noDataEndIndex === 0) {
+    return (newNoDataStartIndex - noDataEndIndex) / 2 + noDataEndIndex
+  } else {
+    var startCount = noDataStartIndex;
+    var endCount = arr.length - 1 - noDataEndIndex;
+    var mid = Math.abs(startCount - endCount);
+    return startCount > endCount ? noDataStartIndex - Math.floor(mid/2) -1 - endCount : noDataEndIndex + Math.floor(mid/2) + startCount + 1;
+  }
+
+}
+
 
 function wrapperItemStyle(data) {
   var heightStyleStr = "height: " + data.itemHeight + 'px;'
-  var fontStyleStr = style(data.fontStyle);
-  var activeStyleStr = style(data.activeStyle);
-
-  // var maxSideShow = Math.floor(data.visibleItemCount / 2) + 1;
-  // var offsetIndex = data.animationIndex - data.index;
-  // var scale = Math.min(Math.abs(offsetIndex * 0.2), 0.2 * maxSideShow)
-  // var rotateX = offsetIndex * 25 > 0 ? Math.min(offsetIndex * 25, 25 * maxSideShow) : Math.max(offsetIndex * 25, -25 * maxSideShow)
-  // var translateYIndex = offsetIndex > 0 ? Math.min(offsetIndex, maxSideShow) : Math.max(offsetIndex, -maxSideShow)
-  // const transStyle = style({
-  //   transform: `rotateX(${rotateX}deg) scale(${1 - scale}) translateY(${translateYIndex * Math.abs(translateYIndex) * Math.abs(translateYIndex) * data.itemHeight * 0.1}px) translateZ(0)`,
-  // });
-  // return transStyle + ';' + heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
-  return heightStyleStr + (fontStyleStr ? fontStyleStr + ';' : fontStyleStr) + activeStyleStr
+  var perAngle = 360 / (data.visibleItemCount * 4 - 2)
+  var transformStyleStr = style({
+    transform: 'rotateX(' + (360 - data.index * perAngle) + 'deg) translateZ(' + (data.itemHeight * data.visibleItemCount / 2) + 'px) translateX(-50%) scale(0.88);', //  scale(0.88)
+    top: 'calc(50% - ' + (data.itemHeight / 2) + 'px)',
+  });
+  var textStyle = wrapperItemTextStyle(data);
+  return transformStyleStr.replace(';;', ';') + ';' + heightStyleStr + textStyle;
 }
 
 function wrapperItemClass(data) {
-  var staticClass = 'smart-ellipsis';
+  var optionsVIndexList = getVisibleOptions(data.animationIndex, data.instanceId) || data.optionsVIndexList;
+  var animationIndex = data.animationIndex;
+  var intAnimationIndex = Math.round(animationIndex);
+  var activeIndex = (intAnimationIndex + 1) % data.options.length - 1;
+  if(activeIndex < 0) {
+    activeIndex += data.options.length;
+  }
+  var optionIndex = optionsVIndexList[data.index];
+  var option = data.options[optionIndex];
+  var isActive = typeof optionIndex === 'number' && activeIndex === optionIndex;
   var activeClass = 'active-class';
-  var isActive = Math.abs(data.renderStart + data.index - data.animationIndex) < 0.9;
-  return staticClass + ' ' + wxUtils.bem('picker-column__item', { disabled: data.option && data.option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
+  return wxUtils.bem('picker-column__item', { disabled: wxUtils.isObj(option) && option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
+}
+
+function wrapperItemTextStyle(data) {
+  var optionsVIndexList = getVisibleOptions(data.animationIndex, data.instanceId) || data.optionsVIndexList;
+  var animationIndex = data.animationIndex;
+  var intAnimationIndex = Math.round(animationIndex);
+  var activeIndex = (intAnimationIndex + 1) % data.options.length - 1;
+  if(activeIndex < 0) {
+    activeIndex += data.options.length;
+  }
+  var optionIndex = optionsVIndexList[data.index];
+  var fontStyle = data.fontStyle;
+  var activeStyle = data.activeStyle;
+  var isActive = typeof optionIndex === 'number' && activeIndex === optionIndex;
+  return (fontStyle ? fontStyle.replace(';;', '') + ';' : '') + (isActive ? activeStyle.replace(';;', ';') + ';' : '')
+}
+
+function getNewAnimationIndex(animationIndex, activeIndex, length, loop) {
+  var curOptionsNewIndex = Math.floor((animationIndex + 1) / length) * length + activeIndex;
+  var preOptionsNewIndex = curOptionsNewIndex - length;
+  var afterOptionsNewIndex = curOptionsNewIndex + length;
+  var newAnimationIndex = !loop ?
+    activeIndex :
+    Math.abs(preOptionsNewIndex - animationIndex) > Math.abs(curOptionsNewIndex - animationIndex)
+      ? Math.abs(curOptionsNewIndex - animationIndex) > Math.abs(afterOptionsNewIndex - animationIndex)
+        ? afterOptionsNewIndex : curOptionsNewIndex
+      : Math.abs(preOptionsNewIndex - animationIndex) > Math.abs(afterOptionsNewIndex - animationIndex)
+        ? afterOptionsNewIndex
+        : preOptionsNewIndex;
+  return newAnimationIndex;
+}
+
+function getDomState(ownerInstance) {
+  var dom = wxUtils.queryComponent(ownerInstance, '.smart-picker-column');
+  var state = dom.getDataset();
+  return state
+}
+
+function initDomState(instanceId, ownerInstance) {
+  var state = getDomState(ownerInstance);
+  updateState(instanceId, 'options', state.options)
+  updateState(instanceId, 'valueKey', state.valuekey)
+  updateState(instanceId, 'itemHeight', state.itemheight)
+  updateState(instanceId, 'visibleItemCount', state.visibleitemcount)
+  updateState(instanceId, 'activeIndex', state.activeindex)
+  updateState(instanceId, 'loop', state.loop)
+  updateState(instanceId, 'animationTime', state.animationtime)
+  updateState(instanceId, 'changeAnimation', state.changeanimation)
+}
+
+
+function updateValue(instanceId, key) {
+  return function(newOptions, oldOptions, ownerInstance) {
+    if (!instanceId) return;
+    updateState(instanceId, key, newOptions)
+    initDomState(instanceId, ownerInstance)
+    updateListView(instanceId, ownerInstance)
+  }
+}
+
+function updateListView(instanceId, ownerInstance) {
+  var state = getCurrState(instanceId);
+  var domState = getDomState(ownerInstance);
+  if (domState.isdestroy) {
+    clearCurrState(instanceId)
+    return
+  }
+  if(getPreState(instanceId) === JSON.stringify(domState) || !state.itemHeight || !state.visibleItemCount || !wxUtils.isArray(state.options) || state.animationTime === undefined) {
+    return
+  }
+  updatePreState(instanceId, domState)
+  var activeIndex = state.activeIndex;
+  var length = state.options.length || 1;
+  var animationIndex = state.animationIndex || 0;
+  var newAnimationIndex = getNewAnimationIndex(animationIndex, activeIndex, length, state.loop);
+  var isSame = newAnimationIndex === animationIndex;
+  updateState(instanceId, 'animationIndex', newAnimationIndex)
+  updateVisibleOptions(state.animationIndex, instanceId);
+  updateWrapperStyle(instanceId, ownerInstance, {
+    transition: (!state.changeAnimation || isSame) ? 'none' : 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+  });
+}
+
+function touchStart(instanceId) {
+  return function(event) {
+    var state = getCurrState(instanceId);
+    if (state.endTimer) {
+      cancelAnimationFrame(state.endTimer);
+      clearTimeout(state.endTimer);
+      updateState(instanceId, 'endTimer', null);
+    } else {
+      updateState(instanceId, 'recentVelocity', 0);
+    }
+    if(state.tapTimer) {
+      clearTimeout(state.tapTimer);
+      updateState(instanceId, 'tapTimer', null);
+    }
+    var pageY = event.touches[0].pageY;
+    updateState(instanceId, 'startY', pageY);
+    updateState(instanceId, 'moving', false);
+    updateState(instanceId, 'startOffset', state.animationIndex * state.itemHeight);
+    updateState(instanceId, 'preOffsetting', state.animationIndex * state.itemHeight);
+    updateState(instanceId, 'preOffsetList', []);
+  }
+}
+
+function touchMove(instanceId) {
+  return function(event, ownerInstance) {
+    var state = getCurrState(instanceId);
+    var pageY = event.touches[0].pageY;
+    var offsetY = pageY - state.startY;
+    var offsetting = -state.startOffset + offsetY;
+    var newOffsetList = state.preOffsetList.slice();
+    newOffsetList.push(offsetting);
+    var animationIndex = -offsetting / state.itemHeight;
+    var intPreIndex = Math.round(state.animationIndex);
+    var intCurIndex = Math.round(animationIndex);
+    var offsetCompare = offsetting - state.preOffsetting;
+    var direction =
+      offsetCompare < 0 ? 'down' : offsetCompare > 0 ? 'up' : state.movingDirection;
+    updateVisibleOptions(animationIndex, instanceId);
+    var isOverOptionsItem = state.loop ? false : animationIndex < 0 || animationIndex > state.options.length - 1;
+    var activeIndex = Math.round(animationIndex);
+    var isDisabled = wxUtils.isObj(state.options[activeIndex]) && state.options[activeIndex].disabled;
+    if (
+      intPreIndex !== intCurIndex
+      && !isOverOptionsItem
+      && !isDisabled
+    ) {
+      ownerInstance.callMethod('animationIndexChange', animationIndex);
+      ownerInstance.callMethod('vibrateShort');
+    }
+
+    if (!state.moving) {
+      ownerInstance.callMethod('animationStart');
+    }
+    updateState(instanceId, 'moving', true);
+    updateState(instanceId, 'animationIndex', animationIndex);
+    updateState(instanceId, 'preOffsetting', offsetting);
+    updateState(instanceId, 'preOffsetList', newOffsetList);
+    updateState(instanceId, 'movingDirection', direction);
+
+    updateWrapperStyle(instanceId, ownerInstance);
+  }
+}
+
+function touchEnd(instanceId) {
+  return function(event, ownerInstance) {
+    var state = getCurrState(instanceId);
+    if (!state.moving) {
+      return;
+    }
+    var preOffsetList = state.preOffsetList;
+    // 计算最后几帧的平均速度，用于惯性滚动
+    var recentVelocity = 0;
+    /** -1: 向下, 1: 向上, 0: 无滚动 */
+    var scrollDirection = 0;
+
+    if (preOffsetList.length >= 2) {
+      // 计算速度，优先使用最后几帧的数据
+      var recentOffset = 0;
+      var recentTime = 0;
+
+      if (preOffsetList.length >= 3) {
+        // 有3个或以上数据点，使用最后3个点计算速度
+        recentOffset =
+          preOffsetList[preOffsetList.length - 1] - preOffsetList[preOffsetList.length - 3];
+        recentTime = 2; // 2帧间隔
+      } else if (preOffsetList.length === 2) {
+        // 只有2个数据点，使用这2个点计算速度
+        recentOffset = preOffsetList[1] - preOffsetList[0];
+        recentTime = 1; // 1帧间隔
+      }
+
+      // 计算速度 (px/ms)
+      recentVelocity = state.recentVelocity + Math.abs(recentOffset) / (recentTime * 16);
+      updateState(instanceId, 'recentVelocity', recentVelocity);
+      // 确定滚动方向
+      if (recentOffset > 0) {
+        scrollDirection = 1; // 向上滚动
+      } else if (recentOffset < 0) {
+        scrollDirection = -1; // 向下滚动
+      }
+    }
+
+    // 惯性滚动参数配置
+    var minVelocity = 0.1; // 最小速度阈值，低于此值停止滚动
+    var maxInertiaDistance = state.itemHeight * Math.max(Math.floor(state.options.length/4), 6); // 最大惯性滚动距离
+    // 计算惯性滚动距离
+    var inertiaDistance = 0;
+    if (recentVelocity > minVelocity) {
+      // 使用物理公式计算惯性距离：distance = velocity^2 / (2 * friction)
+      // 这里简化处理，直接使用速度乘以一个系数
+      inertiaDistance = recentVelocity * 150; // 200ms的惯性时间
+
+      // 限制最大滚动距离
+      if (inertiaDistance > maxInertiaDistance) {
+        inertiaDistance = maxInertiaDistance;
+      }
+
+      // 根据滚动方向确定正负值
+      inertiaDistance *= scrollDirection;
+    }
+
+    // 计算最终目标位置 和 index
+    var targetOffset =
+      Math.round((state.preOffsetting + inertiaDistance) / state.itemHeight) *
+      state.itemHeight;
+    var currTargetActiveIndex = -targetOffset / state.itemHeight;
+    currTargetActiveIndex = adjustIndex(Math.round(currTargetActiveIndex), state.options, state.loop);
+    targetOffset = -currTargetActiveIndex * state.itemHeight;
+    var animationOffset = Math.abs(targetOffset - state.preOffsetting);
+    var isOverOptionsLimit = state.loop ? false : state.animationIndex < 0 || state.animationIndex > state.options.length - 1;
+    var totalDistance = targetOffset - state.preOffsetting;
+      // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
+    if (state.animationTime > 200 && animationOffset > state.itemHeight && !isOverOptionsLimit) {
+      var countOffsetIndex = Math.abs(Math.round(currTargetActiveIndex - state.animationIndex));
+      var maxVibrateShort = Math.floor(state.animationTime / 30);
+      
+      // 基于时间的减速动画参数
+      var startOffset = state.preOffsetting;
+      var startTime = Date.now();
+      
+      // 使用 requestAnimationFrame 实现动画
+      var animate = function() {
+        var elapsedTime = Date.now() - startTime;
+        var progress = Math.min(elapsedTime / state.animationTime, 1); // 进度 0-1
+        
+        // 使用缓动函数实现减速效果：easeOutCubic
+        // f(t) = 1 - (1-t)^3，开始快，结束慢
+        var easedProgress = 1 - Math.pow(1 - progress, 3);
+        
+        // 计算当前偏移量
+        var currentOffset = startOffset + totalDistance * easedProgress;
+        
+        if (progress >= 1) {
+          // 动画完成，设置为精确的目标位置
+          updateVisibleOptions(currTargetActiveIndex, instanceId);
+          updateWrapperStyle(instanceId, ownerInstance);
+          updateState(instanceId, 'endTimer', null);
+          updateState(instanceId, 'moving', false);
+          updateState(instanceId, 'animationIndex', currTargetActiveIndex);
+          ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
+          setTimeout(function() {
+            ownerInstance.callMethod('animationEnd');
+          }, 0);
+          return;
+        }
+        
+        var currIndex = -currentOffset / state.itemHeight;
+        updateVisibleOptions(currIndex, instanceId);
+        updateState(instanceId, 'animationIndex', currIndex);
+        ownerInstance.callMethod('animationIndexChange', currIndex);
+        updateWrapperStyle(instanceId, ownerInstance);
+        
+        // 继续下一帧动画
+        var animationId = requestAnimationFrame(animate);
+        updateState(instanceId, 'endTimer', animationId);
+      };
+      
+      // 启动动画
+      var animationId = requestAnimationFrame(animate);
+      ownerInstance.callMethod('vibrateShort', Math.min(countOffsetIndex, maxVibrateShort), state.animationTime);
+      updateState(instanceId, 'endTimer', animationId);
+    } else {
+      updateVisibleOptions(currTargetActiveIndex, instanceId);
+      updateState(instanceId, 'animationIndex', currTargetActiveIndex);
+      updateWrapperStyle(instanceId, ownerInstance, {
+        transition: 'transform ' + 200 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+      });
+      setTimeout(function() {
+        updateState(instanceId, 'moving', false);
+        ownerInstance.callMethod('animationEnd');
+        ownerInstance.callMethod('activeIndexChange', currTargetActiveIndex, true);
+      }, 150);
+    }
+  }
+}
+
+
+function updateVisibleOptions(currentIndex, instanceId) {
+  var newArr = getVisibleOptions(currentIndex, instanceId);
+  updateState(instanceId, 'optionsVIndexList', newArr);
+  return newArr
+}
+
+var Cache = {}
+
+function getVisibleOptions(currentIndex, instanceId) {
+  var state = getCurrState(instanceId);
+  if(!state) return
+  var animationIndex = Math.round(
+    currentIndex !== undefined ? currentIndex : state.animationIndex
+  );
+  var newCheckData = {
+    visibleItemCount: state.visibleItemCount,
+    animationIndex: animationIndex,
+    loop: state.loop,
+    optionsLength: state.options.length,
+  }
+  if (!Cache[instanceId]) {
+    Cache[instanceId] = {}
+  }
+  if (JSON.stringify(newCheckData) === Cache[instanceId].check) {
+    return Cache[instanceId].result;
+  }
+  Cache[instanceId].check = JSON.stringify(newCheckData);
+  var vOptionLength = state.visibleItemCount * 4 - 2;
+  var rotateAngle = 360 / vOptionLength;
+  var newArr = wxUtils.createArray(vOptionLength, '');
+  var partCount = Math.floor(state.visibleItemCount / 2) + 3;
+  var newValueArr = wxUtils.createArray(partCount * 2 + 1, '');
+  if (state.loop) {
+    // 循环模式：根据 options 首尾填充 newValueArr 数组
+    var optionsLength = state.options.length;
+    if (optionsLength === 0) {
+      // 如果没有选项，填充空值
+      wxUtils.fillArray(newValueArr, '');
+    } else {
+      newValueArr.forEach(function(item, index) {
+        // 计算相对于中心的偏移量
+        var offset = index - partCount;
+        // 计算目标索引，支持循环
+        var targetAnimationIndex = animationIndex + offset;
+        var targetIndex = (targetAnimationIndex + 1) % optionsLength - 1;
+        if(targetIndex < 0) {
+          targetIndex += optionsLength;
+        }
+
+        newValueArr[index] = targetIndex;
+      });
+    }
+  } else {
+    if (animationIndex < 0) {
+      animationIndex = 0;
+    }
+    if (animationIndex > state.options.length - 1) {
+      animationIndex = state.options.length - 1;
+    }
+    newValueArr.forEach(function(item, index) {
+      var valueIndex =
+        animationIndex - partCount + index >= 0 ? animationIndex - partCount + index : undefined;
+      if (valueIndex === undefined) {
+        return;
+      }
+      newValueArr[index] = valueIndex;
+    });
+  }
+  var rotate = (animationIndex * rotateAngle) % 360;
+  if(rotate < 0) {
+    rotate += 360;
+  }
+  var rotateIndex = Math.round(rotate / rotateAngle);
+
+  // 环形结构填充：以rotateIndex为中心，向两边扩展填充newValueArr
+  var centerIndex = rotateIndex; // 中心位置
+  var halfLength = Math.floor(newValueArr.length / 2); // newValueArr的一半长度
+
+  // 从中心位置开始，向两边填充
+  for (var i = 0; i < newValueArr.length; i++) {
+    var targetIndex = (centerIndex - halfLength + i + vOptionLength) % vOptionLength; // 确保索引在0-17范围内
+    newArr[targetIndex] = newValueArr[i];
+  }
+
+  Cache[instanceId].result = newArr;
+  return newArr
+}
+
+function getWrapperCSSVar(instanceId) {
+  var state = getCurrState(instanceId);
+  var optionsVIndexList = state.optionsVIndexList;
+  return optionsVIndexList.reduce(function(previousValue, currentValue, currentIndex) {
+    if (currentValue === '' || currentValue === undefined) {
+      previousValue['--picker-item-content_' + currentIndex] = '""';
+    } else {
+      var index = currentValue;
+      var text = optionText(state.options, index, state.valueKey);
+      previousValue['--picker-item-content_' + currentIndex] = '"' + (text === undefined ? '' : text) + '"';
+    }
+    return previousValue;
+  }, {});
+}
+
+function updateWrapperStyle(instanceId, ownerInstance, style) {
+  style = style || {};
+  var state = getCurrState(instanceId);
+  var perAngle = 360 / (state.visibleItemCount * 4 - 2)
+  var rotate = perAngle * state.animationIndex;
+  var cssVar = getWrapperCSSVar(instanceId);
+  var styleObj = {
+    transition: state.moving ? 'none' : 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
+    transform: 'rotateX(' + rotate + 'deg)'
+  };
+
+  const newStyleObject = Object.assign(Object.assign(styleObj, style), cssVar);
+  
+  setStyle(ownerInstance, newStyleObject, '.smart-picker-column__offset');
+}
+
+function tapItem(instanceId) {
+  return function(e, ownerInstance) {
+    var state = getCurrState(instanceId);
+    var rotateIndex = e.currentTarget.dataset.index;
+    var currOptionsActiveIndex = state.optionsVIndexList[rotateIndex];
+    var activeRotateIndex = calculateCenterIndex(state.optionsVIndexList);
+    var option = state.options[currOptionsActiveIndex];
+    if (option === undefined || (option && typeof option === 'object' && option.disabled)) return;
+    if (state.startTimer) {
+      clearTimeout(state.startTimer);
+      updateState(instanceId, 'startTimer', null);
+    }
+    if (rotateIndex === activeRotateIndex) return;
+    ownerInstance.callMethod('animationStart');
+    if (state.tapTimer) {
+      clearTimeout(state.tapTimer);
+      updateState(instanceId, 'tapTimer', null);
+    }
+    var targetAnimationIndex = getNewAnimationIndex(state.animationIndex, currOptionsActiveIndex, state.options.length || 1, state.loop);
+    var offsetCount = Math.abs(targetAnimationIndex - state.animationIndex);
+    updateVisibleOptions(targetAnimationIndex, instanceId);
+    updateState(instanceId, 'animationIndex', targetAnimationIndex);
+    updateWrapperStyle(instanceId, ownerInstance, {
+      transition: 'transform ' + 300 + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+    });
+    ownerInstance.callMethod('animationIndexChange', targetAnimationIndex);
+    ownerInstance.callMethod('vibrateShort', offsetCount, 200);
+    var tapTimer = setTimeout(function() {
+      ownerInstance.callMethod('activeIndexChange', targetAnimationIndex);
+      updateState(instanceId, 'tapTimer', null);
+      setTimeout(function() {
+        ownerInstance.callMethod('animationEnd');
+      }, 0);
+    }, 200);
+    updateState(instanceId, 'tapTimer', tapTimer);
+  }
 }
 
 module.exports = {
   optionText: optionText,
   rootStyle: rootStyle,
   wrapperStyle: wrapperStyle,
-  wrapperInterStyle: wrapperInterStyle,
   wrapperItemStyle: wrapperItemStyle,
-  wrapperItemClass: wrapperItemClass
+  wrapperItemClass: wrapperItemClass,
+  updateValue: updateValue,
+  touchStart: touchStart,
+  touchMove: touchMove,
+  touchEnd: touchEnd,
+  tapItem: tapItem,
 };

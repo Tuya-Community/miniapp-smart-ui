@@ -29,7 +29,7 @@
     <view class="demo-preview">
       <image class="demo-preview-img" src="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png" />
       <view class="demo-content">
-        <view class="demo-content-h3">{{I18n.t('aboutTuyaMiniApp')}}</view>
+        <view class="demo-content-h3">{{I18n.t('about_Tu_yaMiniApp')}}</view>
         <view class="domo-content-p">{{I18n.t('helpDeverTip')}}</view>
       </view>
     </view>

@@ -23,13 +23,21 @@ category: 反馈
 ### 基础用法
 
 ```html
-<smart-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
+<smart-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" bind:tabClose="onTabClose">
   <view slot="left" class="smart-swipe-cell__left">选择</view>
   <smart-cell-group>
     <smart-cell title="单元格" value="内容" />
   </smart-cell-group>
   <view slot="right" class="smart-swipe-cell__right">删除</view>
 </smart-swipe-cell>
+```
+
+```js
+Page({
+  onTabClose(event) {
+    console.log('onTabClose: ', event.detail);
+  },
+});
 ```
 
 ### 异步关闭
@@ -42,7 +50,7 @@ category: 反馈
   right-width="{{ 65 }}"
   left-width="{{ 65 }}"
   async-close
-  bind:close="onClose"
+  bind:close="onAsyncClose"
 >
   <view slot="left">选择</view>
   <smart-cell-group>
@@ -54,7 +62,7 @@ category: 反馈
 
 ```js
 Page({
-  onClose(event) {
+  onAsyncClose(event) {
     const { position, instance } = event.detail;
     switch (position) {
       case 'left':
@@ -142,7 +150,8 @@ Page({
 | 事件名     | 说明       | 参数                                                      |
 | ---------- | ---------- | --------------------------------------------------------- |
 | bind:click | 点击时触发 | 关闭时的点击位置 (`left` `right` `cell` `outside`)        |
-| bind:close | 关闭时触发 | { position: 'left' \| 'right' , instance , name: string } |
+| bind:tabClose `v2.7.0` | 关闭时触发 | 关闭的位置 (`left` `right`)        |
+| bind:close | 点击异步关闭时触发 | { position: 'left' \| 'right' , instance , name: string } |
 | bind:open  | 打开时触发 | { position: 'left' \| 'right' , name: string }            |
 
 ### close 参数
@@ -155,7 +164,7 @@ Page({
 
 ### 方法
 
-通过 selectComponent 可以获取到 SwipeCell 实例并调用实例方法
+通过 [selectComponent](/material/smartui?comId=faq&appType=miniapp) 可以获取到 SwipeCell 实例并调用实例方法
 
 | 方法名 | 参数                      | 返回值 | 介绍             |
 | ------ | ------------------------- | ------ | ---------------- |

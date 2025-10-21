@@ -40,6 +40,21 @@ Page({
 });
 ```
 
+### Switch Label  `v2.7.0`
+
+```html
+<smart-switch
+  active-text="ON"
+  inactive-text="OFF"
+/>
+<view style="--switch-label-font-size: 10px;">
+  <smart-switch
+    active-text="show"
+    inactive-text="hide"
+  />
+</view>
+```
+
 ### Disabled State
 
 ```html
@@ -147,6 +162,8 @@ The `stop-click-propagation` attribute can prevent bubbling.
 | name                           | Identifier when submitting | _string_  | -         |
 | size                           | Switch size                | _string_  | `30px`    |
 | stop-click-propagation `v1.0.2`| Whether to prevent bubbling| _boolean_ | `false`   |
+| active-text `v2.7.0` | Text when opening           | _string_ | -   |
+| inactive-text `v2.7.0` | Text when closed           | _string_ | -   |
 
 ### Events
 
@@ -180,3 +197,7 @@ The component provides the following CSS variables for custom styling. See [Conf
 | --switch-border `@deprecated v2.5.0`             | _0.08em solid rgba(0, 0, 0, 0.1)_     | Switch border |
 | --switch-node-on-background-color `v2.4.0` | _var(--switch-node-background-color, #fff)_ | Background color of the sphere when turned on |
 | --switch-padding `v2.5.0` | _0.08em_ | Internal padding |
+| --switch-label-width `v2.7.0` | _2em_ | Default width when the text switch is on |
+| --switch-label-font-size `v2.7.0` | _12px_ | Font Size |
+| --switch-label-active-color `v2.7.0` | _var(--app-B3, #ffffff)_ | Text color on open |
+| --switch-label-inactive-color `v2.7.0` | _var(--app-B3, #ffffff)_ | Text color when turned off |

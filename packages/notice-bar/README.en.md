@@ -172,7 +172,7 @@ import Warning from '@tuya-miniapp/icons/dist/svg/Warning';
 | ----------- | ----------------- | ---------------- |
 | bind:click  | Triggered when the notice bar is clicked | _event: Event_ |
 | bind:close  | Triggered when the notice bar is closed | _event: Event_ |
-| bind:btnClick | Triggered when the button text is clicked | _event: Event_ |
+| bind:btn-click `v2.7.0` | Triggered when the button text is clicked | _event: Event_ |
 
 
 ### Slot

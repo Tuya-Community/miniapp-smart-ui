@@ -236,7 +236,8 @@ SmartComponent({
           unit: locale?.[column.type],
           style: columnStyles?.[column.type],
           fontStyle: fontStyles?.[column.type],
-          activeIndex,
+          activeIndex: activeIndex === -1 ? 0 : activeIndex,
+          loop: !['12HourClock', 'year'].includes(column.type),
         };
       });
       return this.setData({ columns: results });
@@ -453,7 +454,6 @@ SmartComponent({
         value = `${+originColumns[0].values[indexes[0]]}:${+originColumns[1].values[indexes[1]]}`;
       } else {
         const originColumns = this.getOriginColumns();
-        const indexes = picker.getIndexes();
         const values = indexes.map((value, index) => originColumns[index].values[value]);
         const year = getTrueValue(values[0]);
         const month = getTrueValue(values[1]);

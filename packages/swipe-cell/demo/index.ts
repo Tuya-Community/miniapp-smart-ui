@@ -4,7 +4,7 @@ import Toast from '../../toast/toast';
 
 SmartComponent({
   methods: {
-    onClose(event) {
+    onAsyncClose(event) {
       const { position, instance } = event.detail;
       switch (position) {
         case 'left':
@@ -25,6 +25,9 @@ SmartComponent({
             });
           break;
       }
+    },
+    onTabClose(event) {
+      console.log('onTabClose', event.detail);
     },
 
     onOpen(event) {

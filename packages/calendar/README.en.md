@@ -384,7 +384,7 @@ When the `poppable` of Calendar is `true`, the following props are supported:
 | close-on-click-overlay   | Close when clicking the overlay   | _boolean_ | `true`       |
 | position                 | Popup position, optional values are `top`, `right`, `left` | _string_  | `bottom`     |
 | round                    | Show rounded popup                | _boolean_ | `true`       |
-| safe-area-inset-bottom   | Enable bottom safe area adaptation | _boolean_ | `true`       |
+| safe-area-inset-bottom   | Whether to reserve bottom safe area, v2.7.0 starts to close by default | _boolean_ | `false`       |
 | show                     | Show the calendar popup           | _boolean_ | `false`      |
 
 ### Events
@@ -403,7 +403,7 @@ When the `poppable` of Calendar is `true`, the following props are supported:
 
 ### Methods
 
-You can get the Calendar instance via selectComponent and call instance methods.
+You can get the Calendar instance via [selectComponent](/material/smartui?comId=faq&appType=miniapp) and call instance methods.
 
 | Method Name | Description                        | Parameter | Return Value |
 | ------------| ---------------------------------- | ----------| -------------|

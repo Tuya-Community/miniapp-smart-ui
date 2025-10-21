@@ -167,7 +167,7 @@ Page({
 
 ### 方法
 
-通过 selectComponent 可以获取到 CountDown 实例并调用实例方法。
+通过 [selectComponent](/material/smartui?comId=faq&appType=miniapp) 可以获取到 CountDown 实例并调用实例方法。
 
 | 方法名 | 参数 | 返回值 | 介绍                                                       |
 | ------ | ---- | ------ | ---------------------------------------------------------- |

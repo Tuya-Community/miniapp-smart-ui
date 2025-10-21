@@ -27,8 +27,8 @@ function tabStyle(data) {
   if (data.type === 'card') {
     return style({
       'border-color': data.color,
-      'background-color': !data.disabled && data.active ? data.color : null,
-      color: titleColor || (!data.disabled && !data.active ? data.color : null),
+      'background-color': !data.disabled && data.active && data.type !== 'card' ? data.color : null,
+      color: titleColor || (!data.disabled && !data.active && data.type !== 'card' ? data.color : null),
       'flex-basis': ellipsis ? 88 / data.swipeThreshold + '%' : null,
     });
   }

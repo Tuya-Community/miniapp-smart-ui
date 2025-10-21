@@ -218,7 +218,7 @@ Page({
 
 ### DropdownItem Methods
 
-Accessible via selectComponent(id).
+Accessible via [selectComponent](/material/smartui?comId=faq&appType=miniapp)
 
 | Method Name | Description                           | Parameters     | Return Value |
 | ----------- | ------------------------------------- | -------------- | ------------ |
