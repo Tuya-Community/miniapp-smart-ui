@@ -1,7 +1,7 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
 <view
-  class="{{ utils.bem('tabbar', { border: true }) }} {{ utils.bem('tabbar', { fixed, safe: safeAreaInsetBottom }) }} custom-class"
+  class="{{ utils.bem('tabbar', { border }) }} {{ utils.bem('tabbar', { fixed, safe: safeAreaInsetBottom }) }} custom-class"
   style="{{ zIndex ? 'z-index: ' + zIndex : '' }}"
 >
   <slot name="left" />
