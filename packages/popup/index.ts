@@ -52,7 +52,7 @@ SmartComponent({
     },
     safeAreaInsetBottom: {
       type: Boolean,
-      value: true,
+      value: false,
     },
     safeAreaInsetBottomMin: {
       type: Number,
