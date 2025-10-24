@@ -152,7 +152,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:click="onClickButton"
           >
             <smart-button
-              class="smart-goods-action-button smart-goods-action-button--warning smart-goods-action-button--first"
+              class="smart-goods-action-button smart-goods-action-button--warning"
               customClass="smart-goods-action-button__inner custom-class"
               bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
@@ -207,7 +207,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:click="onClickButton"
           >
             <smart-button
-              class="smart-goods-action-button smart-goods-action-button--danger smart-goods-action-button--last"
+              class="smart-goods-action-button smart-goods-action-button--danger"
               customClass="smart-goods-action-button__inner custom-class"
               bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
@@ -489,7 +489,7 @@ exports[`should render demo and match snapshot 1`] = `
           </smart-goods-action-icon>
           <smart-goods-action-button>
             <smart-button
-              class="smart-goods-action-button smart-goods-action-button--warning smart-goods-action-button--first"
+              class="smart-goods-action-button smart-goods-action-button--warning"
               customClass="smart-goods-action-button__inner custom-class"
               bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
@@ -542,7 +542,7 @@ exports[`should render demo and match snapshot 1`] = `
           </smart-goods-action-button>
           <smart-goods-action-button>
             <smart-button
-              class="smart-goods-action-button smart-goods-action-button--danger smart-goods-action-button--last"
+              class="smart-goods-action-button smart-goods-action-button--danger"
               customClass="smart-goods-action-button__inner custom-class"
               bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
@@ -743,7 +743,7 @@ exports[`should render demo and match snapshot 1`] = `
           </smart-goods-action-icon>
           <smart-goods-action-button>
             <smart-button
-              class="smart-goods-action-button smart-goods-action-button--warning smart-goods-action-button--first"
+              class="smart-goods-action-button smart-goods-action-button--warning"
               customClass="smart-goods-action-button__inner custom-class"
               bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
@@ -796,7 +796,7 @@ exports[`should render demo and match snapshot 1`] = `
           </smart-goods-action-button>
           <smart-goods-action-button>
             <smart-button
-              class="smart-goods-action-button smart-goods-action-button--danger smart-goods-action-button--last"
+              class="smart-goods-action-button smart-goods-action-button--danger"
               customClass="smart-goods-action-button__inner custom-class"
               bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
@@ -997,7 +997,7 @@ exports[`should render demo and match snapshot 1`] = `
           </smart-goods-action-icon>
           <smart-goods-action-button>
             <smart-button
-              class="smart-goods-action-button smart-goods-action-button--warning smart-goods-action-button--first"
+              class="smart-goods-action-button smart-goods-action-button--warning"
               customClass="smart-goods-action-button__inner custom-class"
               bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
@@ -1050,7 +1050,7 @@ exports[`should render demo and match snapshot 1`] = `
           </smart-goods-action-button>
           <smart-goods-action-button>
             <smart-button
-              class="smart-goods-action-button smart-goods-action-button--danger smart-goods-action-button--last smart-goods-action-button--plain"
+              class="smart-goods-action-button smart-goods-action-button--danger smart-goods-action-button--plain"
               customClass="smart-goods-action-button__inner custom-class"
               bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
