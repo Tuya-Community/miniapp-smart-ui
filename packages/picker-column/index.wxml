@@ -13,13 +13,13 @@
   data-itemheight="{{itemHeight}}"
   data-visibleitemcount="{{visibleItemCount}}"
   data-activeindex="{{currentIndex}}"
-  data-loop="{{loop}}"
+  data-loop="{{loop && options.length > 1}}"
   data-animationtime="{{animationTime}}"
   isdestroy="{{isDestroy}}"
   options="{{options}}" 
   activeindex="{{currentIndex}}"
   changeanimation="{{changeAnimation}}"
-  loop="{{loop}}"
+  loop="{{loop && options.length > 1}}"
   valuekey="{{valueKey}}"
   itemheight="{{itemHeight}}"
   visibleitemcount="{{visibleItemCount}}"
@@ -38,7 +38,7 @@
   bind:touchend="{{computed.touchEnd(instanceId)}}"
   bind:touchcancel="{{computed.touchEnd(instanceId)}}"
 >
-  <view class="smart-picker-column__offset" style="{{ computed.wrapperStyle({ animationIndex, itemHeight, animationTime, unit, moving, optionsVIndexList, options, valueKey, visibleItemCount, loop, changeAnimation }) }}" id="options">
+  <view class="smart-picker-column__offset" style="{{ computed.wrapperStyle({ animationIndex, itemHeight, animationTime, unit, moving, optionsVIndexList, options, valueKey, visibleItemCount, loop: loop && options.length > 1, changeAnimation }) }}" id="options">
     <view
       wx:for="{{ optionsVIndexList }}"
       wx:for-item="optionIndex"

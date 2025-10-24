@@ -66,6 +66,11 @@ SmartComponent({
     loop: {
       type: Boolean,
       value: false,
+      observer() {
+        if (!this.data.isInit) return;
+        this.updateCurrentIndex(this.data.currentIndex);
+        this.updateVisibleOptions();
+      },
     },
   },
   data: {
@@ -101,7 +106,8 @@ SmartComponent({
       const count = this.data.options.length;
       let animationIndex = this.getAnimationIndex(currIndex);
       animationIndex = this.adjustIndex(animationIndex);
-      let currActiveIndex = this.data.loop ? ((animationIndex + 1) % count) - 1 : animationIndex;
+      let currActiveIndex =
+        this.data.loop && count > 1 ? ((animationIndex + 1) % count) - 1 : animationIndex;
       if (currActiveIndex < 0) {
         currActiveIndex += count;
       }
@@ -119,7 +125,7 @@ SmartComponent({
     getAnimationIndex(currentIndex) {
       const { animationIndex } = this.data;
       const length = this.data.options.length || 1;
-      if (this.data.loop) {
+      if (this.data.loop && length > 1) {
         const newAnimationIndex = this.getNewAnimationIndex(
           animationIndex,
           currentIndex,
@@ -182,7 +188,7 @@ SmartComponent({
       const partCount = Math.floor(this.data.visibleItemCount / 2) + 3;
       const newArr = new Array(vOptionLength).fill('');
       const newValueArr = new Array(partCount * 2 + 1).fill('');
-      if (this.data.loop) {
+      if (this.data.loop && this.data.options.length > 1) {
         // 循环模式：根据 options 首尾填充 newValueArr 数组
         const optionsLength = this.data.options.length;
         if (optionsLength === 0) {
@@ -258,7 +264,7 @@ SmartComponent({
     adjustIndex(index: number) {
       const { data } = this;
       const count = this.getCount();
-      if (this.data.loop) {
+      if (this.data.loop && count > 1) {
         for (let i = 0; i < count; i++) {
           const targetIndex = index + i;
           let optionIndex = ((targetIndex + 1) % count) - 1;
