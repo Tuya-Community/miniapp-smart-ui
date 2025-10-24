@@ -4,7 +4,9 @@ import { useChildren } from '../common/relation';
 SmartComponent({
   relation: useChildren('goods-action-button', function () {
     this.children.forEach(item => {
-      item.updateStyle();
+      setTimeout(() => {
+        item.updateStyle();
+      }, 0);
     });
   }),
 
