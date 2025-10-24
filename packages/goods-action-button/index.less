@@ -14,8 +14,11 @@
     @goods-action-button-danger-color
   );
   --button-default-height: var(
+    --button-default-height,
+    var(
     --goods-action-button-height,
     @goods-action-button-height
+  )
   );
   --button-line-height: var(
     --goods-action-button-line-height,
@@ -31,7 +34,7 @@
   --button-border-width: 0;
 
   &--first {
-    margin-right: 5px;
+    margin-right: 6px;
 
     --button-border-radius: var(
       --goods-action-button-border-radius,
@@ -44,7 +47,7 @@
   }
 
   &--last {
-    margin-left: 5px;
+    margin-left: 6px;
 
     --button-border-radius: 0 var(
       --goods-action-button-border-radius,
