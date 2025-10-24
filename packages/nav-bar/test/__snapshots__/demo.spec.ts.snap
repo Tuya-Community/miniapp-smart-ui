@@ -267,7 +267,7 @@ exports[`should render demo and match snapshot 1`] = `
                 data-type="rightIcon"
                 hoverClass="smart-nav-bar__icon--hover"
                 hoverStayTime="70"
-                catch:tap="onClickRightIcon"
+                bind:tap="onClickRightIcon"
               >
                 <smart-icon
                   class="right-icon-class"
@@ -337,7 +337,7 @@ exports[`should render demo and match snapshot 1`] = `
                 data-type="rightIcon"
                 hoverClass="smart-nav-bar__icon--hover"
                 hoverStayTime="70"
-                catch:tap="onClickRightIcon"
+                bind:tap="onClickRightIcon"
               >
                 <smart-icon
                   class="right-icon-class"
