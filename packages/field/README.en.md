@@ -291,7 +291,7 @@ Upgrade to version 1.10.21 or above, and configure the `name` attribute.
 | error-message-align          | Bottom error message text alignment, optional values are `center` `right`                                     | _string_            | `''`    |
 | extra-event-params `v1.10.12`| Enable event enhanced mode, will provide additional `cursor` and `keyCode` parameters in input and change events, planned to be the default behavior in the next major version | _boolean_           | `false` |
 | fixed                        | If the type is `textarea` and in a `position: fixed` area, you need to explicitly specify the attribute fixed as true | _boolean_           | `false` |
-| focus                        | Get focus                                                                                                     | _boolean_           | `false` |
+| focus   `@deprecated Mini program not supported`                       | Get focus                                                                                                     | _boolean_           | `false` |
 | hold-keyboard                | Do not hide the keyboard when clicking the page while focused                                                 | _boolean_           | `false` |
 | input-align                  | Input text alignment, optional values are `center` `right`                                                    | _string_            | -       |
 | is-link                      | Whether to display the right arrow and enable click feedback                                                  | _boolean_           | `false` |
