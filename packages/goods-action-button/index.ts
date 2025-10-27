@@ -26,8 +26,8 @@ SmartComponent({
       type: String,
       value: '',
     },
-    first: Boolean,
-    last: Boolean,
+    isFirst: Boolean,
+    isLast: Boolean,
   },
 
   methods: {
@@ -44,9 +44,13 @@ SmartComponent({
       const { index } = this;
       const { children = [] } = this.parent;
 
+      // this.setData({
+      //   isFirst: index === 0 && children.length > 1,
+      //   isLast: index === children.length - 1 && children.length > 1,
+      // });
+
       this.setData({
-        isFirst: index === 0 && children.length > 1,
-        isLast: index === children.length - 1 && children.length > 1,
+        length: children.length,
       });
     },
   },
