@@ -195,6 +195,7 @@ SmartComponent({
             ...detail,
             callback: (data: InputDetails) => {
               result = data;
+              this.setData({ innerValue: data.value });
             },
           }
         : detail.value;
