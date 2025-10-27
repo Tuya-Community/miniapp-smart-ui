@@ -58,7 +58,7 @@ export default Render({
     const ctx = canvas.getContext('2d');
 
     const lineWidth = this.lineWidth; // 进度条宽度
-    const radius = ((this.width - lineWidth) * 0.9) / 2; // 圆形半径
+    const radius = ((this.width - lineWidth) * 1) / 2; // 圆形半径
     const startAngle = Math.PI; // 起始角度（3点钟方向）
     const endAngle = 4 * Math.PI; // 结束角度（360度）
 
@@ -113,7 +113,7 @@ export default Render({
     const ctx = canvas.getContext('2d');
 
     const lineWidth = this.lineWidth; // 进度条宽度
-    const radius = ((this.width - lineWidth) * 0.9) / 2; // 圆形半径
+    const radius = ((this.width - lineWidth) * 1) / 2; // 圆形半径
     const startAngle = 1 * Math.PI; // 起始角度（3点钟方向）
     const endAngle = 2 * Math.PI; // 结束角度（360度）
 
@@ -170,7 +170,7 @@ export default Render({
     const ctx = canvas.getContext('2d');
 
     const lineWidth = this.lineWidth; // 进度条宽度
-    const radius = ((this.width - lineWidth) * 0.9) / 2; // 圆形半径
+    const radius = ((this.width - lineWidth) * 1) / 2; // 圆形半径
 
     const startAngle = 0.8 * Math.PI; // 起始角度（3点钟方向）
     const endAngle = 2.2 * Math.PI; // 结束角度（360度）
