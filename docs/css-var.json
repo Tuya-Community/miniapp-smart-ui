@@ -1484,7 +1484,7 @@
   },
   "dialog--round-button-border-radius": {
     "name": "@dialog--round-button-border-radius",
-    "value": "20px",
+    "value": "301px",
     "decs": ""
   },
   "field-label-color": {
@@ -1664,7 +1664,7 @@
   },
   "goods-action-height": {
     "name": "@goods-action-height",
-    "value": "50px",
+    "value": "48px",
     "decs": ""
   },
   "goods-action-icon-width": {
@@ -1674,7 +1674,7 @@
   },
   "goods-action-icon-height": {
     "name": "@goods-action-icon-height",
-    "value": "50px",
+    "value": "48px",
     "decs": ""
   },
   "goods-action-icon-color": {
@@ -1699,7 +1699,7 @@
   },
   "goods-action-button-height": {
     "name": "@goods-action-button-height",
-    "value": "40px",
+    "value": "48px",
     "decs": ""
   },
   "goods-action-button-line-height": {

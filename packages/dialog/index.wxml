@@ -53,9 +53,10 @@
     <smart-goods-action-button
       wx:if="{{ showCancelButton }}"
       loading="{{ loaing.cancel }}"
+      is-first
       class="smart-dialog__button smart-hairline--right"
       custom-class="smart-dialog__cancel cancle-button-class"
-      custom-style="color: {{ cancelButtonColor }}"
+      custom-style="{{ cancelButtonColor ? 'color: ' + cancelButtonColor : '' }}"
       bind:click="onCancel"
     >
       {{ cancelButtonText }}
@@ -64,8 +65,9 @@
       wx:if="{{ showConfirmButton }}"
       class="smart-dialog__button"
       loading="{{ loading.confirm }}"
+      is-last
       custom-class="smart-dialog__confirm confirm-button-class"
-      custom-style="color: {{ confirmButtonColor }}"
+      custom-style="{{ confirmButtonColor ? 'color: ' + confirmButtonColor : '' }}"
       button-id="{{ confirmButtonId }}"
       open-type="{{ confirmButtonOpenType }}"
       lang="{{ lang }}"

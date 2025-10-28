@@ -124,7 +124,7 @@ Setting the `round` property adds different rounded corner styles based on the p
 | overlay-style                      | Custom overlay style          | _string_           | `''`        |
 | position                           | Popup position, options: `top`, `bottom`, `right`, `left`         | _string_           | `center`    |
 | round                              | Whether to display rounded corners          | _boolean_          | `false`     |
-| safe-area-inset-bottom             | Whether to reserve bottom safe area, v2.7.0 starts to close by default        | _boolean_          | `false`      |
+| safe-area-inset-bottom             | Whether to reserve bottom safe area, v2.7.1 starts to close by default        | _boolean_          | `false`      |
 | safe-area-inset-bottom-min `v1.1.0` | Whether to reserve a minimum bottom safe area to be added when the safeArea bottom is 0, effective when safeAreaInsetBottom is true                      | _number_           | `0`         |
 | safe-area-inset-top                | Whether to reserve top safe distance (status bar height)       | _boolean_          | `false`     |
 | safe-area-tab-bar                  | Whether to reserve bottom tabbar safe distance (when using tabbar component & custom tabbar in mini-programs, the popup cannot cover the tabbar)        | _boolean_          | `false`     |

@@ -50,7 +50,7 @@
         hover-class="smart-nav-bar__icon--hover"
         hover-stay-time="70"
         class="smart-nav-bar__icon-wrap"
-        catch:tap="onClickRightIcon"
+        bind:tap="onClickRightIcon"
       >
         <smart-icon class="right-icon-class" custom-class="smart-nav-bar__icon" size="{{ rightIconSize }}" name="{{ rightIcon }}" color="{{ rightIconColor }}" />
       </view>
@@ -60,7 +60,7 @@
         style="color: {{ rightTextColor }};"
         hover-class="smart-nav-bar__text--hover"
         hover-stay-time="70"
-        catch:tap="onClickRightText"
+        bind:tap="onClickRightText"
       >
         {{ rightText }}
       </view>

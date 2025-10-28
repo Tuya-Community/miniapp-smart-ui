@@ -249,7 +249,7 @@ Page({
 });
 ```
 
-### Style `2.3.7`
+### Style `v2.3.7`
 
 `active-style` can modify the style of the selected item; `column-styles` can set the style of each column; `font-styles` can set the text style of each column.
 

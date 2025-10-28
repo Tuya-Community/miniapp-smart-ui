@@ -38,7 +38,7 @@ SmartComponent({
     },
     border: {
       type: Boolean,
-      value: false,
+      value: true,
     },
     zIndex: {
       type: Number,
