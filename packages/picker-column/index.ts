@@ -77,8 +77,8 @@ SmartComponent({
     isInit: false,
     maxText: '',
     optionsVIndexList: [] as any[], // 渲染的 options index 列表
-    animationIndex: 0,
-    currentIndex: 0,
+    animationIndex: 0, // 动画索引 会存在 小数，负数等情况
+    currentIndex: 0, // 当前索引 同 activeIndex
     isDestroy: false,
   },
 
