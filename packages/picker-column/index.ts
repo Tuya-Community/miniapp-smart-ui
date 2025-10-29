@@ -319,12 +319,9 @@ SmartComponent({
         animationIndex: index,
       });
     },
-
     getValue() {
       const { data } = this;
-      return isObj(data.options[data.currentIndex])
-        ? data.options[data.currentIndex][data.valueKey]
-        : data.options[data.currentIndex];
+      return data.options[data.currentIndex];
     },
 
     activeIndexChange(index: number) {
