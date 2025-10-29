@@ -1,7 +1,7 @@
 import xmarkIcon from '@tuya-miniapp/icons/dist/svg/Xmark';
 import { SmartComponent } from '../common/component';
 import ty from '../common/ty';
-import { getSystemInfoSync } from 'packages/common/version';
+import { getSystemInfoSync } from '../common/version';
 
 const idListRef = {
   value: [] as string[],
