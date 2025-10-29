@@ -50,7 +50,7 @@ exports[`should render demo and match snapshot 1`] = `
             </wx-view>
             <wx-input
               alwaysEmbed="{{false}}"
-              class="input-class smart-stepper__input"
+              class="smart-manrope input-class smart-stepper__input"
               disabled="{{false}}"
               focus=""
               style=""
@@ -138,7 +138,7 @@ exports[`should render demo and match snapshot 1`] = `
             </wx-view>
             <wx-input
               alwaysEmbed="{{false}}"
-              class="input-class smart-stepper__input"
+              class="smart-manrope input-class smart-stepper__input"
               disabled="{{false}}"
               focus=""
               style=""
@@ -226,7 +226,7 @@ exports[`should render demo and match snapshot 1`] = `
             </wx-view>
             <wx-input
               alwaysEmbed="{{false}}"
-              class="input-class smart-stepper__input"
+              class="smart-manrope input-class smart-stepper__input"
               disabled="{{false}}"
               focus=""
               style=""
@@ -314,7 +314,7 @@ exports[`should render demo and match snapshot 1`] = `
             </wx-view>
             <wx-input
               alwaysEmbed="{{false}}"
-              class="input-class smart-stepper__input"
+              class="smart-manrope input-class smart-stepper__input"
               disabled="{{false}}"
               focus=""
               style=""
@@ -402,7 +402,7 @@ exports[`should render demo and match snapshot 1`] = `
             </wx-view>
             <wx-input
               alwaysEmbed="{{false}}"
-              class="input-class smart-stepper__input smart-stepper__input--disabled"
+              class="smart-manrope input-class smart-stepper__input smart-stepper__input--disabled"
               disabled="{{true}}"
               focus=""
               style=""
@@ -490,7 +490,7 @@ exports[`should render demo and match snapshot 1`] = `
             </wx-view>
             <wx-input
               alwaysEmbed="{{false}}"
-              class="input-class smart-stepper__input"
+              class="smart-manrope input-class smart-stepper__input"
               disabled="{{false}}"
               focus=""
               style=""
@@ -578,7 +578,7 @@ exports[`should render demo and match snapshot 1`] = `
             </wx-view>
             <wx-input
               alwaysEmbed="{{false}}"
-              class="input-class smart-stepper__input"
+              class="smart-manrope input-class smart-stepper__input"
               disabled="{{false}}"
               focus=""
               style=""
@@ -668,7 +668,7 @@ exports[`should render demo and match snapshot 1`] = `
             </wx-view>
             <wx-input
               alwaysEmbed="{{false}}"
-              class="input-class smart-stepper__input"
+              class="smart-manrope input-class smart-stepper__input"
               disabled="{{false}}"
               focus=""
               style=""
@@ -756,7 +756,7 @@ exports[`should render demo and match snapshot 1`] = `
             </wx-view>
             <wx-input
               alwaysEmbed="{{false}}"
-              class="input-class smart-stepper__input"
+              class="smart-manrope input-class smart-stepper__input"
               disabled="{{false}}"
               focus=""
               style="width:40px;height:32px"
@@ -844,7 +844,7 @@ exports[`should render demo and match snapshot 1`] = `
             </wx-view>
             <wx-input
               alwaysEmbed="{{false}}"
-              class="input-class smart-stepper__input"
+              class="smart-manrope input-class smart-stepper__input"
               disabled="{{false}}"
               focus=""
               style="height:22px"
