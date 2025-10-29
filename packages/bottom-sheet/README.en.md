@@ -164,6 +164,30 @@ Page({
 </smart-bottom-sheet>
 ```
 
+### Draggable `v2.7.1`
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  draggable
+>
+  <view style="background-color: red; height: 100px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+});
+```
+
 ## API
 
 ### Props
@@ -182,6 +206,10 @@ Page({
 | content-height `v2.5.0` | Content area height. When this value is set, the component's max-height will be invalid.       | _number \| string_   | `false`        |
 | max-height `v2.6.0` | The maximum height of the entire component      | _number \| string_   | -        |
 | show-close `v2.6.1` | Whether to display the close icon      | _boolean_   | `true`        |
+| draggable `v2.7.1` | Whether dragging to adjust panel height is supported | _boolean_ | `false` |
+| min-drag-height `v2.7.1` | Minimum allowed height when dragging | _number_ | `windowHeight * 0.9` |
+| max-drag-height `v2.7.1` | Maximum allowed height when dragging | _number_ | `windowHeight * 0.5` |
+| mid-drag-height `v2.7.1` | Middle state height when dragging | _number_ | `windowHeight * 0.1` |
 
 
 ### Events

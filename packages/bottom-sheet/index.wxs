@@ -7,6 +7,91 @@ function getHeight(contentHeight) {
   return 'height: ' + height + ';';
 }
 
+const queryComponent = (ownerInstance, instanceId, selector) => {
+  const root = ownerInstance.selectComponent(`#${instanceId}`);
+  return selector ? root.selectComponent(selector) : root;
+};
+
+const getContentNode = (ownerInstance, instanceId) => {
+  return queryComponent(ownerInstance, instanceId, '.smart-bottom-sheet__content');
+};
+
+const state = {};
+
+const getEndY = ({ instanceId, endY, minHeight, maxHeight, midHeight, windowHeight }) => {
+  const B = windowHeight;
+  maxHeight = maxHeight || B * 0.9;
+  minHeight = minHeight || B * 0.1;
+  midHeight = midHeight || B * 0.5;
+
+  const splitHeight = (maxHeight + midHeight) * 0.5;
+  const splitLow = (midHeight + minHeight) * 0.5;
+
+  if (endY > splitHeight) {
+    return maxHeight;
+  } else if (endY > midHeight) {
+    return midHeight;
+  } else if (endY > splitLow) {
+    return midHeight;
+  } else {
+    return minHeight;
+  }
+};
+
+const onDrag = instanceId => (e, ownerInstance) => {
+  const delta = e.touches[0].pageY - state[instanceId].startY;
+  const contentNode = getContentNode(ownerInstance, instanceId);
+
+  const originHeight = state[instanceId].originHeight;
+  state[instanceId].delta = delta;
+
+  const newHeight = originHeight - delta;
+  state[instanceId].newHeight = newHeight;
+
+  contentNode.setStyle({
+    height: `${newHeight}px`,
+  });
+};
+
+const onDragStart = instanceId => (e, ownerInstance) => {
+  const contentNode = getContentNode(ownerInstance, instanceId);
+  const rect = contentNode.getBoundingClientRect();
+  const originHeight = rect.height;
+
+  state[instanceId] = {
+    startY: e.touches[0].pageY,
+    originHeight: originHeight,
+  };
+};
+
+const onDragEnd = (instanceId, data) => (e, ownerInstance) => {
+  const { minDragHeight, maxDragHeight, midDragHeight, windowHeight } = data;
+  const newHeight = state[instanceId].newHeight;
+
+  const endHeight = getEndY({
+    instanceId,
+    endY: newHeight,
+    minHeight: minDragHeight,
+    maxHeight: maxDragHeight,
+    midHeight: midDragHeight,
+    windowHeight,
+  });
+  const contentNode = getContentNode(ownerInstance, instanceId);
+  contentNode.setStyle({
+    height: `${endHeight}px`,
+    transition: 'height 0.3s ease-in-out',
+  });
+  setTimeout(() => {
+    contentNode.setStyle({
+      transition: 'none',
+    });
+  }, 300);
+  state[instanceId] = null;
+};
+
 module.exports = {
   getHeight: getHeight,
+  onDrag: onDrag,
+  onDragStart: onDragStart,
+  onDragEnd: onDragEnd,
 };

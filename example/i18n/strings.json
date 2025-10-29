@@ -1,5 +1,6 @@
 {
   "en": {
+    "draggable": "Draggable",
     "calendarSelectDay": "Select a day, the currently selected date is",
     "calendarSelectWeek": "Select a week, the currently selected date is",
     "calendarSelectRange": "Select the time range, the currently selected date is",
@@ -571,6 +572,7 @@
     "loop": "Loop List"
   },
   "zh": {
+    "draggable": "可拖拽",
     "calendarSelectDay": "选择某天，当前选中的日期是",
     "calendarSelectWeek": "选择周，当前选中的日期是",
     "calendarSelectRange": "选择时间范围，当前选中的日期是",

@@ -66,3 +66,14 @@
   <view style="background-color: orange; height: 100px;" />
   </smart-bottom-sheet>
 </demo-block>
+
+<demo-block title="{{I18n.t('draggable')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet6">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    show="{{ show6 }}"
+    bind:close="toggleActionSheet6"
+    draggable
+  >
+    <view style="background-color: red; height: 100px;" />
+  </smart-bottom-sheet>
+</demo-block>
