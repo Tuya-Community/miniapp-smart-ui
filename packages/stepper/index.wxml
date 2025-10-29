@@ -18,7 +18,7 @@
   </view>
   <input
     type="{{ integer ? 'number' : 'digit' }}"
-    class="input-class {{ utils.bem('stepper__input', { disabled: disabled || disableInput }) }}"
+    class="smart-manrope input-class {{ utils.bem('stepper__input', { disabled: disabled || disableInput }) }}"
     style="{{ computed.inputStyle({ buttonSize, inputWidth }) }}"
     value="{{ currentValue }}"
     focus="{{ focus }}"
