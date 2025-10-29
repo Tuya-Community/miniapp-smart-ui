@@ -38,6 +38,39 @@ function isArray(array) {
   return array && typeof array === 'object' && typeof array.length === 'number';
 }
 
+// 判断字符串是否全是数字（支持负数和小数）
+function isAllNumbers(str) {
+  if (str === null || str === undefined || str === '' || isNaN(str)) return false;
+  if( typeof str === 'number') return true;
+  var s = str + '';
+  var len = s.length;
+  if (len === 0) return false;
+  
+  var i = 0;
+  // 检查开头的负号
+  if (s[0] === '-') {
+    i = 1;
+    if (len === 1) return false;
+  }
+  
+  var hasDigit = false;
+  var hasDot = false;
+  
+  for (; i < len; i++) {
+    var char = s[i];
+    if (char >= '0' && char <= '9') {
+      hasDigit = true;
+    } else if (char === '.') {
+      if (hasDot) return false; // 多个小数点
+      hasDot = true;
+    } else {
+      return false; // 非法字符
+    }
+  }
+  
+  return hasDigit; // 至少有一个数字
+}
+
 module.exports = {
   bem: memoize(bem),
   memoize: memoize,
@@ -47,5 +80,6 @@ module.exports = {
   range: range,
   createArray: createArray,
   fillArray: fillArray,
-  isArray: isArray
+  isArray: isArray,
+  isAllNumbers: isAllNumbers
 };
