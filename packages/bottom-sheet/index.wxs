@@ -7,6 +7,19 @@ function getHeight(contentHeight) {
   return 'height: ' + height + ';';
 }
 
+function getCustomStyle(draggable, contentHeight, maxHeight) {
+  if (draggable) {
+    return 'max-height: unset;min-height: unset;';
+  }
+  if (contentHeight) {
+    return 'max-height: fit-content;';
+  }
+  if (maxHeight) {
+    return 'max-height: ' + maxHeight + ';';
+  }
+  return '';
+}
+
 function queryComponent(ownerInstance, instanceId, selector) {
   var root = ownerInstance.selectComponent('#' + instanceId);
   return selector ? root.selectComponent(selector) : root;
@@ -107,6 +120,7 @@ function onDragEnd(instanceId, data) {
 
 module.exports = {
   getHeight: getHeight,
+  getCustomStyle: getCustomStyle,
   onDrag: onDrag,
   onDragStart: onDragStart,
   onDragEnd: onDragEnd,
