@@ -40,7 +40,7 @@
   <scroll-view wx:else class="smart-bottom-sheet__content" 
     catch:touchstart="{{draggable ? computed.onDragStart(curInstanceId) : null}}" 
     catch:touchmove="{{draggable ? computed.onDrag(curInstanceId) : null}}"
-    catch:touchend="{{draggable ? computed.onDragEnd(curInstanceId, { maxDragHeight, minDragHeight, windowHeight, midDragHeight }) : null}}"
+    catch:touchend="{{draggable ? computed.onDragEnd(curInstanceId, { maxDragHeight, minDragHeight, windowHeight, midDragHeight, closeDragHeight }) : null}}"
   >
     <view wx:if="{{draggable}}" class="smart-bottom-sheet__dragger" >
       <view class="smart-bottom-sheet__dragger_node"></view>

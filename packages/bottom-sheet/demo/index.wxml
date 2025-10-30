@@ -79,6 +79,7 @@
     bind:close="toggleActionSheet6"
     draggable
     instanceId="com6"
+    closeDragHeight="{{closeDragHeight}}"
   >
     <view style="background-color: red; height: 100px;" />
   </smart-bottom-sheet>

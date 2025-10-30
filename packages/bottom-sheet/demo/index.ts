@@ -1,3 +1,4 @@
+import { getSystemInfoSync } from '../../common/version';
 import { SmartComponent } from '../../common/component';
 
 SmartComponent({
@@ -7,8 +8,12 @@ SmartComponent({
     show3: false,
     show4: false,
     show5: false,
+    closeDragHeight: 0,
   },
-
+  created() {
+    const { windowHeight } = getSystemInfoSync();
+    this.setData({ closeDragHeight: windowHeight * 0.4 });
+  },
   methods: {
     toggle(type) {
       this.setData({

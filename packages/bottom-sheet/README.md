@@ -186,6 +186,7 @@ Page({
   show="{{ show }}"
   bind:close="onClose"
   draggable
+  close-drag-height="{{closeDragHeight}}"
 >
   <view style="background-color: red; height: 100px;" />
 </smart-bottom-sheet>
@@ -195,8 +196,12 @@ Page({
 Page({
   data: {
     show: false,
+    closeDragHeight: 0
   },
-
+  attached() {
+    const { windowHeight } = getSystemInfoSync();
+    this.setData({ closeDragHeight: windowHeight * 0.4 });
+  },
   onClose() {
     this.setData({ show: false });
   },
@@ -225,6 +230,7 @@ Page({
 | min-drag-height `v2.7.1` | 拖拽时允许的最小高度 | _number_ | `windowHeight * 0.9` |
 | max-drag-height `v2.7.1` | 拖拽时允许的最大高度 | _number_ | `windowHeight * 0.5` |
 | mid-drag-height `v2.7.1` | 拖拽时中间态高度 | _number_ | `windowHeight * 0.1` |
+| close-drag-height `v2.7.1` | 拖拽关闭时的临界高度，低于该高度将自动关闭 | _number_ | `windowHeight * 0.4` |
 
 ### Events
 

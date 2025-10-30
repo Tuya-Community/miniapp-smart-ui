@@ -40,7 +40,7 @@ function getEndY(params) {
   var windowHeight = params.windowHeight;
 
   var B = windowHeight;
-  maxHeight = maxHeight || B * 0.9;
+  maxHeight = maxHeight || B * 0.85;
   minHeight = minHeight || B * 0.1;
   midHeight = midHeight || B * 0.5;
 
@@ -94,26 +94,33 @@ function onDragEnd(instanceId, data) {
     var maxDragHeight = data.maxDragHeight;
     var midDragHeight = data.midDragHeight;
     var windowHeight = data.windowHeight;
+    var closeDragHeight = data.closeDragHeight;
     var newHeight = state[instanceId].newHeight;
 
-    var endHeight = getEndY({
-      instanceId: instanceId,
-      endY: newHeight,
-      minHeight: minDragHeight,
-      maxHeight: maxDragHeight,
-      midHeight: midDragHeight,
-      windowHeight: windowHeight,
-    });
-    var contentNode = getContentNode(ownerInstance, instanceId);
-    contentNode.setStyle({
-      height: endHeight + 'px',
-      transition: 'height 0.3s ease-in-out',
-    });
-    setTimeout(function () {
-      contentNode.setStyle({
-        transition: 'none',
+    if (newHeight && closeDragHeight && newHeight < closeDragHeight) {
+      ownerInstance.callMethod('onClose');
+    } else {
+      var endHeight = getEndY({
+        instanceId: instanceId,
+        endY: newHeight,
+        minHeight: minDragHeight,
+        maxHeight: maxDragHeight,
+        midHeight: midDragHeight,
+        windowHeight: windowHeight,
+        closeDragHeight: closeDragHeight,
       });
-    }, 300);
+      var contentNode = getContentNode(ownerInstance, instanceId);
+      contentNode.setStyle({
+        height: endHeight + 'px',
+        transition: 'height 0.3s ease-in-out',
+      });
+      setTimeout(function () {
+        contentNode.setStyle({
+          transition: 'none',
+        });
+      }, 300);
+    }
+
     state[instanceId] = null;
   };
 }

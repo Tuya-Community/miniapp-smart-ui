@@ -60,6 +60,10 @@ SmartComponent({
       type: Number,
       value: 0,
     },
+    closeDragHeight: {
+      type: Number,
+      value: 0,
+    },
   },
 
   data: {

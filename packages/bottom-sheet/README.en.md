@@ -171,6 +171,7 @@ Page({
   show="{{ show }}"
   bind:close="onClose"
   draggable
+  close-drag-height="{{closeDragHeight}}"
 >
   <view style="background-color: red; height: 100px;" />
 </smart-bottom-sheet>
@@ -180,8 +181,12 @@ Page({
 Page({
   data: {
     show: false,
+    closeDragHeight: 0
   },
-
+  attached() {
+    const { windowHeight } = getSystemInfoSync();
+    this.setData({ closeDragHeight: windowHeight * 0.4 });
+  },
   onClose() {
     this.setData({ show: false });
   },
@@ -210,6 +215,7 @@ Page({
 | min-drag-height `v2.7.1` | Minimum allowed height when dragging | _number_ | `windowHeight * 0.9` |
 | max-drag-height `v2.7.1` | Maximum allowed height when dragging | _number_ | `windowHeight * 0.5` |
 | mid-drag-height `v2.7.1` | Middle state height when dragging | _number_ | `windowHeight * 0.1` |
+| close-drag-height `v2.7.1` | Threshold height for closing on drag; if the height goes below this while dragging, the sheet will automatically close | _number_ | `windowHeight * 0.4` |
 
 
 ### Events
