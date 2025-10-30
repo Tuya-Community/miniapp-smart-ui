@@ -7,7 +7,7 @@
       wx:for="{{ days }}"
       wx:key="index"
       style="{{ computed.getDayStyle(item.type, index, date, rowHeight, color, firstDayOfWeek) }}"
-      class="{{ utils.bem('calendar__day', [item.type]) }} {{ item.className }} {{ item.customClass }}"
+      class="{{ utils.bem('calendar__day', [item.type]) }} {{ item.className }} smart-manrope {{ item.customClass }}"
       data-index="{{ index }}"
       bindtap="onClick"
     >
