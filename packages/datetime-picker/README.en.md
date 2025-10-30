@@ -62,9 +62,10 @@ The `columns-order` `v2.2.0` property can set the order of columns; the higher t
   type="date"
   value="{{ currentDate }}"
   columns-order="{{ columnsOrder }}"
-  bind:input="onInput"
   min-date="{{ minDate }}"
+  font-styles="{{ fontStyles }}"
   formatter-map="{{ formatterMap }}"
+  bind:input="onInput"
 />
 ```
 
@@ -91,6 +92,10 @@ Page({
         '12': 'December',
       },
       day: '{{day}} Day'
+    },
+    fontStyles: {
+      year: 'font-family: "Manrope", sans-serif;',
+      day: 'font-family: "Manrope", sans-serif;',
     },
   },
 

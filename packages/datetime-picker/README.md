@@ -62,9 +62,10 @@ Page({
   type="date"
   value="{{ currentDate }}"
   columns-order="{{ columnsOrder }}"
-  bind:input="onInput"
   min-date="{{ minDate }}"
+  font-styles="{{ fontStyles }}"
   formatter-map="{{ formatterMap }}"
+  bind:input="onInput"
 />
 ```
 
@@ -91,6 +92,10 @@ Page({
         '12': 'December',
       },
       day: '{{day}}日'
+    },
+    fontStyles: {
+      year: 'font-family: "Manrope", sans-serif;',
+      day: 'font-family: "Manrope", sans-serif;',
     },
   },
 

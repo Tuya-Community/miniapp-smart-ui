@@ -21,6 +21,7 @@
     columns-order="{{ columnsOrder }}"
     min-date="{{ minDate }}"
     bind:input="onInput"
+    font-styles="{{ fontStylesTwo }}"
     formatter-map="{{ formatterMap }}"
   />
 </demo-block>
@@ -52,7 +53,7 @@
     data-type="time"
     is-12-hour-clock
     value="{{ currentDate5 }}"
-    fontStyles="{{ fontStyles }}"
+    font-styles="{{ fontStyles }}"
     bind:input="onInputChange"
   />
 </demo-block>
