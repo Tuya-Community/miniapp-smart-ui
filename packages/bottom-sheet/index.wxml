@@ -34,7 +34,7 @@
     />
     <slot name="title" />
   </view>
-  <view wx:if="{{ contentHeight !== null }}" class="smart-bottom-sheet__content smart-bottom-sheet__content_height" style="{{computed.getHeight(contentHeight)}}">
+  <view wx:if="{{ contentHeight !== null && !draggable }}" class="smart-bottom-sheet__content smart-bottom-sheet__content_height" style="{{computed.getHeight(contentHeight)}}">
     <slot />
   </view>
   <scroll-view wx:else class="smart-bottom-sheet__content" 
