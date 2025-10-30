@@ -1,6 +1,10 @@
+page {
+  background: var(--app-B3);
+}
+
 .demo-home-nav__title {
   margin: 24px 0 8px 16px;
-  color: rgba(69, 90, 100, 0.6);
+  color: var(--app-B1-N1, rgba(0, 0, 0, 1));
   font-size: 14px;
 }
 
@@ -9,21 +13,17 @@
   display: flex;
   margin: 0 0 12px;
   padding-left: 20px;
-  color: #323233;
+  color: var(--app-B1-N1, rgba(0, 0, 0, 1));
   font-weight: 500;
   font-size: 14px;
   line-height: 40px;
-  background: #f7f8fa;
+  background: var(--app-B1);
   border-radius: 99px;
   transition: background 0.3s;
 }
 
-.demo-home-nav__block:hover {
-  background: darken(#f7f8fa, 3%);
-}
-
 .demo-home-nav__block:active {
-  background: darken(#f7f8fa, 6%);
+  background: darken(var(--app-B1), 6%);
 }
 
 .demo-home-nav__icon {
