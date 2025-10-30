@@ -1,0 +1,10 @@
+{
+  "light": {
+    "bgColor": "rgb(246, 247, 251)",
+    "textColor": "rgb(0, 0, 0)"
+  },
+  "dark": {
+    "bgColor": "rgb(0, 0, 0)",
+    "textColor": "rgb(255, 255, 255)"
+  }
+}

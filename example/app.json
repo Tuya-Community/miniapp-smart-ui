@@ -49,12 +49,12 @@
     "pages/battery/index",
     "pages/custom-keyboard/index"
   ],
+  "themeLocation": "./theme.json",
+  "darkmode": "auto",
   "window": {
-    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarBackgroundColor": "@bgColor",
     "navigationBarTitleText": "Smart UI",
-    "navigationBarTextStyle": "black",
-    "backgroundTextStyle": "dark",
-    "backgroundColor": "#f8f8f8"
+    "navigationBarTextStyle": "@textColor"
   },
   "usingComponents": {
     "demo-block": "./components/demo-block/index",
