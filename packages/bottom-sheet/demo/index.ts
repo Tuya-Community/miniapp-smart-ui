@@ -1,3 +1,4 @@
+import { getSystemInfoSync } from '../../common/version';
 import { SmartComponent } from '../../common/component';
 
 SmartComponent({
@@ -7,8 +8,14 @@ SmartComponent({
     show3: false,
     show4: false,
     show5: false,
+    show6: false,
+    show7: false,
+    closeDragHeight: 0,
   },
-
+  created() {
+    const { windowHeight } = getSystemInfoSync();
+    this.setData({ closeDragHeight: windowHeight * 0.4 });
+  },
   methods: {
     toggle(type) {
       this.setData({
@@ -32,6 +39,12 @@ SmartComponent({
     },
     toggleActionSheet5() {
       this.toggle('show5');
+    },
+    toggleActionSheet6() {
+      this.toggle('show6');
+    },
+    toggleActionSheet7() {
+      this.toggle('show7');
     },
   },
 });

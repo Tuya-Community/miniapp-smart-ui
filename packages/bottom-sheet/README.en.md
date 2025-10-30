@@ -164,6 +164,66 @@ Page({
 </smart-bottom-sheet>
 ```
 
+### Draggable `v2.7.1`
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  draggable
+  close-drag-height="{{closeDragHeight}}"
+>
+  <view style="background-color: red; height: 100px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    closeDragHeight: 0
+  },
+  attached() {
+    const { windowHeight } = getSystemInfoSync();
+    this.setData({ closeDragHeight: windowHeight * 0.4 });
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+});
+```
+
+### Set the range of dragging `v2.7.1`
+
+You can customize the minimum, middle, and maximum heights of the panel during dragging by setting the `min-drag-height`, `mid-drag-height`, and `max-drag-height` properties. For example:
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  draggable
+  midDragHeight="300"
+  minDragHeight="300"
+  maxDragHeight="300"
+  closeDragHeight="300"
+>
+  <view style="background-color: red; height: 300px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+});
+```
+
+This limits the bottom sheet's scalable (draggable) range to the specified values, which can help meet different business requirements.
+
 ## API
 
 ### Props
@@ -179,9 +239,14 @@ Page({
 | overlay | Whether to display the overlay | _boolean_ | `true` |
 | close-on-click-overlay | Whether clicking the overlay closes the menu | _boolean_ | `true` |
 | native-disabled `v2.5.0`     |  Whether to disable local gestures during the opening of the dialog; it will call `ty.nativeDisabled(true)` when the dialog starts the entrance animation, and call `ty.nativeDisabled(false)` at the end of the closing animation to restore the click ability of components on different layers. Since `ty.nativeDisabled` works globally, pay attention to whether to pass the `native-disabled` attribute and the timing of closing when multiple dialog components are opened simultaneously, to prevent the `native-disabled` attribute from being ineffective.  | _boolean_   | `false`        |
-| content-height `v2.5.0` | Content area height. When this value is set, the component's max-height will be invalid.       | _number \| string_   | `false`        |
+| content-height `v2.5.0` | Content area height. When this value is set, the component's max-height will be invalid. This value is ignored when draggable is set.      | _number \| string_   | `false`        |
 | max-height `v2.6.0` | The maximum height of the entire component      | _number \| string_   | -        |
 | show-close `v2.6.1` | Whether to display the close icon      | _boolean_   | `true`        |
+| draggable `v2.7.1` | Whether dragging to adjust panel height is supported | _boolean_ | `false` |
+| min-drag-height `v2.7.1` | Minimum allowed height when dragging | _number_ | `windowHeight * 0.9` |
+| max-drag-height `v2.7.1` | Maximum allowed height when dragging | _number_ | `windowHeight * 0.5` |
+| mid-drag-height `v2.7.1` | Middle state height when dragging | _number_ | `windowHeight * 0.1` |
+| close-drag-height `v2.7.1` | Threshold height for closing on drag; if the height goes below this while dragging, the sheet will automatically close | _number_ | `windowHeight * 0.4` |
 
 
 ### Events
@@ -229,3 +294,9 @@ The component offers the following CSS variables for custom styles. For usage, p
 | --bottom-sheet-header-font-weight  | _600_    | Font weight of the bottom sheet header text    |
 | --bottom-sheet-font-color  | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | Text color of the bottom sheet    |
 | --bottom-sheet-header-padding `v2.5.0`  | _0 16px_    | Padding of the bottom popup header    |
+| --bottom-sheet-dragger-padding `v2.7.1` | _8px 0_ | Padding of the drag handle area |
+| --bottom-sheet-dragger-node-width `v2.7.1` | _30px_ | Width of the drag handle |
+| --bottom-sheet-dragger-node-height `v2.7.1` | _4px_ | Height of the drag handle |
+| --bottom-sheet-dragger-node-border-radius `v2.7.1` | _2px_ | Border radius of the drag handle |
+| --bottom-sheet-dragger-node-background `v2.7.1` | _rgba(0, 0, 0, 0.3)_ | Background color of the drag handle |
+

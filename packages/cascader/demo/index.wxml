@@ -11,6 +11,7 @@
   <smart-bottom-sheet
     show="{{ baseState.show }}"
     max-height="100%"
+    instanceId="com1"
   >
     <smart-cascader
       wx:if="{{ baseState.show }}"
@@ -37,6 +38,7 @@
   <smart-bottom-sheet
     show="{{ customColorState.show }}"
     max-height="100%"
+    instanceId="com2"
   >
     <smart-cascader
       wx:if="{{ customColorState.show }}"
@@ -64,6 +66,7 @@
   <smart-bottom-sheet
     show="{{ asyncState.show }}"
     max-height="100%"
+    instanceId="com3"
   >
     <smart-cascader
       wx:if="{{ asyncState.show }}"
