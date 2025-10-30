@@ -203,7 +203,7 @@ Page({
 | overlay | Whether to display the overlay | _boolean_ | `true` |
 | close-on-click-overlay | Whether clicking the overlay closes the menu | _boolean_ | `true` |
 | native-disabled `v2.5.0`     |  Whether to disable local gestures during the opening of the dialog; it will call `ty.nativeDisabled(true)` when the dialog starts the entrance animation, and call `ty.nativeDisabled(false)` at the end of the closing animation to restore the click ability of components on different layers. Since `ty.nativeDisabled` works globally, pay attention to whether to pass the `native-disabled` attribute and the timing of closing when multiple dialog components are opened simultaneously, to prevent the `native-disabled` attribute from being ineffective.  | _boolean_   | `false`        |
-| content-height `v2.5.0` | Content area height. When this value is set, the component's max-height will be invalid.       | _number \| string_   | `false`        |
+| content-height `v2.5.0` | Content area height. When this value is set, the component's max-height will be invalid. This value is ignored when draggable is set.      | _number \| string_   | `false`        |
 | max-height `v2.6.0` | The maximum height of the entire component      | _number \| string_   | -        |
 | show-close `v2.6.1` | Whether to display the close icon      | _boolean_   | `true`        |
 | draggable `v2.7.1` | Whether dragging to adjust panel height is supported | _boolean_ | `false` |
