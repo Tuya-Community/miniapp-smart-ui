@@ -257,3 +257,9 @@ The component offers the following CSS variables for custom styles. For usage, p
 | --bottom-sheet-header-font-weight  | _600_    | Font weight of the bottom sheet header text    |
 | --bottom-sheet-font-color  | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | Text color of the bottom sheet    |
 | --bottom-sheet-header-padding `v2.5.0`  | _0 16px_    | Padding of the bottom popup header    |
+| --bottom-sheet-dragger-padding `v2.7.1` | _8px 0_ | Padding of the drag handle area |
+| --bottom-sheet-dragger-node-width `v2.7.1` | _30px_ | Width of the drag handle |
+| --bottom-sheet-dragger-node-height `v2.7.1` | _4px_ | Height of the drag handle |
+| --bottom-sheet-dragger-node-border-radius `v2.7.1` | _2px_ | Border radius of the drag handle |
+| --bottom-sheet-dragger-node-background `v2.7.1` | _rgba(0, 0, 0, 0.3)_ | Background color of the drag handle |
+
