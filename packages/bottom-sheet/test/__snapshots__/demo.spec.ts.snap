@@ -422,5 +422,75 @@ exports[`should render demo and match snapshot 1`] = `
       </smart-bottom-sheet>
     </wx-view>
   </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix demo-block--padding"
+    >
+      <smart-button
+        bind:click="toggleActionSheet7"
+      >
+        <wx-button
+          appParameter=""
+          ariaLabel=""
+          businessId="{{0}}"
+          class="custom-class smart-button smart-button--primary smart-button--normal "
+          data-detail="{{null}}"
+          formType=""
+          hoverClass="smart-button--active hover-class"
+          id=""
+          lang=""
+          openType=""
+          sendMessageImg=""
+          sendMessagePath=""
+          sendMessageTitle=""
+          sessionFrom=""
+          showMessageCard="{{false}}"
+          style=""
+          bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+          bind:chooseavatar="onChooseAvatar"
+          bind:contact="onContact"
+          bind:error="onError"
+          bind:getphonenumber="onGetPhoneNumber"
+          bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+          bind:getuserinfo="onGetUserInfo"
+          bind:launchapp="onLaunchApp"
+          bind:opensetting="onOpenSetting"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="smart-button__text"
+            style=""
+          >
+            
+          </wx-view>
+        </wx-button>
+      </smart-button>
+      <smart-bottom-sheet
+        bind:close="toggleActionSheet7"
+      >
+        <smart-popup
+          customClass="smart-bottom-sheet custom-class"
+          id="com7"
+          bind:after-enter="onAfterEnter"
+          bind:after-leave="onAfterLeave"
+          bind:before-enter="onBeforeEnter"
+          bind:before-leave="onBeforeLeave"
+          bind:close="onClickOverlay"
+          bind:enter="onEnter"
+          bind:leave="onLeave"
+        >
+          <smart-overlay
+            bind:click="onClickOverlay"
+          >
+            <smart-transition
+              customClass="smart-overlay custom-class"
+              bind:tap="onClick"
+              catch:touchmove="noop"
+            />
+          </smart-overlay>
+        </smart-popup>
+      </smart-bottom-sheet>
+    </wx-view>
+  </demo-block>
 </main>
 `;

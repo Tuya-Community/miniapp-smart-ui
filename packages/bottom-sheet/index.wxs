@@ -127,7 +127,7 @@ function init(instanceId, currentHeight) {
   return function (prop, oldProp, ownerInstance) {
     if (!instanceId) return;
 
-    let currOriginHeight = state[instanceId] ? state[instanceId].originHeight : null;
+    var currOriginHeight = state[instanceId] ? state[instanceId].originHeight : null;
     var contentNode = getContentNode(ownerInstance, instanceId);
 
     if (!currOriginHeight) {
@@ -151,5 +151,5 @@ module.exports = {
   onDrag: onDrag,
   onDragStart: onDragStart,
   onDragEnd: onDragEnd,
-  init,
+  init: init,
 };
