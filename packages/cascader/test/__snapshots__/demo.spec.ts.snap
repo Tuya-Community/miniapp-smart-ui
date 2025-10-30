@@ -111,7 +111,7 @@ exports[`should render demo and match snapshot 1`] = `
       <smart-bottom-sheet>
         <smart-popup
           customClass="smart-bottom-sheet custom-class"
-          id="smart-ui-bottom-sheet_3543_14"
+          id="smart-ui-bottom-sheet_6438_83"
           bind:after-enter="onAfterEnter"
           bind:after-leave="onAfterLeave"
           bind:before-enter="onBeforeEnter"
@@ -242,7 +242,7 @@ exports[`should render demo and match snapshot 1`] = `
       <smart-bottom-sheet>
         <smart-popup
           customClass="smart-bottom-sheet custom-class"
-          id="smart-ui-bottom-sheet_3544_17"
+          id="smart-ui-bottom-sheet_6440_45"
           bind:after-enter="onAfterEnter"
           bind:after-leave="onAfterLeave"
           bind:before-enter="onBeforeEnter"
@@ -373,7 +373,7 @@ exports[`should render demo and match snapshot 1`] = `
       <smart-bottom-sheet>
         <smart-popup
           customClass="smart-bottom-sheet custom-class"
-          id="smart-ui-bottom-sheet_3545_06"
+          id="smart-ui-bottom-sheet_6441_98"
           bind:after-enter="onAfterEnter"
           bind:after-leave="onAfterLeave"
           bind:before-enter="onBeforeEnter"

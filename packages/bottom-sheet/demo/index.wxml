@@ -4,6 +4,7 @@
     title="Title"
     show="{{ show1 }}"
     bind:close="toggleActionSheet1"
+    instanceId="com1"
   />
 </demo-block>
 
@@ -13,6 +14,7 @@
     show="{{ show2 }}"
     title="Title"
     bind:close="toggleActionSheet2"
+    instanceId="com2"
   >
     <view class="content" />
     <view class="footer">
@@ -27,6 +29,7 @@
     show="{{ show3 }}"
     title="Title"
     bind:close="toggleActionSheet3"
+    instanceId="com3"
   >
     <view style="background-color: red; height: 100px;" />
     <view style="background-color: blue; height: 100px;" />
@@ -43,6 +46,7 @@
     title="Title"
     bind:close="toggleActionSheet4"
     content-height="500px"
+    instanceId="com4"
   >
   <scroll-view scroll-y style="height: 300px">
     <view style="background-color: red; height: 100px;" />
@@ -61,6 +65,7 @@
   <smart-bottom-sheet
     show="{{ show5 }}"
     bind:close="toggleActionSheet5"
+    instanceId="com5"
   >
   <view slot="title">title</view>
   <view style="background-color: orange; height: 100px;" />
@@ -73,6 +78,7 @@
     show="{{ show6 }}"
     bind:close="toggleActionSheet6"
     draggable
+    instanceId="com6"
   >
     <view style="background-color: red; height: 100px;" />
   </smart-bottom-sheet>

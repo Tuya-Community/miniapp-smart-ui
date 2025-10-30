@@ -20,7 +20,7 @@
   bind:before-leave="onBeforeLeave"
   bind:leave="onLeave"
   bind:after-leave="onAfterLeave"
-  id="{{instanceId}}"
+  id="{{curInstanceId}}"
 >
   <view class="smart-bottom-sheet__header">
     <view wx:if="{{ title }}">{{ title }}</view>
@@ -38,9 +38,9 @@
     <slot />
   </view>
   <scroll-view wx:else class="smart-bottom-sheet__content" 
-    catch:touchstart="{{draggable ? computed.onDragStart(instanceId) : null}}" 
-    catch:touchmove="{{draggable ? computed.onDrag(instanceId) : null}}"
-    catch:touchend="{{draggable ? computed.onDragEnd(instanceId, { maxDragHeight, minDragHeight, windowHeight, midDragHeight }) : null}}"
+    catch:touchstart="{{draggable ? computed.onDragStart(curInstanceId) : null}}" 
+    catch:touchmove="{{draggable ? computed.onDrag(curInstanceId) : null}}"
+    catch:touchend="{{draggable ? computed.onDragEnd(curInstanceId, { maxDragHeight, minDragHeight, windowHeight, midDragHeight }) : null}}"
   >
     <view wx:if="{{draggable}}" class="smart-bottom-sheet__dragger" >
       <view class="smart-bottom-sheet__dragger_node"></view>

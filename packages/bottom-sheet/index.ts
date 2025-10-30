@@ -13,6 +13,7 @@ SmartComponent({
     title: String,
     iconColor: String,
     nativeDisabled: Boolean,
+    instanceId: String,
     maxHeight: null,
     iconSize: {
       type: null,
@@ -64,7 +65,7 @@ SmartComponent({
   data: {
     xmarkIcon,
     xmarkIconColor: 'rgba(0, 0, 0, 0.5)',
-    instanceId: '',
+    curInstanceId: '',
     windowHeight: 0,
   },
 
@@ -78,7 +79,13 @@ SmartComponent({
 
   methods: {
     initId() {
-      if (this.data.instanceId) return;
+      if (this.data.instanceId) {
+        this.setData({
+          curInstanceId: this.data.instanceId,
+        });
+        return;
+      }
+      if (this.data.curInstanceId) return;
       const id = `smart-ui-bottom-sheet_${String(+new Date()).slice(-4)}_${String(
         Math.random()
       ).slice(-2)}`;
@@ -87,7 +94,7 @@ SmartComponent({
         return;
       }
       this.setData({
-        instanceId: id,
+        curInstanceId: id,
       });
       idListRef.value.push(id);
     },

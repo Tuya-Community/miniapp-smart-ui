@@ -50,7 +50,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <smart-popup
           customClass="smart-bottom-sheet custom-class"
-          id="smart-ui-bottom-sheet_5409_38"
+          id="com1"
           bind:after-enter="onAfterEnter"
           bind:after-leave="onAfterLeave"
           bind:before-enter="onBeforeEnter"
@@ -120,7 +120,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <smart-popup
           customClass="smart-bottom-sheet custom-class"
-          id="smart-ui-bottom-sheet_5410_51"
+          id="com2"
           bind:after-enter="onAfterEnter"
           bind:after-leave="onAfterLeave"
           bind:before-enter="onBeforeEnter"
@@ -190,7 +190,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <smart-popup
           customClass="smart-bottom-sheet custom-class"
-          id="smart-ui-bottom-sheet_5410_66"
+          id="com3"
           bind:after-enter="onAfterEnter"
           bind:after-leave="onAfterLeave"
           bind:before-enter="onBeforeEnter"
@@ -260,7 +260,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <smart-popup
           customClass="smart-bottom-sheet custom-class"
-          id="smart-ui-bottom-sheet_5410_49"
+          id="com4"
           bind:after-enter="onAfterEnter"
           bind:after-leave="onAfterLeave"
           bind:before-enter="onBeforeEnter"
@@ -330,7 +330,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <smart-popup
           customClass="smart-bottom-sheet custom-class"
-          id="smart-ui-bottom-sheet_5410_55"
+          id="com5"
           bind:after-enter="onAfterEnter"
           bind:after-leave="onAfterLeave"
           bind:before-enter="onBeforeEnter"
@@ -400,7 +400,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <smart-popup
           customClass="smart-bottom-sheet custom-class"
-          id="smart-ui-bottom-sheet_5411_52"
+          id="com6"
           bind:after-enter="onAfterEnter"
           bind:after-leave="onAfterLeave"
           bind:before-enter="onBeforeEnter"
