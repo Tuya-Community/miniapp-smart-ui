@@ -34,17 +34,31 @@
     />
     <slot name="title" />
   </view>
-  <view wx:if="{{ contentHeight !== null && !draggable }}" class="smart-bottom-sheet__content smart-bottom-sheet__content_height" style="{{computed.getHeight(contentHeight)}}">
-    <slot />
-  </view>
-  <scroll-view wx:else class="smart-bottom-sheet__content" 
-    catch:touchstart="{{draggable ? computed.onDragStart(curInstanceId) : null}}" 
-    catch:touchmove="{{draggable ? computed.onDrag(curInstanceId) : null}}"
-    catch:touchend="{{draggable ? computed.onDragEnd(curInstanceId, { maxDragHeight, minDragHeight, windowHeight, midDragHeight, closeDragHeight }) : null}}"
-  >
-    <view wx:if="{{draggable}}" class="smart-bottom-sheet__dragger" >
-      <view class="smart-bottom-sheet__dragger_node"></view>
+  <block wx:if="{{draggable}}">
+    <view
+      class="smart-bottom-sheet__content"
+      id="{{curInstanceId}}"
+      catch:touchstart="{{draggable ? computed.onDragStart(curInstanceId) : null}}" 
+      catch:touchmove="{{draggable ? computed.onDrag(curInstanceId) : null}}"
+      catch:touchend="{{draggable ? computed.onDragEnd(curInstanceId, { maxDragHeight, minDragHeight, windowHeight, midDragHeight, closeDragHeight }) : null}}"
+      tick="{{ts}}"
+      change:tick="{{computed.init(curInstanceId, currentHeight)}}"
+    >
+      <view wx:if="{{draggable}}" class="smart-bottom-sheet__dragger" >
+        <view class="smart-bottom-sheet__dragger_node"></view>
+      </view>
+      <slot />
     </view>
-    <slot />
-  </scroll-view>
+  </block>
+  <block wx:else>
+    <view wx:if="{{ contentHeight !== null }}" class="smart-bottom-sheet__content smart-bottom-sheet__content_height" style="{{computed.getHeight(contentHeight)}}">
+      <slot />
+    </view>
+    <scroll-view wx:else class="smart-bottom-sheet__content">
+      <view wx:if="{{draggable}}" class="smart-bottom-sheet__dragger" >
+        <view class="smart-bottom-sheet__dragger_node"></view>
+      </view>
+      <slot />
+    </scroll-view>
+  </block>
 </smart-popup>

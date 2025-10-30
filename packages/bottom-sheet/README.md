@@ -208,6 +208,37 @@ Page({
 });
 ```
 
+### 设置拖拽范围 `v2.7.1`
+
+你可以通过设置 `min-drag-height`、`mid-drag-height` 和 `max-drag-height` 属性来自定义面板可拖拽的最小、中间和最大高度。例如：
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  draggable
+  midDragHeight="300"
+  minDragHeight="300"
+  maxDragHeight="300"
+  closeDragHeight="300"
+>
+  <view style="background-color: red; height: 100px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+});
+```
+
+这样可以限制底部弹窗组件在拖拽时的可伸缩范围，满足不同业务的需求。
+
 ## API
 
 ### Props

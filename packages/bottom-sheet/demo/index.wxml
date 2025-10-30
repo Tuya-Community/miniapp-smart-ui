@@ -81,6 +81,22 @@
     instanceId="com6"
     closeDragHeight="{{closeDragHeight}}"
   >
-    <view style="background-color: red; height: 100px;" />
+    <view style="background-color: red; height: 300px;" />
+  </smart-bottom-sheet>
+</demo-block>
+
+<demo-block title="{{I18n.t('setTheRangeOfDragging')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet7">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    show="{{ show7 }}"
+    bind:close="toggleActionSheet7"
+    draggable
+    instanceId="com7"
+    midDragHeight="300"
+    minDragHeight="300"
+    maxDragHeight="300"
+    closeDragHeight="300"
+  >
+    <view style="background-color: red; height: 300px;" />
   </smart-bottom-sheet>
 </demo-block>

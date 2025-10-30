@@ -64,6 +64,10 @@ SmartComponent({
       type: Number,
       value: 0,
     },
+    defaultDragPosition: {
+      type: String,
+      value: 'middle',
+    },
   },
 
   data: {
@@ -71,17 +75,35 @@ SmartComponent({
     xmarkIconColor: 'rgba(0, 0, 0, 0.5)',
     curInstanceId: '',
     windowHeight: 0,
+    currentHeight: 0,
+    ts: 1,
   },
 
   mounted() {
     const themeInfo = ty.getThemeInfo() || {};
     const xmarkIconColor = this.data.iconColor || themeInfo['--app-B4-N3'] || 'rgba(0, 0, 0, 0.5)';
     const { windowHeight } = getSystemInfoSync();
-    this.setData({ xmarkIconColor, windowHeight });
+    const currentHeight = this.getDragPosition();
+
+    const data = { xmarkIconColor, windowHeight, ts: 2 } as any;
+    data.currentHeight = currentHeight;
+
+    this.setData(data);
     this.initId();
   },
 
   methods: {
+    getDragPosition() {
+      let currentHeight = this.data.midDragHeight;
+      if (this.data.defaultDragPosition === 'middle') {
+        currentHeight = this.data.midDragHeight;
+      } else if (this.data.defaultDragPosition === 'min') {
+        currentHeight = this.data.minDragHeight;
+      } else if (this.data.defaultDragPosition === 'max') {
+        currentHeight = this.data.maxDragHeight;
+      }
+      return currentHeight;
+    },
     initId() {
       if (this.data.instanceId) {
         this.setData({
@@ -116,6 +138,10 @@ SmartComponent({
     },
 
     onEnter() {
+      if (this.data.draggable) {
+        const currentHeight = this.getDragPosition();
+        this.setData({ currentHeight, ts: this.data.ts + 1 });
+      }
       this.$emit('enter');
     },
 

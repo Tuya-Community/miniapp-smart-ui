@@ -193,6 +193,37 @@ Page({
 });
 ```
 
+### Set the range of dragging `v2.7.1`
+
+You can customize the minimum, middle, and maximum heights of the panel during dragging by setting the `min-drag-height`, `mid-drag-height`, and `max-drag-height` properties. For example:
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  draggable
+  midDragHeight="300"
+  minDragHeight="300"
+  maxDragHeight="300"
+  closeDragHeight="300"
+>
+  <view style="background-color: red; height: 300px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+});
+```
+
+This limits the bottom sheet's scalable (draggable) range to the specified values, which can help meet different business requirements.
+
 ## API
 
 ### Props
