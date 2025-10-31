@@ -1,6 +1,6 @@
 {
   "name": "@tuya-miniapp/smart-ui",
-  "version": "2.7.2-beta-7",
+  "version": "2.7.2-beta-8",
   "author": "MiniApp Team",
   "license": "MIT",
   "miniprogram": "lib",
