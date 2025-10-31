@@ -672,7 +672,7 @@ exports[`should render demo and match snapshot 1`] = `
               />
               <wx-view
                 class="image-class smart-image__img smart-image__tint-color"
-                style="mask-image: url(https://images.tuyacn.com/rms-static/e6c9e630-00b4-11f0-9ab9-bf07ac3388bc-1741943741459.png?tyName=a.png);-webkit-mask-image: url(https://images.tuyacn.com/rms-static/e6c9e630-00b4-11f0-9ab9-bf07ac3388bc-1741943741459.png?tyName=a.png);background: rgba(255, 255, 25, 0.4);"
+                style="-webkit-mask-image: url(https://images.tuyacn.com/rms-static/e6c9e630-00b4-11f0-9ab9-bf07ac3388bc-1741943741459.png?tyName=a.png);background: rgba(255, 255, 25, 0.4);"
               />
             </wx-view>
           </smart-image>

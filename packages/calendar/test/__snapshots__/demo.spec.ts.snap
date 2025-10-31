@@ -57,17 +57,17 @@ exports[`should render demo and match snapshot 1`] = `
                       >
                         <wx-view
                           class="smart-icon__svg"
-                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:var(--calendar-header-icon_color)"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--calendar-header-icon_color)"
                         />
                       </wx-view>
                     </smart-icon>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__header-subtitle"
+                    class="smart-calendar__header-subtitle smart-manrope"
                     bind:tap="onClickSubtitle"
                   >
                     
-      2024-02
+      2024year02month
     
                   </wx-view>
                   <wx-view
@@ -84,7 +84,7 @@ exports[`should render demo and match snapshot 1`] = `
                       >
                         <wx-view
                           class="smart-icon__svg"
-                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:var(--calendar-header-icon_color)"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--calendar-header-icon_color)"
                         />
                       </wx-view>
                     </smart-icon>
@@ -160,7 +160,7 @@ exports[`should render demo and match snapshot 1`] = `
                   class="smart-calendar__days"
                 >
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--selected  "
+                    class="smart-calendar__day smart-calendar__day--selected  smart-manrope "
                     data-index="{{0}}"
                     style="margin-left:57.142857142857146%"
                     bind:tap="onClick"
@@ -175,7 +175,7 @@ exports[`should render demo and match snapshot 1`] = `
                     </wx-view>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{1}}"
                     style=""
                     bind:tap="onClick"
@@ -185,7 +185,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{2}}"
                     style=""
                     bind:tap="onClick"
@@ -195,7 +195,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{3}}"
                     style=""
                     bind:tap="onClick"
@@ -205,7 +205,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{4}}"
                     style=""
                     bind:tap="onClick"
@@ -215,7 +215,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{5}}"
                     style=""
                     bind:tap="onClick"
@@ -225,7 +225,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{6}}"
                     style=""
                     bind:tap="onClick"
@@ -235,7 +235,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{7}}"
                     style=""
                     bind:tap="onClick"
@@ -245,7 +245,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{8}}"
                     style=""
                     bind:tap="onClick"
@@ -255,7 +255,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{9}}"
                     style=""
                     bind:tap="onClick"
@@ -265,7 +265,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{10}}"
                     style=""
                     bind:tap="onClick"
@@ -275,7 +275,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{11}}"
                     style=""
                     bind:tap="onClick"
@@ -285,7 +285,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{12}}"
                     style=""
                     bind:tap="onClick"
@@ -295,7 +295,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{13}}"
                     style=""
                     bind:tap="onClick"
@@ -305,7 +305,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{14}}"
                     style=""
                     bind:tap="onClick"
@@ -315,7 +315,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{15}}"
                     style=""
                     bind:tap="onClick"
@@ -325,7 +325,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{16}}"
                     style=""
                     bind:tap="onClick"
@@ -335,7 +335,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{17}}"
                     style=""
                     bind:tap="onClick"
@@ -345,7 +345,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{18}}"
                     style=""
                     bind:tap="onClick"
@@ -355,7 +355,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{19}}"
                     style=""
                     bind:tap="onClick"
@@ -365,7 +365,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{20}}"
                     style=""
                     bind:tap="onClick"
@@ -375,7 +375,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{21}}"
                     style=""
                     bind:tap="onClick"
@@ -385,7 +385,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{22}}"
                     style=""
                     bind:tap="onClick"
@@ -395,7 +395,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{23}}"
                     style=""
                     bind:tap="onClick"
@@ -405,7 +405,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{24}}"
                     style=""
                     bind:tap="onClick"
@@ -415,7 +415,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{25}}"
                     style=""
                     bind:tap="onClick"
@@ -425,7 +425,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{26}}"
                     style=""
                     bind:tap="onClick"
@@ -435,7 +435,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{27}}"
                     style=""
                     bind:tap="onClick"
@@ -445,7 +445,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{28}}"
                     style=""
                     bind:tap="onClick"
@@ -518,17 +518,17 @@ exports[`should render demo and match snapshot 1`] = `
                       >
                         <wx-view
                           class="smart-icon__svg"
-                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:var(--calendar-header-icon_color)"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--calendar-header-icon_color)"
                         />
                       </wx-view>
                     </smart-icon>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__header-subtitle"
+                    class="smart-calendar__header-subtitle smart-manrope"
                     bind:tap="onClickSubtitle"
                   >
                     
-      2024-02
+      2024year02month
     
                   </wx-view>
                   <wx-view
@@ -545,7 +545,7 @@ exports[`should render demo and match snapshot 1`] = `
                       >
                         <wx-view
                           class="smart-icon__svg"
-                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:var(--calendar-header-icon_color)"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--calendar-header-icon_color)"
                         />
                       </wx-view>
                     </smart-icon>
@@ -621,7 +621,7 @@ exports[`should render demo and match snapshot 1`] = `
                   class="smart-calendar__days"
                 >
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--selected  "
+                    class="smart-calendar__day smart-calendar__day--selected  smart-manrope "
                     data-index="{{0}}"
                     style="margin-left:57.142857142857146%"
                     bind:tap="onClick"
@@ -636,7 +636,7 @@ exports[`should render demo and match snapshot 1`] = `
                     </wx-view>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{1}}"
                     style=""
                     bind:tap="onClick"
@@ -646,7 +646,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{2}}"
                     style=""
                     bind:tap="onClick"
@@ -656,7 +656,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{3}}"
                     style=""
                     bind:tap="onClick"
@@ -666,7 +666,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{4}}"
                     style=""
                     bind:tap="onClick"
@@ -676,7 +676,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{5}}"
                     style=""
                     bind:tap="onClick"
@@ -686,7 +686,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{6}}"
                     style=""
                     bind:tap="onClick"
@@ -696,7 +696,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{7}}"
                     style=""
                     bind:tap="onClick"
@@ -706,7 +706,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{8}}"
                     style=""
                     bind:tap="onClick"
@@ -716,7 +716,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{9}}"
                     style=""
                     bind:tap="onClick"
@@ -726,7 +726,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{10}}"
                     style=""
                     bind:tap="onClick"
@@ -736,7 +736,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{11}}"
                     style=""
                     bind:tap="onClick"
@@ -746,7 +746,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{12}}"
                     style=""
                     bind:tap="onClick"
@@ -756,7 +756,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{13}}"
                     style=""
                     bind:tap="onClick"
@@ -766,7 +766,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{14}}"
                     style=""
                     bind:tap="onClick"
@@ -776,7 +776,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{15}}"
                     style=""
                     bind:tap="onClick"
@@ -786,7 +786,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{16}}"
                     style=""
                     bind:tap="onClick"
@@ -796,7 +796,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{17}}"
                     style=""
                     bind:tap="onClick"
@@ -806,7 +806,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{18}}"
                     style=""
                     bind:tap="onClick"
@@ -816,7 +816,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{19}}"
                     style=""
                     bind:tap="onClick"
@@ -826,7 +826,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{20}}"
                     style=""
                     bind:tap="onClick"
@@ -836,7 +836,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{21}}"
                     style=""
                     bind:tap="onClick"
@@ -846,7 +846,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{22}}"
                     style=""
                     bind:tap="onClick"
@@ -856,7 +856,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{23}}"
                     style=""
                     bind:tap="onClick"
@@ -866,7 +866,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{24}}"
                     style=""
                     bind:tap="onClick"
@@ -876,7 +876,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{25}}"
                     style=""
                     bind:tap="onClick"
@@ -886,7 +886,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{26}}"
                     style=""
                     bind:tap="onClick"
@@ -896,7 +896,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{27}}"
                     style=""
                     bind:tap="onClick"
@@ -906,7 +906,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{28}}"
                     style=""
                     bind:tap="onClick"
@@ -979,17 +979,17 @@ exports[`should render demo and match snapshot 1`] = `
                       >
                         <wx-view
                           class="smart-icon__svg"
-                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:var(--calendar-header-icon_color)"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--calendar-header-icon_color)"
                         />
                       </wx-view>
                     </smart-icon>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__header-subtitle"
+                    class="smart-calendar__header-subtitle smart-manrope"
                     bind:tap="onClickSubtitle"
                   >
                     
-      2024-01
+      2024year01month
     
                   </wx-view>
                   <wx-view
@@ -1006,7 +1006,7 @@ exports[`should render demo and match snapshot 1`] = `
                       >
                         <wx-view
                           class="smart-icon__svg"
-                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:var(--calendar-header-icon_color)"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--calendar-header-icon_color)"
                         />
                       </wx-view>
                     </smart-icon>
@@ -1082,7 +1082,7 @@ exports[`should render demo and match snapshot 1`] = `
                   class="smart-calendar__days"
                 >
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--disabled  "
+                    class="smart-calendar__day smart-calendar__day--disabled  smart-manrope "
                     data-index="{{0}}"
                     style="margin-left:14.285714285714286%"
                     bind:tap="onClick"
@@ -1092,7 +1092,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--disabled  "
+                    class="smart-calendar__day smart-calendar__day--disabled  smart-manrope "
                     data-index="{{1}}"
                     style=""
                     bind:tap="onClick"
@@ -1102,7 +1102,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--disabled  "
+                    class="smart-calendar__day smart-calendar__day--disabled  smart-manrope "
                     data-index="{{2}}"
                     style=""
                     bind:tap="onClick"
@@ -1112,7 +1112,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{3}}"
                     style=""
                     bind:tap="onClick"
@@ -1122,7 +1122,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{4}}"
                     style=""
                     bind:tap="onClick"
@@ -1132,7 +1132,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{5}}"
                     style=""
                     bind:tap="onClick"
@@ -1142,7 +1142,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{6}}"
                     style=""
                     bind:tap="onClick"
@@ -1152,7 +1152,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{7}}"
                     style=""
                     bind:tap="onClick"
@@ -1162,7 +1162,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{8}}"
                     style=""
                     bind:tap="onClick"
@@ -1172,7 +1172,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{9}}"
                     style=""
                     bind:tap="onClick"
@@ -1182,7 +1182,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{10}}"
                     style=""
                     bind:tap="onClick"
@@ -1192,7 +1192,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{11}}"
                     style=""
                     bind:tap="onClick"
@@ -1202,7 +1202,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{12}}"
                     style=""
                     bind:tap="onClick"
@@ -1212,7 +1212,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{13}}"
                     style=""
                     bind:tap="onClick"
@@ -1222,7 +1222,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--start  "
+                    class="smart-calendar__day smart-calendar__day--start  smart-manrope "
                     data-index="{{14}}"
                     style=""
                     bind:tap="onClick"
@@ -1232,7 +1232,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{15}}"
                     style=""
                     bind:tap="onClick"
@@ -1242,7 +1242,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{16}}"
                     style=""
                     bind:tap="onClick"
@@ -1252,7 +1252,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{17}}"
                     style=""
                     bind:tap="onClick"
@@ -1262,7 +1262,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{18}}"
                     style=""
                     bind:tap="onClick"
@@ -1272,7 +1272,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{19}}"
                     style=""
                     bind:tap="onClick"
@@ -1282,7 +1282,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--end  "
+                    class="smart-calendar__day smart-calendar__day--end  smart-manrope "
                     data-index="{{20}}"
                     style=""
                     bind:tap="onClick"
@@ -1292,7 +1292,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{21}}"
                     style=""
                     bind:tap="onClick"
@@ -1302,7 +1302,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{22}}"
                     style=""
                     bind:tap="onClick"
@@ -1312,7 +1312,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{23}}"
                     style=""
                     bind:tap="onClick"
@@ -1322,7 +1322,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{24}}"
                     style=""
                     bind:tap="onClick"
@@ -1332,7 +1332,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{25}}"
                     style=""
                     bind:tap="onClick"
@@ -1342,7 +1342,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{26}}"
                     style=""
                     bind:tap="onClick"
@@ -1352,7 +1352,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{27}}"
                     style=""
                     bind:tap="onClick"
@@ -1362,7 +1362,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{28}}"
                     style=""
                     bind:tap="onClick"
@@ -1372,7 +1372,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{29}}"
                     style=""
                     bind:tap="onClick"
@@ -1382,7 +1382,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{30}}"
                     style=""
                     bind:tap="onClick"
@@ -1455,17 +1455,17 @@ exports[`should render demo and match snapshot 1`] = `
                       >
                         <wx-view
                           class="smart-icon__svg"
-                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:var(--calendar-header-icon_color)"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--calendar-header-icon_color)"
                         />
                       </wx-view>
                     </smart-icon>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__header-subtitle"
+                    class="smart-calendar__header-subtitle smart-manrope"
                     bind:tap="onClickSubtitle"
                   >
                     
-      2024-01
+      2024year01month
     
                   </wx-view>
                   <wx-view
@@ -1482,7 +1482,7 @@ exports[`should render demo and match snapshot 1`] = `
                       >
                         <wx-view
                           class="smart-icon__svg"
-                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:var(--calendar-header-icon_color)"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--calendar-header-icon_color)"
                         />
                       </wx-view>
                     </smart-icon>
@@ -1558,7 +1558,7 @@ exports[`should render demo and match snapshot 1`] = `
                   class="smart-calendar__days"
                 >
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--disabled  "
+                    class="smart-calendar__day smart-calendar__day--disabled  smart-manrope "
                     data-index="{{0}}"
                     style="margin-left:14.285714285714286%"
                     bind:tap="onClick"
@@ -1568,7 +1568,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--disabled  "
+                    class="smart-calendar__day smart-calendar__day--disabled  smart-manrope "
                     data-index="{{1}}"
                     style=""
                     bind:tap="onClick"
@@ -1578,7 +1578,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--disabled  "
+                    class="smart-calendar__day smart-calendar__day--disabled  smart-manrope "
                     data-index="{{2}}"
                     style=""
                     bind:tap="onClick"
@@ -1588,7 +1588,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{3}}"
                     style=""
                     bind:tap="onClick"
@@ -1598,7 +1598,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{4}}"
                     style=""
                     bind:tap="onClick"
@@ -1608,7 +1608,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{5}}"
                     style=""
                     bind:tap="onClick"
@@ -1618,7 +1618,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{6}}"
                     style=""
                     bind:tap="onClick"
@@ -1628,7 +1628,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{7}}"
                     style=""
                     bind:tap="onClick"
@@ -1638,7 +1638,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{8}}"
                     style=""
                     bind:tap="onClick"
@@ -1648,7 +1648,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--start  "
+                    class="smart-calendar__day smart-calendar__day--start  smart-manrope "
                     data-index="{{9}}"
                     style=""
                     bind:tap="onClick"
@@ -1658,7 +1658,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{10}}"
                     style=""
                     bind:tap="onClick"
@@ -1668,7 +1668,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{11}}"
                     style=""
                     bind:tap="onClick"
@@ -1678,7 +1678,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{12}}"
                     style=""
                     bind:tap="onClick"
@@ -1688,7 +1688,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{13}}"
                     style=""
                     bind:tap="onClick"
@@ -1698,7 +1698,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{14}}"
                     style=""
                     bind:tap="onClick"
@@ -1708,7 +1708,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{15}}"
                     style=""
                     bind:tap="onClick"
@@ -1718,7 +1718,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{16}}"
                     style=""
                     bind:tap="onClick"
@@ -1728,7 +1728,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{17}}"
                     style=""
                     bind:tap="onClick"
@@ -1738,7 +1738,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--middle  "
+                    class="smart-calendar__day smart-calendar__day--middle  smart-manrope "
                     data-index="{{18}}"
                     style=""
                     bind:tap="onClick"
@@ -1748,7 +1748,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day smart-calendar__day--end  "
+                    class="smart-calendar__day smart-calendar__day--end  smart-manrope "
                     data-index="{{19}}"
                     style=""
                     bind:tap="onClick"
@@ -1758,7 +1758,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{20}}"
                     style=""
                     bind:tap="onClick"
@@ -1768,7 +1768,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{21}}"
                     style=""
                     bind:tap="onClick"
@@ -1778,7 +1778,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{22}}"
                     style=""
                     bind:tap="onClick"
@@ -1788,7 +1788,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{23}}"
                     style=""
                     bind:tap="onClick"
@@ -1798,7 +1798,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{24}}"
                     style=""
                     bind:tap="onClick"
@@ -1808,7 +1808,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{25}}"
                     style=""
                     bind:tap="onClick"
@@ -1818,7 +1818,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{26}}"
                     style=""
                     bind:tap="onClick"
@@ -1828,7 +1828,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{27}}"
                     style=""
                     bind:tap="onClick"
@@ -1838,7 +1838,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{28}}"
                     style=""
                     bind:tap="onClick"
@@ -1848,7 +1848,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{29}}"
                     style=""
                     bind:tap="onClick"
@@ -1858,7 +1858,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__day  "
+                    class="smart-calendar__day  smart-manrope "
                     data-index="{{30}}"
                     style=""
                     bind:tap="onClick"
@@ -1931,13 +1931,13 @@ exports[`should render demo and match snapshot 1`] = `
                       >
                         <wx-view
                           class="smart-icon__svg"
-                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:var(--calendar-header-icon_color)"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--calendar-header-icon_color)"
                         />
                       </wx-view>
                     </smart-icon>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__header-subtitle"
+                    class="smart-calendar__header-subtitle smart-manrope"
                     bind:tap="onClickSubtitle"
                   >
                     
@@ -1958,7 +1958,7 @@ exports[`should render demo and match snapshot 1`] = `
                       >
                         <wx-view
                           class="smart-icon__svg"
-                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:var(--calendar-header-icon_color)"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--calendar-header-icon_color)"
                         />
                       </wx-view>
                     </smart-icon>
@@ -1986,7 +1986,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_disabled"
+                          class="item smart-manrope item_disabled"
                           data-index="{{0}}"
                         >
                           
@@ -2003,7 +2003,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_disabled"
+                          class="item smart-manrope item_disabled"
                           data-index="{{1}}"
                         >
                           
@@ -2020,7 +2020,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{2}}"
                           bind:tap="onClick"
                         >
@@ -2038,7 +2038,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{3}}"
                           bind:tap="onClick"
                         >
@@ -2056,7 +2056,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{4}}"
                           bind:tap="onClick"
                         >
@@ -2074,7 +2074,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{5}}"
                           bind:tap="onClick"
                         >
@@ -2092,7 +2092,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_active"
+                          class="item smart-manrope item_active"
                           data-index="{{6}}"
                           style="background: ;"
                           bind:tap="onClick"
@@ -2111,7 +2111,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{7}}"
                           bind:tap="onClick"
                         >
@@ -2129,7 +2129,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{8}}"
                           bind:tap="onClick"
                         >
@@ -2147,7 +2147,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{9}}"
                           bind:tap="onClick"
                         >
@@ -2165,7 +2165,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{10}}"
                           bind:tap="onClick"
                         >
@@ -2183,7 +2183,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{11}}"
                           bind:tap="onClick"
                         >
@@ -2258,13 +2258,13 @@ exports[`should render demo and match snapshot 1`] = `
                       >
                         <wx-view
                           class="smart-icon__svg"
-                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:var(--calendar-header-icon_color)"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--calendar-header-icon_color)"
                         />
                       </wx-view>
                     </smart-icon>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__header-subtitle"
+                    class="smart-calendar__header-subtitle smart-manrope"
                     bind:tap="onClickSubtitle"
                   >
                     
@@ -2285,7 +2285,7 @@ exports[`should render demo and match snapshot 1`] = `
                       >
                         <wx-view
                           class="smart-icon__svg"
-                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);mask-size:contain;background:var(--calendar-header-icon_color)"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--calendar-header-icon_color)"
                         />
                       </wx-view>
                     </smart-icon>
@@ -2312,7 +2312,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_disabled"
+                          class="item smart-manrope item_disabled"
                           data-index="{{0}}"
                         >
                           
@@ -2329,7 +2329,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_disabled"
+                          class="item smart-manrope item_disabled"
                           data-index="{{1}}"
                         >
                           
@@ -2346,7 +2346,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_disabled"
+                          class="item smart-manrope item_disabled"
                           data-index="{{2}}"
                         >
                           
@@ -2363,7 +2363,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_disabled"
+                          class="item smart-manrope item_disabled"
                           data-index="{{3}}"
                         >
                           
@@ -2380,7 +2380,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{4}}"
                           bind:tap="onClick"
                         >
@@ -2398,7 +2398,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_active"
+                          class="item smart-manrope item_active"
                           data-index="{{5}}"
                           style="background: ;"
                           bind:tap="onClick"
@@ -2417,7 +2417,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{6}}"
                           bind:tap="onClick"
                         >
@@ -2435,7 +2435,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{7}}"
                           bind:tap="onClick"
                         >
@@ -2453,7 +2453,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{8}}"
                           bind:tap="onClick"
                         >
@@ -2471,7 +2471,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{9}}"
                           bind:tap="onClick"
                         >
@@ -2489,7 +2489,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_disabled"
+                          class="item smart-manrope item_disabled"
                           data-index="{{10}}"
                         >
                           
@@ -2506,7 +2506,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_disabled"
+                          class="item smart-manrope item_disabled"
                           data-index="{{11}}"
                         >
                           
@@ -2595,7 +2595,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="smart-icon__svg"
-                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);mask-size:contain"
+                  style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
                 />
               </wx-view>
             </smart-icon>

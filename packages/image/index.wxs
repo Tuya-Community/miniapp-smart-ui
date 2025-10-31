@@ -30,7 +30,7 @@ function mode(fit) {
 
 
 function maskStyle(url, color) {
-  var str = 'mask-image: url(' + url + ');-webkit-mask-image: url(' + url + ');background: ' + color + ';'
+  var str = '-webkit-mask-image: url(' + url + ');background: ' + color + ';'
   return str
 }
 

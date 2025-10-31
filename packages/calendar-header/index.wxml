@@ -11,7 +11,7 @@
     <view class="smart-calendar__header-subtitle_left" bind:tap="onPrev">
       <smart-icon color="{{iconColor}}" class="smart-calendar__header-subtitle_left_icon" name="{{LeftIcon}}" />
     </view>
-    <view wx:if="{{ showSubtitle }}" class="smart-calendar__header-subtitle" bind:tap="onClickSubtitle">
+    <view wx:if="{{ showSubtitle }}" class="smart-calendar__header-subtitle smart-manrope" bind:tap="onClickSubtitle">
       {{ subtitle }}
     </view>
     <view class="smart-calendar__header-subtitle_right" bind:tap="onNext">

@@ -22,11 +22,12 @@ function loadingStyle(data) {
     iconSrc = data.circular;
   }
 
+  var imageBase64Src = "url('" + iconSrc + "')";
   var ret = style({
-    'mask-image': "url('".concat(iconSrc, "')"),
+    '-webkit-mask-image': imageBase64Src,
+    '-webkit-mask-size': addUnit(data.size),
     width: addUnit(data.size),
     height: addUnit(data.size),
-    'mask-size': addUnit(data.size),
   });
 
   return ret;

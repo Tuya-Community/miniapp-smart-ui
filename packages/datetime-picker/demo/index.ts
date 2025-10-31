@@ -33,6 +33,10 @@ SmartComponent({
       },
       day: '{{day}}日'
     },
+    fontStylesTwo: {
+      year: 'font-family: "Manrope", sans-serif;',
+      day: 'font-family: "Manrope", sans-serif;',
+    },
     formatter(type, value) {
       if (type === 'year') {
         return `${value}${I18n.t('year')}`;

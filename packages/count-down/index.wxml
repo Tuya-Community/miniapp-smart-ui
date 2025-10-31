@@ -1,4 +1,4 @@
-<view class="smart-count-down">
+<view class="smart-manrope smart-count-down">
   <slot wx:if="{{ useSlot }}"/>
   <block wx:else>{{ formattedTime }}</block>
 </view>

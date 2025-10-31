@@ -167,8 +167,13 @@ function wrapperItemClass(data) {
   var optionIndex = optionsVIndexList[data.index];
   var option = data.options[optionIndex];
   var isActive = typeof optionIndex === 'number' && activeIndex === optionIndex;
+  var text = optionText(data.options, optionIndex, data.valueKey);
+  // 判断 text 是否全是数字（使用自定义函数，因为 WXS 不支持正则）
+  var isAllNumbersVal = wxUtils.isAllNumbers(text);
   var activeClass = 'active-class';
-  return wxUtils.bem('picker-column__item', { disabled: wxUtils.isObj(option) && option.disabled, selected: isActive }) + ' ' + (isActive ? activeClass : '');
+  var manropeClass = 'smart-manrope';
+  var mainClass = wxUtils.bem('picker-column__item', { disabled: wxUtils.isObj(option) && option.disabled, selected: isActive })
+  return (isAllNumbersVal ? manropeClass + ' ' : '') + mainClass + ' ' + (isActive ? activeClass : '');
 }
 
 function wrapperItemTextStyle(data) {

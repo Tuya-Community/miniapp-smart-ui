@@ -107,14 +107,22 @@ After obtaining the component instance through the `selectComponent` selector, y
 />
 
 <smart-grid clickable column-num="3">
-  <smart-grid-item text="Start" icon="play-circle-o" bindclick="start" />
-  <smart-grid-item text="Pause" icon="pause-circle-o" bindclick="pause" />
-  <smart-grid-item text="Reset" icon="replay" bindclick="reset" />
+  <smart-grid-item text="Start" icon="{{PlayIcon}}" bindclick="start" />
+  <smart-grid-item text="Pause" icon="{{PauseIcon}}" bindclick="pause" />
+  <smart-grid-item text="Reset" icon="{{ReplayIcon}}" bindclick="reset" />
 </smart-grid>
 ```
 
 ```js
+import PlayIcon from '@tuya-miniapp/icons/dist/svg/Play';
+import PauseIcon from '@tuya-miniapp/icons/dist/svg/Pause';
+import ReplayIcon from '@tuya-miniapp/icons/dist/svg/Refresh';
 Page({
+  data:{
+    PlayIcon,
+    PauseIcon,
+    ReplayIcon,
+  },
   start() {
     const countDown = this.selectComponent('.control-count-down');
     countDown.start();

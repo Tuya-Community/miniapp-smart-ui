@@ -482,37 +482,37 @@ exports[`should render demo and match snapshot 1`] = `
                   style=""
                 >
                   <wx-view
-                    class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                    class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
                     style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;;color: #000;;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_1 smart-picker-column__item "
+                    class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                     data-index="{{1}}"
                     style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_2 smart-picker-column__item "
+                    class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                     data-index="{{2}}"
                     style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_3 smart-picker-column__item "
+                    class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                     data-index="{{3}}"
                     style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_4 smart-picker-column__item "
+                    class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                     data-index="{{4}}"
                     style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_5 smart-picker-column__item "
+                    class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                     data-index="{{5}}"
                     style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;;"
                     bind:tap=null
@@ -862,37 +862,37 @@ exports[`should render demo and match snapshot 1`] = `
                   style=""
                 >
                   <wx-view
-                    class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                    class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
                     style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: #000;;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_1 smart-picker-column__item "
+                    class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                     data-index="{{1}}"
                     style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_2 smart-picker-column__item "
+                    class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                     data-index="{{2}}"
                     style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_3 smart-picker-column__item "
+                    class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                     data-index="{{3}}"
                     style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_4 smart-picker-column__item "
+                    class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                     data-index="{{4}}"
                     style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_5 smart-picker-column__item "
+                    class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                     data-index="{{5}}"
                     style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
@@ -1273,37 +1273,37 @@ exports[`should render demo and match snapshot 1`] = `
                   style=""
                 >
                   <wx-view
-                    class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                    class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
                     style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_1 smart-picker-column__item "
+                    class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                     data-index="{{1}}"
                     style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_2 smart-picker-column__item "
+                    class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                     data-index="{{2}}"
                     style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_3 smart-picker-column__item "
+                    class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                     data-index="{{3}}"
                     style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_4 smart-picker-column__item "
+                    class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                     data-index="{{4}}"
                     style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_5 smart-picker-column__item "
+                    class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                     data-index="{{5}}"
                     style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
@@ -1351,31 +1351,31 @@ exports[`should render demo and match snapshot 1`] = `
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_13 smart-picker-column__item "
+                    class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                     data-index="{{13}}"
                     style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_14 smart-picker-column__item "
+                    class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                     data-index="{{14}}"
                     style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_15 smart-picker-column__item "
+                    class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                     data-index="{{15}}"
                     style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_16 smart-picker-column__item "
+                    class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                     data-index="{{16}}"
                     style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_17 smart-picker-column__item "
+                    class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                     data-index="{{17}}"
                     style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
@@ -2468,11 +2468,11 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="smart-loading__spinner smart-loading__spinner--circular"
-                  style="mask-image:url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20fill%3D%22none%22%20version%3D%221.1%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22master_svg0_452_31565%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%220%22%2F%3E%3C%2FclipPath%3E%3ClinearGradient%20x1%3D%220.5%22%20y1%3D%220.5%22%20x2%3D%220.5%22%20y2%3D%220.8999999761581421%22%20id%3D%22master_svg1_452_31641%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231989fa%22%20stop-opacity%3D%221%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231989fa%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cg%20clip-path%3D%22url(%23master_svg0_452_31565)%22%3E%3Cg%20style%3D%22opacity%3A0.20000000298023224%3B%22%3E%3Cpath%20d%3D%22M12%2C18.4C15.5346%2C18.4%2C18.4%2C15.5346%2C18.4%2C12C18.4%2C8.46538%2C15.5346%2C5.6%2C12%2C5.6C8.46538%2C5.6%2C5.6%2C8.46538%2C5.6%2C12C5.6%2C15.5346%2C8.46538%2C18.4%2C12%2C18.4ZM12%2C20C16.418300000000002%2C20%2C20%2C16.418300000000002%2C20%2C12C20%2C7.58172%2C16.418300000000002%2C4%2C12%2C4C7.58172%2C4%2C4%2C7.58172%2C4%2C12C4%2C16.418300000000002%2C7.58172%2C20%2C12%2C20Z%22%20fill-rule%3D%22evenodd%22%20fill%3D%22%231989fa%22%20fill-opacity%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22M12%2C5.6C8.46538%2C5.6%2C5.6%2C8.46538%2C5.6%2C12C5.6%2C15.5346%2C8.46538%2C18.4%2C12%2C18.4C12.44183%2C18.4%2C12.8%2C18.758200000000002%2C12.8%2C19.2C12.8%2C19.6418%2C12.44183%2C20%2C12%2C20C7.58172%2C20%2C4%2C16.418300000000002%2C4%2C12C4%2C7.58172%2C7.58172%2C4%2C12%2C4C16.418300000000002%2C4%2C20%2C7.58172%2C20%2C12C20%2C12.44183%2C19.6418%2C12.8%2C19.2%2C12.8C18.758200000000002%2C12.8%2C18.4%2C12.44183%2C18.4%2C12C18.4%2C8.46538%2C15.5346%2C5.6%2C12%2C5.6Z%22%20fill-rule%3D%22evenodd%22%20fill%3D%22url(%23master_svg1_452_31641)%22%20fill-opacity%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');width:30px;height:30px;mask-size:30px"
+                  style="-webkit-mask-image:url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20fill%3D%22none%22%20version%3D%221.1%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22master_svg0_452_31565%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%220%22%2F%3E%3C%2FclipPath%3E%3ClinearGradient%20x1%3D%220.5%22%20y1%3D%220.5%22%20x2%3D%220.5%22%20y2%3D%220.8999999761581421%22%20id%3D%22master_svg1_452_31641%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231989fa%22%20stop-opacity%3D%221%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231989fa%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cg%20clip-path%3D%22url(%23master_svg0_452_31565)%22%3E%3Cg%20style%3D%22opacity%3A0.20000000298023224%3B%22%3E%3Cpath%20d%3D%22M12%2C18.4C15.5346%2C18.4%2C18.4%2C15.5346%2C18.4%2C12C18.4%2C8.46538%2C15.5346%2C5.6%2C12%2C5.6C8.46538%2C5.6%2C5.6%2C8.46538%2C5.6%2C12C5.6%2C15.5346%2C8.46538%2C18.4%2C12%2C18.4ZM12%2C20C16.418300000000002%2C20%2C20%2C16.418300000000002%2C20%2C12C20%2C7.58172%2C16.418300000000002%2C4%2C12%2C4C7.58172%2C4%2C4%2C7.58172%2C4%2C12C4%2C16.418300000000002%2C7.58172%2C20%2C12%2C20Z%22%20fill-rule%3D%22evenodd%22%20fill%3D%22%231989fa%22%20fill-opacity%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22M12%2C5.6C8.46538%2C5.6%2C5.6%2C8.46538%2C5.6%2C12C5.6%2C15.5346%2C8.46538%2C18.4%2C12%2C18.4C12.44183%2C18.4%2C12.8%2C18.758200000000002%2C12.8%2C19.2C12.8%2C19.6418%2C12.44183%2C20%2C12%2C20C7.58172%2C20%2C4%2C16.418300000000002%2C4%2C12C4%2C7.58172%2C7.58172%2C4%2C12%2C4C16.418300000000002%2C4%2C20%2C7.58172%2C20%2C12C20%2C12.44183%2C19.6418%2C12.8%2C19.2%2C12.8C18.758200000000002%2C12.8%2C18.4%2C12.44183%2C18.4%2C12C18.4%2C8.46538%2C15.5346%2C5.6%2C12%2C5.6Z%22%20fill-rule%3D%22evenodd%22%20fill%3D%22url(%23master_svg1_452_31641)%22%20fill-opacity%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');-webkit-mask-size:30px;width:30px;height:30px"
                 >
                   <wx-view
                     class="smart-switch__loading"
-                    style="mask-image:url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20fill%3D%22none%22%20version%3D%221.1%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22master_svg0_452_31565%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%220%22%2F%3E%3C%2FclipPath%3E%3ClinearGradient%20x1%3D%220.5%22%20y1%3D%220.5%22%20x2%3D%220.5%22%20y2%3D%220.8999999761581421%22%20id%3D%22master_svg1_452_31641%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231989fa%22%20stop-opacity%3D%221%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231989fa%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cg%20clip-path%3D%22url(%23master_svg0_452_31565)%22%3E%3Cg%20style%3D%22opacity%3A0.20000000298023224%3B%22%3E%3Cpath%20d%3D%22M12%2C18.4C15.5346%2C18.4%2C18.4%2C15.5346%2C18.4%2C12C18.4%2C8.46538%2C15.5346%2C5.6%2C12%2C5.6C8.46538%2C5.6%2C5.6%2C8.46538%2C5.6%2C12C5.6%2C15.5346%2C8.46538%2C18.4%2C12%2C18.4ZM12%2C20C16.418300000000002%2C20%2C20%2C16.418300000000002%2C20%2C12C20%2C7.58172%2C16.418300000000002%2C4%2C12%2C4C7.58172%2C4%2C4%2C7.58172%2C4%2C12C4%2C16.418300000000002%2C7.58172%2C20%2C12%2C20Z%22%20fill-rule%3D%22evenodd%22%20fill%3D%22%231989fa%22%20fill-opacity%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22M12%2C5.6C8.46538%2C5.6%2C5.6%2C8.46538%2C5.6%2C12C5.6%2C15.5346%2C8.46538%2C18.4%2C12%2C18.4C12.44183%2C18.4%2C12.8%2C18.758200000000002%2C12.8%2C19.2C12.8%2C19.6418%2C12.44183%2C20%2C12%2C20C7.58172%2C20%2C4%2C16.418300000000002%2C4%2C12C4%2C7.58172%2C7.58172%2C4%2C12%2C4C16.418300000000002%2C4%2C20%2C7.58172%2C20%2C12C20%2C12.44183%2C19.6418%2C12.8%2C19.2%2C12.8C18.758200000000002%2C12.8%2C18.4%2C12.44183%2C18.4%2C12C18.4%2C8.46538%2C15.5346%2C5.6%2C12%2C5.6Z%22%20fill-rule%3D%22evenodd%22%20fill%3D%22url(%23master_svg1_452_31641)%22%20fill-opacity%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');width:30px;height:30px;mask-size:30px"
+                    style="-webkit-mask-image:url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20fill%3D%22none%22%20version%3D%221.1%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22master_svg0_452_31565%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%220%22%2F%3E%3C%2FclipPath%3E%3ClinearGradient%20x1%3D%220.5%22%20y1%3D%220.5%22%20x2%3D%220.5%22%20y2%3D%220.8999999761581421%22%20id%3D%22master_svg1_452_31641%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231989fa%22%20stop-opacity%3D%221%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231989fa%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cg%20clip-path%3D%22url(%23master_svg0_452_31565)%22%3E%3Cg%20style%3D%22opacity%3A0.20000000298023224%3B%22%3E%3Cpath%20d%3D%22M12%2C18.4C15.5346%2C18.4%2C18.4%2C15.5346%2C18.4%2C12C18.4%2C8.46538%2C15.5346%2C5.6%2C12%2C5.6C8.46538%2C5.6%2C5.6%2C8.46538%2C5.6%2C12C5.6%2C15.5346%2C8.46538%2C18.4%2C12%2C18.4ZM12%2C20C16.418300000000002%2C20%2C20%2C16.418300000000002%2C20%2C12C20%2C7.58172%2C16.418300000000002%2C4%2C12%2C4C7.58172%2C4%2C4%2C7.58172%2C4%2C12C4%2C16.418300000000002%2C7.58172%2C20%2C12%2C20Z%22%20fill-rule%3D%22evenodd%22%20fill%3D%22%231989fa%22%20fill-opacity%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22M12%2C5.6C8.46538%2C5.6%2C5.6%2C8.46538%2C5.6%2C12C5.6%2C15.5346%2C8.46538%2C18.4%2C12%2C18.4C12.44183%2C18.4%2C12.8%2C18.758200000000002%2C12.8%2C19.2C12.8%2C19.6418%2C12.44183%2C20%2C12%2C20C7.58172%2C20%2C4%2C16.418300000000002%2C4%2C12C4%2C7.58172%2C7.58172%2C4%2C12%2C4C16.418300000000002%2C4%2C20%2C7.58172%2C20%2C12C20%2C12.44183%2C19.6418%2C12.8%2C19.2%2C12.8C18.758200000000002%2C12.8%2C18.4%2C12.44183%2C18.4%2C12C18.4%2C8.46538%2C15.5346%2C5.6%2C12%2C5.6Z%22%20fill-rule%3D%22evenodd%22%20fill%3D%22url(%23master_svg1_452_31641)%22%20fill-opacity%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');-webkit-mask-size:30px;width:30px;height:30px"
                   />
                 </wx-view>
                 <wx-view
@@ -3532,37 +3532,37 @@ exports[`should render demo and match snapshot 1`] = `
                   style=""
                 >
                   <wx-view
-                    class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                    class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
                     style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_1 smart-picker-column__item "
+                    class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                     data-index="{{1}}"
                     style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_2 smart-picker-column__item "
+                    class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                     data-index="{{2}}"
                     style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_3 smart-picker-column__item "
+                    class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                     data-index="{{3}}"
                     style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_4 smart-picker-column__item "
+                    class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                     data-index="{{4}}"
                     style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_5 smart-picker-column__item "
+                    class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                     data-index="{{5}}"
                     style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
@@ -3610,31 +3610,31 @@ exports[`should render demo and match snapshot 1`] = `
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_13 smart-picker-column__item "
+                    class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                     data-index="{{13}}"
                     style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_14 smart-picker-column__item "
+                    class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                     data-index="{{14}}"
                     style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_15 smart-picker-column__item "
+                    class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                     data-index="{{15}}"
                     style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_16 smart-picker-column__item "
+                    class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                     data-index="{{16}}"
                     style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
                   />
                   <wx-view
-                    class="smart-picker-column__item_17 smart-picker-column__item "
+                    class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                     data-index="{{17}}"
                     style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                     bind:tap=null
