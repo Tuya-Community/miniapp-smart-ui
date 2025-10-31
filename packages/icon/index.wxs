@@ -59,8 +59,6 @@ function svgStyle(data) {
       '-webkit-mask-size': 'contain',
       '-webkit-mask-repeat': 'no-repeat',
       '-webkit-mask-position': 'center',
-      'mask-image': imageBase64Src,
-      'mask-size': 'contain',
       background: data.color,
     },
   ]);
@@ -78,8 +76,6 @@ function svgPathStyle(data) {
       '-webkit-mask-size': 'contain',
       '-webkit-mask-repeat': 'no-repeat',
       '-webkit-mask-position': 'center',
-      'mask-image': imageBase64Src,
-      'mask-size': 'contain',
       background: data.color,
     },
   ]);
