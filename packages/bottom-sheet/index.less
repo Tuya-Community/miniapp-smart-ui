@@ -29,6 +29,23 @@
     }
   }
 
+  &__dragger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--bottom-sheet-dragger-padding, @bottom-sheet-dragger-padding);
+  }
+
+  &__dragger_node {
+    width: var(--bottom-sheet-dragger-node-width, @bottom-sheet-dragger-node-width);
+    height: var(--bottom-sheet-dragger-node-height, @bottom-sheet-dragger-node-height);
+    border-radius: var(
+      --bottom-sheet-dragger-node-border-radius,
+      @bottom-sheet-dragger-node-border-radius
+    );
+    background: var(--bottom-sheet-dragger-node-background, @bottom-sheet-dragger-node-background);
+  }
+
   &__content {
     padding: var(--bottom-sheet-padding, @bottom-sheet-padding);
     overflow-y: auto;
