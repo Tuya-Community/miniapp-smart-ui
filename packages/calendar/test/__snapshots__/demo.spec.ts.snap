@@ -63,11 +63,11 @@ exports[`should render demo and match snapshot 1`] = `
                     </smart-icon>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__header-subtitle"
+                    class="smart-calendar__header-subtitle smart-manrope"
                     bind:tap="onClickSubtitle"
                   >
                     
-      2024-02
+      2024year02month
     
                   </wx-view>
                   <wx-view
@@ -524,11 +524,11 @@ exports[`should render demo and match snapshot 1`] = `
                     </smart-icon>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__header-subtitle"
+                    class="smart-calendar__header-subtitle smart-manrope"
                     bind:tap="onClickSubtitle"
                   >
                     
-      2024-02
+      2024year02month
     
                   </wx-view>
                   <wx-view
@@ -985,11 +985,11 @@ exports[`should render demo and match snapshot 1`] = `
                     </smart-icon>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__header-subtitle"
+                    class="smart-calendar__header-subtitle smart-manrope"
                     bind:tap="onClickSubtitle"
                   >
                     
-      2024-01
+      2024year01month
     
                   </wx-view>
                   <wx-view
@@ -1461,11 +1461,11 @@ exports[`should render demo and match snapshot 1`] = `
                     </smart-icon>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__header-subtitle"
+                    class="smart-calendar__header-subtitle smart-manrope"
                     bind:tap="onClickSubtitle"
                   >
                     
-      2024-01
+      2024year01month
     
                   </wx-view>
                   <wx-view
@@ -1937,7 +1937,7 @@ exports[`should render demo and match snapshot 1`] = `
                     </smart-icon>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__header-subtitle"
+                    class="smart-calendar__header-subtitle smart-manrope"
                     bind:tap="onClickSubtitle"
                   >
                     
@@ -1986,7 +1986,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_disabled"
+                          class="item smart-manrope item_disabled"
                           data-index="{{0}}"
                         >
                           
@@ -2003,7 +2003,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_disabled"
+                          class="item smart-manrope item_disabled"
                           data-index="{{1}}"
                         >
                           
@@ -2020,7 +2020,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{2}}"
                           bind:tap="onClick"
                         >
@@ -2038,7 +2038,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{3}}"
                           bind:tap="onClick"
                         >
@@ -2056,7 +2056,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{4}}"
                           bind:tap="onClick"
                         >
@@ -2074,7 +2074,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{5}}"
                           bind:tap="onClick"
                         >
@@ -2092,7 +2092,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item item_active"
+                          class="item smart-manrope item_active"
                           data-index="{{6}}"
                           style="background: ;"
                           bind:tap="onClick"
@@ -2111,7 +2111,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{7}}"
                           bind:tap="onClick"
                         >
@@ -2129,7 +2129,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{8}}"
                           bind:tap="onClick"
                         >
@@ -2147,7 +2147,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{9}}"
                           bind:tap="onClick"
                         >
@@ -2165,7 +2165,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{10}}"
                           bind:tap="onClick"
                         >
@@ -2183,7 +2183,7 @@ exports[`should render demo and match snapshot 1`] = `
                         style=""
                       >
                         <wx-view
-                          class="item"
+                          class="item smart-manrope"
                           data-index="{{11}}"
                           bind:tap="onClick"
                         >
@@ -2264,7 +2264,7 @@ exports[`should render demo and match snapshot 1`] = `
                     </smart-icon>
                   </wx-view>
                   <wx-view
-                    class="smart-calendar__header-subtitle"
+                    class="smart-calendar__header-subtitle smart-manrope"
                     bind:tap="onClickSubtitle"
                   >
                     
