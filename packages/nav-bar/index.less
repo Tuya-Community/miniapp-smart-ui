@@ -88,9 +88,18 @@
 
   &__left {
     padding-left: var(--nav-bar-icon-padding, @nav-bar-icon-padding);
+
+    &--text {
+      padding-left: var(--nav-bar-text-padding, @nav-bar-text-padding);
+    }
+    &--icon {
+      padding-left: var(--nav-bar-icon-padding, @nav-bar-icon-padding);
+    }
+
     &--home {
       width: auto;
       max-width: var(--nav-bar-home-max-width, @nav-bar-home-max-width);
+      padding-left: var(--nav-bar-home-padding, @nav-bar-home-padding);
       .smart-nav-bar__text {
         color: var(--nav-bar-home-text-color, @nav-bar-home-text-color);
         font-weight: var(--nav-bar-home-font-weight, @nav-bar-home-font-weight);
@@ -101,19 +110,13 @@
     &--title {
       width: auto;
       max-width: var(--nav-bar-title-max-width, @nav-bar-title-max-width);
+      padding-left: var(--nav-bar-home-padding, @nav-bar-home-padding);
       .smart-nav-bar__text {
         color: var(--nav-bar-title-text-color, @nav-bar-title-text-color);
         font-weight: var(--nav-bar-title-font-weight, @nav-bar-title-font-weight);
         font-size: var(--nav-bar-home-font-size, @nav-bar-home-font-size);
         padding-left: var(--nav-bar-left-title-padding, @nav-bar-left-title-padding);
       }
-    }
-
-    &--text {
-      padding-left: var(--nav-bar-text-padding, @nav-bar-text-padding);
-    }
-    &--icon {
-      padding-left: var(--nav-bar-icon-padding, @nav-bar-icon-padding);
     }
   }
 
