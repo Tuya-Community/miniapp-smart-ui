@@ -179,7 +179,7 @@ Page({
 });
 ```
 
-### 可拖拽 `v2.7.1`
+### 可拖拽 `v2.7.2`
 
 ```html
 <smart-bottom-sheet
@@ -208,7 +208,7 @@ Page({
 });
 ```
 
-### 设置拖拽范围 `v2.7.1`
+### 设置拖拽的范围 `v2.7.2`
 
 你可以通过设置 `min-drag-height`、`mid-drag-height` 和 `max-drag-height` 属性来自定义面板可拖拽的最小、中间和最大高度。例如：
 
@@ -306,9 +306,9 @@ Page({
 | --bottom-sheet-header-font-weight  | _600_    | 底部弹窗的头部字重    |
 | --bottom-sheet-font-color  | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | 底部弹窗的文字颜色    |
 | --bottom-sheet-header-padding `v2.5.0`  | _0 16px_    | 底部弹窗头部的内边距    |
-| --bottom-sheet-dragger-padding `v2.7.1` | _8px 0_ | 拖拽手柄区域的内边距 |
-| --bottom-sheet-dragger-node-width `v2.7.1` | _30px_ | 拖拽手柄的宽度 |
-| --bottom-sheet-dragger-node-height `v2.7.1` | _4px_ | 拖拽手柄的高度 |
-| --bottom-sheet-dragger-node-border-radius `v2.7.1` | _2px_ | 拖拽手柄的圆角 |
-| --bottom-sheet-dragger-node-background `v2.7.1` | _rgba(0, 0, 0, 0.3)_ | 拖拽手柄的背景色 |
+| --bottom-sheet-dragger-padding `v2.7.2` | _8px 0_ | 拖拽手柄区域的内边距 |
+| --bottom-sheet-dragger-node-width `v2.7.2` | _30px_ | 拖拽手柄的宽度 |
+| --bottom-sheet-dragger-node-height `v2.7.2` | _4px_ | 拖拽手柄的高度 |
+| --bottom-sheet-dragger-node-border-radius `v2.7.2` | _2px_ | 拖拽手柄的圆角 |
+| --bottom-sheet-dragger-node-background `v2.7.2` | _rgba(0, 0, 0, 0.3)_ | 拖拽手柄的背景色 |
 
