@@ -113,6 +113,7 @@
     maxDragHeight="300"
     closeDragHeight="300"
     title="{{I18n.t('draggableWithTitle')}}"
+    showClose="{{false}}"
   >
     <view style="background-color: red; height: 300px;" />
   </smart-bottom-sheet>
