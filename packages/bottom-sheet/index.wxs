@@ -137,6 +137,7 @@ function init(instanceId, currentHeight) {
       state[instanceId] = {
         originHeight: originHeight,
       };
+      currOriginHeight = originHeight;
     }
 
     contentNode.setStyle({
