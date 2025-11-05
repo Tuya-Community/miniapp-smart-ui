@@ -76,7 +76,7 @@ SmartComponent({
     curInstanceId: '',
     windowHeight: 0,
     currentHeight: 0,
-    ts: 1,
+    ts: Date.now(),
   },
 
   mounted() {
@@ -85,7 +85,7 @@ SmartComponent({
     const { windowHeight } = getSystemInfoSync();
     const currentHeight = this.getDragPosition();
 
-    const data = { xmarkIconColor, windowHeight, ts: 2 } as any;
+    const data = { xmarkIconColor, windowHeight, ts: Date.now() } as any;
     data.currentHeight = currentHeight;
 
     this.setData(data);
@@ -140,7 +140,7 @@ SmartComponent({
     onEnter() {
       if (this.data.draggable) {
         const currentHeight = this.getDragPosition();
-        this.setData({ currentHeight, ts: this.data.ts + 1 });
+        this.setData({ currentHeight, ts: Date.now() });
       }
       this.$emit('enter');
     },
