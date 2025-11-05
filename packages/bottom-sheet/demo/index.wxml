@@ -107,7 +107,7 @@
     show="{{ show8 }}"
     bind:close="toggleActionSheet8"
     draggable
-    instanceId="com7"
+    instanceId="com8"
     midDragHeight="300"
     minDragHeight="300"
     maxDragHeight="300"
