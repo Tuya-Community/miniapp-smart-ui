@@ -80,6 +80,7 @@
     draggable
     instanceId="com6"
     closeDragHeight="{{closeDragHeight}}"
+    midDragHeight="300"
   >
     <view style="background-color: red; height: 300px;" />
   </smart-bottom-sheet>
