@@ -25,9 +25,9 @@
   <block wx:if="{{draggable}}">
     <view
       id="{{curInstanceId}}"
-      bind:touchstart="{{draggable ? computed.onDragStart(curInstanceId) : null}}" 
-      catch:touchmove="{{draggable ? computed.onDrag(curInstanceId) : null}}"
-      bind:touchend="{{draggable ? computed.onDragEnd(curInstanceId, { maxDragHeight, minDragHeight, windowHeight, midDragHeight, closeDragHeight }) : null}}"
+      bind:touchstart="{{computed.onDragStart(curInstanceId)}}" 
+      catch:touchmove="{{computed.onDrag(curInstanceId)}}"
+      bind:touchend="{{computed.onDragEnd(curInstanceId, { maxDragHeight, minDragHeight, windowHeight, midDragHeight, closeDragHeight })}}"
       tick="{{ts}}"
       change:tick="{{computed.init(curInstanceId, currentHeight)}}"
     >
@@ -61,7 +61,7 @@
     <view wx:if="{{ contentHeight !== null }}" class="smart-bottom-sheet__content smart-bottom-sheet__content_height" style="{{computed.getHeight(contentHeight)}}">
       <slot />
     </view>
-    <scroll-view wx:else class="smart-bottom-sheet__content">
+    <scroll-view class="smart-bottom-sheet__content">
       <view wx:if="{{draggable}}" class="smart-bottom-sheet__dragger" >
         <view class="smart-bottom-sheet__dragger_node"></view>
       </view>
