@@ -36,14 +36,6 @@
       </view>
       <view class="smart-bottom-sheet__header">
         <view wx:if="{{ title }}">{{ title }}</view>
-        <smart-icon 
-          wx:if="{{ title && showClose }}" 
-          name="{{ xmarkIcon }}" 
-          class="smart-bottom-sheet__icon" 
-          size="{{ iconSize }}" 
-          color="{{ xmarkIconColor }}" 
-          bind:click="onClose"
-        />
         <slot name="title" />
       </view>
       <view

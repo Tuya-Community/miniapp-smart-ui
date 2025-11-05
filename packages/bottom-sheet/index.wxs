@@ -40,7 +40,7 @@ function getEndY(params) {
   var windowHeight = params.windowHeight;
 
   var B = windowHeight;
-  maxHeight = maxHeight || B * 0.85;
+  maxHeight = maxHeight || B * 0.8;
   minHeight = minHeight || B * 0.1;
   midHeight = midHeight || B * 0.5;
 

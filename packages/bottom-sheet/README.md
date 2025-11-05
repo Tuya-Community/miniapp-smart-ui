@@ -256,9 +256,9 @@ Page({
 | native-disabled `v2.5.0`     | 开启弹框期间是否禁用本地手势; 会在弹框开始进入动画时调用 `ty.nativeDisabled(true)`, 在弹框关闭动画结束时调用 `ty.nativeDisabled(false)` 恢复异层组件的点击能力；由于`ty.nativeDisabled` 是全局生效的，所以多个弹框组件同时打开时注意是否传 `native-disabled`属性和关闭的时机，防止 `native-disabled` 属性失效       | _boolean_   | `false`        |
 | content-height `v2.5.0` | 内容区域高度，当设置此值时，组件的 max-height 将会失效。当设置 draggable 时此值无效。       | _number \| string_   | `false`        |
 | max-height `v2.6.0` | 整个组件的最大高度    | _number \| string_   | -     |
-| show-close `v2.6.1` | 是否展示关闭图标      | _boolean_   | `true`       |
+| show-close `v2.6.1` | 是否展示关闭图标。当设置 draggable 时此值无效。      | _boolean_   | `true`       |
 | draggable `v2.7.1` | 是否支持拖拽，可用于实现拖拽调整面板高度 | _boolean_ | `false` |
-| min-drag-height `v2.7.1` | 拖拽时允许的最小高度 | _number_ | `windowHeight * 0.9` |
+| min-drag-height `v2.7.1` | 拖拽时允许的最小高度 | _number_ | `windowHeight * 0.8` |
 | max-drag-height `v2.7.1` | 拖拽时允许的最大高度 | _number_ | `windowHeight * 0.5` |
 | mid-drag-height `v2.7.1` | 拖拽时中间态高度 | _number_ | `windowHeight * 0.1` |
 | close-drag-height `v2.7.1` | 拖拽关闭时的临界高度，低于该高度将自动关闭 | _number_ | `windowHeight * 0.4` |
