@@ -2,6 +2,7 @@
   "en": {
     "setTheRangeOfDragging": "Set the range of dragging",
     "draggable": "Draggable",
+    "draggableWithTitle": "Draggable with Title",
     "calendarSelectDay": "Select a day, the currently selected date is",
     "calendarSelectWeek": "Select a week, the currently selected date is",
     "calendarSelectRange": "Select the time range, the currently selected date is",
@@ -574,6 +575,7 @@
   },
   "zh": {
     "draggable": "可拖拽",
+    "draggableWithTitle": "可拖拽带标题",
     "setTheRangeOfDragging": "设置拖拽的范围",
     "calendarSelectDay": "选择某天，当前选中的日期是",
     "calendarSelectWeek": "选择周，当前选中的日期是",

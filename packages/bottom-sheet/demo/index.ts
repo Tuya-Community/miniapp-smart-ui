@@ -10,6 +10,7 @@ SmartComponent({
     show5: false,
     show6: false,
     show7: false,
+    show8: false,
     closeDragHeight: 0,
   },
   created() {
@@ -45,6 +46,9 @@ SmartComponent({
     },
     toggleActionSheet7() {
       this.toggle('show7');
+    },
+    toggleActionSheet8() {
+      this.toggle('show8');
     },
   },
 });

@@ -100,3 +100,20 @@
     <view style="background-color: red; height: 300px;" />
   </smart-bottom-sheet>
 </demo-block>
+
+<demo-block title="{{I18n.t('draggableWithTitle')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet8">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    show="{{ show8 }}"
+    bind:close="toggleActionSheet8"
+    draggable
+    instanceId="com7"
+    midDragHeight="300"
+    minDragHeight="300"
+    maxDragHeight="300"
+    closeDragHeight="300"
+    title="{{I18n.t('draggableWithTitle')}}"
+  >
+    <view style="background-color: red; height: 300px;" />
+  </smart-bottom-sheet>
+</demo-block>
