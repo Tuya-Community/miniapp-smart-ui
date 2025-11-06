@@ -48,13 +48,13 @@ function getEndY(params) {
   var splitLow = (midHeight + minHeight) * 0.5;
 
   if (endY > splitHeight) {
-    return maxHeight;
+    return { value: maxHeight, position: 'max' };
   } else if (endY > midHeight) {
-    return midHeight;
+    return { value: midHeight, position: 'mid' };
   } else if (endY > splitLow) {
-    return midHeight;
+    return { value: midHeight, position: 'mid' };
   } else {
-    return minHeight;
+    return { value: minHeight, position: 'min' };
   }
 }
 
@@ -100,7 +100,7 @@ function onDragEnd(instanceId, data) {
     if (newHeight && closeDragHeight && newHeight < closeDragHeight) {
       ownerInstance.callMethod('onClose');
     } else {
-      var endHeight = getEndY({
+      var { value: endHeight, position } = getEndY({
         instanceId: instanceId,
         endY: newHeight,
         minHeight: minDragHeight,
@@ -118,6 +118,7 @@ function onDragEnd(instanceId, data) {
         contentNode.setStyle({
           transition: 'none',
         });
+        ownerInstance.triggerEvent('drag-position', position)
       }, 300);
     }
   };

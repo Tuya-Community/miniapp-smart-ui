@@ -224,6 +224,45 @@ Page({
 
 This limits the bottom sheet's scalable (draggable) range to the specified values, which can help meet different business requirements.
 
+### Listen to drag position `v2.7.2`
+
+You can listen to the panel position when dragging ends through the `bind:drag-position` event, which returns `'max'`, `'mid'`, or `'min'`.
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  draggable
+  bind:drag-position="onDragPosition"
+  close-drag-height="{{closeDragHeight}}"
+  mid-drag-height="300"
+  min-drag-height="300"
+  max-drag-height="300"
+>
+  <view style="background-color: red; height: 300px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    closeDragHeight: 0
+  },
+  attached() {
+    const { windowHeight } = getSystemInfoSync();
+    this.setData({ closeDragHeight: windowHeight * 0.4 });
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+  onDragPosition(e) {
+    const position = e.detail; // 'max' | 'mid' | 'min'
+    console.log('Current panel position:', position);
+  },
+});
+```
+
 ## API
 
 ### Props
@@ -261,6 +300,7 @@ This limits the bottom sheet's scalable (draggable) range to the specified value
 | bind:leave         | Triggered during leaving    | -          |
 | bind:after-leave   | Triggered after leaving     | -          |
 | bind:click-overlay | Triggered when clicking overlay | -      |
+| bind:drag-position `v2.7.2` | Triggered when dragging ends, returns the current panel position | _event.detail_: `'max'` \| `'mid'` \| `'min'` |
 
 
 ### Slot

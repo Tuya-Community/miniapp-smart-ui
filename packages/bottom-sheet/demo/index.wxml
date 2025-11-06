@@ -118,3 +118,21 @@
     <view style="background-color: red; height: 300px;" />
   </smart-bottom-sheet>
 </demo-block>
+
+<demo-block title="{{I18n.t('listenDragPosition')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet9">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    show="{{ show9 }}"
+    bind:close="toggleActionSheet9"
+    draggable
+    instanceId="com9"
+    bind:drag-position="onDragPosition"
+    midDragHeight="300"
+    minDragHeight="100"
+    maxDragHeight="600"
+  >
+    <view wx:if="{{dragPosition}}" style="margin-top: 16px; padding: 12px; background-color: #f0f0f0; border-radius: 4px;">
+      <text>{{I18n.t('currentPanelPosition')}}: {{dragPositionText}}</text>
+    </view>
+  </smart-bottom-sheet>
+</demo-block>

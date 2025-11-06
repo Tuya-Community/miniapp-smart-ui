@@ -239,6 +239,45 @@ Page({
 
 这样可以限制底部弹窗组件在拖拽时的可伸缩范围，满足不同业务的需求。
 
+### 监听拖拽位置 `v2.7.2`
+
+通过 `bind:drag-position` 事件可以监听拖拽结束时面板的位置，返回值为 `'max'`、`'mid'` 或 `'min'`。
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  draggable
+  bind:drag-position="onDragPosition"
+  close-drag-height="{{closeDragHeight}}"
+  mid-drag-height="300"
+  min-drag-height="300"
+  max-drag-height="300"
+>
+  <view style="background-color: red; height: 300px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    closeDragHeight: 0
+  },
+  attached() {
+    const { windowHeight } = getSystemInfoSync();
+    this.setData({ closeDragHeight: windowHeight * 0.4 });
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+  onDragPosition(e) {
+    const position = e.detail; // 'max' | 'mid' | 'min'
+    console.log('当前面板位置:', position);
+  },
+});
+```
+
 ## API
 
 ### Props
@@ -275,6 +314,7 @@ Page({
 | bind:leave         | 遮罩离开中触发       | -    |
 | bind:after-leave   | 遮罩离开后触发       | -    |
 | bind:click-overlay | 点击遮罩层时触发 | - |
+| bind:drag-position `v2.7.2` | 拖拽结束时触发，返回当前面板位置 | _event.detail_: `'max'` \| `'mid'` \| `'min'` |
 
 ### Slot
 

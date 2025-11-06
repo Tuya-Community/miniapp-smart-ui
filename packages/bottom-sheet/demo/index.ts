@@ -11,11 +11,22 @@ SmartComponent({
     show6: false,
     show7: false,
     show8: false,
+    show9: false,
     closeDragHeight: 0,
+    dragPosition: 'mid',
+    dragPositionText: '',
   },
   created() {
     const { windowHeight } = getSystemInfoSync();
-    this.setData({ closeDragHeight: windowHeight * 0.4 });
+    const positionMap = {
+      max: I18n.t('dragPositionMax'),
+      mid: I18n.t('dragPositionMid'),
+      min: I18n.t('dragPositionMin'),
+    };
+    this.setData({
+      closeDragHeight: windowHeight * 0.4,
+      dragPositionText: positionMap[this.data.dragPosition] || this.data.dragPosition,
+    });
   },
   methods: {
     toggle(type) {
@@ -49,6 +60,21 @@ SmartComponent({
     },
     toggleActionSheet8() {
       this.toggle('show8');
+    },
+    toggleActionSheet9() {
+      this.toggle('show9');
+    },
+    onDragPosition(e) {
+      const position = e.detail; // 'max' | 'mid' | 'min'
+      const positionMap = {
+        max: I18n.t('dragPositionMax'),
+        mid: I18n.t('dragPositionMid'),
+        min: I18n.t('dragPositionMin'),
+      };
+      this.setData({
+        dragPosition: position,
+        dragPositionText: positionMap[position] || position,
+      });
     },
   },
 });
