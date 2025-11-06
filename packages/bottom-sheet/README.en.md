@@ -242,11 +242,11 @@ This limits the bottom sheet's scalable (draggable) range to the specified value
 | content-height `v2.5.0` | Content area height. When this value is set, the component's max-height will be invalid. This value is ignored when draggable is set.      | _number \| string_   | `false`        |
 | max-height `v2.6.0` | The maximum height of the entire component      | _number \| string_   | -        |
 | show-close `v2.6.1` | Whether to display the close icon. This value is ignored when draggable is set.       | _boolean_   | `true`        |
-| draggable `v2.7.1` | Whether dragging to adjust panel height is supported | _boolean_ | `false` |
-| min-drag-height `v2.7.1` | Minimum allowed height when dragging | _number_ | `windowHeight * 0.8` |
-| max-drag-height `v2.7.1` | Maximum allowed height when dragging | _number_ | `windowHeight * 0.5` |
-| mid-drag-height `v2.7.1` | Middle state height when dragging | _number_ | `windowHeight * 0.1` |
-| close-drag-height `v2.7.1` | Threshold height for closing on drag; if the height goes below this while dragging, the sheet will automatically close | _number_ | `windowHeight * 0.4` |
+| draggable `v2.7.2` | Whether dragging to adjust panel height is supported | _boolean_ | `false` |
+| min-drag-height `v2.7.2` | Minimum allowed height when dragging | _number_ | `windowHeight * 0.8` |
+| max-drag-height `v2.7.2` | Maximum allowed height when dragging | _number_ | `windowHeight * 0.5` |
+| mid-drag-height `v2.7.2` | Middle state height when dragging | _number_ | `windowHeight * 0.1` |
+| close-drag-height `v2.7.2` | Threshold height for closing on drag; if the height goes below this while dragging, the sheet will automatically close | _number_ | `windowHeight * 0.4` |
 
 
 ### Events

@@ -257,11 +257,11 @@ Page({
 | content-height `v2.5.0` | 内容区域高度，当设置此值时，组件的 max-height 将会失效。当设置 draggable 时此值无效。       | _number \| string_   | `false`        |
 | max-height `v2.6.0` | 整个组件的最大高度    | _number \| string_   | -     |
 | show-close `v2.6.1` | 是否展示关闭图标。当设置 draggable 时此值无效。      | _boolean_   | `true`       |
-| draggable `v2.7.1` | 是否支持拖拽，可用于实现拖拽调整面板高度 | _boolean_ | `false` |
-| min-drag-height `v2.7.1` | 拖拽时允许的最小高度 | _number_ | `windowHeight * 0.8` |
-| max-drag-height `v2.7.1` | 拖拽时允许的最大高度 | _number_ | `windowHeight * 0.5` |
-| mid-drag-height `v2.7.1` | 拖拽时中间态高度 | _number_ | `windowHeight * 0.1` |
-| close-drag-height `v2.7.1` | 拖拽关闭时的临界高度，低于该高度将自动关闭 | _number_ | `windowHeight * 0.4` |
+| draggable `v2.7.2` | 是否支持拖拽，可用于实现拖拽调整面板高度 | _boolean_ | `false` |
+| min-drag-height `v2.7.2` | 拖拽时允许的最小高度 | _number_ | `windowHeight * 0.8` |
+| max-drag-height `v2.7.2` | 拖拽时允许的最大高度 | _number_ | `windowHeight * 0.5` |
+| mid-drag-height `v2.7.2` | 拖拽时中间态高度 | _number_ | `windowHeight * 0.1` |
+| close-drag-height `v2.7.2` | 拖拽关闭时的临界高度，低于该高度将自动关闭 | _number_ | `windowHeight * 0.4` |
 
 ### Events
 
