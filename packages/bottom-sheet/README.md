@@ -248,11 +248,11 @@ Page({
   show="{{ show }}"
   bind:close="onClose"
   draggable
-  bind:drag-position="onDragPosition"
   close-drag-height="{{closeDragHeight}}"
   mid-drag-height="300"
   min-drag-height="300"
   max-drag-height="300"
+  bind:drag-position="onDragPosition"
 >
   <view style="background-color: red; height: 300px;" />
 </smart-bottom-sheet>

@@ -71,6 +71,7 @@ SmartComponent({
         mid: I18n.t('dragPositionMid'),
         min: I18n.t('dragPositionMin'),
       };
+      console.log(position, '--position')
       this.setData({
         dragPosition: position,
         dragPositionText: positionMap[position] || position,
