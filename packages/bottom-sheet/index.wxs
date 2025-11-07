@@ -100,7 +100,7 @@ function onDragEnd(instanceId, data) {
     if (newHeight && closeDragHeight && newHeight < closeDragHeight) {
       ownerInstance.callMethod('onClose');
     } else {
-      var { value: endHeight, position } = getEndY({
+      var endYRes = getEndY({
         instanceId: instanceId,
         endY: newHeight,
         minHeight: minDragHeight,
@@ -109,6 +109,8 @@ function onDragEnd(instanceId, data) {
         windowHeight: windowHeight,
         closeDragHeight: closeDragHeight,
       });
+      var endHeight = endYRes.value;
+      var position = endYRes.position
       var contentNode = getContentNode(ownerInstance, instanceId);
       contentNode.setStyle({
         height: endHeight + 'px',
