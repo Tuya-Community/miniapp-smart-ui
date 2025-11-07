@@ -1,6 +1,6 @@
 {
   "name": "@tuya-miniapp/smart-ui",
-  "version": "2.7.2-beta-10",
+  "version": "2.7.2-beta-11",
   "author": "MiniApp Team",
   "license": "MIT",
   "miniprogram": "lib",
@@ -86,7 +86,7 @@
     "iOS >= 9"
   ],
   "dependencies": {
-    "@ray-js/components-ty-slider": "^0.3.4",
+    "@ray-js/components-ty-slider": "^0.3.5",
     "@tuya-miniapp/icons": "^2.2.0"
   },
   "maintainers": [
