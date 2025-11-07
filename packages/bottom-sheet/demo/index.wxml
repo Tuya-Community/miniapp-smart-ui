@@ -4,6 +4,7 @@
     title="Title"
     show="{{ show1 }}"
     bind:close="toggleActionSheet1"
+    instanceId="com1"
   />
 </demo-block>
 
@@ -13,6 +14,7 @@
     show="{{ show2 }}"
     title="Title"
     bind:close="toggleActionSheet2"
+    instanceId="com2"
   >
     <view class="content" />
     <view class="footer">
@@ -27,6 +29,7 @@
     show="{{ show3 }}"
     title="Title"
     bind:close="toggleActionSheet3"
+    instanceId="com3"
   >
     <view style="background-color: red; height: 100px;" />
     <view style="background-color: blue; height: 100px;" />
@@ -43,6 +46,7 @@
     title="Title"
     bind:close="toggleActionSheet4"
     content-height="500px"
+    instanceId="com4"
   >
   <scroll-view scroll-y style="height: 300px">
     <view style="background-color: red; height: 100px;" />
@@ -61,8 +65,74 @@
   <smart-bottom-sheet
     show="{{ show5 }}"
     bind:close="toggleActionSheet5"
+    instanceId="com5"
   >
   <view slot="title">title</view>
   <view style="background-color: orange; height: 100px;" />
+  </smart-bottom-sheet>
+</demo-block>
+
+<demo-block title="{{I18n.t('draggable')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet6">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    show="{{ show6 }}"
+    bind:close="toggleActionSheet6"
+    draggable
+    instanceId="com6"
+    closeDragHeight="{{closeDragHeight}}"
+    midDragHeight="300"
+  >
+    <view style="background-color: red; height: 300px;" />
+  </smart-bottom-sheet>
+</demo-block>
+
+<demo-block title="{{I18n.t('setTheRangeOfDragging')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet7">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    show="{{ show7 }}"
+    draggable
+    instanceId="com7"
+    midDragHeight="300"
+    minDragHeight="300"
+    maxDragHeight="300"
+    closeDragHeight="300"
+    bind:close="toggleActionSheet7"
+  >
+    <view style="background-color: red; height: 300px;" />
+  </smart-bottom-sheet>
+</demo-block>
+
+<demo-block title="{{I18n.t('draggableWithTitle')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet8">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    title="{{I18n.t('draggableWithTitle')}}"
+    show="{{ show8 }}"
+    draggable
+    instanceId="com8"
+    midDragHeight="300"
+    minDragHeight="300"
+    maxDragHeight="300"
+    closeDragHeight="300"
+    bind:close="toggleActionSheet8"
+  >
+    <view style="background-color: red; height: 300px;" />
+  </smart-bottom-sheet>
+</demo-block>
+
+<demo-block title="{{I18n.t('listenDragPosition')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet9">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    show="{{ show9 }}"
+    bind:close="toggleActionSheet9"
+    draggable
+    instanceId="com9"
+    midDragHeight="300"
+    minDragHeight="100"
+    maxDragHeight="600"
+    bind:drag-position="onDragPosition"
+  >
+    <view wx:if="{{dragPosition}}" style="margin-top: 16px; padding: 12px; background-color: #f0f0f0; border-radius: 4px;">
+      <text>{{I18n.t('currentPanelPosition')}}: {{dragPositionText}}</text>
+    </view>
   </smart-bottom-sheet>
 </demo-block>
