@@ -26,8 +26,8 @@ category: 导航
 index.config.ts:
 
 export default {
-  navigationBarTitleText: 'HomeHomeHomeHomeHome',
-  disableScroll: true,
+  navigationBarTitleText: 'Home',
+  disableScroll: false,
 };
 ```
 
