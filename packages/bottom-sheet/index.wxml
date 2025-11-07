@@ -62,7 +62,7 @@
       <slot />
     </view>
     <scroll-view class="smart-bottom-sheet__content">
-      <view wx:if="{{draggable}}" class="smart-bottom-sheet__dragger" >
+      <view class="smart-bottom-sheet__dragger" >
         <view class="smart-bottom-sheet__dragger_node"></view>
       </view>
       <slot />
