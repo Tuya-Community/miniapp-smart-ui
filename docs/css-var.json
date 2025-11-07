@@ -732,6 +732,31 @@
     "value": "var(--app-B4-N1, rgba(0, 0, 0, 1))",
     "decs": ""
   },
+  "bottom-sheet-dragger-padding": {
+    "name": "@bottom-sheet-dragger-padding",
+    "value": "8px 0",
+    "decs": ""
+  },
+  "bottom-sheet-dragger-node-width": {
+    "name": "@bottom-sheet-dragger-node-width",
+    "value": "30px",
+    "decs": ""
+  },
+  "bottom-sheet-dragger-node-height": {
+    "name": "@bottom-sheet-dragger-node-height",
+    "value": "4px",
+    "decs": ""
+  },
+  "bottom-sheet-dragger-node-border-radius": {
+    "name": "@bottom-sheet-dragger-node-border-radius",
+    "value": "2px",
+    "decs": ""
+  },
+  "bottom-sheet-dragger-node-background": {
+    "name": "@bottom-sheet-dragger-node-background",
+    "value": "var(--smart-ui-bottom-sheet-dragger-node-background, rgba(0, 0, 0, 0.3))",
+    "decs": ""
+  },
   "button-mini-height": {
     "name": "@button-mini-height",
     "value": "22px",
