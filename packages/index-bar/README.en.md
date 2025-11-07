@@ -19,6 +19,17 @@ Introduce the component in `app.json` or `index.json`. For details, see [Quickst
 }
 ```
 
+```warning:⚠️Note
+The component listens for the scroll event of the entire page to create a dynamic fixed header element, so the page rendering this component must be configured to allow scrolling.
+
+index.config.ts:
+
+export default {
+  navigationBarTitleText: 'HomeHomeHomeHomeHome',
+  disableScroll: true,
+};
+```
+
 ## Code Demonstration
 
 ### Basic Usage

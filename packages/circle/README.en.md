@@ -23,7 +23,7 @@ Introduce the component in `app.json` or `index.json`, for detailed instructions
 ```
 
 ```warning:⚠️Note
-从 v2.3.9 开始将不支持微信小程序。
+WeChat Mini Programs will no longer be supported from v2.3.9.
 ```
 
 ## Code Examples
