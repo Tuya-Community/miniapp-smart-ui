@@ -3,7 +3,7 @@
 instanceId="{{instanceId}}"
 className="{{className}}"
 disable="{{disable}}"
-end="{{value}}"
+value="{{value}}"
 min="{{min}}"
 max="{{max}}"
 step="{{step}}"
