@@ -339,9 +339,10 @@ The component provides the following CSS variables for custom styles. For usage 
 | --nav-bar-home-text-color      | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar home text color |
 | --nav-bar-right-text-color `v2.5.1` | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar right text color |
 | --nav-bar-title-max-width `v2.6.0` | _56%_ `v2.6.0` _calc(100% - 98px - 16px)_ `v2.7.0`   | Width of the Navigation Bar Title | Width of the nav bar title |
-| --nav-bar-side-width `v2.7.0` | _98px_     | Side width |
+| --nav-bar-side-width `v2.7.0` | _98px_ `v2.7.0` _104px_ `v2.7.2`     | Side width |
 | --nav-bar-text-padding `v2.7.0` | _20px_    | Text padding on both sides |
 | --nav-bar-icon-padding `v2.7.0` | _16px_    | Icon padding on both sides |
 | --nav-bar-title-margin `v2.7.0` | _16px_    | Title margin |
 | --nav-bar-home-max-width `v2.7.0` | _calc(100% - 98px - 16px)_  | Maximum width of the left title when on the home page |
 | --nav-bar-left-title-padding `v2.7.0`  | _8px_   | Left padding in left title mode |
+| --nav-bar-home-padding `v2.7.2`    | _16px_   | The left margin of the title when in home or title mode on the left side. |
