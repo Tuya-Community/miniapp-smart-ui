@@ -9,12 +9,7 @@ exports[`should render demo and match snapshot 1`] = `
       <wx-view
         class="custom-class demo-block smart-clearfix "
       >
-        
-  4
-    
-        <smart-slider
-          bind:end="onEnd"
-        >
+        <smart-slider>
           <wx-view
             class="contain"
           >
@@ -29,8 +24,8 @@ exports[`should render demo and match snapshot 1`] = `
               hideThumbButton="{{false}}"
               hotAreaStyle=""
               instanceId="slider1"
-              max="{{8}}"
-              min="{{1}}"
+              max="{{100}}"
+              min="{{0}}"
               parcel="{{false}}"
               parcelMargin="{{0}}"
               parcelThumbHeight="{{0}}"
@@ -46,7 +41,7 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="height:4px"
-              value="{{0}}"
+              value="{{50}}"
               bind:change="bindmove"
               bind:end="bindend"
               bind:start="bindstart"
@@ -91,7 +86,7 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="height:8px"
-              value="{{4}}"
+              value="{{50}}"
               bind:change="bindmove"
               bind:end="bindend"
               bind:start="bindstart"
@@ -136,7 +131,7 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="height:40px;border-radius:16px;"
-              value="{{4}}"
+              value="{{50}}"
               bind:change="bindmove"
               bind:end="bindend"
               bind:start="bindstart"
@@ -181,7 +176,7 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="height:26px;border-radius:13px;"
-              value="{{4}}"
+              value="{{50}}"
               bind:change="bindmove"
               bind:end="bindend"
               bind:start="bindstart"
@@ -226,7 +221,7 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="height:45px;border-radius:8px;"
-              value="{{4}}"
+              value="{{50}}"
               bind:change="bindmove"
               bind:end="bindend"
               bind:start="bindstart"
@@ -271,7 +266,7 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="height:26px;border-radius:5px;"
-              value="{{4}}"
+              value="{{50}}"
               bind:change="bindmove"
               bind:end="bindend"
               bind:start="bindstart"
