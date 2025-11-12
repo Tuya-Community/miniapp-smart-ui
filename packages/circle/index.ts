@@ -60,6 +60,8 @@ SmartComponent({
   data: {
     canvasId: '',
     dpr: 0,
+    width: '100',
+    height: '100',
   },
   watch: {
     dpr() {
