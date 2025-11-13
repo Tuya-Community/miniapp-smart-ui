@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/radio/index",
     "pages/dashboard/index",
     "pages/bottom-sheet/index",
     "pages/datetime-picker/index",
