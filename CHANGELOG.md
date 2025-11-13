@@ -11,7 +11,7 @@
 - calendar: 接入 `manrope` 数字字体，App 7.0.5 版本开始支持([pull/79](https://github.com/Tuya-Community/miniapp-smart-ui/pull/79))
 - custom-keyboard: 接入 `manrope` 数字字体，App 7.0.5 版本开始支持([e8f763d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/e8f763d526f635d702a87586535f8b4a854100b1))
 - bottom-sheet: 支持拖拽能力, 新增 draggable、min-drag-height、max-drag-height、mid-drag-height、close-drag-height属性，新增 drag-position 事件([pull/78](https://github.com/Tuya-Community/miniapp-smart-ui/pull/78))
-- nav-bar: 样式重构，适配新UI 标准([]())
+- nav-bar: 修改 --nav-bar-text-padding 默认值 为 16px([352954e](https://github.com/Tuya-Community/miniapp-smart-ui/commit/352954e16f05b0660369bfc860b7f895dc5f1774))
 
 ### Bug Fixes  🐛
 
