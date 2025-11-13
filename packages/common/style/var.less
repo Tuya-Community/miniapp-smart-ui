@@ -1,5 +1,6 @@
 :root {
   --smart-ui-overlay: rgba(0, 0, 0, 0.4);
+  --smart-ui-bottom-sheet-dragger-node-background: rgba(0, 0, 0, 0.3);
   --smart-ui-dialog-background: rgba(255, 255, 255, 1);
   --smart-ui-border-image: linear-gradient(
     to right,
@@ -9,6 +10,7 @@
   );
 
   &[theme='dark'] {
+    --smart-ui-bottom-sheet-dragger-node-background: rgba(255, 255, 255, 0.3);
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
     --smart-ui-dialog-background: #333;
     --smart-ui-border-image: linear-gradient(
@@ -18,6 +20,10 @@
       rgba(255, 255, 255, 0)
     );
   }
+}
+
+.smart-manrope {
+  font-family: 'Manrope', sans-serif;
 }
 
 // Theme Palette
@@ -192,6 +198,11 @@
 @bottom-sheet-header-font-size: 17px;
 @bottom-sheet-header-font-weight: 600;
 @bottom-sheet-font-color: @B4-N1;
+@bottom-sheet-dragger-padding: 8px 0;
+@bottom-sheet-dragger-node-width: 30px;
+@bottom-sheet-dragger-node-height: 4px;
+@bottom-sheet-dragger-node-border-radius: 2px;
+@bottom-sheet-dragger-node-background: var(--smart-ui-bottom-sheet-dragger-node-background, rgba(0, 0, 0, 0.3));
 
 // Button
 @button-mini-height: 22px;
@@ -465,7 +476,7 @@
 @nav-bar-home-text-color: @B2-N1;
 @nav-bar-text-font-weight: 600;
 @nav-bar-side-width: 98px;
-@nav-bar-text-padding: 20px;
+@nav-bar-text-padding: 16px;
 @nav-bar-icon-padding: 16px;
 @nav-bar-title-margin: 0 16px;
 @nav-bar-left-title-padding: 8px;

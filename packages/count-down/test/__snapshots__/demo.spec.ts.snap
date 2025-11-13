@@ -8,7 +8,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <smart-count-down>
         <wx-view
-          class="smart-count-down"
+          class="smart-manrope smart-count-down"
         >
           30:00:00
         </wx-view>
@@ -21,7 +21,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <smart-count-down>
         <wx-view
-          class="smart-count-down"
+          class="smart-manrope smart-count-down"
         >
           01  06  00  00 
         </wx-view>
@@ -34,7 +34,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <smart-count-down>
         <wx-view
-          class="smart-count-down"
+          class="smart-manrope smart-count-down"
         >
           30:00:00:000
         </wx-view>
@@ -49,7 +49,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
-          class="smart-count-down"
+          class="smart-manrope smart-count-down"
         >
           <wx-text
             class="item"
@@ -79,7 +79,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:finish="finished"
       >
         <wx-view
-          class="smart-count-down"
+          class="smart-manrope smart-count-down"
         >
           03:000
         </wx-view>
@@ -106,10 +106,15 @@ exports[`should render demo and match snapshot 1`] = `
                 >
                   <smart-icon>
                     <wx-view
-                      class="custom-class smart-icon smart-icon-play-circle-o"
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M341.650286%20781.568c13.494857%200%2025.380571-4.827429%2040.155428-13.494857l379.611429-219.538286c27.648-16.091429%2039.241143-28.598857%2039.241143-48.859428s-11.593143-32.475429-39.241143-48.859429L381.805714%20231.277714c-14.774857-8.667429-26.697143-13.494857-40.155428-13.494857-26.331429%200-44.982857%2020.260571-44.982857%2052.077714v459.629715c0%2032.182857%2018.651429%2052.077714%2044.982857%2052.077714z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
+                      />
+                    </wx-view>
                   </smart-icon>
                 </wx-view>
                 <wx-view
@@ -135,10 +140,15 @@ exports[`should render demo and match snapshot 1`] = `
                 >
                   <smart-icon>
                     <wx-view
-                      class="custom-class smart-icon smart-icon-pause-circle-o"
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M352.256%20766.793143h75.52c30.537143%200%2046.299429-15.725714%2046.299429-46.299429V278.198857c0-31.158857-15.725714-45.933714-46.299429-46.262857H352.256c-30.537143%200-46.299429%2015.725714-46.299429%2046.262857v442.294857c-0.329143%2030.537143%2015.433143%2046.299429%2046.299429%2046.299429z%20m244.297143%200h75.190857c30.537143%200%2046.299429-15.725714%2046.299429-46.299429V278.198857c0-31.158857-15.725714-46.262857-46.299429-46.262857h-75.190857c-30.866286%200-46.299429%2015.725714-46.299429%2046.262857v442.294857c0%2030.537143%2015.433143%2046.299429%2046.262857%2046.299429z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
+                      />
+                    </wx-view>
                   </smart-icon>
                 </wx-view>
                 <wx-view
@@ -164,10 +174,15 @@ exports[`should render demo and match snapshot 1`] = `
                 >
                   <smart-icon>
                     <wx-view
-                      class="custom-class smart-icon smart-icon-replay"
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M521.325714%20442.477714a31.085714%2031.085714%200%200%200%2031.158857-31.524571%2029.330286%2029.330286%200%200%200-8.996571-21.540572l-87.405714-86.784a337.554286%20337.554286%200%200%201%2056.868571-4.498285c123.757714%200%20222.427429%2098.998857%20222.427429%20224.036571A222.793143%20222.793143%200%200%201%20512%20745.874286a222.976%20222.976%200%200%201-223.378286-223.707429c0-19.273143-12.544-33.097143-31.195428-33.097143-19.273143%200-32.768%2013.824-32.768%2033.097143A286.902857%20286.902857%200%200%200%20512%20809.874286a286.72%20286.72%200%200%200%20287.341714-287.707429%20285.257143%20285.257143%200%200%200-286.354285-286.72c-15.140571%200-30.573714%201.316571-45.970286%203.547429l76.8-75.190857a31.707429%2031.707429%200%200%200%208.667428-21.869715c0-17.700571-13.494857-32.146286-31.158857-32.146285a28.708571%2028.708571%200%200%200-22.491428%209.654857L367.030857%20253.44a31.853714%2031.853714%200%200%200-9.947428%2023.442286c0%208.996571%202.889143%2016.713143%209.947428%2023.771428l132.096%20132.754286c5.485714%206.144%2012.873143%209.033143%2022.198857%209.033143z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
+                      />
+                    </wx-view>
                   </smart-icon>
                 </wx-view>
                 <wx-view

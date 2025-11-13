@@ -108,7 +108,7 @@ SmartComponent({
     },
 
     check() {
-      const val = this.format(this.data.currentValue);
+      const val = this.format(this.data.currentValue, true);
       if (!equal(val, this.data.currentValue)) {
         this.setData({ currentValue: val });
       }
@@ -130,10 +130,13 @@ SmartComponent({
 
     onBlur(event: WechatMiniprogram.InputBlur) {
       const value = this.format(event.detail.value, true);
-      const stepValue = Math.round(value / this.data.step) * this.data.step;
-      const strStepValue = stepValue.toString();
+      const stepValue =
+        Math.round((value - this.data.min) / this.data.step) * this.data.step +
+        Number(this.data.min);
+      const strStepValue = isDef(this.data.decimalLength)
+        ? stepValue.toFixed(this.data.decimalLength)
+        : stepValue.toString();
       this.setData({ currentValue: strStepValue });
-
       this.emitChange(strStepValue);
 
       this.$emit('blur', {
@@ -142,28 +145,25 @@ SmartComponent({
       });
     },
 
-    // filter illegal characters
-    filter(value) {
+    // limit value range
+    format(value, isFormatAll = false) {
       value = String(value).replace(/[^0-9.-]/g, '');
-
       if (this.data.integer && value.indexOf('.') !== -1) {
         value = value.split('.')[0];
       }
-
-      return value;
-    },
-
-    // limit value range
-    format(value, isFormatAll = false) {
-      value = this.filter(value);
-
+      // 当有多个.号时，只保留第一个
+      const firstDotIndex = value.indexOf('.');
+      if (firstDotIndex !== -1) {
+        value =
+          value.substring(0, firstDotIndex + 1) +
+          value.substring(firstDotIndex + 1).replace(/\./g, '');
+      }
       // format range
-      value = value === '' ? 0 : +value;
-      value = Math.min(this.data.max, value);
       if (isFormatAll) {
+        value = value === '' ? 0 : +value;
+        value = Math.min(this.data.max, value);
         value = Math.max(value, this.data.min);
       }
-
       // format decimal
       if (isDef(this.data.decimalLength) && isFormatAll) {
         value = value.toFixed(this.data.decimalLength);

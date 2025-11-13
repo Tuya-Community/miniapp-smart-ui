@@ -20,7 +20,6 @@ exports[`should render demo and match snapshot 1`] = `
               direction=""
               disable="{{false}}"
               enableTouch="{{true}}"
-              end="{{50}}"
               hidden="{{false}}"
               hideThumbButton="{{false}}"
               hotAreaStyle=""
@@ -42,8 +41,9 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="height:4px"
+              value="{{50}}"
+              bind:change="bindmove"
               bind:end="bindend"
-              bind:move="bindmove"
               bind:start="bindstart"
             />
           </wx-view>
@@ -65,7 +65,6 @@ exports[`should render demo and match snapshot 1`] = `
               direction=""
               disable="{{false}}"
               enableTouch="{{true}}"
-              end="{{50}}"
               hidden="{{false}}"
               hideThumbButton="{{false}}"
               hotAreaStyle=""
@@ -87,8 +86,9 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="height:8px"
+              value="{{50}}"
+              bind:change="bindmove"
               bind:end="bindend"
-              bind:move="bindmove"
               bind:start="bindstart"
             />
           </wx-view>
@@ -110,7 +110,6 @@ exports[`should render demo and match snapshot 1`] = `
               direction=""
               disable="{{false}}"
               enableTouch="{{true}}"
-              end="{{50}}"
               hidden="{{false}}"
               hideThumbButton="{{true}}"
               hotAreaStyle=""
@@ -132,8 +131,9 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="height:40px;border-radius:16px;"
+              value="{{50}}"
+              bind:change="bindmove"
               bind:end="bindend"
-              bind:move="bindmove"
               bind:start="bindstart"
             />
           </wx-view>
@@ -155,7 +155,6 @@ exports[`should render demo and match snapshot 1`] = `
               direction=""
               disable="{{false}}"
               enableTouch="{{true}}"
-              end="{{50}}"
               hidden="{{false}}"
               hideThumbButton="{{false}}"
               hotAreaStyle=""
@@ -177,8 +176,9 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="height:26px;border-radius:13px;"
+              value="{{50}}"
+              bind:change="bindmove"
               bind:end="bindend"
-              bind:move="bindmove"
               bind:start="bindstart"
             />
           </wx-view>
@@ -200,7 +200,6 @@ exports[`should render demo and match snapshot 1`] = `
               direction=""
               disable="{{false}}"
               enableTouch="{{true}}"
-              end="{{50}}"
               hidden="{{false}}"
               hideThumbButton="{{false}}"
               hotAreaStyle=""
@@ -222,8 +221,9 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="height:45px;border-radius:8px;"
+              value="{{50}}"
+              bind:change="bindmove"
               bind:end="bindend"
-              bind:move="bindmove"
               bind:start="bindstart"
             />
           </wx-view>
@@ -245,7 +245,6 @@ exports[`should render demo and match snapshot 1`] = `
               direction=""
               disable="{{false}}"
               enableTouch="{{true}}"
-              end="{{50}}"
               hidden="{{false}}"
               hideThumbButton="{{false}}"
               hotAreaStyle=""
@@ -267,8 +266,9 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="height:26px;border-radius:5px;"
+              value="{{50}}"
+              bind:change="bindmove"
               bind:end="bindend"
-              bind:move="bindmove"
               bind:start="bindstart"
             />
           </wx-view>
@@ -345,7 +345,6 @@ exports[`should render demo and match snapshot 1`] = `
               direction="vertical"
               disable="{{false}}"
               enableTouch="{{true}}"
-              end="{{0}}"
               hidden="{{false}}"
               hideThumbButton="{{false}}"
               hotAreaStyle=""
@@ -367,8 +366,9 @@ exports[`should render demo and match snapshot 1`] = `
               thumbStyleRenderValueStart="{{1}}"
               thumbWrapStyle="{{null}}"
               trackStyle="width:48px;height:203px;border-radius:10px;background:rgba(0, 0, 0, 0.08);"
+              value="{{0}}"
+              bind:change="bindmove"
               bind:end="bindend"
-              bind:move="bindmove"
               bind:start="bindstart"
             />
           </wx-view>

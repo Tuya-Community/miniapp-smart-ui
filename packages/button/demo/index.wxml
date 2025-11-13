@@ -25,10 +25,9 @@
 </demo-block>
 
 <demo-block title="{{I18n.t('loadingStatus')}}" padding>
-  <smart-button loading type="info" loading-text="{{I18n.t('loading')}}..." class="demo-margin-right" />
-  <smart-button loading type="info" class="demo-margin-right" />
   <smart-button loading type="primary" class="demo-margin-right" />
-  <smart-button loading type="primary" loading-type="spinner" />
+  <smart-button loading type="primary" loading-type="spinner" class="demo-margin-right" />
+  <smart-button loading type="primary" loading-text="{{I18n.t('loading')}}..." />
 </demo-block>
 
 <demo-block title="{{I18n.t('buttonShape')}}" padding>

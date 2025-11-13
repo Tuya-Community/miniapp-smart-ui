@@ -18,7 +18,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:tap="handlePassword"
         >
           <wx-text
-            class="keyboard-pwdText null"
+            class="keyboard-pwdText smart-manrope null"
             style=""
           >
             please input
@@ -56,7 +56,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:tap="handlePassword"
         >
           <wx-text
-            class="keyboard-pwdText keyboard-password"
+            class="keyboard-pwdText smart-manrope keyboard-password"
             style=""
           >
             222
@@ -98,7 +98,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:tap="handlePassword"
         >
           <wx-text
-            class="keyboard-pwdText null"
+            class="keyboard-pwdText smart-manrope null"
             style=""
           >
             please input
@@ -133,7 +133,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:tap="handlePassword"
         >
           <wx-text
-            class="keyboard-pwdText null"
+            class="keyboard-pwdText smart-manrope null"
             style=""
           >
             please input

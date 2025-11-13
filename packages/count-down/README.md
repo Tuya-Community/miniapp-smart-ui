@@ -107,14 +107,22 @@ Page({
 />
 
 <smart-grid clickable column-num="3">
-  <smart-grid-item text="开始" icon="play-circle-o" bindclick="start" />
-  <smart-grid-item text="暂停" icon="pause-circle-o" bindclick="pause" />
-  <smart-grid-item text="重置" icon="replay" bindclick="reset" />
+  <smart-grid-item text="开始" icon="{{PlayIcon}}" bindclick="start" />
+  <smart-grid-item text="暂停" icon="{{PauseIcon}}" bindclick="pause" />
+  <smart-grid-item text="重置" icon="{{ReplayIcon}}" bindclick="reset" />
 </smart-grid>
 ```
 
 ```js
+import PlayIcon from '@tuya-miniapp/icons/dist/svg/Play';
+import PauseIcon from '@tuya-miniapp/icons/dist/svg/Pause';
+import ReplayIcon from '@tuya-miniapp/icons/dist/svg/Refresh';
 Page({
+  data:{
+    PlayIcon,
+    PauseIcon,
+    ReplayIcon,
+  },
   start() {
     const countDown = this.selectComponent('.control-count-down');
     countDown.start();

@@ -127,37 +127,37 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -338,49 +338,49 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item "
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item "
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_6 smart-picker-column__item "
+                      class="smart-picker-column__item_6 smart-manrope smart-picker-column__item "
                       data-index="{{6}}"
                       style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_7 smart-picker-column__item "
+                      class="smart-picker-column__item_7 smart-manrope smart-picker-column__item "
                       data-index="{{7}}"
                       style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -428,19 +428,19 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item "
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -587,31 +587,31 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item "
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item "
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -659,37 +659,37 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_12 smart-picker-column__item "
+                      class="smart-picker-column__item_12 smart-manrope smart-picker-column__item "
                       data-index="{{12}}"
                       style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
@@ -822,37 +822,37 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -900,31 +900,31 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item "
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -1129,37 +1129,37 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -1207,31 +1207,31 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item "
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -1418,109 +1418,109 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
-                      style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                      style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_1 smart-picker-column__item "
                       data-index="{{1}}"
-                      style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_2 smart-picker-column__item "
                       data-index="{{2}}"
-                      style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_3 smart-picker-column__item "
                       data-index="{{3}}"
-                      style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_4 smart-picker-column__item "
                       data-index="{{4}}"
-                      style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_5 smart-picker-column__item "
                       data-index="{{5}}"
-                      style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_6 smart-picker-column__item "
                       data-index="{{6}}"
-                      style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_7 smart-picker-column__item "
                       data-index="{{7}}"
-                      style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_8 smart-picker-column__item "
                       data-index="{{8}}"
-                      style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_9 smart-picker-column__item "
                       data-index="{{9}}"
-                      style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_10 smart-picker-column__item "
                       data-index="{{10}}"
-                      style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_11 smart-picker-column__item "
                       data-index="{{11}}"
-                      style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_12 smart-picker-column__item "
                       data-index="{{12}}"
-                      style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_13 smart-picker-column__item "
                       data-index="{{13}}"
-                      style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_14 smart-picker-column__item "
                       data-index="{{14}}"
-                      style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_15 smart-picker-column__item "
                       data-index="{{15}}"
-                      style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_16 smart-picker-column__item "
                       data-index="{{16}}"
-                      style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_17 smart-picker-column__item "
                       data-index="{{17}}"
-                      style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                   </wx-view>
@@ -1842,109 +1842,109 @@ exports[`should render demo and match snapshot 1`] = `
                     <wx-view
                       class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
-                      style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
+                      style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_1 smart-picker-column__item "
                       data-index="{{1}}"
-                      style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_2 smart-picker-column__item "
                       data-index="{{2}}"
-                      style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_3 smart-picker-column__item "
                       data-index="{{3}}"
-                      style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_4 smart-picker-column__item "
                       data-index="{{4}}"
-                      style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_5 smart-picker-column__item "
                       data-index="{{5}}"
-                      style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_6 smart-picker-column__item "
                       data-index="{{6}}"
-                      style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_7 smart-picker-column__item "
                       data-index="{{7}}"
-                      style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_8 smart-picker-column__item "
                       data-index="{{8}}"
-                      style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_9 smart-picker-column__item "
                       data-index="{{9}}"
-                      style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_10 smart-picker-column__item "
                       data-index="{{10}}"
-                      style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_11 smart-picker-column__item "
                       data-index="{{11}}"
-                      style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_12 smart-picker-column__item "
                       data-index="{{12}}"
-                      style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_13 smart-picker-column__item "
                       data-index="{{13}}"
-                      style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_14 smart-picker-column__item "
                       data-index="{{14}}"
-                      style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_15 smart-picker-column__item "
                       data-index="{{15}}"
-                      style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_16 smart-picker-column__item "
                       data-index="{{16}}"
-                      style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                     <wx-view
                       class="smart-picker-column__item_17 smart-picker-column__item "
                       data-index="{{17}}"
-                      style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-family: \\"Manrope\\", sans-serif;;"
                       bind:tap=null
                     />
                   </wx-view>
@@ -2109,37 +2109,37 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -2302,37 +2302,37 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -2380,31 +2380,31 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item "
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -2557,49 +2557,49 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item "
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item "
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_6 smart-picker-column__item "
+                      class="smart-picker-column__item_6 smart-manrope smart-picker-column__item "
                       data-index="{{6}}"
                       style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_7 smart-picker-column__item "
+                      class="smart-picker-column__item_7 smart-manrope smart-picker-column__item "
                       data-index="{{7}}"
                       style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -2647,19 +2647,19 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item "
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -2846,37 +2846,37 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -2924,31 +2924,31 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item "
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -3276,31 +3276,31 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item "
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item "
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -3348,37 +3348,37 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_12 smart-picker-column__item "
+                      class="smart-picker-column__item_12 smart-manrope smart-picker-column__item "
                       data-index="{{12}}"
                       style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
@@ -3565,37 +3565,37 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -3643,31 +3643,31 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item "
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -3882,67 +3882,67 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_6 smart-picker-column__item "
+                      class="smart-picker-column__item_6 smart-manrope smart-picker-column__item "
                       data-index="{{6}}"
                       style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_7 smart-picker-column__item "
+                      class="smart-picker-column__item_7 smart-manrope smart-picker-column__item "
                       data-index="{{7}}"
                       style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_8 smart-picker-column__item "
+                      class="smart-picker-column__item_8 smart-manrope smart-picker-column__item "
                       data-index="{{8}}"
                       style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_9 smart-picker-column__item "
+                      class="smart-picker-column__item_9 smart-manrope smart-picker-column__item "
                       data-index="{{9}}"
                       style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_10 smart-picker-column__item "
+                      class="smart-picker-column__item_10 smart-manrope smart-picker-column__item "
                       data-index="{{10}}"
                       style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_11 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_11 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{11}}"
                       style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_12 smart-picker-column__item "
+                      class="smart-picker-column__item_12 smart-manrope smart-picker-column__item "
                       data-index="{{12}}"
                       style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -4135,37 +4135,37 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -4213,31 +4213,31 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item "
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -4419,67 +4419,67 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_6 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_6 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{6}}"
                       style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_7 smart-picker-column__item "
+                      class="smart-picker-column__item_7 smart-manrope smart-picker-column__item "
                       data-index="{{7}}"
                       style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_8 smart-picker-column__item "
+                      class="smart-picker-column__item_8 smart-manrope smart-picker-column__item "
                       data-index="{{8}}"
                       style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_9 smart-picker-column__item "
+                      class="smart-picker-column__item_9 smart-manrope smart-picker-column__item "
                       data-index="{{9}}"
                       style="transform:rotateX(180deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_10 smart-picker-column__item "
+                      class="smart-picker-column__item_10 smart-manrope smart-picker-column__item "
                       data-index="{{10}}"
                       style="transform:rotateX(160deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_11 smart-picker-column__item "
+                      class="smart-picker-column__item_11 smart-manrope smart-picker-column__item "
                       data-index="{{11}}"
                       style="transform:rotateX(140deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -4606,37 +4606,37 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -4684,31 +4684,31 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item "
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -4855,55 +4855,55 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item "
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item "
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(235, 87, 41);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_6 smart-picker-column__item "
+                      class="smart-picker-column__item_6 smart-manrope smart-picker-column__item "
                       data-index="{{6}}"
                       style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_7 smart-picker-column__item "
+                      class="smart-picker-column__item_7 smart-manrope smart-picker-column__item "
                       data-index="{{7}}"
                       style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_8 smart-picker-column__item "
+                      class="smart-picker-column__item_8 smart-manrope smart-picker-column__item "
                       data-index="{{8}}"
                       style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -5048,49 +5048,49 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item "
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item "
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(23, 138, 237);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(23, 138, 237);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(23, 138, 237);;color: rgb(235, 87, 41);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(23, 138, 237);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(23, 138, 237);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(23, 138, 237);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_6 smart-picker-column__item "
+                      class="smart-picker-column__item_6 smart-manrope smart-picker-column__item "
                       data-index="{{6}}"
                       style="transform:rotateX(240deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(23, 138, 237);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_7 smart-picker-column__item "
+                      class="smart-picker-column__item_7 smart-manrope smart-picker-column__item "
                       data-index="{{7}}"
                       style="transform:rotateX(220deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(23, 138, 237);;"
                       bind:tap=null
@@ -5138,19 +5138,19 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(23, 138, 237);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(23, 138, 237);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item "
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(23, 138, 237);;"
                       bind:tap=null
@@ -5279,31 +5279,31 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item "
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item "
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -5351,37 +5351,37 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_12 smart-picker-column__item "
+                      class="smart-picker-column__item_12 smart-manrope smart-picker-column__item "
                       data-index="{{12}}"
                       style="transform:rotateX(120deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(235, 87, 41);;"
                       bind:tap=null
@@ -5496,37 +5496,37 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(235, 87, 41);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -5574,31 +5574,31 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item "
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -5785,37 +5785,37 @@ exports[`should render demo and match snapshot 1`] = `
                     style=""
                   >
                     <wx-view
-                      class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{0}}"
                       style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(235, 87, 41);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_1 smart-picker-column__item "
+                      class="smart-picker-column__item_1 smart-manrope smart-picker-column__item "
                       data-index="{{1}}"
                       style="transform:rotateX(340deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
                       data-index="{{2}}"
                       style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-picker-column__item "
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
                       style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_4 smart-picker-column__item "
+                      class="smart-picker-column__item_4 smart-manrope smart-picker-column__item "
                       data-index="{{4}}"
                       style="transform:rotateX(280deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_5 smart-picker-column__item "
+                      class="smart-picker-column__item_5 smart-manrope smart-picker-column__item "
                       data-index="{{5}}"
                       style="transform:rotateX(260deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
@@ -5863,31 +5863,31 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_13 smart-picker-column__item "
+                      class="smart-picker-column__item_13 smart-manrope smart-picker-column__item "
                       data-index="{{13}}"
                       style="transform:rotateX(100deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_14 smart-picker-column__item "
+                      class="smart-picker-column__item_14 smart-manrope smart-picker-column__item "
                       data-index="{{14}}"
                       style="transform:rotateX(80deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_15 smart-picker-column__item "
+                      class="smart-picker-column__item_15 smart-manrope smart-picker-column__item "
                       data-index="{{15}}"
                       style="transform:rotateX(60deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_16 smart-picker-column__item "
+                      class="smart-picker-column__item_16 smart-manrope smart-picker-column__item "
                       data-index="{{16}}"
                       style="transform:rotateX(40deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_17 smart-picker-column__item "
+                      class="smart-picker-column__item_17 smart-manrope smart-picker-column__item "
                       data-index="{{17}}"
                       style="transform:rotateX(20deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null

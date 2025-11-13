@@ -13,7 +13,6 @@
     "pages/action-sheet/index",
     "pages/toast/index",
     "pages/switch/index",
-    "pages/radio/index",
     "pages/tab/index",
     "pages/button/index",
     "pages/cascader/index",
@@ -49,12 +48,12 @@
     "pages/battery/index",
     "pages/custom-keyboard/index"
   ],
+  "themeLocation": "./theme.json",
+  "darkmode": "auto",
   "window": {
-    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarBackgroundColor": "@bgColor",
     "navigationBarTitleText": "Smart UI",
-    "navigationBarTextStyle": "black",
-    "backgroundTextStyle": "dark",
-    "backgroundColor": "#f8f8f8"
+    "navigationBarTextStyle": "@textColor"
   },
   "usingComponents": {
     "demo-block": "./components/demo-block/index",

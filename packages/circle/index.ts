@@ -60,6 +60,8 @@ SmartComponent({
   data: {
     canvasId: '',
     dpr: 0,
+    width: 100,
+    height: 100,
   },
   watch: {
     dpr() {
@@ -70,6 +72,7 @@ SmartComponent({
   },
   created() {
     this.initId();
+    this.initSize();
     this.render = new Render(this);
   },
   mounted() {
@@ -95,6 +98,13 @@ SmartComponent({
       });
       idListRef.value.push(id);
     },
+    initSize() {
+      const sizeVal = this.parseSize();
+      this.setData({
+        width: +sizeVal,
+        height: +sizeVal,
+      });
+    },
     parseSize() {
       if (typeof this.data.size === 'number') return this.data.size;
       if (typeof this.data.size === 'string') {
@@ -117,10 +127,6 @@ SmartComponent({
             width: +sizeVal,
             height: +sizeVal,
             lineWidth: this.data.trackWidth,
-            trackColor: this.data.trackColor,
-            fillColor: this.data.fillColor,
-            fillColorStops: this.data.fillColorStops,
-            maskColor: this.data.maskColor,
             dpr: dpr,
             canvasId: this.data.canvasId,
           };

@@ -7,6 +7,153 @@ function getHeight(contentHeight) {
   return 'height: ' + height + ';';
 }
 
+function getCustomStyle(draggable, contentHeight, maxHeight) {
+  if (draggable) {
+    return 'max-height: unset;min-height: unset;';
+  }
+  if (contentHeight) {
+    return 'max-height: fit-content;';
+  }
+  if (maxHeight) {
+    return 'max-height: ' + maxHeight + ';';
+  }
+  return '';
+}
+
+function queryComponent(ownerInstance, instanceId, selector) {
+  var root = ownerInstance.selectComponent('#' + instanceId);
+  return selector ? root.selectComponent(selector) : root;
+}
+
+function getContentNode(ownerInstance, instanceId) {
+  return queryComponent(ownerInstance, instanceId, '.smart-bottom-sheet__content');
+}
+
+var state = {};
+
+function getEndY(params) {
+  var instanceId = params.instanceId;
+  var endY = params.endY;
+  var minHeight = params.minHeight;
+  var maxHeight = params.maxHeight;
+  var midHeight = params.midHeight;
+  var windowHeight = params.windowHeight;
+
+  var B = windowHeight;
+  maxHeight = maxHeight || B * 0.8;
+  minHeight = minHeight || B * 0.1;
+  midHeight = midHeight || B * 0.5;
+
+  var splitHeight = (maxHeight + midHeight) * 0.5;
+  var splitLow = (midHeight + minHeight) * 0.5;
+
+  if (endY > splitHeight) {
+    return { value: maxHeight, position: 'max' };
+  } else if (endY > midHeight) {
+    return { value: midHeight, position: 'mid' };
+  } else if (endY > splitLow) {
+    return { value: midHeight, position: 'mid' };
+  } else {
+    return { value: minHeight, position: 'min' };
+  }
+}
+
+function onDrag(instanceId) {
+  return function (e, ownerInstance) {
+    var delta = e.touches[0].pageY - state[instanceId].startY;
+    var contentNode = getContentNode(ownerInstance, instanceId);
+
+    var originHeight = state[instanceId].originHeight;
+    state[instanceId].delta = delta;
+
+    var newHeight = originHeight - delta;
+    state[instanceId].newHeight = newHeight;
+
+    contentNode.setStyle({
+      height: newHeight + 'px',
+    });
+  };
+}
+
+function onDragStart(instanceId) {
+  return function (e, ownerInstance) {
+    var contentNode = getContentNode(ownerInstance, instanceId);
+    var rect = contentNode.getBoundingClientRect();
+    var originHeight = rect.height;
+
+    state[instanceId] = {
+      startY: e.touches[0].pageY,
+      originHeight: originHeight,
+    };
+  };
+}
+
+function onDragEnd(instanceId, data) {
+  return function (e, ownerInstance) {
+    var minDragHeight = data.minDragHeight;
+    var maxDragHeight = data.maxDragHeight;
+    var midDragHeight = data.midDragHeight;
+    var windowHeight = data.windowHeight;
+    var closeDragHeight = data.closeDragHeight;
+    var newHeight = state[instanceId].newHeight;
+
+    if (newHeight && closeDragHeight && newHeight < closeDragHeight) {
+      ownerInstance.callMethod('onClose');
+    } else {
+      var endYRes = getEndY({
+        instanceId: instanceId,
+        endY: newHeight,
+        minHeight: minDragHeight,
+        maxHeight: maxDragHeight,
+        midHeight: midDragHeight,
+        windowHeight: windowHeight,
+        closeDragHeight: closeDragHeight,
+      });
+      var endHeight = endYRes.value;
+      var position = endYRes.position
+      var contentNode = getContentNode(ownerInstance, instanceId);
+      contentNode.setStyle({
+        height: endHeight + 'px',
+        transition: 'height 0.3s ease-in-out',
+      });
+      setTimeout(function () {
+        contentNode.setStyle({
+          transition: 'none',
+        });
+        ownerInstance.triggerEvent('drag-position', position)
+      }, 300);
+    }
+  };
+}
+
+function init(instanceId, currentHeight) {
+  return function (prop, oldProp, ownerInstance) {
+    if (!instanceId) return;
+
+    var currOriginHeight = state[instanceId] ? state[instanceId].originHeight : null;
+    var contentNode = getContentNode(ownerInstance, instanceId);
+
+    if (!currOriginHeight) {
+      var rect = contentNode.getBoundingClientRect();
+      var originHeight = rect.height;
+
+      state[instanceId] = {
+        originHeight: originHeight,
+      };
+      currOriginHeight = originHeight;
+    }
+
+    contentNode.setStyle({
+      height: (currentHeight || currOriginHeight) + 'px',
+    });
+  };
+}
+
 module.exports = {
   getHeight: getHeight,
+  getCustomStyle: getCustomStyle,
+  onDrag: onDrag,
+  onDragStart: onDragStart,
+  onDragEnd: onDragEnd,
+  init: init,
 };

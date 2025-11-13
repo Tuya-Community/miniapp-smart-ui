@@ -64,7 +64,7 @@ Disable the button with the `disabled` attribute. The `bind:click` event won't t
 ```html
 <smart-button loading type="primary" />
 <smart-button loading type="primary" loading-type="spinner" />
-<smart-button loading type="info" loading-text="Loading..." />
+<smart-button loading type="primary" loading-text="Loading..." />
 ```
 
 ### Button Shape

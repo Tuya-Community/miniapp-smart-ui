@@ -179,6 +179,104 @@ Page({
 });
 ```
 
+### 可拖拽 `v2.7.2`
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  draggable
+  close-drag-height="{{closeDragHeight}}"
+>
+  <view style="background-color: red; height: 100px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    closeDragHeight: 0
+  },
+  attached() {
+    const { windowHeight } = getSystemInfoSync();
+    this.setData({ closeDragHeight: windowHeight * 0.4 });
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+});
+```
+
+### 设置拖拽的范围 `v2.7.2`
+
+你可以通过设置 `min-drag-height`、`mid-drag-height` 和 `max-drag-height` 属性来自定义面板可拖拽的最小、中间和最大高度。例如：
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  draggable
+  midDragHeight="300"
+  minDragHeight="300"
+  maxDragHeight="300"
+  closeDragHeight="300"
+>
+  <view style="background-color: red; height: 100px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+});
+```
+
+这样可以限制底部弹窗组件在拖拽时的可伸缩范围，满足不同业务的需求。
+
+### 监听拖拽位置 `v2.7.2`
+
+通过 `bind:drag-position` 事件可以监听拖拽结束时面板的位置，返回值为 `'max'`、`'mid'` 或 `'min'`。
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  draggable
+  close-drag-height="{{closeDragHeight}}"
+  mid-drag-height="300"
+  min-drag-height="300"
+  max-drag-height="300"
+  bind:drag-position="onDragPosition"
+>
+  <view style="background-color: red; height: 300px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    closeDragHeight: 0
+  },
+  attached() {
+    const { windowHeight } = getSystemInfoSync();
+    this.setData({ closeDragHeight: windowHeight * 0.4 });
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+  onDragPosition(e) {
+    const position = e.detail; // 'max' | 'mid' | 'min'
+    console.log('当前面板位置:', position);
+  },
+});
+```
 
 ## API
 
@@ -195,11 +293,14 @@ Page({
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | _boolean_ | `true` |
 | native-disabled `v2.5.0`     | 开启弹框期间是否禁用本地手势; 会在弹框开始进入动画时调用 `ty.nativeDisabled(true)`, 在弹框关闭动画结束时调用 `ty.nativeDisabled(false)` 恢复异层组件的点击能力；由于`ty.nativeDisabled` 是全局生效的，所以多个弹框组件同时打开时注意是否传 `native-disabled`属性和关闭的时机，防止 `native-disabled` 属性失效       | _boolean_   | `false`        |
-| content-height `v2.5.0` | 内容区域高度，当设置此值时，组件的 max-height 将会失效       | _number \| string_   | `false`        |
+| content-height `v2.5.0` | 内容区域高度，当设置此值时，组件的 max-height 将会失效。当设置 draggable 时此值无效。       | _number \| string_   | `false`        |
 | max-height `v2.6.0` | 整个组件的最大高度    | _number \| string_   | -     |
-| show-close `v2.6.1` | 是否展示关闭图标      | _boolean_   | `true`       |
-
-
+| show-close `v2.6.1` | 是否展示关闭图标。当设置 draggable 时此值无效。      | _boolean_   | `true`       |
+| draggable `v2.7.2` | 是否支持拖拽，可用于实现拖拽调整面板高度 | _boolean_ | `false` |
+| min-drag-height `v2.7.2` | 拖拽时允许的最小高度 | _number_ | `windowHeight * 0.8` |
+| max-drag-height `v2.7.2` | 拖拽时允许的最大高度 | _number_ | `windowHeight * 0.5` |
+| mid-drag-height `v2.7.2` | 拖拽时中间态高度 | _number_ | `windowHeight * 0.1` |
+| close-drag-height `v2.7.2` | 拖拽关闭时的临界高度，低于该高度将自动关闭 | _number_ | `windowHeight * 0.4` |
 
 ### Events
 
@@ -213,6 +314,7 @@ Page({
 | bind:leave         | 遮罩离开中触发       | -    |
 | bind:after-leave   | 遮罩离开后触发       | -    |
 | bind:click-overlay | 点击遮罩层时触发 | - |
+| bind:drag-position `v2.7.2` | 拖拽结束时触发，返回当前面板位置 | _event.detail_: `'max'` \| `'mid'` \| `'min'` |
 
 ### Slot
 
@@ -244,3 +346,9 @@ Page({
 | --bottom-sheet-header-font-weight  | _600_    | 底部弹窗的头部字重    |
 | --bottom-sheet-font-color  | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | 底部弹窗的文字颜色    |
 | --bottom-sheet-header-padding `v2.5.0`  | _0 16px_    | 底部弹窗头部的内边距    |
+| --bottom-sheet-dragger-padding `v2.7.2` | _8px 0_ | 拖拽手柄区域的内边距 |
+| --bottom-sheet-dragger-node-width `v2.7.2` | _30px_ | 拖拽手柄的宽度 |
+| --bottom-sheet-dragger-node-height `v2.7.2` | _4px_ | 拖拽手柄的高度 |
+| --bottom-sheet-dragger-node-border-radius `v2.7.2` | _2px_ | 拖拽手柄的圆角 |
+| --bottom-sheet-dragger-node-background `v2.7.2` | _rgba(0, 0, 0, 0.3)_ | 拖拽手柄的背景色 |
+

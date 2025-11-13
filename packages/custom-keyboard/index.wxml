@@ -1,6 +1,6 @@
 <view class="{{prefix}} {{prefix}}-container" style="{{inputContainerStyle}}">
   <view class="{{prefix}}-textView" bind:tap="handlePassword">
-    <text class="{{prefix}}-pwdText {{currValue !== '' ? prefix + '-password' : null}}" style="{{valueTextStyle}}">{{currValue || placeholder}}</text>
+    <text class="{{prefix}}-pwdText smart-manrope {{currValue !== '' ? prefix + '-password' : null}}" style="{{valueTextStyle}}">{{currValue || placeholder}}</text>
   </view>
   <slot name="custom-button" />
 </view>
@@ -18,7 +18,7 @@
           class="{{prefix}}-hidden-image"
           style="{{img_hidden_light}}"
         />
-        <text wx:else class="{{prefix}}-number-text">{{ item <= -1 || item > maxNum ? '' : item }}</text>
+        <text wx:else class="{{prefix}}-number-text smart-manrope">{{ item <= -1 || item > maxNum ? '' : item }}</text>
       </view>
     </view>
     <view class="{{prefix}}-operate-wrap">

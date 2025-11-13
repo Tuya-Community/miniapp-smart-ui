@@ -64,7 +64,7 @@ category: 通用
 ```html
 <smart-button loading type="primary" />
 <smart-button loading type="primary" loading-type="spinner" />
-<smart-button loading type="info" loading-text="加载中..." />
+<smart-button loading type="primary" loading-text="加载中..." />
 ```
 
 ### 按钮形状

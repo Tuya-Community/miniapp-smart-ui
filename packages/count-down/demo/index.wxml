@@ -39,9 +39,9 @@
     bind:finish="finished"
   />
   <smart-grid clickable column-num="3">
-    <smart-grid-item text="{{I18n.t('start')}}" icon="play-circle-o" bindclick="start" />
-    <smart-grid-item text="{{I18n.t('pause')}}" icon="pause-circle-o" bindclick="pause" />
-    <smart-grid-item text="{{I18n.t('reset')}}" icon="replay" bind:click="reset" />
+    <smart-grid-item text="{{I18n.t('start')}}" icon="{{PlayIcon}}" bindclick="start" />
+    <smart-grid-item text="{{I18n.t('pause')}}" icon="{{PauseIcon}}" bindclick="pause" />
+    <smart-grid-item text="{{I18n.t('reset')}}" icon="{{ReplayIcon}}" bind:click="reset" />
   </smart-grid>
 </demo-block>
 
