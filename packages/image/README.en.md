@@ -72,7 +72,7 @@ Images are lazy-loaded and only start loading when they are about to enter a cer
 The `Image` component provides a default loading prompt, with support for custom content via the `loading` slot.
 
 ```html
-<smart-image use-loading-slot>
+<smart-image show-loading use-loading-slot>
   <smart-loading slot="loading" type="spinner" size="20" vertical />
 </smart-image>
 ```

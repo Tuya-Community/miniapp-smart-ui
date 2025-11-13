@@ -72,7 +72,7 @@ category: 展示
 `Image`组件提供了默认的加载中提示，支持通过`loading`插槽自定义内容。
 
 ```html
-<smart-image use-loading-slot>
+<smart-image show-loading use-loading-slot>
   <smart-loading slot="loading" type="spinner" size="20" vertical />
 </smart-image>
 ```
