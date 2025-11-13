@@ -61,6 +61,7 @@
       <smart-image
         width="100%"
         height="27vw"
+        show-loading
         use-loading-slot
       >
         <smart-loading
