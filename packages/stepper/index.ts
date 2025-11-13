@@ -131,7 +131,8 @@ SmartComponent({
     onBlur(event: WechatMiniprogram.InputBlur) {
       const value = this.format(event.detail.value, true);
       const stepValue =
-        Math.round((value - this.data.min) / this.data.step) * this.data.step + this.data.min;
+        Math.round((value - this.data.min) / this.data.step) * this.data.step +
+        Number(this.data.min);
       const strStepValue = isDef(this.data.decimalLength)
         ? stepValue.toFixed(this.data.decimalLength)
         : stepValue.toString();
