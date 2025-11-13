@@ -79,8 +79,8 @@
     bind:close="toggleActionSheet6"
     draggable
     instanceId="com6"
-    closeDragHeight="{{closeDragHeight}}"
-    midDragHeight="300"
+    close-drag-height="{{closeDragHeight}}"
+    mid-drag-height="300"
   >
     <view style="background-color: red; height: 300px;" />
   </smart-bottom-sheet>
@@ -92,10 +92,10 @@
     show="{{ show7 }}"
     draggable
     instanceId="com7"
-    midDragHeight="300"
-    minDragHeight="300"
-    maxDragHeight="300"
-    closeDragHeight="300"
+    mid-drag-height="300"
+    min-drag-height="300"
+    max-drag-height="300"
+    close-drag-height="300"
     bind:close="toggleActionSheet7"
   >
     <view style="background-color: red; height: 300px;" />
@@ -109,10 +109,10 @@
     show="{{ show8 }}"
     draggable
     instanceId="com8"
-    midDragHeight="300"
-    minDragHeight="300"
-    maxDragHeight="300"
-    closeDragHeight="300"
+    mid-drag-height="300"
+    min-drag-height="300"
+    max-drag-height="300"
+    close-drag-height="300"
     bind:close="toggleActionSheet8"
   >
     <view style="background-color: red; height: 300px;" />
@@ -126,9 +126,9 @@
     bind:close="toggleActionSheet9"
     draggable
     instanceId="com9"
-    midDragHeight="300"
-    minDragHeight="100"
-    maxDragHeight="600"
+    mid-drag-height="300"
+    min-drag-height="100"
+    max-drag-height="600"
     bind:drag-position="onDragPosition"
   >
     <view wx:if="{{dragPosition}}" style="margin-top: 16px; padding: 12px; background-color: #f0f0f0; border-radius: 4px;">
