@@ -17,7 +17,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
-              class="smart-nav-bar__left smart-nav-bar__left--home smart-nav-bar__left--text"
+              style=""
               bind:tap="onClickLeft"
             >
               <wx-view
@@ -38,7 +38,8 @@ exports[`should render demo and match snapshot 1`] = `
               
             </wx-view>
             <wx-view
-              class="smart-nav-bar__right"
+              class=""
+              style=""
               bind:tap="onClickRight"
             />
           </wx-view>
@@ -56,7 +57,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
-              class="smart-nav-bar__left smart-nav-bar__left--home smart-nav-bar__left--text"
+              style=""
               bind:tap="onClickLeft"
             >
               <wx-view
@@ -77,7 +78,8 @@ exports[`should render demo and match snapshot 1`] = `
               
             </wx-view>
             <wx-view
-              class="smart-nav-bar__right"
+              class=""
+              style=""
               bind:tap="onClickRight"
             />
           </wx-view>
@@ -102,7 +104,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
-              class="smart-nav-bar__left smart-nav-bar__left--icon"
+              style=""
               bind:tap="onClickLeft"
             >
               <smart-icon
@@ -127,90 +129,37 @@ exports[`should render demo and match snapshot 1`] = `
               class="smart-nav-bar__title title-class smart-ellipsis"
               bind:tap="onClickTitle"
             >
-              
+              ScheduleScheduleScheduleSchedule
             </wx-view>
             <wx-view
-              class="smart-nav-bar__right"
+              class=""
+              style=""
               bind:tap="onClickRight"
-            />
-          </wx-view>
-        </wx-view>
-      </smart-nav-bar>
-      <smart-nav-bar
-        customClass="demo-nav-bar"
-        bind:click-left="onClickLeft"
-        bind:click-right-text="onClickRightText"
-        bind:click-title="onClickTitle"
-      >
-        <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
-        >
-          <wx-view
-            class="smart-nav-bar__content"
-          >
-            <wx-view
-              class="smart-nav-bar__left smart-nav-bar__left--icon"
-              bind:tap="onClickLeft"
             >
-              <smart-icon
-                customClass="smart-nav-bar__arrow"
-                data-type="leftArrow"
+              <wx-view
+                class="smart-nav-bar__icon-wrap"
+                data-type="rightIcon"
                 hoverClass="smart-nav-bar__icon--hover"
                 hoverStayTime="70"
+                bind:tap="onClickRightIcon"
               >
-                <wx-view
-                  class="custom-class smart-icon smart-icon--image smart-icon--svg"
-                  style="font-size:24px"
-                  bind:tap="onClick"
+                <smart-icon
+                  class="right-icon-class"
+                  customClass="smart-nav-bar__icon"
                 >
                   <wx-view
-                    class="smart-icon__svg"
-                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
-                  />
-                </wx-view>
-              </smart-icon>
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="font-size:24px"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M213.333333%20437.333333a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%20m298.666667%200a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%20m298.666667%200a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
             </wx-view>
-            <wx-view
-              class="smart-nav-bar__title title-class smart-ellipsis"
-              bind:tap="onClickTitle"
-            >
-              
-            </wx-view>
-            <wx-view
-              class="smart-nav-bar__right"
-              bind:tap="onClickRight"
-            />
-          </wx-view>
-        </wx-view>
-      </smart-nav-bar>
-      <smart-nav-bar
-        customClass="demo-nav-bar"
-        bind:click-left-text="onClickLeftText"
-        bind:click-right-text="onClickRightText"
-        bind:click-title="onClickTitle"
-      >
-        <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
-        >
-          <wx-view
-            class="smart-nav-bar__content"
-          >
-            <wx-view
-              class="smart-nav-bar__left"
-              bind:tap="onClickLeft"
-            />
-            <wx-view
-              class="smart-nav-bar__title title-class smart-ellipsis"
-              bind:tap="onClickTitle"
-            >
-              
-            </wx-view>
-            <wx-view
-              class="smart-nav-bar__right"
-              bind:tap="onClickRight"
-            />
           </wx-view>
         </wx-view>
       </smart-nav-bar>
@@ -221,7 +170,9 @@ exports[`should render demo and match snapshot 1`] = `
       class="custom-class demo-block smart-clearfix "
     >
       <smart-nav-bar
-        bind:click-right-icon="onClickRightIcon"
+        bind:click-left="onClickLeft"
+        bind:click-right="onClickRight"
+        bind:click-title="onClickTitle"
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
@@ -231,7 +182,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
-              class="smart-nav-bar__left smart-nav-bar__left--icon"
+              style=""
               bind:tap="onClickLeft"
             >
               <smart-icon
@@ -256,10 +207,11 @@ exports[`should render demo and match snapshot 1`] = `
               class="smart-nav-bar__title title-class smart-ellipsis"
               bind:tap="onClickTitle"
             >
-              
+              ScheduleScheduleScheduleSchedule
             </wx-view>
             <wx-view
-              class="smart-nav-bar__right"
+              class=""
+              style=""
               bind:tap="onClickRight"
             >
               <wx-view
@@ -275,82 +227,12 @@ exports[`should render demo and match snapshot 1`] = `
                 >
                   <wx-view
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
-                    style="color:var(--app-B2-N1, rgba(0, 0, 0, 1));font-size:32px"
+                    style="font-size:24px"
                     bind:tap="onClick"
                   >
                     <wx-view
                       class="smart-icon__svg"
-                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M213.333333%20437.333333a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%20m298.666667%200a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%20m298.666667%200a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--app-B2-N1, rgba(0, 0, 0, 1))"
-                    />
-                  </wx-view>
-                </smart-icon>
-              </wx-view>
-            </wx-view>
-          </wx-view>
-        </wx-view>
-      </smart-nav-bar>
-      <smart-nav-bar
-        customClass="demo-nav-bar"
-        bind:click-right-icon="onClickRightIcon"
-      >
-        <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
-        >
-          <wx-view
-            class="smart-nav-bar__content"
-          >
-            <wx-view
-              class="smart-nav-bar__left smart-nav-bar__left--icon"
-              bind:tap="onClickLeft"
-            >
-              <smart-icon
-                customClass="smart-nav-bar__arrow"
-                data-type="leftArrow"
-                hoverClass="smart-nav-bar__icon--hover"
-                hoverStayTime="70"
-              >
-                <wx-view
-                  class="custom-class smart-icon smart-icon--image smart-icon--svg"
-                  style="font-size:24px"
-                  bind:tap="onClick"
-                >
-                  <wx-view
-                    class="smart-icon__svg"
-                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
-                  />
-                </wx-view>
-              </smart-icon>
-            </wx-view>
-            <wx-view
-              class="smart-nav-bar__title title-class smart-ellipsis"
-              bind:tap="onClickTitle"
-            >
-              
-            </wx-view>
-            <wx-view
-              class="smart-nav-bar__right"
-              bind:tap="onClickRight"
-            >
-              <wx-view
-                class="smart-nav-bar__icon-wrap"
-                data-type="rightIcon"
-                hoverClass="smart-nav-bar__icon--hover"
-                hoverStayTime="70"
-                bind:tap="onClickRightIcon"
-              >
-                <smart-icon
-                  class="right-icon-class"
-                  customClass="smart-nav-bar__icon"
-                >
-                  <wx-view
-                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
-                    style="color:var(--app-B2-N1, rgba(0, 0, 0, 1));font-size:32px"
-                    bind:tap="onClick"
-                  >
-                    <wx-view
-                      class="smart-icon__svg"
-                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M213.333333%20437.333333a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%20m298.666667%200a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%20m298.666667%200a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--app-B2-N1, rgba(0, 0, 0, 1))"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M213.333333%20437.333333a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%20m298.666667%200a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%20m298.666667%200a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
                     />
                   </wx-view>
                 </smart-icon>
@@ -361,12 +243,12 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
-                  style="color:var(--app-B2-N1, rgba(0, 0, 0, 1));font-size:32px"
+                  style="font-size:24px"
                   bind:tap="onClick"
                 >
                   <wx-view
                     class="smart-icon__svg"
-                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221730112397206%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%229813%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M554.656%20174.336a70.656%2070.656%200%200%200-85.312%200l-248.896%20188.16A71.872%2071.872%200%200%200%20192%20419.84v340.48C192%20799.904%20223.84%20832%20263.104%20832h138.688c21.6%200%2039.104-17.664%2039.104-39.424V616.96c0-39.584%2031.84-71.68%2071.104-71.68a71.392%2071.392%200%200%201%2071.104%2071.68v175.616c0%2021.76%2017.504%2039.424%2039.104%2039.424h138.688A71.392%2071.392%200%200%200%20832%20760.32V419.84c0-22.56-10.56-43.808-28.448-57.344l-248.896-188.16z%22%20p-id%3D%229814%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:var(--app-B2-N1, rgba(0, 0, 0, 1))"
+                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221730112397206%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%229813%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M554.656%20174.336a70.656%2070.656%200%200%200-85.312%200l-248.896%20188.16A71.872%2071.872%200%200%200%20192%20419.84v340.48C192%20799.904%20223.84%20832%20263.104%20832h138.688c21.6%200%2039.104-17.664%2039.104-39.424V616.96c0-39.584%2031.84-71.68%2071.104-71.68a71.392%2071.392%200%200%201%2071.104%2071.68v175.616c0%2021.76%2017.504%2039.424%2039.104%2039.424h138.688A71.392%2071.392%200%200%200%20832%20760.32V419.84c0-22.56-10.56-43.808-28.448-57.344l-248.896-188.16z%22%20p-id%3D%229814%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
                   />
                 </wx-view>
               </smart-icon>
@@ -374,18 +256,10 @@ exports[`should render demo and match snapshot 1`] = `
           </wx-view>
         </wx-view>
       </smart-nav-bar>
-    </wx-view>
-  </demo-block>
-  <demo-block>
-    <wx-view
-      class="custom-class demo-block smart-clearfix "
-    >
       <smart-nav-bar
-        leftIconClass="nav-bar-icon-home"
-        bind:click-left="onClickLeft"
-        bind:click-left-icon="onClickLeftIcon"
+        customClass="demo-nav-bar"
         bind:click-left-text="onClickLeftText"
-        bind:click-right="onClickRight"
+        bind:click-right-text="onClickRightText"
         bind:click-title="onClickTitle"
       >
         <wx-view
@@ -396,7 +270,61 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
-              class="smart-nav-bar__left smart-nav-bar__left--icon"
+              style=""
+              bind:tap="onClickLeft"
+            >
+              <wx-view
+                class="smart-nav-bar__text left-text-class"
+                hoverClass="smart-nav-bar__text--hover"
+                hoverStayTime="70"
+                catch:tap="onClickLeftText"
+              >
+                
+        Cancel
+      
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="smart-nav-bar__title title-class smart-ellipsis"
+              bind:tap="onClickTitle"
+            >
+              ScheduleScheduleScheduleSchedule
+            </wx-view>
+            <wx-view
+              class=""
+              style=""
+              bind:tap="onClickRight"
+            >
+              <wx-view
+                class="smart-nav-bar__text right-text-class"
+                hoverClass="smart-nav-bar__text--hover"
+                hoverStayTime="70"
+                style="color: #F04C4C;"
+                bind:tap="onClickRightText"
+              >
+                
+        Confirm
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-nav-bar>
+      <smart-nav-bar
+        customClass="demo-nav-bar"
+        bind:click-left="onClickLeft"
+        bind:click-right-text="onClickRightText"
+        bind:click-title="onClickTitle"
+      >
+        <wx-view
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
+          style="z-index:1;padding-top:20px; "
+        >
+          <wx-view
+            class="smart-nav-bar__content"
+          >
+            <wx-view
+              style=""
               bind:tap="onClickLeft"
             >
               <smart-icon
@@ -416,40 +344,276 @@ exports[`should render demo and match snapshot 1`] = `
                   />
                 </wx-view>
               </smart-icon>
+            </wx-view>
+            <wx-view
+              class="smart-nav-bar__title title-class smart-ellipsis"
+              bind:tap="onClickTitle"
+            >
+              ScheduleScheduleScheduleSchedule
+            </wx-view>
+            <wx-view
+              class=""
+              style=""
+              bind:tap="onClickRight"
+            >
               <wx-view
-                class="smart-nav-bar__icon-wrap"
-                data-type="leftIcon"
+                class="smart-nav-bar__text right-text-class"
+                hoverClass="smart-nav-bar__text--hover"
+                hoverStayTime="70"
+                style="color: #F04C4C;"
+                bind:tap="onClickRightText"
+              >
+                
+        Confirm
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-nav-bar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-nav-bar
+        bind:click-left="onClickLeft"
+        bind:click-title="onClickTitle"
+      >
+        <wx-view
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
+          style="z-index:1;padding-top:20px; "
+        >
+          <wx-view
+            class="smart-nav-bar__content"
+          >
+            <wx-view
+              style=""
+              bind:tap="onClickLeft"
+            >
+              <smart-icon
+                customClass="smart-nav-bar__arrow"
+                data-type="leftArrow"
                 hoverClass="smart-nav-bar__icon--hover"
                 hoverStayTime="70"
-                catch:tap="onClickLeftIcon"
               >
-                <smart-icon
-                  class="left-icon-class"
-                  customClass="smart-nav-bar__icon"
+                <wx-view
+                  class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  style="font-size:24px"
+                  bind:tap="onClick"
                 >
                   <wx-view
-                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
-                    style="font-size:32px"
-                    bind:tap="onClick"
-                  >
-                    <wx-view
-                      class="smart-icon__svg"
-                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221730112397206%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%229813%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M554.656%20174.336a70.656%2070.656%200%200%200-85.312%200l-248.896%20188.16A71.872%2071.872%200%200%200%20192%20419.84v340.48C192%20799.904%20223.84%20832%20263.104%20832h138.688c21.6%200%2039.104-17.664%2039.104-39.424V616.96c0-39.584%2031.84-71.68%2071.104-71.68a71.392%2071.392%200%200%201%2071.104%2071.68v175.616c0%2021.76%2017.504%2039.424%2039.104%2039.424h138.688A71.392%2071.392%200%200%200%20832%20760.32V419.84c0-22.56-10.56-43.808-28.448-57.344l-248.896-188.16z%22%20p-id%3D%229814%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
-                    />
-                  </wx-view>
-                </smart-icon>
+                    class="smart-icon__svg"
+                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
+                  />
+                </wx-view>
+              </smart-icon>
+            </wx-view>
+            <wx-view
+              class="smart-nav-bar__title title-class smart-ellipsis"
+              bind:tap="onClickTitle"
+            >
+              ScheduleSchedule
+            </wx-view>
+            <wx-view
+              class=""
+              style=""
+              bind:tap="onClickRight"
+            />
+          </wx-view>
+        </wx-view>
+      </smart-nav-bar>
+      <smart-nav-bar
+        customClass="demo-nav-bar"
+        bind:click-left-text="onClickLeftText"
+        bind:click-right-text="onClickRightText"
+        bind:click-title="onClickTitle"
+      >
+        <wx-view
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
+          style="z-index:1;padding-top:20px; "
+        >
+          <wx-view
+            class="smart-nav-bar__content"
+          >
+            <wx-view
+              style=""
+              bind:tap="onClickLeft"
+            >
+              <wx-view
+                class="smart-nav-bar__text left-text-class"
+                hoverClass="smart-nav-bar__text--hover"
+                hoverStayTime="70"
+                catch:tap="onClickLeftText"
+              >
+                
+        Abbrechen
+      
               </wx-view>
             </wx-view>
             <wx-view
               class="smart-nav-bar__title title-class smart-ellipsis"
               bind:tap="onClickTitle"
             >
-              Home
+              ScheduleSchedule
             </wx-view>
             <wx-view
-              class="smart-nav-bar__right"
+              class=""
+              style=""
               bind:tap="onClickRight"
-            />
+            >
+              <wx-view
+                class="smart-nav-bar__text right-text-class"
+                hoverClass="smart-nav-bar__text--hover"
+                hoverStayTime="70"
+                style="color: #F04C4C;"
+                bind:tap="onClickRightText"
+              >
+                
+        Speichern
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-nav-bar>
+      <smart-nav-bar
+        customClass="demo-nav-bar"
+        bind:click-left="onClickLeft"
+        bind:click-right-text="onClickRightText"
+        bind:click-title="onClickTitle"
+      >
+        <wx-view
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
+          style="z-index:1;padding-top:20px; "
+        >
+          <wx-view
+            class="smart-nav-bar__content"
+          >
+            <wx-view
+              style=""
+              bind:tap="onClickLeft"
+            >
+              <smart-icon
+                customClass="smart-nav-bar__arrow"
+                data-type="leftArrow"
+                hoverClass="smart-nav-bar__icon--hover"
+                hoverStayTime="70"
+              >
+                <wx-view
+                  class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  style="font-size:24px"
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-icon__svg"
+                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
+                  />
+                </wx-view>
+              </smart-icon>
+            </wx-view>
+            <wx-view
+              class="smart-nav-bar__title title-class smart-ellipsis"
+              bind:tap="onClickTitle"
+            >
+              ScheduleSchedule
+            </wx-view>
+            <wx-view
+              class=""
+              style=""
+              bind:tap="onClickRight"
+            >
+              <wx-view
+                class="smart-nav-bar__text right-text-class"
+                hoverClass="smart-nav-bar__text--hover"
+                hoverStayTime="70"
+                style="color: #F04C4C;"
+                bind:tap="onClickRightText"
+              >
+                
+        Speichern
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </smart-nav-bar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-nav-bar
+        bind:click-left="onClickLeft"
+        bind:click-right="onClickRight"
+        bind:click-title="onClickTitle"
+      >
+        <wx-view
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
+          style="z-index:1;padding-top:20px; "
+        >
+          <wx-view
+            class="smart-nav-bar__content"
+          >
+            <wx-view
+              style=""
+              bind:tap="onClickLeft"
+            >
+              <smart-icon
+                customClass="smart-nav-bar__arrow"
+                data-type="leftArrow"
+                hoverClass="smart-nav-bar__icon--hover"
+                hoverStayTime="70"
+              >
+                <wx-view
+                  class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  style="font-size:24px"
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="smart-icon__svg"
+                    style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008228129%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225912%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M670.165333%20225.834667a42.666667%2042.666667%200%200%200-56.32-3.541334l-4.010666%203.541334-256%20256a42.666667%2042.666667%200%200%200-3.541334%2056.32l3.541334%204.010666%20256%20256a42.666667%2042.666667%200%200%200%2063.872-56.32l-3.541334-4.010666L444.373333%20512l225.792-225.834667a42.666667%2042.666667%200%200%200%203.541334-56.32l-3.541334-4.010666z%22%20p-id%3D%225913%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
+                  />
+                </wx-view>
+              </smart-icon>
+            </wx-view>
+            <wx-view
+              class="smart-nav-bar__title title-class smart-ellipsis"
+              bind:tap="onClickTitle"
+            >
+              ScheduleScheduleScheduleSchedule
+            </wx-view>
+            <wx-view
+              class=""
+              style=""
+              bind:tap="onClickRight"
+            >
+              <wx-view
+                class="smart-nav-bar__icon-wrap"
+                data-type="rightIcon"
+                hoverClass="smart-nav-bar__icon--hover"
+                hoverStayTime="70"
+                bind:tap="onClickRightIcon"
+              >
+                <smart-icon
+                  class="right-icon-class"
+                  customClass="smart-nav-bar__icon"
+                >
+                  <wx-view
+                    class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    style="font-size:24px"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-icon__svg"
+                      style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20class%3D%22icon%22%20width%3D%22200px%22%20height%3D%22200.00px%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M213.333333%20437.333333a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%20m298.666667%200a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%20m298.666667%200a74.666667%2074.666667%200%201%201%200%20149.333334%2074.666667%2074.666667%200%200%201%200-149.333334z%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
+                    />
+                  </wx-view>
+                </smart-icon>
+              </wx-view>
+            </wx-view>
           </wx-view>
         </wx-view>
       </smart-nav-bar>
@@ -473,7 +637,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
-              class="smart-nav-bar__left smart-nav-bar__left--title smart-nav-bar__left--text smart-nav-bar__left--icon"
+              style=""
               bind:tap="onClickLeft"
             >
               <wx-view
@@ -518,7 +682,8 @@ exports[`should render demo and match snapshot 1`] = `
               
             </wx-view>
             <wx-view
-              class="smart-nav-bar__right"
+              class=""
+              style=""
               bind:tap="onClickRight"
             />
           </wx-view>

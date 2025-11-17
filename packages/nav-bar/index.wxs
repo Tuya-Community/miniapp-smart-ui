@@ -10,25 +10,35 @@ function barStyle(data) {
   });
 }
 
+function getSideClassObj(data) {
+  var classObj = {};
+  if (data.sideWidth === 'max') {
+    classObj.max = true;
+  } else if (data.sideWidth === 'min') {
+    classObj.min = true;
+  } else {
+    classObj.mid = true;
+  }
+  return classObj;
+}
+
 function leftClass(data) {
-  return utils.bem('nav-bar__left', {
-    [data.sideWidth]: data.sideWidth === 'max' ? 'max' : data.sideWidth === 'min' ? 'min' : 'mid',
+  return utils.bem('nav-bar__left', Object.assign(getSideClassObj(data), {
     home: data.leftTextType === 'home',
     title: data.leftTextType === 'title',
     text: !!data.leftText,
     icon: data.leftArrow || data.leftIcon,
-  })
+  }))
 }
 
 function rightClass(data) {
-  return utils.bem('nav-bar__right', {
-    [data.sideWidth]: data.sideWidth === 'max' ? 'max' : data.sideWidth === 'min' ? 'min' : 'mid',
+  return utils.bem('nav-bar__right', Object.assign(getSideClassObj(data), {
     text: !!data.rightText,
-  })
+  }))
 }
 
 function sideStyle(data) {
-  const isDefaultWidth = ['min', 'max', 'mid'].includes(data.sideWidth);
+  var isDefaultWidth = ['min', 'max', 'mid'].includes(data.sideWidth);
   var width = '';
   if (!isDefaultWidth && data.sideWidth) { 
     if (typeof data.sideWidth === 'string' && data.sideWidth.includes('px')) { 
@@ -37,9 +47,7 @@ function sideStyle(data) {
       width = data.sideWidth + 'px';
     }
   }
-  return style({
-    'width': width,
-  })
+  return width ? 'width: ' + width + ';' : '';
 }
 
 module.exports = {
