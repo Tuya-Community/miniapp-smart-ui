@@ -17,6 +17,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
+              class="smart-nav-bar__left smart-nav-bar__left--mid smart-nav-bar__left--home smart-nav-bar__left--text"
               style=""
               bind:tap="onClickLeft"
             >
@@ -38,7 +39,7 @@ exports[`should render demo and match snapshot 1`] = `
               
             </wx-view>
             <wx-view
-              class=""
+              class="smart-nav-bar__right smart-nav-bar__right--mid"
               style=""
               bind:tap="onClickRight"
             />
@@ -57,6 +58,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
+              class="smart-nav-bar__left smart-nav-bar__left--mid smart-nav-bar__left--home smart-nav-bar__left--text"
               style=""
               bind:tap="onClickLeft"
             >
@@ -78,7 +80,7 @@ exports[`should render demo and match snapshot 1`] = `
               
             </wx-view>
             <wx-view
-              class=""
+              class="smart-nav-bar__right smart-nav-bar__right--mid"
               style=""
               bind:tap="onClickRight"
             />
@@ -104,6 +106,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
+              class="smart-nav-bar__left smart-nav-bar__left--min smart-nav-bar__left--icon"
               style=""
               bind:tap="onClickLeft"
             >
@@ -132,7 +135,7 @@ exports[`should render demo and match snapshot 1`] = `
               ScheduleScheduleScheduleSchedule
             </wx-view>
             <wx-view
-              class=""
+              class="smart-nav-bar__right smart-nav-bar__right--min"
               style=""
               bind:tap="onClickRight"
             >
@@ -182,6 +185,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
+              class="smart-nav-bar__left smart-nav-bar__left--mid smart-nav-bar__left--icon"
               style=""
               bind:tap="onClickLeft"
             >
@@ -210,7 +214,7 @@ exports[`should render demo and match snapshot 1`] = `
               ScheduleScheduleScheduleSchedule
             </wx-view>
             <wx-view
-              class=""
+              class="smart-nav-bar__right smart-nav-bar__right--mid"
               style=""
               bind:tap="onClickRight"
             >
@@ -270,6 +274,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
+              class="smart-nav-bar__left smart-nav-bar__left--mid smart-nav-bar__left--text"
               style=""
               bind:tap="onClickLeft"
             >
@@ -291,7 +296,7 @@ exports[`should render demo and match snapshot 1`] = `
               ScheduleScheduleScheduleSchedule
             </wx-view>
             <wx-view
-              class=""
+              class="smart-nav-bar__right smart-nav-bar__right--mid smart-nav-bar__right--text"
               style=""
               bind:tap="onClickRight"
             >
@@ -324,6 +329,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
+              class="smart-nav-bar__left smart-nav-bar__left--mid smart-nav-bar__left--icon"
               style=""
               bind:tap="onClickLeft"
             >
@@ -352,7 +358,7 @@ exports[`should render demo and match snapshot 1`] = `
               ScheduleScheduleScheduleSchedule
             </wx-view>
             <wx-view
-              class=""
+              class="smart-nav-bar__right smart-nav-bar__right--mid smart-nav-bar__right--text"
               style=""
               bind:tap="onClickRight"
             >
@@ -389,6 +395,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
+              class="smart-nav-bar__left smart-nav-bar__left--max smart-nav-bar__left--icon"
               style=""
               bind:tap="onClickLeft"
             >
@@ -417,7 +424,7 @@ exports[`should render demo and match snapshot 1`] = `
               ScheduleSchedule
             </wx-view>
             <wx-view
-              class=""
+              class="smart-nav-bar__right smart-nav-bar__right--max"
               style=""
               bind:tap="onClickRight"
             />
@@ -438,6 +445,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
+              class="smart-nav-bar__left smart-nav-bar__left--max smart-nav-bar__left--text"
               style=""
               bind:tap="onClickLeft"
             >
@@ -459,7 +467,7 @@ exports[`should render demo and match snapshot 1`] = `
               ScheduleSchedule
             </wx-view>
             <wx-view
-              class=""
+              class="smart-nav-bar__right smart-nav-bar__right--max smart-nav-bar__right--text"
               style=""
               bind:tap="onClickRight"
             >
@@ -492,6 +500,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
+              class="smart-nav-bar__left smart-nav-bar__left--max smart-nav-bar__left--icon"
               style=""
               bind:tap="onClickLeft"
             >
@@ -520,7 +529,7 @@ exports[`should render demo and match snapshot 1`] = `
               ScheduleSchedule
             </wx-view>
             <wx-view
-              class=""
+              class="smart-nav-bar__right smart-nav-bar__right--max smart-nav-bar__right--text"
               style=""
               bind:tap="onClickRight"
             >
@@ -558,6 +567,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
+              class="smart-nav-bar__left smart-nav-bar__left--mid smart-nav-bar__left--icon"
               style=""
               bind:tap="onClickLeft"
             >
@@ -586,7 +596,7 @@ exports[`should render demo and match snapshot 1`] = `
               ScheduleScheduleScheduleSchedule
             </wx-view>
             <wx-view
-              class=""
+              class="smart-nav-bar__right smart-nav-bar__right--mid"
               style=""
               bind:tap="onClickRight"
             >
@@ -637,6 +647,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-nav-bar__content"
           >
             <wx-view
+              class="smart-nav-bar__left smart-nav-bar__left--mid smart-nav-bar__left--title smart-nav-bar__left--text smart-nav-bar__left--icon"
               style=""
               bind:tap="onClickLeft"
             >
@@ -682,7 +693,7 @@ exports[`should render demo and match snapshot 1`] = `
               
             </wx-view>
             <wx-view
-              class=""
+              class="smart-nav-bar__right smart-nav-bar__right--mid"
               style=""
               bind:tap="onClickRight"
             />

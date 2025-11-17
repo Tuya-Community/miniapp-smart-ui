@@ -10,7 +10,7 @@ function barStyle(data) {
   });
 }
 
-function getSideClassObj(data) {
+function leftClass(data) {
   var classObj = {};
   if (data.sideWidth === 'max') {
     classObj.max = true;
@@ -19,22 +19,24 @@ function getSideClassObj(data) {
   } else {
     classObj.mid = true;
   }
-  return classObj;
-}
-
-function leftClass(data) {
-  return utils.bem('nav-bar__left', Object.assign(getSideClassObj(data), {
-    home: data.leftTextType === 'home',
-    title: data.leftTextType === 'title',
-    text: !!data.leftText,
-    icon: data.leftArrow || data.leftIcon,
-  }))
+  classObj.home = data.leftTextType === 'home';
+  classObj.title = data.leftTextType === 'title';
+  classObj.text = !!data.leftText;
+  classObj.icon = data.leftArrow || data.leftIcon;
+  return utils.bem('nav-bar__left', classObj);
 }
 
 function rightClass(data) {
-  return utils.bem('nav-bar__right', Object.assign(getSideClassObj(data), {
-    text: !!data.rightText,
-  }))
+  var classObj = {};
+  if (data.sideWidth === 'max') {
+    classObj.max = true;
+  } else if (data.sideWidth === 'min') {
+    classObj.min = true;
+  } else {
+    classObj.mid = true;
+  }
+  classObj.text = !!data.rightText;
+  return utils.bem('nav-bar__right', classObj);
 }
 
 function sideStyle(data) {
