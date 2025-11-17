@@ -1,5 +1,6 @@
 /* eslint-disable */
 var style = require('../wxs/style.wxs');
+var utils = require('../wxs/utils.wxs');
 
 function barStyle(data) {
   return style({
@@ -9,6 +10,41 @@ function barStyle(data) {
   });
 }
 
+function leftClass(data) {
+  return utils.bem('nav-bar__left', {
+    [data.sideWidth]: data.sideWidth === 'max' ? 'max' : data.sideWidth === 'min' ? 'min' : 'mid',
+    home: data.leftTextType === 'home',
+    title: data.leftTextType === 'title',
+    text: !!data.leftText,
+    icon: data.leftArrow || data.leftIcon,
+  })
+}
+
+function rightClass(data) {
+  return utils.bem('nav-bar__right', {
+    [data.sideWidth]: data.sideWidth === 'max' ? 'max' : data.sideWidth === 'min' ? 'min' : 'mid',
+    text: !!data.rightText,
+  })
+}
+
+function sideStyle(data) {
+  const isDefaultWidth = ['min', 'max', 'mid'].includes(data.sideWidth);
+  var width = '';
+  if (!isDefaultWidth && data.sideWidth) { 
+    if (typeof data.sideWidth === 'string' && data.sideWidth.includes('px')) { 
+      width = data.sideWidth;
+    } else {
+      width = data.sideWidth + 'px';
+    }
+  }
+  return style({
+    'width': width,
+  })
+}
+
 module.exports = {
   barStyle: barStyle,
+  leftClass: leftClass,
+  rightClass: rightClass,
+  sideStyle: sideStyle,
 };
