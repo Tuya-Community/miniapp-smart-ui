@@ -87,7 +87,7 @@
   ],
   "dependencies": {
     "@ray-js/components-ty-slider": "^0.3.7",
-    "@tuya-miniapp/icons": "2.3.0-beta-2"
+    "@tuya-miniapp/icons": "^2.3.0"
   },
   "maintainers": [
     {
