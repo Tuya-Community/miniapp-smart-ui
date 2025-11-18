@@ -1,5 +1,6 @@
 /* eslint-disable */
 var style = require('../wxs/style.wxs');
+var utils = require('../wxs/utils.wxs');
 
 function barStyle(data) {
   return style({
@@ -9,6 +10,51 @@ function barStyle(data) {
   });
 }
 
+function leftClass(data) {
+  var classObj = {};
+  if (data.sideWidth === 'max') {
+    classObj.max = true;
+  } else if (data.sideWidth === 'min') {
+    classObj.min = true;
+  } else {
+    classObj.mid = true;
+  }
+  classObj.home = data.leftTextType === 'home';
+  classObj.title = data.leftTextType === 'title';
+  classObj.text = !!data.leftText;
+  classObj.icon = data.leftArrow || data.leftIcon;
+  return utils.bem('nav-bar__left', classObj);
+}
+
+function rightClass(data) {
+  var classObj = {};
+  if (data.sideWidth === 'max') {
+    classObj.max = true;
+  } else if (data.sideWidth === 'min') {
+    classObj.min = true;
+  } else {
+    classObj.mid = true;
+  }
+  classObj.text = !!data.rightText;
+  return utils.bem('nav-bar__right', classObj);
+}
+
+function sideStyle(data) {
+  var isDefaultWidth = ['min', 'max', 'mid'].includes(data.sideWidth);
+  var width = '';
+  if (!isDefaultWidth && data.sideWidth) { 
+    if (typeof data.sideWidth === 'string' && data.sideWidth.includes('px')) { 
+      width = data.sideWidth;
+    } else {
+      width = data.sideWidth + 'px';
+    }
+  }
+  return width ? 'width: ' + width + ';' : '';
+}
+
 module.exports = {
   barStyle: barStyle,
+  leftClass: leftClass,
+  rightClass: rightClass,
+  sideStyle: sideStyle,
 };

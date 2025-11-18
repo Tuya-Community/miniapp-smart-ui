@@ -13,6 +13,10 @@ SmartComponent({
 
   props: {
     title: String,
+    sideWidth: {
+      type: null,
+      default: 'mid',
+    },
     fixed: {
       type: Boolean,
       observer: 'setHeight',

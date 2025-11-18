@@ -84,6 +84,14 @@
     display: flex;
     align-items: center;
     width: var(--nav-bar-side-width, @nav-bar-side-width);
+
+    &--min {
+      width: var(--nav-bar-side-width-min, var(--nav-bar-side-width, @nav-bar-side-width-min));
+    }
+
+    &--max {
+      width: var(--nav-bar-side-width-max, var(--nav-bar-side-width, @nav-bar-side-width-max));
+    }
   }
 
   &__left {

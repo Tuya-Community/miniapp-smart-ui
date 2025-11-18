@@ -13,78 +13,102 @@
   />
 </demo-block>
 
-<demo-block title="{{I18n.t('secondPage')}}">
+<demo-block title="{{I18n.t('secondPageSingleIcon')}}">
   <smart-nav-bar
-    title="{{I18n.t('setting')}}"
+    title="ScheduleScheduleScheduleSchedule"
     left-arrow
+    right-icon="{{ iconMore }}"
+    sideWidth="min"
+    right-icon-size="24px"
     bind:click-right="onClickRight"
     bind:click-left="onClickLeft"
     bind:click-title="onClickTitle"
   />
-  <smart-nav-bar
-    title="{{I18n.t('setting')}}"
-    custom-class="demo-nav-bar"
-    right-text="{{I18n.t('delete')}}"
-    right-text-color="#F04C4C"
-    left-arrow
-    bind:click-right-text="onClickRightText"
-    bind:click-left="onClickLeft"
-    bind:click-title="onClickTitle"
-  />
-  <smart-nav-bar
-    title="{{I18n.t('setting')}}"
-    custom-class="demo-nav-bar"
-    right-text="{{I18n.t('delete')}}"
-    right-text-color="#F04C4C"
-    left-text="{{I18n.t('cancel')}}"
-    bind:click-right-text="onClickRightText"
-    bind:click-left-text="onClickLeftText"
-    bind:click-title="onClickTitle"
-  />
 </demo-block>
 
-<demo-block title="{{I18n.t('rightIcon')}}">
+<demo-block title="{{I18n.t('secondPageCommonCases')}}">
   <smart-nav-bar
-    title="{{I18n.t('setting')}}"
+    title="ScheduleScheduleScheduleSchedule"
     left-arrow
     right-icon="{{ iconMore }}"
-    right-icon-size="32px"
-    right-icon-color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
-    bind:click-right-icon="onClickRightIcon"
-  />
-  <smart-nav-bar
-    title="{{I18n.t('setting')}}"
-    left-arrow
-    custom-class="demo-nav-bar"
-    right-icon="{{ iconMore }}"
-    right-icon-size="32px"
-    right-icon-color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
-    bind:click-right-icon="onClickRightIcon"
+    right-icon-size="24px"
+    bind:click-right="onClickRight"
+    bind:click-left="onClickLeft"
+    bind:click-title="onClickTitle"
   >
     <smart-icon
       slot="right"
-      size="32px"
+      size="24px"
       style="margin-right: 16px;"
       name="{{ iconHouse }}"
-      color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
     />
   </smart-nav-bar>
-</demo-block>
-
-
-
-<demo-block title="{{I18n.t('customIcon')}}">
   <smart-nav-bar
-    title="Home"
-    left-arrow
-    left-icon="{{ iconHouse }}"
-    left-icon-size="32px"
-    left-icon-class="nav-bar-icon-home"
-    bind:click-left="onClickLeft"
-    bind:click-left-icon="onClickLeftIcon"
+    title="ScheduleScheduleScheduleSchedule"
+    right-text="Confirm"
+    left-text="Cancel"
+    custom-class="demo-nav-bar"
+    right-text-color="#F04C4C"
+    bind:click-right-text="onClickRightText"
     bind:click-left-text="onClickLeftText"
     bind:click-title="onClickTitle"
+  />
+  <smart-nav-bar
+    title="ScheduleScheduleScheduleSchedule"
+    left-arrow
+    right-text="Confirm"
+    custom-class="demo-nav-bar"
+    right-text-color="#F04C4C"
+    bind:click-right-text="onClickRightText"
+    bind:click-left="onClickLeft"
+    bind:click-title="onClickTitle"
+  />
+  
+</demo-block>
+
+<demo-block title="{{I18n.t('secondPageShortTitle')}}">
+  <smart-nav-bar
+    title="ScheduleSchedule"
+    left-arrow
+    sideWidth="max"
+    bind:click-left="onClickLeft"
+    bind:click-title="onClickTitle"
+  />
+  <smart-nav-bar
+    title="ScheduleSchedule"
+    left-text="Abbrechen"
+    right-text="Speichern"
+    custom-class="demo-nav-bar"
+    right-text-color="#F04C4C"
+    side-width="max"
+    bind:click-left-text="onClickLeftText"
+    bind:click-title="onClickTitle"
+    bind:click-right-text="onClickRightText"
+  />
+
+  <smart-nav-bar
+    title="ScheduleSchedule"
+    left-arrow
+    right-text="Speichern"
+    right-text-color="#F04C4C"
+    side-width="max"
+    custom-class="demo-nav-bar"
+    bind:click-left="onClickLeft"
+    bind:click-title="onClickTitle"
+    bind:click-right-text="onClickRightText"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('customWidth')}}">
+  <smart-nav-bar
+    title="ScheduleScheduleScheduleSchedule"
+    left-arrow
+    side-width="100px"
+    right-icon="{{ iconMore }}"
+    right-icon-size="24px"
     bind:click-right="onClickRight"
+    bind:click-left="onClickLeft"
+    bind:click-title="onClickTitle"
   />
 </demo-block>
 

@@ -32,7 +32,6 @@ category: 导航
 />
 <smart-nav-bar
   background="#E4EDFF"
-  custom-class="demo-nav-bar"
   left-text="HomeHomeHomeHomeHome"
   left-text-type="home"
   bind:click-left-text="onClickLeftText"
@@ -42,64 +41,40 @@ category: 导航
 ```js
 Page({
   onClickLeftText() {
-    ty.showToast({ title: '点击标题', icon: 'none' });
+    wx.showToast({ title: '点击左侧文本', icon: 'none' });
   },
 });
 ```
 
-```less
-.demo-nav-bar {
-  margin-top: 16px;
-}
-```
+### 二级页面-单图标
 
-### 二级页面
-
-二级页面的文本样式居中，左侧显示返回箭头，点击中央文本或左侧箭头时触发事件。
+当中间标题内容比较长，且两侧内容较少时可以设置 `v2.7.3` `side-width` 为 `min`。
 
 ```html
 <smart-nav-bar
-  title="设置"
+  title="ScheduleScheduleScheduleSchedule"
   left-arrow
+  right-icon="{{ iconMore }}"
+  side-width="min"
+  right-icon-size="24px"
   bind:click-right="onClickRight"
   bind:click-left="onClickLeft"
-  bind:click-title="onClickTitle"
-/>
-<smart-nav-bar
-  title="设置"
-  custom-class="demo-nav-bar"
-  right-text="删除"
-  right-text-color="#F04C4C"
-  left-arrow
-  bind:click-right-text="onClickRightText"
-  bind:click-left="onClickLeft"
-  bind:click-title="onClickTitle"
-/>
-<smart-nav-bar
-  title="设置"
-  custom-class="demo-nav-bar"
-  right-text="删除"
-  right-text-color="#F04C4C"
-  left-text="取消"
-  bind:click-right-text="onClickRightText"
-  bind:click-left-text="onClickLeftText"
   bind:click-title="onClickTitle"
 />
 ```
 
 ```js
+import More from '@tuya-miniapp/icons/dist/svg/More';
+
 Page({
+  data: {
+    iconMore: More,
+  },
   onClickLeft() {
     wx.showToast({ title: '点击返回', icon: 'none' });
   },
-  onClickLeftText() {
-    wx.showToast({ title: '点击返回', icon: 'none' });
-  },
-  onClickRightText() {
-    wx.showToast({ title: '点击右侧文字', icon: 'none' });
-  },
   onClickTitle() {
-    wx.showToast({ title: '点击标题', icon: 'none' });
+    wx.showToast({ title: '点击中央文本', icon: 'none' });
   },
   onClickRight() {
     wx.showToast({ title: '点击右侧', icon: 'none' });
@@ -107,107 +82,157 @@ Page({
 });
 ```
 
-## 右侧图标
+### 二级页面-常见情况
 
 ```html
 <smart-nav-bar
-  title="设置"
+  title="ScheduleScheduleScheduleSchedule"
   left-arrow
   right-icon="{{ iconMore }}"
-  right-icon-size="32px"
-  right-icon-color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
-  bind:click-right-icon="onClickRightIcon"
-/>
-<smart-nav-bar
-  title="设置"
-  left-arrow
-  custom-class="demo-nav-bar"
-  right-icon="{{ iconMore }}"
-  right-icon-size="32px"
-  right-icon-color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
-  bind:click-right-icon="onClickRightIcon"
+  right-icon-size="24px"
+  bind:click-right="onClickRight"
+  bind:click-left="onClickLeft"
+  bind:click-title="onClickTitle"
 >
   <smart-icon
     slot="right"
-    size="32px"
+    size="24px"
+    style="margin-right: 16px;"
     name="{{ iconHouse }}"
-    color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
   />
 </smart-nav-bar>
-```
-
-
-```js
-import iconHouse from '@tuya-miniapp/icons/dist/svg/House';
-import iconMore from '@tuya-miniapp/icons/dist/svg/More';
-
-Page({
-  data: {
-    iconHouse,
-    iconMore,
-  },
-
-  onClickRightIcon() {
-    wx.showToast({ title: '点击右侧图标', icon: 'none' });
-  },
-});
-```
-
-
-
-## 自定义图标
-
-可自定义图标的样式，进行更丰富的展示。
-
-```html
 <smart-nav-bar
-  title="Home"
-  left-arrow
-  left-icon="{{ iconHouse }}"
-  left-icon-size="32px"
-  left-icon-class="nav-bar-icon-home"
-  bind:click-left="onClickLeft"
-  bind:click-left-icon="onClickLeftIcon"
+  title="ScheduleScheduleScheduleSchedule"
+  right-text="确认"
+  left-text="取消"
+  right-text-color="#F04C4C"
+  bind:click-right-text="onClickRightText"
   bind:click-left-text="onClickLeftText"
   bind:click-title="onClickTitle"
-  bind:click-right="onClickRight"
+/>
+<smart-nav-bar
+  title="ScheduleScheduleScheduleSchedule"
+  left-arrow
+  right-text="确认"
+  right-text-color="#F04C4C"
+  bind:click-right-text="onClickRightText"
+  bind:click-left="onClickLeft"
+  bind:click-title="onClickTitle"
 />
 ```
 
 ```js
-import iconHouse from '@tuya-miniapp/icons/dist/svg/House';
+import House from '@tuya-miniapp/icons/dist/svg/House';
+import More from '@tuya-miniapp/icons/dist/svg/More';
 
 Page({
   data: {
-    iconHouse,
+    iconHouse: House,
+    iconMore: More,
   },
-
   onClickLeft() {
-    ty.showToast({ title: '点击返回', icon: 'none' });
+    wx.showToast({ title: '点击返回', icon: 'none' });
   },
-
-  onClickLeftIcon() {
-    ty.showToast({ title: '点击左侧图标', icon: 'none' });
-  },
-
   onClickLeftText() {
-    ty.showToast({ title: '点击返回', icon: 'none' });
+    wx.showToast({ title: '点击左侧文本', icon: 'none' });
   },
-
+  onClickRightText() {
+    wx.showToast({ title: '点击右侧文本', icon: 'none' });
+  },
   onClickTitle() {
-    ty.showToast({ title: '点击标题', icon: 'none' });
+    wx.showToast({ title: '点击中央文本', icon: 'none' });
   },
-
   onClickRight() {
-    ty.showToast({ title: '点击右侧', icon: 'none' });
+    wx.showToast({ title: '点击右侧', icon: 'none' });
   },
 });
 ```
 
-```less
-.nav-bar-icon-home {
-  margin-left: 16px;
-}
+### 二级页面-短标题
+
+当两侧操作内容较多时可以设置 `v2.7.3` `side-width` 为 `max`，减小标题区域的大小。
+
+```html
+<smart-nav-bar
+  title="ScheduleSchedule"
+  left-arrow
+  side-width="max"
+  bind:click-left="onClickLeft"
+  bind:click-title="onClickTitle"
+/>
+<smart-nav-bar
+  title="ScheduleSchedule"
+  left-text="Abbrechen"
+  right-text="Speichern"
+  right-text-color="#F04C4C"
+  side-width="max"
+  bind:click-left-text="onClickLeftText"
+  bind:click-title="onClickTitle"
+  bind:click-right-text="onClickRightText"
+/>
+<smart-nav-bar
+  title="ScheduleSchedule"
+  left-arrow
+  right-text="Speichern"
+  right-text-color="#F04C4C"
+  side-width="max"
+  bind:click-left="onClickLeft"
+  bind:click-title="onClickTitle"
+  bind:click-right-text="onClickRightText"
+/>
+```
+
+```js
+Page({
+  onClickLeft() {
+    wx.showToast({ title: '点击返回', icon: 'none' });
+  },
+  onClickLeftText() {
+    wx.showToast({ title: '点击左侧文本', icon: 'none' });
+  },
+  onClickRightText() {
+    wx.showToast({ title: '点击右侧文本', icon: 'none' });
+  },
+  onClickTitle() {
+    wx.showToast({ title: '点击中央文本', icon: 'none' });
+  },
+});
+```
+
+### 自定义宽度 `v2.7.3`
+
+`side-width` 也支持传如 `100`、`100px`、`100rpx` 去自定义两边的宽度。
+
+```html
+<smart-nav-bar
+  title="ScheduleScheduleScheduleSchedule"
+  left-arrow
+  side-width="100px"
+  right-icon="{{ iconMore }}"
+  right-icon-size="24px"
+  bind:click-right="onClickRight"
+  bind:click-left="onClickLeft"
+  bind:click-title="onClickTitle"
+/>
+```
+
+```js
+import More from '@tuya-miniapp/icons/dist/svg/More';
+
+Page({
+  data: {
+    iconMore: More,
+  },
+  onClickLeft() {
+    wx.showToast({ title: '点击返回', icon: 'none' });
+  },
+  onClickTitle() {
+    wx.showToast({ title: '点击中央文本', icon: 'none' });
+  },
+  onClickRight() {
+    wx.showToast({ title: '点击右侧', icon: 'none' });
+  },
+});
 ```
 
 ### 左标题
@@ -216,43 +241,21 @@ Page({
 
 ```html
 <smart-nav-bar
-  left-arrow
-  left-text="Home"
-  left-text-type="title"
-  bind:click-left="onClickLeft"
-  bind:click-left-text="onClickLeftText"
-  bind:click-right="onClickRight"
-/>
-
-<smart-nav-bar
-  custom-class="demo-nav-bar"
-  left-arrow
   left-text="Home"
   left-text-type="title"
   left-icon="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
-  bind:click-left="onClickLeft"
   bind:click-left-icon="onClickLeftIcon"
   bind:click-left-text="onClickLeftText"
-  bind:click-right="onClickRight"
 />
 ```
 
 ```js
 Page({
-  onClickLeft() {
-    ty.showToast({ title: '点击返回', icon: 'none' });
-  },
-
   onClickLeftIcon() {
-    ty.showToast({ title: '点击左侧图标', icon: 'none' });
+    wx.showToast({ title: '点击左侧图标', icon: 'none' });
   },
-
   onClickLeftText() {
-    ty.showToast({ title: '点击返回', icon: 'none' });
-  },
-
-  onClickRight() {
-    ty.showToast({ title: '点击右侧', icon: 'none' });
+    wx.showToast({ title: '点击左侧文本', icon: 'none' });
   },
 });
 ```
@@ -283,6 +286,7 @@ Page({
 | right-icon-size `v2.7.0` | 右侧图标大小    | _number_  | `32px`   |
 | left-icon-color `v2.7.0` | 左侧图标颜色    | _string_  | -   |
 | background `v2.7.0` | 整体背景色    | _string_  | -   |
+| side-width `v2.7.3` | 两边控制栏的宽度, 提供 `min`、`mid`、`max`三档内置值；也可以传具体宽度值    | _string\/number\/`min`\/`mid`\/`max`_  | `mid`   |
 
 ### Slot
 
@@ -329,7 +333,8 @@ Page({
 | --nav-bar-icon-size `@deprecated v2.7.0`   | _32px_     | 导航栏图标大小 |
 | --nav-bar-icon-color          | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | 导航栏图标颜色 |
 | --nav-bar-icon-margin `@deprecated v2.7.0`    | _0_      | 导航栏图标外边距 |
-| --nav-bar-text-font-size `v2.1.0`         | _16px_   | 导航栏文字大小 |
+| --nav-bar-text-font-size `v2.1.0`         | _16px_ `v2.1.0` _17px_ `v2.7.3`   | 导航栏侧边文字大小 |
+| --nav-bar-text-font-weight `v2.7.0`         | _600_ `v2.7.0` _normal_ `v2.7.3`   | 导航栏侧边文字字体字重 |
 | --nav-bar-text-color          | _var(--app-B2-N2, rgba(0, 0, 0, 1))_   | 导航栏文字颜色 |
 | --nav-bar-title-font-size     | _17px_                  | 导航栏标题文字大小 |
 | --nav-bar-title-font-weight   | _600_                                  | 导航栏标题字重 |
@@ -339,12 +344,13 @@ Page({
 | --nav-bar-home-text-color     | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | 导航栏首页文字颜色 |
 | --nav-bar-right-text-color `v2.5.1`  | _var(--app-B2-N1, rgba(0, 0, 0, 1))_  | 导航栏右侧文字颜色 |
 | --nav-bar-title-max-width `v2.6.0`    | _56%_ `v2.6.0` _calc(100% - 98px - 16px)_ `v2.7.0`   | 导航栏标题的宽度 |
-| --nav-bar-side-width `v2.7.0`    | _98px_   | 两边宽度 |
-| --nav-bar-text-padding `v2.7.0`    | _16px_   | 两边文字内边距 |
+| --nav-bar-side-width `v2.7.0`    | _98px_ `v2.7.0` _80px_ `v2.7.3`  | 两边默认宽度 |
+| --nav-bar-text-padding `v2.7.0`    | _20px_ `v2.7.0` _16px_ `v2.7.3`    | 两边文字内边距 |
 | --nav-bar-icon-padding `v2.7.0`    | _16px_   | 两边图标内边距 |
 | --nav-bar-title-margin `v2.7.0`    | _16px_   | 标题外边距 |
 | --nav-bar-home-max-width `v2.7.0`    | _calc(100% - 98px - 16px)_   | 小程序首页时左侧标题最大宽度 |
-| --nav-bar-left-title-padding `v2.7.0`    | _8px_   | 左侧标题模式时的左内边距 |
+| --nav-bar-side-width-min `v2.7.3`    | _40px_   | 侧边min时宽度 |
+| --nav-bar-side-width-max `v2.7.3`    | _105px_   | 侧边max时宽度 |
 
 
 
