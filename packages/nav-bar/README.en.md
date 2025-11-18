@@ -345,7 +345,7 @@ The component provides the following CSS variables for custom styling. Please re
 | --nav-bar-right-text-color `v2.5.1`  | _var(--app-B2-N1, rgba(0, 0, 0, 1))_  | Nav Bar Right Text Color |
 | --nav-bar-title-max-width `v2.6.0`    | _56%_ `v2.6.0` _calc(100% - 98px - 16px)_ `v2.7.0`   | Nav Bar Title Width |
 | --nav-bar-side-width `v2.7.0`    | _98px_ `v2.7.0` _80px_ `v2.7.3`   | Width of both sides |
-| --nav-bar-text-padding `v2.7.0`    | _16px_   | Text padding on both sides |
+| --nav-bar-text-padding `v2.7.0`    | _20px_ `v2.7.0` _16px_ `v2.7.3`   | Text padding on both sides |
 | --nav-bar-icon-padding `v2.7.0`    | _16px_   | Icon padding on both sides |
 | --nav-bar-title-margin `v2.7.0`    | _16px_   | Title margin |
 | --nav-bar-home-max-width `v2.7.0`    | _calc(100% - 98px - 16px)_   | Maximum width of the left title on the home page of the mini program |
