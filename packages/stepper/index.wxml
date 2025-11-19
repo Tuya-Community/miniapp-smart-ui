@@ -21,7 +21,6 @@
     class="smart-manrope input-class {{ utils.bem('stepper__input', { disabled: disabled || disableInput }) }}"
     style="{{ computed.inputStyle({ buttonSize, inputWidth }) }}"
     value="{{ currentValue }}"
-    focus="{{ focus }}"
     disabled="{{ disabled || disableInput }}"
     always-embed="{{ alwaysEmbed }}"
     bindinput="onInput"
