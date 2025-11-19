@@ -76,6 +76,7 @@ SmartComponent({
     currentValue: '',
     Minus,
     Plus,
+    focus: false,
     isInit: false,
   },
 
@@ -98,9 +99,9 @@ SmartComponent({
 
   methods: {
     observeValue() {
-      const { value, isInit } = this.data;
-      if (!isInit) return;
-      const currentValue = this.format(value, true);
+      const { value, isInit, focus } = this.data;
+      if (!isInit || `${value}` === `${this.data.currentValue}` || focus) return;
+      const currentValue = this.format(value, !this.data.focus);
       if (currentValue !== value) {
         this.$emit('change', currentValue);
       }
@@ -126,6 +127,7 @@ SmartComponent({
 
     onFocus(event: WechatMiniprogram.InputFocus) {
       this.$emit('focus', event.detail);
+      this.setData({ focus: true });
     },
 
     onBlur(event: WechatMiniprogram.InputBlur) {
@@ -136,7 +138,7 @@ SmartComponent({
       const strStepValue = isDef(this.data.decimalLength)
         ? stepValue.toFixed(this.data.decimalLength)
         : stepValue.toString();
-      this.setData({ currentValue: strStepValue });
+      this.setData({ currentValue: strStepValue, focus: false });
       this.emitChange(strStepValue);
 
       this.$emit('blur', {
