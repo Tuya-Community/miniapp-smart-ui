@@ -4,8 +4,11 @@ page {
   padding: 0 0 100rpx;
   color: var(--app-B1-N1);
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial,
-    Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial,
+    Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif; */
+
+  /* font-family: 'San Francisco', 'PingFang SC', sans-serif; */
   background: var(--app-B1, #f6f7fb);
   -webkit-font-smoothing: antialiased;
 }
