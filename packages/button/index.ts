@@ -52,17 +52,17 @@ SmartComponent({
     onClick(event: WechatMiniprogram.TouchEvent) {
       this.$emit('click', event);
 
-      const { canIUseGetUserProfile, openType, getUserProfileDesc, lang } = this.data;
+      // const { canIUseGetUserProfile, openType, getUserProfileDesc, lang } = this.data;
 
-      if (openType === 'getUserInfo' && canIUseGetUserProfile && typeof wx !== 'undefined') {
-        wx.getUserProfile({
-          desc: getUserProfileDesc || '  ',
-          lang: lang || 'en',
-          complete: userProfile => {
-            this.$emit('getuserinfo', userProfile);
-          },
-        });
-      }
+      // if (openType === 'getUserInfo' && canIUseGetUserProfile && typeof wx !== 'undefined') {
+      //   wx.getUserProfile({
+      //     desc: getUserProfileDesc || '  ',
+      //     lang: lang || 'en',
+      //     complete: userProfile => {
+      //       this.$emit('getuserinfo', userProfile);
+      //     },
+      //   });
+      // }
     },
   },
 });
