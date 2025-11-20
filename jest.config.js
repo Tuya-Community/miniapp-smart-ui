@@ -3,12 +3,13 @@ module.exports = {
   verbose: true,
   testEnvironment: 'jsdom',
   testURL: 'https://jest.test',
-  moduleFileExtensions: ['js', 'ts'],
+  moduleFileExtensions: ['js', 'ts', 'rjs'],
   setupFiles: ['jest-canvas-mock', './jest.setup.js'],
   testMatch: ['<rootDir>/packages/**/test/**/*.spec.{js,ts}'],
   transformIgnorePatterns: ['/node_modules/(?!(@vant|@tuya-miniapp/icons)/)'],
   transform: {
-    '^.+\\.js?$': 'babel-jest', // Adding this line solved the issue
+    '^.+\\.rjs$': '<rootDir>/jest-rjs-transformer.js', // Custom transformer for .rjs files
+    '^.+\\.js$': 'babel-jest', // Handle .js files
     '^.+\\.ts?$': 'ts-jest',
   },
   collectCoverageFrom: [
