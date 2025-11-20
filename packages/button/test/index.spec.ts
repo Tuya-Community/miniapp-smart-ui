@@ -434,4 +434,223 @@ describe('button', () => {
     await simulate.sleep(10);
     expect(clickEvent).toBeTruthy();
   });
+
+  test('should call wx.getUserProfile when openType is getUserInfo and canIUseGetUserProfile is true', async () => {
+    let getUserInfoEvent: any = null;
+    const mockUserProfile = {
+      userInfo: {
+        nickName: 'test user',
+        avatarUrl: 'https://example.com/avatar.png',
+      },
+      rawData: '{}',
+      signature: '',
+      encryptedData: '',
+      iv: '',
+      errMsg: 'getUserProfile:ok',
+    };
+
+    // Mock wx.getUserProfile
+    const originalGetUserProfile = wx.getUserProfile;
+    (wx as any).getUserProfile = jest.fn((options: any) => {
+      if (options && options.complete) {
+        options.complete(mockUserProfile);
+      }
+    });
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-button': SmartButton,
+        },
+        template: `
+          <smart-button
+            id="wrapper"
+            open-type="getUserInfo"
+            bind:getuserinfo="onGetUserInfo"
+          />
+        `,
+        methods: {
+          onGetUserInfo(event: any) {
+            getUserInfoEvent = event;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    // Set canIUseGetUserProfile to true
+    if (instance) {
+      instance.setData({ canIUseGetUserProfile: true });
+      await simulate.sleep(10);
+    }
+
+    const btn = wrapper?.querySelector('.smart-button');
+    btn?.dispatchEvent('tap');
+    await simulate.sleep(10);
+
+    // Verify wx.getUserProfile was called
+    expect((wx as any).getUserProfile).toHaveBeenCalled();
+    expect((wx as any).getUserProfile).toHaveBeenCalledWith(
+      expect.objectContaining({
+        desc: '  ', // default value
+        lang: 'en', // default value
+        complete: expect.any(Function),
+      })
+    );
+
+    // Verify getuserinfo event was emitted
+    expect(getUserInfoEvent).toBeTruthy();
+    expect(getUserInfoEvent.detail).toEqual(mockUserProfile);
+
+    // Restore
+    (wx as any).getUserProfile = originalGetUserProfile;
+  });
+
+  test('should use custom getUserProfileDesc and lang when provided', async () => {
+    const mockUserProfile = {
+      userInfo: {
+        nickName: 'test user',
+        avatarUrl: 'https://example.com/avatar.png',
+      },
+      rawData: '{}',
+      signature: '',
+      encryptedData: '',
+      iv: '',
+      errMsg: 'getUserProfile:ok',
+    };
+
+    // Mock wx.getUserProfile
+    const originalGetUserProfile = wx.getUserProfile;
+    (wx as any).getUserProfile = jest.fn((options: any) => {
+      if (options && options.complete) {
+        options.complete(mockUserProfile);
+      }
+    });
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-button': SmartButton,
+        },
+        template: `
+          <smart-button
+            id="wrapper"
+            open-type="getUserInfo"
+            get-user-profile-desc="用于完善用户资料"
+            lang="zh_CN"
+          />
+        `,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    // Set canIUseGetUserProfile to true
+    if (instance) {
+      instance.setData({ canIUseGetUserProfile: true });
+      await simulate.sleep(10);
+    }
+
+    const btn = wrapper?.querySelector('.smart-button');
+    btn?.dispatchEvent('tap');
+    await simulate.sleep(10);
+
+    // Verify wx.getUserProfile was called with custom desc and lang
+    expect(wx.getUserProfile).toHaveBeenCalled();
+    expect(wx.getUserProfile).toHaveBeenCalledWith(
+      expect.objectContaining({
+        desc: '用于完善用户资料',
+        lang: 'zh_CN',
+        complete: expect.any(Function),
+      })
+    );
+
+    // Restore
+    (wx as any).getUserProfile = originalGetUserProfile;
+  });
+
+  test('should not call wx.getUserProfile when openType is not getUserInfo', async () => {
+    // Mock wx.getUserProfile
+    const originalGetUserProfile = wx.getUserProfile;
+    wx.getUserProfile = jest.fn();
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-button': SmartButton,
+        },
+        template: `
+          <smart-button
+            id="wrapper"
+            open-type="contact"
+          />
+        `,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    // Set canIUseGetUserProfile to true
+    if (instance) {
+      instance.setData({ canIUseGetUserProfile: true });
+      await simulate.sleep(10);
+    }
+
+    const btn = wrapper?.querySelector('.smart-button');
+    btn?.dispatchEvent('tap');
+    await simulate.sleep(10);
+
+    // Verify wx.getUserProfile was not called
+    expect((wx as any).getUserProfile).not.toHaveBeenCalled();
+
+    // Restore
+    (wx as any).getUserProfile = originalGetUserProfile;
+  });
+
+  test('should not call wx.getUserProfile when canIUseGetUserProfile is false', async () => {
+    // Mock wx.getUserProfile
+    const originalGetUserProfile = wx.getUserProfile;
+    wx.getUserProfile = jest.fn();
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-button': SmartButton,
+        },
+        template: `
+          <smart-button
+            id="wrapper"
+            open-type="getUserInfo"
+          />
+        `,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    // Set canIUseGetUserProfile to false
+    if (instance) {
+      instance.setData({ canIUseGetUserProfile: false });
+      await simulate.sleep(10);
+    }
+
+    const btn = wrapper?.querySelector('.smart-button');
+    btn?.dispatchEvent('tap');
+    await simulate.sleep(10);
+
+    // Verify wx.getUserProfile was not called
+    expect((wx as any).getUserProfile).not.toHaveBeenCalled();
+
+    // Restore
+    (wx as any).getUserProfile = originalGetUserProfile;
+  });
 });
