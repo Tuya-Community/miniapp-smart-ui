@@ -11,7 +11,7 @@ module.exports = {
     '^.+\\.js?$': 'babel-jest', // Adding this line solved the issue
     '^.+\\.ts?$': 'ts-jest',
   },
-  collectCoverageFrom: ['<rootDir>/packages/**/*.{js,ts}', '!**/test/**'],
+  collectCoverageFrom: ['<rootDir>/packages/**/*.{js,ts}', '!**/test/**', '!**/demo/**'],
   preset: 'ts-jest',
   snapshotSerializers: ['miniprogram-simulate/jest-snapshot-plugin'],
 };

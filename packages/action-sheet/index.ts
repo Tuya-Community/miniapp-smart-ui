@@ -77,14 +77,14 @@ SmartComponent({
           this.onClose();
         }
 
-        if (item.openType === 'getUserInfo' && canIUseGetUserProfile) {
-          wx.getUserProfile({
-            desc: item.getUserProfileDesc || '  ',
-            complete: userProfile => {
-              this.$emit('getuserinfo', userProfile);
-            },
-          });
-        }
+        // if (item.openType === 'getUserInfo' && canIUseGetUserProfile) {
+        //   wx.getUserProfile({
+        //     desc: item.getUserProfileDesc || '  ',
+        //     complete: userProfile => {
+        //       this.$emit('getuserinfo', userProfile);
+        //     },
+        //   });
+        // }
       }
     },
 
