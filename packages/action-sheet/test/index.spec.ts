@@ -535,5 +535,248 @@ describe('action-sheet', () => {
       expect(afterLeaveCalled).toBe(true);
     }
   });
+
+  test('should call wx.getUserProfile when openType is getUserInfo', async () => {
+    const getUserProfileSpy = jest.spyOn(wx, 'getUserProfile');
+    let getUserInfoEvent: any = null;
+
+    const actions = [
+      {
+        name: '获取用户信息',
+        openType: 'getUserInfo',
+        getUserProfileDesc: '用于完善用户资料',
+      },
+    ];
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-action-sheet': SmartActionSheet,
+        },
+        template: `
+          <smart-action-sheet
+            id="wrapper"
+            show="{{ true }}"
+            actions="{{ actions }}"
+            bind:getuserinfo="onGetUserInfo"
+          />
+        `,
+        data: {
+          actions,
+        },
+        methods: {
+          onGetUserInfo(event: any) {
+            getUserInfoEvent = event.detail;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      // Set canIUseGetUserProfile to true
+      instance.setData({ canIUseGetUserProfile: true });
+      await simulate.sleep(10);
+      
+      // Call onSelect with the action item
+      instance.onSelect({
+        currentTarget: {
+          dataset: { index: 0 },
+        },
+      } as any);
+      await simulate.sleep(20);
+      
+      // Should call wx.getUserProfile
+      expect(getUserProfileSpy).toHaveBeenCalledWith({
+        desc: '用于完善用户资料',
+        complete: expect.any(Function),
+      });
+      
+      // Simulate the complete callback
+      const callArgs = getUserProfileSpy.mock.calls[0][0];
+      if (callArgs && callArgs.complete) {
+        const mockUserProfile = {
+          userInfo: {
+            nickName: 'test user',
+            avatarUrl: 'https://example.com/avatar.png',
+          },
+          rawData: '{}',
+          signature: '',
+          encryptedData: '',
+          iv: '',
+          errMsg: 'getUserProfile:ok',
+        };
+        callArgs.complete(mockUserProfile);
+        await simulate.sleep(10);
+        
+        // Should emit getuserinfo event
+        expect(getUserInfoEvent).toEqual(mockUserProfile);
+      }
+      
+      getUserProfileSpy.mockRestore();
+    }
+  });
+
+  test('should use default desc when getUserProfileDesc is not provided', async () => {
+    const getUserProfileSpy = jest.spyOn(wx, 'getUserProfile');
+
+    const actions = [
+      {
+        name: '获取用户信息',
+        openType: 'getUserInfo',
+      },
+    ];
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-action-sheet': SmartActionSheet,
+        },
+        template: `
+          <smart-action-sheet
+            id="wrapper"
+            show="{{ true }}"
+            actions="{{ actions }}"
+          />
+        `,
+        data: {
+          actions,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      // Set canIUseGetUserProfile to true
+      instance.setData({ canIUseGetUserProfile: true });
+      await simulate.sleep(10);
+      
+      // Call onSelect with the action item
+      instance.onSelect({
+        currentTarget: {
+          dataset: { index: 0 },
+        },
+      } as any);
+      await simulate.sleep(20);
+      
+      // Should call wx.getUserProfile with default desc
+      expect(getUserProfileSpy).toHaveBeenCalledWith({
+        desc: '  ',
+        complete: expect.any(Function),
+      });
+      
+      getUserProfileSpy.mockRestore();
+    }
+  });
+
+  test('should not call wx.getUserProfile when canIUseGetUserProfile is false', async () => {
+    const getUserProfileSpy = jest.spyOn(wx, 'getUserProfile');
+
+    const actions = [
+      {
+        name: '获取用户信息',
+        openType: 'getUserInfo',
+      },
+    ];
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-action-sheet': SmartActionSheet,
+        },
+        template: `
+          <smart-action-sheet
+            id="wrapper"
+            show="{{ true }}"
+            actions="{{ actions }}"
+          />
+        `,
+        data: {
+          actions,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      // Set canIUseGetUserProfile to false
+      instance.setData({ canIUseGetUserProfile: false });
+      await simulate.sleep(10);
+      
+      // Call onSelect with the action item
+      instance.onSelect({
+        currentTarget: {
+          dataset: { index: 0 },
+        },
+      } as any);
+      await simulate.sleep(10);
+      
+      // Should not call wx.getUserProfile
+      expect(getUserProfileSpy).not.toHaveBeenCalled();
+      
+      getUserProfileSpy.mockRestore();
+    }
+  });
+
+  test('should not call wx.getUserProfile when openType is not getUserInfo', async () => {
+    const getUserProfileSpy = jest.spyOn(wx, 'getUserProfile');
+
+    const actions = [
+      {
+        name: '普通选项',
+        openType: 'default',
+      },
+    ];
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-action-sheet': SmartActionSheet,
+        },
+        template: `
+          <smart-action-sheet
+            id="wrapper"
+            show="{{ true }}"
+            actions="{{ actions }}"
+          />
+        `,
+        data: {
+          actions,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      // Set canIUseGetUserProfile to true
+      instance.setData({ canIUseGetUserProfile: true });
+      await simulate.sleep(10);
+      
+      // Call onSelect with the action item
+      instance.onSelect({
+        currentTarget: {
+          dataset: { index: 0 },
+        },
+      } as any);
+      await simulate.sleep(10);
+      
+      // Should not call wx.getUserProfile when openType is not getUserInfo
+      expect(getUserProfileSpy).not.toHaveBeenCalled();
+      
+      getUserProfileSpy.mockRestore();
+    }
+  });
 });
 
