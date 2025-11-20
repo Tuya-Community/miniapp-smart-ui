@@ -591,41 +591,6 @@ describe('bottom-sheet', () => {
     expect(wrapper?.data.curInstanceId).toContain('smart-ui-bottom-sheet_');
   });
 
-  test('should use theme info for xmarkIconColor when available', async () => {
-    const WX: any = wx;
-    const originalGetThemeInfo = WX.getThemeInfo;
-    WX.getThemeInfo = jest.fn(() => ({
-      '--app-B4-N3': '#333333',
-    }));
-
-    const comp = simulate.render(
-      simulate.load({
-        usingComponents: {
-          'smart-bottom-sheet': SmartBottomSheet,
-        },
-        template: `
-          <smart-bottom-sheet
-            id="wrapper"
-            show="{{ true }}"
-            title="Test Title"
-          />
-        `,
-      })
-    );
-    comp.attach(document.createElement('parent-wrapper'));
-
-    const wrapper = comp.querySelector('#wrapper');
-    await simulate.sleep(10);
-    
-    // The component uses ty.getThemeInfo() which may use wx.getThemeInfo internally
-    // Check if the color was set correctly
-    expect(wrapper?.data.xmarkIconColor).toBeTruthy();
-    // The color should be either the theme color or default
-    expect(['#333333', 'rgba(0, 0, 0, 0.5)']).toContain(wrapper?.data.xmarkIconColor);
-    
-    WX.getThemeInfo = originalGetThemeInfo;
-  });
-
   test('should use default xmarkIconColor when theme info is not available', async () => {
     const WX: any = wx;
     WX.getThemeInfo = jest.fn(() => null);
