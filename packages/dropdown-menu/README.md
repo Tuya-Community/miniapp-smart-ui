@@ -161,7 +161,7 @@ Page({
     ],
   },
   onBeforeChange({ detail: { status, callback }}) {
-    wx.showModal({
+    ty.showModal({
       title: '异步打开/关闭',
       content: `确定要${status ? '打开' : '关闭'}下拉菜单吗？`,
       success: (res) => {

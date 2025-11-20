@@ -112,7 +112,7 @@ Page({
   },
 
   onChange({ detail }) {
-    wx.showModal({
+    ty.showModal({
       title: 'Prompt',
       content: 'Switch the toggle?',
       success: (res) => {

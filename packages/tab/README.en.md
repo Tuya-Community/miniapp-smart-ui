@@ -41,7 +41,7 @@ Page({
   },
 
   onChange(event) {
-    wx.showToast({
+    ty.showToast({
       title: `Switched to tab ${event.detail.name}`,
       icon: 'none',
     });
@@ -103,7 +103,7 @@ Set the `disabled` attribute to disable a tab. If you need to listen for click e
 ```javascript
 Page({
   onClickDisabled(event) {
-    wx.showToast({
+    ty.showToast({
       title: `Tab ${event.detail.name} is disabled`,
       icon: 'none',
     });
@@ -125,7 +125,7 @@ You can bind the `click` event on `smart-tabs` to get the title and identifier o
 ```javascript
 Page({
   onClick(event) {
-    wx.showToast({
+    ty.showToast({
       title: `Clicked tab ${event.detail.name}`,
       icon: 'none',
     });
@@ -209,7 +209,7 @@ Page({
   },
 
   onChange(event) {
-    wx.showToast({
+    ty.showToast({
       title: `Switched to tab ${event.detail.name}`,
       icon: 'none',
     });
@@ -217,7 +217,7 @@ Page({
   onBeforeChange(event) {
     const { callback, title } = event.detail;
     
-    wx.showModal({
+    ty.showModal({
       title: 'Asynchronous Switch',
       content: `Are you sure you want to switch to the ${title} tab?`,
       success: (res) => {
@@ -264,7 +264,7 @@ Page({
   },
 
   onChange(event) {
-    wx.showToast({
+    ty.showToast({
       title: `Switched to tab ${event.detail.name}`,
       icon: 'none',
     });
