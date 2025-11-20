@@ -304,6 +304,28 @@ global.ty = {
 
 global.wx = {
   getThemeInfo: () => THEME_INFO,
+  getUserProfile: options => {
+    const mockUserInfo = {
+      userInfo: {
+        nickName: 'test user',
+        avatarUrl: 'https://example.com/avatar.png',
+      },
+      rawData: '{}',
+      signature: '',
+      encryptedData: '',
+      iv: '',
+    };
+
+    if (options && options.complete) {
+      options.complete(mockUserInfo);
+    }
+    if (options && options.success) {
+      options.success(mockUserInfo);
+    }
+    if (options && options.fail) {
+      // Don't call fail by default, but allow it to be called if needed
+    }
+  },
 };
 
 global.getCurrentPages = () => [{}];
