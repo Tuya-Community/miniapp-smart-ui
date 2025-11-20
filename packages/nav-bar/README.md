@@ -41,7 +41,7 @@ category: 导航
 ```js
 Page({
   onClickLeftText() {
-    wx.showToast({ title: '点击左侧文本', icon: 'none' });
+    ty.showToast({ title: '点击左侧文本', icon: 'none' });
   },
 });
 ```
@@ -71,13 +71,13 @@ Page({
     iconMore: More,
   },
   onClickLeft() {
-    wx.showToast({ title: '点击返回', icon: 'none' });
+    ty.showToast({ title: '点击返回', icon: 'none' });
   },
   onClickTitle() {
-    wx.showToast({ title: '点击中央文本', icon: 'none' });
+    ty.showToast({ title: '点击中央文本', icon: 'none' });
   },
   onClickRight() {
-    wx.showToast({ title: '点击右侧', icon: 'none' });
+    ty.showToast({ title: '点击右侧', icon: 'none' });
   },
 });
 ```
@@ -131,19 +131,19 @@ Page({
     iconMore: More,
   },
   onClickLeft() {
-    wx.showToast({ title: '点击返回', icon: 'none' });
+    ty.showToast({ title: '点击返回', icon: 'none' });
   },
   onClickLeftText() {
-    wx.showToast({ title: '点击左侧文本', icon: 'none' });
+    ty.showToast({ title: '点击左侧文本', icon: 'none' });
   },
   onClickRightText() {
-    wx.showToast({ title: '点击右侧文本', icon: 'none' });
+    ty.showToast({ title: '点击右侧文本', icon: 'none' });
   },
   onClickTitle() {
-    wx.showToast({ title: '点击中央文本', icon: 'none' });
+    ty.showToast({ title: '点击中央文本', icon: 'none' });
   },
   onClickRight() {
-    wx.showToast({ title: '点击右侧', icon: 'none' });
+    ty.showToast({ title: '点击右侧', icon: 'none' });
   },
 });
 ```
@@ -185,16 +185,16 @@ Page({
 ```js
 Page({
   onClickLeft() {
-    wx.showToast({ title: '点击返回', icon: 'none' });
+    ty.showToast({ title: '点击返回', icon: 'none' });
   },
   onClickLeftText() {
-    wx.showToast({ title: '点击左侧文本', icon: 'none' });
+    ty.showToast({ title: '点击左侧文本', icon: 'none' });
   },
   onClickRightText() {
-    wx.showToast({ title: '点击右侧文本', icon: 'none' });
+    ty.showToast({ title: '点击右侧文本', icon: 'none' });
   },
   onClickTitle() {
-    wx.showToast({ title: '点击中央文本', icon: 'none' });
+    ty.showToast({ title: '点击中央文本', icon: 'none' });
   },
 });
 ```
@@ -224,13 +224,13 @@ Page({
     iconMore: More,
   },
   onClickLeft() {
-    wx.showToast({ title: '点击返回', icon: 'none' });
+    ty.showToast({ title: '点击返回', icon: 'none' });
   },
   onClickTitle() {
-    wx.showToast({ title: '点击中央文本', icon: 'none' });
+    ty.showToast({ title: '点击中央文本', icon: 'none' });
   },
   onClickRight() {
-    wx.showToast({ title: '点击右侧', icon: 'none' });
+    ty.showToast({ title: '点击右侧', icon: 'none' });
   },
 });
 ```
@@ -252,10 +252,10 @@ Page({
 ```js
 Page({
   onClickLeftIcon() {
-    wx.showToast({ title: '点击左侧图标', icon: 'none' });
+    ty.showToast({ title: '点击左侧图标', icon: 'none' });
   },
   onClickLeftText() {
-    wx.showToast({ title: '点击左侧文本', icon: 'none' });
+    ty.showToast({ title: '点击左侧文本', icon: 'none' });
   },
 });
 ```

@@ -41,7 +41,7 @@ The text style on the home page is aligned to the left and bold by default, clic
 ```js
 Page({
   onClickLeftText() {
-    wx.showToast({ title: 'Clicked left text', icon: 'none' });
+    ty.showToast({ title: 'Clicked left text', icon: 'none' });
   },
 });
 ```
@@ -71,13 +71,13 @@ Page({
     iconMore: More,
   },
   onClickLeft() {
-    wx.showToast({ title: 'Clicked back', icon: 'none' });
+    ty.showToast({ title: 'Clicked back', icon: 'none' });
   },
   onClickTitle() {
-    wx.showToast({ title: 'Clicked central text', icon: 'none' });
+    ty.showToast({ title: 'Clicked central text', icon: 'none' });
   },
   onClickRight() {
-    wx.showToast({ title: 'Clicked right side', icon: 'none' });
+    ty.showToast({ title: 'Clicked right side', icon: 'none' });
   },
 });
 ```
@@ -131,19 +131,19 @@ Page({
     iconMore: More,
   },
   onClickLeft() {
-    wx.showToast({ title: 'Clicked back', icon: 'none' });
+    ty.showToast({ title: 'Clicked back', icon: 'none' });
   },
   onClickLeftText() {
-    wx.showToast({ title: 'Clicked left text', icon: 'none' });
+    ty.showToast({ title: 'Clicked left text', icon: 'none' });
   },
   onClickRightText() {
-    wx.showToast({ title: 'Clicked right text', icon: 'none' });
+    ty.showToast({ title: 'Clicked right text', icon: 'none' });
   },
   onClickTitle() {
-    wx.showToast({ title: 'Clicked central text', icon: 'none' });
+    ty.showToast({ title: 'Clicked central text', icon: 'none' });
   },
   onClickRight() {
-    wx.showToast({ title: 'Clicked right side', icon: 'none' });
+    ty.showToast({ title: 'Clicked right side', icon: 'none' });
   },
 });
 ```
@@ -185,16 +185,16 @@ When there are many operation contents on both sides, you can set `v2.7.3` `side
 ```js
 Page({
   onClickLeft() {
-    wx.showToast({ title: 'Clicked back', icon: 'none' });
+    ty.showToast({ title: 'Clicked back', icon: 'none' });
   },
   onClickLeftText() {
-    wx.showToast({ title: 'Clicked left text', icon: 'none' });
+    ty.showToast({ title: 'Clicked left text', icon: 'none' });
   },
   onClickRightText() {
-    wx.showToast({ title: 'Clicked right text', icon: 'none' });
+    ty.showToast({ title: 'Clicked right text', icon: 'none' });
   },
   onClickTitle() {
-    wx.showToast({ title: 'Clicked central text', icon: 'none' });
+    ty.showToast({ title: 'Clicked central text', icon: 'none' });
   },
 });
 ```
@@ -224,13 +224,13 @@ Page({
     iconMore: More,
   },
   onClickLeft() {
-    wx.showToast({ title: 'Clicked back', icon: 'none' });
+    ty.showToast({ title: 'Clicked back', icon: 'none' });
   },
   onClickTitle() {
-    wx.showToast({ title: 'Clicked central text', icon: 'none' });
+    ty.showToast({ title: 'Clicked central text', icon: 'none' });
   },
   onClickRight() {
-    wx.showToast({ title: 'Clicked right side', icon: 'none' });
+    ty.showToast({ title: 'Clicked right side', icon: 'none' });
   },
 });
 ```
@@ -252,10 +252,10 @@ Some secondary page titles are located on the left side, or have an icon attache
 ```js
 Page({
   onClickLeftIcon() {
-    wx.showToast({ title: 'Clicked left icon', icon: 'none' });
+    ty.showToast({ title: 'Clicked left icon', icon: 'none' });
   },
   onClickLeftText() {
-    wx.showToast({ title: 'Clicked left text', icon: 'none' });
+    ty.showToast({ title: 'Clicked left text', icon: 'none' });
   },
 });
 ```
