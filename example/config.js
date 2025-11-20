@@ -169,10 +169,6 @@ export default [
         path: '/skeleton',
         title: I18n.t('skeletonScreen'),
       },
-      // {
-      //   path: '/steps',
-      //   title: 'Steps 步骤条',
-      // },
       {
         path: '/sticky',
         title: I18n.t('stickyLayout'),
