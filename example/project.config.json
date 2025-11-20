@@ -185,11 +185,6 @@
           "query": ""
         },
         {
-          "name": "area",
-          "pathName": "pages/area/index",
-          "query": ""
-        },
-        {
           "name": "tab",
           "pathName": "pages/tab/index",
           "query": ""

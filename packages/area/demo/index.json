@@ -1,8 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "smart-area": "../../area/index",
-    "smart-toast": "../../toast/index",
-    "demo-block": "../../../example/components/demo-block/index"
-  }
-}

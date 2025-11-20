@@ -9,7 +9,7 @@ async function run() {
   clearRjs();
   tansI18();
   clearErrorCSS();
-  deleteFolderRecursive(path.join(__dirname, `../example/dist/area/demo`));
+  // deleteFolderRecursive(path.join(__dirname, `../example/dist/area/demo`));
   // copySvg();
   // tansSvgImport();
 }
