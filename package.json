@@ -1,6 +1,6 @@
 {
   "name": "@tuya-miniapp/smart-ui",
-  "version": "2.7.2",
+  "version": "2.7.3-beta-1",
   "author": "MiniApp Team",
   "license": "MIT",
   "miniprogram": "lib",
@@ -17,6 +17,7 @@
     "build:wx": "node build/wx.mjs",
     "test": "TZ=Asia/Shanghai jest",
     "test:watch": "jest --watch",
+    "test:cover": "jest --coverage",
     "preMinipackBuild": "yarn && MODE=build NODE_OPTIONS=--no-experimental-fetch npx gulp -f build/compiler.js --series buildEs buildLib buildExample",
     "changelog": "conventional-changelog -p -i CHANGELOG.md -s"
   },
@@ -87,7 +88,7 @@
   ],
   "dependencies": {
     "@ray-js/components-ty-slider": "^0.3.7",
-    "@tuya-miniapp/icons": "^2.2.0"
+    "@tuya-miniapp/icons": "^2.3.0"
   },
   "maintainers": [
     {

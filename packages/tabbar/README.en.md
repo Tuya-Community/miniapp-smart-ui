@@ -164,7 +164,7 @@ Page({
     active: 0,
   },
   onClick(event) {
-    wx.showToast({
+    ty.showToast({
       title: `Clicked on label ${event.detail + 1}`,
       icon: 'none',
     });

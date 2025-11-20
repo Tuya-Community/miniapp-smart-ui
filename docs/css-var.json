@@ -1909,7 +1909,7 @@
   },
   "nav-bar-text-font-size": {
     "name": "@nav-bar-text-font-size",
-    "value": "16px",
+    "value": "17px",
     "decs": ""
   },
   "nav-bar-title-font-size": {
@@ -1949,12 +1949,12 @@
   },
   "nav-bar-text-font-weight": {
     "name": "@nav-bar-text-font-weight",
-    "value": "600",
+    "value": "normal",
     "decs": ""
   },
   "nav-bar-side-width": {
     "name": "@nav-bar-side-width",
-    "value": "98px",
+    "value": "80px",
     "decs": ""
   },
   "nav-bar-text-padding": {
@@ -1975,6 +1975,16 @@
   "nav-bar-left-title-padding": {
     "name": "@nav-bar-left-title-padding",
     "value": "8px",
+    "decs": ""
+  },
+  "nav-bar-side-width-min": {
+    "name": "@nav-bar-side-width-min",
+    "value": "40px",
+    "decs": ""
+  },
+  "nav-bar-side-width-max": {
+    "name": "@nav-bar-side-width-max",
+    "value": "105px",
     "decs": ""
   },
   "notice-bar-height": {

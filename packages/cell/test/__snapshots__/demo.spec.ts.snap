@@ -379,7 +379,6 @@ exports[`should render demo and match snapshot 1`] = `
                       alwaysEmbed="{{false}}"
                       class="smart-manrope input-class smart-stepper__input"
                       disabled="{{false}}"
-                      focus=""
                       style=""
                       type="digit"
                       value="{{1}}"

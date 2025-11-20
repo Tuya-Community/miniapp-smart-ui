@@ -41,7 +41,7 @@ Page({
   },
 
   onChange(event) {
-    wx.showToast({
+    ty.showToast({
       title: `切换到标签 ${event.detail.name}`,
       icon: 'none',
     });
@@ -103,7 +103,7 @@ Page({
 ```javascript
 Page({
   onClickDisabled(event) {
-    wx.showToast({
+    ty.showToast({
       title: `标签 ${event.detail.name} 已被禁用`,
       icon: 'none',
     });
@@ -125,7 +125,7 @@ Page({
 ```javascript
 Page({
   onClick(event) {
-    wx.showToast({
+    ty.showToast({
       title: `点击标签 ${event.detail.name}`,
       icon: 'none',
     });
@@ -209,7 +209,7 @@ Page({
   },
 
   onChange(event) {
-    wx.showToast({
+    ty.showToast({
       title: `切换到标签 ${event.detail.name}`,
       icon: 'none',
     });
@@ -217,7 +217,7 @@ Page({
   onBeforeChange(event) {
     const { callback, title } = event.detail;
     
-    wx.showModal({
+    ty.showModal({
       title: '异步切换',
       content: `确定要切换至 ${title} tab吗？`,
       success: (res) => {
@@ -266,7 +266,7 @@ Page({
   },
 
   onChange(event) {
-    wx.showToast({
+    ty.showToast({
       title: `切换到标签 ${event.detail.name}`,
       icon: 'none',
     });

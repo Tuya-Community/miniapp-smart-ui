@@ -144,4 +144,4 @@ The component provides the following CSS variables that can be used for custom s
 
 ### IndexAnchor is ineffective when nested in scrolling elements?
 
-As `<IndexBar />` uses wx.pageScrollTo internally to scroll to the specified position, it only supports page-level scrolling and cannot be nested in scrolling elements, such as when `view` uses `overflow: scroll;` or `scroll-view`. For details, see [WeChat Mini Program Documentation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/wx.pageScrollTo.html).
+As `<IndexBar />` uses ty.pageScrollTo internally to scroll to the specified position, it only supports page-level scrolling and cannot be nested in scrolling elements, such as when `view` uses `overflow: scroll;` or `scroll-view`. For details, see [WeChat Mini Program Documentation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/ty.pageScrollTo.html).

@@ -169,10 +169,6 @@ export default [
         path: '/skeleton',
         title: I18n.t('skeletonScreen'),
       },
-      // {
-      //   path: '/steps',
-      //   title: 'Steps 步骤条',
-      // },
       {
         path: '/sticky',
         title: I18n.t('stickyLayout'),
@@ -220,10 +216,6 @@ export default [
     groupName: I18n.t('businessComponent'),
     icon: 'ellipsis',
     list: [
-      // {
-      //   path: '/area',
-      //   title: 'Area 省市区选择',
-      // },
       {
         path: '/battery',
         title: I18n.t('battery'),
@@ -237,10 +229,6 @@ export default [
   // {
   //   groupName: '业务组件',
   //   list: [
-  //     {
-  //       path: '/area',
-  //       title: 'Area 省市区选择',
-  //     },
   //     {
   //       path: '/card',
   //       title: 'Card 商品卡片',

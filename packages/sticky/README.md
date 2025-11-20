@@ -60,7 +60,7 @@ Page({
 
   onReady() {
     this.setData({
-      container: () => wx.createSelectorQuery().select('#container'),
+      container: () => ty.createSelectorQuery().select('#container'),
     });
   },
 });
@@ -93,7 +93,7 @@ Page({
   },
 
   onScroll(event) {
-    wx.createSelectorQuery()
+    ty.createSelectorQuery()
       .select('#scroller')
       .boundingClientRect((res) => {
         this.setData({

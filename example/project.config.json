@@ -140,11 +140,6 @@
           "query": ""
         },
         {
-          "name": "steps",
-          "pathName": "pages/steps/index",
-          "query": ""
-        },
-        {
           "name": "search",
           "pathName": "pages/search/index",
           "query": ""
@@ -182,11 +177,6 @@
         {
           "name": "progress",
           "pathName": "pages/progress/index",
-          "query": ""
-        },
-        {
-          "name": "area",
-          "pathName": "pages/area/index",
           "query": ""
         },
         {

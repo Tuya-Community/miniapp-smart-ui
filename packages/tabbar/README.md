@@ -164,7 +164,7 @@ Page({
     active: 0,
   },
   onClick(event) {
-    wx.showToast({
+    ty.showToast({
       title: `点击标签 ${event.detail + 1}`,
       icon: 'none',
     });

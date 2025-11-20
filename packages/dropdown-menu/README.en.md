@@ -161,7 +161,7 @@ Page({
     ],
   },
   onBeforeChange({ detail: { status, callback }}) {
-    wx.showModal({
+    ty.showModal({
       title: 'Asynchronous Open/Close',
       content: `Are you sure you want to ${status ? 'open' : 'close'} the dropdown menu?`,
       success: (res) => {

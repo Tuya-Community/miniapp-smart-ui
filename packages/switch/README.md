@@ -113,7 +113,7 @@ Page({
   },
 
   onChange({ detail }) {
-    wx.showModal({
+    ty.showModal({
       title: '提示',
       content: '是否切换开关？',
       success: (res) => {
