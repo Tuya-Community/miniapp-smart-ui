@@ -2,7 +2,7 @@
  * Jest transformer for .rjs files
  * Transforms .rjs files (which use Render({...}) pattern) into ES modules
  * that can be used with 'new Render(this)' in the component code
- * 
+ *
  * Pattern: export default Render({ ... })
  * Converts to: A class that can be instantiated with 'new'
  */
@@ -20,15 +20,17 @@ module.exports = {
       const renderStart = code.indexOf('Render(');
       const renderContentStart = code.indexOf('{', renderStart);
       const renderEnd = code.lastIndexOf('});');
-      
+
       if (renderContentStart !== -1 && renderEnd !== -1) {
         // Get the object content
         const objectContent = code.substring(renderContentStart + 1, renderEnd);
-        
+
         // Create a class that contains all the properties and methods
         // We'll use a simpler approach: create a function that returns an object
         // with all the methods bound properly
-        
+
+        // Use eval-safe approach: wrap the object literal in a function
+        // This preserves all the original code structure
         const transformedCode = `
 // Transformed from .rjs file
 class RenderInstance {
@@ -38,14 +40,20 @@ class RenderInstance {
       Object.assign(this, instance);
     }
     
-    // Initialize from object literal
-    const obj = {${objectContent}};
-    Object.assign(this, obj);
+    // Initialize from object literal using eval to preserve structure
+    const obj = (function() {
+      return {${objectContent}};
+    })();
+    
+    // Copy all properties and methods
+    Object.keys(obj).forEach(key => {
+      this[key] = obj[key];
+    });
     
     // Bind methods to this
     Object.getOwnPropertyNames(obj).forEach(key => {
-      if (typeof obj[key] === 'function') {
-        this[key] = obj[key].bind(this);
+      if (typeof this[key] === 'function') {
+        this[key] = this[key].bind(this);
       }
     });
   }
@@ -66,10 +74,13 @@ export { RenderInstance };
     // Use babel to transform ES6+ syntax to CommonJS
     const babelOptions = {
       presets: [
-        ['@babel/preset-env', { 
-          modules: 'commonjs',
-          targets: { node: 'current' }
-        }],
+        [
+          '@babel/preset-env',
+          {
+            modules: 'commonjs',
+            targets: { node: 'current' },
+          },
+        ],
       ],
       filename: sourcePath,
       sourceMaps: options.instrument ? 'inline' : false,
@@ -84,8 +95,8 @@ export { RenderInstance };
     } catch (error) {
       // If babel transformation fails, use fallback
       console.warn(`Babel transformation failed for ${sourcePath}:`, error.message);
-      
-      // Fallback: create a simple wrapper
+
+      // Fallback: create a simple wrapper that uses the global Render function
       const fallbackCode = `
 const Render = global.Render || function(obj) {
   const instance = Object.assign({}, obj);
@@ -101,7 +112,7 @@ const Render = global.Render || function(obj) {
 module.exports = Render;
 module.exports.default = Render;
 `;
-      
+
       return {
         code: fallbackCode,
         map: null,
