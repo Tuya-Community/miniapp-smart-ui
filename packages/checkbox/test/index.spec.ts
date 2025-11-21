@@ -208,8 +208,11 @@ describe('checkbox', () => {
     await simulate.sleep(10);
 
     // Mock getRelationNodes to return empty array for standalone checkbox
+    // This ensures parent is undefined, so emitChange will call emit(this, value) directly
     if (instance) {
       (instance as any).getRelationNodes = jest.fn(() => []);
+      // Force parent to be undefined by accessing it after mock
+      const _ = (instance as any).parent; // This will trigger the getter with mocked getRelationNodes
     }
 
     // Toggle from false to true
@@ -252,6 +255,8 @@ describe('checkbox', () => {
     // Mock getRelationNodes to return empty array for standalone checkbox
     if (instance) {
       (instance as any).getRelationNodes = jest.fn(() => []);
+      // Force parent to be undefined by accessing it after mock
+      const _ = (instance as any).parent; // This will trigger the getter with mocked getRelationNodes
     }
 
     // Toggle should change value from false to true
@@ -343,6 +348,8 @@ describe('checkbox', () => {
     // Mock getRelationNodes to return empty array for standalone checkbox
     if (instance) {
       (instance as any).getRelationNodes = jest.fn(() => []);
+      // Force parent to be undefined by accessing it after mock
+      const _ = (instance as any).parent; // This will trigger the getter with mocked getRelationNodes
     }
 
     instance?.onClickLabel();
@@ -440,9 +447,16 @@ describe('checkbox', () => {
 
     await simulate.sleep(10);
 
-    // Directly test setParentValue method
+    // Mock getRelationNodes to return group instance so parent is available
+    // This allows emitChange to go through the if (this.parent) branch
     if (instance1 && groupInstance) {
-      instance1.setParentValue(groupInstance, true);
+      // Mock getRelationNodes to return array with group instance
+      (instance1 as any).getRelationNodes = jest.fn(() => [groupInstance]);
+      // Access parent to trigger getter with mocked getRelationNodes
+      const _ = (instance1 as any).parent;
+      
+      // Now emitChange should go through if (this.parent) branch
+      instance1.emitChange(true);
       await simulate.sleep(10);
       expect(groupChangeValue).toEqual(['a']);
       expect(groupInputValue).toEqual(['a']);
