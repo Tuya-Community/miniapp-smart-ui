@@ -2,15 +2,15 @@
 category: General
 ---
 
-# ConfigProvider
+# ConfigProvider Global Configuration
 
 ### Introduction
 
 Used to configure the theme styles of Smart UI components.
 
-### Import
+### Importing
 
-Import the component in `app.json` or `index.json`. For details, see [Quick Start](/material/smartui?comId=help-getting-started&appType=miniapp).
+Import the component in `app.json` or `index.json`. For details, see [Getting Started](/material/smartui?comId=help-getting-started&appType=miniapp).
 
 ```json
 "usingComponents": {
@@ -18,15 +18,15 @@ Import the component in `app.json` or `index.json`. For details, see [Quick Star
 }
 ```
 
-## Customize Theme
+## Customizing Theme
 
 ### Introduction
 
-Smart UI components organize styles through a wealth of [CSS variables](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties). By overriding these CSS variables, you can achieve effects like **custom themes and dynamic theme switching**.
+Smart UI components organize styles through rich [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties). By overriding these CSS variables, you can achieve **custom themes, dynamic theme switching**, and other effects.
 
 #### Example
 
-Take the Button component as an example. Looking at the component's style, you can see the following variables on the `.smart-button--primary` class name:
+Taking the Button component as an example, by viewing the component's styles, you can see the following variables in the `.smart-button--primary` class name:
 
 ```css
 .smart-button--primary {
@@ -41,9 +41,9 @@ Take the Button component as an example. Looking at the component's style, you c
 
 ### Custom CSS Variables
 
-#### Override via CSS
+#### Overriding via CSS
 
-You can directly override these CSS variables in your code, and the style of the Button component will change accordingly:
+You can directly override these CSS variables in your code, and the Button component's styles will change accordingly:
 
 ```css
 /* After adding this style, the Primary Button will turn red */
@@ -52,61 +52,80 @@ page {
 }
 ```
 
-#### Override via ConfigProvider
+#### Overriding via ConfigProvider
 
-The `ConfigProvider` component offers the ability to override CSS variables. You need to wrap a `ConfigProvider` component around the root node and use the `theme-vars` attribute to configure some theme variables. The parameters for `theme-vars` are the component's CSS variables converted into camelCase form.
+`ConfigProvider` component provides the ability to override CSS variables. You need to wrap a `ConfigProvider` component around the component node and configure some theme variables through the `theme-vars` attribute, where the input parameters are the component's CSS variables converted to camelCase.
 
 ```html
+<view class="demo-buttons">
+  <smart-button type="primary" data-color="red" color="red" bind:click="onChange">
+    Set to red
+  </smart-button>
+  <smart-button type="primary" data-color="green" color="green" bind:click="onChange">
+    Set to green
+  </smart-button>
+  <smart-button type="primary" data-color="blue" color="blue" bind:click="onChange">
+    Set to blue 
+  </smart-button>
+</view>
 <smart-config-provider theme-vars="{{ themeVars }}">
-  <smart-cell-group>
-    <smart-field label="Rating">
-      <view slot="input" style="width: 100%">
-        <smart-rate
-          model:value="{{ rate }}"
-          data-key="rate"
-          bind:change="onChange"
-        />
-      </view>
-    </smart-field>
-    <smart-field label="Slider" border="{{ false }}">
-      <view slot="input" style="width: 100%">
-        <smart-slider
-          value="{{ slider }}"
-          data-key="slider"
-          bind:change="onChange"
-        />
-      </view>
-    </smart-field>
-  </smart-cell-group>
-
-  <view style="margin: 16px">
-    <smart-button round block type="primary">Submit</smart-button>
-  </view>
+  <smart-button type="primary">Main Button</smart-button>
 </smart-config-provider>
 ```
 
 ```js
-import Page from '../../common/page';
-
 Page({
   data: {
-    rate: 4,
-    slider: 50,
     themeVars: {
-      rateIconFullColor: '#07c160',
-      sliderBarHeight: '4px',
-      sliderButtonWidth: '20px',
-      sliderButtonHeight: '20px',
-      sliderActiveBackgroundColor: '#07c160',
-      buttonPrimaryBorderColor: '#07c160',
-      buttonPrimaryBackgroundColor: '#07c160',
+      buttonPrimaryBorderColor: 'red',
+      buttonPrimaryBackgroundColor: 'red',
     },
   },
 
   onChange(event) {
-    const { key } = event.currentTarget.dataset;
+    const { color } = event.currentTarget.dataset;
     this.setData({
-      [key]: event.detail,
+      themeVars: {
+        buttonPrimaryBorderColor: color,
+        buttonPrimaryBackgroundColor: color,
+      },
+    });
+  },
+});
+```
+
+### Theme Switching `v2.7.4`
+
+The `ConfigProvider` component supports switching between light and dark themes using the `theme` property, with optional values of `light` and `dark`.
+
+```html
+<view class="demo-buttons">
+  <smart-button type="primary" data-theme="light" bind:click="onThemeChange">
+    Light Theme
+  </smart-button>
+  <text>Current Theme: {{ currentTheme }}</text>
+  <smart-button type="primary" data-theme="dark" bind:click="onThemeChange">
+    Dark Theme
+  </smart-button>
+</view>
+<smart-config-provider theme="{{ currentTheme }}">
+  <smart-cell-group>
+    <smart-cell title="Title" value="Content" />
+    <smart-cell title="Title" value="Content" label="Details" is-link />
+  </smart-cell-group>
+</smart-config-provider>
+```
+
+```js
+Page({
+  data: {
+    currentTheme: 'light',
+  },
+
+  onThemeChange(event) {
+    const { theme } = event.currentTarget.dataset;
+    this.setData({
+      currentTheme: theme,
     });
   },
 });
@@ -116,6 +135,7 @@ Page({
 
 ### Props
 
-| Parameter  | Description    | Type     | Default |
-| ---------- | -------------- | -------- | ------- |
-| theme-vars | Custom theme variables | _object_ | -      |
+| Parameter   | Description         | Type          | Default Value |
+| ----------- | ------------------- | ------------- | ------------- |
+| theme-vars  | Custom theme variables | _object_     | -             |
+| theme `v2.7.4` | Theme mode         | _'light'\/'dark'_ | -             |

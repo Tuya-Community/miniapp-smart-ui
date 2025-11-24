@@ -54,59 +54,78 @@ page {
 
 #### 通过 ConfigProvider 覆盖
 
-`ConfigProvider` 组件提供了覆盖 CSS 变量的能力，你需要在根节点包裹一个 `ConfigProvider` 组件，并通过 `theme-vars` 属性来配置一些主题变量，其入参就是组件的CSS 变量变成驼峰形式。
+`ConfigProvider` 组件提供了覆盖 CSS 变量的能力，你需要在组件节点外包裹一个 `ConfigProvider` 组件，并通过 `theme-vars` 属性来配置一些主题变量，其入参就是组件的CSS 变量变成驼峰形式。
 
 ```html
+<view class="demo-buttons">
+  <smart-button type="primary" data-color="red" color="red" bind:click="onChange">
+    设置为红色
+  </smart-button>
+  <smart-button type="primary" data-color="green" color="green" bind:click="onChange">
+    设置为绿色
+  </smart-button>
+  <smart-button type="primary" data-color="blue" color="blue" bind:click="onChange">
+    设置为蓝色
+  </smart-button>
+</view>
 <smart-config-provider theme-vars="{{ themeVars }}">
-  <smart-cell-group>
-    <smart-field label="评分">
-      <view slot="input" style="width: 100%">
-        <smart-rate
-          model:value="{{ rate }}"
-          data-key="rate"
-          bind:change="onChange"
-        />
-      </view>
-    </smart-field>
-    <smart-field label="滑块" border="{{ false }}">
-      <view slot="input" style="width: 100%">
-        <smart-slider
-          value="{{ slider }}"
-          data-key="slider"
-          bind:change="onChange"
-        />
-      </view>
-    </smart-field>
-  </smart-cell-group>
-
-  <view style="margin: 16px">
-    <smart-button round block type="primary">提交</smart-button>
-  </view>
+  <smart-button type="primary">主按钮</smart-button>
 </smart-config-provider>
 ```
 
 ```js
-import Page from '../../common/page';
-
 Page({
   data: {
-    rate: 4,
-    slider: 50,
     themeVars: {
-      rateIconFullColor: '#07c160',
-      sliderBarHeight: '4px',
-      sliderButtonWidth: '20px',
-      sliderButtonHeight: '20px',
-      sliderActiveBackgroundColor: '#07c160',
-      buttonPrimaryBorderColor: '#07c160',
-      buttonPrimaryBackgroundColor: '#07c160',
+      buttonPrimaryBorderColor: 'red',
+      buttonPrimaryBackgroundColor: 'red',
     },
   },
 
   onChange(event) {
-    const { key } = event.currentTarget.dataset;
+    const { color } = event.currentTarget.dataset;
     this.setData({
-      [key]: event.detail,
+      themeVars: {
+        buttonPrimaryBorderColor: color,
+        buttonPrimaryBackgroundColor: color,
+      },
+    });
+  },
+});
+```
+
+### 主题切换 `v2.7.4`
+
+`ConfigProvider` 组件支持通过 `theme` 属性来切换明暗主题，可选值为 `light` 和 `dark`。
+
+```html
+<view class="demo-buttons">
+  <smart-button type="primary" data-theme="light" bind:click="onThemeChange">
+    浅色主题
+  </smart-button>
+  <text>当前主题：{{ currentTheme }}</text>
+  <smart-button type="primary" data-theme="dark" bind:click="onThemeChange">
+    深色主题
+  </smart-button>
+</view>
+<smart-config-provider theme="{{ currentTheme }}">
+  <smart-cell-group>
+    <smart-cell title="标题" value="内容" />
+    <smart-cell title="标题" value="内容" label="详细信息" is-link />
+  </smart-cell-group>
+</smart-config-provider>
+```
+
+```js
+Page({
+  data: {
+    currentTheme: 'light',
+  },
+
+  onThemeChange(event) {
+    const { theme } = event.currentTarget.dataset;
+    this.setData({
+      currentTheme: theme,
     });
   },
 });
@@ -119,3 +138,5 @@ Page({
 | 参数       | 说明           | 类型     | 默认值 |
 | ---------- | -------------- | -------- | ------ |
 | theme-vars | 自定义主题变量 | _object_ | -      |
+| theme   `v2.7.4`      | 主题模式       | _'light'\/'dark'_ | -      |
+
