@@ -94,9 +94,8 @@ SmartComponent({
         return this.data.color;
       }
 
-      const ee = '';
-      ee.test = '123';
       // 自定义电量的颜色分配规则
+
       const color = typeof this.data.onCalcColor === 'function' && this.data.onCalcColor();
       if (color) {
         return color;
