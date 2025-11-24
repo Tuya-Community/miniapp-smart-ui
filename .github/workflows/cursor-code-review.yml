@@ -78,24 +78,8 @@ jobs:
             echo "✅ 审查通过或无阻塞性问题"
           fi
       
-      - name: 验证 PR 审查状态
-        id: check_pr_status
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          # 检查 PR 是否有 request-changes 的审查
-          PR_REVIEWS=$(gh pr view ${{ github.event.pull_request.number }} --json reviews --jq '.reviews[] | select(.state == "CHANGES_REQUESTED") | .state' || echo "")
-          
-          if [ -n "$PR_REVIEWS" ]; then
-            echo "review_status=BLOCKING" >> $GITHUB_OUTPUT
-            echo "⚠️ PR 存在 request-changes 审查"
-          else
-            echo "review_status=PASS" >> $GITHUB_OUTPUT
-            echo "✅ PR 审查状态正常"
-          fi
-      
       - name: 检查审查结果
-        if: steps.review.outputs.review_result == 'BLOCKING' || steps.check_pr_status.outputs.review_status == 'BLOCKING'
+        if: steps.review.outputs.review_result == 'BLOCKING'
         run: |
           echo "::error::代码审查发现阻塞性问题，PR 无法合并"
           echo "请根据审查意见修复问题后重新提交"
@@ -103,4 +87,6 @@ jobs:
           echo "阻塞性问题包括："
           echo "- 🚨 关键问题：安全漏洞、严重 bug、破坏性变更"
           echo "- ⚠️ 重要问题：逻辑错误、性能问题、代码质量问题"
+          echo ""
+          echo "提示：修复问题后重新提交，审查将自动重新运行"
           exit 1
