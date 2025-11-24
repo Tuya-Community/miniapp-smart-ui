@@ -6,5 +6,6 @@ SmartComponent({
       type: Object,
       value: {},
     },
+    theme: String,
   },
 });

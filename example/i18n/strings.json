@@ -579,7 +579,11 @@
     "popOutFromTheTop": "Top",
     "svgPath": "Svg Path",
     "upsideDown": "Upside Down",
-    "loop": "Loop List"
+    "loop": "Loop List",
+    "currentTheme": "Theme:",
+    "lightTheme": "Light Theme",
+    "darkTheme": "Dark Theme",
+    "themeSwitch": "Theme Switch"
   },
   "zh": {
     "draggable": "可拖拽",
@@ -1162,6 +1166,10 @@
     "popUpOnTheRightSide": "右侧弹出",
     "svgPath": "Svg Path",
     "upsideDown": "上下颠倒",
-    "loop": "循环列表"
+    "loop": "循环列表",
+    "currentTheme": "当前主题：",
+    "lightTheme": "浅色主题",
+    "darkTheme": "深色主题",
+    "themeSwitch": "主题切换"
   }
 }

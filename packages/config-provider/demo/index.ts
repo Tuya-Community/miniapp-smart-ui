@@ -8,6 +8,7 @@ SmartComponent({
       buttonPrimaryBorderColor: 'red',
       buttonPrimaryBackgroundColor: 'red',
     },
+    currentTheme: 'light',
   },
 
   methods: {
@@ -18,6 +19,12 @@ SmartComponent({
           buttonPrimaryBorderColor: color,
           buttonPrimaryBackgroundColor: color,
         },
+      });
+    },
+    onThemeChange(event) {
+      const { theme } = event.currentTarget.dataset;
+      this.setData({
+        currentTheme: theme,
       });
     },
   },
