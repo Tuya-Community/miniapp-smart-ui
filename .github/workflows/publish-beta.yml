@@ -82,7 +82,7 @@ jobs:
     - name: Commit Changes
       run: |
         git config pull.rebase false
-        git pull origin HEAD:release/2.x
+        git pull origin release/2.x
         git add .
         if git diff --staged --quiet; then
           echo "No changes to commit"
@@ -94,7 +94,12 @@ jobs:
     - name: Push
       # 使用个人访问令牌来推送更改以避免保护分支限制
       run: |
-        git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:release/2.x
+        git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{github.ref}}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        
+
 
     - name: Comment on PR
       uses: peter-evans/create-or-update-comment@v2
