@@ -33,6 +33,91 @@ describe('toast', () => {
     };
   });
 
+  test('should log error when id is repeated in mounted', () => {
+    const mockPage = {} as any;
+    (getCurrentPage as jest.Mock).mockReturnValue(mockPage);
+    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation();
+    const appLogInfoSpy = jest.spyOn(appLog, 'info');
+
+    // First toast component - simulate it already mounted
+    contextRef.value['#toast1'] = mockPage;
+
+    // Second toast component with same id
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-toast': SmartToast,
+        },
+        template: `<smart-toast id="toast1" />`,
+      })
+    );
+    
+    const toast1 = comp.querySelector('#toast1');
+    if (toast1 && toast1.instance) {
+      toast1.instance.id = 'toast1';
+    }
+    
+    // Attach will trigger ready lifecycle, which should detect repeated id
+    comp.attach(document.createElement('parent-wrapper'));
+
+    // The error should be logged when the component mounts with a repeated id
+    expect(consoleErrorSpy).toHaveBeenCalledWith('Toast component #toast1 repeated!');
+    expect(appLogInfoSpy).toHaveBeenCalledWith('Toast component #toast1 repeated!');
+
+    consoleErrorSpy.mockRestore();
+  });
+
+  test('should set contextRef when mounted with id', () => {
+    const mockPage = {} as any;
+    (getCurrentPage as jest.Mock).mockReturnValue(mockPage);
+    const appLogInfoSpy = jest.spyOn(appLog, 'info');
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-toast': SmartToast,
+        },
+        template: `<smart-toast id="toast1" />`,
+      })
+    );
+    
+    const toast1 = comp.querySelector('#toast1');
+    if (toast1 && toast1.instance) {
+      toast1.instance.id = 'toast1';
+    }
+    
+    // Attach will trigger ready lifecycle
+    comp.attach(document.createElement('parent-wrapper'));
+
+    expect(contextRef.value['#toast1']).toBe(mockPage);
+    expect(appLogInfoSpy).toHaveBeenCalledWith('Toast #toast1 mounted');
+  });
+
+  test('should not set contextRef when mounted without id', () => {
+    const mockPage = {} as any;
+    (getCurrentPage as jest.Mock).mockReturnValue(mockPage);
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-toast': SmartToast,
+        },
+        template: `<smart-toast />`,
+      })
+    );
+    
+    const toast = comp.querySelector('smart-toast');
+    if (toast && toast.instance) {
+      toast.instance.id = '';
+    }
+    
+    // Attach will trigger ready lifecycle
+    comp.attach(document.createElement('parent-wrapper'));
+
+    // Should not set contextRef when id is empty
+    expect(contextRef.value).toEqual({});
+  });
+
   test('should call noop method', () => {
     const comp = simulate.render(
       simulate.load({
