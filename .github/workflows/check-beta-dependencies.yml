@@ -1,0 +1,56 @@
+name: Check Beta Dependencies
+
+on: 
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-beta:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      
+      - name: 检查 Beta 版本依赖
+        id: check_beta
+        run: |
+          echo "正在检查 package.json 中的 beta 版本依赖..."
+          
+          # 检查 dependencies 和 devDependencies 中是否包含 beta 版本
+          BETA_DEPS=$(node -e "
+            const pkg = require('./package.json');
+            const deps = { ...pkg.dependencies || {}, ...pkg.devDependencies || {} };
+            const betaDeps = [];
+            
+            for (const [name, version] of Object.entries(deps)) {
+              if (version && typeof version === 'string' && version.toLowerCase().includes('beta')) {
+                betaDeps.push(\`\${name}: \${version}\`);
+              }
+            }
+            
+            if (betaDeps.length > 0) {
+              console.log(betaDeps.join('\\n'));
+              process.exit(1);
+            } else {
+              console.log('未发现 beta 版本依赖');
+              process.exit(0);
+            }
+          " 2>&1) || BETA_CHECK_FAILED=true
+          
+          if [ "$BETA_CHECK_FAILED" = "true" ]; then
+            echo "::error::检测到 package.json 中包含 beta 版本的依赖包，不允许合并到 main 分支"
+            echo ""
+            echo "发现的 beta 版本依赖："
+            echo "$BETA_DEPS"
+            echo ""
+            echo "请将以下依赖更新为稳定版本后再提交："
+            echo "$BETA_DEPS"
+            exit 1
+          else
+            echo "✅ 未发现 beta 版本依赖，检查通过"
+          fi
+
