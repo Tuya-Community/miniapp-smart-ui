@@ -81,6 +81,8 @@ jobs:
 
     - name: Commit Changes
       run: |
+        git config pull.rebase false
+        git pull origin HEAD:release/2.x
         git add .
         if git diff --staged --quiet; then
           echo "No changes to commit"
@@ -88,17 +90,12 @@ jobs:
           git commit -m "chore(release): ${NEXT_VERSION} release by Github Actions"
           git log -1  # 检查最后的commit结果
         fi
-        git config pull.rebase false
-        git pull
 
     - name: Push
       # 使用个人访问令牌来推送更改以避免保护分支限制
       run: |
-        git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{github.ref}}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:release/2.x
 
-        
     - name: Comment on PR
       uses: peter-evans/create-or-update-comment@v2
       with:
