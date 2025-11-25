@@ -118,6 +118,74 @@ describe('toast', () => {
     expect(contextRef.value).toEqual({});
   });
 
+  test('should clear contextRef when destroyed with id', () => {
+    const mockPage = {} as any;
+    (getCurrentPage as jest.Mock).mockReturnValue(mockPage);
+    const appLogInfoSpy = jest.spyOn(appLog, 'info');
+
+    // First set up contextRef as if component was mounted
+    contextRef.value['#toast1'] = mockPage;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-toast': SmartToast,
+        },
+        template: `<smart-toast id="toast1" />`,
+      })
+    );
+    
+    const toast1 = comp.querySelector('#toast1');
+    if (toast1 && toast1.instance) {
+      toast1.instance.id = 'toast1';
+    }
+    
+    comp.attach(document.createElement('parent-wrapper'));
+
+    // Verify it was set during mount
+    expect(contextRef.value['#toast1']).toBe(mockPage);
+
+    // Detach will trigger detached lifecycle (which maps to destroyed)
+    comp.detach();
+
+    // Should clear contextRef when destroyed
+    expect(contextRef.value['#toast1']).toBeNull();
+    expect(appLogInfoSpy).toHaveBeenCalledWith('Toast #toast1 destroyed');
+  });
+
+  test('should not clear contextRef when destroyed without id', () => {
+    const mockPage = {} as any;
+    (getCurrentPage as jest.Mock).mockReturnValue(mockPage);
+    const appLogInfoSpy = jest.spyOn(appLog, 'info');
+
+    // Set up contextRef manually
+    contextRef.value['#toast1'] = mockPage;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-toast': SmartToast,
+        },
+        template: `<smart-toast />`,
+      })
+    );
+    
+    const toast = comp.querySelector('smart-toast');
+    if (toast && toast.instance) {
+      toast.instance.id = '';
+    }
+    
+    comp.attach(document.createElement('parent-wrapper'));
+
+    // Detach will trigger detached lifecycle
+    comp.detach();
+
+    // Should not clear contextRef when id is empty
+    expect(contextRef.value['#toast1']).toBe(mockPage);
+    // Should not log destroyed message when id is empty
+    expect(appLogInfoSpy).not.toHaveBeenCalledWith(expect.stringContaining('destroyed'));
+  });
+
   test('should call noop method', () => {
     const comp = simulate.render(
       simulate.load({
