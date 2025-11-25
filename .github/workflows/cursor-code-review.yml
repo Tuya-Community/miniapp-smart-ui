@@ -28,6 +28,17 @@ jobs:
           CURSOR_API_KEY: ${{ secrets.cursor_token }}
           GH_TOKEN: ${{ github.token }}
         run: |
+          # 获取变更的文件列表，排除 .github 目录
+          CHANGED_FILES=$(gh pr diff --name-only | grep -v "^\.github/" || true)
+          
+          # 如果没有需要审查的文件（只有 .github 目录的变更），则跳过审查
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "✅ 仅包含 .github 目录的变更，跳过代码审查"
+            gh pr review --approve --body "✅ 仅包含工作流配置变更，审查通过"
+            echo "review_result=PASS" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
           # 执行代码审查并捕获输出
           REVIEW_OUTPUT=$(cursor-agent --force --output-format=text --print "您正在 GitHub Actions 运行器中执行自动化代码审查。gh 命令行界面已可用并通过 GH_TOKEN 进行身份验证。您可以对拉取请求进行评论。
       
@@ -43,9 +54,13 @@ jobs:
           3) 仅在更改的行上留下非常简短的内联评论（1-2 句话）并在最后提供简要摘要
           4) 检测严重问题并决定是否阻止 PR 合并
       
+          重要规则：
+          - 完全忽略 .github 目录下的所有文件变更，不要审查这些文件
+          - 只审查以下文件：$(echo "$CHANGED_FILES" | tr '\n' ' ')
+      
           流程：
           - 获取现有评论：gh pr view --json comments
-          - 获取差异：gh pr diff
+          - 获取差异：gh pr diff，但只关注非 .github 目录的文件
           - 如果先前报告的问题似乎已通过附近的更改修复，请回复：✅ 此问题似乎已通过最近的更改得到解决
           - 避免重复：如果在相同或相近的行上已存在类似反馈，则跳过
           - 分类问题严重性：
@@ -66,7 +81,6 @@ jobs:
           - 在审查完成后，必须在最后输出一行：REVIEW_STATUS: BLOCKING 或 REVIEW_STATUS: PASS
           - 如果使用了 --request-changes，必须输出 REVIEW_STATUS: BLOCKING
           - 如果使用了 --comment 或 --approve，输出 REVIEW_STATUS: PASS" 2>&1)
-          - 忽略检查 .github .cursor .husky 等文件的改动
           
           echo "$REVIEW_OUTPUT"
           
