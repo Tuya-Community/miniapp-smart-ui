@@ -1,8 +1,7 @@
-name: Merge Check Jest CI
+name: Merge Check Release
 on: 
   pull_request:
     branches:
-      - main
       - release/*
 jobs:
   build:

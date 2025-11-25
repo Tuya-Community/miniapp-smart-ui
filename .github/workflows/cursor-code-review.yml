@@ -66,6 +66,7 @@ jobs:
           - 在审查完成后，必须在最后输出一行：REVIEW_STATUS: BLOCKING 或 REVIEW_STATUS: PASS
           - 如果使用了 --request-changes，必须输出 REVIEW_STATUS: BLOCKING
           - 如果使用了 --comment 或 --approve，输出 REVIEW_STATUS: PASS" 2>&1)
+          - 忽略检查 .github .cursor .husky 等文件的改动
           
           echo "$REVIEW_OUTPUT"
           

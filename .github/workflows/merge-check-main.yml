@@ -1,4 +1,4 @@
-name: Check Beta Dependencies
+name: Merge Check main
 
 on: 
   pull_request:
