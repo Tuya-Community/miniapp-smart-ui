@@ -77,15 +77,15 @@ jobs:
         env:
           TZ: Asia/Shanghai
       
-      - name: 上传覆盖率到 Codecov
-        uses: codecov/codecov-action@v4
-        with:
+      # - name: 上传覆盖率到 Codecov
+      #   uses: codecov/codecov-action@v4
+      #   with:
           # token 对于公开仓库是可选的，不配置也能正常工作
           # 如果需要 PR 评论等高级功能，可在 GitHub Secrets 中配置 CODECOV_TOKEN
           # token: ${{ secrets.CODECOV_TOKEN }}
-          directory: ./coverage
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: false
-          verbose: true
+          # directory: ./coverage
+          # flags: unittests
+          # name: codecov-umbrella
+          # fail_ci_if_error: false
+          # verbose: true
 
