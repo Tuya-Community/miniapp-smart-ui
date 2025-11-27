@@ -17,24 +17,4 @@ SmartComponent({
     src1: 'https://images.tuyacn.com/rms-static/778f4440-00af-11f0-b5de-11ed08c4d406-1741941407364.png?tyName=musicBg1%402x.png',
     src: 'https://images.tuyacn.com/rms-static/f350c8a0-0eb2-11ef-8f06-49ae7b2fadcf-1715334722090.jpeg?tyName=cat.jpeg',
   },
-  methods: {
-    onImageLoad(event) {
-      wx.showToast({
-        icon: 'none',
-        title: 'Image loaded',
-      });
-    },
-    onImageError(event) {
-      wx.showToast({
-        icon: 'none',
-        title: 'Image error',
-      });
-    },
-    onImageClick(event) {
-      wx.showToast({
-        icon: 'none',
-        title: 'Image clicked',
-      });
-    },
-  },
 });

@@ -112,19 +112,3 @@
     />
   </smart-row>
 </demo-block>
-
-<demo-block title="{{I18n.t('imageEvents')}}" padding>
-  <smart-row gutter="20">
-    <smart-col span="8">
-      <smart-image
-        width="100%"
-        height="27vw"
-        src="{{ src }}"
-        bind:load="onImageLoad"
-        bind:error="onImageError"
-        bind:click="onImageClick"
-      />
-      <view class="text">{{I18n.t('loadErrorClick')}}</view>
-    </smart-col>
-  </smart-row>
-</demo-block>
