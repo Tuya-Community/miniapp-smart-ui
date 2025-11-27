@@ -15,3 +15,28 @@
 <demo-block custom-class="white" title="{{I18n.t('customStyle')}}" padding>
   <smart-divider content-position="center" custom-style="color: #1989fa;border-color: #1989fa;font-size: 18px;">{{I18n.t('text')}}</smart-divider>
 </demo-block>
+
+<demo-block custom-class="white" title="{{I18n.t('hairline')}}" padding>
+  <smart-divider hairline />
+  <view style="margin-top: 16px;">
+    <smart-divider hairline content-position="center">{{I18n.t('text')}}</smart-divider>
+  </view>
+</demo-block>
+
+<demo-block custom-class="white" title="{{I18n.t('customFontSize')}}" padding>
+  <smart-divider content-position="center" font-size="20px">{{I18n.t('text')}}</smart-divider>
+  <smart-divider content-position="center" font-size="16px">{{I18n.t('text')}}</smart-divider>
+  <smart-divider content-position="center" font-size="12px">{{I18n.t('text')}}</smart-divider>
+</demo-block>
+
+<demo-block custom-class="white" title="{{I18n.t('customBorderColor')}}" padding>
+  <smart-divider content-position="center" border-color="#1989fa">{{I18n.t('text')}}</smart-divider>
+  <smart-divider content-position="center" border-color="#07c160">{{I18n.t('text')}}</smart-divider>
+  <smart-divider content-position="center" border-color="#ee0a24">{{I18n.t('text')}}</smart-divider>
+</demo-block>
+
+<demo-block custom-class="white" title="{{I18n.t('customTextColor')}}" padding>
+  <smart-divider content-position="center" text-color="#1989fa">{{I18n.t('text')}}</smart-divider>
+  <smart-divider content-position="center" text-color="#07c160">{{I18n.t('text')}}</smart-divider>
+  <smart-divider content-position="center" text-color="#ee0a24">{{I18n.t('text')}}</smart-divider>
+</demo-block>

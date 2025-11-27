@@ -398,6 +398,9 @@
     "fixedDecimalPlaces": "Fixed decimal places",
     "asynchronousChanges": "Asynchronous Changes",
     "roundedCornerStyle": "Rounded Corner Style",
+    "focusEvent": "Focus Event",
+    "blurEvent": "Blur Event",
+    "overlimitEvent": "Overlimit Event",
     "customStyles": "Custom Styles",
     "fixedHeight": "Fixed Height",
     "verticalStepBar": "Vertical step bar",
@@ -583,7 +586,9 @@
     "currentTheme": "Theme:",
     "lightTheme": "Light Theme",
     "darkTheme": "Dark Theme",
-    "themeSwitch": "Theme Switch"
+    "themeSwitch": "Theme Switch",
+    "required": "Required",
+    "arrowDirection": "Arrow Direction"
   },
   "zh": {
     "draggable": "可拖拽",
@@ -987,6 +992,9 @@
     "fixedDecimalPlaces": "固定小数位数",
     "asynchronousChanges": "异步变更",
     "roundedCornerStyle": "圆角样式",
+    "focusEvent": "聚焦事件",
+    "blurEvent": "失焦事件",
+    "overlimitEvent": "超出限制事件",
     "customStyles": "自定义样式",
     "verticalStepBar": "竖向步骤条",
     "fixedHeight": "固定高度",
@@ -1170,6 +1178,8 @@
     "currentTheme": "当前主题：",
     "lightTheme": "浅色主题",
     "darkTheme": "深色主题",
-    "themeSwitch": "主题切换"
+    "themeSwitch": "主题切换",
+    "required": "必填",
+    "arrowDirection": "箭头方向"
   }
 }

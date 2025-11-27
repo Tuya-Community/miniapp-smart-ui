@@ -130,3 +130,104 @@
     maxlength="{{ 200 }}"
   />
 </demo-block>
+
+<demo-block title="{{I18n.t('fieldSize')}}">
+  <smart-cell-group>
+    <smart-field
+      value="{{ value }}"
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+      size="large"
+    />
+    <smart-field
+      value="{{ value }}"
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('fieldIcon')}}">
+  <smart-cell-group>
+    <smart-field
+      value="{{ value }}"
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+      icon="{{ sunIcon }}"
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('fieldError')}}">
+  <smart-cell-group>
+    <smart-field
+      value="{{ value }}"
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+      error
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('fieldCenter')}}">
+  <smart-cell-group>
+    <smart-field
+      value="{{ value }}"
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+      center
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('fieldIsLink')}}">
+  <smart-cell-group>
+    <smart-field
+      value="{{ value }}"
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+      is-link
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('fieldLeftIcon')}}">
+  <smart-cell-group>
+    <smart-field
+      value="{{ value }}"
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+      left-icon="{{ sunIcon }}"
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('fieldRightIcon')}}">
+  <smart-cell-group>
+    <smart-field
+      value="{{ value }}"
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+      right-icon="{{ sunIcon }}"
+      bind:click-icon="onClickIcon"
+    />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('fieldEvents')}}">
+  <smart-cell-group>
+    <smart-field
+      value="{{ value }}"
+      label="{{I18n.t('title')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+      bind:focus="onFieldFocus"
+      bind:blur="onFieldBlur"
+      bind:click-icon="onFieldClickIcon"
+      bind:click-input="onFieldClickInput"
+      bind:clear="onFieldClear"
+      bind:confirm="onFieldConfirm"
+      bind:input="onFieldInput"
+      bind:change="onFieldChange"
+    />
+  </smart-cell-group>
+</demo-block>

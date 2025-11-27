@@ -101,3 +101,17 @@
     ></smart-icon>
   </smart-notice-bar>
 </demo-block>
+
+<demo-block title="{{ I18n.t('noticeBarEvents') }}">
+  <smart-notice-bar
+    wrapable
+    left-icon="{{ Warning }}"
+    text="{{ I18n.t('noticeBarTip1') }}"
+    btn-text="{{ I18n.t('familySettings') }}"
+    mode="closeable"
+    bind:close="onNoticeBarClose"
+    bind:btn-click="onNoticeBarBtnClick"
+    bind:click="onNoticeBarClick"
+  >
+  </smart-notice-bar>
+</demo-block>

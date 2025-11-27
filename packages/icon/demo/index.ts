@@ -32,5 +32,11 @@ SmartComponent({
         active: event.detail.index,
       });
     },
+    onIconClick(event) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Icon clicked',
+      });
+    },
   },
 });

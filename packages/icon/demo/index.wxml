@@ -113,6 +113,19 @@
         />
       </smart-col>
     </demo-block>
+    <demo-block title="{{I18n.t('clickEvent')}}">
+      <smart-col
+        custom-class="col"
+        span="6"
+      >
+        <smart-icon
+          name="{{ iconWarning }}"
+          size="36px"
+          custom-class="icon"
+          bind:click="onIconClick"
+        />
+      </smart-col>
+    </demo-block>
   </smart-tab>
   <smart-tab title="{{I18n.t('allIcons')}}" custom-class="demo-tab-pane">
     <demo-block title="{{I18n.t('basicUsage')}}">

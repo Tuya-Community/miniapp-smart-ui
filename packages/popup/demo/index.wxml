@@ -90,3 +90,29 @@
     bind:close="hideRound"
   />
 </demo-block>
+
+<demo-block title="{{I18n.t('overlayStyle')}}">
+  <smart-cell title="{{I18n.t('overlayStyle')}}" is-link bind:click="showOverlayStyle" />
+
+  <smart-popup
+    show="{{ show.overlayStyle }}"
+    position="bottom"
+    custom-style="height: 20%"
+    overlay-style="background-color: rgba(0, 0, 0, 0.3);"
+    bind:close="hideOverlayStyle"
+  />
+</demo-block>
+
+<demo-block title="{{I18n.t('clickOverlay')}}">
+  <smart-cell title="{{I18n.t('clickOverlay')}}" is-link bind:click="showClickOverlay" />
+
+  <smart-popup
+    show="{{ show.clickOverlay }}"
+    position="bottom"
+    custom-style="height: 20%"
+    bind:click-overlay="onClickOverlay"
+    bind:close="hideClickOverlay"
+  >
+    {{I18n.t('content')}}
+  </smart-popup>
+</demo-block>

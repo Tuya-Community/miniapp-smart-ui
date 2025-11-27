@@ -42,4 +42,27 @@
   <smart-stepper value="{{ 1 }}" theme="round" button-size="22px" />
 </smart-cell>
 
+<smart-cell center title="{{I18n.t('focusEvent')}}">
+  <smart-stepper
+    value="{{ value2 }}"
+    bind:focus="onFocus"
+  />
+</smart-cell>
+
+<smart-cell center title="{{I18n.t('blurEvent')}}">
+  <smart-stepper
+    value="{{ value3 }}"
+    bind:blur="onBlur"
+  />
+</smart-cell>
+
+<smart-cell center title="{{I18n.t('overlimitEvent')}}">
+  <smart-stepper
+    value="{{ 1 }}"
+    min="5"
+    max="8"
+    bind:overlimit="onOverlimit"
+  />
+</smart-cell>
+
 <smart-toast id="smart-toast-stepper" />

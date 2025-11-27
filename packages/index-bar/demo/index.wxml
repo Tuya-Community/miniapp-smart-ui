@@ -5,6 +5,7 @@
   <smart-tab title="{{I18n.t('basicUsage')}}">
     <smart-index-bar
       wx:if="{{ activeTab === 0 }}"
+      bind:select="onIndexSelect"
     >
       <view
         wx:for="{{ indexList }}"

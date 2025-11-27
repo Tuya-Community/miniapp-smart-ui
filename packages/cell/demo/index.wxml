@@ -105,3 +105,18 @@
   </smart-cell-group>
 </demo-block>
 
+<demo-block title="{{I18n.t('required')}}">
+  <smart-cell-group>
+    <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" required />
+    <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" required is-link />
+  </smart-cell-group>
+</demo-block>
+
+<demo-block title="{{I18n.t('arrowDirection')}}">
+  <smart-cell-group>
+    <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" is-link arrow-direction="up" />
+    <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" is-link arrow-direction="down" />
+    <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" is-link arrow-direction="left" />
+    <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" is-link arrow-direction="right" />
+  </smart-cell-group>
+</demo-block>

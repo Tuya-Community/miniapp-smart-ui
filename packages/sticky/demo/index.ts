@@ -25,5 +25,11 @@ SmartComponent({
         })
         .exec();
     },
+    onStickyScroll(event) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Sticky scroll',
+      });
+    },
   },
 });

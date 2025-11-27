@@ -81,3 +81,12 @@
     />
   </view>
 </demo-block>
+
+<demo-block title="{{I18n.t('dragEvents')}}">
+  <smart-slider
+    value="50"
+    custom-class="slider"
+    bind:drag-start="onDragStart"
+    bind:drag-end="onDragEnd"
+  />
+</demo-block>

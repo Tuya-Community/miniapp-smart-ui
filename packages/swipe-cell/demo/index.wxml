@@ -28,5 +28,35 @@
   </smart-swipe-cell>
 </demo-block>
 
+<demo-block title="{{I18n.t('disabled')}}">
+  <smart-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" disabled>
+    <view slot="left" class="smart-swipe-cell__left">{{I18n.t('choose')}}</view>
+    <smart-cell-group>
+      <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" />
+    </smart-cell-group>
+    <view slot="right" class="smart-swipe-cell__right">{{I18n.t('delete')}}</view>
+  </smart-swipe-cell>
+</demo-block>
+
+<demo-block title="{{I18n.t('tabCloseEvent')}}">
+  <smart-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" bind:tab-close="onTabCloseEvent">
+    <view slot="left" class="smart-swipe-cell__left">{{I18n.t('choose')}}</view>
+    <smart-cell-group>
+      <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" />
+    </smart-cell-group>
+    <view slot="right" class="smart-swipe-cell__right">{{I18n.t('delete')}}</view>
+  </smart-swipe-cell>
+</demo-block>
+
+<demo-block title="{{I18n.t('clickEvent')}}">
+  <smart-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" bind:click="onSwipeCellClick">
+    <view slot="left" class="smart-swipe-cell__left">{{I18n.t('choose')}}</view>
+    <smart-cell-group>
+      <smart-cell title="{{I18n.t('cell')}}" value="{{I18n.t('content')}}" />
+    </smart-cell-group>
+    <view slot="right" class="smart-swipe-cell__right">{{I18n.t('delete')}}</view>
+  </smart-swipe-cell>
+</demo-block>
+
 <smart-dialog id="smart-dialog-cell" />
 <smart-toast id="smart-toast-cell" />

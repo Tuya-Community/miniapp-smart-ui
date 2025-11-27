@@ -18,5 +18,17 @@ SmartComponent({
         currentValue: event.detail.value,
       });
     },
+    onDragStart(event) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Drag start',
+      });
+    },
+    onDragEnd(event) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Drag end',
+      });
+    },
   },
 });

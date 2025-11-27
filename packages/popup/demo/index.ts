@@ -13,6 +13,8 @@ SmartComponent({
       closeIcon: false,
       customCloseIcon: false,
       customIconPosition: false,
+      overlayStyle: false,
+      clickOverlay: false,
     },
     rightIcon: Right,
   },
@@ -94,6 +96,29 @@ SmartComponent({
 
     hideCustomIconPosition() {
       this.toggle('customIconPosition', false);
+    },
+
+    showOverlayStyle() {
+      this.toggle('overlayStyle', true);
+    },
+
+    hideOverlayStyle() {
+      this.toggle('overlayStyle', false);
+    },
+
+    showClickOverlay() {
+      this.toggle('clickOverlay', true);
+    },
+
+    hideClickOverlay() {
+      this.toggle('clickOverlay', false);
+    },
+
+    onClickOverlay() {
+      wx.showToast({
+        icon: 'none',
+        title: 'Click Overlay',
+      });
     },
     enter() {
       console.log('enter');

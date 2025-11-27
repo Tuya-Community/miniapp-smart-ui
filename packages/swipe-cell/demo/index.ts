@@ -49,5 +49,19 @@ SmartComponent({
           break;
       }
     },
+    onTabCloseEvent(event) {
+      Toast({
+        context: this,
+        selector: '#smart-toast-cell',
+        message: 'Tab Close: ' + event.detail,
+      });
+    },
+    onSwipeCellClick(event) {
+      Toast({
+        context: this,
+        selector: '#smart-toast-cell',
+        message: 'Click: ' + event.detail,
+      });
+    },
   },
 });

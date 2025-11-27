@@ -69,3 +69,13 @@
     <view slot="label">{{I18n.t('address')}}<smart-icon class="icon" name="{{icon}}" size="12px" /></view>
   </smart-search>
 </demo-block>
+
+<demo-block title="{{I18n.t('searchEvents')}}">
+  <smart-search
+    model:value="{{ value }}"
+    placeholder="{{I18n.t('pleaseEnterSearchKeywords')}}"
+    bind:focus="onSearchFocus"
+    bind:blur="onSearchBlur"
+    bind:click-input="onSearchClickInput"
+  />
+</demo-block>

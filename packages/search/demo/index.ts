@@ -45,5 +45,23 @@ SmartComponent({
         icon: 'none',
       });
     },
+    onSearchFocus(event) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Focus',
+      });
+    },
+    onSearchBlur(event) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Blur',
+      });
+    },
+    onSearchClickInput(event) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Click Input',
+      });
+    },
   },
 });

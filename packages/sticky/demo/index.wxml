@@ -32,7 +32,7 @@
     style="height: 200px; background-color: var(--app-B3);"
   >
     <view style="height: 400px; padding-top: 50px;">
-      <smart-sticky scroll-top="{{ scrollTop }}" offset-top="{{ offsetTop }}">
+      <smart-sticky scroll-top="{{ scrollTop }}" offset-top="{{ offsetTop }}" bind:scroll="onStickyScroll">
         <smart-button type="warning">
           {{I18n.t('nestedWithinScrollView')}}
         </smart-button>

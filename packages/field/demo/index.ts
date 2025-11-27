@@ -21,5 +21,47 @@ SmartComponent({
         title: I18n.t('clickTheIcon'),
       });
     },
+    onFieldFocus(e) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Focus: ' + JSON.stringify(e.detail),
+      });
+    },
+    onFieldBlur(e) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Blur: ' + JSON.stringify(e.detail),
+      });
+    },
+    onFieldClickIcon(e) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Click Icon',
+      });
+    },
+    onFieldClickInput(e) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Click Input',
+      });
+    },
+    onFieldClear(e) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Clear',
+      });
+    },
+    onFieldConfirm(e) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Confirm: ' + e.detail,
+      });
+    },
+    onFieldInput(e) {
+      console.log('Input:', e.detail);
+    },
+    onFieldChange(e) {
+      console.log('Change:', e.detail);
+    },
   },
 });

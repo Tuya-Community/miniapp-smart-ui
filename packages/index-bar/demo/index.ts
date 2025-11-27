@@ -20,5 +20,11 @@ SmartComponent({
         activeTab: event.detail.name,
       });
     },
+    onIndexSelect(event) {
+      wx.showToast({
+        icon: 'none',
+        title: 'Select: ' + event.detail,
+      });
+    },
   },
 });
