@@ -10,6 +10,14 @@ SmartComponent({
       });
     },
 
+    showColorToast() {
+      ToastInstance({
+        context: this,
+        message: I18n.t('promptContent'),
+        textColor: '#1989FA',
+      });
+    },
+
     showLongToast() {
       ToastInstance({
         context: this,
@@ -36,6 +44,15 @@ SmartComponent({
 
     showSuccessToast() {
       ToastInstance.success({ context: this, message: I18n.t('successMessage') });
+    },
+
+    showSuccessColorToast() {
+      ToastInstance.success({
+        context: this,
+        message: I18n.t('successMessage'),
+        textColor: '#1989FA',
+        iconColor: '#1989FA',
+      });
     },
 
     showFailToast() {

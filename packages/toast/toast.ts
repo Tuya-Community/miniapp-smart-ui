@@ -17,6 +17,8 @@ interface ToastOptions {
   context?: (() => ToastContext) | ToastContext;
   position?: string;
   duration?: number;
+  textColor?: string;
+  iconColor?: string;
   selector?: string;
   forbidClick?: boolean;
   ignoreQueue?: boolean;
