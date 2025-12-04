@@ -45,6 +45,17 @@ version: v2.3.0
 </smart-circle>
 <smart-circle percent="{{50}}" mode="angle2">
 </smart-circle>
+<smart-circle percent="{{50}}" mode="angle2" angle-offset="{{30}}">
+</smart-circle>
+```
+
+### 角度偏移
+
+`angle-offset` 属性用于设置半圆类型（`angle`、`angle2`）的起始角度偏移，单位为度。值越大，圆环的缺口越大。默认值为 -1，表示使用默认偏移。
+
+```html
+<smart-circle percent="{{50}}" mode="angle2" angle-offset="{{30}}">
+</smart-circle>
 ```
 
 ### 不使用圆角
@@ -91,6 +102,7 @@ Page({
 
 | 属性名                     | 描述     | 类型          | 默认值                     |
 | -------------------------- | -------- | ------------- | -------------------------- |
+| angle-offset               | 角度偏移 | number        | -1                         |
 | children                   | 子元素   | ReactNode     | undefined                  |
 | class-name                 | 类名     | string        | undefined                  |
 | custom-style `v2.3.3`      | 样式     | CSSProperties | undefined                  |

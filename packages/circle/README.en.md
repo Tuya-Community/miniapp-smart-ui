@@ -45,6 +45,17 @@ The `mode` property represents the type, angle, and angle2 are semicircular type
 </smart-circle>
 <smart-circle percent="{{50}}" mode="angle2">
 </smart-circle>
+<smart-circle percent="{{50}}" mode="angle2" angle-offset="{{30}}">
+</smart-circle>
+```
+
+### Angle Offset
+
+The `angle-offset` property is used to set the starting angle offset for semicircular types (`angle`, `angle2`), in degrees. The larger the value, the larger the gap in the circle. The default value is -1, which means using the default offset.
+
+```html
+<smart-circle percent="{{50}}" mode="angle2" angle-offset="{{30}}">
+</smart-circle>
 ```
 
 ### Without Round Corners
@@ -89,20 +100,21 @@ Page({
 
 ### props
 
-| Property Name              | Description | Type          | Default Value              |
-| -------------------------- | ----------- | ------------- | -------------------------- |
-| children                   | Children    | ReactNode     | undefined                  |
-| class-name                 | Class Name  | string        | undefined                  |
-| custom-style `v2.3.3`      | Style       | CSSProperties | undefined                  |
-| fill-color                 | Fill Color  | string        | '#007AFF'                  |
-| mask-color                 | Mask Color  | string        | '#ffffff'                  |
-| mode `v2.3.0`              | Style Mode  | string        | `basic`, `angle`, `angle2` |
-| percent                    | Percentage  | number        | 0                          |
-| round `v2.3.0`             | Mask Color  | string        | `true`                     |
-| size                       | Size        | string        | '100px'                    |
-| style `@deprecated v2.1.7` | Style       | CSSProperties | undefined                  |
-| track-color                | Track Color | string        | '#d3d3d3'                  |
-| track-width                | Track Width | number        | 10                         |
+| Property Name              | Description  | Type          | Default Value              |
+| -------------------------- | ------------ | ------------- | -------------------------- |
+| angle-offset               | Angle Offset | number        | -1                         |
+| children                   | Children     | ReactNode     | undefined                  |
+| class-name                 | Class Name   | string        | undefined                  |
+| custom-style `v2.3.3`      | Style        | CSSProperties | undefined                  |
+| fill-color                 | Fill Color   | string        | '#007AFF'                  |
+| mask-color                 | Mask Color   | string        | '#ffffff'                  |
+| mode `v2.3.0`              | Style Mode   | string        | `basic`, `angle`, `angle2` |
+| percent                    | Percentage   | number        | 0                          |
+| round `v2.3.0`             | Mask Color   | string        | `true`                     |
+| size                       | Size         | string        | '100px'                    |
+| style `@deprecated v2.1.7` | Style        | CSSProperties | undefined                  |
+| track-color                | Track Color  | string        | '#d3d3d3'                  |
+| track-width                | Track Width  | number        | 10                         |
 
 ### Style Variables
 
