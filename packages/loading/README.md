@@ -58,7 +58,7 @@ category: 展示
 | text-size `v1.0.0` | 文字大小，默认单位为为 `px`   | _string \| number_ | `14px`     |
 | type               | 类型，可选值为 `spinner`      | _string_           | `circular` |
 | vertical `v1.0.0`  | 是否垂直排列图标和文字内容    | _boolean_          | `false`    |
-| icon-color `v2.7.4` | 单独控制icon的颜色 | _string_          | `var(--loading-spinner-size, #1989FA)`    |
+| icon-color `v2.7.4` | 单独控制icon的颜色 | _string_          | `var(--loading-spinner-color, #1989FA)`    |
 
 ### Slots
 

@@ -58,7 +58,7 @@ Import the component in `app.json` or `index.json`. For details, see [Quick Star
 | text-size `v1.0.0`| Text size, default unit is `px` | _string \| number_ | `14px`     |
 | type              | Type, optional value is `spinner` | _string_           | `circular` |
 | vertical `v1.0.0` | Whether to vertically align icons and text | _boolean_          | `false`    |
-| icon-color `v2.7.4` | Independently control the color of the icon | _string_          | `var(--loading-spinner-size, #1989FA)`    |
+| icon-color `v2.7.4` | Independently control the color of the icon | _string_          | `var(--loading-spinner-color, #1989FA)`    |
 
 ### Slots
 
