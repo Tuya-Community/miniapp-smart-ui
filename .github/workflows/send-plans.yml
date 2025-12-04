@@ -19,6 +19,17 @@ jobs:
 
     - name: Read PLANS.md and Send to WeChat Bot
       run: |
+
+        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=693axxx6-7aoc-4bc4-97a0-0ec2sifa5aaa' \
+        -H 'Content-Type: application/json' \
+        -d '
+        {
+            "msgtype": "markdown",
+            "markdown": {
+                "content": "hello world"
+            }
+        }'
+
         if [ ! -f PLANS.md ]; then
           echo "PLANS.md not found"
           exit 1
