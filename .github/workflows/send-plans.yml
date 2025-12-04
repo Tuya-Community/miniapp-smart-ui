@@ -35,7 +35,34 @@ jobs:
             }
           }')
         
+        # 调试：打印 JSON payload（前 200 个字符）
+        echo "JSON payload preview: ${JSON_PAYLOAD:0:200}..."
+        
         # 使用 curl 发送到微信机器人
-        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=39de41a1-3fbf-4a03-96c8-23da3503318f' \
+        RESPONSE=$(curl -s -w "\n%{http_code}" \
+          'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=39de41a1-3fbf-4a03-96c8-23da3503318f' \
           -H 'Content-Type: application/json' \
-          -d "$JSON_PAYLOAD"
+          -d "$JSON_PAYLOAD")
+        
+        # 分离响应体和状态码
+        HTTP_BODY=$(echo "$RESPONSE" | head -n -1)
+        HTTP_CODE=$(echo "$RESPONSE" | tail -n 1)
+        
+        echo "HTTP Status Code: $HTTP_CODE"
+        echo "Response: $HTTP_BODY"
+        
+        # 检查是否成功
+        if [ "$HTTP_CODE" != "200" ]; then
+          echo "Failed to send message. HTTP code: $HTTP_CODE"
+          exit 1
+        fi
+        
+        # 检查响应中的 errcode
+        ERRCODE=$(echo "$HTTP_BODY" | jq -r '.errcode // 0')
+        if [ "$ERRCODE" != "0" ]; then
+          ERRMSG=$(echo "$HTTP_BODY" | jq -r '.errmsg // "Unknown error"')
+          echo "WeChat API error: errcode=$ERRCODE, errmsg=$ERRMSG"
+          exit 1
+        fi
+        
+        echo "Message sent successfully!"
