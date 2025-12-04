@@ -51,7 +51,7 @@ jobs:
         
         # 使用 curl 发送到微信机器人
         RESPONSE=$(curl -s -w "\n%{http_code}" \
-          'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=fe5de2f0-8129-42c9-ab8d-5f5d59625d0b' \
+          'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_TOKEN }}' \
           -H 'Content-Type: application/json' \
           -d "$JSON_PAYLOAD")
         
