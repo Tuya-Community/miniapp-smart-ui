@@ -24,37 +24,18 @@ jobs:
           exit 1
         fi
         
-        # 使用 Python 构建 JSON 并发送，自动处理转义和特殊字符
-        python3 << 'EOF'
-        import json
-        import urllib.request
-        import urllib.parse
-        
-        # 读取 PLANS.md 文件内容
-        with open('PLANS.md', 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        # 构建请求数据
-        data = {
-            "msgtype": "markdown",
-            "markdown": {
-                "content": content
+        # 读取文件内容并使用 jq 构建 JSON，自动处理转义
+        CONTENT=$(cat PLANS.md)
+        JSON_PAYLOAD=$(jq -n \
+          --arg content "$CONTENT" \
+          '{
+            msgtype: "markdown",
+            markdown: {
+              content: $content
             }
-        }
+          }')
         
-        # 转换为 JSON
-        json_data = json.dumps(data, ensure_ascii=False).encode('utf-8')
-        
-        # 发送请求
-        url = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=39de41a1-3fbf-4a03-96c8-23da3503318f'
-        req = urllib.request.Request(url, data=json_data, headers={'Content-Type': 'application/json'})
-        
-        try:
-            with urllib.request.urlopen(req) as response:
-                result = response.read().decode('utf-8')
-                print(f"Response: {result}")
-        except urllib.error.HTTPError as e:
-            print(f"Error: {e.code} - {e.reason}")
-            print(e.read().decode('utf-8'))
-            exit(1)
-        EOF
+        # 使用 curl 发送到微信机器人
+        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=39de41a1-3fbf-4a03-96c8-23da3503318f' \
+          -H 'Content-Type: application/json' \
+          -d "$JSON_PAYLOAD"
