@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - 'release/*'
-    paths:
-      - 'PLANS.md'
+    # paths:
+    #   - 'PLANS.md'
 
 jobs:
   send_plans:
