@@ -26,10 +26,10 @@ SmartComponent({
   created() {
     this.setData({
       spinner: this.SpinnerLoading({
-        color: this.data.color || 'var(--loading-spinner-size, #1989FA)',
+        color: this.data.color || 'var(--loading-spinner-color, #1989FA)',
       }),
       circular: this.CircularLoading({
-        color: this.data.color || 'var(--loading-spinner-size, #1989FA)',
+        color: this.data.color || 'var(--loading-spinner-color, #1989FA)',
       }),
     });
   },
