@@ -11,6 +11,11 @@ SmartComponent({
     message: String,
     forbidClick: Boolean,
     nativeDisabled: Boolean,
+    iconColor: {
+      type: String,
+      value: 'white',
+    },
+    textColor: String,
     zIndex: {
       type: Number,
       value: 1000,
