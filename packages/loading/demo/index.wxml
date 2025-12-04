@@ -5,13 +5,13 @@
 </demo-block>
 
 <demo-block title="{{I18n.t('customColor')}}" padding>
-  <smart-loading custom-class="demo-loading" type="spinner" />
-  <smart-loading custom-class="demo-loading" />
+  <smart-loading color="red" custom-class="demo-loading" type="spinner" />
+  <smart-loading color="green" custom-class="demo-loading" />
 </demo-block>
 
 <demo-block title="{{I18n.t('loadingCopy')}}" padding>
   <smart-loading custom-class="demo-loading" type="spinner" size="24px">{{I18n.t('loading')}}...</smart-loading>
-  <smart-loading custom-class="demo-loading" size="24px">{{I18n.t('loading')}}...</smart-loading>
+  <smart-loading color="var(--app-B1-N1)" icon-color="#1989FA" custom-class="demo-loading" size="24px">{{I18n.t('loading')}}...</smart-loading>
 </demo-block>
 
 <demo-block title="{{I18n.t('verticalArrangement')}}" padding>

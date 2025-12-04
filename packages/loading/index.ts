@@ -4,7 +4,6 @@ SmartComponent({
   props: {
     color: {
       type: String,
-      value: 'var(--loading-text-color, #1989FA)',
     },
     vertical: Boolean,
     type: {
@@ -16,6 +15,9 @@ SmartComponent({
       value: '30',
     },
     textSize: String,
+    iconColor: {
+      type: String,
+    },
   },
   data: {
     spinner: '',
@@ -23,8 +25,12 @@ SmartComponent({
   },
   created() {
     this.setData({
-      spinner: this.SpinnerLoading({ color: this.data.color }),
-      circular: this.CircularLoading({ color: this.data.color }),
+      spinner: this.SpinnerLoading({
+        color: this.data.color || 'var(--loading-spinner-size, #1989FA)',
+      }),
+      circular: this.CircularLoading({
+        color: this.data.color || 'var(--loading-spinner-size, #1989FA)',
+      }),
     });
   },
   methods: {

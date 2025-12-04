@@ -5,7 +5,7 @@ var addUnit = require('../wxs/add-unit.wxs');
 function textStyle(data) {
   var ret = style({
     'font-size': addUnit(data.textSize),
-    color: data.color,
+    color: data.color || 'var(--loading-text-color, #1989FA)',
   });
 
   return ret;
@@ -28,6 +28,7 @@ function loadingStyle(data) {
     '-webkit-mask-size': addUnit(data.size),
     width: addUnit(data.size),
     height: addUnit(data.size),
+    background: data.iconColor || data.color || 'var(--loading-spinner-size, #1989FA)',
   });
 
   return ret;

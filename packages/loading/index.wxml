@@ -4,11 +4,11 @@
 <view class="custom-class {{ utils.bem('loading', { vertical }) }}">
   <view
     class="smart-loading__spinner smart-loading__spinner--{{ type }}"
-    style="{{ computed.loadingStyle({ size, type, color, spinner, circular }) }}"
+    style="{{ computed.loadingStyle({ iconColor, size, type, color, spinner, circular }) }}"
   >
     <view
       class="smart-switch__loading"
-      style="{{ computed.loadingStyle({ size, type, color, spinner, circular }) }}" 
+      style="{{ computed.loadingStyle({ iconColor, size, type, color, spinner, circular }) }}" 
     />
   </view>
   <view class="smart-loading__text" style="{{ computed.textStyle({ textSize, color }) }}">
