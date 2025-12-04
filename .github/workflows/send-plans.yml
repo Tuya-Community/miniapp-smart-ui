@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - 'release/*'
-    # paths:
-    #   - 'PLANS.md'
+    paths:
+      - 'PLANS.md'
 
 jobs:
   send_plans:
@@ -24,8 +24,19 @@ jobs:
           exit 1
         fi
         
-        # 读取文件内容并使用 jq 构建 JSON，自动处理转义
-        CONTENT=$(cat PLANS.md)
+        # 提取最后一个大标题（以 # 开头）及其后面的内容
+        # 找到最后一个以 # 开头的行号
+        LAST_HEADER_LINE=$(grep -n '^#' PLANS.md | tail -1 | cut -d: -f1)
+        
+        if [ -n "$LAST_HEADER_LINE" ]; then
+          # 从最后一个标题行开始提取到文件末尾
+          CONTENT=$(sed -n "${LAST_HEADER_LINE},\$p" PLANS.md)
+        else
+          # 如果没有找到标题，使用整个文件
+          CONTENT=$(cat PLANS.md)
+        fi
+        
+        # 使用 jq 构建 JSON，自动处理转义
         JSON_PAYLOAD=$(jq -n \
           --arg content "$CONTENT" \
           '{
