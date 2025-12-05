@@ -229,7 +229,7 @@ export default Render({
   },
   render(val, offsetValue) {
     var offset = offsetValue !== -1 ? Math.max(offsetValue, 1) : undefined;
-    val = Math.min(Math.max(0, val), 100)
+    val = Math.min(Math.max(0, val), 100);
     if (this.mode === 'basic') {
       this.renderAll(val / 100, this.round ? { lineCap: 'round' } : { lineCap: '' });
     }
