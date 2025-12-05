@@ -38,22 +38,13 @@ The `percent` property represents the target progress of the progress bar.
 
 ### Notch Circle
 
-The `mode` property represents the type, angle, and angle2 are semicircular types.
+The `mode` property represents the type, angle, and angle2 are semicircular types. The `angle-offset` property is used to set the starting angle offset for semicircular types (`angle`, `angle2`), in degrees. The larger the value, the larger the gap in the circle. The default value is -1, which means using the default offset.
 
 ```html
 <smart-circle percent="{{50}}" mode="angle">
 </smart-circle>
 <smart-circle percent="{{50}}" mode="angle2">
 </smart-circle>
-<smart-circle percent="{{50}}" mode="angle2" angle-offset="{{30}}">
-</smart-circle>
-```
-
-### Angle Offset
-
-The `angle-offset` property is used to set the starting angle offset for semicircular types (`angle`, `angle2`), in degrees. The larger the value, the larger the gap in the circle. The default value is -1, which means using the default offset.
-
-```html
 <smart-circle percent="{{50}}" mode="angle2" angle-offset="{{30}}">
 </smart-circle>
 ```

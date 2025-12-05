@@ -38,22 +38,13 @@ version: v2.3.0
 
 ### 缺口圆角
 
-`mode`属性表示类型，angle、angle2 为半圆类型。
+`mode`属性表示类型，angle、angle2 为半圆类型，`angle-offset` 属性用于设置半圆类型（`angle`、`angle2`）的起始角度偏移，单位为度。值越大，圆环的缺口越大。默认值为 -1，表示使用默认偏移。
 
 ```html
 <smart-circle percent="{{50}}" mode="angle">
 </smart-circle>
 <smart-circle percent="{{50}}" mode="angle2">
 </smart-circle>
-<smart-circle percent="{{50}}" mode="angle2" angle-offset="{{30}}">
-</smart-circle>
-```
-
-### 角度偏移
-
-`angle-offset` 属性用于设置半圆类型（`angle`、`angle2`）的起始角度偏移，单位为度。值越大，圆环的缺口越大。默认值为 -1，表示使用默认偏移。
-
-```html
 <smart-circle percent="{{50}}" mode="angle2" angle-offset="{{30}}">
 </smart-circle>
 ```
