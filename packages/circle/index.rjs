@@ -122,6 +122,7 @@ export default Render({
 
     const startAngle = startOffset * Math.PI; // 起始角度（3点钟方向）
     const endAngle = endOffset * Math.PI; // 结束角度（360度）
+    const availableAngle = endAngle - startAngle; // 实际可用角度范围
 
     // 绘制环形进度条的函数
     const drawProgressBar = (progress, color) => {
@@ -139,7 +140,9 @@ export default Render({
       ctx.stroke();
 
       // 绘制进度条
-      const progressAngle = progress * (Math.PI * 2); // 根据进度计算角度
+      // progress 的范围是 0-0.5（对应 percent 0-100%），需要归一化到 0-1
+      const normalizedProgress = progress * 2; // 将 0-0.5 映射到 0-1
+      const progressAngle = normalizedProgress * availableAngle; // 根据归一化进度和实际可用角度范围计算角度
       ctx.beginPath();
       ctx.arc(this.width / 2, this.height / 2, radius, startAngle, startAngle + progressAngle);
       ctx.lineWidth = lineWidth;
@@ -184,6 +187,7 @@ export default Render({
     const endOffset = ((180 - offset) + 180 + offset * 2) / 180;
     const startAngle = startOffset * Math.PI; // 起始角度（3点钟方向）
     const endAngle = endOffset * Math.PI; // 结束角度（360度）
+    const availableAngle = endAngle - startAngle; // 实际可用角度范围
 
     // 绘制环形进度条的函数
     const drawProgressBar = (progress, color) => {
@@ -201,7 +205,9 @@ export default Render({
       ctx.stroke();
 
       // 绘制进度条
-      const progressAngle = progress * (Math.PI * 2.12); // 根据进度计算角度
+      // progress 的范围是 0-0.666...（对应 percent 0-100%），需要归一化到 0-1
+      const normalizedProgress = progress * 1.5; // 将 0-0.666... 映射到 0-1 (1 / 0.666... = 1.5)
+      const progressAngle = normalizedProgress * availableAngle; // 根据归一化进度和实际可用角度范围计算角度
       ctx.beginPath();
       ctx.arc(this.width / 2, this.height / 2, radius, startAngle, startAngle + progressAngle);
       ctx.lineWidth = lineWidth;
