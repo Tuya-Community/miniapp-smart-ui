@@ -7,7 +7,7 @@ export default Render({
   dpr: 1,
   fillColor: '#007AFF',
 
-  async init(data) {
+  async init(data, offsetValue) {
     let canvas = this.canvas;
     if (!canvas) {
       canvas = await getCanvasById(data.canvasId);
@@ -42,7 +42,7 @@ export default Render({
     this.round = data.round;
 
     ctx.scale(this.dpr, this.dpr);
-    this.render(data.percent);
+    this.render(data.percent, offsetValue);
   },
   percentToDecimal(percent) {
     percent = percent.replace('%', '');
@@ -107,6 +107,7 @@ export default Render({
     progress,
     ops = {
       lineCap: 'round',
+      offset: 1,
     }
   ) {
     const canvas = this.canvas;
@@ -114,8 +115,14 @@ export default Render({
 
     const lineWidth = this.lineWidth; // 进度条宽度
     const radius = ((this.width - lineWidth) * 1) / 2; // 圆形半径
-    const startAngle = 1 * Math.PI; // 起始角度（3点钟方向）
-    const endAngle = 2 * Math.PI; // 结束角度（360度）
+
+    const offset = ops.offset || 1;
+    const startOffset = (180 - offset) / 180;
+    const endOffset = ((180 - offset) + 180 + offset * 2) / 180;
+
+    const startAngle = startOffset * Math.PI; // 起始角度（3点钟方向）
+    const endAngle = endOffset * Math.PI; // 结束角度（360度）
+    const availableAngle = endAngle - startAngle; // 实际可用角度范围
 
     // 绘制环形进度条的函数
     const drawProgressBar = (progress, color) => {
@@ -133,7 +140,9 @@ export default Render({
       ctx.stroke();
 
       // 绘制进度条
-      const progressAngle = progress * (Math.PI * 2); // 根据进度计算角度
+      // progress 的范围是 0-0.5（对应 percent 0-100%），需要归一化到 0-1
+      const normalizedProgress = progress * 2; // 将 0-0.5 映射到 0-1
+      const progressAngle = normalizedProgress * availableAngle; // 根据归一化进度和实际可用角度范围计算角度
       ctx.beginPath();
       ctx.arc(this.width / 2, this.height / 2, radius, startAngle, startAngle + progressAngle);
       ctx.lineWidth = lineWidth;
@@ -164,6 +173,7 @@ export default Render({
     progress,
     ops = {
       lineCap: 'round',
+      offset: 36,
     }
   ) {
     const canvas = this.canvas;
@@ -172,8 +182,12 @@ export default Render({
     const lineWidth = this.lineWidth; // 进度条宽度
     const radius = ((this.width - lineWidth) * 1) / 2; // 圆形半径
 
-    const startAngle = 0.8 * Math.PI; // 起始角度（3点钟方向）
-    const endAngle = 2.2 * Math.PI; // 结束角度（360度）
+    const offset = ops.offset || 36;
+    const startOffset = (180 - offset) / 180;
+    const endOffset = ((180 - offset) + 180 + offset * 2) / 180;
+    const startAngle = startOffset * Math.PI; // 起始角度（3点钟方向）
+    const endAngle = endOffset * Math.PI; // 结束角度（360度）
+    const availableAngle = endAngle - startAngle; // 实际可用角度范围
 
     // 绘制环形进度条的函数
     const drawProgressBar = (progress, color) => {
@@ -191,7 +205,9 @@ export default Render({
       ctx.stroke();
 
       // 绘制进度条
-      const progressAngle = progress * (Math.PI * 2.12); // 根据进度计算角度
+      // progress 的范围是 0-0.666...（对应 percent 0-100%），需要归一化到 0-1
+      const normalizedProgress = progress * 1.5; // 将 0-0.666... 映射到 0-1 (1 / 0.666... = 1.5)
+      const progressAngle = normalizedProgress * availableAngle; // 根据归一化进度和实际可用角度范围计算角度
       ctx.beginPath();
       ctx.arc(this.width / 2, this.height / 2, radius, startAngle, startAngle + progressAngle);
       ctx.lineWidth = lineWidth;
@@ -217,16 +233,17 @@ export default Render({
     // 示例：绘制不同的进度条
     drawProgressBar(progress, this.fillColor); // 25%的蓝色进度条
   },
-  render(val) {
-    val = Math.min(Math.max(0, val), 100)
+  render(val, offsetValue) {
+    var offset = offsetValue !== -1 ? Math.max(offsetValue, 1) : undefined;
+    val = Math.min(Math.max(0, val), 100);
     if (this.mode === 'basic') {
       this.renderAll(val / 100, this.round ? { lineCap: 'round' } : { lineCap: '' });
     }
     if (this.mode === 'angle') {
-      this.renderHalf(val / 200, this.round ? { lineCap: 'round' } : { lineCap: '' });
+      this.renderHalf(val / 200, this.round ? { lineCap: 'round', offset: offset } : { lineCap: '', offset: offset });
     }
     if (this.mode === 'angle2') {
-      this.renderHalf2(val / 150, this.round ? { lineCap: 'round' } : { lineCap: '' });
+      this.renderHalf2(val / 150, this.round ? { lineCap: 'round', offset: offset } : { lineCap: '', offset: offset });
     }
   },
 });

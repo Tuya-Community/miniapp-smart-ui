@@ -2,13 +2,9 @@ import path from 'path';
 import simulate from 'miniprogram-simulate';
 
 describe('circle', () => {
-  const SmartCircle = simulate.load(
-    path.resolve(__dirname, '../index'),
-    'smart-circle',
-    {
-      rootPath: path.resolve(__dirname, '../../'),
-    }
-  );
+  const SmartCircle = simulate.load(path.resolve(__dirname, '../index'), 'smart-circle', {
+    rootPath: path.resolve(__dirname, '../../'),
+  });
 
   beforeEach(() => {
     // Mock wx.getSystemInfo
@@ -41,13 +37,13 @@ describe('circle', () => {
 
     const wrapper = comp.querySelector('#wrapper');
     await simulate.sleep(10);
-    
+
     expect(wrapper).toBeTruthy();
     expect(wrapper?.data.size).toBe('100px');
     expect(wrapper?.data.trackWidth).toBe(10);
     expect(wrapper?.data.trackColor).toBe('#d3d3d3');
     expect(wrapper?.data.fillColor).toBe('#007AFF');
-    expect(wrapper?.data.maskColor).toBe('#ffffff');
+    expect(wrapper?.data.maskColor).toBe('transparent');
     expect(wrapper?.data.percent).toBe(0);
     expect(wrapper?.data.mode).toBe('basic');
     expect(wrapper?.data.round).toBe(true);
@@ -78,7 +74,7 @@ describe('circle', () => {
 
     const wrapper = comp.querySelector('#wrapper');
     await simulate.sleep(10);
-    
+
     expect(wrapper?.data.size).toBe('200px');
     expect(wrapper?.data.trackWidth).toBe(20);
     expect(wrapper?.data.trackColor).toBe('#ff0000');
@@ -102,7 +98,7 @@ describe('circle', () => {
 
     const wrapper = comp.querySelector('#wrapper');
     await simulate.sleep(10);
-    
+
     // canvasId should be initialized
     expect(wrapper?.data.canvasId).toBeTruthy();
     expect(wrapper?.data.canvasId).toContain('smart-ui-circle_');
@@ -121,7 +117,7 @@ describe('circle', () => {
 
     const wrapper = comp.querySelector('#wrapper');
     await simulate.sleep(10);
-    
+
     expect(wrapper?.data.width).toBe(150);
     expect(wrapper?.data.height).toBe(150);
   });
@@ -142,7 +138,7 @@ describe('circle', () => {
 
     const wrapper = comp.querySelector('#wrapper');
     await simulate.sleep(10);
-    
+
     expect(wrapper?.data.width).toBe(200);
     expect(wrapper?.data.height).toBe(200);
   });
@@ -161,7 +157,7 @@ describe('circle', () => {
     const wrapper = comp.querySelector('#wrapper');
     const instance = wrapper?.instance;
     await simulate.sleep(10);
-    
+
     // parseSize should return the original value when no number is found
     const sizeVal = instance?.parseSize();
     expect(sizeVal).toBe('invalid');
@@ -180,7 +176,7 @@ describe('circle', () => {
 
     const wrapper = comp.querySelector('#wrapper');
     await simulate.sleep(30); // Wait for mounted lifecycle
-    
+
     // initRate should be called and set dpr
     expect(wx.getSystemInfo).toHaveBeenCalled();
     expect(wrapper?.data.dpr).toBe(2);
@@ -203,17 +199,17 @@ describe('circle', () => {
     const wrapper = comp.querySelector('#wrapper');
     const instance = wrapper?.instance;
     await simulate.sleep(30); // Wait for mounted to set dpr
-    
+
     // Mock render.init
     const initSpy = jest.fn();
     if (instance && instance.render) {
       instance.render.init = initSpy;
     }
-    
+
     // Change percent
     comp.setData({ percent: 50 });
     await simulate.sleep(10);
-    
+
     // render.init should be called when dpr is set
     if (instance?.data.dpr) {
       expect(initSpy).toHaveBeenCalled();
@@ -234,17 +230,17 @@ describe('circle', () => {
     const wrapper = comp.querySelector('#wrapper');
     const instance = wrapper?.instance;
     await simulate.sleep(30); // Wait for mounted to set dpr
-    
+
     // Mock render.init
     const initSpy = jest.fn();
     if (instance && instance.render) {
       instance.render.init = initSpy;
     }
-    
+
     // Change dpr
     instance?.setData({ dpr: 3 });
     await simulate.sleep(10);
-    
+
     // render.init should be called
     expect(initSpy).toHaveBeenCalled();
   });
@@ -262,14 +258,14 @@ describe('circle', () => {
 
     const wrapper = comp.querySelector('#wrapper');
     await simulate.sleep(10);
-    
+
     const canvasId = wrapper?.data.canvasId;
     expect(canvasId).toBeTruthy();
-    
+
     // Destroy component
     comp.detach();
     await simulate.sleep(10);
-    
+
     // canvasId should be removed from idListRef (we can't directly test this,
     // but we can verify the component is destroyed)
     expect(wrapper).toBeTruthy();
@@ -279,15 +275,15 @@ describe('circle', () => {
     // Mock Date and Math.random to create predictable IDs
     const originalDate = Date;
     const originalMathRandom = Math.random;
-    
+
     const fixedTimestamp = 1234567890123;
     const MockDate = jest.fn(() => new originalDate(fixedTimestamp)) as any;
     MockDate.now = jest.fn(() => fixedTimestamp);
     global.Date = MockDate;
-    
+
     // First component: generate id with '45'
     Math.random = jest.fn(() => 0.12345);
-    
+
     const comp1 = simulate.render(
       simulate.load({
         usingComponents: {
@@ -298,11 +294,11 @@ describe('circle', () => {
     );
     comp1.attach(document.createElement('parent-wrapper'));
     await simulate.sleep(10);
-    
+
     const wrapper1 = comp1.querySelector('#wrapper1');
     const firstId = wrapper1?.data.canvasId;
     expect(firstId).toBeTruthy();
-    
+
     // Second component: try to generate same id (collision), then retry with different value
     let randomCallCount = 0;
     Math.random = jest.fn(() => {
@@ -310,9 +306,9 @@ describe('circle', () => {
       if (randomCallCount === 1) {
         return 0.12345; // Same as first - will cause collision
       }
-      return 0.67890; // Different value for retry
+      return 0.6789; // Different value for retry
     });
-    
+
     const comp2 = simulate.render(
       simulate.load({
         usingComponents: {
@@ -323,16 +319,16 @@ describe('circle', () => {
     );
     comp2.attach(document.createElement('parent-wrapper'));
     await simulate.sleep(10);
-    
+
     const wrapper2 = comp2.querySelector('#wrapper2');
     const secondId = wrapper2?.data.canvasId;
-    
+
     // IDs should be different (retry happened)
     expect(secondId).not.toBe(firstId);
     expect(secondId).toBeTruthy();
     // Verify Math.random was called at least twice (once for collision, once for retry)
     expect(randomCallCount).toBeGreaterThanOrEqual(2);
-    
+
     // Restore
     global.Date = originalDate;
     Math.random = originalMathRandom;
@@ -355,21 +351,21 @@ describe('circle', () => {
     const wrapper = comp.querySelector('#wrapper');
     const instance = wrapper?.instance;
     await simulate.sleep(10);
-    
+
     // Ensure dpr is 0
     instance?.setData({ dpr: 0 });
     await simulate.sleep(10);
-    
+
     // Mock render.init
     const initSpy = jest.fn();
     if (instance && instance.render) {
       instance.render.init = initSpy;
     }
-    
+
     // Change percent
     comp.setData({ percent: 50 });
     await simulate.sleep(10);
-    
+
     // render.init should NOT be called when dpr is 0
     expect(initSpy).not.toHaveBeenCalled();
   });
@@ -388,18 +384,18 @@ describe('circle', () => {
     const wrapper = comp.querySelector('#wrapper');
     const instance = wrapper?.instance;
     await simulate.sleep(10);
-    
+
     const originalCanvasId = wrapper?.data.canvasId;
     expect(originalCanvasId).toBeTruthy();
-    
+
     // Manually set canvasId
     instance?.setData({ canvasId: 'custom-id' });
     await simulate.sleep(10);
-    
+
     // Call initId - should return early without changing canvasId
     instance?.initId();
     await simulate.sleep(10);
-    
+
     // canvasId should remain 'custom-id'
     expect(wrapper?.data.canvasId).toBe('custom-id');
   });
@@ -418,7 +414,7 @@ describe('circle', () => {
     const wrapper = comp.querySelector('#wrapper');
     const instance = wrapper?.instance;
     await simulate.sleep(10);
-    
+
     // Directly test parseSize with number type
     // We need to set the property type, not just data
     if (instance) {
@@ -427,7 +423,7 @@ describe('circle', () => {
       (instance as any).data.size = 300;
     }
     await simulate.sleep(10);
-    
+
     // parseSize should return the number directly
     const sizeVal = instance?.parseSize();
     // Since size prop is String type, it might be converted to string

@@ -33,17 +33,21 @@ SmartComponent({
     },
     maskColor: {
       type: String,
-      value: '#ffffff',
+      value: 'transparent',
     },
     fillColorStops: {
       type: null,
+    },
+    angleOffset: {
+      type: Number,
+      value: -1,
     },
     percent: {
       type: Number,
       value: 0,
       observer(val) {
         if (this.render && this.data.dpr) {
-          this.render.init(this.data);
+          this.render.init(this.data, this.data.angleOffset);
         }
       },
     },
@@ -66,7 +70,7 @@ SmartComponent({
   watch: {
     dpr() {
       if (this.render) {
-        this.render.init(this.data);
+        this.render.init(this.data, this.data.angleOffset);
       }
     },
   },
