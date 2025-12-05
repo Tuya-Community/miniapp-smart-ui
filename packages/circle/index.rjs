@@ -117,8 +117,8 @@ export default Render({
     const radius = ((this.width - lineWidth) * 1) / 2; // 圆形半径
 
     const offset = ops.offset || 1;
-    const startOffset = (180 - offset) / 180
-    const endOffset = ((180 - offset) + 180 + offset * 2) / 180
+    const startOffset = (180 - offset) / 180;
+    const endOffset = ((180 - offset) + 180 + offset * 2) / 180;
 
     const startAngle = startOffset * Math.PI; // 起始角度（3点钟方向）
     const endAngle = endOffset * Math.PI; // 结束角度（360度）
@@ -180,8 +180,8 @@ export default Render({
     const radius = ((this.width - lineWidth) * 1) / 2; // 圆形半径
 
     const offset = ops.offset || 36;
-    const startOffset = (180 - offset) / 180
-    const endOffset = ((180 - offset) + 180 + offset * 2) / 180
+    const startOffset = (180 - offset) / 180;
+    const endOffset = ((180 - offset) + 180 + offset * 2) / 180;
     const startAngle = startOffset * Math.PI; // 起始角度（3点钟方向）
     const endAngle = endOffset * Math.PI; // 结束角度（360度）
 

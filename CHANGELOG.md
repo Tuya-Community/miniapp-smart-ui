@@ -1,5 +1,12 @@
 # 更新日志
 
+## v2.7.4 (2025-12-09)
+
+### Features ✨
+
+- circle: 新增 `angle-offset` 属性，用于设置半圆类型（`angle`、`angle2`）的起始角度偏移；修改 `mask-color` 默认值从 `#ffffff` 为 `transparent`
+
+
 ## v2.7.3 (2025-11-20)
 
 ### Features  ✨
