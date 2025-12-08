@@ -98,7 +98,7 @@ Page({
 | class-name                 | Class Name   | string        | undefined                  |
 | custom-style `v2.3.3`      | Style        | CSSProperties | undefined                  |
 | fill-color                 | Fill Color   | string        | '#007AFF'                  |
-| mask-color                 | Mask Color   | string        | '#ffffff'                  |
+| mask-color       | Mask Color   | string        | 'transparent'     |
 | mode `v2.3.0`              | Style Mode   | string        | `basic`, `angle`, `angle2` |
 | percent                    | Percentage   | number        | 0                          |
 | round `v2.3.0`             | Mask Color   | string        | `true`                     |

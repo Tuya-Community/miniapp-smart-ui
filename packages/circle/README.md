@@ -98,7 +98,7 @@ Page({
 | class-name                 | 类名     | string        | undefined                  |
 | custom-style `v2.3.3`      | 样式     | CSSProperties | undefined                  |
 | fill-color                 | 填充颜色 | string        | '#007AFF'                  |
-| mask-color                 | 遮罩颜色 | string        | '#ffffff'                  |
+| mask-color      | 遮罩颜色 | string        | 'transparent'                  |
 | mode `v2.3.0`              | 样式风格 | string        | `basic`、`angle`、`angle2` |
 | percent                    | 百分比   | number        | 0                          |
 | round `v2.3.0`             | 遮罩颜色 | string        | `true`                     |
