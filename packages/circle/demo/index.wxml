@@ -9,6 +9,8 @@
       </smart-circle>
       <smart-circle percent="{{50}}" mode="angle2">
       </smart-circle>
+      <smart-circle percent="{{50}}" mode="angle2" angle-offset="{{30}}">
+      </smart-circle>
     </view>
   </demo-block>
   <demo-block title="{{I18n.t('circle_noround')}}">
