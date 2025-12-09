@@ -12,8 +12,8 @@
 ### Bug Fixes  🐛
 
 - loading: 修复 color 属性效果([pull/104](https://github.com/Tuya-Community/miniapp-smart-ui/pull/104))
-- picker: 修复 loop 模式部分列无法拖动选中的问题([]())
-- datetime-picker: 修复部分情况下 1月 无法拖动选中的问题([]())
+- picker: 修复 loop 模式部分列无法拖动选中的问题([pull/113](https://github.com/Tuya-Community/miniapp-smart-ui/pull/113))
+- datetime-picker: 修复部分情况下 1月 无法拖动选中的问题([pull/113](https://github.com/Tuya-Community/miniapp-smart-ui/pull/113))
 
 
 
