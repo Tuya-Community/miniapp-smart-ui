@@ -4,7 +4,17 @@
 
 ### Features ✨
 
-- circle: 新增 `angle-offset` 属性，用于设置半圆类型（`angle`、`angle2`）的起始角度偏移；修改 `mask-color` 默认值从 `#ffffff` 为 `transparent`
+- config-provider：新增theme属性 一键切换主题([pull/100](https://github.com/Tuya-Community/miniapp-smart-ui/pull/100))
+- toast: 新增 textColor、iconColor属性([pull/105](https://github.com/Tuya-Community/miniapp-smart-ui/pull/105))
+- loading: 新增iconColor属性([pull/104](https://github.com/Tuya-Community/miniapp-smart-ui/pull/104))
+- circle: 新增 `angle-offset` 属性，用于设置半圆类型（`angle`、`angle2`）的起始角度偏移；修改 `mask-color` 默认值从 `#ffffff` 为 `transparent`([pull/106](https://github.com/Tuya-Community/miniapp-smart-ui/pull/106))
+
+### Bug Fixes  🐛
+
+- loading: 修复 color 属性效果([pull/104](https://github.com/Tuya-Community/miniapp-smart-ui/pull/104))
+
+
+
 
 
 ## v2.7.3 (2025-11-20)
@@ -14,6 +24,7 @@
 - nav-bar: 对其全新UI标准，新增 side-width 属性；新增--nav-bar-side-width-min、--nav-bar-side-width-max CSS 变量，调整 --nav-bar-side-width、--nav-bar-text-font-size、--nav-bar-text-font-weight CSS 变量默认值([pull/96](https://github.com/Tuya-Community/miniapp-smart-ui/pull/96))
 
 ### Bug Fixes  🐛
+
 - stepper: 修复小数情况输入框输入实时更新问题([e9cf7a9](https://github.com/Tuya-Community/miniapp-smart-ui/pull/97/commits/e9cf7a9edb6ea2fc93e3a38be54bdb03fd4e0294))
 
 ## v2.7.2 (2025-11-13)
