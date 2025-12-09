@@ -273,8 +273,19 @@ global.I18n = {
   },
 };
 
+global.tyApi = {
+  vibrateShort: () => {},
+  selectionVibrate: () => {},
+  nativeDisabled: () => {},
+  getThemeInfo: () => {},
+  notificationVibrate: () => {},
+  isWX: () => false,
+};
+
 global.ty = {
+  selectionVibrate: () => {},
   getLogManager: () => {},
+  notificationVibrate: () => {},
   getThemeInfo: () => THEME_INFO,
   createCanvasContext: id => {
     const canvas = document.createElement('canvas');
@@ -303,6 +314,8 @@ global.ty = {
 };
 
 global.wx = {
+  selectionVibrate: () => {},
+  notificationVibrate: () => {},
   getThemeInfo: () => THEME_INFO,
   getUserProfile: options => {
     const mockUserInfo = {

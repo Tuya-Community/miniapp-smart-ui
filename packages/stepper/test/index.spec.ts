@@ -7,6 +7,10 @@ jest.mock('../../common/ty', () => ({
   __esModule: true,
   default: {
     vibrateShort: jest.fn(),
+    selectionVibrate: jest.fn(),
+    nativeDisabled: jest.fn(),
+    getThemeInfo: jest.fn(),
+    isWX: jest.fn(() => false),
   },
 }));
 

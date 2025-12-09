@@ -1,7 +1,7 @@
 import { SmartComponent } from '../common/component';
 import { range } from '../common/utils';
 import { isObj } from '../common/validator';
-import ty from '../common/ty';
+import tyApi from '../common/ty';
 
 const DEFAULT_DURATION = 400;
 
@@ -148,7 +148,7 @@ SmartComponent({
         });
       }
       if (!count) {
-        ty.vibrateShort({ type: 'light' });
+        tyApi.vibrateShort({ type: 'light' });
         return;
       }
       let has = 0;
@@ -158,7 +158,7 @@ SmartComponent({
           return;
         }
         has++;
-        ty.vibrateShort({ type: 'light' });
+        tyApi.vibrateShort({ type: 'light' });
       }, time / count - 20);
       this.setData({
         vibrateTimer: timer,
