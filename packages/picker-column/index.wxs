@@ -386,14 +386,11 @@ function touchEnd(instanceId) {
       Math.round((state.preOffsetting + inertiaDistance) / state.itemHeight) *
       state.itemHeight;
     var currTargetActiveIndex = -targetOffset / state.itemHeight;
-    console.log(currTargetActiveIndex, '--currTargetActiveIndex1')
     currTargetActiveIndex = adjustIndex(Math.round(currTargetActiveIndex), state.options, state.loop);
-    console.log(currTargetActiveIndex, '--currTargetActiveIndex2')
     targetOffset = -currTargetActiveIndex * state.itemHeight;
     var animationOffset = Math.abs(targetOffset - state.preOffsetting);
     var isOverOptionsLimit = state.loop ? false : state.animationIndex < 0 || state.animationIndex > state.options.length - 1;
     var totalDistance = targetOffset - state.preOffsetting;
-    console.log(currTargetActiveIndex, '--currTargetActiveIndex3')
       // 如果动画时间大于150ms，并且滚动距离大于itemHeight，则需要进行动态更新列表
     if (state.animationTime > 200 && animationOffset > state.itemHeight && !isOverOptionsLimit) {
       var countOffsetIndex = Math.abs(Math.round(currTargetActiveIndex - state.animationIndex));
