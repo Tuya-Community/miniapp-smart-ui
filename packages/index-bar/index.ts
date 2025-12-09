@@ -3,6 +3,7 @@ import { SmartComponent } from '../common/component';
 import { useChildren } from '../common/relation';
 import { getRect, isDef } from '../common/utils';
 import { pageScrollMixin } from '../mixins/page-scroll';
+import ty from '../common/ty';
 
 const indexList = () => {
   const indexList: string[] = [];
@@ -57,6 +58,14 @@ SmartComponent({
   data: {
     activeAnchorIndex: null,
     showSidebar: false,
+  },
+
+  watch: {
+    activeAnchorIndex(newVal) {
+      if (newVal !== null && newVal !== -1) {
+        ty.vibrateShort({ type: 'light' });
+      }
+    },
   },
 
   created() {
@@ -229,7 +238,6 @@ SmartComponent({
               z-index: ${zIndex};
               color: ${highlightColor};
             `;
-
             this.setDiffData({
               target: item,
               data: {
