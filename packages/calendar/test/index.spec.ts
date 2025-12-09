@@ -1270,5 +1270,443 @@ describe('calendar', () => {
       expect(confirmEvent).toBeTruthy();
     }
   });
+
+  test('should reset visibleIndex to 0 when show becomes false', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ show }}" />`,
+        data: {
+          show: true,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    await simulate.sleep(10);
+    
+    // Set visibleIndex to a non-zero value
+    wrapper?.setData({ visibleIndex: 5 });
+    await simulate.sleep(10);
+    
+    expect(wrapper?.data.visibleIndex).toBe(5);
+    
+    // Set show to false
+    comp.setData({ show: false });
+    await simulate.sleep(10);
+    
+    expect(wrapper?.data.visibleIndex).toBe(0);
+  });
+
+  test('should handle onPrev with year type', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" type="year" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    const initialVisibleIndex = wrapper?.data.visibleIndex || 0;
+    
+    if (instance) {
+      instance.onPrev();
+      await simulate.sleep(10);
+      
+      expect(wrapper?.data.visibleIndex).toBe(initialVisibleIndex - 1);
+    }
+  });
+
+  test('should handle onPrev with month type', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" type="month" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    const initialVisibleIndex = wrapper?.data.visibleIndex || 0;
+    
+    if (instance) {
+      instance.onPrev();
+      await simulate.sleep(10);
+      
+      expect(wrapper?.data.visibleIndex).toBe(initialVisibleIndex - 1);
+    }
+  });
+
+  test('should handle onNext with year type', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" type="year" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    const initialVisibleIndex = wrapper?.data.visibleIndex || 0;
+    
+    if (instance) {
+      instance.onNext();
+      await simulate.sleep(10);
+      
+      expect(wrapper?.data.visibleIndex).toBe(initialVisibleIndex + 1);
+    }
+  });
+
+  test('should handle onNext with month type', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" type="month" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    const initialVisibleIndex = wrapper?.data.visibleIndex || 0;
+    
+    if (instance) {
+      instance.onNext();
+      await simulate.sleep(10);
+      
+      expect(wrapper?.data.visibleIndex).toBe(initialVisibleIndex + 1);
+    }
+  });
+
+  test('should handle limitDateRange when date is less than minDate', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" />`,
+        data: {
+          minDate: new Date(2024, 0, 10).getTime(),
+          maxDate: new Date(2024, 11, 31).getTime(),
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      const dateBeforeMin = new Date(2024, 0, 5).getTime();
+      const result = instance.limitDateRange(dateBeforeMin);
+      
+      expect(result).toBe(wrapper?.data.minDate);
+    }
+  });
+
+  test('should handle limitDateRange when date is greater than maxDate', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" />`,
+        data: {
+          minDate: new Date(2024, 0, 1).getTime(),
+          maxDate: new Date(2024, 11, 31).getTime(),
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      const dateAfterMax = new Date(2025, 0, 5).getTime();
+      const result = instance.limitDateRange(dateAfterMax);
+      
+      expect(result).toBe(wrapper?.data.maxDate);
+    }
+  });
+
+  test('should handle getInitialDate with multiple type and array defaultDate', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" type="multiple" default-date="{{ defaultDate }}" />`,
+        data: {
+          defaultDate: [
+            new Date(2024, 0, 10).getTime(),
+            new Date(2024, 0, 15).getTime(),
+            new Date(2024, 0, 20).getTime(),
+          ],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      const result = instance.getInitialDate(wrapper?.data.defaultDate);
+      
+      expect(Array.isArray(result)).toBe(true);
+      expect(result.length).toBe(3);
+    }
+  });
+
+  test('should handle getInitialDate with null or array defaultDate for single type', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" type="single" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      // Test with null
+      const result1 = instance.getInitialDate(null);
+      expect(Array.isArray(result1)).toBe(true);
+      expect(result1.length).toBe(0);
+      
+      // Test with array (should convert to today's date)
+      const result2 = instance.getInitialDate([]);
+      expect(typeof result2).toBe('number');
+    }
+  });
+
+  test('should emit closed event', async () => {
+    let closedEmitted = false;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" poppable="{{ true }}" bind:closed="onClosed" />`,
+        methods: {
+          onClosed() {
+            closedEmitted = true;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      instance.onClosed();
+      await simulate.sleep(10);
+      
+      expect(closedEmitted).toBe(true);
+    }
+  });
+
+  test('should handle onClickDay with week type', async () => {
+    let selectEvent: any = null;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" type="week" bind:select="onSelect" />`,
+        methods: {
+          onSelect(event: any) {
+            selectEvent = event.detail;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      const date = new Date();
+      date.setHours(0, 0, 0, 0);
+      
+      instance.onClickDay({ detail: { date: date.getTime() } });
+      await simulate.sleep(10);
+      
+      expect(selectEvent).toBeTruthy();
+      expect(Array.isArray(selectEvent)).toBe(true);
+      expect(selectEvent.length).toBe(2);
+    }
+  });
+
+  test('should handle select with invalid range without maxRange', async () => {
+    let selectEvent: any = null;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" type="range" bind:select="onSelect" />`,
+        methods: {
+          onSelect(event: any) {
+            selectEvent = event.detail;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      const startDate = new Date();
+      startDate.setHours(0, 0, 0, 0);
+      const endDate = new Date(startDate);
+      endDate.setDate(endDate.getDate() + 100);
+      
+      // Mock checkRange to return false (invalid range) and no maxRange
+      const originalCheckRange = instance.checkRange;
+      instance.checkRange = jest.fn(() => false);
+      instance.setData({ maxRange: null });
+      
+      instance.select([startDate.getTime(), endDate.getTime()], true);
+      await simulate.sleep(10);
+      
+      // Should emit the date even when invalid (without maxRange adjustment)
+      expect(selectEvent).toBeTruthy();
+      
+      // Restore original method
+      instance.checkRange = originalCheckRange;
+    }
+  });
+
+  test('should handle initData with null defaultDate', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      // Set defaultDate to null
+      instance.setData({ defaultDate: null });
+      await simulate.sleep(10);
+      
+      // Call initData which should handle null defaultDate
+      instance.initData();
+      await simulate.sleep(10);
+      
+      // visibleIndex should be set to months.length - 1 when defaultDate is null
+      expect(wrapper?.data.visibleIndex).toBeDefined();
+    }
+  });
+
+  test('should handle limitDateRange with null minDate and maxDate parameters', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      // Set minDate and maxDate to null in data
+      instance.setData({ minDate: null, maxDate: null });
+      await simulate.sleep(10);
+      
+      const date = new Date();
+      date.setHours(0, 0, 0, 0);
+      
+      // Call limitDateRange with null parameters, should use edge dates
+      const result = instance.limitDateRange(date.getTime(), null, null);
+      
+      expect(typeof result).toBe('number');
+    }
+  });
+
+  test('should handle getInitialDate with empty array for range type', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" type="range" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      // Test with empty array
+      const result = instance.getInitialDate([]);
+      
+      expect(Array.isArray(result)).toBe(true);
+      expect(result.length).toBe(2);
+    }
+  });
+
+  test('should handle getInitialDate with empty array for week type', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-calendar': SmartCalendar,
+        },
+        template: `<smart-calendar id="wrapper" show="{{ true }}" type="week" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    
+    if (instance) {
+      // Test with empty array
+      const result = instance.getInitialDate([]);
+      
+      expect(Array.isArray(result)).toBe(true);
+      expect(result.length).toBe(2);
+    }
+  });
 });
 
