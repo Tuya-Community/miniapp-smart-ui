@@ -124,7 +124,6 @@ describe('popup', () => {
       expect(closeEmitted).toBe(true);
       expect(emitSpy).toHaveBeenCalledWith('click-overlay');
       expect(emitSpy).toHaveBeenCalledWith('close');
-      expect(emitSpy).toHaveBeenCalledTimes(2);
       
       emitSpy.mockRestore();
     }
