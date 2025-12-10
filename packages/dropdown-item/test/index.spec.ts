@@ -260,5 +260,350 @@ describe('dropdown-item', () => {
     // checkMarkIconColor should be set from theme info or default
     expect(wrapper?.data.checkMarkIconColor).toBeTruthy();
   });
+
+  test('should handle rerender with parent', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dropdown-item': SmartDropdownItem,
+        },
+        template: `<smart-dropdown-item id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const mockParent = {
+        updateItemListData: jest.fn(),
+      } as any;
+      (instance as any).getRelationNodes = jest.fn(() => [mockParent]);
+      const _ = (instance as any).parent;
+
+      instance.rerender();
+      await simulate.sleep(10);
+
+      expect(mockParent.updateItemListData).toHaveBeenCalled();
+    }
+  });
+
+  test('should handle rerender without parent', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dropdown-item': SmartDropdownItem,
+        },
+        template: `<smart-dropdown-item id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      (instance as any).getRelationNodes = jest.fn(() => []);
+
+      // Should not throw error
+      expect(() => instance.rerender()).not.toThrow();
+      await simulate.sleep(10);
+    }
+  });
+
+  test('should handle updateDataFromParent', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dropdown-item': SmartDropdownItem,
+        },
+        template: `<smart-dropdown-item id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const mockParent = {
+        data: {
+          overlay: true,
+          duration: 200,
+          activeColor: '#3678E3',
+          closeOnClickOverlay: true,
+          direction: 'down',
+          safeAreaTabBar: false,
+        },
+      } as any;
+      (instance as any).getRelationNodes = jest.fn(() => [mockParent]);
+      const _ = (instance as any).parent;
+
+      instance.updateDataFromParent();
+      await simulate.sleep(10);
+
+      expect(wrapper?.data.overlay).toBe(true);
+      expect(wrapper?.data.duration).toBe(200);
+      expect(wrapper?.data.activeColor).toBe('#3678E3');
+    }
+  });
+
+  test('should handle onOptionTap with value change', async () => {
+    let changeEvent: any = null;
+    let closeEvent = false;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dropdown-item': SmartDropdownItem,
+        },
+        template: `<smart-dropdown-item id="wrapper" bind:change="onChange" bind:close="onClose" />`,
+        methods: {
+          onChange(event: any) {
+            changeEvent = event.detail;
+          },
+          onClose() {
+            closeEvent = true;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ value: 'oldValue' });
+      const mockParent = {
+        updateItemListData: jest.fn(),
+      } as any;
+      (instance as any).getRelationNodes = jest.fn(() => [mockParent]);
+      const _ = (instance as any).parent;
+
+      instance.onOptionTap({
+        currentTarget: {
+          dataset: {
+            option: { value: 'newValue' },
+          },
+        },
+      } as any);
+      await simulate.sleep(10);
+
+      expect(wrapper?.data.value).toBe('newValue');
+      expect(wrapper?.data.showPopup).toBe(false);
+      expect(closeEvent).toBe(true);
+      expect(changeEvent).toBe('newValue');
+    }
+  });
+
+  test('should handle onOptionTap without value change', async () => {
+    let changeEvent: any = null;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dropdown-item': SmartDropdownItem,
+        },
+        template: `<smart-dropdown-item id="wrapper" bind:change="onChange" />`,
+        methods: {
+          onChange(event: any) {
+            changeEvent = event.detail;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ value: 'sameValue' });
+      const mockParent = {
+        updateItemListData: jest.fn(),
+      } as any;
+      (instance as any).getRelationNodes = jest.fn(() => [mockParent]);
+      const _ = (instance as any).parent;
+
+      instance.onOptionTap({
+        currentTarget: {
+          dataset: {
+            option: { value: 'sameValue' },
+          },
+        },
+      } as any);
+      await simulate.sleep(10);
+
+      // Should not emit change event when value is the same
+      expect(changeEvent).toBeFalsy();
+    }
+  });
+
+  test('should handle toggle with show undefined', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dropdown-item': SmartDropdownItem,
+        },
+        template: `<smart-dropdown-item id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ showPopup: false });
+      const mockParent = {
+        getChildWrapperStyle: jest.fn(() => Promise.resolve('z-index: 10;top: 100px;')),
+        updateItemListData: jest.fn(),
+      } as any;
+      (instance as any).getRelationNodes = jest.fn(() => [mockParent]);
+      const _ = (instance as any).parent;
+
+      instance.toggle();
+      await simulate.sleep(10);
+
+      expect(wrapper?.data.showPopup).toBe(true);
+    }
+  });
+
+  test('should handle toggle with show true and parent', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dropdown-item': SmartDropdownItem,
+        },
+        template: `<smart-dropdown-item id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ showPopup: false });
+      const mockParent = {
+        getChildWrapperStyle: jest.fn(() => Promise.resolve('z-index: 10;top: 100px;')),
+        updateItemListData: jest.fn(),
+      } as any;
+      (instance as any).getRelationNodes = jest.fn(() => [mockParent]);
+      const _ = (instance as any).parent;
+
+      instance.toggle(true);
+      await new Promise(resolve => setTimeout(resolve, 20));
+
+      expect(wrapper?.data.showPopup).toBe(true);
+      expect(wrapper?.data.showWrapper).toBe(true);
+    }
+  });
+
+  test('should handle toggle with show false', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dropdown-item': SmartDropdownItem,
+        },
+        template: `<smart-dropdown-item id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ showPopup: true });
+      const mockParent = {
+        updateItemListData: jest.fn(),
+      } as any;
+      (instance as any).getRelationNodes = jest.fn(() => [mockParent]);
+      const _ = (instance as any).parent;
+
+      instance.toggle(false);
+      await new Promise(resolve => setTimeout(resolve, 20));
+
+      expect(wrapper?.data.showPopup).toBe(false);
+    }
+  });
+
+  test('should handle toggle with immediate option', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dropdown-item': SmartDropdownItem,
+        },
+        template: `<smart-dropdown-item id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ showPopup: false });
+      const mockParent = {
+        getChildWrapperStyle: jest.fn(() => Promise.resolve('z-index: 10;top: 100px;')),
+        updateItemListData: jest.fn(),
+      } as any;
+      (instance as any).getRelationNodes = jest.fn(() => [mockParent]);
+      const _ = (instance as any).parent;
+
+      instance.toggle(true, { immediate: true });
+      await new Promise(resolve => setTimeout(resolve, 20));
+
+      expect(wrapper?.data.transition).toBe(false);
+    }
+  });
+
+  test('should handle toggle when before-toggle returns false', async () => {
+    let beforeToggleEvent: any = null;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dropdown-item': SmartDropdownItem,
+        },
+        template: `<smart-dropdown-item id="wrapper" use-before-toggle="{{ true }}" bind:before-toggle="onBeforeToggle" />`,
+        data: {
+          useBeforeToggle: true,
+        },
+        methods: {
+          onBeforeToggle(event: any) {
+            beforeToggleEvent = event.detail;
+            event.detail.callback(false);
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ showPopup: false });
+
+      instance.toggle(true);
+      await new Promise(resolve => setTimeout(resolve, 20));
+
+      expect(wrapper?.data.showPopup).toBe(false);
+    }
+  });
 });
 
