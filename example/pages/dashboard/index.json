@@ -1,7 +1,6 @@
 {
   "navigationBarTitleText": "Smart UI",
   "usingComponents": {
-    "demo-home": "../../components/demo-home/index",
-    "smart-config-provider": "../../dist/config-provider/index"
+    "demo-home": "../../components/demo-home/index"
   }
 }
