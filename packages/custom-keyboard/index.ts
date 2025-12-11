@@ -1,4 +1,5 @@
 import { SmartComponent } from '../common/component';
+import ty from '../common/ty';
 
 SmartComponent({
   props: {
@@ -125,6 +126,7 @@ SmartComponent({
         currValue: newValue,
       });
       this.$emit('change', newValue);
+      ty.vibrateShort({ type: 'light' });
     },
 
     handlePassword() {
