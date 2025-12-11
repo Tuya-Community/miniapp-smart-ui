@@ -165,5 +165,9 @@ darkVars["--app-M4_2-N8"] = v7;
 darkVars["--app-M4_2-N9"] = v6;
 darkVars["--app-M5-N8"] = v7;
 darkVars["--app-M5-N9"] = v6;
+darkVars["--smart-ui-overlay"] = v7;
+darkVars["--smart-ui-bottom-sheet-dragger-node-background"] = v4;
+darkVars["--smart-ui-dialog-background"] = "#333";
+darkVars["--smart-ui-border-image"] = "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0))";
 
 module.exports = darkVars;

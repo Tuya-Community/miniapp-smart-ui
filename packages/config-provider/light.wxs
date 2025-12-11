@@ -166,5 +166,9 @@ lightVars["--app-M4_2-N8"] = v7;
 lightVars["--app-M4_2-N9"] = v12;
 lightVars["--app-M5-N8"] = v7;
 lightVars["--app-M5-N9"] = v12;
+lightVars["--smart-ui-overlay"] = v7;
+lightVars["--smart-ui-bottom-sheet-dragger-node-background"] = v4;
+lightVars["--smart-ui-dialog-background"] = v10;
+lightVars["--smart-ui-border-image"] = "linear-gradient(to right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0))";
 
 module.exports = lightVars;
