@@ -20,10 +20,6 @@
 - notice-bar: 修改 --notice-bar-text-color CSS 变量默认值为 rgba(0, 0, 0, 0.5) ([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
 - switch: 修改 --switch-label-active-color、--switch-label-inactive-color CSS 变量默认值为 #FFFFFF ([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
 
-
-
-
-
 ## v2.7.3 (2025-11-20)
 
 ### Features  ✨
