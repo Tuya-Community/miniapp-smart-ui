@@ -2,6 +2,7 @@ import { SmartComponent } from '../common/component';
 import { canIUseModel } from '../common/version';
 import SearchIcon from '@tuya-miniapp/icons/dist/svg/Search';
 import CloseIcon from '@tuya-miniapp/icons/dist/svg/Close';
+import tyApi from '../common/ty';
 
 SmartComponent({
   field: true,
@@ -91,6 +92,7 @@ SmartComponent({
       this.$emit('search', this.data.value);
     },
     onFocus(event: WechatMiniprogram.CustomEvent) {
+      tyApi.selectionVibrate();
       this.$emit('focus', event.detail);
     },
 

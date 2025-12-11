@@ -12,6 +12,11 @@ jest.mock('../../common/ty', () => ({
   __esModule: true,
   default: {
     nativeDisabled: jest.fn(),
+    notificationVibrate: jest.fn(),
+    vibrateShort: jest.fn(),
+    selectionVibrate: jest.fn(),
+    getThemeInfo: jest.fn(),
+    isWX: jest.fn(() => false),
   },
 }));
 

@@ -1,3 +1,4 @@
+import tyApi from '../common/ty';
 import { SmartComponent } from '../common/component';
 
 SmartComponent({
@@ -41,7 +42,7 @@ SmartComponent({
 
       const checked = this.data.checked === activeValue;
       const value = checked ? inactiveValue : activeValue;
-
+      tyApi.vibrateShort({ type: 'light' });
       this.$emit('input', value);
       this.$emit('change', value);
     },

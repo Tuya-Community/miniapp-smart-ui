@@ -9,6 +9,7 @@ import {
 } from '../common/utils';
 import { isDef } from '../common/validator';
 import { useChildren } from '../common/relation';
+import tyApi from '../common/ty';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 
@@ -156,6 +157,7 @@ SmartComponent({
 
       this.onBeforeChange(index)
         .then(() => {
+          tyApi.selectionVibrate();
           this.setCurrentIndex(index);
           nextTick(() => {
             this.trigger('click');

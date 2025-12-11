@@ -3,6 +3,7 @@ import { SmartComponent } from '../common/component';
 import { commonProps, inputProps, textareaProps } from './props';
 import Xmark from '@tuya-miniapp/icons/dist/svg/Xmark';
 import { InputDetails } from './types';
+import tyApi from '../common/ty';
 
 SmartComponent({
   field: true,
@@ -119,6 +120,7 @@ SmartComponent({
     },
 
     onFocus(event: WechatMiniprogram.InputFocus | WechatMiniprogram.TextareaFocus) {
+      tyApi.selectionVibrate();
       this.focused = true;
       this.setShowClear();
       this.$emit('focus', event.detail);

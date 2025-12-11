@@ -3,9 +3,24 @@ const tyApi = {
     // @ts-ignore
     if (typeof ty !== 'undefined') {
       // @ts-ignore
-      ty.vibrateShort(v);
+      ty.vibrateShort?.(v);
     } else if (typeof wx !== 'undefined') {
-      wx.vibrateShort(v);
+      wx.vibrateShort?.(v);
+    }
+  },
+  selectionVibrate: () => {
+    // @ts-ignore
+    if (typeof ty !== 'undefined') {
+      // @ts-ignore
+      ty.selectionVibrate?.();
+    }
+  },
+  notificationVibrate: (v: any) => {
+    console.log('notificationVibrate', v);
+    // @ts-ignore
+    if (typeof ty !== 'undefined') {
+      // @ts-ignore
+      ty.notificationVibrate?.(v);
     }
   },
   nativeDisabled: (v: boolean) => {
