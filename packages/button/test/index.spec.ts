@@ -440,7 +440,7 @@ describe('button', () => {
     const mockUserProfile = {
       userInfo: {
         nickName: 'test user',
-        avatarUrl: 'https://example.com/avatar.png',
+        avatarUrl: '',
       },
       rawData: '{}',
       signature: '',
@@ -513,7 +513,7 @@ describe('button', () => {
     const mockUserProfile = {
       userInfo: {
         nickName: 'test user',
-        avatarUrl: 'https://example.com/avatar.png',
+        avatarUrl: '',
       },
       rawData: '{}',
       signature: '',

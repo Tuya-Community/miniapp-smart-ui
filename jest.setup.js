@@ -308,7 +308,7 @@ global.wx = {
     const mockUserInfo = {
       userInfo: {
         nickName: 'test user',
-        avatarUrl: 'https://example.com/avatar.png',
+        avatarUrl: '',
       },
       rawData: '{}',
       signature: '',
@@ -329,3 +329,63 @@ global.wx = {
 };
 
 global.getCurrentPages = () => [{}];
+
+// Mock getCanvasById for .rjs files (used in circle component)
+global.getCanvasById = jest.fn(canvasId => {
+  const canvas = document.createElement('canvas');
+  canvas.id = canvasId;
+  return Promise.resolve(canvas);
+});
+
+// Mock Render function for .rjs files (used in circle component)
+// Render is a constructor function that can be called with 'new'
+// The .rjs file exports Render({...}) result, but code uses 'new Render(this)'
+// So we need to make Render work as both a factory and constructor
+function MockRender(initialData) {
+  // If called with 'new', treat as constructor
+  if (this instanceof MockRender) {
+    // Constructor mode: merge initialData with methods
+    Object.assign(this, {
+      canvas: null,
+      lineWidth: 10,
+      maskColor: '#ffffff',
+      trackColor: '#d3d3d3',
+      fillColorStops: null,
+      dpr: 1,
+      fillColor: '#007AFF',
+      ...initialData,
+      init: jest.fn(),
+      render: jest.fn(),
+      renderAll: jest.fn(),
+      renderHalf: jest.fn(),
+      renderHalf2: jest.fn(),
+      percentToDecimal: jest.fn(percent => {
+        const num = String(percent).replace('%', '');
+        return parseFloat(num) / 100;
+      }),
+    });
+    return this;
+  }
+  // Factory mode: return object with methods
+  return {
+    canvas: null,
+    lineWidth: 10,
+    maskColor: '#ffffff',
+    trackColor: '#d3d3d3',
+    fillColorStops: null,
+    dpr: 1,
+    fillColor: '#007AFF',
+    ...initialData,
+    init: jest.fn(),
+    render: jest.fn(),
+    renderAll: jest.fn(),
+    renderHalf: jest.fn(),
+    renderHalf2: jest.fn(),
+    percentToDecimal: jest.fn(percent => {
+      const num = String(percent).replace('%', '');
+      return parseFloat(num) / 100;
+    }),
+  };
+}
+
+global.Render = MockRender;

@@ -2551,7 +2551,7 @@ exports[`should render demo and match snapshot 1`] = `
           <wx-view
             class="controls_item"
             data-type="month"
-            style="color: #000"
+            style="color: "
             bind:tap="changeType"
           >
             
@@ -2559,7 +2559,7 @@ exports[`should render demo and match snapshot 1`] = `
           <wx-view
             class="controls_item"
             data-type="year"
-            style="color: #000"
+            style="color: "
             bind:tap="changeType"
           >
             

@@ -2,6 +2,9 @@
 var object = require('../wxs/object.wxs');
 var style = require('../wxs/style.wxs');
 
+var lightVars = require('./light.wxs');
+var darkVars = require('./dark.wxs');
+
 function kebabCase(word) {
   var newWord = word
     .replace(getRegExp("[A-Z]", 'g'), function (i) {
@@ -13,12 +16,32 @@ function kebabCase(word) {
   return newWord;
 }
 
-function mapThemeVarsToCSSVars(themeVars) {
+function mapThemeVarsToCSSVars(data) {
+  var themeVars = data.themeVars;
+  var theme = data.theme;
+  
+  // 最终的 CSS 变量对象
   var cssVars = {};
-  object.keys(themeVars).forEach(function (key) {
-    var cssVarsKey = '--' + kebabCase(key);
-    cssVars[cssVarsKey] = themeVars[key];
-  });
+  
+  // 先处理用户传入的 themeVars（需要转换键名为 kebab-case）
+  if (themeVars) {
+    object.keys(themeVars).forEach(function (key) {
+      var cssVarsKey = '--' + kebabCase(key);
+      cssVars[cssVarsKey] = themeVars[key];
+    });
+  }
+  var themeJSON = {
+    light: lightVars,
+    dark: darkVars
+  };
+
+  // 如果找到了对应的变量，则合并（覆盖用户自定义的相同键）
+  var varsToMerge = themeJSON[theme];
+  if (varsToMerge) {
+    object.keys(varsToMerge).forEach(function (key) {
+      cssVars[key] = varsToMerge[key];
+    });
+  }
 
   return style(cssVars);
 }

@@ -1,0 +1,79 @@
+name: Send PLANS to WeChat
+
+on:
+  push:
+    branches:
+      - 'release/*'
+    paths:
+      - 'PLANS.md'
+
+jobs:
+  send_plans:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Read PLANS.md and Send to WeChat Bot
+      run: |
+        if [ ! -f PLANS.md ]; then
+          echo "PLANS.md not found"
+          exit 1
+        fi
+        
+        # 提取最后一个大标题（以 # 开头）及其后面的内容
+        # 找到最后一个以 # 开头的行号
+        LAST_HEADER_LINE=$(grep -n '^#' PLANS.md | tail -1 | cut -d: -f1)
+        
+        if [ -n "$LAST_HEADER_LINE" ]; then
+          # 从最后一个标题行开始提取到文件末尾
+          CONTENT=$(sed -n "${LAST_HEADER_LINE},\$p" PLANS.md)
+        else
+          # 如果没有找到标题，使用整个文件
+          CONTENT=$(cat PLANS.md)
+        fi
+        
+        # 使用 jq 构建 JSON，自动处理转义
+        JSON_PAYLOAD=$(jq -n \
+          --arg content "$CONTENT" \
+          '{
+            msgtype: "markdown",
+            markdown: {
+              content: $content
+            }
+          }')
+        
+        # 调试：打印 JSON payload（前 200 个字符）
+        echo "JSON payload preview: ${JSON_PAYLOAD:0:200}..."
+        
+        # 使用 curl 发送到微信机器人
+        RESPONSE=$(curl -s -w "\n%{http_code}" \
+          'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_TOKEN }}' \
+          -H 'Content-Type: application/json' \
+          -d "$JSON_PAYLOAD")
+        
+        # 分离响应体和状态码
+        HTTP_BODY=$(echo "$RESPONSE" | head -n -1)
+        HTTP_CODE=$(echo "$RESPONSE" | tail -n 1)
+        
+        echo "HTTP Status Code: $HTTP_CODE"
+        echo "Response: $HTTP_BODY"
+        
+        # 检查是否成功
+        if [ "$HTTP_CODE" != "200" ]; then
+          echo "Failed to send message. HTTP code: $HTTP_CODE"
+          exit 1
+        fi
+        
+        # 检查响应中的 errcode
+        ERRCODE=$(echo "$HTTP_BODY" | jq -r '.errcode // 0')
+        if [ "$ERRCODE" != "0" ]; then
+          ERRMSG=$(echo "$HTTP_BODY" | jq -r '.errmsg // "Unknown error"')
+          echo "WeChat API error: errcode=$ERRCODE, errmsg=$ERRMSG"
+          exit 1
+        fi
+        
+        echo "Message sent successfully!"

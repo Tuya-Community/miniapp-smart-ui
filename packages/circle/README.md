@@ -38,12 +38,14 @@ version: v2.3.0
 
 ### 缺口圆角
 
-`mode`属性表示类型，angle、angle2 为半圆类型。
+`mode`属性表示类型，angle、angle2 为半圆类型，`angle-offset` `v2.8.0` 属性用于设置半圆类型（`angle`、`angle2`）的起始角度偏移，单位为度。值越大，圆环的缺口越大。默认值为 -1，表示使用默认偏移。
 
 ```html
 <smart-circle percent="{{50}}" mode="angle">
 </smart-circle>
 <smart-circle percent="{{50}}" mode="angle2">
+</smart-circle>
+<smart-circle percent="{{50}}" mode="angle2" angle-offset="{{30}}">
 </smart-circle>
 ```
 
@@ -91,11 +93,12 @@ Page({
 
 | 属性名                     | 描述     | 类型          | 默认值                     |
 | -------------------------- | -------- | ------------- | -------------------------- |
+| angle-offset   `v2.8.0`   | 角度偏移 | number        | -1                         |
 | children                   | 子元素   | ReactNode     | undefined                  |
 | class-name                 | 类名     | string        | undefined                  |
 | custom-style `v2.3.3`      | 样式     | CSSProperties | undefined                  |
 | fill-color                 | 填充颜色 | string        | '#007AFF'                  |
-| mask-color                 | 遮罩颜色 | string        | '#ffffff'                  |
+| mask-color      | 遮罩颜色 | string        | 'transparent'                  |
 | mode `v2.3.0`              | 样式风格 | string        | `basic`、`angle`、`angle2` |
 | percent                    | 百分比   | number        | 0                          |
 | round `v2.3.0`             | 遮罩颜色 | string        | `true`                     |

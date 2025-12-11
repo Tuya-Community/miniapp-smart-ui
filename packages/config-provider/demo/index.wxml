@@ -1,6 +1,6 @@
 <demo-block title="{{I18n.t('globalConfigurationStyles')}}">
-  <view class="contain">
-    <view class="buttons">
+  <view class="demo-contain">
+    <view class="demo-buttons">
       <smart-button type="primary" data-color="red" color="red" bind:click="onChange">
         {{I18n.t('setColor')}}
       </smart-button>
@@ -15,6 +15,27 @@
       <smart-button type="primary">
         {{I18n.t('mainButton')}}
       </smart-button>
+    </smart-config-provider>
+  </view>
+</demo-block>
+
+<demo-block title="{{I18n.t('themeSwitch')}}">
+  <view class="demo-contain">
+    <view class="demo-buttons">
+      <smart-button type="primary" data-theme="light" bind:click="onThemeChange">
+        {{I18n.t('lightTheme')}}
+      </smart-button>
+
+      <text>{{I18n.t('currentTheme')}}{{ currentTheme }}</text>
+      <smart-button type="primary" data-theme="dark" bind:click="onThemeChange">
+        {{I18n.t('darkTheme')}}
+      </smart-button>
+    </view>
+    <smart-config-provider theme="{{ currentTheme }}">
+      <smart-cell-group>
+        <smart-cell title="title" value="content" />
+        <smart-cell title="title" value="content" label="detail information" is-link />
+      </smart-cell-group>
     </smart-config-provider>
   </view>
 </demo-block>

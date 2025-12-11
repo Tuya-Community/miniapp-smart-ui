@@ -30,4 +30,9 @@
   <smart-button type="primary" bind:tap="showTopToast">{{I18n.t('top')}}</smart-button>
 </demo-block>
 
+<demo-block title="{{I18n.t('customColor')}}" padding>
+  <smart-button type="primary" bind:tap="showColorToast" class="demo-margin-right">{{I18n.t('textPrompt')}}</smart-button>
+  <smart-button type="info" bind:tap="showSuccessColorToast" class="demo-margin-right">{{I18n.t('successMessage')}}</smart-button>
+</demo-block>
+
 <smart-toast id="smart-toast" />

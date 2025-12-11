@@ -77,9 +77,9 @@
 
 <demo-block title="{{I18n.t('calendarModalSelectDay') + ': ' + computed.formatFullDate(curDayDate)}}">
   <view class="controls">
-    <view class="controls_item" data-type="single" bindtap="changeType" style="color: {{type === 'single' ? '#3678e3' : '#000'}}">{{I18n.t('day')}}</view>
-    <view class="controls_item" data-type="month" bindtap="changeType" style="color: {{type === 'month' ? '#3678e3' : '#000'}}">{{I18n.t('month')}}</view>
-    <view class="controls_item" data-type="year" bindtap="changeType" style="color: {{type === 'year' ? '#3678e3' : '#000'}}">{{I18n.t('year')}}</view>
+    <view class="controls_item" data-type="single" bindtap="changeType" style="color: {{type === 'single' ? '#3678e3' : ''}}">{{I18n.t('day')}}</view>
+    <view class="controls_item" data-type="month" bindtap="changeType" style="color: {{type === 'month' ? '#3678e3' : ''}}">{{I18n.t('month')}}</view>
+    <view class="controls_item" data-type="year" bindtap="changeType" style="color: {{type === 'year' ? '#3678e3' : ''}}">{{I18n.t('year')}}</view>
   </view>
   <smart-cell
     is-link

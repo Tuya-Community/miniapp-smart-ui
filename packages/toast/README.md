@@ -105,6 +105,56 @@ ToastInstance({
 });
 ```
 
+### 自定义宽度
+
+通过 `width` 属性可以自定义弹窗宽度。
+
+```javascript
+ToastInstance.loading({
+  message: '加载中...',
+  forbidClick: true,
+  width: 200,
+});
+```
+
+### 位置设置
+
+通过 `position` 属性可以设置提示的位置，可选值为 `top`、`middle`、`bottom`。
+
+```javascript
+// 底部位置
+ToastInstance({
+  position: 'bottom',
+  message: '我是提示文案，建议不超过十五字~',
+});
+
+// 顶部位置
+ToastInstance({
+  position: 'top',
+  message: '我是提示文案，建议不超过十五字~',
+});
+```
+
+
+### 自定义颜色 `v2.8.0`
+
+通过 `textColor` 属性可以自定义文字颜色，通过 `iconColor` 属性可以自定义图标颜色。
+
+```javascript
+// 自定义文字颜色
+ToastInstance({
+  message: '我是提示文案，建议不超过十五字~',
+  textColor: '#1989FA',
+});
+
+// 自定义成功提示的颜色
+ToastInstance.success({
+  message: '成功文案',
+  textColor: '#1989FA',
+  iconColor: '#1989FA',
+});
+```
+
 ## API
 
 ### 方法
@@ -129,6 +179,8 @@ ToastInstance({
 | loadingType | 加载图标类型, 可选值为 `spinner`     | _string_   | `circular`    |
 | mask        | 是否显示遮罩层             | _boolean_  | `false`       |
 | message     | 内容                   | _string_   | `''`          |
+| textColor `v2.8.0`   | 文字颜色               | _string_   | -             |
+| iconColor `v2.8.0`   | 图标颜色               | _string_   | `white`       |
 | onClose     | 关闭时的回调函数                  | _Function_ | -             |
 | position    | 位置，可选值为 `top` `middle` `bottom`       | _string_   | `middle`      |
 | selector    | 自定义选择器                  | _string_   | `#smart-toast` |

@@ -10,8 +10,8 @@
   );
 
   &[theme='dark'] {
-    --smart-ui-bottom-sheet-dragger-node-background: rgba(255, 255, 255, 0.3);
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
+    --smart-ui-bottom-sheet-dragger-node-background: rgba(255, 255, 255, 0.3);
     --smart-ui-dialog-background: #333;
     --smart-ui-border-image: linear-gradient(
       to right,
@@ -488,7 +488,7 @@
 @notice-bar-padding: 0 @padding-md;
 @notice-bar-wrapable-padding: @padding-xs @padding-md;
 @notice-bar-font-size: @font-size-sm;
-@notice-bar-text-color: @B6-N3;
+@notice-bar-text-color: rgba(0, 0, 0, 0.5);
 @notice-bar-line-height: 14px;
 @notice-bar-background-color: #e7f3fe;
 @notice-bar-background-warning-color: #fff5e5;
@@ -589,8 +589,8 @@
 @switch-on-background-color: @blue;
 @switch-transition-duration: 0.3s;
 @switch-label-font-size: 13px;
-@switch-label-active-color: @B3;
-@switch-label-inactive-color: @B3;
+@switch-label-active-color: #FFFFFF;
+@switch-label-inactive-color: #FFFFFF;
 @switch-disabled-opacity: 0.4;
 @switch-padding: 0.067em;
 @switch-border: 0.08em;
@@ -850,6 +850,7 @@
 @cascader-selected-icon-size: 18px;
 @cascader-tabs-height: 48px;
 @cascader-active-color: @blue;
+@cascader-active-background-color: @B1;
 @cascader-options-height: 384px;
 @cascader-option-disabled-color: #c8c9cc;
 @cascader-tab-color: @B6-N1;
@@ -882,3 +883,4 @@
 @popover-box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.1);
 @popover-padding: 12px;
 @popover-border-radius: 12px;
+@popover-overlay-color: @B1-N1;

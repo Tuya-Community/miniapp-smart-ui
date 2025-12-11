@@ -1,5 +1,5 @@
 <wxs src="./index.wxs" module="computed" />
 
-<view class="smart-config-provider custom-class" style="{{ computed.mapThemeVarsToCSSVars(themeVars) }}">
+<view class="smart-config-provider custom-class" style="{{ computed.mapThemeVarsToCSSVars({ themeVars: themeVars, theme: theme }) }}">
   <slot />
 </view>

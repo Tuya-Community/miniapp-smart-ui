@@ -10,6 +10,8 @@ on:
 jobs:
   publish_beta:
     runs-on: ubuntu-latest
+    # 只在 PR 被合并时执行，避免取消合并时也触发
+    if: github.event.pull_request.merged == true
 
     steps:
     - name: Checkout Code
@@ -81,9 +83,15 @@ jobs:
 
     - name: Commit Changes
       run: |
+        git config pull.rebase false
+        git pull origin release/2.x
         git add .
-        git commit -m "chore(release): ${NEXT_VERSION} release by Github Actions"
-        git log -1  # 检查最后的commit结果
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "chore(release): ${NEXT_VERSION} release by Github Actions"
+          git log -1  # 检查最后的commit结果
+        fi
 
     - name: Push
       # 使用个人访问令牌来推送更改以避免保护分支限制
@@ -93,6 +101,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
         
+
+
     - name: Comment on PR
       uses: peter-evans/create-or-update-comment@v2
       with:

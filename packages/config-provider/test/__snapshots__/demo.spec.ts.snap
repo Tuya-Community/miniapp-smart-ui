@@ -7,10 +7,10 @@ exports[`should render demo and match snapshot 1`] = `
       class="custom-class demo-block smart-clearfix "
     >
       <wx-view
-        class="contain"
+        class="demo-contain"
       >
         <wx-view
-          class="buttons"
+          class="demo-buttons"
         >
           <smart-button
             data-color="red"
@@ -183,6 +183,183 @@ exports[`should render demo and match snapshot 1`] = `
                 </wx-view>
               </wx-button>
             </smart-button>
+          </wx-view>
+        </smart-config-provider>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="demo-contain"
+      >
+        <wx-view
+          class="demo-buttons"
+        >
+          <smart-button
+            data-theme="light"
+            bind:click="onThemeChange"
+          >
+            <wx-button
+              appParameter=""
+              ariaLabel=""
+              businessId="{{0}}"
+              class="custom-class smart-button smart-button--primary smart-button--normal "
+              data-detail="{{null}}"
+              formType=""
+              hoverClass="smart-button--active hover-class"
+              id=""
+              lang=""
+              openType=""
+              sendMessageImg=""
+              sendMessagePath=""
+              sendMessageTitle=""
+              sessionFrom=""
+              showMessageCard="{{false}}"
+              style=""
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+              bind:chooseavatar="onChooseAvatar"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-button__text"
+                style=""
+              >
+                
+        
+      
+              </wx-view>
+            </wx-button>
+          </smart-button>
+          <wx-text>
+            light
+          </wx-text>
+          <smart-button
+            data-theme="dark"
+            bind:click="onThemeChange"
+          >
+            <wx-button
+              appParameter=""
+              ariaLabel=""
+              businessId="{{0}}"
+              class="custom-class smart-button smart-button--primary smart-button--normal "
+              data-detail="{{null}}"
+              formType=""
+              hoverClass="smart-button--active hover-class"
+              id=""
+              lang=""
+              openType=""
+              sendMessageImg=""
+              sendMessagePath=""
+              sendMessageTitle=""
+              sessionFrom=""
+              showMessageCard="{{false}}"
+              style=""
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
+              bind:chooseavatar="onChooseAvatar"
+              bind:contact="onContact"
+              bind:error="onError"
+              bind:getphonenumber="onGetPhoneNumber"
+              bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
+              bind:getuserinfo="onGetUserInfo"
+              bind:launchapp="onLaunchApp"
+              bind:opensetting="onOpenSetting"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="smart-button__text"
+                style=""
+              >
+                
+        
+      
+              </wx-view>
+            </wx-button>
+          </smart-button>
+        </wx-view>
+        <smart-config-provider>
+          <wx-view
+            class="smart-config-provider custom-class"
+            style="--app-B1:rgba(246, 247, 251, 1);--app-B1-N1:rgba(0, 0, 0, 0.9);--app-B1-N2:rgba(0, 0, 0, 0.7);--app-B1-N3:rgba(0, 0, 0, 0.5);--app-B1-N4:rgba(0, 0, 0, 0.3);--app-B1-N5:rgba(0, 0, 0, 0.7);--app-B1-N6:rgba(0, 0, 0, 0.2);--app-B1-N7:rgba(0, 0, 0, 0.1);--app-B1-N8:rgba(0, 0, 0, 0.4);--app-B1-N9:rgba(0, 0, 0, 0.03);--app-B1_2:rgba(221.4, 222.3, 225.9, 1);--app-B1_2-N1:rgba(0, 0, 0, 0.9);--app-B1_2-N2:rgba(0, 0, 0, 0.7);--app-B1_2-N3:rgba(0, 0, 0, 0.5);--app-B1_2-N4:rgba(0, 0, 0, 0.3);--app-B1_2-N5:rgba(0, 0, 0, 0.7);--app-B1_2-N6:rgba(0, 0, 0, 0.2);--app-B1_2-N7:rgba(0, 0, 0, 0.1);--app-B1_2-N8:rgba(0, 0, 0, 0.4);--app-B1_2-N9:rgba(0, 0, 0, 0.03);--app-B2:rgba(255, 255, 255, 1);--app-B2-N1:rgba(0, 0, 0, 0.9);--app-B2-N2:rgba(0, 0, 0, 0.7);--app-B2-N3:rgba(0, 0, 0, 0.5);--app-B2-N4:rgba(0, 0, 0, 0.3);--app-B2-N5:rgba(0, 0, 0, 0.7);--app-B2-N6:rgba(0, 0, 0, 0.2);--app-B2-N7:rgba(0, 0, 0, 0.1);--app-B2-N8:rgba(0, 0, 0, 0.4);--app-B2-N9:rgba(0, 0, 0, 0.03);--app-B2_2:rgba(229.5, 229.5, 229.5, 1);--app-B2_2-N1:rgba(0, 0, 0, 0.9);--app-B2_2-N2:rgba(0, 0, 0, 0.7);--app-B2_2-N3:rgba(0, 0, 0, 0.5);--app-B2_2-N4:rgba(0, 0, 0, 0.3);--app-B2_2-N5:rgba(0, 0, 0, 0.7);--app-B2_2-N6:rgba(0, 0, 0, 0.2);--app-B2_2-N7:rgba(0, 0, 0, 0.1);--app-B2_2-N8:rgba(0, 0, 0, 0.4);--app-B2_2-N9:rgba(0, 0, 0, 0.03);--app-B3:rgba(255, 255, 255, 1);--app-B3-N1:rgba(0, 0, 0, 0.9);--app-B3-N2:rgba(0, 0, 0, 0.7);--app-B3-N3:rgba(0, 0, 0, 0.5);--app-B3-N4:rgba(0, 0, 0, 0.3);--app-B3-N5:rgba(0, 0, 0, 0.7);--app-B3-N6:rgba(0, 0, 0, 0.2);--app-B3-N7:rgba(0, 0, 0, 0.1);--app-B3-N8:rgba(0, 0, 0, 0.4);--app-B3-N9:rgba(0, 0, 0, 0.03);--app-B3_2:rgba(229.5, 229.5, 229.5, 1);--app-B3_2-N1:rgba(0, 0, 0, 0.9);--app-B3_2-N2:rgba(0, 0, 0, 0.7);--app-B3_2-N3:rgba(0, 0, 0, 0.5);--app-B3_2-N4:rgba(0, 0, 0, 0.3);--app-B3_2-N5:rgba(0, 0, 0, 0.7);--app-B3_2-N6:rgba(0, 0, 0, 0.2);--app-B3_2-N7:rgba(0, 0, 0, 0.1);--app-B3_2-N8:rgba(0, 0, 0, 0.4);--app-B3_2-N9:rgba(0, 0, 0, 0.03);--app-B4:rgba(255, 255, 255, 1);--app-B4-N1:rgba(0, 0, 0, 0.9);--app-B4-N2:rgba(0, 0, 0, 0.7);--app-B4-N3:rgba(0, 0, 0, 0.5);--app-B4-N4:rgba(0, 0, 0, 0.3);--app-B4-N5:rgba(0, 0, 0, 0.7);--app-B4-N6:rgba(0, 0, 0, 0.2);--app-B4-N7:rgba(0, 0, 0, 0.1);--app-B4-N8:rgba(0, 0, 0, 0.4);--app-B4-N9:rgba(0, 0, 0, 0.03);--app-B4_2:rgba(229.5, 229.5, 229.5, 1);--app-B4_2-N1:rgba(0, 0, 0, 0.9);--app-B4_2-N2:rgba(0, 0, 0, 0.7);--app-B4_2-N3:rgba(0, 0, 0, 0.5);--app-B4_2-N4:rgba(0, 0, 0, 0.3);--app-B4_2-N5:rgba(0, 0, 0, 0.7);--app-B4_2-N6:rgba(0, 0, 0, 0.2);--app-B4_2-N7:rgba(0, 0, 0, 0.1);--app-B4_2-N8:rgba(0, 0, 0, 0.4);--app-B4_2-N9:rgba(0, 0, 0, 0.03);--app-B5:rgba(255, 255, 255, 1);--app-B5-N1:rgba(0, 0, 0, 0.9);--app-B5-N2:rgba(0, 0, 0, 0.7);--app-B5-N3:rgba(0, 0, 0, 0.5);--app-B5-N4:rgba(0, 0, 0, 0.3);--app-B5-N5:rgba(0, 0, 0, 0.7);--app-B5-N6:rgba(0, 0, 0, 0.2);--app-B5-N7:rgba(0, 0, 0, 0.1);--app-B5-N8:rgba(0, 0, 0, 0.4);--app-B5-N9:rgba(0, 0, 0, 0.03);--app-B5_2:rgba(229.5, 229.5, 229.5, 1);--app-B5_2-N1:rgba(0, 0, 0, 0.9);--app-B5_2-N2:rgba(0, 0, 0, 0.7);--app-B5_2-N3:rgba(0, 0, 0, 0.5);--app-B5_2-N4:rgba(0, 0, 0, 0.3);--app-B5_2-N5:rgba(0, 0, 0, 0.7);--app-B5_2-N6:rgba(0, 0, 0, 0.2);--app-B5_2-N7:rgba(0, 0, 0, 0.1);--app-B5_2-N8:rgba(0, 0, 0, 0.4);--app-B5_2-N9:rgba(0, 0, 0, 0.03);--app-B6:rgba(255, 255, 255, 1);--app-B6-N1:rgba(0, 0, 0, 0.9);--app-B6-N2:rgba(0, 0, 0, 0.7);--app-B6-N3:rgba(0, 0, 0, 0.5);--app-B6-N4:rgba(0, 0, 0, 0.3);--app-B6-N5:rgba(0, 0, 0, 0.7);--app-B6-N6:rgba(0, 0, 0, 0.2);--app-B6-N7:rgba(0, 0, 0, 0.1);--app-B6-N8:rgba(0, 0, 0, 0.4);--app-B6-N9:rgba(0, 0, 0, 0.03);--app-B6_2:rgba(229.5, 229.5, 229.5, 1);--app-B6_2-N1:rgba(0, 0, 0, 0.9);--app-B6_2-N2:rgba(0, 0, 0, 0.7);--app-B6_2-N3:rgba(0, 0, 0, 0.5);--app-B6_2-N4:rgba(0, 0, 0, 0.3);--app-B6_2-N5:rgba(0, 0, 0, 0.7);--app-B6_2-N6:rgba(0, 0, 0, 0.2);--app-B6_2-N7:rgba(0, 0, 0, 0.1);--app-B6_2-N8:rgba(0, 0, 0, 0.4);--app-B6_2-N9:rgba(0, 0, 0, 0.03);--app-M1-N8:rgba(0, 0, 0, 0.4);--app-M1-N9:rgba(255, 255, 255, 0.03);--app-M1_1-N8:rgba(0, 0, 0, 0.4);--app-M1_1-N9:rgba(255, 255, 255, 0.03);--app-M1_2-N1:rgba(255, 255, 255, 0.9);--app-M1_2-N8:rgba(0, 0, 0, 0.4);--app-M1_2-N9:rgba(255, 255, 255, 0.03);--app-M2-N8:rgba(0, 0, 0, 0.4);--app-M2-N9:rgba(255, 255, 255, 0.03);--app-M2_1-N8:rgba(0, 0, 0, 0.4);--app-M2_1-N9:rgba(255, 255, 255, 0.03);--app-M2_2-N1:rgba(255, 255, 255, 0.9);--app-M2_2-N8:rgba(0, 0, 0, 0.4);--app-M2_2-N9:rgba(255, 255, 255, 0.03);--app-M3-N8:rgba(0, 0, 0, 0.4);--app-M3-N9:rgba(255, 255, 255, 0.03);--app-M3_1-N8:rgba(0, 0, 0, 0.4);--app-M3_1-N9:rgba(255, 255, 255, 0.03);--app-M3_2-N1:rgba(0, 0, 0, 0.9);--app-M3_2-N8:rgba(0, 0, 0, 0.4);--app-M3_2-N9:rgba(0, 0, 0, 0.03);--app-M4-N8:rgba(0, 0, 0, 0.4);--app-M4-N9:rgba(255, 255, 255, 0.03);--app-M4_1-N8:rgba(0, 0, 0, 0.4);--app-M4_1-N9:rgba(255, 255, 255, 0.03);--app-M4_2-N1:rgba(255, 255, 255, 0.9);--app-M4_2-N8:rgba(0, 0, 0, 0.4);--app-M4_2-N9:rgba(255, 255, 255, 0.03);--app-M5-N8:rgba(0, 0, 0, 0.4);--app-M5-N9:rgba(255, 255, 255, 0.03);--smart-ui-overlay:rgba(0, 0, 0, 0.4);--smart-ui-bottom-sheet-dragger-node-background:rgba(0, 0, 0, 0.3);--smart-ui-dialog-background:rgba(255, 255, 255, 1);--smart-ui-border-image:linear-gradient(to right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0))"
+          >
+            <smart-cell-group>
+              <wx-view
+                class="custom-class smart-cell-group "
+                style=""
+              >
+                <smart-cell>
+                  <wx-view
+                    class="custom-class smart-cell"
+                    hoverClass="smart-cell--hover hover-class"
+                    hoverStayTime="70"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-cell__title title-class"
+                      style=""
+                    >
+                      title
+                    </wx-view>
+                    <wx-view
+                      class="smart-cell__value value-class"
+                    >
+                      content
+                    </wx-view>
+                  </wx-view>
+                </smart-cell>
+                <smart-cell>
+                  <wx-view
+                    class="custom-class smart-cell smart-cell--clickable"
+                    hoverClass="smart-cell--hover hover-class"
+                    hoverStayTime="70"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="smart-cell__title title-class"
+                      style=""
+                    >
+                      title
+                      <wx-view
+                        class="smart-cell__label label-class"
+                      >
+                        detail information
+                      </wx-view>
+                    </wx-view>
+                    <wx-view
+                      class="smart-cell__value value-class"
+                    >
+                      content
+                    </wx-view>
+                    <smart-icon
+                      class="smart-cell__right-icon-wrap right-icon-class"
+                      customClass="smart-cell__right-icon"
+                    >
+                      <wx-view
+                        class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="smart-icon__svg"
+                          style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221758008222411%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%225628%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M353.834667%20225.834667a42.666667%2042.666667%200%200%201%2056.32-3.541334l4.010666%203.541334%20256%20256a42.666667%2042.666667%200%200%201%203.541334%2056.32l-3.541334%204.010666-256%20256a42.666667%2042.666667%200%200%201-63.872-56.32l3.541334-4.010666L579.626667%20512%20353.834667%20286.165333a42.666667%2042.666667%200%200%201-3.541334-56.32l3.541334-4.010666z%22%20p-id%3D%225629%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center"
+                        />
+                      </wx-view>
+                    </smart-icon>
+                  </wx-view>
+                </smart-cell>
+              </wx-view>
+            </smart-cell-group>
           </wx-view>
         </smart-config-provider>
       </wx-view>

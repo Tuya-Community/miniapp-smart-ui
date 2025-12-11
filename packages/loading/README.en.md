@@ -23,19 +23,22 @@ Import the component in `app.json` or `index.json`. For details, see [Quick Star
 ### Loading Types
 
 ```html
-<smart-loading /> <smart-loading type="spinner" />
+<smart-loading /> 
+<smart-loading type="spinner" />
 ```
 
 ### Custom Color
 
 ```html
-<smart-loading color="#1989fa" /> <smart-loading type="spinner" color="#1989fa" />
+<smart-loading color="red" /> 
+<smart-loading type="spinner" color="green" />
 ```
 
 ### Loading Text
 
 ```html
 <smart-loading size="24px">Loading...</smart-loading>
+<smart-loading color="var(--app-B1-N1)" icon-color="#1989FA" size="24px">Loading...</smart-loading>
 ```
 
 ### Vertical Arrangement
@@ -50,11 +53,12 @@ Import the component in `app.json` or `index.json`. For details, see [Quick Star
 
 | Parameter         | Description                   | Type               | Default    |
 | ----------------- | ----------------------------- | ------------------ | ---------- |
-| color             | Color                        | _string_           | `#c9c9c9`  |
+| color             | Overall Color                        | _string_           | `var(--loading-text-color, #1989FA)`  |
 | size              | Size of the loading icon, default unit is `px` | _string \| number_ | `30px`     |
 | text-size `v1.0.0`| Text size, default unit is `px` | _string \| number_ | `14px`     |
 | type              | Type, optional value is `spinner` | _string_           | `circular` |
 | vertical `v1.0.0` | Whether to vertically align icons and text | _boolean_          | `false`    |
+| icon-color `v2.8.0` | Independently control the color of the icon | _string_          | `var(--loading-spinner-color, #1989FA)`    |
 
 ### Slots
 

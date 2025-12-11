@@ -104,6 +104,55 @@ ToastInstance({
 });
 ```
 
+### Custom Width
+
+You can customize the popup width using the `width` property.
+
+```javascript
+ToastInstance.loading({
+  message: 'Loading...',
+  forbidClick: true,
+  width: 200,
+});
+```
+
+### Position Setting
+
+You can set the position of the notification using the `position` property, with optional values of `top`, `middle`, `bottom`.
+
+```javascript
+// Bottom position
+ToastInstance({
+  position: 'bottom',
+  message: 'This is a notification, recommended not to exceed fifteen characters~',
+});
+
+// Top position
+ToastInstance({
+  position: 'top',
+  message: 'This is a notification, recommended not to exceed fifteen characters~',
+});
+```
+
+### Custom Color `v2.8.0`
+
+You can customize the text color using the `textColor` property and customize the icon color using the `iconColor` property.
+
+```javascript
+// Custom text color
+ToastInstance({
+  message: 'This is a notification, recommended not to exceed fifteen characters~',
+  textColor: '#1989FA',
+});
+
+// Custom success notification color
+ToastInstance.success({
+  message: 'Success message',
+  textColor: '#1989FA',
+  iconColor: '#1989FA',
+});
+```
+
 ## API
 
 ### Methods
@@ -128,6 +177,8 @@ ToastInstance({
 | loadingType | Type of loading icon, optional value is `spinner`       | _string_   | `circular`    |
 | mask        | Whether to show the mask layer         | _boolean_  | `false`       |
 | message     | Content                       | _string_   | `''`          |
+| textColor `v2.8.0`   | Text color                    | _string_   | -             |
+| iconColor `v2.8.0`   | Icon color                    | _string_   | `white`       |
 | onClose     | Callback function on close            | _Function_ | -             |
 | position    | Position, optional values are `top` `middle` `bottom`           | _string_   | `middle`      |
 | selector    | Custom selector                | _string_   | `#smart-toast` |

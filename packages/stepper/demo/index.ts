@@ -12,6 +12,7 @@ SmartComponent({
         context: this,
         selector: '#smart-toast-stepper',
         forbidClick: true,
+        message: I18n.t('loading'),
       });
 
       setTimeout(() => {
