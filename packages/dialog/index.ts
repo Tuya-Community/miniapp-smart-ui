@@ -3,7 +3,7 @@ import { SmartComponent } from '../common/component';
 import { button } from '../mixins/button';
 import appLog from '../common/appLog';
 import { getCurrentPage, toPromise } from '../common/utils';
-import { contextRef, type Action } from './dialog';
+import { contextRef, queueRef, type Action } from './dialog';
 
 SmartComponent({
   mixins: [button],
@@ -122,6 +122,7 @@ SmartComponent({
   destroyed: function () {
     if (!this.id) return;
     contextRef.value[`#${this.id}`] = null;
+    queueRef.value = queueRef.value.filter(item => item.id !== this.id);
     appLog.info(`dialog #${this.id} destroyed`);
   },
   methods: {
