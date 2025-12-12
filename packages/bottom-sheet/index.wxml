@@ -21,6 +21,7 @@
   bind:leave="onLeave"
   bind:after-leave="onAfterLeave"
   id="{{curInstanceId}}"
+  lock-scroll="{{ lockScroll }}"
 >
   <block wx:if="{{draggable}}">
     <view
