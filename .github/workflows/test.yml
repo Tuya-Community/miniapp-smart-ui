@@ -3,7 +3,7 @@ name: Test Publish Manual
 on:
   push:
     branches:
-      - test/ci
+      - test/ci2
   workflow_dispatch:
 
 jobs:
