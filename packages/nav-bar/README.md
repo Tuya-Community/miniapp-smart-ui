@@ -89,6 +89,7 @@ Page({
   title="ScheduleScheduleScheduleSchedule"
   left-arrow
   right-icon="{{ iconMore }}"
+  side-width="mid"
   right-icon-size="24px"
   bind:click-right="onClickRight"
   bind:click-left="onClickLeft"
@@ -105,6 +106,7 @@ Page({
   title="ScheduleScheduleScheduleSchedule"
   right-text="确认"
   left-text="取消"
+  side-width="mid"
   right-text-color="#F04C4C"
   bind:click-right-text="onClickRightText"
   bind:click-left-text="onClickLeftText"
@@ -113,6 +115,7 @@ Page({
 <smart-nav-bar
   title="ScheduleScheduleScheduleSchedule"
   left-arrow
+  side-width="mid"
   right-text="确认"
   right-text-color="#F04C4C"
   bind:click-right-text="onClickRightText"
@@ -286,7 +289,7 @@ Page({
 | right-icon-size `v2.7.0` | 右侧图标大小    | _number_  | `32px`   |
 | left-icon-color `v2.7.0` | 左侧图标颜色    | _string_  | -   |
 | background `v2.7.0` | 整体背景色    | _string_  | -   |
-| side-width `v2.7.3` | 两边控制栏的宽度, 提供 `min`、`mid`、`max`三档内置值；也可以传具体宽度值    | _string\/number\/`min`\/`mid`\/`max`_  | `mid`   |
+| side-width `v2.7.3` | 两边控制栏的宽度, 提供 `min`、`mid`、`max`三档内置值；也可以传具体宽度值    | _string\/number\/`min`\/`mid`\/`max`_  | `mid` `v2.7.3` `max` `v2.8.1`   |
 
 ### Slot
 

@@ -89,6 +89,7 @@ Page({
   title="ScheduleScheduleScheduleSchedule"
   left-arrow
   right-icon="{{ iconMore }}"
+  side-width="mid"
   right-icon-size="24px"
   bind:click-right="onClickRight"
   bind:click-left="onClickLeft"
@@ -103,6 +104,7 @@ Page({
 </smart-nav-bar>
 <smart-nav-bar
   title="ScheduleScheduleScheduleSchedule"
+  side-width="mid"
   right-text="Confirm"
   left-text="Cancel"
   right-text-color="#F04C4C"
@@ -113,6 +115,7 @@ Page({
 <smart-nav-bar
   title="ScheduleScheduleScheduleSchedule"
   left-arrow
+  side-width="mid"
   right-text="Confirm"
   right-text-color="#F04C4C"
   bind:click-right-text="onClickRightText"
@@ -286,7 +289,7 @@ Page({
 | right-icon-size `v2.7.0` | Size of the right icon    | _number_  | `32px`   |
 | left-icon-color `v2.7.0` | Color of the left icon    | _string_  | -   |
 | background `v2.7.0` | Overall background color    | _string_  | -   |
-| side-width `v2.7.3` | Width of the side control bar, provides three built-in values: `min`, `mid`, `max`; also can pass specific width values    | _string\/number\/`min`\/`mid`\/`max`_  | `mid`   |
+| side-width `v2.7.3` | Width of the side control bar, provides three built-in values: `min`, `mid`, `max`; also can pass specific width values    | _string\/number\/`min`\/`mid`\/`max`_  | `mid` `v2.7.3` `max` `v2.8.1`   |
 
 ### Slot
 
