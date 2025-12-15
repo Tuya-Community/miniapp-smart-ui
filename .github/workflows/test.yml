@@ -13,6 +13,11 @@ jobs:
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+    
+    - name: Test
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
     - name: Push SubModules
       uses: benc-uk/workflow-dispatch@v1
