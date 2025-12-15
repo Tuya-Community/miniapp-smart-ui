@@ -5,16 +5,22 @@ import {
   getRect,
   requestAnimationFrame,
   nextTick,
+  getCurrentPage,
 } from '../../common/utils';
 
 // Mock utilities
-jest.mock('../../common/utils', () => ({
-  getAllRect: jest.fn(),
-  getRect: jest.fn(),
-  requestAnimationFrame: jest.fn(),
-  nextTick: jest.fn(),
-  groupSetData: jest.fn((context, cb) => cb()),
-}));
+jest.mock('../../common/utils', () => {
+  const actual = jest.requireActual('../../common/utils');
+  return {
+    ...actual,
+    getAllRect: jest.fn(),
+    getRect: jest.fn(),
+    requestAnimationFrame: jest.fn(),
+    nextTick: jest.fn(),
+    getCurrentPage: jest.fn(),
+    groupSetData: jest.fn((context, cb) => cb()),
+  };
+});
 
 describe('tabs', () => {
   const SmartTabs = simulate.load(
@@ -34,6 +40,12 @@ describe('tabs', () => {
         callback();
       }
     }) as any;
+
+    // Mock getCurrentPage
+    (getCurrentPage as jest.Mock).mockReturnValue({
+      smartPageScroller: [],
+      onPageScroll: undefined,
+    });
 
     (requestAnimationFrame as jest.Mock).mockImplementation((cb) => {
       if (cb) {
