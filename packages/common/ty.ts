@@ -16,7 +16,6 @@ const tyApi = {
     }
   },
   notificationVibrate: (v: any) => {
-    console.log('notificationVibrate', v);
     // @ts-ignore
     if (typeof ty !== 'undefined') {
       // @ts-ignore
