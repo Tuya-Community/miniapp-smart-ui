@@ -6,6 +6,7 @@
     "smart-cell": "../../cell/index",
     "smart-index-bar": "../../index-bar/index",
     "smart-index-anchor": "../../index-anchor/index",
-    "demo-block": "../../../example/components/demo-block/index"
+    "demo-block": "../../../example/components/demo-block/index",
+    "smart-config-provider": "../../config-provider/index"
   }
 }

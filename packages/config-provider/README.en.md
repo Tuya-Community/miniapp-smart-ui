@@ -94,7 +94,7 @@ Page({
 });
 ```
 
-### Theme Switching `v2.7.4`
+### Theme Switching `v2.8.0`
 
 The `ConfigProvider` component supports switching between light and dark themes using the `theme` property, with optional values of `light` and `dark`.
 
@@ -138,4 +138,4 @@ Page({
 | Parameter   | Description         | Type          | Default Value |
 | ----------- | ------------------- | ------------- | ------------- |
 | theme-vars  | Custom theme variables | _object_     | -             |
-| theme `v2.7.4` | Theme mode         | _'light'\/'dark'_ | -             |
+| theme `v2.8.0` | Theme mode         | _'light'\/'dark'_ | -             |
