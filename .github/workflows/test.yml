@@ -40,10 +40,37 @@ jobs:
           }
           
           try {
+            // 先列出所有可用的工作流，检查目标工作流是否存在
+            console.log('🔍 Checking available workflows...');
+            const workflows = await github.rest.actions.listWorkflowsForRepo({
+              owner: targetOwner,
+              repo: targetRepo,
+            });
+            
+            console.log(`📋 Found ${workflows.data.total_count} workflow(s) in the repository`);
+            
+            // 查找目标工作流
+            const targetWorkflow = workflows.data.workflows.find(
+              w => w.name === 'publish-manual.yml' || w.path === '.github/workflows/publish-manual.yml'
+            );
+            
+            if (!targetWorkflow) {
+              console.log('⚠️  Workflow "publish-manual.yml" not found. Available workflows:');
+              workflows.data.workflows.forEach(w => {
+                console.log(`   - ${w.name} (ID: ${w.id}, Path: ${w.path})`);
+              });
+              throw new Error(`❌ Workflow "publish-manual.yml" not found in repository ${targetOwner}/${targetRepo}`);
+            }
+            
+            console.log(`✅ Found workflow: ${targetWorkflow.name} (ID: ${targetWorkflow.id})`);
+            
+            // 使用工作流 ID 或文件名来触发
+            const workflowId = targetWorkflow.id;
+            
             await github.rest.actions.createWorkflowDispatch({
               owner: targetOwner,
               repo: targetRepo,
-              workflow_id: 'publish-manual.yml',
+              workflow_id: workflowId,
               ref: targetBranch,
               inputs: {
                 version: version
@@ -52,9 +79,13 @@ jobs:
             
             console.log('✅ Successfully triggered publish-manual.yml workflow');
             console.log(`📋 Please check the workflow run in the Actions tab`);
-            console.log(`🔗 Workflow URL: https://github.com/${targetOwner}/${targetRepo}/actions/workflows/publish-manual.yml`);
+            console.log(`🔗 Workflow URL: https://github.com/${targetOwner}/${targetRepo}/actions/workflows/${targetWorkflow.id}`);
           } catch (error) {
             console.error('❌ Failed to trigger workflow:', error.message);
+            if (error.response) {
+              console.error(`   Status: ${error.response.status}`);
+              console.error(`   Message: ${error.response.data?.message || 'Unknown error'}`);
+            }
             console.error('Error details:', JSON.stringify(error, null, 2));
             throw error;
           }
