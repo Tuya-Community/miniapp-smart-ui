@@ -1,3 +1,4 @@
+import tyApi from '../common/ty';
 import { SmartComponent } from '../common/component';
 import { useParent } from '../common/relation';
 
@@ -46,6 +47,7 @@ SmartComponent({
 
         if (active !== this.data.active) {
           parent.$emit('change', active);
+          tyApi.selectionVibrate();
         }
       }
 

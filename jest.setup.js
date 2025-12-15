@@ -273,8 +273,19 @@ global.I18n = {
   },
 };
 
+global.tyApi = {
+  vibrateShort: () => {},
+  selectionVibrate: () => {},
+  nativeDisabled: () => {},
+  getThemeInfo: () => {},
+  notificationVibrate: () => {},
+  isWX: () => false,
+};
+
 global.ty = {
+  selectionVibrate: () => {},
   getLogManager: () => {},
+  notificationVibrate: () => {},
   getThemeInfo: () => THEME_INFO,
   vibrateShort: jest.fn(),
   createCanvasContext: id => {
@@ -304,6 +315,8 @@ global.ty = {
 };
 
 global.wx = {
+  selectionVibrate: () => {},
+  notificationVibrate: () => {},
   getThemeInfo: () => THEME_INFO,
   getUserProfile: options => {
     const mockUserInfo = {

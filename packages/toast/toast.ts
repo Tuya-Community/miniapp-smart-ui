@@ -1,7 +1,7 @@
 import appLog from '../common/appLog';
 import { getCurrentPage } from '../common/utils';
 import { isObj } from '../common/validator';
-import ty from '../common/ty';
+import tyApi from '../common/ty';
 
 type ToastMessage = string | number;
 type ToastContext =
@@ -91,7 +91,7 @@ function Toast(toastOptions: ToastOptions | ToastMessage) {
   toast.clear = () => {
     toast.setData({ show: false });
     if (options.nativeDisabled) {
-      ty.nativeDisabled(false);
+      tyApi.nativeDisabled(false);
     }
     preDisRef.value[options.selector as string] = false;
     if (options.onClose) {
@@ -102,10 +102,10 @@ function Toast(toastOptions: ToastOptions | ToastMessage) {
   queueRef.value.push(toast);
   toast.setData(options);
   if (options.nativeDisabled) {
-    ty.nativeDisabled(true);
+    tyApi.nativeDisabled(true);
   }
   if (preDisRef.value[options.selector as any] && !options.nativeDisabled) {
-    ty.nativeDisabled(false);
+    tyApi.nativeDisabled(false);
   }
   preDisRef.value[options.selector as any] = options.nativeDisabled || false;
   clearTimeout(toast.timer);
@@ -121,11 +121,19 @@ function Toast(toastOptions: ToastOptions | ToastMessage) {
   return toast;
 }
 
-const createMethod = (type: string) => (options: ToastOptions | ToastMessage) =>
-  Toast({
+const createMethod = (type: string) => (options: ToastOptions | ToastMessage) => {
+  if (type === 'success') {
+    tyApi.notificationVibrate({ type: 'success' });
+  } else if (type === 'fail') {
+    tyApi.notificationVibrate({ type: 'error' });
+  } else if (type === 'warn') {
+    tyApi.notificationVibrate({ type: 'warning' });
+  }
+  return Toast({
     type,
     ...parseOptions(options),
   });
+};
 
 Toast.loading = createMethod('loading');
 Toast.success = createMethod('success');
