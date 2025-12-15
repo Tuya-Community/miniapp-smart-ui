@@ -1,28 +1,58 @@
-name: Test Ray CI
+name: Test Publish Manual
 
 on:
-  push:
-    branches:
-      - 'test/ci'
-jobs:
-  publish_beta:
-    runs-on: ubuntu-latest
+  workflow_dispatch:
 
+jobs:
+  test_publish:
+    runs-on: ubuntu-latest
+    
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.PROTECT_WRITE_TOKEN }}
-    
-    - name: Test
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-    - name: Push SubModules
-      uses: benc-uk/workflow-dispatch@v1
+    - name: Get Version from package.json
+      id: package_version
+      run: |
+        VERSION=$(node -p "require('./package.json').version")
+        echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
+        echo "📦 Current version in package.json: ${VERSION}"
+
+    - name: Call Publish Manual Workflow
+      uses: actions/github-script@v7
       with:
-        workflow: sync.yml
-        repo: 'Tuya-Community/ray-smart-ui'
-        token: ${{ secrets.PROTECT_WRITE_TOKEN }}
-        ref: release/2.x
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const version = '${{ steps.package_version.outputs.VERSION }}';
+          const targetOwner = 'Tuya-Community';
+          const targetRepo = 'ray-smart-ui';
+          const targetBranch = 'test/ci';
+          
+          console.log(`🚀 Triggering publish-manual.yml workflow with version: ${version}`);
+          console.log(`📦 Target Repository: ${targetOwner}/${targetRepo}`);
+          console.log(`🔀 Target Branch: ${targetBranch}`);
+          
+          if (!version || version.trim() === '') {
+            throw new Error('❌ Version is empty. Please ensure package.json contains a valid version.');
+          }
+          
+          try {
+            await github.rest.actions.createWorkflowDispatch({
+              owner: targetOwner,
+              repo: targetRepo,
+              workflow_id: 'publish-manual.yml',
+              ref: targetBranch,
+              inputs: {
+                version: version
+              }
+            });
+            
+            console.log('✅ Successfully triggered publish-manual.yml workflow');
+            console.log(`📋 Please check the workflow run in the Actions tab`);
+            console.log(`🔗 Workflow URL: https://github.com/${targetOwner}/${targetRepo}/actions/workflows/publish-manual.yml`);
+          } catch (error) {
+            console.error('❌ Failed to trigger workflow:', error.message);
+            console.error('Error details:', JSON.stringify(error, null, 2));
+            throw error;
+          }
+
