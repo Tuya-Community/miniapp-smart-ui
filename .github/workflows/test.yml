@@ -22,7 +22,7 @@ jobs:
     - name: Push SubModules
       uses: benc-uk/workflow-dispatch@v1
       with:
-        workflow: sync
-        repo: Tuya-Community/ray-smart-ui
+        workflow: sync.yml
+        repo: 'Tuya-Community/ray-smart-ui'
         token: ${{ secrets.PROTECT_WRITE_TOKEN }}
         ref: release/2.x
