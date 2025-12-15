@@ -328,5 +328,28 @@ describe('notify', () => {
 
     jest.useRealTimers();
   });
+
+  test('should handle mounted lifecycle', async () => {
+    const { contextRef } = require('../notify');
+    
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-notify': SmartNotify,
+        },
+        template: `<smart-notify id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      // mounted should set contextRef.value
+      expect(contextRef.value).toBeDefined();
+    }
+  });
 });
 

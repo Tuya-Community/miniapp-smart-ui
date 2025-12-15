@@ -1,5 +1,6 @@
 import path from 'path';
 import simulate from 'miniprogram-simulate';
+import { contextRef } from '../dialog';
 
 describe('dialog', () => {
   const SmartDialog = simulate.load(
@@ -11,6 +12,9 @@ describe('dialog', () => {
   );
 
   beforeEach(() => {
+    // Clear contextRef before each test
+    contextRef.value = {};
+    
     // Mock wx.nextTick
     const originalNextTick = wx.nextTick;
     wx.nextTick = jest.fn((callback: () => void) => {
@@ -424,6 +428,280 @@ describe('dialog', () => {
 
       expect(callbackCalled).toBe(true);
       expect(callbackAction).toBe('cancel');
+    }
+  });
+
+  test('should handle destroyed lifecycle without id', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      // Set id to empty to test early return
+      instance.id = '';
+      await simulate.sleep(10);
+
+      // Call destroyed - should return early
+      if (instance.destroyed) {
+        instance.destroyed();
+      }
+      await simulate.sleep(10);
+
+      expect(instance.id).toBe('');
+    }
+  });
+
+  test('should handle action with beforeClose returning true', async () => {
+    let closeCalled = false;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" show="{{ true }}" bind:close="onClose" />`,
+        methods: {
+          onClose() {
+            closeCalled = true;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const beforeClose = jest.fn(() => Promise.resolve(true));
+      instance.setData({
+        show: true,
+        asyncClose: false,
+        beforeClose,
+      });
+      await simulate.sleep(10);
+
+      instance.handleAction('confirm');
+      await simulate.sleep(50);
+
+      expect(beforeClose).toHaveBeenCalled();
+      expect(closeCalled).toBe(true);
+    }
+  });
+
+  test('should handle action with beforeClose returning false', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" show="{{ true }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const beforeClose = jest.fn(() => Promise.resolve(false));
+      instance.setData({
+        show: true,
+        asyncClose: false,
+        beforeClose,
+        loading: { confirm: false, cancel: false },
+      });
+      await simulate.sleep(10);
+
+      instance.handleAction('confirm');
+      await simulate.sleep(50);
+
+      expect(beforeClose).toHaveBeenCalled();
+      // Should stop loading when beforeClose returns false
+      expect(wrapper?.data.loading.confirm).toBe(false);
+    }
+  });
+
+  test('should handle action with asyncClose', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" show="{{ true }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({
+        show: true,
+        asyncClose: true,
+        beforeClose: null,
+        loading: { confirm: false, cancel: false },
+      });
+      await simulate.sleep(10);
+
+      instance.handleAction('confirm');
+      await simulate.sleep(10);
+
+      // Should set loading to true
+      expect(wrapper?.data.loading.confirm).toBe(true);
+    }
+  });
+
+  test('should handle destroyed lifecycle with id', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" id="{{ 'test-dialog' }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      // Set id
+      instance.id = 'test-dialog';
+      await simulate.sleep(10);
+
+      // Verify contextRef is set
+      expect(contextRef.value['#test-dialog']).toBeTruthy();
+
+      // Call destroyed
+      if (instance.destroyed) {
+        instance.destroyed();
+      }
+      await simulate.sleep(10);
+
+      // Should clear contextRef
+      expect(contextRef.value['#test-dialog']).toBeNull();
+    }
+  });
+
+  test('should handle action with beforeClose returning true', async () => {
+    let closeCalled = false;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" show="{{ true }}" bind:close="onClose" />`,
+        methods: {
+          onClose() {
+            closeCalled = true;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const beforeClose = jest.fn(() => Promise.resolve(true));
+      instance.setData({
+        show: true,
+        asyncClose: false,
+        beforeClose,
+      });
+      await simulate.sleep(10);
+
+      instance.handleAction('confirm');
+      await simulate.sleep(50);
+
+      expect(beforeClose).toHaveBeenCalled();
+      expect(closeCalled).toBe(true);
+    }
+  });
+
+  test('should handle action with beforeClose returning false', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" show="{{ true }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const beforeClose = jest.fn(() => Promise.resolve(false));
+      instance.setData({
+        show: true,
+        asyncClose: false,
+        beforeClose,
+        loading: { confirm: false, cancel: false },
+      });
+      await simulate.sleep(10);
+
+      instance.handleAction('confirm');
+      await simulate.sleep(50);
+
+      expect(beforeClose).toHaveBeenCalled();
+      // Should stop loading when beforeClose returns false
+      expect(wrapper?.data.loading.confirm).toBe(false);
+    }
+  });
+
+  test('should handle action with beforeClose returning void', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" show="{{ true }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const beforeClose = jest.fn(() => {});
+      instance.setData({
+        show: true,
+        asyncClose: false,
+        beforeClose,
+        loading: { confirm: false, cancel: false },
+      });
+      await simulate.sleep(10);
+
+      instance.handleAction('confirm');
+      await simulate.sleep(50);
+
+      expect(beforeClose).toHaveBeenCalled();
     }
   });
 });

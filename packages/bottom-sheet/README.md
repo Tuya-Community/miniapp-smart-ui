@@ -301,6 +301,7 @@ Page({
 | max-drag-height `v2.7.2` | 拖拽时允许的最大高度 | _number_ | `windowHeight * 0.5` |
 | mid-drag-height `v2.7.2` | 拖拽时中间态高度 | _number_ | `windowHeight * 0.1` |
 | close-drag-height `v2.7.2` | 拖拽关闭时的临界高度，低于该高度将自动关闭 | _number_ | `windowHeight * 0.4` |
+| lock-scroll  `v2.8.1`                      | 是否锁定背景滚动            | _boolean_          | `true`      |
 
 ### Events
 

@@ -23,7 +23,10 @@ export function useParent(name: string, onEffect?: (this: TrivialInstance) => vo
     mixin: Behavior({
       created() {
         Object.defineProperty(this, 'parent', {
-          get: () => this.getRelationNodes(path)[0],
+          get: () => {
+            const nodes = this.getRelationNodes(path);
+            return nodes && nodes.length > 0 ? nodes[0] : undefined;
+          },
         });
 
         Object.defineProperty(this, 'index', {
