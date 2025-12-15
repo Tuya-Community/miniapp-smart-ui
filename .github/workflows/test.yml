@@ -13,6 +13,8 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PROTECT_WRITE_TOKEN }}
 
     - name: Get Version from package.json
       id: package_version
@@ -40,53 +42,91 @@ jobs:
           }
           
           try {
-            // 先列出所有可用的工作流，检查目标工作流是否存在
-            console.log('🔍 Checking available workflows...');
-            const workflows = await github.rest.actions.listWorkflowsForRepo({
-              owner: targetOwner,
-              repo: targetRepo,
-            });
+            // 先检查工作流文件是否存在
+            console.log('🔍 Checking if workflow file exists...');
+            let workflowId = 'publish-manual.yml';
             
-            console.log(`📋 Found ${workflows.data.total_count} workflow(s) in the repository`);
-            
-            // 查找目标工作流
-            const targetWorkflow = workflows.data.workflows.find(
-              w => w.name === 'publish-manual.yml' || w.path === '.github/workflows/publish-manual.yml'
-            );
-            
-            if (!targetWorkflow) {
-              console.log('⚠️  Workflow "publish-manual.yml" not found. Available workflows:');
-              workflows.data.workflows.forEach(w => {
-                console.log(`   - ${w.name} (ID: ${w.id}, Path: ${w.path})`);
+            try {
+              // 尝试获取工作流文件内容来验证是否存在
+              await github.rest.repos.getContent({
+                owner: targetOwner,
+                repo: targetRepo,
+                path: '.github/workflows/publish-manual.yml',
+                ref: targetBranch,
               });
-              throw new Error(`❌ Workflow "publish-manual.yml" not found in repository ${targetOwner}/${targetRepo}`);
+              console.log('✅ Workflow file exists in the repository');
+            } catch (fileError) {
+              if (fileError.status === 404) {
+                console.log('⚠️  Workflow file not found at .github/workflows/publish-manual.yml');
+                console.log(`   Checking branch: ${targetBranch}`);
+                console.log(`   💡 Make sure the workflow file exists in the target repository and branch.`);
+              } else {
+                console.log(`⚠️  Could not verify workflow file existence (status: ${fileError.status})`);
+                console.log('   Will attempt to trigger workflow anyway...');
+              }
             }
             
-            console.log(`✅ Found workflow: ${targetWorkflow.name} (ID: ${targetWorkflow.id})`);
-            
-            // 使用工作流 ID 或文件名来触发
-            const workflowId = targetWorkflow.id;
-            
-            await github.rest.actions.createWorkflowDispatch({
-              owner: targetOwner,
-              repo: targetRepo,
-              workflow_id: workflowId,
-              ref: targetBranch,
-              inputs: {
-                version: version
+            // 尝试触发工作流（先使用文件名）
+            console.log(`🚀 Attempting to trigger workflow: ${workflowId}`);
+            try {
+              await github.rest.actions.createWorkflowDispatch({
+                owner: targetOwner,
+                repo: targetRepo,
+                workflow_id: workflowId,
+                ref: targetBranch,
+                inputs: {
+                  version: version
+                }
+              });
+              
+              console.log('✅ Successfully triggered publish-manual.yml workflow');
+              console.log(`📋 Please check the workflow run in the Actions tab`);
+              console.log(`🔗 Workflow URL: https://github.com/${targetOwner}/${targetRepo}/actions/workflows/publish-manual.yml`);
+            } catch (dispatchError) {
+              // 如果使用文件名失败，尝试使用工作流 ID
+              if (dispatchError.status === 404) {
+                console.log('⚠️  Workflow not found with filename, trying to get workflow ID...');
+                try {
+                  // 使用 GET 请求获取工作流信息
+                  const workflowResponse = await github.request('GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}', {
+                    owner: targetOwner,
+                    repo: targetRepo,
+                    workflow_id: workflowId,
+                  });
+                  
+                  const actualWorkflowId = workflowResponse.data.id;
+                  console.log(`✅ Found workflow ID: ${actualWorkflowId}`);
+                  
+                  await github.rest.actions.createWorkflowDispatch({
+                    owner: targetOwner,
+                    repo: targetRepo,
+                    workflow_id: actualWorkflowId,
+                    ref: targetBranch,
+                    inputs: {
+                      version: version
+                    }
+                  });
+                  
+                  console.log('✅ Successfully triggered workflow using workflow ID');
+                } catch (idError) {
+                  throw dispatchError; // 抛出原始错误
+                }
+              } else {
+                throw dispatchError;
               }
-            });
-            
-            console.log('✅ Successfully triggered publish-manual.yml workflow');
-            console.log(`📋 Please check the workflow run in the Actions tab`);
-            console.log(`🔗 Workflow URL: https://github.com/${targetOwner}/${targetRepo}/actions/workflows/${targetWorkflow.id}`);
+            }
           } catch (error) {
             console.error('❌ Failed to trigger workflow:', error.message);
             if (error.response) {
               console.error(`   Status: ${error.response.status}`);
               console.error(`   Message: ${error.response.data?.message || 'Unknown error'}`);
+              if (error.response.status === 404) {
+                console.error(`   💡 Possible reasons:`);
+                console.error(`      1. Workflow file "publish-manual.yml" does not exist in ${targetOwner}/${targetRepo}`);
+                console.error(`      2. Workflow file does not exist on branch "${targetBranch}"`);
+                console.error(`      3. Workflow file is not in .github/workflows/ directory`);
+              }
             }
-            console.error('Error details:', JSON.stringify(error, null, 2));
             throw error;
           }
 
