@@ -32,6 +32,7 @@
     left-arrow
     right-icon="{{ iconMore }}"
     right-icon-size="24px"
+    sideWidth="mid"
     bind:click-right="onClickRight"
     bind:click-left="onClickLeft"
     bind:click-title="onClickTitle"
@@ -47,6 +48,7 @@
     title="ScheduleScheduleScheduleSchedule"
     right-text="Confirm"
     left-text="Cancel"
+    sideWidth="mid"
     custom-class="demo-nav-bar"
     right-text-color="#F04C4C"
     bind:click-right-text="onClickRightText"
@@ -57,6 +59,7 @@
     title="ScheduleScheduleScheduleSchedule"
     left-arrow
     right-text="Confirm"
+    sideWidth="mid"
     custom-class="demo-nav-bar"
     right-text-color="#F04C4C"
     bind:click-right-text="onClickRightText"
@@ -116,6 +119,7 @@
   <smart-nav-bar
     left-text="Home"
     left-text-type="title"
+    sideWidth="mid"
     left-icon="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
     bind:click-left="onClickLeft"
     bind:click-left-icon="onClickLeftIcon"
