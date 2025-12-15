@@ -117,7 +117,7 @@ jobs:
         workflow: publish-manual.yml
         repo: Tuya-Community/ray-smart-ui
         token: ${{ secrets.PROTECT_WRITE_TOKEN }}
-        ref: test/ci
+        ref: release/2.x
         inputs: '{"version":"${{ env.NEXT_VERSION }}"}'
 
     - name: Wait for Workflow Completion
