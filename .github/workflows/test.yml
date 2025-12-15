@@ -1,0 +1,25 @@
+name: Test Ray CI
+
+on:
+  push:
+    branches:
+      - 'test/ci'
+jobs:
+  publish_beta:
+    runs-on: ubuntu-latest
+    # 只在 PR 被合并时执行，避免取消合并时也触发
+    if: github.event.pull_request.merged == true
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+
+    - name: Push SubModules
+      uses: benc-uk/workflow-dispatch@v1
+      with:
+        workflow: Sync README & ConfigType
+        repo: Tuya-Community/ray-smart-ui
+        token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+        ref: release/2.x
