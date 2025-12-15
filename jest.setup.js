@@ -276,6 +276,7 @@ global.I18n = {
 global.ty = {
   getLogManager: () => {},
   getThemeInfo: () => THEME_INFO,
+  vibrateShort: jest.fn(),
   createCanvasContext: id => {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
