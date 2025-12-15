@@ -7,8 +7,6 @@ on:
 jobs:
   publish_beta:
     runs-on: ubuntu-latest
-    # 只在 PR 被合并时执行，避免取消合并时也触发
-    if: github.event.pull_request.merged == true
 
     steps:
     - name: Checkout Code
