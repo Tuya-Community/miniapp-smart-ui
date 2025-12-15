@@ -26,7 +26,7 @@ jobs:
     - name: Call Publish Manual Workflow
       uses: benc-uk/workflow-dispatch@v1
       with:
-        workflow: publish-manual.yml
+        workflow: sync.yml
         repo: Tuya-Community/ray-smart-ui
         token: ${{ secrets.PROTECT_WRITE_TOKEN }}
         ref: test/ci
