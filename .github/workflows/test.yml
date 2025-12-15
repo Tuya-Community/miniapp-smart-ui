@@ -1,6 +1,9 @@
 name: Test Publish Manual
 
 on:
+  push:
+    branches:
+      - test/ci
   workflow_dispatch:
 
 jobs:
