@@ -7,6 +7,7 @@ category: General
 ### Introduction
 
 Used to configure the theme styles of Smart UI components.
+* [Best Practices for the ConfigProvider Component](https://github.com/Tuya-Community/miniapp-smart-ui/wiki/ConfigProvider-%E7%BB%84%E4%BB%B6%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5)
 
 ### Importing
 
