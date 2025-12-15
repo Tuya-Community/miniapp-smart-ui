@@ -18,3 +18,4 @@
 - [x] bottom-sheet 组件支持 lockScroll 属性 测试版本 2.8.1-beta-1
 - [ ] nav-bar sideWidth 默认值从 mid 调整为 max
 - [ ] 整理版本更新变更要点，官网透出
+- [ ] 简化 config-provider 主题文件体积
