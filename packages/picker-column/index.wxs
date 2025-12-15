@@ -83,7 +83,10 @@ function adjustIndex(index, options, loop) {
   if (loop) {
     for (var i = 0; i < count; i++) {
       var targetIndex = index + i;
-      var optionIndex = Math.abs(((targetIndex + 1) % count) - 1);
+      var optionIndex = ((targetIndex + 1) % count) - 1;
+      if (optionIndex < 0) {
+        optionIndex += count;
+      }
       if (
         !isDisabled(options[optionIndex]) &&
         options[optionIndex] !== undefined

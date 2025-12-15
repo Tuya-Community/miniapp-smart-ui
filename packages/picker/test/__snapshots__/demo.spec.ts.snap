@@ -484,7 +484,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <wx-view
                     class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;;color: #000;;"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;font-size: 16px;;color: rgb(135, 180, 244);;"
                     bind:tap=null
                   />
                   <wx-view
@@ -655,7 +655,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <wx-view
                     class="smart-picker-column__item_0 smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: #000;;"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(135, 180, 244);;"
                     bind:tap=null
                   />
                   <wx-view
@@ -864,7 +864,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <wx-view
                     class="smart-picker-column__item_0 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                     data-index="{{0}}"
-                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: #000;;"
+                    style="transform:rotateX(360deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(135, 180, 244);;"
                     bind:tap=null
                   />
                   <wx-view

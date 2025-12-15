@@ -105,7 +105,7 @@
       parcelThumbWidth="{{12}}"
       parcelThumbHeight="{{2}}"
       thumbStyle="width: 12px;height:2px;border-radius:2px;background: #FFFFFF;"
-      trackStyle="width:48px;height:203px;border-radius:10px;background:rgba(0, 0, 0, 0.08);"
+      trackStyle="width:48px;height:203px;border-radius:10px;background: var(--app-B4-N7,rgba(0,0,0,.1));"
       barStyle="width:48px;height:114px;background:#1989FA;"
     />
   </demo-block>

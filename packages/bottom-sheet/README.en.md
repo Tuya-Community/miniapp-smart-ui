@@ -286,6 +286,7 @@ Page({
 | max-drag-height `v2.7.2` | Maximum allowed height when dragging | _number_ | `windowHeight * 0.5` |
 | mid-drag-height `v2.7.2` | Middle state height when dragging | _number_ | `windowHeight * 0.1` |
 | close-drag-height `v2.7.2` | Threshold height for closing on drag; if the height goes below this while dragging, the sheet will automatically close | _number_ | `windowHeight * 0.4` |
+| lock-scroll  `v2.8.1`                      | Whether to lock background scrolling          | _boolean_          | `true`      |
 
 
 ### Events
