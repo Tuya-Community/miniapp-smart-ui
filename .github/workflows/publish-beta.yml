@@ -85,7 +85,7 @@ jobs:
     - name: Commit Changes
       run: |
         git config pull.rebase false
-        git pull origin release/2.x
+        git pull origin ${{ github.event.pull_request.base.ref }}
         git add .
         if git diff --staged --quiet; then
           echo "No changes to commit"
