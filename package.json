@@ -87,7 +87,7 @@
     "iOS >= 9"
   ],
   "dependencies": {
-    "@ray-js/components-ty-slider": "^0.3.8-beta-3",
+    "@ray-js/components-ty-slider": "^0.3.8-beta-7",
     "@tuya-miniapp/icons": "^2.3.0"
   },
   "maintainers": [
