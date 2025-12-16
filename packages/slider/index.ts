@@ -191,7 +191,7 @@ SmartComponent({
           if (this.data.lastMinValue !== nextMinValue) {
             const isMin = value[0] === this.data.min;
             if (isMin) {
-              ty.vibrateShort({ type: 'light' });
+              ty.selectionVibrate();
             }
           }
         }
