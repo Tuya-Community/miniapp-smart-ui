@@ -1,5 +1,6 @@
 import path from 'path';
 import simulate from 'miniprogram-simulate';
+import * as version from '../../common/version';
 
 describe('search', () => {
   const SmartSearch = simulate.load(
@@ -396,6 +397,67 @@ describe('search', () => {
 
       expect(searchEvent).toBe('');
     }
+  });
+
+  test('should clear value when canIUseModel returns true', () => {
+    jest.useFakeTimers();
+    const canIUseModelSpy = jest.spyOn(version, 'canIUseModel').mockReturnValue(true);
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-search': SmartSearch,
+        },
+        template: `<smart-search id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      instance.setData({ value: 'test value' });
+      instance.onCancel();
+
+      jest.advanceTimersByTime(200);
+
+      expect(wrapper?.data.value).toBe('');
+    }
+
+    canIUseModelSpy.mockRestore();
+    jest.useRealTimers();
+  });
+
+  test('should not clear value when canIUseModel returns false', () => {
+    jest.useFakeTimers();
+    const canIUseModelSpy = jest.spyOn(version, 'canIUseModel').mockReturnValue(false);
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-search': SmartSearch,
+        },
+        template: `<smart-search id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      instance.setData({ value: 'test value' });
+      instance.onCancel();
+
+      jest.advanceTimersByTime(200);
+
+      // Value should remain unchanged when canIUseModel returns false
+      expect(wrapper?.data.value).toBe('test value');
+    }
+
+    canIUseModelSpy.mockRestore();
+    jest.useRealTimers();
   });
 });
 
