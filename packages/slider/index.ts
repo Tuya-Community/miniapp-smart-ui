@@ -185,19 +185,18 @@ SmartComponent({
       if (Array.isArray(value)) {
         const nextValue = value.join(',');
         if (this.data.lastValue) {
-          if (this.data.lastValue === nextValue) {
-            return;
+          if (this.data.lastValue !== nextValue) {
+            const isMin = value[0] === this.data.min;
+            const isMax = value[1] === this.data.max;
+            if (isMin) {
+              ty.vibrateShort({ type: 'light' });
+            }
+            if (isMax) {
+              ty.vibrateShort({ type: 'medium' });
+            }
           }
         }
         this.data.lastValue = value.join(',');
-        const isMin = value[0] === this.data.min;
-        const isMax = value[1] === this.data.max;
-        if (isMin) {
-          ty.vibrateShort({ type: 'light' });
-        }
-        if (isMax) {
-          ty.vibrateShort({ type: 'medium' });
-        }
       }
 
       if (drag) {
