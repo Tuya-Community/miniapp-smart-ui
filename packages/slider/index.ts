@@ -184,6 +184,7 @@ SmartComponent({
 
       if (Array.isArray(value)) {
         const nextValue = value.join(',');
+        const nextValueReverse = value.slice(0).reverse().join(',');
         if (this.data.lastValue) {
           if (this.data.lastValue !== nextValue) {
             const isMin = value[0] === this.data.min;
@@ -196,7 +197,7 @@ SmartComponent({
             }
           }
         }
-        this.data.lastValue = value.join(',');
+        this.data.lastValue = nextValue;
       }
 
       if (drag) {
