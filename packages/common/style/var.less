@@ -9,6 +9,14 @@
     rgba(0, 0, 0, 0)
   );
 
+  --smart-ui-battery-body-base-background: rgba(0, 0, 0, 0.25);
+  --smart-ui-battery-body-high-background: rgba(0, 0, 0, 0.9);
+  --smart-ui-battery-body-middle-background: #ffcb00;
+  --smart-ui-battery-body-low-background: #ee652e;
+  --smart-ui-battery-body-charging-background: #2fc755;
+  --smart-ui-battery-text-color: rgba(0, 0, 0, 0.6);
+  --smart-ui-battery-slash-border-color: #ffffff;
+
   &[theme='dark'] {
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
     --smart-ui-bottom-sheet-dragger-node-background: rgba(255, 255, 255, 0.3);
@@ -19,6 +27,13 @@
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0)
     );
+    --smart-ui-battery-body-base-background: rgba(255, 255, 255, 0.4);
+    --smart-ui-battery-body-high-background: #ffffff;
+    --smart-ui-battery-body-middle-background: #ffcb00;
+    --smart-ui-battery-body-low-background: #ee652e;
+    --smart-ui-battery-body-charging-background: #2fc755;
+    --smart-ui-battery-text-color: rgba(255, 255, 255, 0.6);
+    --smart-ui-battery-slash-border-color: #000000;
   }
 }
 
@@ -202,7 +217,10 @@
 @bottom-sheet-dragger-node-width: 30px;
 @bottom-sheet-dragger-node-height: 4px;
 @bottom-sheet-dragger-node-border-radius: 2px;
-@bottom-sheet-dragger-node-background: var(--smart-ui-bottom-sheet-dragger-node-background, rgba(0, 0, 0, 0.3));
+@bottom-sheet-dragger-node-background: var(
+  --smart-ui-bottom-sheet-dragger-node-background,
+  rgba(0, 0, 0, 0.3)
+);
 
 // Button
 @button-mini-height: 22px;
@@ -589,8 +607,8 @@
 @switch-on-background-color: @blue;
 @switch-transition-duration: 0.3s;
 @switch-label-font-size: 13px;
-@switch-label-active-color: #FFFFFF;
-@switch-label-inactive-color: #FFFFFF;
+@switch-label-active-color: #ffffff;
+@switch-label-inactive-color: #ffffff;
 @switch-disabled-opacity: 0.4;
 @switch-padding: 0.067em;
 @switch-border: 0.08em;
@@ -884,3 +902,27 @@
 @popover-padding: 12px;
 @popover-border-radius: 12px;
 @popover-overlay-color: @B1-N1;
+
+// Battery
+@battery-body-base-background: var(--smart-ui-battery-body-base-background, rgba(0, 0, 0, 0.25));
+@battery-body-high-background: var(--smart-ui-battery-body-high-background, rgba(0, 0, 0, 0.9));
+@battery-body-middle-background: var(--smart-ui-battery-body-middle-background, #ffcb00);
+@battery-body-low-background: var(--smart-ui-battery-body-low-background, #ee652e);
+@battery-body-charging-background: var(--smart-ui-battery-body-charging-background, #2fc755);
+@battery-text-color: var(--smart-ui-battery-text-color, rgba(0, 0, 0, 0.6));
+@battery-slash-border-color: var(--smart-ui-battery-slash-border-color, #ffffff);
+@battery-body-border-radius: var(--smart-ui-battery-body-border-radius, 2px);
+@battery-body-width: var(--smart-ui-battery-body-width, 18px);
+@battery-body-height: var(--smart-ui-battery-body-height, 10px);
+@battery-dot-border-radius: var(--smart-ui-battery-dot-border-radius, 0.5px);
+@battery-dot-height: var(--smart-ui-battery-dot-height, 4px);
+@battery-dot-width: var(--smart-ui-battery-dot-width, 1.5px);
+@battery-dot-padding: var(--smart-ui-battery-dot-padding, 0.5px);
+@battery-zero-border-radius: var(--smart-ui-battery-zero-border-radius, 2px);
+@battery-zero-height: var(--smart-ui-battery-zero-height, 4px);
+@battery-zero-width: var(--smart-ui-battery-zero-width, 16px);
+@battery-zero-inner-height: var(--smart-ui-battery-zero-inner-height, 1.5px);
+@battery-zero-inner-width: var(--smart-ui-battery-zero-inner-width, 16px);
+@battery-text-font-size: var(--smart-ui-battery-text-font-size, 11px);
+@battery-text-font-weight: var(--smart-ui-battery-text-font-weight, 590);
+@battery-text-padding: var(--smart-ui-battery-text-padding, 6px);
