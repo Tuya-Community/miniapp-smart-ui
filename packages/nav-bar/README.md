@@ -246,6 +246,7 @@ Page({
 <smart-nav-bar
   left-text="Home"
   left-text-type="title"
+  side-width="mid"
   left-icon="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
   bind:click-left-icon="onClickLeftIcon"
   bind:click-left-text="onClickLeftText"

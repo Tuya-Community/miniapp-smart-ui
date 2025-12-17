@@ -18,7 +18,7 @@
     title="ScheduleScheduleScheduleSchedule"
     left-arrow
     right-icon="{{ iconMore }}"
-    sideWidth="min"
+    side-width="min"
     right-icon-size="24px"
     bind:click-right="onClickRight"
     bind:click-left="onClickLeft"
@@ -32,7 +32,7 @@
     left-arrow
     right-icon="{{ iconMore }}"
     right-icon-size="24px"
-    sideWidth="mid"
+    side-width="mid"
     bind:click-right="onClickRight"
     bind:click-left="onClickLeft"
     bind:click-title="onClickTitle"
@@ -48,7 +48,7 @@
     title="ScheduleScheduleScheduleSchedule"
     right-text="Confirm"
     left-text="Cancel"
-    sideWidth="mid"
+    side-width="mid"
     custom-class="demo-nav-bar"
     right-text-color="#F04C4C"
     bind:click-right-text="onClickRightText"
@@ -59,7 +59,7 @@
     title="ScheduleScheduleScheduleSchedule"
     left-arrow
     right-text="Confirm"
-    sideWidth="mid"
+    side-width="mid"
     custom-class="demo-nav-bar"
     right-text-color="#F04C4C"
     bind:click-right-text="onClickRightText"
@@ -73,7 +73,7 @@
   <smart-nav-bar
     title="ScheduleSchedule"
     left-arrow
-    sideWidth="max"
+    side-width="max"
     bind:click-left="onClickLeft"
     bind:click-title="onClickTitle"
   />
@@ -119,7 +119,7 @@
   <smart-nav-bar
     left-text="Home"
     left-text-type="title"
-    sideWidth="mid"
+    side-width="mid"
     left-icon="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
     bind:click-left="onClickLeft"
     bind:click-left-icon="onClickLeftIcon"
