@@ -54,10 +54,10 @@ SmartComponent({
     this.updateValue(this.data.value);
   },
 
-  data: {
-    lastMinValue: null as number | null,
-    lastMaxValue: null as number | null,
-  },
+  // @ts-ignore
+  lastMinValue: null as number | null,
+  // @ts-ignore
+  lastMaxValue: null as number | null,
 
   methods: {
     onTouchStart(event: WechatMiniprogram.TouchEvent) {
@@ -189,24 +189,24 @@ SmartComponent({
         const nextMinValue = value[0];
         const nextMaxValue = value[1];
 
-        if (this.data.lastMinValue !== null) {
-          if (this.data.lastMinValue !== nextMinValue) {
+        if (this.lastMinValue !== null) {
+          if (this.lastMinValue !== nextMinValue) {
             const isMin = value[0] === this.data.min;
             if (isMin) {
               ty.selectionVibrate();
             }
           }
         }
-        if (this.data.lastMaxValue !== null) {
-          if (this.data.lastMaxValue !== nextMaxValue) {
+        if (this.lastMaxValue !== null) {
+          if (this.lastMaxValue !== nextMaxValue) {
             const isMax = value[1] === this.data.max;
             if (isMax) {
               ty.vibrateShort({ type: 'medium' });
             }
           }
         }
-        this.data.lastMinValue = nextMinValue;
-        this.data.lastMaxValue = nextMaxValue;
+        this.lastMinValue = nextMinValue;
+        this.lastMaxValue = nextMaxValue;
       }
 
       if (drag) {
