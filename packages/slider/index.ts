@@ -207,6 +207,8 @@ SmartComponent({
         }
         this.lastMinValue = nextMinValue;
         this.lastMaxValue = nextMaxValue;
+      } else {
+        // 单值模式不需要震动
       }
 
       if (drag) {
