@@ -189,7 +189,7 @@ SmartComponent({
         const nextMinValue = value[0];
         const nextMaxValue = value[1];
 
-        if (this.data.lastMinValue !== -1) {
+        if (this.data.lastMinValue !== null) {
           if (this.data.lastMinValue !== nextMinValue) {
             const isMin = value[0] === this.data.min;
             if (isMin) {
@@ -197,7 +197,7 @@ SmartComponent({
             }
           }
         }
-        if (this.data.lastMaxValue !== -1) {
+        if (this.data.lastMaxValue !== null) {
           if (this.data.lastMaxValue !== nextMaxValue) {
             const isMax = value[1] === this.data.max;
             if (isMax) {
