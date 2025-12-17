@@ -2165,10 +2165,10 @@
   resolved "https://registry.npmjs.org/@pkgr/core/-/core-0.2.9.tgz#d229a7b7f9dac167a156992ef23c7f023653f53b"
   integrity sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==
 
-"@ray-js/components-ty-slider@^0.3.8-beta-8":
-  version "0.3.8-beta-8"
-  resolved "https://registry.npmjs.org/@ray-js/components-ty-slider/-/components-ty-slider-0.3.8-beta-8.tgz#d555a91a3cc72270b28a85c9bc7a8622bcc753a6"
-  integrity sha512-35GeTWCFWEDpDAk1aBAgdUqoyvRzMYGlJHa7pn5M2/iL20jVxIb0ZQa2kuhDkOFvvCzw9KAv/dL6qwGW395Zfw==
+"@ray-js/components-ty-slider@^0.3.8":
+  version "0.3.8"
+  resolved "https://registry.npmjs.org/@ray-js/components-ty-slider/-/components-ty-slider-0.3.8.tgz#ff3caf6b503f8361f5f019fed1150b28903ebf42"
+  integrity sha512-1FZ9zvQ9IuxA7OPAIYKDMO9HTQoSrV0wpJe6f6bPAHuN7NGWxo00200OWgad4Jf8bvsP7bX5E/HqHxLKvkhI0Q==
   dependencies:
     clsx "^1.2.1"
     lodash "^4.17.21"
