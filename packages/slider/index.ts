@@ -53,10 +53,12 @@ SmartComponent({
   created() {
     this.updateValue(this.data.value);
   },
+
   data: {
-    lastMinValue: -1,
-    lastMaxValue: -1,
+    lastMinValue: null as number | null,
+    lastMaxValue: null as number | null,
   },
+
   methods: {
     onTouchStart(event: WechatMiniprogram.TouchEvent) {
       if (this.data.disabled) return;
