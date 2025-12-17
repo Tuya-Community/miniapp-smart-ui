@@ -15,7 +15,7 @@ SmartComponent({
     title: String,
     sideWidth: {
       type: null,
-      default: 'max',
+      value: 'max',
     },
     fixed: {
       type: Boolean,
