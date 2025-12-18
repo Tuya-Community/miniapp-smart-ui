@@ -9,6 +9,19 @@
     rgba(0, 0, 0, 0)
   );
 
+<<<<<<< Updated upstream
+=======
+  --smart-ui-battery-body-base-background: rgba(0, 0, 0, 0.25);
+  --smart-ui-battery-body-high-background: rgba(0, 0, 0, 0.9);
+  --smart-ui-battery-body-middle-background: #ffcb00;
+  --smart-ui-battery-body-low-background: #ee652e;
+  --smart-ui-battery-body-charging-background: #2fc755;
+  --smart-ui-battery-text-color: rgba(0, 0, 0, 0.6);
+  --smart-ui-battery-slash-border-color: #ffffff;
+
+  --smart-ui-calendar-day-disabled-color: rgba(0, 0, 0, 0.3);
+
+>>>>>>> Stashed changes
   &[theme='dark'] {
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
     --smart-ui-bottom-sheet-dragger-node-background: rgba(255, 255, 255, 0.3);
@@ -19,6 +32,18 @@
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0)
     );
+<<<<<<< Updated upstream
+=======
+    --smart-ui-battery-body-base-background: rgba(255, 255, 255, 0.4);
+    --smart-ui-battery-body-high-background: #ffffff;
+    --smart-ui-battery-body-middle-background: #ffcb00;
+    --smart-ui-battery-body-low-background: #ee652e;
+    --smart-ui-battery-body-charging-background: #2fc755;
+    --smart-ui-battery-text-color: rgba(255, 255, 255, 1);
+    --smart-ui-battery-slash-border-color: #000000;
+
+    --smart-ui-calendar-day-disabled-color: rgba(255, 255, 255, 0.3);
+>>>>>>> Stashed changes
   }
 }
 
@@ -271,7 +296,7 @@
 @calendar-info-font-size: @font-size-xs;
 @calendar-info-line-height: 14px;
 @calendar-selected-day-background-color: #3678e3;
-@calendar-day-disabled-color: @gray-5;
+@calendar-day-disabled-color: var(--smart-ui-calendar-day-disabled-color, @gray-5);
 @calendar-confirm-button-height: 36px;
 @calendar-confirm-button-margin: 7px 0;
 @calendar-confirm-button-line-height: 34px;
