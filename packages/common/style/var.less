@@ -9,8 +9,6 @@
     rgba(0, 0, 0, 0)
   );
 
-  --smart-ui-calendar-day-disabled-color: rgba(0, 0, 0, 0.3);
-
   &[theme='dark'] {
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
     --smart-ui-bottom-sheet-dragger-node-background: rgba(255, 255, 255, 0.3);
@@ -21,8 +19,6 @@
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0)
     );
-
-    --smart-ui-calendar-day-disabled-color: rgba(255, 255, 255, 0.3);
   }
 }
 
@@ -275,7 +271,6 @@
 @calendar-info-font-size: @font-size-xs;
 @calendar-info-line-height: 14px;
 @calendar-selected-day-background-color: #3678e3;
-@calendar-day-disabled-color: var(--smart-ui-calendar-day-disabled-color, @gray-5);
 @calendar-confirm-button-height: 36px;
 @calendar-confirm-button-margin: 7px 0;
 @calendar-confirm-button-line-height: 34px;
