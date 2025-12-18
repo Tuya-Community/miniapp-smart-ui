@@ -90,7 +90,7 @@
 ### Bug Fixes 🐛
 - dialog、toast: 修复组件无法打开问题，增加全局 Id 唯一校验
 
-### v2.2.0 (2025-2-13)
+## v2.2.0 (2025-2-13)
 
 ### Bug Fixes 🐛
 - stepper: 修复内部图标显示问题，内置Icon图标
@@ -98,12 +98,12 @@
 ## v2.1.7 (2024-12-27)
 
 ### Features ✨
- - index-bar: 新增 scrollable 属性默认禁止 Sidebar 滚动触发索引变更
+- index-bar: 新增 scrollable 属性默认禁止 Sidebar 滚动触发索引变更
 
 ## v2.1.6 (2024-12-19)
 
 ### Bug Fixes 🐛
- - 修复 toast 宽度默认值以及屏幕居中问题
+- 修复 toast 宽度默认值以及屏幕居中问题
 
 ## v2.1.0（2024-11-21）
 

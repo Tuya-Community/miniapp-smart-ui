@@ -280,7 +280,7 @@
 - calendar：修复 type 属性动态切换时显示问题；优化年选择的范围控制
 
 
-### v2.2.0 (2025-2-13)
+## v2.2.0 (2025-2-13)
 
 ### Bug Fixes 🐛
 - Icon: 修复异常repeat现象
@@ -303,38 +303,38 @@
 
 ## v2.1.10 (2025-1-13)
 ### Bug Fixes 🐛
- - 修复 notice-bar 背景色有透明度问题，修改的CSS变量：--notice-bar-info-color、--notice-bar-warning-color、--notice-bar-error-color;
+- 修复 notice-bar 背景色有透明度问题，修改的CSS变量：--notice-bar-info-color、--notice-bar-warning-color、--notice-bar-error-color;
 
 ## v2.1.8 (2024-01-06)
 ### Bug Fixes 🐛
- - 修复toast、dialog api方式调用时获取context错误导致无法获取组件实例问题
+- 修复toast、dialog api方式调用时获取context错误导致无法获取组件实例问题
 
 ## v2.1.7 (2024-12-27)
 ### Bug Fixes 🐛
- - dialog: 
+- dialog: 
    1. 修复快速调用 DialogInstance 导致渲染异常无效销毁
    2. 修复方法调用缺失 confirmButtonColor & cancelButtonColor 类型
    3. 删除dialog组件方式使用的beforeClose类型;
- - circle：style属性警告修复
- - config-provider: 修复内部对 dialog 缺失的主题变量
- - progress： 暂无相关业务场景，隐藏此组件
- - notice-bar: 修复CSS变量无法覆盖问题
- - custom-keyboard: 修复CSS变量无法覆盖问题
- - tree-select: 修复CSS变量无法覆盖问题
+- circle：style属性警告修复
+- config-provider: 修复内部对 dialog 缺失的主题变量
+- progress： 暂无相关业务场景，隐藏此组件
+- notice-bar: 修复CSS变量无法覆盖问题
+- custom-keyboard: 修复CSS变量无法覆盖问题
+- tree-select: 修复CSS变量无法覆盖问题
 
 ### Features ✨
- - 组件实现ESM方式打包，支持tree-shaking
- - @tuya-miniapp/icons 实现ESM方式打包，支持tree-shaking
- - index-bar: 新增 scrollable 属性默认禁止 Sidebar 滚动触发索引变更
- - dialog: 新增 --dialog-cancel-color & --dialog-confirm-color CSS 变量支持
- - notice-bar：新增 --notice-bar-right-icon-color CSS变量
- - stepper：新增 --stepper-container-background-color CSS变量
- - Circle：新增 customStyle 属性，提示废弃style属性，size 属性支持字符串
+- 组件实现ESM方式打包，支持tree-shaking
+- @tuya-miniapp/icons 实现ESM方式打包，支持tree-shaking
+- index-bar: 新增 scrollable 属性默认禁止 Sidebar 滚动触发索引变更
+- dialog: 新增 --dialog-cancel-color & --dialog-confirm-color CSS 变量支持
+- notice-bar：新增 --notice-bar-right-icon-color CSS变量
+- stepper：新增 --stepper-container-background-color CSS变量
+- Circle：新增 customStyle 属性，提示废弃style属性，size 属性支持字符串
 
 ## v2.1.6 (2024-12-19)
 ### Bug Fixes 🐛
- - 修复 toast 宽度默认值以及屏幕居中问题
- - 修复 slider 滑动时屏幕滚动问题；
+- 修复 toast 宽度默认值以及屏幕居中问题
+- 修复 slider 滑动时屏幕滚动问题；
 
 ## v2.1.5 (2024-12-10)
 ## 变更内容: 
