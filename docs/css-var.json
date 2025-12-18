@@ -1077,11 +1077,6 @@
     "value": "#3678e3",
     "decs": ""
   },
-  "calendar-day-disabled-color": {
-    "name": "@calendar-day-disabled-color",
-    "value": "#c8c9cc",
-    "decs": ""
-  },
   "calendar-confirm-button-height": {
     "name": "@calendar-confirm-button-height",
     "value": "36px",
