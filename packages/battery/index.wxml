@@ -1,18 +1,21 @@
 <view class="container">
   <view class="contain {{ type === 'vertical' ? 'contain-vertical' : 'contain-horizontal' }}">
     <view
-      class="body {{ value === 0 ? '' : 'overflow-hidden' }} {{ type === 'vertical' ? 'body-vertical' : 'body-horizontal' }}">
+      class="body {{ value === 0 ? '' : 'overflow-hidden' }} {{ type === 'vertical' ? 'body-vertical' : 'body-horizontal' }}"
+      style="{{ bodyStyle }}">
       <view class="bar {{ type === 'vertical' ? 'bar-vertical' : 'bar-horizontal' }}"
         style="background-color: {{ insideColor }}; {{insidePercentStr}}">
       </view>
       <view class="icon" wx:if="{{ inCharging }}" style="{{chargingSvg}}"></view>
       <view wx:if="{{ value === 0 && !inCharging }}"
-        class="zero {{ type === 'vertical' ? 'zero-vertical' : 'zero-horizontal' }}">
-        <view class="zero zero-inner {{ type === 'vertical' ? 'zero-inner-vertical' : 'zero-inner-horizontal' }}">
+        class="zero {{ type === 'vertical' ? 'zero-vertical' : 'zero-horizontal' }}" style="{{ zeroStyle }}">
+        <view class="zero zero-inner {{ type === 'vertical' ? 'zero-inner-vertical' : 'zero-inner-horizontal' }}"
+          style="{{ zeroInnerStyle }}">
         </view>
       </view>
     </view>
-    <view class="dot {{ type === 'vertical' ? 'dot-vertical' : 'dot-horizontal' }} {{ insideBotBgClass }}"></view>
+    <view class="dot {{ type === 'vertical' ? 'dot-vertical' : 'dot-horizontal' }} {{ insideBotBgClass }}"
+      style="{{ dotStyle }}"></view>
   </view>
   <view class="text" wx:if="{{ showText }}">{{ value }}%</view>
 </view>

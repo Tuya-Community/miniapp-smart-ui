@@ -12,6 +12,7 @@ SmartComponent({
     size: {
       type: Number,
       value: 10,
+      observer: 'init',
     },
     value: {
       type: Number,
@@ -39,7 +40,6 @@ SmartComponent({
       value: false,
     },
     backgroundColor: String,
-    onCalcColor: null,
     color: String,
     showText: {
       type: Boolean,
@@ -51,6 +51,10 @@ SmartComponent({
     insideColor: '',
     chargingSvg: '',
     insidePercent: 0,
+    bodyStyle: '',
+    dotStyle: '',
+    zeroStyle: '',
+    zeroInnerStyle: '',
   },
 
   created() {
@@ -61,23 +65,101 @@ SmartComponent({
     init() {
       const insidePercent = +((this.data.value * 100) / 100).toFixed(0);
       const insideColor = this.calcColor(this.data.value);
+      const sizeData = this.calcSize();
+
+      let bodyStyle = '';
+      let dotStyle = '';
+      let zeroStyle = '';
+      let zeroInnerStyle = '';
+
+      if (sizeData) {
+        const {
+          width,
+          height,
+          dotWidth,
+          dotHeight,
+          dotPadding,
+          zeroWidth,
+          zeroHeight,
+          zeroInnerWidth,
+          zeroInnerHeight,
+          borderRadius,
+          dotBorderRadius,
+          zeroBorderRadius,
+        } = sizeData;
+
+        const backgroundColorStyle = this.data.backgroundColor
+          ? `background-color: ${this.data.backgroundColor};`
+          : '';
+        const isFull = String(insidePercent) === '100';
+        if (this.data.type === 'horizontal') {
+          bodyStyle = `width: ${height}px; height: ${width}px; border-radius: ${borderRadius}px; ${backgroundColorStyle}`;
+          dotStyle = `width: ${dotHeight}px; height: ${dotWidth}px; margin-left: ${dotPadding}px; border-radius: ${dotBorderRadius}px; ${
+            isFull ? '' : backgroundColorStyle
+          }`;
+          zeroStyle = `width: ${zeroHeight}px; height: ${zeroWidth}px; border-radius: ${zeroBorderRadius}px;`;
+          zeroInnerStyle = `width: ${zeroInnerHeight}px; height: ${zeroInnerWidth}px;`;
+        } else {
+          bodyStyle = `width: ${width}px; height: ${height}px; border-radius: ${borderRadius}px; ${backgroundColorStyle}`;
+          dotStyle = `width: ${dotWidth}px; height: ${dotHeight}px; margin-bottom: ${dotPadding}px; border-radius: ${dotBorderRadius}px; ${
+            isFull ? '' : backgroundColorStyle
+          }`;
+          zeroStyle = `width: ${zeroWidth}px; height: ${zeroHeight}px; border-radius: ${zeroBorderRadius}px;`;
+          zeroInnerStyle = `width: ${zeroInnerWidth}px; height: ${zeroInnerHeight}px;`;
+        }
+      }
+
       this.setData({
         insideColor,
         insidePercentStr:
           this.data.type === 'vertical' ? `height: ${insidePercent}%` : `width: ${insidePercent}%`,
         insideBotBgClass: String(insidePercent) === '100' ? 'high-bg' : 'base-bg',
         chargingSvg: this.toSvgCssBackground(chargingSvg),
+        bodyStyle,
+        dotStyle,
+        zeroStyle,
+        zeroInnerStyle,
       });
+    },
+
+    calcSize() {
+      if (this.data.size === 0) {
+        // 使用css变量的值
+        return;
+      }
+      const width = 1 * this.data.size; // 10
+      const height = 1.8 * this.data.size; // 18
+      const borderRadius = this.data.size * 0.2; // 2
+
+      const dotWidth = this.data.size * 0.4; // 4 !
+      const dotHeight = this.data.size * 0.15; // 1.5 !
+      const dotBorderRadius = this.data.size * 0.05; // 0.5
+      const dotPadding = this.data.size * 0.05; // 0.5
+
+      const zeroWidth = this.data.size * 0.4; // 4 !
+      const zeroHeight = this.data.size * 1.6; // 16
+      const zeroInnerWidth = this.data.size * 0.15; // 1.5 !
+      const zeroInnerHeight = this.data.size * 1.6; // 16
+      const zeroBorderRadius = this.data.size * 0.2; // 2
+      return {
+        width,
+        height,
+        dotWidth,
+        dotHeight,
+        dotPadding,
+        zeroWidth,
+        zeroHeight,
+        zeroInnerWidth,
+        zeroInnerHeight,
+        borderRadius,
+        dotBorderRadius,
+        zeroBorderRadius,
+      };
     },
 
     calcColor(top) {
       if (this.data.color) {
         return this.data.color;
-      }
-      // 自定义电量的颜色分配规则
-      const color = typeof this.data.onCalcColor === 'function' && this.data.onCalcColor();
-      if (color) {
-        return color;
       }
 
       if (this.data.inCharging) {

@@ -45,7 +45,6 @@
 }
 
 .body {
-  border-radius: var(--smart-ui-battery-body-border-radius, @battery-body-border-radius);
   position: relative;
   background-color: var(--smart-ui-battery-body-base-background, @battery-body-base-background);
   display: flex;
@@ -56,30 +55,23 @@
 }
 
 .body-horizontal {
-  width: var(--smart-ui-battery-body-width, @battery-body-width);
-  height: var(--smart-ui-battery-body-height, @battery-body-height);
+  flex-shrink: 0;
 }
+
 .body-vertical {
-  width: var(--smart-ui-battery-body-height, @battery-body-height);
-  height: var(--smart-ui-battery-body-width, @battery-body-width);
   order: 2;
 }
 
 .dot {
-  border-radius: var(--smart-ui-battery-dot-border-radius, @battery-dot-border-radius);
   flex-shrink: 0;
 }
 
 .dot-horizontal {
-  height: var(--smart-ui-battery-dot-height, @battery-dot-height);
-  width: var(--smart-ui-battery-dot-width, @battery-dot-width);
-  margin-left: var(--smart-ui-battery-dot-padding, @battery-dot-padding);
+  flex-shrink: 0;
 }
+
 .dot-vertical {
-  height: var(--smart-ui-battery-dot-width, @battery-dot-width);
-  width: var(--smart-ui-battery-dot-height, @battery-dot-height);
   order: 1;
-  margin-bottom: var(--smart-ui-battery-dot-padding, @battery-dot-padding);
 }
 
 .icon {
@@ -105,7 +97,6 @@
 }
 
 .zero {
-  border-radius: var(--smart-ui-battery-zero-border-radius, @battery-zero-border-radius);
   background-color: var(--smart-ui-battery-slash-border-color, @battery-slash-border-color);
   position: relative;
   display: flex;
@@ -123,24 +114,18 @@
 
 .zero-horizontal {
   transform: rotate(-60deg);
-  height: var(--smart-ui-battery-zero-height, @battery-zero-height);
-  width: var(--smart-ui-battery-zero-width, @battery-zero-width);
 }
 
 .zero-vertical {
   transform: rotate(-60deg);
-  height: var(--smart-ui-battery-zero-width, @battery-zero-width);
-  width: var(--smart-ui-battery-zero-height, @battery-zero-height);
 }
 
 .zero-inner-horizontal {
-  height: var(--smart-ui-battery-zero-inner-height, @battery-zero-inner-height);
-  width: var(--smart-ui-battery-zero-inner-width, @battery-zero-inner-width);
+  flex-shrink: 0;
 }
 
 .zero-inner-vertical {
-  width: var(--smart-ui-battery-zero-inner-height, @battery-zero-inner-height);
-  height: var(--smart-ui-battery-zero-inner-width, @battery-zero-inner-width);
+  flex-shrink: 0;
 }
 
 .container {

@@ -17,7 +17,7 @@
     <battery type="horizontal" value="0" />
   </view>
 </demo-block>
-<demo-block title="{{I18n.t('basicUsage')}}">
+<demo-block title="{{I18n.t('basicUsage') + '(' + I18n.t('withPercent') + ')'}}">
   <view class="line">
     <battery show-text size="20" value="100" />
     <battery show-text value="80" />
@@ -27,7 +27,7 @@
     <battery show-text in-charging value="80" />
   </view>
 </demo-block>
-<demo-block title="{{I18n.t('level')}}">
+<demo-block title="{{I18n.t('level') + '(' + I18n.t('withPercent') + ')'}}">
   <view class="line">
     <battery show-text type="horizontal" value="100" />
     <battery show-text type="horizontal" />
