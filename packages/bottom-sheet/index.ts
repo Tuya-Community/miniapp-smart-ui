@@ -60,6 +60,10 @@ SmartComponent({
       type: Number,
       value: 0,
     },
+    lockMaxDrag: {
+      type: Boolean,
+      value: false,
+    },
     midDragHeight: {
       type: Number,
       value: 0,
