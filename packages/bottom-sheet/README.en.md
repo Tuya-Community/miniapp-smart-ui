@@ -263,6 +263,43 @@ Page({
 });
 ```
 
+### Lock maximum drag height
+
+By setting the `lock-max-drag` property to `true`, you can limit the panel height to not exceed the value set by `max-drag-height` during dragging.
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  draggable
+  mid-drag-height="300"
+  min-drag-height="100"
+  max-drag-height="400"
+  lock-max-drag
+  close-drag-height="{{closeDragHeight}}"
+>
+  <view style="background-color: red; height: 100px;" />
+  <view style="background-color: blue; height: 100px;" />
+  <view style="background-color: black; height: 100px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    closeDragHeight: 0
+  },
+  attached() {
+    const { windowHeight } = getSystemInfoSync();
+    this.setData({ closeDragHeight: windowHeight * 0.4 });
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+});
+```
+
 ## API
 
 ### Props

@@ -844,5 +844,93 @@ describe('bottom-sheet', () => {
     
     expect(wrapper?.data.maxHeight).toBe(600);
   });
+
+  test('should handle lockMaxDrag prop with default value', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-bottom-sheet': SmartBottomSheet,
+        },
+        template: `
+          <smart-bottom-sheet
+            id="wrapper"
+            show="{{ true }}"
+            draggable="{{ true }}"
+          />
+        `,
+        data: {
+          draggable: true,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    await simulate.sleep(10);
+    
+    expect(wrapper?.data.lockMaxDrag).toBe(false);
+  });
+
+  test('should handle lockMaxDrag prop when set to true', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-bottom-sheet': SmartBottomSheet,
+        },
+        template: `
+          <smart-bottom-sheet
+            id="wrapper"
+            show="{{ true }}"
+            draggable="{{ true }}"
+            lock-max-drag="{{ true }}"
+            max-drag-height="{{ 400 }}"
+          />
+        `,
+        data: {
+          draggable: true,
+          lockMaxDrag: true,
+          maxDragHeight: 400,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    await simulate.sleep(10);
+    
+    expect(wrapper?.data.lockMaxDrag).toBe(true);
+    expect(wrapper?.data.maxDragHeight).toBe(400);
+  });
+
+  test('should handle lockMaxDrag prop when set to false', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-bottom-sheet': SmartBottomSheet,
+        },
+        template: `
+          <smart-bottom-sheet
+            id="wrapper"
+            show="{{ true }}"
+            draggable="{{ true }}"
+            lock-max-drag="{{ false }}"
+            max-drag-height="{{ 500 }}"
+          />
+        `,
+        data: {
+          draggable: true,
+          lockMaxDrag: false,
+          maxDragHeight: 500,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    await simulate.sleep(10);
+    
+    expect(wrapper?.data.lockMaxDrag).toBe(false);
+    expect(wrapper?.data.maxDragHeight).toBe(500);
+  });
 });
 
