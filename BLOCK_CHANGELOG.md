@@ -1,4 +1,4 @@
-# Block 更新日志
+# 升级注意事项
 
 ## v2.8.0 (2025-12-09)
 
@@ -29,7 +29,7 @@
 ### Features ✨
 
 - picker: 对齐 UI 标准，重构 picker 实现原理，增加3D视觉效果([pull/48](https://github.com/Tuya-Community/miniapp-smart-ui/pull/48))
-- nav-bar: 对齐 UI 标准稿，样式优化，新增和修改 --nav-bar-side-width、--nav-bar-text-padding、--nav-bar-icon-padding、--nav-bar-title-margin、--nav-bar-home-max-width、--nav-bar-left-title-padding、--nav-bar-title-max-width CSS 变量；删除--nav-bar-icon-size、--nav-bar-icon-margin CSS 变量；修改border属性默认为 false([pull/38](https://github.com/Tuya-Community/miniapp-smart-ui/pull/38))
+- nav-bar: 对齐 UI 标准稿，样式优化，新增和修改 --nav-bar-side-width、--nav-bar-text-padding、--nav-bar-icon-padding、--nav-bar-title-margin、--nav-bar-home-max-width、--nav-bar-left-title-padding、--nav-bar-title-max-width CSS 变量；删除--nav-bar-icon-size、--nav-bar-icon-margin CSS 变量；修改 border 属性默认为 false([pull/38](https://github.com/Tuya-Community/miniapp-smart-ui/pull/38))
 
 ### Bug Fixes 🐛
 
@@ -48,7 +48,7 @@
 ### Bug Fixes 🐛
 - overlay: 对齐 UI 标准调整背景样式，底层依赖 --app-overlay CSS变量([319761a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/319761a88793c178d3f6c0089adb4a6079df29ec))
 - dialog: 对齐 UI 标准稿，修改弹框背景颜色，--dialog-background-color CSS 变量底层依赖从 --app-B4 变更为 --smart-ui-dialog-background([eae43fb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/eae43fb54a23fa669636e166b149cd9f393fb8ef))
-- picker: 修改 animationTime 默认值为 300([302919a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/302919ab414ac70cc2174541c97127bc8e2f5bdc), [f7a4f28](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/f7a4f28b60d31afc7b699100f7cc1e992f621319), [afe87f2](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/afe87f262a69d6733c8ee7eb38cf129220ae333f));修复单位间距受外部盒子挤压问题，并修改 --picker-option-unit-mid-size 默认值为 4px ([1619172](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/16191721222fe7658d87b0eaf0d8c28d5ecc29a6), [d82a6cf](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/d82a6cff525d26f9094046be27874a0a80f883de));
+- picker: 修改 animationTime 默认值为 300([302919a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/302919ab414ac70cc2174541c97127bc8e2f5bdc), [f7a4f28](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/f7a4f28b60d31afc7b699100f7cc1e992f621319), [afe87f2](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/afe87f262a69d6733c8ee7eb38cf129220ae333f));改变定位单位方式，修复其间距受外部盒子挤压问题，并修改 --picker-option-unit-mid-size 默认值为 4px ([1619172](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/16191721222fe7658d87b0eaf0d8c28d5ecc29a6), [d82a6cf](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/d82a6cff525d26f9094046be27874a0a80f883de));
 
 
 ## v2.5.1(2025-07-17)
@@ -57,7 +57,7 @@
 
 ## v2.5.0(2025-06-26)
 ### Features ✨
-- switch: 改动组件布局， `active-color` 和 `inactive-color` 支持传入渐变色，删除 `--switch-border` CSS 变量属性，用新增的 `--switch-padding` CSS 变量替代
+- switch: 改动组件内部样式布局
 
 ## v2.4.0(2025-06-10)
 
@@ -65,25 +65,8 @@
 - picker: 新增 --picker-option-unit-mid-size CSS 变量，flex gap 方式控制单位间距
 - switch: 新增单独定义开启时背景色，新增 --switch-node-on-background-color CSS 变量
 
-## v2.3.9(2025-05-15)
-
-### Features ✨
-- circle: 重构逻辑，采用rjs重写(不再支持微信)
-
-### Bug Fixes 🐛
-- picker: 默认初始化动画 changeAnimation 改为 false
-
-## v2.3.7(2025-04-15)
-
-### Features ✨
-- switch: 对齐组件 UI 标准稿，调整尺寸样式
-
-## v2.3.5(2025-03-27)
-
-### Bug Fixes 🐛
-- dialog: 删除 --smart-dialog--round-button-border-radius CSS 变量 替换为 --dialog--round-button-border-radius
-
 ## v2.3.0(2025-02-28)
+
 ### Features ✨
 - circle: 使用canvas重构组件
 
