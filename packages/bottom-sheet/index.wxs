@@ -67,11 +67,11 @@ function onDrag(instanceId, data) {
     state[instanceId].delta = delta;
 
     var newHeight = originHeight - delta;
-    state[instanceId].newHeight = newHeight;
-
     if (data.lockMaxDrag && data.maxDragHeight) {
       newHeight = Math.min(newHeight, data.maxDragHeight);
     }
+
+    state[instanceId].newHeight = newHeight;
 
     contentNode.setStyle({
       height: newHeight + 'px',
