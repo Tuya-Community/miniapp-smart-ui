@@ -58,7 +58,7 @@ function getEndY(params) {
   }
 }
 
-function onDrag(instanceId) {
+function onDrag(instanceId, data) {
   return function (e, ownerInstance) {
     var delta = e.touches[0].pageY - state[instanceId].startY;
     var contentNode = getContentNode(ownerInstance, instanceId);
@@ -68,6 +68,10 @@ function onDrag(instanceId) {
 
     var newHeight = originHeight - delta;
     state[instanceId].newHeight = newHeight;
+
+    if (data.lockMaxDrag && data.maxDragHeight) {
+      newHeight = Math.min(newHeight, data.maxDragHeight);
+    }
 
     contentNode.setStyle({
       height: newHeight + 'px',
@@ -110,7 +114,7 @@ function onDragEnd(instanceId, data) {
         closeDragHeight: closeDragHeight,
       });
       var endHeight = endYRes.value;
-      var position = endYRes.position
+      var position = endYRes.position;
       var contentNode = getContentNode(ownerInstance, instanceId);
       contentNode.setStyle({
         height: endHeight + 'px',
@@ -120,7 +124,7 @@ function onDragEnd(instanceId, data) {
         contentNode.setStyle({
           transition: 'none',
         });
-        ownerInstance.triggerEvent('drag-position', position)
+        ownerInstance.triggerEvent('drag-position', position);
       }, 300);
     }
   };

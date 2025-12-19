@@ -27,7 +27,7 @@
     <view
       id="{{curInstanceId}}"
       bind:touchstart="{{computed.onDragStart(curInstanceId)}}" 
-      catch:touchmove="{{computed.onDrag(curInstanceId)}}"
+      catch:touchmove="{{computed.onDrag(curInstanceId, { maxDragHeight, lockMaxDrag })}}"
       bind:touchend="{{computed.onDragEnd(curInstanceId, { maxDragHeight, minDragHeight, windowHeight, midDragHeight, closeDragHeight })}}"
       tick="{{ts}}"
       change:tick="{{computed.init(curInstanceId, currentHeight)}}"
