@@ -263,7 +263,7 @@ Page({
 });
 ```
 
-### Lock maximum drag height
+### Lock maximum drag height `v2.8.1`
 
 By setting the `lock-max-drag` property to `true`, you can limit the panel height to not exceed the value set by `max-drag-height` during dragging.
 
