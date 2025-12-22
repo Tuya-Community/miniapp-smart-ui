@@ -26,13 +26,14 @@
   <block wx:if="{{draggable}}">
     <view
       id="{{curInstanceId}}"
-      bind:touchstart="{{computed.onDragStart(curInstanceId)}}" 
-      catch:touchmove="{{computed.onDrag(curInstanceId, { maxDragHeight, lockMaxDrag })}}"
-      bind:touchend="{{computed.onDragEnd(curInstanceId, { maxDragHeight, minDragHeight, windowHeight, midDragHeight, closeDragHeight })}}"
       tick="{{ts}}"
       change:tick="{{computed.init(curInstanceId, currentHeight)}}"
     >
-      <view class="smart-bottom-sheet__dragger" >
+      <view class="smart-bottom-sheet__dragger" 
+        bind:touchstart="{{computed.onDragStart(curInstanceId)}}" 
+        catch:touchmove="{{computed.onDrag(curInstanceId, { maxDragHeight, lockMaxDrag })}}"
+        bind:touchend="{{computed.onDragEnd(curInstanceId, { maxDragHeight, minDragHeight, windowHeight, midDragHeight, closeDragHeight })}}"
+      >
         <view class="smart-bottom-sheet__dragger_node"></view>
       </view>
       <view class="smart-bottom-sheet__header">

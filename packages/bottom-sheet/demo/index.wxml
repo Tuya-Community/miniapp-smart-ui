@@ -150,8 +150,13 @@
     lock-max-drag
     close-drag-height="{{closeDragHeight}}"
   >
-    <view style="background-color: red; height: 100px;" />
-    <view style="background-color: blue; height: 100px;" />
-    <view style="background-color: black; height: 100px;" />
+    <scroll-view scroll-y style="height: 400px;">
+      <view style="background-color: red; height: 100px;" />
+      <view style="background-color: blue; height: 100px;" />
+      <view style="background-color: black; height: 100px;" />
+      <view style="background-color: red; height: 100px;" />
+      <view style="background-color: blue; height: 100px;" />
+      <view style="background-color: black; height: 100px;" />
+    </scroll-view>
   </smart-bottom-sheet>
 </demo-block>
