@@ -278,6 +278,43 @@ Page({
 });
 ```
 
+### 锁定最大拖拽高度 `v2.8.1`
+
+通过设置 `lock-max-drag` 属性为 `true`，可以在拖拽过程中限制面板高度不超过 `max-drag-height` 设置的值。
+
+```html
+<smart-bottom-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  draggable
+  mid-drag-height="300"
+  min-drag-height="100"
+  max-drag-height="400"
+  lock-max-drag
+  close-drag-height="{{closeDragHeight}}"
+>
+  <view style="background-color: red; height: 100px;" />
+  <view style="background-color: blue; height: 100px;" />
+  <view style="background-color: black; height: 100px;" />
+</smart-bottom-sheet>
+```
+
+```javascript
+Page({
+  data: {
+    show: false,
+    closeDragHeight: 0
+  },
+  attached() {
+    const { windowHeight } = getSystemInfoSync();
+    this.setData({ closeDragHeight: windowHeight * 0.4 });
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+});
+```
+
 ## API
 
 ### Props
@@ -290,7 +327,7 @@ Page({
 | draggable `v2.7.2`         | 是否支持拖拽，可用于实现拖拽调整面板高度                                                                                                                                                                                                                                                                      | _boolean_          | `false`                                 |
 | icon-color                 | 标题中关闭按钮的颜色                                                                                                                                                                                                                                                                                          | _string_           | `--app-B4-N3` \|\| `rgba(0, 0, 0, 0.5)` |
 | icon-size                  | 标题中关闭按钮的大小                                                                                                                                                                                                                                                                                          | _string \| number_ | `24`                                    |
-| lock-max-drag  `v2.8.1`            | 是否锁定最大拖拽高度，设置为 `true` 时，拖拽过程中面板高度不会超过 `max-drag-height`                                                                                                                                                                                                                          | _boolean_          | `false`                                 |
+| lock-max-drag `v2.8.1`     | 是否锁定最大拖拽高度，设置为 `true` 时，拖拽过程中面板高度不会超过 `max-drag-height`                                                                                                                                                                                                                          | _boolean_          | `false`                                 |
 | lock-scroll `v2.8.1`       | 是否锁定背景滚动                                                                                                                                                                                                                                                                                              | _boolean_          | `true`                                  |
 | max-drag-height `v2.7.2`   | 拖拽时允许的最大高度                                                                                                                                                                                                                                                                                          | _number_           | `windowHeight * 0.5`                    |
 | max-height `v2.6.0`        | 整个组件的最大高度                                                                                                                                                                                                                                                                                            | _number \| string_ | -                                       |

@@ -12,6 +12,7 @@ SmartComponent({
     show7: false,
     show8: false,
     show9: false,
+    show10: false,
     closeDragHeight: 0,
     dragPosition: 'mid',
     dragPositionText: '',
@@ -63,6 +64,9 @@ SmartComponent({
     },
     toggleActionSheet9() {
       this.toggle('show9');
+    },
+    toggleActionSheet10() {
+      this.toggle('show10');
     },
     onDragPosition(e) {
       const position = e.detail; // 'max' | 'mid' | 'min'
