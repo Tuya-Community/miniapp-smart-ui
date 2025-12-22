@@ -87,7 +87,6 @@ The component provides the following CSS variables that can be used for custom s
 | ------------------------------------------- | --------------------- | ------------------------------- |
 | --smart-ui-battery-body-base-background     | _rgba(0, 0, 0, 0.25)_ | Battery body background         |
 | --smart-ui-battery-body-charging-background | _#2fc755_             | Charging state background       |
-| --smart-ui-battery-body-high-background     | _rgba(0, 0, 0, 0.9)_  | High battery level background   |
 | --smart-ui-battery-body-low-background      | _#ee652e_             | Low battery level background    |
 | --smart-ui-battery-body-middle-background   | _#ffcb00_             | Medium battery level background |
 | --smart-ui-battery-slash-border-color       | _#ffffff_             | Slash border color              |
