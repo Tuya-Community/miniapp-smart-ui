@@ -932,5 +932,148 @@ describe('bottom-sheet', () => {
     expect(wrapper?.data.lockMaxDrag).toBe(false);
     expect(wrapper?.data.maxDragHeight).toBe(500);
   });
+
+  test('should handle duplicate id generation by retrying initId', async () => {
+    // Save original functions
+    const originalDate = global.Date;
+    const originalMathRandom = Math.random;
+
+    // Mock Date and Math.random to generate a fixed id
+    const mockTimestamp = 1234567890123;
+    const mockRandom = 0.12345;
+    const expectedId = `smart-ui-bottom-sheet_${String(mockTimestamp).slice(-4)}_${String(mockRandom).slice(-2)}`;
+
+    // Mock Date constructor to return fixed timestamp
+    let dateCallCount = 0;
+    const MockDate = jest.fn((...args: any[]) => {
+      if (args.length === 0) {
+        dateCallCount++;
+        // First two calls return the same timestamp to generate duplicate id
+        // Third call returns different timestamp to break the loop
+        if (dateCallCount <= 2) {
+          return new originalDate(mockTimestamp);
+        } else {
+          return new originalDate(mockTimestamp + 1000);
+        }
+      }
+      // Handle Date constructor with arguments
+      if (args.length === 1) {
+        return new originalDate(args[0]);
+      } else if (args.length === 2) {
+        return new originalDate(args[0], args[1]);
+      } else if (args.length === 3) {
+        return new originalDate(args[0], args[1], args[2]);
+      } else if (args.length === 4) {
+        return new originalDate(args[0], args[1], args[2], args[3]);
+      } else if (args.length === 5) {
+        return new originalDate(args[0], args[1], args[2], args[3], args[4]);
+      } else if (args.length === 6) {
+        return new originalDate(args[0], args[1], args[2], args[3], args[4], args[5]);
+      } else if (args.length === 7) {
+        return new originalDate(args[0], args[1], args[2], args[3], args[4], args[5], args[6]);
+      }
+      return new originalDate();
+    }) as any;
+    MockDate.now = jest.fn(() => mockTimestamp);
+    global.Date = MockDate;
+
+    // Mock Math.random to return fixed value
+    let randomCallCount = 0;
+    Math.random = jest.fn(() => {
+      randomCallCount++;
+      // First two calls return the same random to generate duplicate id
+      // Third call returns different random to break the loop
+      if (randomCallCount <= 2) {
+        return mockRandom;
+      } else {
+        return mockRandom + 0.1;
+      }
+    });
+
+    // Create first component to generate and store the id
+    const comp1 = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-bottom-sheet': SmartBottomSheet,
+        },
+        template: `<smart-bottom-sheet id="wrapper1" show="{{ true }}" />`,
+      })
+    );
+    comp1.attach(document.createElement('parent-wrapper'));
+    await simulate.sleep(10);
+
+    const wrapper1 = comp1.querySelector('#wrapper1');
+    const firstId = wrapper1?.data.curInstanceId;
+    expect(firstId).toBe(expectedId);
+
+    // Reset counters for second component
+    dateCallCount = 0;
+    randomCallCount = 0;
+
+    // Create second component - it should generate the same id (due to mocks)
+    // and trigger the duplicate check, then retry with different values
+    const comp2 = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-bottom-sheet': SmartBottomSheet,
+        },
+        template: `<smart-bottom-sheet id="wrapper2" show="{{ true }}" />`,
+      })
+    );
+    comp2.attach(document.createElement('parent-wrapper'));
+    await simulate.sleep(10);
+
+    const wrapper2 = comp2.querySelector('#wrapper2');
+    const secondId = wrapper2?.data.curInstanceId;
+    
+    // The second id should be different from the first (due to retry logic)
+    expect(secondId).toBeTruthy();
+    expect(secondId).not.toBe(firstId);
+    expect(secondId).toContain('smart-ui-bottom-sheet_');
+
+    // Restore original functions before creating comp3
+    global.Date = originalDate;
+    Math.random = originalMathRandom;
+
+    // Create third component with instanceId prop to test instanceId handling (lines 116-120)
+    const comp3 = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-bottom-sheet': SmartBottomSheet,
+        },
+        template: `<smart-bottom-sheet id="wrapper3" show="{{ true }}" instance-id="my-test-bottom-sheet" />`,
+      })
+    );
+    comp3.attach(document.createElement('parent-wrapper'));
+    await simulate.sleep(10);
+
+    const wrapper3 = comp3.querySelector('#wrapper3');
+    const instance3 = wrapper3?.instance;
+    
+    // Verify that instanceId is set correctly (lines 116-120)
+    expect(wrapper3?.data.instanceId).toBe('my-test-bottom-sheet');
+    expect(wrapper3?.data.curInstanceId).toBe('my-test-bottom-sheet');
+
+    // Now manually set instanceId to empty and call initId to trigger line 122
+    // This simulates the scenario where curInstanceId exists but instanceId prop is not provided
+    if (instance3) {
+      // Manually set instanceId to empty to bypass the first check (line 116)
+      instance3.setData({ instanceId: '' });
+      await simulate.sleep(10);
+      
+      // Now curInstanceId exists but instanceId is empty, calling initId should trigger line 122
+      const curInstanceIdBefore = wrapper3?.data.curInstanceId;
+      instance3.initId();
+      await simulate.sleep(10);
+      
+      // curInstanceId should remain the same (line 122 early return)
+      expect(wrapper3?.data.curInstanceId).toBe(curInstanceIdBefore);
+      expect(wrapper3?.data.curInstanceId).toBe('my-test-bottom-sheet');
+    }
+
+    // Restore original functions
+    global.Date = originalDate;
+    Math.random = originalMathRandom;
+  });
 });
 
