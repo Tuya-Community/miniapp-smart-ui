@@ -22,7 +22,7 @@
 ## v2.7.1(2025-10-28)
 
 ### Bug Fixes 🐛
-- popup: 对齐 UI 标准，调整组件默认 safe-area-inset-bottom 为 false([c3c79f2](https://github.com/Tuya-Community/miniapp-smart-ui/pull/61/commits/c3c79f2f0efef6595649b426fb5221cb6df83da9))；
+- popup: 对齐 UI 标准，调整组件默认 safe-area-inset-bottom 为 false([c3c79f2](https://github.com/Tuya-Community/miniapp-smart-ui/pull/61/commits/c3c79f2f0efef6595649b426fb5221cb6df83da9))；修复 --popup-background-color 无法设置渐变色问题，使用 background CSS 属性代替 background-color([37a938a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/68/commits/37a938a0780fe64d24a4e8c20810b1e1434e4ee6))
 
 ## v2.7.0(2025-10-21)
 

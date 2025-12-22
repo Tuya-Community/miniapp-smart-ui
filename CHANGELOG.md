@@ -64,7 +64,7 @@
 - picker: 修复 loop 模式 滚动值切换时，修改列表后滚动报错问题；修复active状态实时更新问题([pull/65](https://github.com/Tuya-Community/miniapp-smart-ui/pull/65))
 - circle: 修复组件内部左右多余空隙问题([fbae95e](https://github.com/Tuya-Community/miniapp-smart-ui/pull/70/commits/fbae95ebbc80836cbacd9a0da7a84ec909498cab))
 - nav-bar: 修复 click-right 事件不生效问题([d0e1f9f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/62/commits/d0e1f9f9b1a7028517a334299b03a07fe5cf206f))
-- popup: 调整组件默认 safe-area-inset-bottom 为 false([c3c79f2](https://github.com/Tuya-Community/miniapp-smart-ui/pull/61/commits/c3c79f2f0efef6595649b426fb5221cb6df83da9))；修复 --popup-background-color 无法设置渐变色问题([37a938a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/68/commits/37a938a0780fe64d24a4e8c20810b1e1434e4ee6))
+- popup: 对齐 UI 标准，调整组件默认 safe-area-inset-bottom 为 false([c3c79f2](https://github.com/Tuya-Community/miniapp-smart-ui/pull/61/commits/c3c79f2f0efef6595649b426fb5221cb6df83da9))；修复 --popup-background-color 无法设置渐变色问题([37a938a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/68/commits/37a938a0780fe64d24a4e8c20810b1e1434e4ee6))
 
 ## v2.7.0(2025-10-21)
 
