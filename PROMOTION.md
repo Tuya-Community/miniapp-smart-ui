@@ -1,3 +1,6 @@
+# 🚀 SmartUI：让涂鸦小程序开发更简单、更高效
+
+
 > 一个轻量、可靠、功能丰富的智能小程序 UI 组件库，助力开发者快速构建精美的涂鸦小程序应用
 
 ## 📦 关于 Smart UI
@@ -68,80 +71,34 @@ export default function Demo() {
 
 <img src="https://github.com/user-attachments/assets/aa64f245-efa6-4e2b-b85e-9be28feb266c" width="250" style="display: inline-block; margin-right: 2%;" /> <img src="https://github.com/user-attachments/assets/26aa4298-7f70-48b9-9d5b-81109b47c074" width="250" style="display: inline-block;" />
 
+### 3D 滚动选择器
 
-### 选择器
-
-真实3D滚动效果，且支持无限滚动的Picker，DateTimePicker
+真实3D滚动效果，类似 IOS 原生，且支持无限滚动的Picker，DateTimePicker
 
 ![Kapture 2025-12-19 at 19 37 40](https://github.com/user-attachments/assets/d00ea6ce-4f8b-48d7-97ae-d377f356ec9f)  
-
 
 ![Kapture 2025-12-19 at 19 31 38](https://github.com/user-attachments/assets/860dbc3f-f6ce-41c1-899f-bcf8fdc5e5c0)
 
 
 
-### 按钮组件
 
-```html
-<!-- 基础用法 -->
-<smart-button type="primary">主要按钮</smart-button>
-<smart-button type="info">信息按钮</smart-button>
-<smart-button type="warning">警告按钮</smart-button>
-<smart-button type="danger">危险按钮</smart-button>
+### 多种弹框
 
-<!-- 不同尺寸 -->
-<smart-button size="large">大号按钮</smart-button>
-<smart-button size="normal">普通按钮</smart-button>
-<smart-button size="small">小号按钮</smart-button>
-<smart-button size="mini">迷你按钮</smart-button>
+内部包含基础弹框Popup（可任意方向出现）、选择器弹框ActionSheet、底部可拖拽弹框BottomSheet、交互弹框Dialog、轻提示弹框Toast，涵盖所有交互形式，方便开发。
 
-<!-- 不同形状 -->
-<smart-button round>圆角按钮</smart-button>
-<smart-button square>方形按钮</smart-button>
-```
+![Kapture 2025-12-19 at 19 58 01](https://github.com/user-attachments/assets/80a018ff-7485-4bdd-8fa5-ad0a3c764957) ![Kapture 2025-12-22 at 15 13 21](https://github.com/user-attachments/assets/5ca739c7-e439-4ffd-af5f-10ab3e1b72a0) ![Kapture 2025-12-19 at 19 59 09](https://github.com/user-attachments/assets/f087f0da-f8a2-4eb5-882e-b055952fe38d) ![Kapture 2025-12-19 at 20 02 12](https://github.com/user-attachments/assets/be25d5da-a196-4afd-afd8-95c2e569fae1) ![Kapture 2025-12-22 at 14 55 49](https://github.com/user-attachments/assets/83774a26-ab95-44cb-9afa-4e481c382723) ![Kapture 2025-12-22 at 14 58 37](https://github.com/user-attachments/assets/54861153-1f31-46cd-af0f-e78649c78430)
 
-### 表单组件
-
-```html
-<!-- 输入框 -->
-<smart-field
-  value="{{ value }}"
-  label="用户名"
-  placeholder="请输入用户名"
-  bind:change="onChange"
-/>
-
-<!-- 开关 -->
-<smart-switch checked="{{ checked }}" bind:change="onSwitchChange" />
-
-<!-- 步进器 -->
-<smart-stepper value="{{ value }}" bind:change="onStepperChange" />
-```
-
-### 反馈组件
-
-```html
-<!-- Toast 提示 -->
-<smart-toast show="{{ showToast }}" message="操作成功" />
-
-<!-- Dialog 对话框 -->
-<smart-dialog
-  show="{{ showDialog }}"
-  title="提示"
-  message="确定要删除吗？"
-  bind:confirm="onConfirm"
-/>
-
-<!-- Loading 加载 -->
-<smart-loading type="spinner" />
-```
 
 ## 🎯 适用场景
 
 ### 智能家居控制
-- 设备开关控制（Switch、Button）
-- 设备参数调节（Slider、Stepper）
-- 场景模式选择（Picker、Cascader）
+- 电工（插座、排插、开关）
+- 照明（光源、灯带、氛围灯、吸顶灯、灯串、感应灯...）
+- 大家电
+- 门锁
+- 节能
+- 户外
+- ...
 
 ### 设备管理
 - 设备列表展示（Cell、CellGroup）
@@ -163,7 +120,7 @@ export default function Demo() {
 ### ✅ 成熟稳定
 - 基于 `vant-weapp` 成熟架构
 - 经过大量项目验证
-- 持续更新维护
+- 持续更新维护（一月两次）
 
 ### ✅ 开发效率
 - 开箱即用，减少重复开发
@@ -187,8 +144,8 @@ export default function Demo() {
 
 ## 📚 学习资源
 
-- 📖 [组件库官网](https://developer.tuya.com/material/smartui?comId=help-getting-started&appType=miniapp&lang=zh)
-- 📦 [GitHub 仓库](https://github.com/Tuya-Community/miniapp-smart-ui)
+- 📖 [组件库官网](https://developer.tuya.com/material/smartui?comId=help-getting-started&lang=zh)
+- 📦 [GitHub 仓库](https://github.com/Tuya-Community/ray-smart-ui)
 - 💬 [社区论坛](https://www.tuyaos.com/viewforum.php?f=10)
 - 🎨 [物料市场](https://developer.tuya.com/material/library_oHEKLjj0/?lang=zh)
 - 📝 [更新日志](https://developer.tuya.com/material/smartui?comId=help-changelog&appType=miniapp)
@@ -197,7 +154,7 @@ export default function Demo() {
 
 扫描下方二维码，在涂鸦小程序中体验完整的组件库示例：
 
-<img src="https://images.tuyacn.com/rms-static/8bcfe810-a187-11ef-9773-6b86083026a3-1731478901009.png?tyName=v2.0.0miniapp-SmartUI.png" width="200" height="200" alt="智能小程序二维码">
+<img src="https://images.tuyacn.com/content-platform/hestia/1716260412b7f2ae02271.png" width="200" height="200" alt="智能小程序二维码">
 
 ## 🛠️ 本地开发
 
@@ -205,7 +162,8 @@ export default function Demo() {
 
 ```bash
 # 克隆仓库
-git clone https://github.com/Tuya-Community/miniapp-smart-ui.git
+git clone https://github.com/Tuya-Community/ray-smart-ui
+
 
 # 安装依赖
 yarn install
@@ -230,7 +188,7 @@ yarn test:cover
 - 📝 改进文档
 - 🔧 提交代码
 
-请查看 [贡献指南](./CONTRIBUTING.md) 了解详情。
+请查看 [贡献指南](https://github.com/Tuya-Community/ray-smart-ui/blob/main/CONTRIBUTING.md) 了解详情。
 
 ## 📄 开源协议
 
@@ -238,15 +196,15 @@ yarn test:cover
 
 ## 🌟 开始使用
 
-还在等什么？立即开始使用 `@tuya-miniapp/smart-ui`，让小程序开发变得更简单！
+还在等什么？立即开始使用 `@ray-js/smart-ui`，让小程序开发变得更简单！
 
 ```bash
-yarn add @tuya-miniapp/smart-ui
+yarn add @ray-js/smart-ui
 ```
 
 ---
 
 **让开发更简单，让体验更美好** ✨
 
-如有任何问题或建议，欢迎在 [GitHub Issues](https://github.com/Tuya-Community/miniapp-smart-ui/issues) 中提出。
+如有任何问题或建议，欢迎在 [小程序开发论坛](https://www.tuyaos.com/viewforum.php?f=10&sid=31103cb7c85eb94d0dc9017a3c0eeaf1) 中提出。
 
