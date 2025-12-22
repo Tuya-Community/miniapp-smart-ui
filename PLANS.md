@@ -20,5 +20,5 @@
 - [x] 组件search、field、tab、tabbar、stepper、switch、toast、slider、index-bar、calendar、custom-keyboard 接入震动反馈API 测试版本 2.8.1-beta-3
 - [x] nav-bar sideWidth 默认值从 mid 调整为 max 测试版本 2.8.1-beta-11
 - [x] calendar组件 删除 --calendar-day-disabled-color，采用 opacity 实现禁用样式，修复深色模式禁用样式问题 测试版本 2.8.1-beta-13
-- [x] 整理版本更新 Block Change 要点，官网透出
+- [x] 整理版本升级注意事项，官网透出 [跳转链接](https://developer.tuya.com/material/smartui?comId=help-changelog&tab=block)
 
