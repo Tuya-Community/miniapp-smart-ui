@@ -1,5 +1,30 @@
 # 更新日志
 
+## v2.9.0 (2025-12-23)
+
+### Features ✨
+- bottom-sheet: 组件 lock-scroll 属性禁止遮罩滚动([7eeec64](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/7eeec64c305d0edfd413a3c34db4e3583a03b19c))；新增 lock-max-drag 属性 禁止最大距离拖动([pull/128](https://github.com/Tuya-Community/miniapp-smart-ui/pull/128), [pull/129](https://github.com/Tuya-Community/miniapp-smart-ui/pull/129))
+- search: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- field: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- tab: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- tabbar: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- stepper: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- switch: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- toast: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- slider: 接入震动反馈([7fb416f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/124/commits/7fb416fd10fc267920509b45e27ad9c10841f003))
+- index-bar: 接入震动反馈([pull/110](https://github.com/Tuya-Community/miniapp-smart-ui/pull/110))
+- calendar: 接入震动反馈([pull/109](https://github.com/Tuya-Community/miniapp-smart-ui/pull/109))
+- custom-keyboard: 接入震动反馈([pull/111](https://github.com/Tuya-Community/miniapp-smart-ui/pull/111))
+
+### Bug Fixes  🐛
+
+- dialog: 修复组件未关闭，销毁页面后无法再次打开问题([b4f7472](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/b4f74729ff5964597be13aa0b3e1f70a59d91b48))
+- config-provider: 缩小主题文件体积([3d55091](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/3d5509187dd3830449127b68718bdd95243c13cd))
+- circle: 删除多余样式，防止导致圆环缺角([c4ae523](https://github.com/Tuya-Community/miniapp-smart-ui/pull/114/commits/c4ae5231522e85d09301bc24801066c6857b60b7))
+- picker: 修复 loop 模式部分列无法拖动选中的问题([bed9b37](https://github.com/Tuya-Community/miniapp-smart-ui/pull/113/commits/bed9b37f9fc5a885c031de24c6c5c6f526d72fd9))
+- nav-bar: 对齐涂鸦 UI 标准，sideWidth 默认值从 mid 调整为 max([64281c8](https://github.com/Tuya-Community/miniapp-smart-ui/pull/125/commits/64281c830cde83b908320085014f394058b257c1))
+- calendar: 对齐涂鸦 UI 标准，删除 --calendar-day-disabled-color，采用 opacity 实现禁用样式，修复深色模式禁用样式问题([pull/126](https://github.com/Tuya-Community/miniapp-smart-ui/pull/126))
+
 ## v2.8.0 (2025-12-09)
 
 ### Features ✨

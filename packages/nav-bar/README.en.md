@@ -290,7 +290,7 @@ Page({
 | right-icon-size `v2.7.0` | Size of the right icon    | _number_  | `32px`   |
 | left-icon-color `v2.7.0` | Color of the left icon    | _string_  | -   |
 | background `v2.7.0` | Overall background color    | _string_  | -   |
-| side-width `v2.7.3` | Width of the side control bar, provides three built-in values: `min`, `mid`, `max`; also can pass specific width values    | _string\/number\/`min`\/`mid`\/`max`_  | `mid` `v2.7.3` `max` `v2.8.1`   |
+| side-width `v2.7.3` | Width of the side control bar, provides three built-in values: `min`, `mid`, `max`; also can pass specific width values    | _string\/number\/`min`\/`mid`\/`max`_  | `mid` `v2.7.3` `max` `v2.9.0`   |
 
 ### Slot
 
