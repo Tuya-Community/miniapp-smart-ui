@@ -1,7 +1,7 @@
 // components/month-list.js
 import { getYears } from '../calendar-utils/utils';
 import { SmartComponent } from '../common/component';
-import ty from '../common/ty';
+import tyApi from '../common/ty';
 
 SmartComponent({
   /**
@@ -118,7 +118,7 @@ SmartComponent({
         this.setData({
           date: item.value,
         });
-        ty.vibrateShort({ type: 'light' });
+        tyApi.vibrateShort({ type: 'light' });
       }
     },
   },
