@@ -3,18 +3,18 @@
 ## v2.9.0 (2025-12-23)
 
 ### Features ✨
-- bottom-sheet: 组件 lock-scroll 属性禁止遮罩滚动([7eeec64](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/7eeec64c305d0edfd413a3c34db4e3583a03b19c))；新增 lock-max-drag 属性 禁止最大距离拖动([pull/128](https://github.com/Tuya-Community/miniapp-smart-ui/pull/128), [pull/129](https://github.com/Tuya-Community/miniapp-smart-ui/pull/129))
-- search: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- field: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- tab: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- tabbar: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- stepper: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- switch: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- toast: 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- slider: 接入震动反馈([7fb416f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/124/commits/7fb416fd10fc267920509b45e27ad9c10841f003))
-- index-bar: 接入震动反馈([pull/110](https://github.com/Tuya-Community/miniapp-smart-ui/pull/110))
-- calendar: 接入震动反馈([pull/109](https://github.com/Tuya-Community/miniapp-smart-ui/pull/109))
-- custom-keyboard: 接入震动反馈([pull/111](https://github.com/Tuya-Community/miniapp-smart-ui/pull/111))
+- bottom-sheet: 新增 lock-scroll 属性禁止遮罩滚动([7eeec64](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/7eeec64c305d0edfd413a3c34db4e3583a03b19c))；新增 lock-max-drag 属性 禁止最大距离拖动([pull/128](https://github.com/Tuya-Community/miniapp-smart-ui/pull/128), [pull/129](https://github.com/Tuya-Community/miniapp-smart-ui/pull/129))
+- search: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- field: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- tab: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- tabbar: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- stepper: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- switch: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- toast: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- slider: IOS 接入震动反馈([7fb416f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/124/commits/7fb416fd10fc267920509b45e27ad9c10841f003))
+- index-bar: IOS 接入震动反馈([pull/110](https://github.com/Tuya-Community/miniapp-smart-ui/pull/110))
+- calendar: IOS 接入震动反馈([pull/109](https://github.com/Tuya-Community/miniapp-smart-ui/pull/109))
+- custom-keyboard: IOS 接入震动反馈([pull/111](https://github.com/Tuya-Community/miniapp-smart-ui/pull/111))
 
 ### Bug Fixes  🐛
 
