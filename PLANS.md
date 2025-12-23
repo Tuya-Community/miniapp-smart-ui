@@ -28,7 +28,7 @@
 发布计划（发布正式时间：2025.1.13 周二）
 - [] 修复 index-bar 滚动切换时右侧 索引栏闪烁问题
 - [] 电池组件对齐全新 UED 设计
-- [] dialog input 支持 onInput 回调；增加then返回实例内取 input 值Demo
+- [] dialog input 支持 onInput 回调；增加then返回实例内取 input 值Demo;修复调用 input 方式，value为undefined 无法显示输入框问题
 
 
 
