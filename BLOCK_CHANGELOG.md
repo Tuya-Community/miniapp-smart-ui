@@ -2,12 +2,8 @@
 
 ## v2.9.0 (2025-12-23)
 
-### Features ✨
-- bottom-sheet: 新增 lock-scroll 属性禁止遮罩滚动([7eeec64](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/7eeec64c305d0edfd413a3c34db4e3583a03b19c))；新增 lock-max-drag 属性 禁止最大距离拖动([pull/128](https://github.com/Tuya-Community/miniapp-smart-ui/pull/128), [pull/129](https://github.com/Tuya-Community/miniapp-smart-ui/pull/129))
-
 ### Bug Fixes  🐛
 
-- config-provider: 缩小主题文件体积([3d55091](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/3d5509187dd3830449127b68718bdd95243c13cd))
 - nav-bar: 对齐涂鸦 UI 标准，sideWidth 默认值从 mid 调整为 max([64281c8](https://github.com/Tuya-Community/miniapp-smart-ui/pull/125/commits/64281c830cde83b908320085014f394058b257c1))
 - calendar: 对齐涂鸦 UI 标准，删除 --calendar-day-disabled-color，采用 opacity 实现禁用样式，修复深色模式禁用样式问题([pull/126](https://github.com/Tuya-Community/miniapp-smart-ui/pull/126))
 
