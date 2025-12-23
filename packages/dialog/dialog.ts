@@ -1,7 +1,7 @@
 import appLog from '../common/appLog';
 import { getCurrentPage } from '../common/utils';
 
-const queueRef = {
+export const queueRef = {
   value: [] as WechatMiniprogram.Component.TrivialInstance[],
 };
 export type Action = 'confirm' | 'cancel' | 'overlay';

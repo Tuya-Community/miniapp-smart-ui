@@ -1,6 +1,6 @@
 import path from 'path';
 import simulate from 'miniprogram-simulate';
-import { contextRef } from '../dialog';
+import { contextRef, queueRef } from '../dialog';
 
 describe('dialog', () => {
   const SmartDialog = simulate.load(
@@ -12,8 +12,9 @@ describe('dialog', () => {
   );
 
   beforeEach(() => {
-    // Clear contextRef before each test
+    // Clear contextRef and queueRef before each test
     contextRef.value = {};
+    queueRef.value = [];
     
     // Mock wx.nextTick
     const originalNextTick = wx.nextTick;
@@ -702,6 +703,172 @@ describe('dialog', () => {
       await simulate.sleep(50);
 
       expect(beforeClose).toHaveBeenCalled();
+    }
+  });
+
+  test('should log error when dialog id is repeated in mounted', async () => {
+    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" id="{{ 'test-dialog' }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.id = 'test-dialog';
+      // Set contextRef to simulate repeated id
+      contextRef.value['#test-dialog'] = {} as any;
+      await simulate.sleep(10);
+
+      // Trigger mounted
+      if (instance.mounted) {
+        instance.mounted();
+        await simulate.sleep(10);
+
+        expect(consoleErrorSpy).toHaveBeenCalled();
+      }
+
+      consoleErrorSpy.mockRestore();
+    }
+  });
+
+  test('should handle destroyed lifecycle with queue cleanup', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" id="{{ 'test-dialog' }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.id = 'test-dialog';
+      // Add to queue
+      queueRef.value.push(instance);
+      await simulate.sleep(10);
+
+      // Call destroyed
+      if (instance.destroyed) {
+        instance.destroyed();
+        await simulate.sleep(10);
+
+        // Should clear contextRef and remove from queue
+        expect(contextRef.value['#test-dialog']).toBeNull();
+        expect(queueRef.value.length).toBe(0);
+      }
+    }
+  });
+
+  test('should handle onInput with undefined detail', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" show="{{ true }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.onInput({});
+      await simulate.sleep(10);
+
+      expect(wrapper?.data.inputValue).toBe('');
+    }
+  });
+
+  test('should handle onInput with null detail', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" show="{{ true }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.onInput({ detail: null });
+      await simulate.sleep(10);
+
+      expect(wrapper?.data.inputValue).toBe('');
+    }
+  });
+
+  test('should handle onAfterLeave without callback', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({
+        callback: null,
+        actionType: 'confirm',
+      });
+      
+      // Should not throw error
+      expect(() => instance.onAfterLeave()).not.toThrow();
+    }
+  });
+
+  test('should handle onPopUpError without callback', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({
+        callback: null,
+        actionType: 'cancel',
+      });
+      
+      // Should not throw error
+      expect(() => instance.onPopUpError()).not.toThrow();
     }
   });
 });

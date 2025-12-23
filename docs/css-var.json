@@ -1077,11 +1077,6 @@
     "value": "#3678e3",
     "decs": ""
   },
-  "calendar-day-disabled-color": {
-    "name": "@calendar-day-disabled-color",
-    "value": "#c8c9cc",
-    "decs": ""
-  },
   "calendar-confirm-button-height": {
     "name": "@calendar-confirm-button-height",
     "value": "36px",
@@ -2009,7 +2004,7 @@
   },
   "notice-bar-text-color": {
     "name": "@notice-bar-text-color",
-    "value": "var(--app-B6-N3, rgba(0, 0, 0, 0.5))",
+    "value": "rgba(0, 0, 0, 0.5)",
     "decs": ""
   },
   "notice-bar-line-height": {
@@ -2412,12 +2407,12 @@
   },
   "switch-label-active-color": {
     "name": "@switch-label-active-color",
-    "value": "var(--app-B3, #ffffff)",
+    "value": "#FFFFFF",
     "decs": ""
   },
   "switch-label-inactive-color": {
     "name": "@switch-label-inactive-color",
-    "value": "var(--app-B3, #ffffff)",
+    "value": "#FFFFFF",
     "decs": ""
   },
   "switch-disabled-opacity": {
@@ -3495,6 +3490,11 @@
     "value": "#1989fa",
     "decs": ""
   },
+  "cascader-active-background-color": {
+    "name": "@cascader-active-background-color",
+    "value": "var(--app-B1, #f6f7fb)",
+    "decs": ""
+  },
   "cascader-options-height": {
     "name": "@cascader-options-height",
     "value": "384px",
@@ -3628,6 +3628,11 @@
   "popover-border-radius": {
     "name": "@popover-border-radius",
     "value": "12px",
+    "decs": ""
+  },
+  "popover-overlay-color": {
+    "name": "@popover-overlay-color",
+    "value": "var(--app-B1-N1, rgba(0, 0, 0, 1))",
     "decs": ""
   }
 }

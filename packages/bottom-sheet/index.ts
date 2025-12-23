@@ -48,6 +48,10 @@ SmartComponent({
       type: Boolean,
       value: false,
     },
+    lockScroll: {
+      type: Boolean,
+      value: true,
+    },
     minDragHeight: {
       type: Number,
       value: 0,
@@ -55,6 +59,10 @@ SmartComponent({
     maxDragHeight: {
       type: Number,
       value: 0,
+    },
+    lockMaxDrag: {
+      type: Boolean,
+      value: false,
     },
     midDragHeight: {
       type: Number,

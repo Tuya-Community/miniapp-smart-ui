@@ -1,8 +1,8 @@
 import { SmartComponent } from '../common/component';
 import { isDef } from '../common/validator';
-import ty from '../common/ty';
 import Minus from '@tuya-miniapp/icons/dist/svg/Minus';
 import Plus from '@tuya-miniapp/icons/dist/svg/Plus';
+import tyApi from '../common/ty';
 
 const LONG_PRESS_START_TIME = 600;
 const LONG_PRESS_INTERVAL = 200;
@@ -126,6 +126,7 @@ SmartComponent({
     },
 
     onFocus(event: WechatMiniprogram.InputFocus) {
+      tyApi.selectionVibrate();
       this.$emit('focus', event.detail);
       this.setData({ focus: true });
     },
@@ -209,7 +210,7 @@ SmartComponent({
 
       this.emitChange(value);
       this.$emit(type);
-      ty.vibrateShort({ type: 'light' });
+      tyApi.vibrateShort({ type: 'light' });
     },
 
     longPressStep() {

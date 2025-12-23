@@ -1,6 +1,7 @@
 // components/month-list.js
 import { getMonths } from '../calendar-utils/utils';
 import { SmartComponent } from '../common/component';
+import tyApi from '../common/ty';
 
 const currentYear = new Date().getFullYear();
 const minMonthDate = new Date(currentYear - 10, 1, 1).getTime();
@@ -111,6 +112,7 @@ SmartComponent({
         this.setData({
           date: item.value,
         });
+        tyApi.vibrateShort({ type: 'light' });
       }
     },
   },

@@ -1,14 +1,34 @@
+const systemInfo = wx.getSystemInfoSync();
+const isIOS = systemInfo.platform === 'ios';
 const tyApi = {
   vibrateShort: (v: any) => {
+    if (!isIOS) return;
     // @ts-ignore
     if (typeof ty !== 'undefined') {
       // @ts-ignore
-      ty.vibrateShort(v);
+      ty.vibrateShort?.(v);
     } else if (typeof wx !== 'undefined') {
-      wx.vibrateShort(v);
+      wx.vibrateShort?.(v);
+    }
+  },
+  selectionVibrate: () => {
+    if (!isIOS) return;
+    // @ts-ignore
+    if (typeof ty !== 'undefined') {
+      // @ts-ignore
+      ty.selectionVibrate?.();
+    }
+  },
+  notificationVibrate: (v: any) => {
+    if (!isIOS) return;
+    // @ts-ignore
+    if (typeof ty !== 'undefined') {
+      // @ts-ignore
+      ty.notificationVibrate?.(v);
     }
   },
   nativeDisabled: (v: boolean) => {
+    if (!isIOS) return;
     // @ts-ignore
     if (typeof ty !== 'undefined') {
       // @ts-ignore

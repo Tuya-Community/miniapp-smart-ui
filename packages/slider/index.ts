@@ -2,6 +2,7 @@ import { SmartComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { canIUseModel } from '../common/version';
 import { getRect, addUnit, nextTick, addNumber, clamp } from '../common/utils';
+import ty from '../common/ty';
 
 type SliderValue = number | [number, number];
 
@@ -52,6 +53,11 @@ SmartComponent({
   created() {
     this.updateValue(this.data.value);
   },
+
+  // @ts-ignore
+  lastMinValue: null as number | null,
+  // @ts-ignore
+  lastMaxValue: null as number | null,
 
   methods: {
     onTouchStart(event: WechatMiniprogram.TouchEvent) {
@@ -178,6 +184,32 @@ SmartComponent({
           ${drag ? 'transition: none;' : ''}
         `,
       });
+
+      if (Array.isArray(value)) {
+        const nextMinValue = value[0];
+        const nextMaxValue = value[1];
+
+        if (this.lastMinValue !== null) {
+          if (this.lastMinValue !== nextMinValue) {
+            const isMin = value[0] === this.data.min;
+            if (isMin) {
+              ty.selectionVibrate();
+            }
+          }
+        }
+        if (this.lastMaxValue !== null) {
+          if (this.lastMaxValue !== nextMaxValue) {
+            const isMax = value[1] === this.data.max;
+            if (isMax) {
+              ty.vibrateShort({ type: 'medium' });
+            }
+          }
+        }
+        this.lastMinValue = nextMinValue;
+        this.lastMaxValue = nextMaxValue;
+      } else {
+        // 单值模式不需要震动
+      }
 
       if (drag) {
         this.$emit('drag', { value });

@@ -551,5 +551,491 @@ describe('picker', () => {
       expect(animationEndEmitted).toBe(false);
     }
   });
+
+  test('should set column value successfully', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: ['选项1', '选项2', '选项3'],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const mockChild = {
+        setValue: jest.fn(() => Promise.resolve()),
+        getValue: jest.fn(),
+        data: {},
+      };
+      instance.selectAllComponents = jest.fn(() => [mockChild]);
+
+      await instance.setColumnValue(0, '选项2');
+      await simulate.sleep(10);
+
+      expect(mockChild.setValue).toHaveBeenCalledWith('选项2');
+    }
+  });
+
+  test('should reject when setColumnValue column does not exist', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: ['选项1', '选项2'],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.selectAllComponents = jest.fn(() => []);
+
+      await expect(instance.setColumnValue(5, '选项2')).rejects.toThrow(
+        'setColumnValue: The corresponding column does not exist'
+      );
+    }
+  });
+
+  test('should set column index successfully', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: ['选项1', '选项2', '选项3'],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const mockChild = {
+        setIndex: jest.fn(() => Promise.resolve()),
+        data: {},
+      };
+      instance.selectAllComponents = jest.fn(() => [mockChild]);
+
+      await instance.setColumnIndex(0, 2);
+      await simulate.sleep(10);
+
+      expect(mockChild.setIndex).toHaveBeenCalledWith(2);
+    }
+  });
+
+  test('should reject when setColumnIndex column does not exist', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: ['选项1', '选项2'],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.selectAllComponents = jest.fn(() => []);
+
+      await expect(instance.setColumnIndex(5, 2)).rejects.toThrow(
+        'setColumnIndex: The corresponding column does not exist'
+      );
+    }
+  });
+
+  test('should set column values successfully', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: [{ values: ['选项1', '选项2'] }],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const mockChild = {
+        set: jest.fn(() => Promise.resolve()),
+        setIndex: jest.fn(),
+        data: { options: ['选项1', '选项2'] },
+      };
+      instance.selectAllComponents = jest.fn(() => [mockChild]);
+
+      await instance.setColumnValues(0, ['选项3', '选项4']);
+      await simulate.sleep(10);
+
+      expect(mockChild.set).toHaveBeenCalledWith({ options: ['选项3', '选项4'] });
+      expect(mockChild.setIndex).toHaveBeenCalledWith(0);
+    }
+  });
+
+  test('should resolve immediately when setColumnValues with same options', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: [{ values: ['选项1', '选项2'] }],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const mockChild = {
+        set: jest.fn(),
+        setIndex: jest.fn(),
+        data: { options: ['选项1', '选项2'] },
+      };
+      instance.selectAllComponents = jest.fn(() => [mockChild]);
+
+      await instance.setColumnValues(0, ['选项1', '选项2']);
+      await simulate.sleep(10);
+
+      expect(mockChild.set).not.toHaveBeenCalled();
+      expect(mockChild.setIndex).not.toHaveBeenCalled();
+    }
+  });
+
+  test('should set column values without reset when needReset is false', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: [{ values: ['选项1', '选项2'] }],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const mockChild = {
+        set: jest.fn(() => Promise.resolve()),
+        setIndex: jest.fn(),
+        data: { options: ['选项1', '选项2'] },
+      };
+      instance.selectAllComponents = jest.fn(() => [mockChild]);
+
+      await instance.setColumnValues(0, ['选项3', '选项4'], false);
+      await simulate.sleep(10);
+
+      expect(mockChild.set).toHaveBeenCalledWith({ options: ['选项3', '选项4'] });
+      expect(mockChild.setIndex).not.toHaveBeenCalled();
+    }
+  });
+
+  test('should reject when setColumnValues column does not exist', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: [{ values: ['选项1', '选项2'] }],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.selectAllComponents = jest.fn(() => []);
+
+      await expect(instance.setColumnValues(5, ['选项3', '选项4'])).rejects.toThrow(
+        'setColumnValues: The corresponding column does not exist'
+      );
+    }
+  });
+
+  test('should set all values', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: [
+            { values: ['选项1', '选项2'] },
+            { values: ['选项A', '选项B'] },
+          ],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const mockChild1 = {
+        setValue: jest.fn(() => Promise.resolve()),
+        getValue: jest.fn(),
+        data: {},
+      };
+      const mockChild2 = {
+        setValue: jest.fn(() => Promise.resolve()),
+        getValue: jest.fn(),
+        data: {},
+      };
+      instance.selectAllComponents = jest.fn(() => [mockChild1, mockChild2]);
+
+      await instance.setValues(['选项2', '选项A']);
+      await simulate.sleep(10);
+
+      expect(mockChild1.setValue).toHaveBeenCalledWith('选项2');
+      expect(mockChild2.setValue).toHaveBeenCalledWith('选项A');
+    }
+  });
+
+  test('should set all indexes', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: [
+            { values: ['选项1', '选项2'] },
+            { values: ['选项A', '选项B'] },
+          ],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const mockChild1 = {
+        setIndex: jest.fn(() => Promise.resolve()),
+        data: {},
+      };
+      const mockChild2 = {
+        setIndex: jest.fn(() => Promise.resolve()),
+        data: {},
+      };
+      instance.selectAllComponents = jest.fn(() => [mockChild1, mockChild2]);
+
+      await instance.setIndexes([1, 0]);
+      await simulate.sleep(10);
+
+      expect(mockChild1.setIndex).toHaveBeenCalledWith(1);
+      expect(mockChild2.setIndex).toHaveBeenCalledWith(0);
+    }
+  });
+
+  test('should handle setColumns', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: ['选项1', '选项2', '选项3'],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const mockChild = {
+        set: jest.fn(() => Promise.resolve()),
+        setIndex: jest.fn(),
+        data: { options: [] },
+      };
+      instance.selectAllComponents = jest.fn(() => [mockChild]);
+      instance.setColumnValues = jest.fn(() => Promise.resolve());
+
+      await instance.setColumns();
+      await simulate.sleep(10);
+
+      expect(instance.setColumnValues).toHaveBeenCalled();
+    }
+  });
+
+  test('should handle columns observer for simple mode', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: ['选项1', '选项2'],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setColumns = jest.fn(() => Promise.resolve());
+      instance.selectAllComponents = jest.fn(() => [{ data: {} }]);
+
+      // Change columns to trigger observer
+      wrapper?.setData({ columns: ['选项3', '选项4'] });
+      await simulate.sleep(10);
+
+      expect(instance.simple).toBe(true);
+    }
+  });
+
+  test('should handle columns observer for multi-column mode', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: [{ values: ['选项1', '选项2'] }],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setColumns = jest.fn(() => Promise.resolve());
+      instance.selectAllComponents = jest.fn(() => [{ data: {} }]);
+
+      // Change columns to trigger observer
+      wrapper?.setData({
+        columns: [
+          { values: ['选项3', '选项4'] },
+          { values: ['选项A', '选项B'] },
+        ],
+      });
+      await simulate.sleep(10);
+
+      expect(instance.simple).toBe(false);
+    }
+  });
+
+  test('should handle columns observer with empty columns', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: [],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      // Change columns to empty array
+      wrapper?.setData({ columns: [] });
+      await simulate.sleep(10);
+
+      // When columns is empty, simple = columns.length && !columns[0].values
+      // Since columns.length is 0, simple should be false (0 && ... = 0)
+      expect(instance.simple).toBeFalsy();
+    }
+  });
+
+
+
+  test('should handle children getter returning empty array', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker': SmartPicker,
+        },
+        template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+        data: {
+          columns: ['选项1', '选项2'],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.selectAllComponents = jest.fn(() => []);
+
+      const children = instance.children;
+      expect(children).toEqual([]);
+    }
+  });
 });
 

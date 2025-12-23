@@ -1,6 +1,7 @@
 import { SmartComponent } from '../common/component';
 import { getMonthEndDay, compareDay, getPrevDay, getNextDay } from '../calendar-utils/utils';
 import { Day } from '../calendar-utils/types';
+import tyApi from '../common/ty';
 
 SmartComponent({
   props: {
@@ -60,6 +61,7 @@ SmartComponent({
       const item: Day = this.data.days[index];
       if (item.type !== 'disabled') {
         this.$emit('click', item);
+        tyApi.vibrateShort({ type: 'light' });
       }
     },
 

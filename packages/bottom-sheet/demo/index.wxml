@@ -136,3 +136,27 @@
     </view>
   </smart-bottom-sheet>
 </demo-block>
+
+<demo-block title="{{I18n.t('lockMaxDrag')}}" padding>
+  <smart-button type="primary" bind:click="toggleActionSheet10">{{I18n.t('popupMenu')}}</smart-button>
+  <smart-bottom-sheet
+    show="{{ show10 }}"
+    bind:close="toggleActionSheet10"
+    draggable
+    instanceId="com10"
+    mid-drag-height="300"
+    min-drag-height="100"
+    max-drag-height="400"
+    lock-max-drag
+    close-drag-height="{{closeDragHeight}}"
+  >
+    <scroll-view scroll-y style="height: 400px;">
+      <view style="background-color: red; height: 100px;" />
+      <view style="background-color: blue; height: 100px;" />
+      <view style="background-color: black; height: 100px;" />
+      <view style="background-color: red; height: 100px;" />
+      <view style="background-color: blue; height: 100px;" />
+      <view style="background-color: black; height: 100px;" />
+    </scroll-view>
+  </smart-bottom-sheet>
+</demo-block>
