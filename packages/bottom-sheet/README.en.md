@@ -378,4 +378,5 @@ The component offers the following CSS variables for custom styles. For usage, p
 | --bottom-sheet-min-height                          | _auto_                               | Minimum height of the bottom sheet             |
 | --bottom-sheet-padding                             | _0 16px_                             | Inner padding of the bottom popup content area |
 | --bottom-sheet-width                               | _100%_                               | Width of the bottom sheet                      |
+| --popup-background-color    | _var(--app-B4, #ffffff)_       | Popup Background Color         |
 

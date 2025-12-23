@@ -390,4 +390,6 @@ Page({
 | --bottom-sheet-min-height                          | _auto_                               | 底部弹窗的最小高度         |
 | --bottom-sheet-padding                             | _0 16px_                             | 底部弹窗内容区域的内边距   |
 | --bottom-sheet-width                               | _100%_                               | 底部弹窗的宽度             |
+| --popup-background-color      | _var(--app-B4, #ffffff)_       | 弹框背景色         |
+
 
