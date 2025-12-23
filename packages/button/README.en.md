@@ -143,11 +143,6 @@ Customize button color with the `color` attribute.
 | size         | Button size, options: `normal` `large` `small` `mini`    | _string_  | `normal`     |
 | square       | Whether it's a square button                             | _boolean_ | `false`      |
 | type         | Button type, options: `primary` `info` `warning` `danger`| _string_  | `default`    |
-| send-message-img | sendMessageImg | _string_ | Screenshot |
-| send-message-path | Path for mini-program redirection in session message card | _string_ | Current share path |
-| send-message-title | Session message card title | _string_ | Current title |
-| session-from | Session source | _string_ | - |
-| show-message-card | Display session message card | _string_ | `false` |
 
 
 ### Events
@@ -156,8 +151,6 @@ Customize button color with the `color` attribute.
 | ----------- | ------------------------------------------------------- | --------- |
 | bind:click  | Triggered when button is clicked, not in loading/disabled state | -    |
 | bind:error  | Callback for errors when using open capabilities       | - |
-| bind:getrealtimephonenumber `v1.10.21` | Real-time phone number verification callback when open-type=getRealtimePhoneNumber | - |
-| bind:opensetting | Callback after opening the authorization settings page | - |
 
 
 > Button provides a click event instead of the native tap event. When the button is disabled, the click event will not fire, but the tap event will.
