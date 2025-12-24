@@ -1,4 +1,4 @@
-# SmartUI 2025 年度升级总结
+# 🚀 SmartUI 2025：从性能突破到体验革新，全面升级的一年
 
 > 本文档面向内部开发者，总结 2025 年度 SmartUI 组件库的重要升级事项和技术改进
 
@@ -8,16 +8,18 @@
 - **1 个新组件**：popover（气泡弹框）
 - **多项重大重构**：Picker 3D 效果、Circle 组件重构、ESM 打包支持
 - **80+ 新增属性/事件/插槽**：覆盖 30+ 组件，包括主题切换、拖拽能力、震动反馈等
-- **100+ Bug 修复**：修复各类已知问题，提升组件稳定性和用户体验
+- **稳定性和体验**：修复各类已知问题，提升组件稳定性和用户体验
 
 ---
 
 ## 🎯 核心升级亮点
 
-### 1. ESM 打包支持（v2.1.7）
+### 1. 按需引入（v2.4.0）
 
-**重大架构升级**：
-- 组件实现 ESM 方式打包，支持 tree-shaking
+此功能可以去除多余的代码和样式文件后，SmartUI打包体积可以减少80%，优化后项目平均产物体积减少1.4MB（压缩前）！
+
+**升级内容**：
+- 组件实现 ESM 方式打包，支持 tree-shaking（v2.1.7）
 - `@tuya-miniapp/icons` 实现 ESM 方式打包
 - 配合 `SmartUIAutoImport` 插件实现按需引入（v2.4.0）
 
@@ -32,7 +34,10 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 
 ---
 
-### 2. Circle 组件重构（v2.3.0、v2.3.9）
+### 2. 更流畅还原的 Circle 组件（v2.3.0、v2.3.9）
+
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/5469a151-3602-41de-b61d-9702e3f04c1c" /> <img height="300" alt="image" src="https://github.com/user-attachments/assets/cca5a968-c6d2-41ff-af61-f34f7b750cc4" />
+
 
 **重构历程**：
 - v2.3.0：使用 canvas 重构，新增 `mode`、`round` 属性
@@ -43,14 +48,11 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 - `customStyle`：自定义样式（v2.1.7）
 - `mask-color` 默认值从 `#ffffff` 改为 `transparent`（v2.8.0）
 
-**修复问题**：
-- 修复模糊问题
-- 修复 flex 布局下初始化宽度 100% 问题
-- 修复外部盒子被挤压导致圆环部分被隐藏问题
-
 ---
 
-### 3. Picker 组件 3D 重构（v2.7.0）
+### 3. 更流畅还原的 3D Picker 组件（v2.7.0）
+
+<img src="https://github.com/user-attachments/assets/4129d062-1147-4d30-8344-71aaa779ec45" height="180" style="display: inline-block; margin-right: 2%;" /> <img src="https://github.com/user-attachments/assets/860dbc3f-f6ce-41c1-899f-bcf8fdc5e5c0" height="180" style="display: inline-block;" />
 
 **重大更新**：Picker 组件完全重构，带来革命性体验提升
 
@@ -219,77 +221,6 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 
 ---
 
-## 🐛 重要 Bug 修复
-
-### Dialog 组件修复
-
-**v2.9.0**：
-- 修复组件未关闭，销毁页面后无法再次打开问题
-
-**v2.6.3**：
-- 新增 `autoClose` 属性，修复组件自动关闭问题
-
-**v2.2.0**：
-- 修复重复调用时，无法打开弹窗问题
-- 修复组件无法打开问题，增加全局 Id 唯一校验
-
-**v2.1.8**：
-- 修复 API 方式调用时获取 context 错误导致无法获取组件实例问题
-
----
-
-### Picker 组件修复
-
-**v2.9.0**：
-- 修复 loop 模式部分列无法拖动选中的问题
-
-**v2.7.1**：
-- 修复 loop 模式滚动值切换时，修改列表后滚动报错问题
-- 修复 active 状态实时更新问题
-
-**v2.7.0**：
-- 修复在 flex 布局下默认没有宽度的问题
-- 修复单位距离不受 fontStyle 属性控制问题
-
-**v2.6.2**：
-- 修复单位对齐问题
-
-**v2.6.1**：
-- 修复单位换行问题
-
----
-
-### Calendar 组件修复
-
-**v2.9.0**：
-- 修复深色模式禁用样式问题
-
-**v2.6.2**：
-- 修复 CSS 变量 `--calendar-day-height`、`--calendar-selected-day-size` 不生效问题
-
-**v2.2.1**：
-- 修复 type 属性动态切换时显示问题
-- 优化年选择的范围控制
-
----
-
-### Stepper 组件修复
-
-**v2.7.3**：
-- 修复小数情况输入框输入实时更新问题
-
-**v2.7.2**：
-- 修复自动换行问题
-- 修复无法输入小数问题
-- 修复步长格式化不计入 min 问题
-- 新增判断字符串逻辑
-
-**v2.6.1**：
-- 修复组件到达 max 或 min 时，禁用样式不生效问题
-- 修复设置 min 或 decimalLength 导致输入框无法删除问题
-
----
-
 ## 📦 新组件
 
 ### Popover（v2.3.0）
@@ -359,11 +290,6 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 2. **图标引入方式**：v2.1.5 起禁止使用命名导入，需使用默认导入
 3. **NavBar**：v2.9.0 `side-width` 默认值从 `mid` 调整为 `max`
 4. **Popup/Calendar**：v2.7.0 默认底部安全距离关闭
-
-### 废弃属性
-
-- Circle 组件 `style` 属性废弃，使用 `customStyle` 替代（v2.1.7）
-- Toast `--toast-text-min-width` CSS 变量废弃，使用 `--toast-min-width`（v2.6.0）
 
 ---
 
