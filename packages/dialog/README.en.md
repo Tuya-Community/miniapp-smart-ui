@@ -70,7 +70,7 @@ DialogInstance.confirm({
 
 ### Input Box
 
-Used to input copy information, the default maximum input limit `maxLength` is `20`; the `emptyDisabled` `v2.7.0` attribute can restrict the submission when the input field is empty.
+Used to input copy information, the default maximum input limit `maxlength` is `20`; the `emptyDisabled` `v2.7.0` attribute can restrict the submission when the input field is empty.
 
 ```html
 <smart-dialog id="smart-dialog" />

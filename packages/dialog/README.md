@@ -70,7 +70,7 @@ DialogInstance.confirm({
 
 ### 输入框
 
-用于输入文案信息，此时默认最大输入限制`maxLength`是`20`;`emptyDisabled` `v2.7.0` 属性可以限制输入框内为空时无法提交。
+用于输入文案信息，此时默认最大输入限制`maxlength`是`20`;`emptyDisabled` `v2.7.0` 属性可以限制输入框内为空时无法提交。
 
 ```html
 <smart-dialog id="smart-dialog" />
