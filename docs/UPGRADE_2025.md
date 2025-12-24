@@ -7,61 +7,14 @@
 2025 年度共发布 **23 个版本**，从 v2.1.10 升级至 v2.9.0，包含：
 - **1 个新组件**：popover（气泡弹框）
 - **多项重大重构**：Picker 3D 效果、Circle 组件重构、ESM 打包支持
-- **大量功能增强**：iOS 震动反馈、主题切换、拖拽能力等
-- **持续 Bug 修复**：修复各类已知问题，提升稳定性
+- **80+ 新增属性/事件/插槽**：覆盖 30+ 组件，包括主题切换、拖拽能力、震动反馈等
+- **100+ Bug 修复**：修复各类已知问题，提升组件稳定性和用户体验
 
 ---
 
 ## 🎯 核心升级亮点
 
-### 1. Picker 组件 3D 重构（v2.7.0）
-
-**重大更新**：Picker 组件完全重构，带来革命性体验提升
-
-- ✨ **3D 视觉效果**：实现类似 iOS 原生的真实 3D 滚动效果
-- ✨ **循环滚动能力**：新增 `loop` 属性，支持无限滚动
-- ✨ **性能优化**：重构实现原理，大幅提升滚动性能
-- ✨ **新增属性**：
-  - `loop`：开启循环滚动
-  - `full-height`：全高度显示
-  - `changeAnimation`：控制动画开关（v2.2.0）
-
-**影响范围**：DateTimePicker 同步支持循环滚动能力
-
-**迁移建议**：
-- 如需循环滚动，设置 `loop={true}`
-- 如需关闭动画，设置 `changeAnimation={false}`
-
----
-
-### 2. 主题系统升级（v2.8.0）
-
-**一键主题切换**：ConfigProvider 新增 `theme` 属性
-
-```typescript
-// 使用示例
-<ConfigProvider theme="dark">
-  {/* 组件内容 */}
-</ConfigProvider>
-```
-
-**相关优化**：
-- 缩小主题文件体积（v2.9.0）
-- 修复深色模式禁用样式问题（Calendar 组件）
-
----
-
-### 3. iOS 震动反馈全面接入（v2.9.0）
-
-**覆盖组件**：以下组件均已接入 iOS 震动反馈
-- search、field、tab、tabbar、stepper、switch、toast、slider
-- index-bar、calendar、custom-keyboard
-
-**技术实现**：统一使用系统震动 API，提升交互体验
-
----
-
-### 4. ESM 打包支持（v2.1.7）
+### 1. ESM 打包支持（v2.1.7）
 
 **重大架构升级**：
 - 组件实现 ESM 方式打包，支持 tree-shaking
@@ -79,7 +32,7 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 
 ---
 
-### 5. Circle 组件重构（v2.3.0、v2.3.9）
+### 2. Circle 组件重构（v2.3.0、v2.3.9）
 
 **重构历程**：
 - v2.3.0：使用 canvas 重构，新增 `mode`、`round` 属性
@@ -94,6 +47,144 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 - 修复模糊问题
 - 修复 flex 布局下初始化宽度 100% 问题
 - 修复外部盒子被挤压导致圆环部分被隐藏问题
+
+---
+
+### 3. Picker 组件 3D 重构（v2.7.0）
+
+**重大更新**：Picker 组件完全重构，带来革命性体验提升
+
+- ✨ **3D 视觉效果**：实现类似 iOS 原生的真实 3D 滚动效果
+- ✨ **循环滚动能力**：新增 `loop` 属性，支持无限滚动
+- ✨ **性能优化**：重构实现原理，大幅提升滚动性能
+- ✨ **新增属性**：
+  - `loop`：开启循环滚动
+  - `full-height`：全高度显示
+  - `changeAnimation`：控制动画开关（v2.2.0）
+
+**影响范围**：DateTimePicker 同步支持循环滚动能力
+
+---
+
+### 4. 主题系统升级（v2.8.0）
+
+**一键主题切换**：ConfigProvider 新增 `theme` 属性
+
+```typescript
+// 使用示例
+<ConfigProvider theme="dark">
+  {/* 组件内容 */}
+</ConfigProvider>
+```
+
+**相关优化**：
+- 缩小主题文件体积（v2.9.0）
+
+---
+
+## 🎨 UI 设计标准对齐
+
+2025 年度，SmartUI 持续对齐涂鸦小程序 UI 设计标准，确保组件库视觉风格统一。以下为已完成对齐的组件及最终状态：
+
+### 已完成完整重构对齐的组件
+
+以下组件已完成 UI 设计稿对齐和重构，符合涂鸦小程序移动端设计规范：
+
+- **field**：表单输入组件
+- **tab**：标签页组件
+- **search**：搜索组件
+- **nav-bar**：导航栏组件
+- **switch**：开关组件
+- **toast**：轻提示组件
+- **dropdown-menu**：下拉菜单组件
+- **button**：按钮组件
+- **action-sheet**：操作面板组件
+- **checkbox**：复选框组件
+- **radio**：单选框组件
+- **empty**：空状态组件
+- **picker**：滚动选择组件
+- **datetime-picker**：时间选择组件
+- **circle**：圆环进度条组件
+
+### 关键组件对齐要点
+
+#### NavBar（导航栏）
+- ✅ 支持三种侧边宽度模式：`min`、`mid`、`max`（通过 `side-width` 属性）
+- ✅ 默认宽度为 `max`，符合最新 UI 标准
+- ✅ 新增多个样式控制属性：`right-text-color`、`right-icon-color`、`right-icon-size` 等
+- ✅ 支持自定义左右侧图标和文案样式
+
+#### Calendar（日历）
+- ✅ 禁用样式采用 `opacity` 实现，支持深色模式
+- ✅ 删除 `--calendar-day-disabled-color` CSS 变量
+- ✅ 新增 `header-icon-color` 属性，支持自定义头部图标颜色
+- ✅ 优化分割线、边距、安全距离等细节
+
+#### Switch（开关）
+- ✅ 尺寸样式对齐设计稿
+- ✅ 支持渐变色背景（`active-color` 和 `inactive-color` 支持渐变色）
+- ✅ 支持开关文案显示（`active-text`、`inactive-text`）
+- ✅ 优化组件布局和样式
+
+#### Popup（弹出层）
+- ✅ 默认关闭底部安全距离（`safe-area-inset-bottom` 默认为 `false`）
+- ✅ 支持渐变色背景设置
+
+#### Icon（图标）
+- ✅ 更新方向图标样式：`right`、`left`、`down`、`up`
+- ✅ 支持自定义图标（Svg Path 方式）
+- ✅ 支持自定义图标颜色和尺寸
+
+#### ActionSheet（操作面板）
+- ✅ 优化分割线样式和边距
+- ✅ 调整安全距离样式
+- ✅ 支持自定义标题插槽
+
+#### Toast（轻提示）
+- ✅ 优化样式，新增 `--toast-min-width` CSS 变量
+- ✅ 弃用 `--toast-text-min-width` CSS 变量
+
+#### Skeleton（骨架屏）
+- ✅ 优化动画效果
+
+### Manrope 数字字体接入（v2.7.2）
+
+**对齐说明**：统一使用 Manrope 数字字体，符合涂鸦 UI 设计规范，提升数字显示效果。
+
+**支持组件**（App 7.0.5+ 版本）：
+- stepper（步进器）
+- count-down（倒计时）
+- picker（选择器）
+- datetime-picker（日期时间选择器）
+- calendar（日历）
+- custom-keyboard（自定义键盘）
+
+### iOS 震动反馈全面接入（v2.9.0）
+
+**对齐说明**：统一接入 iOS 震动反馈，符合涂鸦 UI 设计规范，提升交互体验。
+
+**覆盖组件**：以下组件均已接入 iOS 震动反馈
+- search（搜索）
+- field（输入框）
+- tab（标签页）
+- tabbar（标签栏）
+- stepper（步进器）
+- switch（开关）
+- toast（轻提示）
+- slider（滑块）
+- index-bar（索引栏）
+- calendar（日历）
+- custom-keyboard（自定义键盘）
+
+**技术实现**：统一使用系统震动 API，在用户交互时提供触觉反馈。
+
+### 对齐成果
+
+所有组件均遵循**涂鸦小程序移动端设计规范**，确保：
+- 视觉风格统一
+- 交互体验一致
+- 样式细节完善
+- 深色模式支持
 
 ---
 
@@ -112,22 +203,6 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 
 ---
 
-### NavBar 全新 UI 标准对齐（v2.7.3、v2.7.0）
-
-**重大变更**：
-- 新增 `side-width` 属性，支持 min/mid/max 三种宽度
-- 默认值从 `mid` 调整为 `max`（v2.9.0）
-- 新增多个样式控制属性：`right-text-color`、`right-icon-color`、`right-icon-size` 等
-- 新增事件：`click-right-icon`、`click-right-text`
-- `border` 属性默认值改为 `false`
-
-**CSS 变量调整**：
-- 新增：`--nav-bar-side-width-min`、`--nav-bar-side-width-max`
-- 调整：`--nav-bar-side-width`、`--nav-bar-text-font-size`、`--nav-bar-text-font-weight`
-- 删除：`--nav-bar-icon-size`、`--nav-bar-icon-margin`
-
----
-
 ### DateTimePicker 12 小时制支持（v2.2.0）
 
 **新增属性**：
@@ -135,34 +210,12 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 - `amText`、`pmText`：自定义 AM/PM 文案
 - `columnsOrder`：自定义时间列顺序
 - `formatterMap`：自定义时间文案
-- `changeAnimation`：关闭改动动画
+- `changeAnimation`：关闭受控动画
 
 **修复问题**：
 - 修复 12 小时模式受控使用问题
 - 修复部分情况下 1 月无法拖动选中的问题
 - 修复长时间频繁拖拽后一直跳闪停不下来的问题
-
----
-
-### Manrope 数字字体接入（v2.7.2）
-
-**支持组件**（App 7.0.5+ 版本）：
-- stepper、count-down、picker、datetime-picker、calendar、custom-keyboard
-
-**技术说明**：统一使用 Manrope 数字字体，提升数字显示效果
-
----
-
-### Switch 组件增强（v2.7.0、v2.5.0）
-
-**新增能力**：
-- `active-text`、`inactive-text`：开关文案显示
-- `active-color`、`inactive-color` 支持渐变色
-- 新增多个 CSS 变量控制样式
-
-**布局调整**：
-- 改动组件布局
-- 删除 `--switch-border` CSS 变量，用 `--switch-padding` 替代
 
 ---
 
@@ -209,7 +262,6 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 ### Calendar 组件修复
 
 **v2.9.0**：
-- 对齐涂鸦 UI 标准，删除 `--calendar-day-disabled-color`，采用 opacity 实现禁用样式
 - 修复深色模式禁用样式问题
 
 **v2.6.2**：
@@ -238,24 +290,6 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 
 ---
 
-## 🎨 UI 标准对齐
-
-### 组件样式统一调整
-
-**v2.6.0**：
-- action-sheet：调整分割线以及边距，安全距离样式
-- calendar：调整样式，新增 header-icon-color 属性
-- toast：调整样式，新增 `--toast-min-width` CSS 变量
-
-**v2.5.0**：
-- switch：对齐组件 UI 设计稿，调整尺寸样式
-- skeleton：优化动画效果
-
-**v2.3.7**：
-- switch：对齐组件 UI 设计稿，调整尺寸样式
-
----
-
 ## 📦 新组件
 
 ### Popover（v2.3.0）
@@ -274,8 +308,8 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 ### 按需引入支持（v2.4.0）
 
 **新增插件**：`SmartUIAutoImport`
-- 修改导出目录结构
-- 配合 ray cli 实现按需引入组件资源
+- 配合 ESM 打包（详见"核心升级亮点"），实现按需引入组件资源
+- 修改导出目录结构，配合 ray cli 使用
 - 减少包体积
 
 ---
@@ -305,14 +339,14 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 
 ### 打包优化
 
-- ESM 方式打包，支持 tree-shaking（v2.1.7）
+- ESM 方式打包，支持 tree-shaking（详见"核心升级亮点"）
 - 缩小主题文件体积（v2.9.0）
-- 按需引入插件支持（v2.4.0）
+- 按需引入插件支持（详见"开发体验优化"）
 
 ### 组件性能优化
 
-- Picker 重构，优化滚动性能（v2.7.0）
-- Circle 组件重构，修复模糊问题（v2.3.9）
+- Picker 重构，优化滚动性能（详见"核心升级亮点"）
+- Circle 组件重构，修复模糊问题（详见"核心升级亮点"）
 - 修复 action-sheet 关闭动画卡顿问题（v2.3.7）
 
 ---
@@ -337,35 +371,7 @@ import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
 
 ### 从 v2.1.x 升级到 v2.9.0
 
-1. **图标引入方式**：
-   ```typescript
-   // 旧方式（已废弃）
-   import { Sun } from '@tuya-miniapp/icons'
-   
-   // 新方式
-   import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
-   ```
-
-2. **Circle 组件**：
-   ```typescript
-   // 旧方式（已废弃）
-   <Circle style="..." />
-   
-   // 新方式
-   <Circle customStyle="..." />
-   ```
-
-3. **NavBar 默认值**：
-   ```typescript
-   // 如需保持旧行为，显式设置
-   <NavBar side-width="mid" />
-   ```
-
-4. **Picker 循环滚动**：
-   ```typescript
-   // 如需循环滚动
-   <Picker loop={true} />
-   ```
+升级请参考 [升级注意事项](https://developer.tuya.com/material/smartui?comId=help-changelog&tab=block)
 
 ---
 
