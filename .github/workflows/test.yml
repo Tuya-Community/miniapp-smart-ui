@@ -4,6 +4,10 @@ on:
     branches:
       - main
       - release/*
+  push:
+    branches:
+      - main
+      - release/*
 jobs:
   build:
 
@@ -11,6 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -22,4 +28,46 @@ jobs:
       - run: yarn run build
       - run: echo '检查单元测试是否正常'
       - run: yarn run test
+      - run: echo '生成测试覆盖率报告'
+      - run: yarn run test:cover
+        env:
+          TZ: Asia/Shanghai
+      - name: 上传覆盖率 JSON 文件到 GitHub Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-json
+          path: coverage/coverage-final.json
+          retention-days: 30
+      
+      - name: 输出 Artifact 访问信息
+        run: |
+          echo "## 📦 Coverage JSON Artifact 访问方式" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 方式一：通过 GitHub UI 下载" >> $GITHUB_STEP_SUMMARY
+          echo "1. 访问工作流运行页面: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
+          echo "2. 在页面右侧找到 **Artifacts** 部分" >> $GITHUB_STEP_SUMMARY
+          echo "3. 点击 **coverage-json** 即可下载" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 方式二：通过 GitHub API 访问" >> $GITHUB_STEP_SUMMARY
+          echo "API 地址: \`https://api.github.com/repos/${{ github.repository }}/actions/artifacts\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 方式三：直接访问仓库文件（仅 main/release 分支）" >> $GITHUB_STEP_SUMMARY
+          echo "如果已推送到仓库，可通过以下地址访问:" >> $GITHUB_STEP_SUMMARY
+          echo "- Raw URL: \`https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/.github/coverage/coverage-final.json\`" >> $GITHUB_STEP_SUMMARY
+          echo "- GitHub URL: \`https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/.github/coverage/coverage-final.json\`" >> $GITHUB_STEP_SUMMARY
+      
+      - name: 更新覆盖率 JSON 到仓库（供官网使用）
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          mkdir -p .github/coverage
+          cp coverage/coverage-final.json .github/coverage/coverage-final.json
+          git add .github/coverage/coverage-final.json
+          if git diff --staged --quiet; then
+            echo "覆盖率数据未发生变化，跳过提交"
+          else
+            git commit -m "chore: update test coverage data [skip ci]"
+            git push origin ${{ github.ref_name }}
+          fi
       
