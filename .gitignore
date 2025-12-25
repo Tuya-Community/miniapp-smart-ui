@@ -15,6 +15,7 @@ build/private.wx1c01b35002d3ba14.key
 project.private.config.json
 *.tgz
 coverage
+!.github/coverage
 dist
 lib
 micro-app
