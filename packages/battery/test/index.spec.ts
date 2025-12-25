@@ -209,7 +209,7 @@ describe('battery', () => {
     await simulate.sleep(10);
 
     // When value is 100 (> 50), should use highColor
-    expect(wrapper?.data.insideColor).toBe('var(--smart-ui-battery-body-high-background)');
+    expect(wrapper?.data.insideColor).toBe('var(--app-B1-N1)');
   });
 
   test('should use middleColor when value is medium', async () => {

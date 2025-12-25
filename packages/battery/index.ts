@@ -21,7 +21,7 @@ SmartComponent({
     },
     highColor: {
       type: String,
-      value: 'var(--smart-ui-battery-body-high-background)',
+      value: 'var(--app-B1-N1)',
     },
     middleColor: {
       type: String,
@@ -63,8 +63,8 @@ SmartComponent({
 
   methods: {
     init() {
-      const insidePercent = +((this.data.value * 100) / 100).toFixed(0);
-      const insideColor = this.calcColor(this.data.value);
+      const insidePercent = Math.round(Math.min(100, Math.max(0, Math.round(this.data.value))));
+      const insideColor = this.calcColor(insidePercent);
       const sizeData = this.calcSize();
 
       let bodyStyle = '';
@@ -157,7 +157,7 @@ SmartComponent({
       };
     },
 
-    calcColor(top) {
+    calcColor(value) {
       if (this.data.color) {
         return this.data.color;
       }
@@ -166,13 +166,13 @@ SmartComponent({
         return this.data.chargingColor;
       }
 
-      if (top > 50) {
+      if (value > 50) {
         return this.data.highColor;
       }
-      if (top > 20 && top <= 50) {
+      if (value > 20 && value <= 50) {
         return this.data.middleColor;
       }
-      if (top <= 20) {
+      if (value <= 20) {
         return this.data.lowColor;
       }
     },
