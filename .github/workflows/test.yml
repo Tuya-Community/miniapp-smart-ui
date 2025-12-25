@@ -1,7 +1,8 @@
-name: Merge Check Release
+name: test
 on: 
   pull_request:
     branches:
+      - main
       - release/*
 jobs:
   build:
