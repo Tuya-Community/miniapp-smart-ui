@@ -57,7 +57,7 @@ jobs:
           echo "- GitHub URL: \`https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/.github/coverage/coverage-final.json\`" >> $GITHUB_STEP_SUMMARY
       
       - name: 更新覆盖率 JSON 到仓库（供官网使用）
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || contains(github.ref, 'refs/heads/release/'))
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
