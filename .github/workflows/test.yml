@@ -56,14 +56,17 @@ jobs:
           echo "- Raw URL: \`https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/.github/coverage/coverage-final.json\`" >> $GITHUB_STEP_SUMMARY
           echo "- GitHub URL: \`https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/.github/coverage/coverage-final.json\`" >> $GITHUB_STEP_SUMMARY
       
-      - name: 更新覆盖率 JSON 到仓库（供官网使用）
+      - name: 更新覆盖率数据到仓库（供官网和徽章使用）
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           mkdir -p .github/coverage
+          # 复制完整的覆盖率 JSON（供官网使用）
           cp coverage/coverage-final.json .github/coverage/coverage-final.json
-          git add .github/coverage/coverage-final.json
+          # 生成覆盖率摘要 JSON（供 shields.io 徽章使用）
+          node build/update-coverage-badge.js coverage/coverage-final.json .github/coverage/coverage-summary.json
+          git add .github/coverage/coverage-final.json .github/coverage/coverage-summary.json
           if git diff --staged --quiet; then
             echo "覆盖率数据未发生变化，跳过提交"
           else
