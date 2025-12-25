@@ -81,6 +81,7 @@ function calculateCoverage(coveragePath) {
  * @param {Object} coverage - 覆盖率对象
  */
 function generateCoverageSummary(outputPath, coverage) {
+  // shields.io JSON endpoint 只支持特定字段，不能包含额外字段
   const summary = {
     schemaVersion: 1,
     label: 'coverage',
@@ -93,13 +94,6 @@ function generateCoverageSummary(outputPath, coverage) {
         : coverage.statements >= 40
         ? 'orange'
         : 'red',
-    // 详细覆盖率数据
-    coverage: {
-      statements: parseFloat(coverage.statements.toFixed(2)),
-      branches: parseFloat(coverage.branches.toFixed(2)),
-      functions: parseFloat(coverage.functions.toFixed(2)),
-      lines: parseFloat(coverage.lines.toFixed(2)),
-    },
   };
 
   // 确保输出目录存在
