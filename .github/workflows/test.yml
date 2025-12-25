@@ -10,8 +10,11 @@ on:
       - release/*
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
 
     steps:
       - uses: actions/checkout@v4
@@ -40,23 +43,6 @@ jobs:
           path: coverage/coverage-final.json
           retention-days: 30
       
-      - name: 输出 Artifact 访问信息
-        run: |
-          echo "## 📦 Coverage JSON Artifact 访问方式" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 方式一：通过 GitHub UI 下载" >> $GITHUB_STEP_SUMMARY
-          echo "1. 访问工作流运行页面: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
-          echo "2. 在页面右侧找到 **Artifacts** 部分" >> $GITHUB_STEP_SUMMARY
-          echo "3. 点击 **coverage-json** 即可下载" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 方式二：通过 GitHub API 访问" >> $GITHUB_STEP_SUMMARY
-          echo "API 地址: \`https://api.github.com/repos/${{ github.repository }}/actions/artifacts\`" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 方式三：直接访问仓库文件（仅 main/release 分支）" >> $GITHUB_STEP_SUMMARY
-          echo "如果已推送到仓库，可通过以下地址访问:" >> $GITHUB_STEP_SUMMARY
-          echo "- Raw URL: \`https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/.github/coverage/coverage-final.json\`" >> $GITHUB_STEP_SUMMARY
-          echo "- GitHub URL: \`https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/.github/coverage/coverage-final.json\`" >> $GITHUB_STEP_SUMMARY
-      
       - name: 更新覆盖率数据到仓库（供官网和徽章使用）
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
         run: |
@@ -82,4 +68,21 @@ jobs:
               git push origin ${{ github.ref_name }}
             fi
           fi
+
+      - name: 配置 GitHub Pages
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
+        uses: actions/configure-pages@v4
+        with:
+          static_site_generator: custom
+
+      - name: 上传 Coverage 报告到 GitHub Pages
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: coverage/lcov-report
+
+      - name: 部署到 GitHub Pages
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
+        id: deployment
+        uses: actions/deploy-pages@v4
       
