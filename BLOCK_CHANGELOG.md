@@ -79,7 +79,8 @@
 - circle: 使用canvas重构组件
 
 ### Bug Fixes 🐛
-- dialog、toast: 修复组件无法打开问题，增加全局 Id 唯一校验
+- dialog: 修复组件无法打开问题，增加全局 Id 唯一校验
+- toast: 修复组件无法打开问题，增加全局 Id 唯一校验
 
 ## v2.2.0 (2025-2-13)
 
