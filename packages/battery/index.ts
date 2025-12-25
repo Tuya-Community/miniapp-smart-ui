@@ -21,7 +21,7 @@ SmartComponent({
     },
     highColor: {
       type: String,
-      value: 'var(--smart-ui-battery-body-high-background)',
+      value: 'var(--app-B1-N1)',
     },
     middleColor: {
       type: String,
