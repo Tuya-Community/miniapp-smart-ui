@@ -66,8 +66,9 @@ jobs:
           # 复制完整的覆盖率 JSON（供官网使用）
           cp coverage/coverage-final.json .github/coverage/coverage-final.json
           # 生成覆盖率摘要 JSON（供 shields.io 徽章使用）
+          # 会在 .github/coverage 和 docs 目录下各生成一份 coverage-summary.json 和 coverage-final.json
           node build/update-coverage-badge.js coverage/coverage-final.json .github/coverage/coverage-summary.json
-          git add .github/coverage/coverage-final.json .github/coverage/coverage-summary.json
+          git add .github/coverage/coverage-final.json .github/coverage/coverage-summary.json docs/coverage-summary.json docs/coverage-final.json
           if git diff --staged --quiet; then
             echo "覆盖率数据未发生变化，跳过提交"
           else

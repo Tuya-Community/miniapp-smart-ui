@@ -130,8 +130,21 @@ function main() {
   console.log(`  函数覆盖率: ${coverage.functions.toFixed(2)}%`);
   console.log(`  行覆盖率: ${coverage.lines.toFixed(2)}%`);
 
-  // 生成覆盖率摘要 JSON 文件
+  // 生成覆盖率摘要 JSON 文件到 .github/coverage 目录
   generateCoverageSummary(outputPath, coverage);
+
+  // 同时在 docs 目录下也生成一份 coverage-summary.json
+  const docsSummaryPath = path.join(__dirname, '../docs/coverage-summary.json');
+  generateCoverageSummary(docsSummaryPath, coverage);
+
+  // 同时复制 coverage-final.json 到 docs 目录
+  const docsFinalPath = path.join(__dirname, '../docs/coverage-final.json');
+  const docsDir = path.dirname(docsFinalPath);
+  if (!fs.existsSync(docsDir)) {
+    fs.mkdirSync(docsDir, { recursive: true });
+  }
+  fs.copyFileSync(coveragePath, docsFinalPath);
+  console.log(`✅ 已复制覆盖率完整文件到: ${docsFinalPath}`);
 }
 
 main();
