@@ -2,7 +2,7 @@ English | [简体中文](./README-zh_CN.md)
 
 # @tuya-miniapp/smart-ui
 
-![npm](https://img.shields.io/npm/v/@tuya-miniapp/smart-ui)![down](https://img.shields.io/npm/dt/@tuya-miniapp/smart-ui)
+![npm](https://img.shields.io/npm/v/@tuya-miniapp/smart-ui)![down](https://img.shields.io/npm/dt/@tuya-miniapp/smart-ui)![coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Tuya-Community/miniapp-smart-ui/main/.github/coverage/coverage-summary.json)
 
 ## Introduction
 
