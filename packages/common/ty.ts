@@ -1,5 +1,8 @@
+const systemInfo = wx.getSystemInfoSync();
+const isIOS = systemInfo.platform === 'ios';
 const tyApi = {
   vibrateShort: (v: any) => {
+    if (!isIOS) return;
     // @ts-ignore
     if (typeof ty !== 'undefined') {
       // @ts-ignore
@@ -9,6 +12,7 @@ const tyApi = {
     }
   },
   selectionVibrate: () => {
+    if (!isIOS) return;
     // @ts-ignore
     if (typeof ty !== 'undefined') {
       // @ts-ignore
@@ -16,6 +20,7 @@ const tyApi = {
     }
   },
   notificationVibrate: (v: any) => {
+    if (!isIOS) return;
     // @ts-ignore
     if (typeof ty !== 'undefined') {
       // @ts-ignore
@@ -23,6 +28,7 @@ const tyApi = {
     }
   },
   nativeDisabled: (v: boolean) => {
+    if (!isIOS) return;
     // @ts-ignore
     if (typeof ty !== 'undefined') {
       // @ts-ignore

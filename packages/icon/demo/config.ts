@@ -135,6 +135,7 @@ import  {
   Wind,
   XmarkIcloud,
   Xmark,
+  SpeakerMute,
 } from '@tuya-miniapp/icons'
 
 export default {
@@ -274,4 +275,5 @@ export default {
   Wind,
   XmarkIcloud,
   Xmark,
+  SpeakerMute,
 }

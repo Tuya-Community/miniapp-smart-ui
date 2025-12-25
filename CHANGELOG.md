@@ -1,5 +1,31 @@
 # 更新日志
 
+## v2.9.0 (2025-12-23)
+
+### Features ✨
+- bottom-sheet: 新增 lock-scroll 属性禁止遮罩滚动([7eeec64](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/7eeec64c305d0edfd413a3c34db4e3583a03b19c))；新增 lock-max-drag 属性 禁止最大距离拖动([pull/128](https://github.com/Tuya-Community/miniapp-smart-ui/pull/128), [pull/129](https://github.com/Tuya-Community/miniapp-smart-ui/pull/129))
+- search: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- field: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- tab: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- tabbar: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- stepper: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- switch: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- toast: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- slider: IOS 接入震动反馈([7fb416f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/124/commits/7fb416fd10fc267920509b45e27ad9c10841f003))
+- index-bar: IOS 接入震动反馈([pull/110](https://github.com/Tuya-Community/miniapp-smart-ui/pull/110))
+- calendar: IOS 接入震动反馈([pull/109](https://github.com/Tuya-Community/miniapp-smart-ui/pull/109))
+- custom-keyboard: IOS 接入震动反馈([pull/111](https://github.com/Tuya-Community/miniapp-smart-ui/pull/111))
+
+### Bug Fixes  🐛
+
+- dialog: 修复组件未关闭，销毁页面后无法再次打开问题([b4f7472](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/b4f74729ff5964597be13aa0b3e1f70a59d91b48))
+- config-provider: 缩小主题文件体积([3d55091](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/3d5509187dd3830449127b68718bdd95243c13cd))
+- circle: 删除多余样式，防止导致圆环缺角([c4ae523](https://github.com/Tuya-Community/miniapp-smart-ui/pull/114/commits/c4ae5231522e85d09301bc24801066c6857b60b7))
+- picker: 修复 loop 模式部分列无法拖动选中的问题([bed9b37](https://github.com/Tuya-Community/miniapp-smart-ui/pull/113/commits/bed9b37f9fc5a885c031de24c6c5c6f526d72fd9))
+- nav-bar: 对齐涂鸦 UI 标准，side-width 默认值从 mid 调整为 max([64281c8](https://github.com/Tuya-Community/miniapp-smart-ui/pull/125/commits/64281c830cde83b908320085014f394058b257c1))
+- calendar: 对齐涂鸦 UI 标准，删除 --calendar-day-disabled-color，采用 opacity 实现禁用样式，修复深色模式禁用样式问题([pull/126](https://github.com/Tuya-Community/miniapp-smart-ui/pull/126))
+- slider: 修复 parcel 类型时按钮边框间距问题，修复 onChange 回调中 min max 不准确问题，修复按钮隐藏时初始状态异常问题([7fb416f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/124/commits/7fb416fd10fc267920509b45e27ad9c10841f003))
+
 ## v2.8.0 (2025-12-09)
 
 ### Features ✨
@@ -17,8 +43,8 @@
 - picker: 修复 loop 模式部分列无法拖动选中的问题([pull/113](https://github.com/Tuya-Community/miniapp-smart-ui/pull/113))
 - datetime-picker: 修复部分情况下 1月 无法拖动选中的问题([pull/113](https://github.com/Tuya-Community/miniapp-smart-ui/pull/113))
 - circle: 修复外部盒子被挤压导致圆环部分被隐藏情况([pull/115](https://github.com/Tuya-Community/miniapp-smart-ui/pull/115))
-- notice-bar: 修改 --notice-bar-text-color CSS 变量默认值为 rgba(0, 0, 0, 0.5) ([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
-- switch: 修改 --switch-label-active-color、--switch-label-inactive-color CSS 变量默认值为 #FFFFFF ([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
+- notice-bar: 修改 --notice-bar-text-color CSS 变量默认值为 rgba(0, 0, 0, 0.5)，不再依赖 --app-B6-N5 ([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
+- switch: 修改 --switch-label-active-color、--switch-label-inactive-color CSS 变量默认值为 #FFFFFF ，不再依赖 --app-B3 ([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
 
 ## v2.7.3 (2025-11-20)
 
@@ -64,7 +90,7 @@
 - picker: 修复 loop 模式 滚动值切换时，修改列表后滚动报错问题；修复active状态实时更新问题([pull/65](https://github.com/Tuya-Community/miniapp-smart-ui/pull/65))
 - circle: 修复组件内部左右多余空隙问题([fbae95e](https://github.com/Tuya-Community/miniapp-smart-ui/pull/70/commits/fbae95ebbc80836cbacd9a0da7a84ec909498cab))
 - nav-bar: 修复 click-right 事件不生效问题([d0e1f9f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/62/commits/d0e1f9f9b1a7028517a334299b03a07fe5cf206f))
-- popup: 调整组建默认 safe-area-inset-bottom 为 false([c3c79f2](https://github.com/Tuya-Community/miniapp-smart-ui/pull/61/commits/c3c79f2f0efef6595649b426fb5221cb6df83da9))；修复 --popup-background-color 无法设置渐变色问题([37a938a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/68/commits/37a938a0780fe64d24a4e8c20810b1e1434e4ee6))
+- popup: 对齐 UI 标准，调整组件默认 safe-area-inset-bottom 为 false([c3c79f2](https://github.com/Tuya-Community/miniapp-smart-ui/pull/61/commits/c3c79f2f0efef6595649b426fb5221cb6df83da9))；修复 --popup-background-color 无法设置渐变色问题([37a938a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/68/commits/37a938a0780fe64d24a4e8c20810b1e1434e4ee6))
 
 ## v2.7.0(2025-10-21)
 
@@ -87,7 +113,7 @@
 - tab: 修复 color 属性 在 card 模式下的问题([pull/42](https://github.com/Tuya-Community/miniapp-smart-ui/pull/42))
 - notice-bar: 修复 btn-click 事件点击问题([4250d39](https://github.com/Tuya-Community/miniapp-smart-ui/pull/50/commits/4250d39ec89198f115803acaaf82266553bc9f9c))
 - popup: 默认底部安全距离关闭([3da77ee](https://github.com/Tuya-Community/miniapp-smart-ui/pull/54/commits/3da77eecbc51b014fd06b4871d054ddda9d2a1c7))
-- calender: 默认底部安全距离关闭([4c91851](https://github.com/Tuya-Community/miniapp-smart-ui/pull/54/commits/4c91851fe674bcb64a19c830a3f1539da8700dd1))
+- calendar: 默认底部安全距离关闭([4c91851](https://github.com/Tuya-Community/miniapp-smart-ui/pull/54/commits/4c91851fe674bcb64a19c830a3f1539da8700dd1))
 - picker: 修复在 flex 布局下默认没有宽度的问题([f3f4772](https://github.com/Tuya-Community/miniapp-smart-ui/pull/55/commits/f3f47729fd4c1af0eb617cf56d957c2b389f2d4e));修复单位距离不受 fontStyle 属性控制问题([4eb02fc](https://github.com/Tuya-Community/miniapp-smart-ui/pull/55/commits/4eb02fca12cb6feab62e8fdfd7d82d27bc52159c))
 - datetime-picker: 修复在 flex 布局下默认没有宽度的问题([f3f4772](https://github.com/Tuya-Community/miniapp-smart-ui/pull/55/commits/f3f47729fd4c1af0eb617cf56d957c2b389f2d4e))
 - icon: 更新 right、left、down、up 图标,对齐 UI 标准([e1bd07e](https://github.com/Tuya-Community/miniapp-smart-ui/commit/e1bd07ebb2bd411fe82e714b11e603ed68271c9a))
@@ -113,7 +139,7 @@
 ### Bug Fixes 🐛
 - picker: 修复单位对齐问题([fc12155](https://github.com/Tuya-Community/miniapp-smart-ui/pull/28/commits/fc12155f3883d0147cb328c2123442f147fef330));
 - 修改 @tuya-miniapp/icons 资源引入方式([d4921f1](https://github.com/Tuya-Community/miniapp-smart-ui/pull/28/commits/d4921f1763211cb631bcd11a51f8ac0296691b77))
-- calender: 修复 CSS 变量 --calendar-day-height、--calendar-selected-day-size不生效问题([a08cebe](https://github.com/Tuya-Community/miniapp-smart-ui/pull/31/commits/a08cebe8ff8a62c8d544214cfbd5c05b3cce8347), [bfebfa3](https://github.com/Tuya-Community/miniapp-smart-ui/pull/31/commits/bfebfa3a26ec28e9a4a485f9ea1fd73189ed0624))
+- calendar: 修复 CSS 变量 --calendar-day-height、--calendar-selected-day-size不生效问题([a08cebe](https://github.com/Tuya-Community/miniapp-smart-ui/pull/31/commits/a08cebe8ff8a62c8d544214cfbd5c05b3cce8347), [bfebfa3](https://github.com/Tuya-Community/miniapp-smart-ui/pull/31/commits/bfebfa3a26ec28e9a4a485f9ea1fd73189ed0624))
 
 ## v2.6.1(2025-08-14)
 ### Features ✨
@@ -125,18 +151,6 @@
 - picker: 修复单位换行问题([b8075bd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/b8075bd2b48b369db549554bd80c23e5305e9426))
 - stepper: 修复组件到达max或者min时，禁用样式不生效问题([58ce5af](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/58ce5af24c715c9534026fd07121426973578dce))；修改--stepper-button-disabled-color 默认值为 _var(--app-B6, #ffffff)_ ([e0e55fa](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/e0e55fa18f517fafc603a6b9c3035276d6ccaa16))；修复设置 min 或 decimalLength 导致输入框无法删除问题([7cf1cfe](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/7cf1cfe9d0e7ac77db1007d902960b83dde45d9e))
 - image: 修复组件上下多余空隙问题([a42f0ad](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/a42f0ad7e964b0d63de2b5e1dde7aed2efd99b17))
-
-## Engligh
-
-### Features ✨
-- bottom-sheet: Added `show-close` attribute and `title` slot ([fef37bf](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/fef37bf51650810a486ca1e0863ffd421d4711f9))
-
-### Bug Fixes 🐛
-
-- nav-bar: Fixed the issue where long text was not truncated when `left-text-type` was `home` or `title` ([97f91f5](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/97f91f5869860d4cbf8994e11f5a0cffa8ac987e))
-- picker: Fixed the line break issue with units ([b8075bd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/b8075bd2b48b369db549554bd80c23e5305e9426))
-- stepper: Fixed the issue where disabled styles were not applied when reaching `max` or `min` ([58ce5af](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/58ce5af24c715c9534026fd07121426973578dce)); changed the default value of `--stepper-button-disabled-color` to _var(--app-B6, #ffffff)_ ([e0e55fa](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/e0e55fa18f517fafc603a6b9c3035276d6ccaa16)); fixed the issue where the input box could not be cleared when `min` or `decimalLength` was set ([7cf1cfe](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/7cf1cfe9d0e7ac77db1007d902960b83dde45d9e))
-- image: Fixed the issue of extra space above and below the component ([a42f0ad](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/a42f0ad7e964b0d63de2b5e1dde7aed2efd99b17))
 
 
 ## v2.6.0(2025-07-31)
@@ -194,7 +208,7 @@
 - 新增动态引入插件 SmartUIAutoImport 修改导出目录结构，配合 ray cli 实现按需引入组件资源
 - picker: 新增 --picker-option-unit-mid-size CSS 变量
 - slider: 支持 thumb、bar插槽
-- switch: 新增 --switch-node-on-background-color CSS 变量
+- switch: 新增单独定义开启时背景色，新增 --switch-node-on-background-color CSS 变量
 
 ### Bug Fixes 🐛
 - circle：修复 customStyle属性无效、优化绘制模糊问题
@@ -231,7 +245,7 @@
 
 ### Bug Fixes 🐛
 - action-sheet: 修复组件关闭动画卡顿问题
-- checkbox: 修复结合 cell 使用时，点击按钮会导致两次修改事件从而选中无效问题
+- checkbox: 修复结合 cell 使用时，点击阻止冒泡，点击按钮会导致两次修改事件从而选中无效问题
 - icon: 修复Svg path 方式使用时，颜色传rgba 解析无效问题
 - field: 修复 placeholderStyle 属性和 CSS变量 --field-placeholder-text-color 设置问题
 
@@ -248,7 +262,7 @@
 - tabbar: 修复 activeColor 属性默认值取优先取 --tabbar-item-active-color
 - tab: 修复 onBeforeChange 取消时控制台报错问题
 - toast: 修复 toast bottom和top位置时中间存在遮挡问题
-
+- dialog: 删除 --smart-dialog--round-button-border-radius CSS 变量 替换为 --dialog--round-button-border-radius
 
 ## v2.3.3(2025-03-18)
 ### Features ✨
@@ -281,7 +295,7 @@
 
 ### Bug Fixes 🐛
 - datetime-picker: 修复12小时模式受控使用问题
-- slider: 用法说明文档补充 & 修复双向滑块RangeSlider inActiveColor 无效问题
+- slider: 用法说明文档补充 & 修复双向滑块Rangeslider inActiveColor 无效问题
 - transition: 修复组件频繁调用动画问题
 - dialog、toast: 修复组件无法打开问题，增加全局 Id 唯一校验
 
@@ -292,61 +306,61 @@
 - calendar：修复 type 属性动态切换时显示问题；优化年选择的范围控制
 
 
-### v2.2.0 (2025-2-13)
+## v2.2.0 (2025-2-13)
 
 ### Bug Fixes 🐛
 - Icon: 修复异常repeat现象
-- Picker: 修复滚动丝滑问题
-- NavBar: 修复初始化顶部安全距离位移问题
-- Slider: 修复垂直方向值计算
-- Stepper: 修复内部图标显示问题
-- Dialog: 修复重复调用时，无法打开弹窗问题
+- picker: 修复滚动丝滑问题
+- nav-bar: 修复初始化顶部安全距离位移问题
+- slider: 修复垂直方向值计算
+- stepper: 修复内部图标显示问题，内置Icon图标
+- dialog: 修复重复调用时，无法打开弹窗问题
 - 修复单元测试ESM问题
  
 ### Features ✨
-- DateTimePicker: 新增 is12HourClock, amText, pmText 属性，支持12小时选择
-- DateTimePicker: 新增 columnsOrder 属性支持自定义时间列顺序；新增 formatterMap 属性支持自定义时间文案；新增 changeAnimation 属性支持关闭改动动画
-- Stepper: 新增滚动震动反馈
-- Picker: 增加滚动震动反馈；新增 changeAnimation 属性支持关闭改动动画；新增 order 属性支持修改flex order样式
-- ActionSheet: 新增 --action-sheet-active-icon-color css 变量
-- Slider: 新增 useParcelPadding 属性
+- datetime-picker: 新增 is12HourClock, amText, pmText 属性，支持12小时选择
+- datetime-picker: 新增 columnsOrder 属性支持自定义时间列顺序；新增 formatterMap 属性支持自定义时间文案；新增 changeAnimation 属性支持关闭改动动画
+- stepper: 新增滚动震动反馈
+- picker: 增加滚动震动反馈；新增 changeAnimation 属性支持关闭改动动画；新增 order 属性支持修改flex order样式
+- action-sheet: 新增 --action-sheet-active-icon-color css 变量
+- slider: 新增 useParcelPadding 属性
 - Tabbar: 新增 left 和 right 插槽
-- Stepper: 新增 css 变量 --stepper-button-border, --stepper-button-icon-font-size 
+- stepper: 新增 css 变量 --stepper-button-border, --stepper-button-icon-font-size 
 
 ## v2.1.10 (2025-1-13)
 ### Bug Fixes 🐛
- - 修复 notice-bar 背景色有透明度问题，修改的CSS变量：--notice-bar-info-color、--notice-bar-warning-color、--notice-bar-error-color;
+- 修复 notice-bar 背景色有透明度问题，修改的CSS变量：--notice-bar-info-color、--notice-bar-warning-color、--notice-bar-error-color;
 
 ## v2.1.8 (2024-01-06)
 ### Bug Fixes 🐛
- - 修复toast、dialog api方式调用时获取context错误导致无法获取组件实例问题
+- 修复toast、dialog api方式调用时获取context错误导致无法获取组件实例问题
 
 ## v2.1.7 (2024-12-27)
 ### Bug Fixes 🐛
- - Dialog: 
+- dialog: 
    1. 修复快速调用 DialogInstance 导致渲染异常无效销毁
    2. 修复方法调用缺失 confirmButtonColor & cancelButtonColor 类型
    3. 删除dialog组件方式使用的beforeClose类型;
- - Circle：style属性警告修复
- - ConfigProvider: 修复内部对 Dialog 缺失的主题变量
- - Progress： 暂无相关业务场景，隐藏此组件
- - NoticeBar: 修复CSS变量无法覆盖问题
- - CustomKeyboard: 修复CSS变量无法覆盖问题
- - TreeSelect: 修复CSS变量无法覆盖问题
+- circle：style属性警告修复
+- config-provider: 修复内部对 dialog 缺失的主题变量
+- progress： 暂无相关业务场景，隐藏此组件
+- notice-bar: 修复CSS变量无法覆盖问题
+- custom-keyboard: 修复CSS变量无法覆盖问题
+- tree-select: 修复CSS变量无法覆盖问题
 
 ### Features ✨
- - 组件实现ESM方式打包，支持tree-shaking
- - @tuya-miniapp/icons 实现ESM方式打包，支持tree-shaking
- - IndexBar: 新增 scrollable 属性默认禁止 Sidebar 滚动触发索引变更
- - Dialog: 新增 --dialog-cancel-color & --dialog-confirm-color CSS 变量支持
- - NoticeBar：新增 --notice-bar-right-icon-color CSS变量
- - Stepper：新增 --stepper-container-background-color CSS变量
- - Circle：新增 customStyle 属性，提示废弃style属性
+- 组件实现ESM方式打包，支持tree-shaking
+- @tuya-miniapp/icons 实现ESM方式打包，支持tree-shaking
+- index-bar: 新增 scrollable 属性默认禁止 Sidebar 滚动触发索引变更
+- dialog: 新增 --dialog-cancel-color & --dialog-confirm-color CSS 变量支持
+- notice-bar：新增 --notice-bar-right-icon-color CSS变量
+- stepper：新增 --stepper-container-background-color CSS变量
+- Circle：新增 customStyle 属性，提示废弃style属性，size 属性支持字符串
 
 ## v2.1.6 (2024-12-19)
 ### Bug Fixes 🐛
- - 修复 toast 宽度默认值以及屏幕居中问题
- - 修复 slider 滑动时屏幕滚动问题；
+- 修复 toast 宽度默认值以及屏幕居中问题
+- 修复 slider 滑动时屏幕滚动问题；
 
 ## v2.1.5 (2024-12-10)
 ## 变更内容: 
@@ -414,4 +428,4 @@
 
 ## v1.2.6（2024-9-12）
 ### Bug Fixes 🐛
-- picker: 修复 PickerColumn 了滚动到极端时未触发`change`事件的问题。
+- picker: 修复 pickerColumn 了滚动到极端时未触发`change`事件的问题。

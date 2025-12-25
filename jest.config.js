@@ -18,6 +18,7 @@ module.exports = {
     '!**/demo/**',
     '!**/common/**',
   ],
+  // coverageReporters: ['text', 'lcov', 'cobertura', 'html'],
   preset: 'ts-jest',
   snapshotSerializers: ['miniprogram-simulate/jest-snapshot-plugin'],
 };

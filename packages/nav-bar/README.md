@@ -290,7 +290,7 @@ Page({
 | right-icon-size `v2.7.0` | 右侧图标大小    | _number_  | `32px`   |
 | left-icon-color `v2.7.0` | 左侧图标颜色    | _string_  | -   |
 | background `v2.7.0` | 整体背景色    | _string_  | -   |
-| side-width `v2.7.3` | 两边控制栏的宽度, 提供 `min`、`mid`、`max`三档内置值；也可以传具体宽度值    | _string\/number\/`min`\/`mid`\/`max`_  | `mid` `v2.7.3` `max` `v2.8.1`   |
+| side-width `v2.7.3` | 两边控制栏的宽度, 提供 `min`、`mid`、`max`三档内置值；也可以传具体宽度值    | _string\/number\/`min`\/`mid`\/`max`_  | `mid` `v2.7.3` `max` `v2.9.0`   |
 
 ### Slot
 

@@ -143,11 +143,6 @@ category: 通用
 | size         | 按钮尺寸，可选值为 `normal` `large` `small` `mini`       | _string_  | `normal`     |
 | square       | 是否为方形按钮                                           | _boolean_ | `false`      |
 | type         | 按钮类型，可选值为 `primary` `info` `warning` `danger`   | _string_  | `default`    |
-| send-message-img | sendMessageImg | _string_ | 截图 |
-| send-message-path | 会话内消息卡片点击跳转小程序路径 | _string_ | 当前分享路径 |
-| send-message-title | 会话内消息卡片标题 | _string_ | 当前标题 |
-| session-from | 会话来源 | _string_ | - |
-| show-message-card | 显示会话内消息卡片 | _string_ | `false` |
 
 ### Events
 
@@ -155,8 +150,6 @@ category: 通用
 | ---------- | ---------------------------------------- | ---- |
 | bind:click | 点击按钮，且按钮状态不为加载或禁用时触发 | -    |
 | bind:error | 当使用开放能力时，发生错误的回调 | - |
-| bind:getrealtimephonenumber `v1.10.21` | 获取手机号实时验证回调，open-type=getRealtimePhoneNumber 时有效 | - |
-| bind:opensetting | 在打开授权设置页后回调 | - |
 
 > Button 提供的是 click 事件而不是原生 tap 事件，按钮禁用时，click 事件不会触发，tap 事件依然会触发。
 
