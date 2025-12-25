@@ -69,20 +69,21 @@ jobs:
             fi
           fi
 
-      - name: 配置 GitHub Pages
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
-        uses: actions/configure-pages@v4
-        with:
-          static_site_generator: custom
+      # - name: 配置 GitHub Pages
+      #   if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
+      #   uses: actions/configure-pages@v4
+      #   with:
+      #     static_site_generator: custom
+      #     enablement: true
 
-      - name: 上传 Coverage 报告到 GitHub Pages
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: coverage/lcov-report
+      # - name: 上传 Coverage 报告到 GitHub Pages
+      #   if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: coverage/lcov-report
 
-      - name: 部署到 GitHub Pages
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # - name: 部署到 GitHub Pages
+      #   if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
+      #   id: deployment
+      #   uses: actions/deploy-pages@v4
       
