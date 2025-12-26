@@ -2,7 +2,7 @@
 
 # @tuya-miniapp/smart-ui
 
-![CI status](https://github.com/Tuya-Community/miniapp-smart-ui/actions/workflows/test.yml/badge.svg) ![coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Tuya-Community/miniapp-smart-ui/release/2.x/.github/coverage/coverage-summary.json) ![npm](https://img.shields.io/npm/v/@tuya-miniapp/smart-ui)![down](https://img.shields.io/npm/dt/@tuya-miniapp/smart-ui)
+![CI status](https://github.com/Tuya-Community/miniapp-smart-ui/actions/workflows/test.yml/badge.svg) ![coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Tuya-Community/miniapp-smart-ui/release/2.x/.github/coverage/coverage-summary.json) ![npm](https://img.shields.io/npm/v/@tuya-miniapp/smart-ui) ![down](https://img.shields.io/npm/dt/@tuya-miniapp/smart-ui)
 
 ## 介绍
 
