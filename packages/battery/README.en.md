@@ -71,10 +71,10 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 | background-color | Battery background color              | _string_                   | -          |
 | color `v2.6.2`   | Battery color (highest priority)      | _string_                   | -          |
 | high-color       | Color when battery level is high      | _string_                   | `#70CF98`  |
-| in-charging `v2.8.1`      | Whether the battery is charging       | _boolean_                  | `false`    |
+| in-charging `v2.10.0`      | Whether the battery is charging       | _boolean_                  | `false`    |
 | low-color        | Color when battery level is low       | _string_                   | `#FF4444`  |
 | middle-color     | Color when battery level is medium    | _string_                   | `#F5A623`  |
-| show-text  `v2.8.1`       | Whether to display battery level text | _boolean_                  | `false`    |
+| show-text  `v2.10.0`       | Whether to display battery level text | _boolean_                  | `false`    |
 | size             | Size                                  | _number_                   | 10         |
 | type             | Battery orientation                   | `vertical` \| `horizontal` | `vertical` |
 | value            | Battery level                         | _number_                   | 70         |

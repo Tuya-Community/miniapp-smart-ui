@@ -71,10 +71,10 @@ category: 通用
 | background-color | 电量背景色               | _string_                   | -          |
 | color `v2.6.2`   | 电量的颜色（优先级最高） | _string_                   | -          |
 | high-color       | 电量高的颜色             | _string_                   | `#70CF98`  |
-| in-charging `v2.8.1`      | 是否处于充电状态         | _boolean_                  | `false`    |
+| in-charging `v2.10.0`      | 是否处于充电状态         | _boolean_                  | `false`    |
 | low-color        | 电量低的颜色             | _string_                   | `#FF4444`  |
 | middle-color     | 电量中的颜色             | _string_                   | `#F5A623`  |
-| show-text `v2.8.1`        | 是否显示电量文本         | _boolean_                  | `false`    |
+| show-text `v2.10.0`        | 是否显示电量文本         | _boolean_                  | `false`    |
 | size             | 尺寸                     | _number_                   | 10         |
 | type             | 电池方向                 | `vertical` \| `horizontal` | `vertical` |
 | value            | 电量值                   | _number_                   | 70         |
