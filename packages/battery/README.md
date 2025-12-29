@@ -87,7 +87,8 @@ category: 通用
 | ------------------------------------------- | --------------------- | -------------- |
 | --battery-body-base-background     | _var(--smart-ui-battery-body-base-background, rgba(0, 0, 0, 0.25))_ | 电池主体背景色 |
 | --battery-body-charging-background | _#2fc755_             | 充电状态背景色 |
-| --battery-body-low-background      | _#ee652e_             | 低电量背景色   |
+| --battery-body-high-background   | _var(--app-B1-N1, rgba(0, 0, 0, 0.9))_  | 高电量背景色   |
 | --battery-body-middle-background   | _#ffcb00_             | 中电量背景色   |
+| --battery-body-low-background      | _#ee652e_             | 低电量背景色   |
 | --battery-slash-border-color       | _var(--smart-ui-battery-slash-border-color, #ffffff)_   | 斜线边框颜色   |
 | --battery-text-color               | _var(--smart-ui-battery-text-color, rgba(0, 0, 0, 0.6))_  | 电量文本颜色   |
