@@ -63,10 +63,10 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 ### Custom Size
 
 ```html
-<smart-battery size="20" value="100" />
-<smart-battery size="15" value="100" />
-<smart-battery size="10" value="100" />
-<smart-battery size="5" value="100" />
+<smart-battery type="horizontal" size="28" value="100" />
+<smart-battery show-text type="horizontal" size="28" value="100" />
+<smart-battery size="28" value="100" />
+<smart-battery show-text size="28" value="100" />
 ```
 
 ## API
@@ -83,7 +83,7 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 | in-charging `v2.10.0`      | Whether the battery is charging       | _boolean_                  | `false`    |
 | charging-color `v2.10.0`      | Charging Color        | _string_                  | `#2fc755`    |
 | show-text  `v2.10.0`       | Whether to display battery level text | _boolean_                  | `false`    |
-| size             | Size                                  | _number_                   | 10         |
+| size             | Size                                  | _number_                   | 24         |
 | type             | Battery orientation                   | `vertical` \| `horizontal` | `vertical` |
 | value            | Battery level                         | _number_                   | 70         |
 

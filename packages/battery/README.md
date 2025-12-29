@@ -65,10 +65,10 @@ category: 通用
 ### 自定义大小
 
 ```html
-<smart-battery size="20" value="100" />
-<smart-battery size="15" value="100" />
-<smart-battery size="10" value="100" />
-<smart-battery size="5" value="100" />
+<smart-battery type="horizontal" size="28" value="100" />
+<smart-battery show-text type="horizontal" size="28" value="100" />
+<smart-battery size="28" value="100" />
+<smart-battery show-text size="28" value="100" />
 ```
 
 ## API

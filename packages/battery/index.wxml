@@ -5,7 +5,7 @@
         class="smart-battery-body {{ value === 0 ? '' : 'smart-battery-overflow-hidden' }} {{ type === 'vertical' ? 'smart-battery-body-vertical' : 'smart-battery-body-horizontal' }}"
         style="{{ bodyStyle }}">
         <view class="smart-battery-bar {{ type === 'vertical' ? 'smart-battery-bar-vertical' : 'smart-battery-bar-horizontal' }}"
-          style="background-color: {{ insideColor }}; {{insidePercentStr}}">
+          style="background-color: {{ color || insideColor }}; {{insidePercentStr}}">
         </view>
         <view class="smart-battery-icon" wx:if="{{ inCharging }}" style="{{chargingSvg}}"></view>
         <view wx:if="{{ value === 0 && !inCharging }}"
@@ -17,7 +17,7 @@
       </view>
       <view 
         class="smart-battery-dot {{ type === 'vertical' ? 'smart-battery-dot-vertical' : 'smart-battery-dot-horizontal' }} {{ insideBotBgClass }}"
-        style="{{ dotStyle }}"
+        style="background-color: {{ value === 100 && color }};{{ dotStyle }}"
       ></view>
     </view>
   </view>
