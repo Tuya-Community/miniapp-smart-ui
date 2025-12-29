@@ -85,10 +85,10 @@ category: 通用
 
 | 名称                                        | 默认值                | 描述           |
 | ------------------------------------------- | --------------------- | -------------- |
-| --battery-body-base-background     | _var(--smart-ui-battery-body-base-background, rgba(0, 0, 0, 0.25))_ | 电池主体背景色 |
-| --battery-body-charging-background | _#2fc755_             | 充电状态背景色 |
-| --battery-body-high-background   | _var(--app-B1-N1, rgba(0, 0, 0, 0.9))_  | 高电量背景色   |
-| --battery-body-middle-background   | _#ffcb00_             | 中电量背景色   |
-| --battery-body-low-background      | _#ee652e_             | 低电量背景色   |
-| --battery-slash-border-color       | _var(--smart-ui-battery-slash-border-color, #ffffff)_   | 斜线边框颜色   |
-| --battery-text-color               | _var(--smart-ui-battery-text-color, rgba(0, 0, 0, 0.6))_  | 电量文本颜色   |
+| --battery-body-base-background `v2.10.0`     | _var(--smart-ui-battery-body-base-background, rgba(0, 0, 0, 0.25))_ | 电池主体背景色 |
+| --battery-body-charging-background `v2.10.0` | _#2fc755_             | 充电状态背景色 |
+| --battery-body-high-background `v2.10.0`   | _var(--app-B1-N1, rgba(0, 0, 0, 0.9))_  | 高电量背景色   |
+| --battery-body-middle-background `v2.10.0`   | _#ffcb00_             | 中电量背景色   |
+| --battery-body-low-background `v2.10.0`      | _#ee652e_             | 低电量背景色   |
+| --battery-slash-border-color `v2.10.0`       | _var(--smart-ui-battery-slash-border-color, #ffffff)_   | 斜线边框颜色   |
+| --battery-text-color `v2.10.0`  | _var(--smart-ui-battery-text-color, rgba(0, 0, 0, 0.6))_  | 电量文本颜色   |
