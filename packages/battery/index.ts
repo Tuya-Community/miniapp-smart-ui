@@ -11,7 +11,7 @@ SmartComponent({
     },
     size: {
       type: Number,
-      value: 10,
+      value: 24,
       observer: 'init',
     },
     value: {
@@ -114,7 +114,8 @@ SmartComponent({
         insideColor,
         insidePercentStr:
           this.data.type === 'vertical' ? `height: ${insidePercent}%` : `width: ${insidePercent}%`,
-        insideBotBgClass: String(insidePercent) === '100' ? 'high-bg' : 'base-bg',
+        insideBotBgClass:
+          String(insidePercent) === '100' ? 'smart-battery-high-bg' : 'smart-battery-base-bg',
         chargingSvg: this.toSvgCssBackground(chargingSvg),
         bodyStyle,
         dotStyle,

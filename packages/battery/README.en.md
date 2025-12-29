@@ -23,7 +23,6 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 ### Basic Usage
 
 ```html
-<smart-battery size="20" value="100" />
 <smart-battery value="80" />
 <smart-battery value="50" />
 <smart-battery value="20" />
@@ -41,10 +40,9 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 <smart-battery type="horizontal" value="0" />
 ```
 
-### Basic Usage(With Percent)
+### Show Percentage
 
 ```html
-<smart-battery size="20" value="100" />
 <smart-battery value="80" />
 <smart-battery value="50" />
 <smart-battery value="20" />
@@ -52,7 +50,7 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 <smart-battery in-charging value="80" />
 ```
 
-### Horizontal(With Percent)
+### Horizontal(Show Percentage)
 
 ```html
 <smart-battery type="horizontal" value="100" />
@@ -60,6 +58,15 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 <smart-battery type="horizontal" value="10" />
 <smart-battery type="horizontal" value="3" />
 <smart-battery type="horizontal" value="0" />
+```
+
+### Custom Size
+
+```html
+<smart-battery size="20" value="100" />
+<smart-battery size="15" value="100" />
+<smart-battery size="10" value="100" />
+<smart-battery size="5" value="100" />
 ```
 
 ## API

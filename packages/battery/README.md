@@ -41,7 +41,7 @@ category: 通用
 <smart-battery type="horizontal" value="0" />
 ```
 
-### 基础用法(百分比)
+### 显示百分比
 
 ```html
 <smart-battery size="20" value="100" />
@@ -52,7 +52,7 @@ category: 通用
 <smart-battery in-charging value="80" />
 ```
 
-### 水平(百分比)
+### 水平(显示百分比)
 
 ```html
 <smart-battery type="horizontal" value="100" />
@@ -60,6 +60,15 @@ category: 通用
 <smart-battery type="horizontal" value="10" />
 <smart-battery type="horizontal" value="3" />
 <smart-battery type="horizontal" value="0" />
+```
+
+### 自定义大小
+
+```html
+<smart-battery size="20" value="100" />
+<smart-battery size="15" value="100" />
+<smart-battery size="10" value="100" />
+<smart-battery size="5" value="100" />
 ```
 
 ## API

@@ -1,21 +1,21 @@
-<view class="container">
-  <view class="contain {{ type === 'vertical' ? 'contain-vertical' : 'contain-horizontal' }}">
+<view class="smart-battery">
+  <view class="smart-battery-contain {{ type === 'vertical' ? 'smart-battery-contain-vertical' : 'smart-battery-contain-horizontal' }}">
     <view
-      class="body {{ value === 0 ? '' : 'overflow-hidden' }} {{ type === 'vertical' ? 'body-vertical' : 'body-horizontal' }}"
+      class="smart-battery-body {{ value === 0 ? '' : 'smart-battery-overflow-hidden' }} {{ type === 'vertical' ? 'smart-battery-body-vertical' : 'smart-battery-body-horizontal' }}"
       style="{{ bodyStyle }}">
-      <view class="bar {{ type === 'vertical' ? 'bar-vertical' : 'bar-horizontal' }}"
+      <view class="smart-battery-bar {{ type === 'vertical' ? 'smart-battery-bar-vertical' : 'smart-battery-bar-horizontal' }}"
         style="background-color: {{ insideColor }}; {{insidePercentStr}}">
       </view>
-      <view class="icon" wx:if="{{ inCharging }}" style="{{chargingSvg}}"></view>
+      <view class="smart-battery-icon" wx:if="{{ inCharging }}" style="{{chargingSvg}}"></view>
       <view wx:if="{{ value === 0 && !inCharging }}"
-        class="zero {{ type === 'vertical' ? 'zero-vertical' : 'zero-horizontal' }}" style="{{ zeroStyle }}">
-        <view class="zero zero-inner {{ type === 'vertical' ? 'zero-inner-vertical' : 'zero-inner-horizontal' }}"
+        class="smart-battery-zero {{ type === 'vertical' ? 'smart-battery-zero-vertical' : 'smart-battery-zero-horizontal' }}" style="{{ zeroStyle }}">
+        <view class="smart-battery-zero smart-battery-zero-inner {{ type === 'vertical' ? 'smart-battery-zero-inner-vertical' : 'smart-battery-zero-inner-horizontal' }}"
           style="{{ zeroInnerStyle }}">
         </view>
       </view>
     </view>
-    <view class="dot {{ type === 'vertical' ? 'dot-vertical' : 'dot-horizontal' }} {{ insideBotBgClass }}"
+    <view class="smart-battery-dot {{ type === 'vertical' ? 'smart-battery-dot-vertical' : 'smart-battery-dot-horizontal' }} {{ insideBotBgClass }}"
       style="{{ dotStyle }}"></view>
   </view>
-  <view class="text" wx:if="{{ showText }}">{{ value }}%</view>
+  <view class="smart-battery-text" wx:if="{{ showText }}">{{ value }}%</view>
 </view>
