@@ -10,7 +10,7 @@ var v5 = "rgba(0, 0, 0, 0.2)";
 var v6 = "rgba(0, 0, 0, 0.1)";
 var v7 = "rgba(0, 0, 0, 0.4)";
 var v8 = "rgba(0, 0, 0, 0.03)";
-var v10 = "rgba(255, 255, 255, 1)";
+var v10 = "#fff";
 var v12 = "rgba(255, 255, 255, 0.03)";
 
 lightVars["--app-B1"] = v0; // 背景色B1
@@ -94,5 +94,8 @@ lightVars["--smart-ui-overlay"] = v7; // 遮罩层
 lightVars["--smart-ui-bottom-sheet-dragger-node-background"] = v4; // 底部导航栏背景
 lightVars["--smart-ui-dialog-background"] = v10; // 弹窗背景色
 lightVars["--smart-ui-border-image"] = "linear-gradient(to right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0))"; // 边框图片
+darkVars["--smart-ui-battery-body-base-background"] = "rgba(0, 0, 0, 0.25)"; // 电池主体背景色
+darkVars["--smart-ui-battery-text-color"] = "rgba(0, 0, 0, 0.6)"; // 电量文本颜色
+darkVars["--smart-ui-battery-slash-border-color"] = v10; // 电池边框颜色
 
 module.exports = lightVars;

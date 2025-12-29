@@ -74,7 +74,7 @@ category: 通用
 | middle-color     | 电量中的颜色             | _string_                   | `#F5A623`  |
 | low-color        | 电量低的颜色             | _string_                   | `#FF4444`  |
 | in-charging `v2.10.0`      | 是否处于充电状态         | _boolean_                  | `false`    |
-| charging-color `v2.10.0`      | 充电颜色        | _string_                  | `var(--battery-body-charging-background, #2fc755)`    |
+| charging-color `v2.10.0`      | 充电颜色        | _string_                  | `#2fc755`    |
 | show-text `v2.10.0`        | 是否显示电量文本         | _boolean_                  | `false`    |
 | size             | 尺寸                     | _number_                   | 10         |
 | type             | 电池方向                 | `vertical` \| `horizontal` | `vertical` |
