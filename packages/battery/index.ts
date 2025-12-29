@@ -56,6 +56,7 @@ SmartComponent({
     dotStyle: '',
     zeroStyle: '',
     zeroInnerStyle: '',
+    containStyle: '',
   },
 
   created() {
@@ -64,7 +65,8 @@ SmartComponent({
 
   methods: {
     init() {
-      const insidePercent = Math.round(Math.min(100, Math.max(0, Math.round(this.data.value))));
+      const { value, backgroundColor, type, size } = this.data;
+      const insidePercent = Math.round(Math.min(100, Math.max(0, Math.round(value))));
       const insideColor = this.calcColor(insidePercent);
       const sizeData = this.calcSize();
 
@@ -89,11 +91,9 @@ SmartComponent({
           zeroBorderRadius,
         } = sizeData;
 
-        const backgroundColorStyle = this.data.backgroundColor
-          ? `background-color: ${this.data.backgroundColor};`
-          : '';
+        const backgroundColorStyle = backgroundColor ? `background-color: ${backgroundColor};` : '';
         const isFull = String(insidePercent) === '100';
-        if (this.data.type === 'horizontal') {
+        if (type === 'horizontal') {
           bodyStyle = `width: ${height}px; height: ${width}px; border-radius: ${borderRadius}px; ${backgroundColorStyle}`;
           dotStyle = `width: ${dotHeight}px; height: ${dotWidth}px; margin-left: ${dotPadding}px; border-radius: ${dotBorderRadius}px; ${
             isFull ? '' : backgroundColorStyle
@@ -109,11 +109,12 @@ SmartComponent({
           zeroInnerStyle = `width: ${zeroInnerWidth}px; height: ${zeroInnerHeight}px;`;
         }
       }
-
+      const containStyle = `width: ${size}px;height: ${size}px;`;
+      const insidePercentStr =
+        type === 'vertical' ? `height: ${insidePercent}%` : `width: ${insidePercent}%`;
       this.setData({
         insideColor,
-        insidePercentStr:
-          this.data.type === 'vertical' ? `height: ${insidePercent}%` : `width: ${insidePercent}%`,
+        insidePercentStr,
         insideBotBgClass:
           String(insidePercent) === '100' ? 'smart-battery-high-bg' : 'smart-battery-base-bg',
         chargingSvg: this.toSvgCssBackground(chargingSvg),
@@ -121,6 +122,7 @@ SmartComponent({
         dotStyle,
         zeroStyle,
         zeroInnerStyle,
+        containStyle,
       });
     },
 
@@ -129,20 +131,20 @@ SmartComponent({
         // 使用css变量的值
         return;
       }
-      const width = 1 * this.data.size; // 10
-      const height = 1.8 * this.data.size; // 18
-      const borderRadius = this.data.size * 0.2; // 2
+      const width = (this.data.size * 10) / 24; // 10
+      const height = (this.data.size * 20) / 24; // 20
+      const borderRadius = this.data.size / 12; // 2
 
-      const dotWidth = this.data.size * 0.4; // 4 !
-      const dotHeight = this.data.size * 0.15; // 1.5 !
-      const dotBorderRadius = this.data.size * 0.05; // 0.5
-      const dotPadding = this.data.size * 0.05; // 0.5
+      const dotWidth = this.data.size / 6; // 4 !
+      const dotHeight = this.data.size / 16; // 1.5 !
+      const dotBorderRadius = this.data.size / 48; // 0.5
+      const dotPadding = this.data.size / 48; // 0.5
 
-      const zeroWidth = this.data.size * 0.4; // 4 !
-      const zeroHeight = this.data.size * 1.6; // 16
-      const zeroInnerWidth = this.data.size * 0.15; // 1.5 !
-      const zeroInnerHeight = this.data.size * 1.6; // 16
-      const zeroBorderRadius = this.data.size * 0.2; // 2
+      const zeroWidth = this.data.size / 6; // 4 !
+      const zeroHeight = this.data.size / 1.5; // 16
+      const zeroInnerWidth = this.data.size / 16; // 1.5 !
+      const zeroInnerHeight = this.data.size / 1.5; // 16
+      const zeroBorderRadius = this.data.size / 12; // 2
       return {
         width,
         height,

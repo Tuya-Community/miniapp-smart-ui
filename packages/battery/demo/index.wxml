@@ -36,11 +36,11 @@
 </demo-block>
 <demo-block title="{{I18n.t('customSize')}}">
   <view class="line w-180">
-    <smart-battery type="horizontal" size="12" value="100" />
-    <smart-battery show-text type="horizontal" size="12" value="100" />
+    <smart-battery type="horizontal" size="28" value="99" />
+    <smart-battery show-text type="horizontal" size="28" value="99" />
   </view>
   <view class="line w-180">
-    <smart-battery size="12" value="100" />
-    <smart-battery show-text size="12" value="100" />
+    <smart-battery size="28" value="99" />
+    <smart-battery show-text size="28" value="99" />
   </view>
 </demo-block>
