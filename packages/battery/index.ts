@@ -45,6 +45,7 @@ SmartComponent({
       type: Boolean,
       value: false,
     },
+    onCalcColor: null,
   },
 
   data: {
@@ -158,6 +159,9 @@ SmartComponent({
     },
 
     calcColor(value) {
+      if (typeof this.data.onCalcColor === 'function') {
+        return this.data.onCalcColor();
+      }
       if (this.data.color) {
         return this.data.color;
       }
