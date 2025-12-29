@@ -21,19 +21,19 @@ SmartComponent({
     },
     highColor: {
       type: String,
-      value: 'var(--app-B1-N1)',
+      value: 'var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9)))',
     },
     middleColor: {
       type: String,
-      value: 'var(--smart-ui-battery-body-middle-background)',
+      value: 'var(--battery-body-middle-background, #ffcb00)',
     },
     lowColor: {
       type: String,
-      value: 'var(--smart-ui-battery-body-low-background)',
+      value: 'var(--battery-body-low-background, #ee652e)',
     },
     chargingColor: {
       type: String,
-      value: 'var(--smart-ui-battery-body-charging-background)',
+      value: 'var(--battery-body-charging-background, #2fc755)',
     },
     inCharging: {
       type: Boolean,

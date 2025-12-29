@@ -8,13 +8,9 @@
     rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0)
   );
-
   --smart-ui-battery-body-base-background: rgba(0, 0, 0, 0.25);
-  --smart-ui-battery-body-middle-background: #ffcb00;
-  --smart-ui-battery-body-low-background: #ee652e;
-  --smart-ui-battery-body-charging-background: #2fc755;
   --smart-ui-battery-text-color: rgba(0, 0, 0, 0.6);
-  --smart-ui-battery-slash-border-color: #ffffff;
+  --smart-ui-battery-slash-border-color: #fff;
 
   &[theme='dark'] {
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
@@ -27,11 +23,8 @@
       rgba(255, 255, 255, 0)
     );
     --smart-ui-battery-body-base-background: rgba(255, 255, 255, 0.4);
-    --smart-ui-battery-body-middle-background: #ffcb00;
-    --smart-ui-battery-body-low-background: #ee652e;
-    --smart-ui-battery-body-charging-background: #2fc755;
     --smart-ui-battery-text-color: rgba(255, 255, 255, 1);
-    --smart-ui-battery-slash-border-color: #000000;
+    --smart-ui-battery-slash-border-color: #000;
   }
 }
 
@@ -51,7 +44,7 @@
 @B4: var(--app-B4, #ffffff); // 弹窗
 @B5: var(--app-B5, #ffffff); // 底部导航栏
 @B6: var(--app-B6, #ffffff); // 列表
-@B1-N1: var(--app-B1-N1, rgba(0, 0, 0, 1)); // 背景色 N1 字体色
+@B1-N1: var(--app-B1-N1, rgba(0, 0, 0, 9)); // 背景色 N1 字体色
 @B1-N2: var(--app-B1-N2, rgba(0, 0, 0, 0.7)); // 背景色 N2 字体色
 @B1-N3: var(--app-B1-N3, rgba(0, 0, 0, 0.5)); // 背景色 N3 字体色
 @B1-N4: var(--app-B1-N4, rgba(0, 0, 0, 0.4)); // 背景色 N4 字体色
@@ -902,12 +895,12 @@
 
 // Battery
 @battery-body-base-background: var(--smart-ui-battery-body-base-background, rgba(0, 0, 0, 0.25));
-@battery-body-high-background: var(--app-B1-N1, rgba(0, 0, 0, 0.9));
-@battery-body-middle-background: var(--smart-ui-battery-body-middle-background, #ffcb00);
-@battery-body-low-background: var(--smart-ui-battery-body-low-background, #ee652e);
-@battery-body-charging-background: var(--smart-ui-battery-body-charging-background, #2fc755);
 @battery-text-color: var(--smart-ui-battery-text-color, rgba(0, 0, 0, 0.6));
 @battery-slash-border-color: var(--smart-ui-battery-slash-border-color, #ffffff);
-@battery-text-font-size: var(--smart-ui-battery-text-font-size, 11px);
-@battery-text-font-weight: var(--smart-ui-battery-text-font-weight, 590);
-@battery-text-padding: var(--smart-ui-battery-text-padding, 6px);
+@battery-body-high-background: @B1-N1;
+@battery-body-middle-background: #ffcb00;
+@battery-body-low-background: #ee652e;
+@battery-body-charging-background: #2fc755;
+@battery-text-font-size: 11px;
+@battery-text-font-weight: 590;
+@battery-text-padding: 6px;

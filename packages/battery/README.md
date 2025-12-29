@@ -71,10 +71,10 @@ category: 通用
 | background-color | 电量背景色               | _string_                   | -          |
 | color `v2.6.2`   | 电量的颜色（优先级最高） | _string_                   | -          |
 | high-color       | 电量高的颜色             | _string_                   | `#70CF98`  |
-| inCharging `v2.8.1`      | 是否处于充电状态         | _boolean_                  | `false`    |
+| in-charging `v2.8.1`      | 是否处于充电状态         | _boolean_                  | `false`    |
 | low-color        | 电量低的颜色             | _string_                   | `#FF4444`  |
 | middle-color     | 电量中的颜色             | _string_                   | `#F5A623`  |
-| showText `v2.8.1`        | 是否显示电量文本         | _boolean_                  | `false`    |
+| show-text `v2.8.1`        | 是否显示电量文本         | _boolean_                  | `false`    |
 | size             | 尺寸                     | _number_                   | 10         |
 | type             | 电池方向                 | `vertical` \| `horizontal` | `vertical` |
 | value            | 电量值                   | _number_                   | 70         |
@@ -85,9 +85,9 @@ category: 通用
 
 | 名称                                        | 默认值                | 描述           |
 | ------------------------------------------- | --------------------- | -------------- |
-| --smart-ui-battery-body-base-background     | _rgba(0, 0, 0, 0.25)_ | 电池主体背景色 |
-| --smart-ui-battery-body-charging-background | _#2fc755_             | 充电状态背景色 |
-| --smart-ui-battery-body-low-background      | _#ee652e_             | 低电量背景色   |
-| --smart-ui-battery-body-middle-background   | _#ffcb00_             | 中电量背景色   |
-| --smart-ui-battery-slash-border-color       | _#ffffff_             | 斜线边框颜色   |
-| --smart-ui-battery-text-color               | _rgba(0, 0, 0, 0.6)_  | 电量文本颜色   |
+| --battery-body-base-background     | _var(--smart-ui-battery-body-base-background, rgba(0, 0, 0, 0.25))_ | 电池主体背景色 |
+| --battery-body-charging-background | _#2fc755_             | 充电状态背景色 |
+| --battery-body-low-background      | _#ee652e_             | 低电量背景色   |
+| --battery-body-middle-background   | _#ffcb00_             | 中电量背景色   |
+| --battery-slash-border-color       | _var(--smart-ui-battery-slash-border-color, #ffffff)_   | 斜线边框颜色   |
+| --battery-text-color               | _var(--smart-ui-battery-text-color, rgba(0, 0, 0, 0.6))_  | 电量文本颜色   |

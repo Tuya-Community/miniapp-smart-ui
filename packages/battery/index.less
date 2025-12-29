@@ -6,7 +6,7 @@
   position: relative;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 0px;
+  font-size: 0;
 }
 
 .overflow-hidden {
@@ -22,31 +22,31 @@
 }
 
 .base-bg {
-  background-color: var(--smart-ui-battery-body-base-background, @battery-body-base-background);
+  background-color: var(--battery-body-base-background, @battery-body-base-background);
 }
 
 .high-bg {
-  background-color: var(--app-B1-N1, @battery-body-high-background);
+  background-color: var(--battery-body-high-background, @battery-body-high-background);
 }
 
 .middle-bg {
-  background-color: var(--smart-ui-battery-body-middle-background, @battery-body-middle-background);
+  background-color: var(--battery-body-middle-background, @battery-body-middle-background);
 }
 
 .low-bg {
-  background-color: var(--smart-ui-battery-body-low-background, @battery-body-low-background);
+  background-color: var(--battery-body-low-background, @battery-body-low-background);
 }
 
 .charging-bg {
   background-color: var(
-    --smart-ui-battery-body-charging-background,
+    --battery-body-charging-background,
     @battery-body-charging-background
   );
 }
 
 .body {
   position: relative;
-  background-color: var(--smart-ui-battery-body-base-background, @battery-body-base-background);
+  background-color: var(--battery-body-base-background, @battery-body-base-background);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,7 +97,7 @@
 }
 
 .zero {
-  background-color: var(--smart-ui-battery-slash-border-color, @battery-slash-border-color);
+  background-color: var(--battery-slash-border-color, @battery-slash-border-color);
   position: relative;
   display: flex;
   align-items: center;
@@ -109,7 +109,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--smart-ui-battery-body-base-background, @battery-body-base-background);
+  background-color: var(--battery-body-base-background, @battery-body-base-background);
 }
 
 .zero-horizontal {
@@ -135,8 +135,8 @@
 }
 
 .text {
-  font-size: var(--smart-ui-battery-text-font-size, @battery-text-font-size);
-  font-weight: var(--smart-ui-battery-text-font-weight, @battery-text-font-weight);
-  color: var(--smart-ui-battery-text-color, @battery-text-color);
-  margin-left: var(--smart-ui-battery-text-padding, @battery-text-padding);
+  font-size: var(--battery-text-font-size, @battery-text-font-size);
+  font-weight: var(--battery-text-font-weight, @battery-text-font-weight);
+  color: var(--battery-text-color, @battery-text-color);
+  margin-left: var(--battery-text-padding, @battery-text-padding);
 }
