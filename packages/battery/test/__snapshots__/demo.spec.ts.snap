@@ -22,7 +22,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); height: 100%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); height: 100%"
                 />
               </wx-view>
               <wx-view
@@ -45,7 +45,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); height: 80%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); height: 80%"
                 />
               </wx-view>
               <wx-view
@@ -183,7 +183,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); width: 100%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 100%"
                 />
               </wx-view>
               <wx-view
@@ -206,7 +206,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); width: 70%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 70%"
                 />
               </wx-view>
               <wx-view
@@ -322,7 +322,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); height: 100%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); height: 100%"
                 />
               </wx-view>
               <wx-view
@@ -350,7 +350,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); height: 80%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); height: 80%"
                 />
               </wx-view>
               <wx-view
@@ -518,7 +518,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); width: 100%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 100%"
                 />
               </wx-view>
               <wx-view
@@ -546,7 +546,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); width: 70%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 70%"
                 />
               </wx-view>
               <wx-view
