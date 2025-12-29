@@ -22,7 +22,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--app-B1-N1); height: 100%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); height: 100%"
                 />
               </wx-view>
               <wx-view
@@ -45,7 +45,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--app-B1-N1); height: 80%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); height: 80%"
                 />
               </wx-view>
               <wx-view
@@ -68,7 +68,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--smart-ui-battery-body-middle-background); height: 50%"
+                  style="background-color: var(--battery-body-middle-background, #ffcb00); height: 50%"
                 />
               </wx-view>
               <wx-view
@@ -91,7 +91,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--smart-ui-battery-body-low-background); height: 20%"
+                  style="background-color: var(--battery-body-low-background, #ee652e); height: 20%"
                 />
               </wx-view>
               <wx-view
@@ -114,7 +114,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--smart-ui-battery-body-low-background); height: 0%"
+                  style="background-color: var(--battery-body-low-background, #ee652e); height: 0%"
                 />
                 <wx-view
                   class="zero zero-vertical"
@@ -146,7 +146,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--smart-ui-battery-body-charging-background); height: 80%"
+                  style="background-color: var(--battery-body-charging-background, #2fc755); height: 80%"
                 />
                 <wx-view
                   class="icon"
@@ -183,7 +183,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--app-B1-N1); width: 100%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); width: 100%"
                 />
               </wx-view>
               <wx-view
@@ -206,7 +206,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--app-B1-N1); width: 70%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); width: 70%"
                 />
               </wx-view>
               <wx-view
@@ -229,7 +229,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--smart-ui-battery-body-low-background); width: 10%"
+                  style="background-color: var(--battery-body-low-background, #ee652e); width: 10%"
                 />
               </wx-view>
               <wx-view
@@ -252,7 +252,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--smart-ui-battery-body-low-background); width: 3%"
+                  style="background-color: var(--battery-body-low-background, #ee652e); width: 3%"
                 />
               </wx-view>
               <wx-view
@@ -275,7 +275,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--smart-ui-battery-body-low-background); width: 0%"
+                  style="background-color: var(--battery-body-low-background, #ee652e); width: 0%"
                 />
                 <wx-view
                   class="zero zero-horizontal"
@@ -322,7 +322,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--app-B1-N1); height: 100%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); height: 100%"
                 />
               </wx-view>
               <wx-view
@@ -350,7 +350,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--app-B1-N1); height: 80%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); height: 80%"
                 />
               </wx-view>
               <wx-view
@@ -378,7 +378,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--smart-ui-battery-body-middle-background); height: 50%"
+                  style="background-color: var(--battery-body-middle-background, #ffcb00); height: 50%"
                 />
               </wx-view>
               <wx-view
@@ -406,7 +406,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--smart-ui-battery-body-low-background); height: 20%"
+                  style="background-color: var(--battery-body-low-background, #ee652e); height: 20%"
                 />
               </wx-view>
               <wx-view
@@ -434,7 +434,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--smart-ui-battery-body-low-background); height: 0%"
+                  style="background-color: var(--battery-body-low-background, #ee652e); height: 0%"
                 />
                 <wx-view
                   class="zero zero-vertical"
@@ -471,7 +471,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-vertical"
-                  style="background-color: var(--smart-ui-battery-body-charging-background); height: 80%"
+                  style="background-color: var(--battery-body-charging-background, #2fc755); height: 80%"
                 />
                 <wx-view
                   class="icon"
@@ -518,7 +518,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--app-B1-N1); width: 100%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); width: 100%"
                 />
               </wx-view>
               <wx-view
@@ -546,7 +546,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--app-B1-N1); width: 70%"
+                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9))); width: 70%"
                 />
               </wx-view>
               <wx-view
@@ -574,7 +574,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--smart-ui-battery-body-low-background); width: 10%"
+                  style="background-color: var(--battery-body-low-background, #ee652e); width: 10%"
                 />
               </wx-view>
               <wx-view
@@ -602,7 +602,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--smart-ui-battery-body-low-background); width: 3%"
+                  style="background-color: var(--battery-body-low-background, #ee652e); width: 3%"
                 />
               </wx-view>
               <wx-view
@@ -630,7 +630,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <wx-view
                   class="bar bar-horizontal"
-                  style="background-color: var(--smart-ui-battery-body-low-background); width: 0%"
+                  style="background-color: var(--battery-body-low-background, #ee652e); width: 0%"
                 />
                 <wx-view
                   class="zero zero-horizontal"

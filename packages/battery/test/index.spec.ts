@@ -209,7 +209,7 @@ describe('battery', () => {
     await simulate.sleep(10);
 
     // When value is 100 (> 50), should use highColor
-    expect(wrapper?.data.insideColor).toBe('var(--app-B1-N1)');
+    expect(wrapper?.data.insideColor).toBe('var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 9)))');
   });
 
   test('should use middleColor when value is medium', async () => {
@@ -230,7 +230,7 @@ describe('battery', () => {
     await simulate.sleep(10);
 
     // When value is 30 (20 < value <= 50), should use middleColor
-    expect(wrapper?.data.insideColor).toBe('var(--smart-ui-battery-body-middle-background)');
+    expect(wrapper?.data.insideColor).toBe('var(--battery-body-middle-background, #ffcb00)');
   });
 
   test('should use lowColor when value is low', async () => {
@@ -251,7 +251,7 @@ describe('battery', () => {
     await simulate.sleep(10);
 
     // When value is 10 (<= 20), should use lowColor
-    expect(wrapper?.data.insideColor).toBe('var(--smart-ui-battery-body-low-background)');
+    expect(wrapper?.data.insideColor).toBe('var(--battery-body-low-background, #ee652e)');
   });
 
   test('should use custom highColor', async () => {
@@ -352,7 +352,7 @@ describe('battery', () => {
     await simulate.sleep(10);
 
     expect(wrapper?.data.inCharging).toBe(true);
-    expect(wrapper?.data.insideColor).toBe('var(--smart-ui-battery-body-charging-background)');
+    expect(wrapper?.data.insideColor).toBe('var(--battery-body-charging-background, #2fc755)');
   });
 
   test('should use custom chargingColor when inCharging is true', async () => {
