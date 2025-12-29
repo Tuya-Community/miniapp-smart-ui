@@ -1,0 +1,142 @@
+@import '../common/style/var.less';
+
+.contain {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.contain-vertical {
+  flex-direction: column;
+}
+
+.contain-horizontal {
+  flex-direction: row;
+}
+
+.base-bg {
+  background-color: var(--battery-body-base-background, @battery-body-base-background);
+}
+
+.high-bg {
+  background-color: var(--battery-body-high-background, @battery-body-high-background);
+}
+
+.middle-bg {
+  background-color: var(--battery-body-middle-background, @battery-body-middle-background);
+}
+
+.low-bg {
+  background-color: var(--battery-body-low-background, @battery-body-low-background);
+}
+
+.charging-bg {
+  background-color: var(
+    --battery-body-charging-background,
+    @battery-body-charging-background
+  );
+}
+
+.body {
+  position: relative;
+  background-color: var(--battery-body-base-background, @battery-body-base-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.body-horizontal {
+  flex-shrink: 0;
+}
+
+.body-vertical {
+  order: 2;
+}
+
+.dot {
+  flex-shrink: 0;
+}
+
+.dot-horizontal {
+  flex-shrink: 0;
+}
+
+.dot-vertical {
+  order: 1;
+}
+
+.icon {
+  position: relative;
+  z-index: 2;
+}
+.bar {
+  position: absolute;
+}
+
+.bar-vertical {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.bar-horizontal {
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.zero {
+  background-color: var(--battery-slash-border-color, @battery-slash-border-color);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zero-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--battery-body-base-background, @battery-body-base-background);
+}
+
+.zero-horizontal {
+  transform: rotate(-60deg);
+}
+
+.zero-vertical {
+  transform: rotate(-60deg);
+}
+
+.zero-inner-horizontal {
+  flex-shrink: 0;
+}
+
+.zero-inner-vertical {
+  flex-shrink: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  font-size: var(--battery-text-font-size, @battery-text-font-size);
+  font-weight: var(--battery-text-font-weight, @battery-text-font-weight);
+  color: var(--battery-text-color, @battery-text-color);
+  margin-left: var(--battery-text-padding, @battery-text-padding);
+}
