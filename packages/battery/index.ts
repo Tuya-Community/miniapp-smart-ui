@@ -65,50 +65,9 @@ SmartComponent({
 
   methods: {
     init() {
-      const { value, backgroundColor, type, size } = this.data;
+      const { value, type, size } = this.data;
       const insidePercent = Math.round(Math.min(100, Math.max(0, Math.round(value))));
       const insideColor = this.calcColor(insidePercent);
-      const sizeData = this.calcSize();
-
-      let bodyStyle = '';
-      let dotStyle = '';
-      let zeroStyle = '';
-      let zeroInnerStyle = '';
-
-      if (sizeData) {
-        const {
-          width,
-          height,
-          dotWidth,
-          dotHeight,
-          dotPadding,
-          zeroWidth,
-          zeroHeight,
-          zeroInnerWidth,
-          zeroInnerHeight,
-          borderRadius,
-          dotBorderRadius,
-          zeroBorderRadius,
-        } = sizeData;
-
-        const backgroundColorStyle = backgroundColor ? `background-color: ${backgroundColor};` : '';
-        const isFull = String(insidePercent) === '100';
-        if (type === 'horizontal') {
-          bodyStyle = `width: ${height}px; height: ${width}px; border-radius: ${borderRadius}px; ${backgroundColorStyle}`;
-          dotStyle = `width: ${dotHeight}px; height: ${dotWidth}px; margin-left: ${dotPadding}px; border-radius: ${dotBorderRadius}px; ${
-            isFull ? '' : backgroundColorStyle
-          }`;
-          zeroStyle = `width: ${zeroHeight}px; height: ${zeroWidth}px; border-radius: ${zeroBorderRadius}px;`;
-          zeroInnerStyle = `width: ${zeroInnerHeight}px; height: ${zeroInnerWidth}px;`;
-        } else {
-          bodyStyle = `width: ${width}px; height: ${height}px; border-radius: ${borderRadius}px; ${backgroundColorStyle}`;
-          dotStyle = `width: ${dotWidth}px; height: ${dotHeight}px; margin-bottom: ${dotPadding}px; border-radius: ${dotBorderRadius}px; ${
-            isFull ? '' : backgroundColorStyle
-          }`;
-          zeroStyle = `width: ${zeroWidth}px; height: ${zeroHeight}px; border-radius: ${zeroBorderRadius}px;`;
-          zeroInnerStyle = `width: ${zeroInnerWidth}px; height: ${zeroInnerHeight}px;`;
-        }
-      }
       const containStyle = `width: ${size}px;height: ${size}px;`;
       const insidePercentStr =
         type === 'vertical' ? `height: ${insidePercent}%` : `width: ${insidePercent}%`;
@@ -118,47 +77,8 @@ SmartComponent({
         insideBotBgClass:
           String(insidePercent) === '100' ? 'smart-battery-high-bg' : 'smart-battery-base-bg',
         chargingSvg: this.toSvgCssBackground(chargingSvg),
-        bodyStyle,
-        dotStyle,
-        zeroStyle,
-        zeroInnerStyle,
         containStyle,
       });
-    },
-
-    calcSize() {
-      if (this.data.size === 0) {
-        // 使用css变量的值
-        return;
-      }
-      const width = (this.data.size * 10) / 24; // 10
-      const height = (this.data.size * 20) / 24; // 20
-      const borderRadius = this.data.size / 12; // 2
-
-      const dotWidth = this.data.size / 6; // 4 !
-      const dotHeight = this.data.size / 16; // 1.5 !
-      const dotBorderRadius = this.data.size / 48; // 0.5
-      const dotPadding = this.data.size / 48; // 0.5
-
-      const zeroWidth = this.data.size / 6; // 4 !
-      const zeroHeight = this.data.size / 1.5; // 16
-      const zeroInnerWidth = this.data.size / 16; // 1.5 !
-      const zeroInnerHeight = this.data.size / 1.5; // 16
-      const zeroBorderRadius = this.data.size / 12; // 2
-      return {
-        width,
-        height,
-        dotWidth,
-        dotHeight,
-        dotPadding,
-        zeroWidth,
-        zeroHeight,
-        zeroInnerWidth,
-        zeroInnerHeight,
-        borderRadius,
-        dotBorderRadius,
-        zeroBorderRadius,
-      };
     },
 
     calcColor(value) {
@@ -199,7 +119,7 @@ SmartComponent({
         .replace(/>/g, '%3E')
 
         .replace(/\s+/g, ' ');
-      return `background-image: url("data:image/svg+xml,${res}"); width: 6px; height: 10px; background-repeat: no-repeat;`;
+      return `background-image: url("data:image/svg+xml,${res}");`;
     },
   },
 });

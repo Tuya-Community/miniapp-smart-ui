@@ -69,31 +69,48 @@
   z-index: 1;
   flex-shrink: 0;
   transform: translateZ(0);
+  border-radius: 4px;
 }
 
 .smart-battery-body-horizontal {
   flex-shrink: 0;
+  height: 20px;
+  width: 40px;
 }
 
 .smart-battery-body-vertical {
   order: 2;
+  width: 20px;
+  height: 40px;
+  border-radius: 4px;
 }
 
 .smart-battery-dot {
   flex-shrink: 0;
+  border-radius: 1px;
 }
 
 .smart-battery-dot-horizontal {
+  height: 8px;
+  width: 3px;
+  margin-left: 1px;
   flex-shrink: 0;
 }
 
 .smart-battery-dot-vertical {
+  width: 8px;
+  height: 3px;
+  margin-bottom: 1px;
   order: 1;
 }
 
 .smart-battery-icon {
   position: relative;
   z-index: 2;
+  width: 6px; 
+  height: 10px; 
+  background-repeat: no-repeat;
+  transform: scale(2);
 }
 .smart-battery-bar {
   position: absolute;
@@ -119,6 +136,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  border-radius: 4px;
   justify-content: center;
 }
 
@@ -132,18 +150,27 @@
 
 .smart-battery-zero-horizontal {
   transform: rotate(-60deg);
+  width: 32px;
+  height: 8px;
 }
 
 .smart-battery-zero-vertical {
   transform: rotate(-60deg);
+  width: 8px;
+  height: 32px;
 }
 
 .smart-battery-zero-inner-horizontal {
   flex-shrink: 0;
+  width: 32px;
+  height: 3px;
+
 }
 
 .smart-battery-zero-inner-vertical {
   flex-shrink: 0;
+  width: 3px;
+  height: 32px;
 }
 
 .smart-battery-text {
