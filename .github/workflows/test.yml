@@ -11,6 +11,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # 如果是 push 事件且是 merge commit（从 PR 合并来的），则跳过执行，避免重复
+    # GitHub 的 merge commit message 格式通常是 "Merge pull request #xxx" 或 "Merge branch 'xxx' into 'yyy'"
+    if: |
+      github.event_name == 'pull_request' ||
+      (github.event_name == 'push' && 
+       !contains(github.event.head_commit.message, 'Merge pull request') &&
+       !(contains(github.event.head_commit.message, 'Merge branch') && contains(github.event.head_commit.message, ' into ')))
     permissions:
       contents: write
       pages: write
@@ -60,8 +67,9 @@ jobs:
           else
             git commit -m "chore: update test coverage data [skip ci]"
             # 在 PR 中，推送到 PR 的源分支
+            # 使用个人访问令牌来推送更改以避免保护分支限制
             echo "推送到 PR 源分支 ${{ github.head_ref }}"
-            git push origin ${{ github.head_ref }}
+            git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.head_ref }}
           fi
 
       # - name: 配置 GitHub Pages
