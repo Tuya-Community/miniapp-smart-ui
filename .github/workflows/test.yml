@@ -4,24 +4,9 @@ on:
     branches:
       - main
       - release/*
-  push:
-    branches:
-      - main
-      - release/*
 jobs:
   build:
     runs-on: ubuntu-latest
-    # 执行条件：
-    # 1. pull_request 事件：总是执行（包括 release/* 向 main 提 PR 的情况）
-    # 2. push 事件：只有 main 分支且不是 merge commit 时才执行
-    #    - release/* 分支的 push 事件不执行，避免与 PR 事件重复
-    #    - main 分支的 merge commit 不执行，避免与 PR 事件重复
-    if: |
-      github.event_name == 'pull_request' ||
-      (github.event_name == 'push' && 
-       github.ref == 'refs/heads/main' &&
-       !contains(github.event.head_commit.message, 'Merge pull request') &&
-       !(contains(github.event.head_commit.message, 'Merge branch') && contains(github.event.head_commit.message, ' into ')))
     permissions:
       contents: write
       pages: write
@@ -30,8 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # 对于 release 分支，使用 PROTECT_WRITE_TOKEN 以绕过保护分支限制
-          token: ${{ github.ref == 'refs/heads/release/2.x' && secrets.PROTECT_WRITE_TOKEN || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PROTECT_WRITE_TOKEN }}
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -74,16 +58,7 @@ jobs:
             # 先拉取远程更改，避免推送冲突
             echo "拉取远程分支 ${{ github.head_ref }} 的最新更改"
             git config pull.rebase true
-            git pull https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} ${{ github.head_ref }} || {
-              echo "Pull 失败，可能是远程没有新更改或分支不存在，继续推送"
-            }
-            # 使用个人访问令牌来推送更改以避免保护分支限制
-            # 使用 --force-with-lease 更安全，只有在远程没有新提交时才会强制推送
-            echo "推送到 PR 源分支 ${{ github.head_ref }}"
-            git push --force-with-lease https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.head_ref }} || {
-              echo "使用 --force-with-lease 推送失败，尝试普通推送"
-              git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.head_ref }}
-            }
+            git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} ${{ github.head_ref }}
           fi
 
       # - name: 配置 GitHub Pages
