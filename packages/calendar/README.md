@@ -104,7 +104,7 @@ Page({
 
 设置`type`为`week`后可以选择一个周的时间范围，此时`select`事件返回的 date 为数组结构，数组包含开始和结束选中的日期。
 
-通过 `first-day-of-select-week` `v2.8.1` 属性可以设置周选择的起始日，用于控制点击日期时选择的周范围。`first-day-of-week` 用于控制日历显示的周起始日，而 `first-day-of-select-week` 专门用于控制周选择的范围计算。
+通过 `first-day-of-select-week` `v2.9.1` 属性可以设置周选择的起始日，用于控制点击日期时选择的周范围。`first-day-of-week` 用于控制日历显示的周起始日，而 `first-day-of-select-week` 专门用于控制周选择的范围计算。
 
 ```html
 <smart-calendar
@@ -358,7 +358,7 @@ Page({
 | confirm-text               | 确认按钮的文字                                                                                                                                                   | _string_                           | `确定`               |
 | day-class-map `v2.1.0`     | 日期单元格样式                                                                                                                                                   | Object                             | null                 |
 | default-date `v1.10.21`    | 默认选中的日期，`type`为`range`时为数组，传入 `null` 表示默认不选择                                                                                              | _timestamp \| timestamp[] \| null_ | 今天                 |
-| first-day-of-select-week `v2.8.1`  | 设置周选择时的起始日，用于控制点击日期时选择的周范围。`first-day-of-week` 用于控制日历显示的周起始日，而 `first-day-of-select-week` 专门用于控制周选择的范围计算 | _0~6_                              | `1`                  |
+| first-day-of-select-week `v2.9.1`  | 设置周选择时的起始日，用于控制点击日期时选择的周范围。`first-day-of-week` 用于控制日历显示的周起始日，而 `first-day-of-select-week` 专门用于控制周选择的范围计算 | _0~6_                              | `1`                  |
 | first-day-of-week          | 设置周起始日                                                                                                                                                     | _0~6_                              | `0`                  |
 | header-icon-color `v2.6.0` | 头部栏左右箭头 icon 颜色                                                                                                                                         | _string_                           | `rgba(0, 0, 0, 0.7)` |
 | locale                     | 多语言包                                                                                                                                                         | _Object_                           | [默认配置](#locale)  |
