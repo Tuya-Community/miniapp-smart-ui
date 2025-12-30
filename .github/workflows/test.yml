@@ -44,7 +44,7 @@ jobs:
           retention-days: 30
       
       - name: 更新覆盖率数据到仓库（供官网和徽章使用）
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -59,14 +59,9 @@ jobs:
             echo "覆盖率数据未发生变化，跳过提交"
           else
             git commit -m "chore: update test coverage data [skip ci]"
-            # 对于 release 分支，使用 PROTECT_WRITE_TOKEN 来绕过保护分支限制
-            if [ "${{ github.ref }}" = "refs/heads/release/2.x" ]; then
-              echo "使用 PROTECT_WRITE_TOKEN 推送到 release/2.x 分支"
-              git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:release/2.x
-            else
-              echo "推送到 ${{ github.ref_name }} 分支"
-              git push origin ${{ github.ref_name }}
-            fi
+            # 在 PR 中，推送到 PR 的源分支
+            echo "推送到 PR 源分支 ${{ github.head_ref }}"
+            git push origin ${{ github.head_ref }}
           fi
 
       # - name: 配置 GitHub Pages
