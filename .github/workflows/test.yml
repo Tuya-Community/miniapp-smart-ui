@@ -2,6 +2,9 @@ name: test
 on: 
   pull_request:
     branches:
+      - release/*
+  push:
+    branches:
       - main
       - release/*
 jobs:
@@ -15,7 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+          # 对于 release 分支，使用 PROTECT_WRITE_TOKEN 以绕过保护分支限制
+          token: ${{ github.ref == 'refs/heads/release/2.x' && secrets.PROTECT_WRITE_TOKEN || secrets.GITHUB_TOKEN }}
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -54,11 +58,14 @@ jobs:
             echo "覆盖率数据未发生变化，跳过提交"
           else
             git commit -m "chore: update test coverage data [skip ci]"
-            # 在 PR 中，推送到 PR 的源分支
-            # 先拉取远程更改，避免推送冲突
-            echo "拉取远程分支 ${{ github.head_ref }} 的最新更改"
-            git config pull.rebase true
-            git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} ${{ github.head_ref }}
+            # 对于 release 分支，使用 PROTECT_WRITE_TOKEN 来绕过保护分支限制
+            if [ "${{ github.ref }}" = "refs/heads/release/2.x" ]; then
+              echo "使用 PROTECT_WRITE_TOKEN 推送到 release/2.x 分支"
+              git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:release/2.x
+            else
+              echo "推送到 ${{ github.ref_name }} 分支"
+              git push origin ${{ github.ref_name }}
+            fi
           fi
 
       # - name: 配置 GitHub Pages
