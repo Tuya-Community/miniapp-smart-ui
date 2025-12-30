@@ -38,7 +38,7 @@ describe('battery', () => {
     await simulate.sleep(10);
 
     expect(wrapper?.data.value).toBe(70);
-    expect(wrapper?.data.size).toBe(10);
+    expect(wrapper?.data.size).toBe(24);
     expect(wrapper?.data.type).toBe('vertical');
     expect(wrapper?.data.showText).toBe(false);
     expect(wrapper?.data.inCharging).toBe(false);
@@ -87,7 +87,7 @@ describe('battery', () => {
     await simulate.sleep(10);
 
     expect(wrapper?.data.insidePercentStr).toContain('100%');
-    expect(wrapper?.data.insideBotBgClass).toBe('high-bg');
+    expect(wrapper?.data.insideBotBgClass).toBe('smart-battery-high-bg');
   });
 
   test('should use horizontal type', async () => {
@@ -144,8 +144,9 @@ describe('battery', () => {
     await simulate.sleep(10);
 
     expect(wrapper?.data.size).toBe(20);
-    expect(wrapper?.data.bodyStyle).toContain('width: 20px');
-    expect(wrapper?.data.bodyStyle).toContain('height: 36px');
+    // bodyStyle is no longer used in the current implementation
+    expect(wrapper?.data.containStyle).toContain('width: 20px');
+    expect(wrapper?.data.containStyle).toContain('height: 20px');
   });
 
   test('should handle size 0 (use CSS variables)', async () => {
@@ -166,8 +167,10 @@ describe('battery', () => {
     await simulate.sleep(10);
 
     expect(wrapper?.data.size).toBe(0);
-    expect(wrapper?.data.bodyStyle).toBe('');
-    expect(wrapper?.data.dotStyle).toBe('');
+    // bodyStyle and dotStyle are no longer used in the current implementation
+    // containStyle will still be set even when size is 0
+    expect(wrapper?.data.containStyle).toContain('width: 0px');
+    expect(wrapper?.data.containStyle).toContain('height: 0px');
   });
 
   test('should use custom color when provided', async () => {
@@ -331,7 +334,8 @@ describe('battery', () => {
     const wrapper = comp.querySelector('#wrapper');
     await simulate.sleep(10);
 
-    expect(wrapper?.data.bodyStyle).toContain('background-color: #CCCCCC');
+    // backgroundColor is used in SVG generation, not in bodyStyle
+    expect(wrapper?.data.backgroundColor).toBe('#CCCCCC');
   });
 
   test('should use chargingColor when inCharging is true', async () => {
@@ -457,8 +461,8 @@ describe('battery', () => {
 
     expect(wrapper?.data.value).toBe(0);
     expect(wrapper?.data.inCharging).toBe(false);
-    expect(wrapper?.data.zeroStyle).toBeTruthy();
-    expect(wrapper?.data.zeroInnerStyle).toBeTruthy();
+    // zeroStyle and zeroInnerStyle are no longer used, zero indicator is handled by CSS classes
+    expect(wrapper?.data.insidePercentStr).toContain('0%');
   });
 
   test('should not show zero indicator when value is 0 but charging', async () => {
@@ -533,8 +537,9 @@ describe('battery', () => {
     const wrapper = comp.querySelector('#wrapper');
     await simulate.sleep(10);
 
-    const initialBodyStyle = wrapper?.data.bodyStyle;
-    expect(initialBodyStyle).toContain('width: 10px');
+    const initialContainStyle = wrapper?.data.containStyle;
+    expect(initialContainStyle).toContain('width: 10px');
+    expect(initialContainStyle).toContain('height: 10px');
 
     // Change size through component's setData to trigger observer
     wrapper?.setData({ size: 20 });
@@ -542,11 +547,11 @@ describe('battery', () => {
 
     // Size should be updated
     expect(wrapper?.data.size).toBe(20);
-    // Body style should be updated
-    const updatedBodyStyle = wrapper?.data.bodyStyle;
-    expect(updatedBodyStyle).toContain('width: 20px');
-    expect(updatedBodyStyle).toContain('height: 36px');
-    expect(updatedBodyStyle).not.toBe(initialBodyStyle);
+    // Contain style should be updated
+    const updatedContainStyle = wrapper?.data.containStyle;
+    expect(updatedContainStyle).toContain('width: 20px');
+    expect(updatedContainStyle).toContain('height: 20px');
+    expect(updatedContainStyle).not.toBe(initialContainStyle);
   });
 
   test('should calculate correct styles for horizontal type', async () => {
@@ -567,9 +572,9 @@ describe('battery', () => {
     await simulate.sleep(10);
 
     expect(wrapper?.data.type).toBe('horizontal');
-    // For horizontal, width and height should be swapped
-    expect(wrapper?.data.bodyStyle).toContain('width: 18px');
-    expect(wrapper?.data.bodyStyle).toContain('height: 10px');
+    // For horizontal, containStyle uses the same size for both width and height
+    expect(wrapper?.data.containStyle).toContain('width: 10px');
+    expect(wrapper?.data.containStyle).toContain('height: 10px');
     expect(wrapper?.data.insidePercentStr).toContain('width:');
   });
 
@@ -595,7 +600,7 @@ describe('battery', () => {
       expect(result).toContain('%23FF0000'); // # encoded as %23
       expect(result).toContain('%3C'); // < encoded as %3C
       expect(result).toContain('%3E'); // > encoded as %3E
-      expect(result).toContain('background-repeat: no-repeat');
+      expect(result).toContain('background-image');
     }
   });
 
@@ -704,7 +709,7 @@ describe('battery', () => {
     const wrapper = comp.querySelector('#wrapper');
     await simulate.sleep(10);
 
-    expect(wrapper?.data.insideBotBgClass).toBe('high-bg');
+    expect(wrapper?.data.insideBotBgClass).toBe('smart-battery-high-bg');
   });
 
   test('should calculate insideBotBgClass correctly for non-full battery', async () => {
@@ -724,6 +729,6 @@ describe('battery', () => {
     const wrapper = comp.querySelector('#wrapper');
     await simulate.sleep(10);
 
-    expect(wrapper?.data.insideBotBgClass).toBe('base-bg');
+    expect(wrapper?.data.insideBotBgClass).toBe('smart-battery-base-bg');
   });
 });

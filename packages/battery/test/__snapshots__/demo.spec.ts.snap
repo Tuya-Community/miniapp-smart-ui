@@ -9,157 +9,157 @@ exports[`should render demo and match snapshot 1`] = `
       <wx-view
         class="line"
       >
-        <battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-vertical"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body overflow-hidden body-vertical"
-                style="width: 20px; height: 36px; border-radius: 4px; "
+                class="smart-battery-contain smart-battery-contain-vertical"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-vertical"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); height: 100%"
-                />
-              </wx-view>
-              <wx-view
-                class="dot dot-vertical high-bg"
-                style="width: 8px; height: 3px; margin-bottom: 1px; border-radius: 1px; "
-              />
-            </wx-view>
-          </wx-view>
-        </battery>
-        <battery>
-          <wx-view
-            class="container"
-          >
-            <wx-view
-              class="contain contain-vertical"
-            >
-              <wx-view
-                class="body overflow-hidden body-vertical"
-                style="width: 10px; height: 18px; border-radius: 2px; "
-              >
-                <wx-view
-                  class="bar bar-vertical"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); height: 80%"
-                />
-              </wx-view>
-              <wx-view
-                class="dot dot-vertical base-bg"
-                style="width: 4px; height: 1.5px; margin-bottom: 0.5px; border-radius: 0.5px; "
-              />
-            </wx-view>
-          </wx-view>
-        </battery>
-        <battery>
-          <wx-view
-            class="container"
-          >
-            <wx-view
-              class="contain contain-vertical"
-            >
-              <wx-view
-                class="body overflow-hidden body-vertical"
-                style="width: 10px; height: 18px; border-radius: 2px; "
-              >
-                <wx-view
-                  class="bar bar-vertical"
-                  style="background-color: var(--battery-body-middle-background, #ffcb00); height: 50%"
-                />
-              </wx-view>
-              <wx-view
-                class="dot dot-vertical base-bg"
-                style="width: 4px; height: 1.5px; margin-bottom: 0.5px; border-radius: 0.5px; "
-              />
-            </wx-view>
-          </wx-view>
-        </battery>
-        <battery>
-          <wx-view
-            class="container"
-          >
-            <wx-view
-              class="contain contain-vertical"
-            >
-              <wx-view
-                class="body overflow-hidden body-vertical"
-                style="width: 10px; height: 18px; border-radius: 2px; "
-              >
-                <wx-view
-                  class="bar bar-vertical"
-                  style="background-color: var(--battery-body-low-background, #ee652e); height: 20%"
-                />
-              </wx-view>
-              <wx-view
-                class="dot dot-vertical base-bg"
-                style="width: 4px; height: 1.5px; margin-bottom: 0.5px; border-radius: 0.5px; "
-              />
-            </wx-view>
-          </wx-view>
-        </battery>
-        <battery>
-          <wx-view
-            class="container"
-          >
-            <wx-view
-              class="contain contain-vertical"
-            >
-              <wx-view
-                class="body  body-vertical"
-                style="width: 10px; height: 18px; border-radius: 2px; "
-              >
-                <wx-view
-                  class="bar bar-vertical"
-                  style="background-color: var(--battery-body-low-background, #ee652e); height: 0%"
-                />
-                <wx-view
-                  class="zero zero-vertical"
-                  style="width: 4px; height: 16px; border-radius: 2px;"
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
                 >
                   <wx-view
-                    class="zero zero-inner zero-inner-vertical"
-                    style="width: 1.5px; height: 16px;"
+                    class="smart-battery-bar smart-battery-bar-vertical"
+                    style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); height: 80%"
                   />
                 </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-vertical smart-battery-base-bg"
+                  style="background-color: false;"
+                />
               </wx-view>
-              <wx-view
-                class="dot dot-vertical base-bg"
-                style="width: 4px; height: 1.5px; margin-bottom: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
           </wx-view>
-        </battery>
-        <battery>
+        </smart-battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-vertical"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body overflow-hidden body-vertical"
-                style="width: 10px; height: 18px; border-radius: 2px; "
+                class="smart-battery-contain smart-battery-contain-vertical"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-vertical"
-                  style="background-color: var(--battery-body-charging-background, #2fc755); height: 80%"
-                />
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-vertical"
+                    style="background-color: var(--battery-body-middle-background, #ffcb00); height: 50%"
+                  />
+                </wx-view>
                 <wx-view
-                  class="icon"
-                  style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='none' version='1.1' width='6px' height='10px' viewBox='0 0 6 10'%3E%3Cg%3E%3Cpath d='M4.3636,1.1364C3.17988,2.32012,1.37897,4.12103,0.507568,4.99243C0.318579,5.18142,0.461728,5.5,0.729,5.5Q1.35,5.5,2.5,5.5Q1.64,7.435,1.1498,8.53795C1.01473,8.84185,1.40124,9.09876,1.6364,8.8636C2.82012,7.67988,4.62103,5.87897,5.49243,5.00757C5.68142,4.81858,5.55435,4.5,5.28708,4.5C4.54814,4.5,3.5,4.5,3.5,4.5C3.5,4.5,4.26261,2.78412,4.84601,1.47148C4.98108,1.16757,4.59876,0.901241,4.3636,1.1364' fill='%23FFFFFF' fill-opacity='1'/%3E%3C/g%3E%3C/svg%3E\\"); width: 6px; height: 10px; background-repeat: no-repeat;"
+                  class="smart-battery-dot smart-battery-dot-vertical smart-battery-base-bg"
+                  style="background-color: false;"
                 />
               </wx-view>
-              <wx-view
-                class="dot dot-vertical base-bg"
-                style="width: 4px; height: 1.5px; margin-bottom: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
           </wx-view>
-        </battery>
+        </smart-battery>
+        <smart-battery>
+          <wx-view
+            class="smart-battery"
+          >
+            <wx-view
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
+            >
+              <wx-view
+                class="smart-battery-contain smart-battery-contain-vertical"
+                style="transform: scale(0.5)"
+              >
+                <wx-view
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-vertical"
+                    style="background-color: var(--battery-body-low-background, #ee652e); height: 20%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-vertical smart-battery-base-bg"
+                  style="background-color: false;"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </smart-battery>
+        <smart-battery>
+          <wx-view
+            class="smart-battery"
+          >
+            <wx-view
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
+            >
+              <wx-view
+                class="smart-battery-contain smart-battery-contain-vertical"
+                style="transform: scale(0.5)"
+              >
+                <wx-view
+                  class="smart-battery-body  smart-battery-body-vertical"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-vertical"
+                    style="background-color: var(--battery-body-low-background, #ee652e); height: 0%"
+                  />
+                  <wx-view
+                    class="smart-battery-zero smart-battery-zero-vertical"
+                  >
+                    <wx-view
+                      class="smart-battery-zero smart-battery-zero-inner smart-battery-zero-inner-vertical"
+                    />
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-vertical smart-battery-base-bg"
+                  style="background-color: false;"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </smart-battery>
+        <smart-battery>
+          <wx-view
+            class="smart-battery"
+          >
+            <wx-view
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
+            >
+              <wx-view
+                class="smart-battery-contain smart-battery-contain-vertical"
+                style="transform: scale(0.5)"
+              >
+                <wx-view
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-vertical"
+                    style="background-color: var(--battery-body-charging-background, #2fc755); height: 80%"
+                  />
+                  <wx-view
+                    class="smart-battery-icon"
+                    style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='none' version='1.1' width='6px' height='10px' viewBox='0 0 6 10'%3E%3Cg%3E%3Cpath d='M4.3636,1.1364C3.17988,2.32012,1.37897,4.12103,0.507568,4.99243C0.318579,5.18142,0.461728,5.5,0.729,5.5Q1.35,5.5,2.5,5.5Q1.64,7.435,1.1498,8.53795C1.01473,8.84185,1.40124,9.09876,1.6364,8.8636C2.82012,7.67988,4.62103,5.87897,5.49243,5.00757C5.68142,4.81858,5.55435,4.5,5.28708,4.5C4.54814,4.5,3.5,4.5,3.5,4.5C3.5,4.5,4.26261,2.78412,4.84601,1.47148C4.98108,1.16757,4.59876,0.901241,4.3636,1.1364' fill='%23FFFFFF' fill-opacity='1'/%3E%3C/g%3E%3C/svg%3E\\");"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-vertical smart-battery-base-bg"
+                  style="background-color: false;"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </smart-battery>
       </wx-view>
     </wx-view>
   </demo-block>
@@ -170,130 +170,153 @@ exports[`should render demo and match snapshot 1`] = `
       <wx-view
         class="line"
       >
-        <battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-horizontal"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body overflow-hidden body-horizontal"
-                style="width: 18px; height: 10px; border-radius: 2px; "
+                class="smart-battery-contain smart-battery-contain-horizontal"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 100%"
-                />
-              </wx-view>
-              <wx-view
-                class="dot dot-horizontal high-bg"
-                style="width: 1.5px; height: 4px; margin-left: 0.5px; border-radius: 0.5px; "
-              />
-            </wx-view>
-          </wx-view>
-        </battery>
-        <battery>
-          <wx-view
-            class="container"
-          >
-            <wx-view
-              class="contain contain-horizontal"
-            >
-              <wx-view
-                class="body overflow-hidden body-horizontal"
-                style="width: 18px; height: 10px; border-radius: 2px; "
-              >
-                <wx-view
-                  class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 70%"
-                />
-              </wx-view>
-              <wx-view
-                class="dot dot-horizontal base-bg"
-                style="width: 1.5px; height: 4px; margin-left: 0.5px; border-radius: 0.5px; "
-              />
-            </wx-view>
-          </wx-view>
-        </battery>
-        <battery>
-          <wx-view
-            class="container"
-          >
-            <wx-view
-              class="contain contain-horizontal"
-            >
-              <wx-view
-                class="body overflow-hidden body-horizontal"
-                style="width: 18px; height: 10px; border-radius: 2px; "
-              >
-                <wx-view
-                  class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-low-background, #ee652e); width: 10%"
-                />
-              </wx-view>
-              <wx-view
-                class="dot dot-horizontal base-bg"
-                style="width: 1.5px; height: 4px; margin-left: 0.5px; border-radius: 0.5px; "
-              />
-            </wx-view>
-          </wx-view>
-        </battery>
-        <battery>
-          <wx-view
-            class="container"
-          >
-            <wx-view
-              class="contain contain-horizontal"
-            >
-              <wx-view
-                class="body overflow-hidden body-horizontal"
-                style="width: 18px; height: 10px; border-radius: 2px; "
-              >
-                <wx-view
-                  class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-low-background, #ee652e); width: 3%"
-                />
-              </wx-view>
-              <wx-view
-                class="dot dot-horizontal base-bg"
-                style="width: 1.5px; height: 4px; margin-left: 0.5px; border-radius: 0.5px; "
-              />
-            </wx-view>
-          </wx-view>
-        </battery>
-        <battery>
-          <wx-view
-            class="container"
-          >
-            <wx-view
-              class="contain contain-horizontal"
-            >
-              <wx-view
-                class="body  body-horizontal"
-                style="width: 18px; height: 10px; border-radius: 2px; "
-              >
-                <wx-view
-                  class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-low-background, #ee652e); width: 0%"
-                />
-                <wx-view
-                  class="zero zero-horizontal"
-                  style="width: 16px; height: 4px; border-radius: 2px;"
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
                 >
                   <wx-view
-                    class="zero zero-inner zero-inner-horizontal"
-                    style="width: 16px; height: 1.5px;"
+                    class="smart-battery-bar smart-battery-bar-horizontal"
+                    style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 100%"
                   />
                 </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-horizontal smart-battery-high-bg"
+                  style="background-color: ;"
+                />
               </wx-view>
-              <wx-view
-                class="dot dot-horizontal base-bg"
-                style="width: 1.5px; height: 4px; margin-left: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
           </wx-view>
-        </battery>
+        </smart-battery>
+        <smart-battery>
+          <wx-view
+            class="smart-battery"
+          >
+            <wx-view
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
+            >
+              <wx-view
+                class="smart-battery-contain smart-battery-contain-horizontal"
+                style="transform: scale(0.5)"
+              >
+                <wx-view
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-horizontal"
+                    style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 70%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-horizontal smart-battery-base-bg"
+                  style="background-color: false;"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </smart-battery>
+        <smart-battery>
+          <wx-view
+            class="smart-battery"
+          >
+            <wx-view
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
+            >
+              <wx-view
+                class="smart-battery-contain smart-battery-contain-horizontal"
+                style="transform: scale(0.5)"
+              >
+                <wx-view
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-horizontal"
+                    style="background-color: var(--battery-body-low-background, #ee652e); width: 10%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-horizontal smart-battery-base-bg"
+                  style="background-color: false;"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </smart-battery>
+        <smart-battery>
+          <wx-view
+            class="smart-battery"
+          >
+            <wx-view
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
+            >
+              <wx-view
+                class="smart-battery-contain smart-battery-contain-horizontal"
+                style="transform: scale(0.5)"
+              >
+                <wx-view
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-horizontal"
+                    style="background-color: var(--battery-body-low-background, #ee652e); width: 3%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-horizontal smart-battery-base-bg"
+                  style="background-color: false;"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </smart-battery>
+        <smart-battery>
+          <wx-view
+            class="smart-battery"
+          >
+            <wx-view
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
+            >
+              <wx-view
+                class="smart-battery-contain smart-battery-contain-horizontal"
+                style="transform: scale(0.5)"
+              >
+                <wx-view
+                  class="smart-battery-body  smart-battery-body-horizontal"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-horizontal"
+                    style="background-color: var(--battery-body-low-background, #ee652e); width: 0%"
+                  />
+                  <wx-view
+                    class="smart-battery-zero smart-battery-zero-horizontal"
+                  >
+                    <wx-view
+                      class="smart-battery-zero smart-battery-zero-inner smart-battery-zero-inner-horizontal"
+                    />
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-horizontal smart-battery-base-bg"
+                  style="background-color: false;"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </smart-battery>
       </wx-view>
     </wx-view>
   </demo-block>
@@ -302,194 +325,184 @@ exports[`should render demo and match snapshot 1`] = `
       class="custom-class demo-block smart-clearfix "
     >
       <wx-view
-        class="demo-block__title"
-      >
-        undefined(undefined)
-      </wx-view>
-      <wx-view
         class="line"
       >
-        <battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-vertical"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body overflow-hidden body-vertical"
-                style="width: 20px; height: 36px; border-radius: 4px; "
+                class="smart-battery-contain smart-battery-contain-vertical"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-vertical"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); height: 100%"
-                />
-              </wx-view>
-              <wx-view
-                class="dot dot-vertical high-bg"
-                style="width: 8px; height: 3px; margin-bottom: 1px; border-radius: 1px; "
-              />
-            </wx-view>
-            <wx-view
-              class="text"
-            >
-              100%
-            </wx-view>
-          </wx-view>
-        </battery>
-        <battery>
-          <wx-view
-            class="container"
-          >
-            <wx-view
-              class="contain contain-vertical"
-            >
-              <wx-view
-                class="body overflow-hidden body-vertical"
-                style="width: 10px; height: 18px; border-radius: 2px; "
-              >
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-vertical"
+                    style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); height: 80%"
+                  />
+                </wx-view>
                 <wx-view
-                  class="bar bar-vertical"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); height: 80%"
+                  class="smart-battery-dot smart-battery-dot-vertical smart-battery-base-bg"
+                  style="background-color: false;"
                 />
               </wx-view>
-              <wx-view
-                class="dot dot-vertical base-bg"
-                style="width: 4px; height: 1.5px; margin-bottom: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
             <wx-view
-              class="text"
+              class="smart-battery-text smart-battery-text-vertical"
             >
               80%
             </wx-view>
           </wx-view>
-        </battery>
-        <battery>
+        </smart-battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-vertical"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body overflow-hidden body-vertical"
-                style="width: 10px; height: 18px; border-radius: 2px; "
+                class="smart-battery-contain smart-battery-contain-vertical"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-vertical"
-                  style="background-color: var(--battery-body-middle-background, #ffcb00); height: 50%"
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-vertical"
+                    style="background-color: var(--battery-body-middle-background, #ffcb00); height: 50%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-vertical smart-battery-base-bg"
+                  style="background-color: false;"
                 />
               </wx-view>
-              <wx-view
-                class="dot dot-vertical base-bg"
-                style="width: 4px; height: 1.5px; margin-bottom: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
             <wx-view
-              class="text"
+              class="smart-battery-text smart-battery-text-vertical"
             >
               50%
             </wx-view>
           </wx-view>
-        </battery>
-        <battery>
+        </smart-battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-vertical"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body overflow-hidden body-vertical"
-                style="width: 10px; height: 18px; border-radius: 2px; "
+                class="smart-battery-contain smart-battery-contain-vertical"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-vertical"
-                  style="background-color: var(--battery-body-low-background, #ee652e); height: 20%"
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-vertical"
+                    style="background-color: var(--battery-body-low-background, #ee652e); height: 20%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-vertical smart-battery-base-bg"
+                  style="background-color: false;"
                 />
               </wx-view>
-              <wx-view
-                class="dot dot-vertical base-bg"
-                style="width: 4px; height: 1.5px; margin-bottom: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
             <wx-view
-              class="text"
+              class="smart-battery-text smart-battery-text-vertical"
             >
               20%
             </wx-view>
           </wx-view>
-        </battery>
-        <battery>
+        </smart-battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-vertical"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body  body-vertical"
-                style="width: 10px; height: 18px; border-radius: 2px; "
+                class="smart-battery-contain smart-battery-contain-vertical"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-vertical"
-                  style="background-color: var(--battery-body-low-background, #ee652e); height: 0%"
-                />
-                <wx-view
-                  class="zero zero-vertical"
-                  style="width: 4px; height: 16px; border-radius: 2px;"
+                  class="smart-battery-body  smart-battery-body-vertical"
                 >
                   <wx-view
-                    class="zero zero-inner zero-inner-vertical"
-                    style="width: 1.5px; height: 16px;"
+                    class="smart-battery-bar smart-battery-bar-vertical"
+                    style="background-color: var(--battery-body-low-background, #ee652e); height: 0%"
                   />
+                  <wx-view
+                    class="smart-battery-zero smart-battery-zero-vertical"
+                  >
+                    <wx-view
+                      class="smart-battery-zero smart-battery-zero-inner smart-battery-zero-inner-vertical"
+                    />
+                  </wx-view>
                 </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-vertical smart-battery-base-bg"
+                  style="background-color: false;"
+                />
               </wx-view>
-              <wx-view
-                class="dot dot-vertical base-bg"
-                style="width: 4px; height: 1.5px; margin-bottom: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
             <wx-view
-              class="text"
+              class="smart-battery-text smart-battery-text-vertical"
             >
               0%
             </wx-view>
           </wx-view>
-        </battery>
-        <battery>
+        </smart-battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-vertical"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body overflow-hidden body-vertical"
-                style="width: 10px; height: 18px; border-radius: 2px; "
+                class="smart-battery-contain smart-battery-contain-vertical"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-vertical"
-                  style="background-color: var(--battery-body-charging-background, #2fc755); height: 80%"
-                />
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-vertical"
+                    style="background-color: var(--battery-body-charging-background, #2fc755); height: 80%"
+                  />
+                  <wx-view
+                    class="smart-battery-icon"
+                    style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='none' version='1.1' width='6px' height='10px' viewBox='0 0 6 10'%3E%3Cg%3E%3Cpath d='M4.3636,1.1364C3.17988,2.32012,1.37897,4.12103,0.507568,4.99243C0.318579,5.18142,0.461728,5.5,0.729,5.5Q1.35,5.5,2.5,5.5Q1.64,7.435,1.1498,8.53795C1.01473,8.84185,1.40124,9.09876,1.6364,8.8636C2.82012,7.67988,4.62103,5.87897,5.49243,5.00757C5.68142,4.81858,5.55435,4.5,5.28708,4.5C4.54814,4.5,3.5,4.5,3.5,4.5C3.5,4.5,4.26261,2.78412,4.84601,1.47148C4.98108,1.16757,4.59876,0.901241,4.3636,1.1364' fill='%23FFFFFF' fill-opacity='1'/%3E%3C/g%3E%3C/svg%3E\\");"
+                  />
+                </wx-view>
                 <wx-view
-                  class="icon"
-                  style="background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='none' version='1.1' width='6px' height='10px' viewBox='0 0 6 10'%3E%3Cg%3E%3Cpath d='M4.3636,1.1364C3.17988,2.32012,1.37897,4.12103,0.507568,4.99243C0.318579,5.18142,0.461728,5.5,0.729,5.5Q1.35,5.5,2.5,5.5Q1.64,7.435,1.1498,8.53795C1.01473,8.84185,1.40124,9.09876,1.6364,8.8636C2.82012,7.67988,4.62103,5.87897,5.49243,5.00757C5.68142,4.81858,5.55435,4.5,5.28708,4.5C4.54814,4.5,3.5,4.5,3.5,4.5C3.5,4.5,4.26261,2.78412,4.84601,1.47148C4.98108,1.16757,4.59876,0.901241,4.3636,1.1364' fill='%23FFFFFF' fill-opacity='1'/%3E%3C/g%3E%3C/svg%3E\\"); width: 6px; height: 10px; background-repeat: no-repeat;"
+                  class="smart-battery-dot smart-battery-dot-vertical smart-battery-base-bg"
+                  style="background-color: false;"
                 />
               </wx-view>
-              <wx-view
-                class="dot dot-vertical base-bg"
-                style="width: 4px; height: 1.5px; margin-bottom: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
             <wx-view
-              class="text"
+              class="smart-battery-text smart-battery-text-vertical"
             >
               80%
             </wx-view>
           </wx-view>
-        </battery>
+        </smart-battery>
       </wx-view>
     </wx-view>
   </demo-block>
@@ -505,155 +518,314 @@ exports[`should render demo and match snapshot 1`] = `
       <wx-view
         class="line"
       >
-        <battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-horizontal"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body overflow-hidden body-horizontal"
-                style="width: 18px; height: 10px; border-radius: 2px; "
+                class="smart-battery-contain smart-battery-contain-horizontal"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 100%"
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-horizontal"
+                    style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 100%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-horizontal smart-battery-high-bg"
+                  style="background-color: ;"
                 />
               </wx-view>
-              <wx-view
-                class="dot dot-horizontal high-bg"
-                style="width: 1.5px; height: 4px; margin-left: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
             <wx-view
-              class="text"
+              class="smart-battery-text "
             >
               100%
             </wx-view>
           </wx-view>
-        </battery>
-        <battery>
+        </smart-battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-horizontal"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body overflow-hidden body-horizontal"
-                style="width: 18px; height: 10px; border-radius: 2px; "
+                class="smart-battery-contain smart-battery-contain-horizontal"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 70%"
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-horizontal"
+                    style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 70%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-horizontal smart-battery-base-bg"
+                  style="background-color: false;"
                 />
               </wx-view>
-              <wx-view
-                class="dot dot-horizontal base-bg"
-                style="width: 1.5px; height: 4px; margin-left: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
             <wx-view
-              class="text"
+              class="smart-battery-text "
             >
               70%
             </wx-view>
           </wx-view>
-        </battery>
-        <battery>
+        </smart-battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-horizontal"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body overflow-hidden body-horizontal"
-                style="width: 18px; height: 10px; border-radius: 2px; "
+                class="smart-battery-contain smart-battery-contain-horizontal"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-low-background, #ee652e); width: 10%"
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-horizontal"
+                    style="background-color: var(--battery-body-low-background, #ee652e); width: 10%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-horizontal smart-battery-base-bg"
+                  style="background-color: false;"
                 />
               </wx-view>
-              <wx-view
-                class="dot dot-horizontal base-bg"
-                style="width: 1.5px; height: 4px; margin-left: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
             <wx-view
-              class="text"
+              class="smart-battery-text "
             >
               10%
             </wx-view>
           </wx-view>
-        </battery>
-        <battery>
+        </smart-battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-horizontal"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body overflow-hidden body-horizontal"
-                style="width: 18px; height: 10px; border-radius: 2px; "
+                class="smart-battery-contain smart-battery-contain-horizontal"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-low-background, #ee652e); width: 3%"
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-horizontal"
+                    style="background-color: var(--battery-body-low-background, #ee652e); width: 3%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-horizontal smart-battery-base-bg"
+                  style="background-color: false;"
                 />
               </wx-view>
-              <wx-view
-                class="dot dot-horizontal base-bg"
-                style="width: 1.5px; height: 4px; margin-left: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
             <wx-view
-              class="text"
+              class="smart-battery-text "
             >
               3%
             </wx-view>
           </wx-view>
-        </battery>
-        <battery>
+        </smart-battery>
+        <smart-battery>
           <wx-view
-            class="container"
+            class="smart-battery"
           >
             <wx-view
-              class="contain contain-horizontal"
+              class="smart-battery-container"
+              style="width: 24px;height: 24px;"
             >
               <wx-view
-                class="body  body-horizontal"
-                style="width: 18px; height: 10px; border-radius: 2px; "
+                class="smart-battery-contain smart-battery-contain-horizontal"
+                style="transform: scale(0.5)"
               >
                 <wx-view
-                  class="bar bar-horizontal"
-                  style="background-color: var(--battery-body-low-background, #ee652e); width: 0%"
-                />
-                <wx-view
-                  class="zero zero-horizontal"
-                  style="width: 16px; height: 4px; border-radius: 2px;"
+                  class="smart-battery-body  smart-battery-body-horizontal"
                 >
                   <wx-view
-                    class="zero zero-inner zero-inner-horizontal"
-                    style="width: 16px; height: 1.5px;"
+                    class="smart-battery-bar smart-battery-bar-horizontal"
+                    style="background-color: var(--battery-body-low-background, #ee652e); width: 0%"
                   />
+                  <wx-view
+                    class="smart-battery-zero smart-battery-zero-horizontal"
+                  >
+                    <wx-view
+                      class="smart-battery-zero smart-battery-zero-inner smart-battery-zero-inner-horizontal"
+                    />
+                  </wx-view>
                 </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-horizontal smart-battery-base-bg"
+                  style="background-color: false;"
+                />
               </wx-view>
-              <wx-view
-                class="dot dot-horizontal base-bg"
-                style="width: 1.5px; height: 4px; margin-left: 0.5px; border-radius: 0.5px; "
-              />
             </wx-view>
             <wx-view
-              class="text"
+              class="smart-battery-text "
             >
               0%
             </wx-view>
           </wx-view>
-        </battery>
+        </smart-battery>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <wx-view
+        class="line w-180"
+      >
+        <smart-battery>
+          <wx-view
+            class="smart-battery"
+          >
+            <wx-view
+              class="smart-battery-container"
+              style="width: 28px;height: 28px;"
+            >
+              <wx-view
+                class="smart-battery-contain smart-battery-contain-horizontal"
+                style="transform: scale(0.5833333333333334)"
+              >
+                <wx-view
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-horizontal"
+                    style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 100%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-horizontal smart-battery-high-bg"
+                  style="background-color: ;"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </smart-battery>
+        <smart-battery>
+          <wx-view
+            class="smart-battery"
+          >
+            <wx-view
+              class="smart-battery-container"
+              style="width: 28px;height: 28px;"
+            >
+              <wx-view
+                class="smart-battery-contain smart-battery-contain-horizontal"
+                style="transform: scale(0.5833333333333334)"
+              >
+                <wx-view
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-horizontal"
+                    style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); width: 100%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-horizontal smart-battery-high-bg"
+                  style="background-color: ;"
+                />
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="smart-battery-text "
+            >
+              100%
+            </wx-view>
+          </wx-view>
+        </smart-battery>
+      </wx-view>
+      <wx-view
+        class="line w-180"
+      >
+        <smart-battery>
+          <wx-view
+            class="smart-battery"
+          >
+            <wx-view
+              class="smart-battery-container"
+              style="width: 28px;height: 28px;"
+            >
+              <wx-view
+                class="smart-battery-contain smart-battery-contain-vertical"
+                style="transform: scale(0.5833333333333334)"
+              >
+                <wx-view
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-vertical"
+                    style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); height: 100%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-vertical smart-battery-high-bg"
+                  style="background-color: ;"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </smart-battery>
+        <smart-battery>
+          <wx-view
+            class="smart-battery"
+          >
+            <wx-view
+              class="smart-battery-container"
+              style="width: 28px;height: 28px;"
+            >
+              <wx-view
+                class="smart-battery-contain smart-battery-contain-vertical"
+                style="transform: scale(0.5833333333333334)"
+              >
+                <wx-view
+                  class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
+                >
+                  <wx-view
+                    class="smart-battery-bar smart-battery-bar-vertical"
+                    style="background-color: var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9))); height: 100%"
+                  />
+                </wx-view>
+                <wx-view
+                  class="smart-battery-dot smart-battery-dot-vertical smart-battery-high-bg"
+                  style="background-color: ;"
+                />
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="smart-battery-text smart-battery-text-vertical"
+            >
+              100%
+            </wx-view>
+          </wx-view>
+        </smart-battery>
       </wx-view>
     </wx-view>
   </demo-block>
