@@ -33,6 +33,7 @@
       max-date="{{ maxWeekDayDate }}"
       default-date="{{ curWeekDayDate }}"
       bind:select="setWeekCurDay"
+      first-day-of-select-week="{{ 1 }}"
     />
   </demo-block>
 
