@@ -93,7 +93,7 @@ The component provides the following CSS variables that can be used for custom s
 
 | Name             | Default Value         | Description                     |
 | -------------------- | --------------------- | ------------------------------- |
-| --battery-body-base-background `v2.10.0`     | _rgba(0, 0, 0, 0.25)_ | Battery body background         |
+| --battery-body-base-background `v2.10.0`     | _var(--smart-ui-battery-body-base-background, rgba(0, 0, 0, 0.25))_ | Battery body background         |
 | --battery-body-charging-background `v2.10.0` | _#2fc755_             | Charging state background       |
 | --battery-body-high-background `v2.10.0`   | _var(--app-B1-N1, rgba(0, 0, 0, 0.9))_  | High battery background color   |
 | --battery-body-middle-background `v2.10.0`   | _#ffcb00_             | Medium battery level background |
