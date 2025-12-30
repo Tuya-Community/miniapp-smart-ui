@@ -754,7 +754,7 @@
   },
   "bottom-sheet-dragger-node-background": {
     "name": "@bottom-sheet-dragger-node-background",
-    "value": "var("
+    "value": "var(--smart-ui-bottom-sheet-dragger-node-background,rgba(0, 0, 0, 0.3))"
   },
   "button-mini-height": {
     "name": "@button-mini-height",
