@@ -152,6 +152,10 @@ SmartComponent({
       type: Number,
       value: 0,
     },
+    firstDayOfSelectWeek: {
+      type: Number,
+      value: 1,
+    },
     readonly: Boolean,
     rootPortal: {
       type: Boolean,
@@ -363,7 +367,7 @@ SmartComponent({
       const { type, currentDate, allowSameDay } = this.data;
 
       if (type === 'week') {
-        const { weekStart, weekEnd } = getWeekStartAndEnd(date);
+        const { weekStart, weekEnd } = getWeekStartAndEnd(date, this.data.firstDayOfSelectWeek);
         this.select(
           [
             Math.max(getTime(weekStart), getTime(this.data.minDate)),
