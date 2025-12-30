@@ -23,10 +23,9 @@
 }
 
 .smart-battery-overflow-hidden {
-  overflow: hidden;
-
-  /* Add this line */
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  /* 使用 clip-path 代替 overflow: hidden，避免 iOS 上圆角被切割 */
+  clip-path: inset(0 round 4px);
+  -webkit-clip-path: inset(0 round 4px);
 }
 
 .smart-battery-contain-vertical {
@@ -115,6 +114,7 @@
 .smart-battery-bar {
   position: absolute;
   transform: translateZ(0);
+  box-sizing: border-box;
 }
 
 .smart-battery-bar-vertical {
