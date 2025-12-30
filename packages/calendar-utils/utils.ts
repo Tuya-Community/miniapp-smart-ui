@@ -148,13 +148,16 @@ export function getCurrentIndex(currentDate, months) {
   return findLastGreaterOrEqual(months, currentDate);
 }
 
-export function getWeekStartAndEnd(date: Date) {
+export function getWeekStartAndEnd(date: Date, firstDayOfWeek = 1) {
+  // firstDayOfWeek: 0(周日) ~ 6(周六)
   const startOfWeek = new Date(date);
-
   const dayOfWeek = startOfWeek.getDay();
 
-  const diffToMonday = (dayOfWeek + 6) % 7;
-  startOfWeek.setDate(startOfWeek.getDate() - diffToMonday);
+  let diffToFirst = dayOfWeek - firstDayOfWeek;
+  if (diffToFirst < 0) {
+    diffToFirst += 7;
+  }
+  startOfWeek.setDate(startOfWeek.getDate() - diffToFirst);
 
   const endOfWeek = new Date(startOfWeek);
   endOfWeek.setDate(startOfWeek.getDate() + 6);
