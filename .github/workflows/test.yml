@@ -2,7 +2,6 @@ name: test
 on: 
   pull_request:
     branches:
-      - main
       - release/*
   push:
     branches:
@@ -44,7 +43,7 @@ jobs:
           retention-days: 30
       
       - name: 更新覆盖率数据到仓库（供官网和徽章使用）
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
