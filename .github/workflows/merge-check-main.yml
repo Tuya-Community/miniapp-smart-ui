@@ -54,28 +54,48 @@ jobs:
             echo "✅ 未发现 beta 版本依赖，检查通过"
           fi
 
-  test-coverage:
-    runs-on: ubuntu-latest
+  # test-coverage:
+  #   runs-on: ubuntu-latest
     
-    steps:
-      - name: 检出仓库
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
+  #   steps:
+  #     - name: 检出仓库
+  #       uses: actions/checkout@v4
+  #       with:
+  #         ref: ${{ github.event.pull_request.head.sha }}
       
-      - name: 设置 Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'yarn'
+  #     - name: 设置 Node.js
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: '22'
+  #         cache: 'yarn'
       
-      - name: 安装依赖
-        run: yarn install --frozen-lockfile
+  #     - name: 安装依赖
+  #       run: yarn install --frozen-lockfile
       
-      - name: 运行测试并生成覆盖率报告
-        run: yarn test:cover
-        env:
-          TZ: Asia/Shanghai
+      # - name: 运行测试并生成覆盖率报告
+      #   run: yarn test:cover
+      #   env:
+      #     TZ: Asia/Shanghai
+      
+      # - name: 代码覆盖率摘要
+      #   uses: irongut/CodeCoverageSummary@v1.3.0
+      #   with:
+      #     filename: coverage/cobertura-coverage.xml
+      #     badge: true
+      #     fail_below_min: false
+      #     format: markdown
+      #     hide_branch_rate: false
+      #     hide_complexity: true
+      #     indicators: true
+      #     output: both
+      #     thresholds: '50 75'
+      
+      # - name: 在 PR 中添加覆盖率评论
+      #   if: github.event_name == 'pull_request'
+      #   uses: marocchino/sticky-pull-request-comment@v2
+      #   with:
+      #     recreate: true
+      #     path: code-coverage-results.md
       
       # - name: 上传覆盖率到 Codecov
       #   uses: codecov/codecov-action@v4

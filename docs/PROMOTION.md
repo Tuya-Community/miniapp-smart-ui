@@ -1,6 +1,5 @@
 # 🚀 SmartUI：让涂鸦小程序开发更简单、更高效
 
-
 > 一个轻量、可靠、功能丰富的智能小程序 UI 组件库，助力开发者快速构建精美的涂鸦小程序应用
 
 ## 📦 关于 Smart UI
@@ -34,6 +33,16 @@
 - **Less 样式**：灵活的样式定制能力
 - **完整文档**：中英文文档齐全，示例丰富
 - **测试覆盖**：Jest 测试框架，保证代码质量
+
+### ✅ 测试覆盖率
+经过持续完善的测试用例补充，Smart UI 现已达到**98.21%** 的测试覆盖率，确保组件库的稳定性和可靠性：
+
+- **语句覆盖率**：98.21%
+- **分支覆盖率**：91.88%
+- **函数覆盖率**：96.24%
+- **行覆盖率**：98.37%
+
+所有组件都经过严格的单元测试，覆盖各种使用场景和边界情况。你可以通过运行 `yarn test:cover` 查看详细的覆盖率报告。
 
 ### 🌈 主题定制
 - 支持 CSS 变量定制主题
@@ -71,23 +80,27 @@ export default function Demo() {
 
 <img src="https://github.com/user-attachments/assets/aa64f245-efa6-4e2b-b85e-9be28feb266c" width="250" style="display: inline-block; margin-right: 2%;" /> <img src="https://github.com/user-attachments/assets/26aa4298-7f70-48b9-9d5b-81109b47c074" width="250" style="display: inline-block;" />
 
+### 导航组件
+
+<img src="https://github.com/user-attachments/assets/89ee3b28-f3db-4b0a-84af-648294f3bacb" width="250" style="display: inline-block; margin-right: 2%;" /> <img src="https://github.com/user-attachments/assets/a223e51b-6f98-42ae-8905-37d63a5eec04" width="250" style="display: inline-block;" /> <img src="https://github.com/user-attachments/assets/d3fc8f0e-9f39-47a6-9240-64d08155ab64" width="250" style="display: inline-block; margin-right: 2%;" /> <img src="https://github.com/user-attachments/assets/7042a950-3d24-4cbe-b8ce-d13121dfe7d8" width="250" style="display: inline-block;" /> <img src="https://github.com/user-attachments/assets/dde6a21a-1b19-4c88-9be7-b1ef69cb59f0" width="250" style="display: inline-block; margin-right: 2%;" />
+
 ### 3D 滚动选择器
 
 真实3D滚动效果，类似 IOS 原生，且支持无限滚动的Picker，DateTimePicker
 
-![Kapture 2025-12-19 at 19 37 40](https://github.com/user-attachments/assets/d00ea6ce-4f8b-48d7-97ae-d377f356ec9f)  
+<img src="https://github.com/user-attachments/assets/4129d062-1147-4d30-8344-71aaa779ec45" height="180" style="display: inline-block; margin-right: 2%;" /> <img src="https://github.com/user-attachments/assets/860dbc3f-f6ce-41c1-899f-bcf8fdc5e5c0" height="180" style="display: inline-block;" />
 
-![Kapture 2025-12-19 at 19 31 38](https://github.com/user-attachments/assets/860dbc3f-f6ce-41c1-899f-bcf8fdc5e5c0)
+### 表单组件
 
-
-
+<img src="https://github.com/user-attachments/assets/ded282ee-9f31-4f9d-891f-da7932bbc183" width="250" style="display: inline-block; margin-right: 2%;" /> <img src="https://github.com/user-attachments/assets/cd6b3ee5-b08f-45ac-be3b-cd236687f9ff" width="250" style="display: inline-block;" /> <img src="https://github.com/user-attachments/assets/88a435d6-95f7-437f-92d1-44be0c58f709" width="250" style="display: inline-block;" /><img src="https://github.com/user-attachments/assets/1839bfe6-30ae-4056-9aa6-0d97a5e1003b" width="250" style="display: inline-block; margin-right: 2%;" /> <img src="https://github.com/user-attachments/assets/7bade96b-c527-443f-b8fd-ab35030f455e" width="250" style="display: inline-block;" /> <img src="https://github.com/user-attachments/assets/b57fb828-c3dc-4638-a4d7-438c1ba3101e" width="250" style="display: inline-block;" />
 
 ### 多种弹框
 
 内部包含基础弹框Popup（可任意方向出现）、选择器弹框ActionSheet、底部可拖拽弹框BottomSheet、交互弹框Dialog、轻提示弹框Toast，涵盖所有交互形式，方便开发。
 
-![Kapture 2025-12-19 at 19 58 01](https://github.com/user-attachments/assets/80a018ff-7485-4bdd-8fa5-ad0a3c764957) ![Kapture 2025-12-22 at 15 13 21](https://github.com/user-attachments/assets/5ca739c7-e439-4ffd-af5f-10ab3e1b72a0) ![Kapture 2025-12-19 at 19 59 09](https://github.com/user-attachments/assets/f087f0da-f8a2-4eb5-882e-b055952fe38d) ![Kapture 2025-12-19 at 20 02 12](https://github.com/user-attachments/assets/be25d5da-a196-4afd-afd8-95c2e569fae1) ![Kapture 2025-12-22 at 14 55 49](https://github.com/user-attachments/assets/83774a26-ab95-44cb-9afa-4e481c382723) ![Kapture 2025-12-22 at 14 58 37](https://github.com/user-attachments/assets/54861153-1f31-46cd-af0f-e78649c78430)
+<img src="https://github.com/user-attachments/assets/80a018ff-7485-4bdd-8fa5-ad0a3c764957" width="250" style="display: inline-block; margin-right: 2%;" /> <img src="https://github.com/user-attachments/assets/5ca739c7-e439-4ffd-af5f-10ab3e1b72a0" width="250" style="display: inline-block;" /> <img src="https://github.com/user-attachments/assets/f087f0da-f8a2-4eb5-882e-b055952fe38d" width="250" style="display: inline-block; margin-right: 2%;" /> 
 
+<img src="https://github.com/user-attachments/assets/be25d5da-a196-4afd-afd8-95c2e569fae1" width="250" style="display: inline-block; margin-right: 2%;" /> <img src="https://github.com/user-attachments/assets/83774a26-ab95-44cb-9afa-4e481c382723" width="250" style="display: inline-block;" /> <img src="https://github.com/user-attachments/assets/54861153-1f31-46cd-af0f-e78649c78430" width="250" style="display: inline-block; margin-right: 2%;" /> 
 
 ## 🎯 适用场景
 
@@ -98,7 +111,17 @@ export default function Demo() {
 - 门锁
 - 节能
 - 户外
-- ...
+- ...  
+
+> 超100+个涂鸦公版接入SmartUI  
+> 宠物猫砂、食物秤、充电桩...
+
+<img width="250" alt="image" src="https://github.com/user-attachments/assets/cf056a4e-6010-4a81-912a-4e2a40e98cbc" />
+
+<img width="250" alt="截屏2025-12-24 14 03 31" src="https://github.com/user-attachments/assets/ef9fcd4a-09df-4eb0-872d-e235b228a9f5" />
+
+<img width="250" alt="企业微信截图_ab13183c-6573-4811-8435-0cc60122281b" src="https://github.com/user-attachments/assets/301230eb-2572-4463-841d-33db6d957e54" />
+
 
 ### 设备管理
 - 设备列表展示（Cell、CellGroup）
@@ -129,7 +152,7 @@ export default function Demo() {
 
 ### ✅ 代码质量
 - TypeScript 类型安全
-- 完整的测试覆盖
+- **98.21% 测试覆盖率**：经过完善的测试用例补充，确保组件稳定可靠
 - 规范的代码风格
 
 ### ✅ 社区支持
@@ -148,7 +171,7 @@ export default function Demo() {
 - 📦 [GitHub 仓库](https://github.com/Tuya-Community/ray-smart-ui)
 - 💬 [社区论坛](https://www.tuyaos.com/viewforum.php?f=10)
 - 🎨 [物料市场](https://developer.tuya.com/material/library_oHEKLjj0/?lang=zh)
-- 📝 [更新日志](https://developer.tuya.com/material/smartui?comId=help-changelog&appType=miniapp)
+- 📝 [更新日志](https://developer.tuya.com/material/smartui?comId=help-changelog)
 
 ## 🔍 预览体验
 
@@ -163,7 +186,6 @@ export default function Demo() {
 ```bash
 # 克隆仓库
 git clone https://github.com/Tuya-Community/ray-smart-ui
-
 
 # 安装依赖
 yarn install
@@ -193,6 +215,10 @@ yarn test:cover
 ## 📄 开源协议
 
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) 协议开源，请自由地享受和参与开源。
+
+## ✅ 开发计划
+
+[PLANS](https://github.com/Tuya-Community/miniapp-smart-ui/blob/release/2.x/PLANS.md) 内部会标注下个版本迭代的开发计划以及相应的测试包版本
 
 ## 🌟 开始使用
 

@@ -1,0 +1,88 @@
+name: test
+on: 
+  pull_request:
+    branches:
+      - release/*
+  push:
+    branches:
+      - main
+      - release/*
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # 对于 release 分支，使用 PROTECT_WRITE_TOKEN 以绕过保护分支限制
+          token: ${{ github.ref == 'refs/heads/release/2.x' && secrets.PROTECT_WRITE_TOKEN || secrets.GITHUB_TOKEN }}
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: 'yarn'
+      - run: echo '安装依赖'
+      - run: yarn install --frozen-lockfile
+      - run: echo '检查源码编译是否正常'
+      - run: yarn run build
+      - run: echo '检查单元测试是否正常'
+      - run: yarn run test
+      - run: echo '生成测试覆盖率报告'
+      - run: yarn run test:cover
+        env:
+          TZ: Asia/Shanghai
+      - name: 上传覆盖率 JSON 文件到 GitHub Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-json
+          path: coverage/coverage-final.json
+          retention-days: 30
+      
+      - name: 更新覆盖率数据到仓库（供官网和徽章使用）
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          mkdir -p .github/coverage
+          # 复制完整的覆盖率 JSON（供官网使用）
+          cp coverage/coverage-final.json .github/coverage/coverage-final.json
+          # 生成覆盖率摘要 JSON（供 shields.io 徽章使用）
+          # 会在 .github/coverage 和 docs 目录下各生成一份 coverage-summary.json 和 coverage-final.json
+          node build/update-coverage-badge.js coverage/coverage-final.json .github/coverage/coverage-summary.json
+          git add .github/coverage/coverage-final.json .github/coverage/coverage-summary.json docs/coverage-summary.json docs/coverage-final.json
+          if git diff --staged --quiet; then
+            echo "覆盖率数据未发生变化，跳过提交"
+          else
+            git commit -m "chore: update test coverage data [skip ci]"
+            # 对于 release 分支，使用 PROTECT_WRITE_TOKEN 来绕过保护分支限制
+            if [ "${{ github.ref }}" = "refs/heads/release/2.x" ]; then
+              echo "使用 PROTECT_WRITE_TOKEN 推送到 release/2.x 分支"
+              git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:release/2.x
+            else
+              echo "推送到 ${{ github.ref_name }} 分支"
+              git push origin ${{ github.ref_name }}
+            fi
+          fi
+
+      # - name: 配置 GitHub Pages
+      #   if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
+      #   uses: actions/configure-pages@v4
+      #   with:
+      #     static_site_generator: custom
+      #     enablement: true
+
+      # - name: 上传 Coverage 报告到 GitHub Pages
+      #   if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: coverage/lcov-report
+
+      # - name: 部署到 GitHub Pages
+      #   if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release/2.x')
+      #   id: deployment
+      #   uses: actions/deploy-pages@v4
+      
