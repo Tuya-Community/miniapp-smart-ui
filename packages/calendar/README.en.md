@@ -104,6 +104,8 @@ Define the CSS class in the `app.less` file:
 
 Set `type` to `week` to select a week's time range. At this time, the `select` event returns the date in array structure, and the array contains the start and end selected dates.
 
+You can set the starting day of week selection through the `first-day-of-select-week` `v2.8.1` property, which controls the week range when clicking on a date. `first-day-of-week` is used to control the starting day of the week displayed in the calendar, while `first-day-of-select-week` is specifically used to control the week range calculation for week selection.
+
 ```html
 <smart-calendar
   title="Select Single Week Range"
@@ -111,6 +113,7 @@ Set `type` to `week` to select a week's time range. At this time, the `select` e
   min-date="{{ minWeekDayDate }}"
   max-date="{{ maxWeekDayDate }}"
   default-date="{{ curWeekDayDate }}"
+  first-day-of-select-week="{{ 1 }}"
   bind:select="setWeekCurDay"
 />
 ```
@@ -344,113 +347,114 @@ The default configuration is `en`. For configuration parameters, please refer to
 
 ### Props
 
-| Parameter               | Description                                                                                         | Type                                | Default Value        |
-| ----------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------- | -------------------- |
-| color                   | Theme color, takes effect on the bottom button and selected date                                    | _string_                            | `#ee0a24`            |
-| confirm-text            | Text of the confirmation button                                                                     | _string_                            | `Confirm`            |
-| default-date `v1.10.21` | Default selected date, when `type` is `range`, it is an array; passing `null` means no default selection | _timestamp \| timestamp[] \| null_  | Today                |
-| first-day-of-week       | Set the starting day of the week                                                                    | _0~6_                               | `0`                  |
-| locale                  | Locale package                                                                                      | _Object_                            | [Default Configuration](#locale) |
-| max-date                | Maximum selectable date                                                                             | _timestamp_                         | Six months from current date |
-| min-date                | Minimum selectable date                                                                             | _timestamp_                         | Current date          |
-| poppable                | Show the calendar as a popup                                                                        | _boolean_                           | `true`               |
-| readonly `v1.9.1`       | Readonly state, dates cannot be selected in readonly state                                          | _boolean_                           | `false`              |
-| row-height              | Date row height                                                                                     | _number \| string_                  | `64`                 |
-| show-confirm            | Show the confirmation button                                                                        | _boolean_                           | `true`               |
-| show-subtitle           | Show calendar subtitle (year and month)                                                             | _boolean_                           | `true`               |
-| show-title              | Show calendar title                                                                                 | _boolean_                           | `true`               |
-| title                   | Calendar title                                                                                      | _string_                            | `Date Selection`     |
-| day-class-map `v2.1.0`    | Date cell style                                                                                     | Object                              | null                 |
-| type                    | Selection type: <br>`single` for single date selection, <br>`range` for date range selection, <br>`week` for week selection, <br>`month` for month selection, <br>`year` for year selection | _string_ | `single` |
-| header-icon-color `v2.6.0` | Header bar left and right arrow icon color | _string_ | `rgba(0, 0, 0, 0.7)` |
+| Parameter                  | Description                                                                                                                                                                                                                                                                                                  | Type                               | Default Value                    |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- | -------------------------------- |
+| color                      | Theme color, takes effect on the bottom button and selected date                                                                                                                                                                                                                                             | _string_                           | `#ee0a24`                        |
+| confirm-text               | Text of the confirmation button                                                                                                                                                                                                                                                                              | _string_                           | `Confirm`                        |
+| day-class-map `v2.1.0`     | Date cell style                                                                                                                                                                                                                                                                                              | Object                             | null                             |
+| default-date `v1.10.21`    | Default selected date, when `type` is `range`, it is an array; passing `null` means no default selection                                                                                                                                                                                                     | _timestamp \| timestamp[] \| null_ | Today                            |
+| first-day-of-select-week `v2.8.1`  | Set the starting day of week selection, which controls the week range when clicking on a date. `first-day-of-week` is used to control the starting day of the week displayed in the calendar, while `first-day-of-select-week` is specifically used to control the week range calculation for week selection | _0~6_                              | `1`                              |
+| first-day-of-week          | Set the starting day of the week                                                                                                                                                                                                                                                                             | _0~6_                              | `0`                              |
+| header-icon-color `v2.6.0` | Header bar left and right arrow icon color                                                                                                                                                                                                                                                                   | _string_                           | `rgba(0, 0, 0, 0.7)`             |
+| locale                     | Locale package                                                                                                                                                                                                                                                                                               | _Object_                           | [Default Configuration](#locale) |
+| max-date                   | Maximum selectable date                                                                                                                                                                                                                                                                                      | _timestamp_                        | Six months from current date     |
+| min-date                   | Minimum selectable date                                                                                                                                                                                                                                                                                      | _timestamp_                        | Current date                     |
+| poppable                   | Show the calendar as a popup                                                                                                                                                                                                                                                                                 | _boolean_                          | `true`                           |
+| readonly `v1.9.1`          | Readonly state, dates cannot be selected in readonly state                                                                                                                                                                                                                                                   | _boolean_                          | `false`                          |
+| row-height                 | Date row height                                                                                                                                                                                                                                                                                              | _number \| string_                 | `64`                             |
+| show-confirm               | Show the confirmation button                                                                                                                                                                                                                                                                                 | _boolean_                          | `true`                           |
+| show-subtitle              | Show calendar subtitle (year and month)                                                                                                                                                                                                                                                                      | _boolean_                          | `true`                           |
+| show-title                 | Show calendar title                                                                                                                                                                                                                                                                                          | _boolean_                          | `true`                           |
+| title                      | Calendar title                                                                                                                                                                                                                                                                                               | _string_                           | `Date Selection`                 |
+| type                       | Selection type: <br>`single` for single date selection, <br>`range` for date range selection, <br>`week` for week selection, <br>`month` for month selection, <br>`year` for year selection                                                                                                                  | _string_                           | `single`                         |
 
 ### Range Props
 
 When the type of Calendar is set to `range`, the following props are supported:
 
-| Parameter               | Description                                          | Type               | Default Value                   |
-| ------------------ | --------------------------------------------- | ------------------ | ------------------------ |
-| max-range `v2.3.9`         | The maximum number of days selectable in the date range. By default, there is no limit.              | _number \| string_ | -                        |
-| range-prompt `v2.3.9`       | The prompt text when the range selection exceeds the maximum number of selectable days          | _string \| null_   | `Days selected over x days` |
-| show-range-prompt `v2.3.9`  | Whether to display the prompt text when the range selection exceeds the maximum number of selectable days  | _boolean_          | `true`                   |
-| allow-same-day `v2.3.9`     | Whether to allow the start and end time of the date range to be the same day            | _boolean_          | `false`                  |
+| Parameter                  | Description                                                                                               | Type               | Default Value               |
+| -------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------ | --------------------------- |
+| allow-same-day `v2.3.9`    | Whether to allow the start and end time of the date range to be the same day                              | _boolean_          | `false`                     |
+| max-range `v2.3.9`         | The maximum number of days selectable in the date range. By default, there is no limit.                   | _number \| string_ | -                           |
+| range-prompt `v2.3.9`      | The prompt text when the range selection exceeds the maximum number of selectable days                    | _string \| null_   | `Days selected over x days` |
+| show-range-prompt `v2.3.9` | Whether to display the prompt text when the range selection exceeds the maximum number of selectable days | _boolean_          | `true`                      |
 
 ### Poppable Props
 
 When the `poppable` of Calendar is `true`, the following props are supported:
 
-| Parameter                | Description                       | Type      | Default Value |
-| ------------------------ | --------------------------------- | --------- | ------------- |
-| close-on-click-overlay   | Close when clicking the overlay   | _boolean_ | `true`       |
-| position                 | Popup position, optional values are `top`, `right`, `left` | _string_  | `bottom`     |
-| round                    | Show rounded popup                | _boolean_ | `true`       |
-| safe-area-inset-bottom   | Whether to reserve bottom safe area, v2.7.0 starts to close by default | _boolean_ | `false`       |
-| show                     | Show the calendar popup           | _boolean_ | `false`      |
+| Parameter              | Description                                                            | Type      | Default Value |
+| ---------------------- | ---------------------------------------------------------------------- | --------- | ------------- |
+| close-on-click-overlay | Close when clicking the overlay                                        | _boolean_ | `true`        |
+| position               | Popup position, optional values are `top`, `right`, `left`             | _string_  | `bottom`      |
+| round                  | Show rounded popup                                                     | _boolean_ | `true`        |
+| safe-area-inset-bottom | Whether to reserve bottom safe area, v2.7.0 starts to close by default | _boolean_ | `false`       |
+| show                   | Show the calendar popup                                                | _boolean_ | `false`       |
 
 ### Events
 
-| Event Name                  | Description                                                     | Callback Parameter            |
-| --------------------------- | --------------------------------------------------------------- | ----------------------------- |
-| bind:click-subtitle `v1.8.1`| Triggered when the calendar subtitle is clicked                 | _WechatMiniprogram.TouchEvent_ |
-| bind:close                  | Triggered when the popup layer is closed                        | -                             |
-| bind:closed                 | Triggered after the popup layer is closed and the animation ends| -                             |
-| bind:confirm                | Triggered after date selection is completed; if `show-confirm` is `true`, it is triggered after clicking the confirm button | _value: Date \| Date[]_  |
-| bind:open                   | Triggered when the popup layer is opened                        | -                             |
-| bind:opened                 | Triggered after the popup layer is opened and the animation ends | -                             |
-| bind:over-range             | Triggered when the range selection exceeds the maximum selectable days | -                             |
-| bind:select                 | Triggered when any date is clicked                              | _value: Date \| Date[]_        |
-| bind:unselect               | Triggered when clicking a selected date if the `type` of Calendar is `multiple` | _value: Date_                  |
+| Event Name                   | Description                                                                                                                 | Callback Parameter             |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| bind:click-subtitle `v1.8.1` | Triggered when the calendar subtitle is clicked                                                                             | _WechatMiniprogram.TouchEvent_ |
+| bind:close                   | Triggered when the popup layer is closed                                                                                    | -                              |
+| bind:closed                  | Triggered after the popup layer is closed and the animation ends                                                            | -                              |
+| bind:confirm                 | Triggered after date selection is completed; if `show-confirm` is `true`, it is triggered after clicking the confirm button | _value: Date \| Date[]_        |
+| bind:open                    | Triggered when the popup layer is opened                                                                                    | -                              |
+| bind:opened                  | Triggered after the popup layer is opened and the animation ends                                                            | -                              |
+| bind:over-range              | Triggered when the range selection exceeds the maximum selectable days                                                      | -                              |
+| bind:select                  | Triggered when any date is clicked                                                                                          | _value: Date \| Date[]_        |
+| bind:unselect                | Triggered when clicking a selected date if the `type` of Calendar is `multiple`                                             | _value: Date_                  |
 
 ### Methods
 
 You can get the Calendar instance via [selectComponent](/material/smartui?comId=faq&appType=miniapp) and call instance methods.
 
-| Method Name | Description                        | Parameter | Return Value |
-| ------------| ---------------------------------- | ----------| -------------|
+| Method Name | Description                                  | Parameter | Return Value |
+| ----------- | -------------------------------------------- | --------- | ------------ |
 | reset       | Reset the selected date to the default value | -         | -            |
 
 ### Style Variables
 
 The component provides the following CSS variables for custom styles. For usage, please refer to the [ConfigProvider Component](/material/smartui?comId=config-provider&appType=miniapp).  
 
-| Name                                            | Default Value                                  | Description                           |
-| ----------------------------------------------- | ---------------------------------------------- | ------------------------------------- |
-| --calendar-background-color                     | _var(--app-B6, #fff)_                          | Calendar background color             |
-| --calendar-popup-height `v2.5.0`                        | _848rpx_                                          | Calendar popup height                 |
-| --calendar-header-box-shadow                    | _0 2px 10px rgba(125, 126, 128, 0.16)_         | Calendar header box shadow            |
-| --calendar-header-title-height                  | _44px_                                         | Calendar header title height          |
-| --calendar-header-title-font-size               | _16px_                                         | Calendar header title font size       |
-| --calendar-header-title-font-color              | _var(--app-B4-N1, rgba(0, 0, 0, 1))_           | Calendar header title font color      |
-| --calendar-header-subtitle-font-size            | _16px_                                         | Calendar header subtitle font size    |
-| --calendar-weekdays-height                      | _30px_                                         | Weekdays bar height                   |
-| --calendar-weekdays-font-size                   | _12px_                                         | Weekdays font size                    |
-| --calendar-weekdays-font-color                  | _var(--app-B4-N1, rgba(0, 0, 0, 1))_           | Weekdays font color                   |
-| --calendar-month-title-font-size                | _14px_                                         | Month title font size                 |
-| --calendar-month-mark-color                     | _fade(@gray-4, 60%)_                           | Month mark color                      |
-| --calendar-month-mark-font-size                 | _160px_                                        | Month mark font size                  |
-| --calendar-day-height                           | _100rpx_                                       | Day cell height                       |
-| --calendar-cell-item-font-size                  | _15px_                                         | Day font size                         |
-| --calendar-cell-item-width                      | _104rpx_                                       | Calendar cell item width              |
-| --calendar-cell-item-height                     | _104rpx_                                       | Calendar cell item height             |
-| --calendar-cell-item-font-color                 | _var(--app-B4-N1, rgba(0, 0, 0, 1))_           | Calendar cell item font color         |
-| --calendar-cell-item-border-radius              | _104rpx_                                       | Calendar cell item border radius      |
-| --calendar-day-font-weight                      | _500_                                          | Day font weight                       |
-| --calendar-day-select-border-radius             | _34rpx_                                        | Selected day border radius            |
-| --calendar-range-edge-color                     | _#fff_                                         | Date range edge color                 |
-| --calendar-range-edge-background-color          | _#3678e3_                                      | Date range edge background color      |
-| --calendar-range-middle-color                   | _#fff_                                         | Date range middle color               |
-| --calendar-range-middle-background-opacity      | _0.1_                                          | Date range middle background opacity  |
-| --calendar-selected-day-size                    | _34px_                                         | Selected day size                     |
-| --calendar-selected-day-color                   | _#fff_                                         | Selected day text color               |
-| --calendar-info-font-size                       | _10px_                                         | Calendar info font size               |
-| --calendar-info-line-height                     | _14px_                                         | Calendar info line height             |
-| --calendar-selected-day-background-color        | _#3678e3_                                      | Selected day background color         |
-| --calendar-day-disabled-color   `@deprecated v2.9.0`                | _#c8c9cc_                                      | Disabled day color                    |
-| --calendar-confirm-button-height                | _36px_                                         | Confirm button height                 |
-| --calendar-confirm-button-margin                | _7px 0_                                        | Confirm button margin                 |
-| --calendar-confirm-button-line-height           | _34px_                                         | Confirm button line height            |
-| --calendar-text-color                           | _#000_                                         | Calendar text color                   |
-| --calendar-header-save-color                    | _#1989fa_                                      | Calendar header save button color     |
-| --calendar-header-icon-bg-color  `v2.6.0`                | _var(--app-B2-N9, rgba(0, 0, 0, 0.05))_        | Calendar header icon background color |
-| --calendar-header-icon-color   `v2.6.0`             | _var(--app-B1-N2, rgba(0, 0, 0, 0.7))_        | Calendar header icon background color                     |
-| --calendar-header-title-weight `v2.6.0`               | 600        | Calendar Header Title Font Weight                     |
+| Name                                               | Default Value                           | Description                           |
+| -------------------------------------------------- | --------------------------------------- | ------------------------------------- |
+| --calendar-background-color                        | _var(--app-B6, #fff)_                   | Calendar background color             |
+| --calendar-cell-item-border-radius                 | _104rpx_                                | Calendar cell item border radius      |
+| --calendar-cell-item-font-color                    | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | Calendar cell item font color         |
+| --calendar-cell-item-font-size                     | _15px_                                  | Day font size                         |
+| --calendar-cell-item-height                        | _104rpx_                                | Calendar cell item height             |
+| --calendar-cell-item-width                         | _104rpx_                                | Calendar cell item width              |
+| --calendar-confirm-button-height                   | _36px_                                  | Confirm button height                 |
+| --calendar-confirm-button-line-height              | _34px_                                  | Confirm button line height            |
+| --calendar-confirm-button-margin                   | _7px 0_                                 | Confirm button margin                 |
+| --calendar-day-disabled-color `@deprecated v2.9.0` | _#c8c9cc_                               | Disabled day color                    |
+| --calendar-day-font-weight                         | _500_                                   | Day font weight                       |
+| --calendar-day-height                              | _100rpx_                                | Day cell height                       |
+| --calendar-day-select-border-radius                | _34rpx_                                 | Selected day border radius            |
+| --calendar-header-box-shadow                       | _0 2px 10px rgba(125, 126, 128, 0.16)_  | Calendar header box shadow            |
+| --calendar-header-icon-bg-color `v2.6.0`           | _var(--app-B2-N9, rgba(0, 0, 0, 0.05))_ | Calendar header icon background color |
+| --calendar-header-icon-color `v2.6.0`              | _var(--app-B1-N2, rgba(0, 0, 0, 0.7))_  | Calendar header icon background color |
+| --calendar-header-save-color                       | _#1989fa_                               | Calendar header save button color     |
+| --calendar-header-subtitle-font-size               | _16px_                                  | Calendar header subtitle font size    |
+| --calendar-header-title-font-color                 | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | Calendar header title font color      |
+| --calendar-header-title-font-size                  | _16px_                                  | Calendar header title font size       |
+| --calendar-header-title-height                     | _44px_                                  | Calendar header title height          |
+| --calendar-header-title-weight `v2.6.0`            | 600                                     | Calendar Header Title Font Weight     |
+| --calendar-info-font-size                          | _10px_                                  | Calendar info font size               |
+| --calendar-info-line-height                        | _14px_                                  | Calendar info line height             |
+| --calendar-month-mark-color                        | _fade(@gray-4, 60%)_                    | Month mark color                      |
+| --calendar-month-mark-font-size                    | _160px_                                 | Month mark font size                  |
+| --calendar-month-title-font-size                   | _14px_                                  | Month title font size                 |
+| --calendar-popup-height `v2.5.0`                   | _848rpx_                                | Calendar popup height                 |
+| --calendar-range-edge-background-color             | _#3678e3_                               | Date range edge background color      |
+| --calendar-range-edge-color                        | _#fff_                                  | Date range edge color                 |
+| --calendar-range-middle-background-opacity         | _0.1_                                   | Date range middle background opacity  |
+| --calendar-range-middle-color                      | _#fff_                                  | Date range middle color               |
+| --calendar-selected-day-background-color           | _#3678e3_                               | Selected day background color         |
+| --calendar-selected-day-color                      | _#fff_                                  | Selected day text color               |
+| --calendar-selected-day-size                       | _34px_                                  | Selected day size                     |
+| --calendar-text-color                              | _#000_                                  | Calendar text color                   |
+| --calendar-weekdays-font-color                     | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | Weekdays font color                   |
+| --calendar-weekdays-font-size                      | _12px_                                  | Weekdays font size                    |
+| --calendar-weekdays-height                         | _30px_                                  | Weekdays bar height                   |
