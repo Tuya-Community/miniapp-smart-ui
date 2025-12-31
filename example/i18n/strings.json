@@ -1,5 +1,6 @@
 {
   "en": {
+    "withPercent": "Show Percentage",
     "setTheRangeOfDragging": "Set the range of dragging",
     "draggable": "Draggable",
     "draggableWithTitle": "Draggable with Title",
@@ -587,6 +588,7 @@
     "themeSwitch": "Theme Switch"
   },
   "zh": {
+    "withPercent": "显示百分比",
     "draggable": "可拖拽",
     "draggableWithTitle": "可拖拽带标题",
     "setTheRangeOfDragging": "设置拖拽的范围",

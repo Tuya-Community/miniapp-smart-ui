@@ -1,7 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "battery": "../../battery/index",
+    "smart-battery": "../../battery/index",
     "demo-block": "../../../example/components/demo-block/index"
   }
 }

@@ -1,7 +1,7 @@
 /* eslint-disable */
 var darkVars = {};
 
-var v0 = "rgba(0, 0, 0, 1)";
+var v0 = "#000";
 var v1 = "rgba(255, 255, 255, 1)";
 var v2 = "rgba(255, 255, 255, 0.7)";
 var v3 = "rgba(255, 255, 255, 0.5)";
@@ -93,5 +93,8 @@ darkVars["--smart-ui-overlay"] = v7; // 遮罩层
 darkVars["--smart-ui-bottom-sheet-dragger-node-background"] = v4; // 底部导航栏背景
 darkVars["--smart-ui-dialog-background"] = "#333"; // 弹窗背景色
 darkVars["--smart-ui-border-image"] = "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0))"; // 边框图片
+darkVars["--smart-ui-battery-body-base-background"] = "rgba(255, 255, 255, 0.4)"; // 电池主体背景色
+darkVars["--smart-ui-battery-text-color"] = v1; // 电量文本颜色
+darkVars["--smart-ui-battery-slash-border-color"] = v0; // 电池边框颜色
 
 module.exports = darkVars;
