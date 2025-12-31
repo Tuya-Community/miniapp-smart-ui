@@ -20,12 +20,7 @@
   justify-content: center;
   flex-shrink: 0;
   font-size: 0;
-}
-
-.smart-battery-overflow-hidden {
-  /* 使用 clip-path 代替 overflow: hidden，避免 iOS 上圆角被切割 */
-  clip-path: inset(0 round 4px);
-  -webkit-clip-path: inset(0 round 4px);
+  isolation: isolate;
 }
 
 .smart-battery-contain-vertical {
@@ -57,6 +52,15 @@
     --battery-body-charging-background,
     @battery-body-charging-background
   );
+}
+
+.smart-battery-overflow-hidden {
+  /* 使用 clip-path 代替 overflow: hidden，避免 iOS 上圆角被切割 */
+  // clip-path: inset(0 round 4px);
+  // -webkit-clip-path: inset(0 round 4px);
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  isolation: isolate;
 }
 
 .smart-battery-body {
@@ -113,7 +117,6 @@
 }
 .smart-battery-bar {
   position: absolute;
-  transform: translateZ(0);
   box-sizing: border-box;
 }
 
