@@ -139,7 +139,11 @@ SmartComponent({
     },
 
     onInput(evt) {
-      this.setData({ inputValue: evt?.detail?.value ?? '' });
+      const inputValue = evt?.detail?.value ?? '';
+      this.setData({ inputValue });
+      if (this.data.onInput) {
+        this.data.onInput(inputValue);
+      }
     },
 
     close(action) {

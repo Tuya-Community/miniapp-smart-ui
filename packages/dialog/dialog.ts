@@ -62,6 +62,7 @@ interface DialogInputOptions extends DialogOptions {
   placeholder?: string;
   maxlength?: number;
   emptyDisabled?: boolean;
+  onInput?: (value: string) => void;
 }
 
 const defaultOptions: DialogOptions = {
@@ -187,7 +188,9 @@ Dialog.confirm = (options: DialogOptions) =>
   });
 
 Dialog.input = ((options: DialogInputOptions) =>
-  Dialog({ showCancelButton: true, ...options })) as (options: DialogInputOptions) => Promise<
+  Dialog({ showCancelButton: true, ...options, value: options.value ?? '' })) as (
+  options: DialogInputOptions
+) => Promise<
   WechatMiniprogram.Component.Instance<
     {
       /**
