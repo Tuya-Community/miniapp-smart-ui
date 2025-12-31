@@ -183,6 +183,41 @@ describe('dialog', () => {
     }
   });
 
+  test('should call onInput callback when provided', async () => {
+    const onInputCallback = jest.fn();
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" show="{{ true }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({
+        onInput: onInputCallback,
+      });
+      await simulate.sleep(10);
+
+      instance.onInput({
+        detail: {
+          value: 'test callback',
+        },
+      });
+      await simulate.sleep(10);
+
+      expect(wrapper?.data.inputValue).toBe('test callback');
+      expect(onInputCallback).toHaveBeenCalledWith('test callback');
+    }
+  });
+
   test('should close dialog with action', async () => {
     let closeEvent: any = null;
 
