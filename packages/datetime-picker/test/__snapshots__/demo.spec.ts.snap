@@ -248,6 +248,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                       <wx-view
                         class="smart-picker-column__unit_text"
+                        style=""
                       >
                         year
                       </wx-view>
@@ -459,6 +460,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                       <wx-view
                         class="smart-picker-column__unit_text"
+                        style=""
                       >
                         month
                       </wx-view>
@@ -708,6 +710,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                       <wx-view
                         class="smart-picker-column__unit_text"
+                        style=""
                       >
                         sun
                       </wx-view>
@@ -943,6 +946,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                       <wx-view
                         class="smart-picker-column__unit_text"
+                        style=""
                       >
                         time
                       </wx-view>
@@ -1250,6 +1254,7 @@ exports[`should render demo and match snapshot 1`] = `
       
                       <wx-view
                         class="smart-picker-column__unit_text"
+                        style=""
                       >
                         minute
                       </wx-view>
