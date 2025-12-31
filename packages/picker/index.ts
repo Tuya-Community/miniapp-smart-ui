@@ -11,6 +11,7 @@ interface Column {
   defaultIndex?: number;
   activeIndex?: number;
   unit?: string;
+  unitGap?: string | number;
 }
 
 SmartComponent({

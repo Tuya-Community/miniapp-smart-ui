@@ -26,6 +26,7 @@
       options="{{ item.values }}"
       disabled="{{ item.disabled || false }}"
       unit="{{ item.unit || unit }}"
+      unit-gap="{{ item.unitGap }}"
       changeAnimation="{{ changeAnimation }}"
       default-index="{{ item.defaultIndex || defaultIndex }}"
       active-index="{{ (item.activeIndex === null || item.activeIndex === undefined) ? activeIndex : item.activeIndex }}"
