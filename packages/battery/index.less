@@ -21,6 +21,7 @@
   flex-shrink: 0;
   font-size: 0;
   isolation: isolate;
+  transform-origin: center center;
 }
 
 .smart-battery-contain-vertical {
@@ -56,10 +57,10 @@
 
 .smart-battery-overflow-hidden {
   /* 使用 clip-path 代替 overflow: hidden，避免 iOS 上圆角被切割 */
-  // clip-path: inset(0 round 4px);
-  // -webkit-clip-path: inset(0 round 4px);
-  overflow: hidden;
-  -webkit-backface-visibility: hidden;
+  clip-path: inset(0 round 4px);
+  -webkit-clip-path: inset(0 round 4px);
+  // overflow: hidden;
+  // -webkit-backface-visibility: hidden;
   isolation: isolate;
 }
 

@@ -1,6 +1,6 @@
 <view class="smart-battery">
   <view class="smart-battery-container" style="{{containStyle}}">
-    <view class="smart-battery-contain {{ type === 'vertical' ? 'smart-battery-contain-vertical' : 'smart-battery-contain-horizontal' }}" style="transform: scale({{ size / 48 }})">
+    <view class="smart-battery-contain {{ type === 'vertical' ? 'smart-battery-contain-vertical' : 'smart-battery-contain-horizontal' }}" style="transform: translateZ(0) scale({{ size / 48 }})">
       <view
         class="smart-battery-body {{ value === 0 ? '' : 'smart-battery-overflow-hidden' }} {{ type === 'vertical' ? 'smart-battery-body-vertical' : 'smart-battery-body-horizontal' }}"
         >
