@@ -99,8 +99,9 @@ DialogInstance.input({
   emptyDisabled: true,
   cancelButtonText: 'Sub Action',
 })
-  .then(() => {
-    // on confirm
+  .then((res) => {
+    console.log('=== onConfirm', res);
+    const inputValue = res?.data?.inputValue;
   })
   .catch(() => {
     // on cancel
