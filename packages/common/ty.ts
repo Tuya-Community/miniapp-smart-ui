@@ -28,7 +28,6 @@ const tyApi = {
     }
   },
   nativeDisabled: (v: boolean) => {
-    if (!isIOS) return;
     // @ts-ignore
     if (typeof ty !== 'undefined') {
       // @ts-ignore
