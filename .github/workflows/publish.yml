@@ -36,7 +36,12 @@ jobs:
     
     - name: Update Package.json with Release Version
       run: |
-        npm version "${TAG_VERSION}" --no-git-tag-version
+        CURRENT_VERSION=$(node -p "require('./package.json').version")
+        if [ "$CURRENT_VERSION" != "${TAG_VERSION}" ]; then
+          npm version "${TAG_VERSION}" --no-git-tag-version
+        else
+          echo "Version already matches tag version ${TAG_VERSION}, skipping version update"
+        fi
 
     - name: Build
       run: yarn build
