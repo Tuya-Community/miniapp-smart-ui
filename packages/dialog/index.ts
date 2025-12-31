@@ -109,6 +109,7 @@ SmartComponent({
       action: string,
       context: WechatMiniprogram.Component.TrivialInstance
     ) => void,
+    onInput: (() => {}) as (value: string) => void,
   },
   mounted: function () {
     if (!this.id) return;
