@@ -32,10 +32,10 @@ SmartComponent({
     show: {
       type: null,
       observer(value) {
-        // 标记为受控模式（如果 show 有值，无论是 true 还是 false）
-        if (value !== undefined && value !== null) {
-          this.setData({ isControlled: true });
-        }
+        // 动态设置受控模式：如果 show 有值（不是 undefined 或 null），则为受控模式
+        // 如果 show 为 undefined 或 null，则为非受控模式
+        const isControlled = value !== undefined && value !== null;
+        this.setData({ isControlled });
 
         if (this.data.cancel_timer) {
           clearTimeout(this.data.cancel_timer);
