@@ -30,8 +30,13 @@ SmartComponent({
       value: 'right',
     },
     show: {
-      type: Boolean,
+      type: null,
       observer(value) {
+        // 动态设置受控模式：如果 show 有值（不是 undefined 或 null），则为受控模式
+        // 如果 show 为 undefined 或 null，则为非受控模式
+        const isControlled = value !== undefined && value !== null;
+        this.setData({ isControlled });
+
         if (this.data.cancel_timer) {
           clearTimeout(this.data.cancel_timer);
           this.data.cancel_timer = null as any;
@@ -39,9 +44,9 @@ SmartComponent({
 
         if (value !== this.data.currentShow) {
           if (value) {
-            this.onOpen();
+            this.onOpen(false);
           } else {
-            this.onClose();
+            this.onClose(false);
           }
         }
       },
@@ -65,7 +70,7 @@ SmartComponent({
     },
   },
 
-  data: { currentShow: false, showStyle: '', cancel_timer: null as any },
+  data: { currentShow: false, showStyle: '', cancel_timer: null as any, isControlled: false },
 
   mounted() {},
 
@@ -201,11 +206,25 @@ SmartComponent({
       this.setData(params);
     },
     onClick() {
+      // 如果是受控模式，点击时触发事件让外部处理
+      if (this.data.isControlled) {
+        // 受控模式下，如果 show 为 false，触发事件让外部决定是否打开
+        // 如果 show 为 true，可能不需要处理（或者可以关闭？）
+        this.$emit('show-change', !this.data.show);
+        return;
+      }
+
+      // 非受控模式下，如果 show 明确为 false，则不打开
+      // show 为 undefined 时表示未传值，允许打开
+      if (this.data.show === false) {
+        return;
+      }
+
       this.onOpen();
     },
     noop() {},
 
-    onOpen() {
+    onOpen(trigger = true) {
       this.getButtonPosition();
       this.setData({
         currentShow: true,
@@ -217,14 +236,14 @@ SmartComponent({
         });
       }, 100);
 
-      this.$emit('show-change', true);
+      trigger && this.$emit('show-change', true);
       if (this.data.duration) {
         this.data.cancel_timer = setTimeout(() => {
-          this.onClose();
+          this.onClose(trigger);
         }, this.data.duration);
       }
     },
-    onClose() {
+    onClose(trigger = true) {
       if (this.data.cancel_timer) {
         clearTimeout(this.data.cancel_timer);
         this.data.cancel_timer = null as any;
@@ -238,6 +257,10 @@ SmartComponent({
         this.setData({
           currentShow: false,
         });
+
+        if (!trigger) {
+          return;
+        }
         this.$emit('show-change', false);
         this.$emit('close', false);
       }, 300);

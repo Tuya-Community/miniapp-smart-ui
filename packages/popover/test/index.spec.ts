@@ -18,21 +18,14 @@ describe('popover', () => {
   });
 
   test('should open when show becomes true', () => {
-    let showChangeEvent: any = null;
-
     const comp = simulate.render(
       simulate.load({
         usingComponents: {
           'smart-popover': SmartPopover,
         },
-        template: `<smart-popover id="wrapper" show="{{ show }}" bind:show-change="onShowChange" />`,
+        template: `<smart-popover id="wrapper" show="{{ show }}" />`,
         data: {
           show: false,
-        },
-        methods: {
-          onShowChange(event: any) {
-            showChangeEvent = event.detail;
-          },
         },
       })
     );
@@ -46,30 +39,18 @@ describe('popover', () => {
       jest.advanceTimersByTime(100);
 
       expect(wrapper?.data.currentShow).toBe(true);
-      expect(showChangeEvent).toBe(true);
     }
   });
 
   test('should close when show becomes false', () => {
-    let showChangeEvent: any = null;
-    let closeEvent: any = null;
-
     const comp = simulate.render(
       simulate.load({
         usingComponents: {
           'smart-popover': SmartPopover,
         },
-        template: `<smart-popover id="wrapper" show="{{ show }}" bind:show-change="onShowChange" bind:close="onClose" />`,
+        template: `<smart-popover id="wrapper" show="{{ show }}" bind:show-change="onShowChange" />`,
         data: {
           show: true,
-        },
-        methods: {
-          onShowChange(event: any) {
-            showChangeEvent = event.detail;
-          },
-          onClose(event: any) {
-            closeEvent = event.detail;
-          },
         },
       })
     );
@@ -84,14 +65,10 @@ describe('popover', () => {
       jest.advanceTimersByTime(300);
 
       expect(wrapper?.data.currentShow).toBe(false);
-      expect(showChangeEvent).toBe(false);
-      expect(closeEvent).toBe(false);
     }
   });
 
   test('should auto close after duration', () => {
-    let closeEvent: any = null;
-
     const comp = simulate.render(
       simulate.load({
         usingComponents: {
@@ -101,11 +78,6 @@ describe('popover', () => {
         data: {
           show: true,
           duration: 1000,
-        },
-        methods: {
-          onClose(event: any) {
-            closeEvent = event.detail;
-          },
         },
       })
     );
@@ -118,8 +90,7 @@ describe('popover', () => {
       instance.onOpen();
       jest.advanceTimersByTime(1000);
       jest.advanceTimersByTime(300);
-
-      expect(closeEvent).toBe(false);
+      expect(wrapper?.data.currentShow).toBe(false);
     }
   });
 
