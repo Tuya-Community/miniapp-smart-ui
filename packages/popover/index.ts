@@ -44,9 +44,9 @@ SmartComponent({
 
         if (value !== this.data.currentShow) {
           if (value) {
-            this.onOpen();
+            this.onOpen(false);
           } else {
-            this.onClose();
+            this.onClose(false);
           }
         }
       },
@@ -224,7 +224,7 @@ SmartComponent({
     },
     noop() {},
 
-    onOpen() {
+    onOpen(trigger = true) {
       this.getButtonPosition();
       this.setData({
         currentShow: true,
@@ -236,14 +236,14 @@ SmartComponent({
         });
       }, 100);
 
-      this.$emit('show-change', true);
+      trigger && this.$emit('show-change', true);
       if (this.data.duration) {
         this.data.cancel_timer = setTimeout(() => {
-          this.onClose();
+          this.onClose(trigger);
         }, this.data.duration);
       }
     },
-    onClose() {
+    onClose(trigger = true) {
       if (this.data.cancel_timer) {
         clearTimeout(this.data.cancel_timer);
         this.data.cancel_timer = null as any;
@@ -257,6 +257,10 @@ SmartComponent({
         this.setData({
           currentShow: false,
         });
+
+        if (!trigger) {
+          return;
+        }
         this.$emit('show-change', false);
         this.$emit('close', false);
       }, 300);
