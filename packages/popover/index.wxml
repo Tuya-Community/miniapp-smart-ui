@@ -13,9 +13,7 @@
   </smart-overlay>
 
   <view wx:if="{{trigger === 'longpress'}}" class="smart-popover-button" catch:longpress="onClick">
-    <block wx:if="{{currentShow}}">
-      <slot />
-    </block>
+    <slot />
     <view catch:tap="noop" wx:if="{{currentShow}}" class="smart-popover-overlay" style="left: {{left}};top: {{top}}; bottom:{{bottom}};right:{{right}}; transform:{{transform}}; {{customStyle}}; {{showStyle}}">
       <slot name="overlay" />
       <smart-icon class="smart-popover-overlay-arrow" name="{{iconSrc}}" style=" transform: {{iconTransform}}; {{iconPos}}: {{iconPosVal}}px;background-size: {{iconWidth}} {{iconHeight}};{{iconStyle}}"></smart-icon>
@@ -23,9 +21,7 @@
   </view>
 
   <view wx:else class="smart-popover-button" catch:tap="onClick">
-    <block wx:if="{{currentShow}}">
-      <slot />
-    </block>
+    <slot />
     <view catch:tap="noop" wx:if="{{currentShow}}" class="smart-popover-overlay" style="left: {{left}};top: {{top}}; bottom:{{bottom}};right:{{right}}; transform:{{transform}}; {{customStyle}}; {{showStyle}}">
       <slot name="overlay" />
       <smart-icon class="smart-popover-overlay-arrow" name="{{iconSrc}}" style=" transform: {{iconTransform}}; {{iconPos}}: {{iconPosVal}}px;background-size: {{iconWidth}} {{iconHeight}};{{iconStyle}}"></smart-icon>

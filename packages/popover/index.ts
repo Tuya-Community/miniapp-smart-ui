@@ -30,8 +30,13 @@ SmartComponent({
       value: 'right',
     },
     show: {
-      type: Boolean,
+      type: null,
       observer(value) {
+        // 标记为受控模式（如果 show 有值，无论是 true 还是 false）
+        if (value !== undefined && value !== null) {
+          this.setData({ isControlled: true });
+        }
+
         if (this.data.cancel_timer) {
           clearTimeout(this.data.cancel_timer);
           this.data.cancel_timer = null as any;
@@ -65,7 +70,7 @@ SmartComponent({
     },
   },
 
-  data: { currentShow: false, showStyle: '', cancel_timer: null as any },
+  data: { currentShow: false, showStyle: '', cancel_timer: null as any, isControlled: false },
 
   mounted() {},
 
@@ -201,6 +206,20 @@ SmartComponent({
       this.setData(params);
     },
     onClick() {
+      // 如果是受控模式，点击时触发事件让外部处理
+      if (this.data.isControlled) {
+        // 受控模式下，如果 show 为 false，触发事件让外部决定是否打开
+        // 如果 show 为 true，可能不需要处理（或者可以关闭？）
+        this.$emit('show-change', !this.data.show);
+        return;
+      }
+
+      // 非受控模式下，如果 show 明确为 false，则不打开
+      // show 为 undefined 时表示未传值，允许打开
+      if (this.data.show === false) {
+        return;
+      }
+
       this.onOpen();
     },
     noop() {},

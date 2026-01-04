@@ -25,7 +25,7 @@ Introduce the component in `app.json` or `index.json`. For detailed instructions
 ### Basic Usage
 
 ```html
-<smart-popover show="{{show}}" placement="bottomLeft">
+<smart-popover placement="bottomLeft" show="{{show}}" bind:show-change="onShow">
   <smart-button>Bottom Left Pop</smart-button>
   <view slot="overlay">
     <smart-cell-group inset>
@@ -153,8 +153,8 @@ Page({
     sunMaxFill: Sun,
   },
   methods: {
-    onClose() {
-      this.setData({ show: false });
+    onShow(e) {
+      this.setData({ show: e.detail });
     },
   },
 });

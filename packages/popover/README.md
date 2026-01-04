@@ -25,7 +25,7 @@ v2.3.0 版本后开始加入，弹出层容器，用于展示弹窗、信息提�
 ### 基础用法
 
 ```html
-<smart-popover show="{{show}}" placement="bottomLeft">
+<smart-popover placement="bottomLeft" show="{{show}}" bind:show-change="onShow">
   <smart-button>下左弹出</smart-button>
   <view slot="overlay">
     <smart-cell-group inset>
@@ -153,8 +153,8 @@ Page({
     sunMaxFill: Sun,
   },
   methods: {
-    onClose() {
-      this.setData({ show: false });
+    onShow(e) {
+      this.setData({ show: e.detail });
     },
   },
 });
