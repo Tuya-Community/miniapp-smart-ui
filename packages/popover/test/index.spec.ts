@@ -530,5 +530,90 @@ describe('popover', () => {
       expect(wrapper?.data.cancel_timer).toBeNull();
     }
   });
+
+  test('should emit show-change event when clicked in controlled mode with show false', () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" show="{{ show }}" bind:show-change="onShowChange" />`,
+        data: {
+          show: false,
+        },
+        methods: {
+          onShowChange() {
+            // Event handler
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      instance.setData({ isControlled: true, show: false });
+      const showChangeSpy = jest.spyOn(instance, '$emit');
+      instance.onClick();
+
+      expect(showChangeSpy).toHaveBeenCalledWith('show-change', true);
+      showChangeSpy.mockRestore();
+    }
+  });
+
+  test('should not open when show is false in uncontrolled mode', () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" show="{{ false }}" />`,
+        data: {
+          show: false,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      instance.setData({ isControlled: false, show: false });
+      const onOpenSpy = jest.spyOn(instance, 'onOpen');
+      instance.onClick();
+
+      expect(onOpenSpy).not.toHaveBeenCalled();
+      onOpenSpy.mockRestore();
+    }
+  });
+
+  test('should emit show-change and close events when onClose is called with trigger true', () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" bind:show-change="onShowChange" bind:close="onClose" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      instance.setData({ currentShow: true });
+      const showChangeSpy = jest.spyOn(instance, '$emit');
+      instance.onClose(true);
+      jest.advanceTimersByTime(300);
+
+      expect(showChangeSpy).toHaveBeenCalledWith('show-change', false);
+      expect(showChangeSpy).toHaveBeenCalledWith('close', false);
+      showChangeSpy.mockRestore();
+    }
+  });
 });
 
