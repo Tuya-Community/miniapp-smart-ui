@@ -86,4 +86,20 @@
   </view>
 </demo-block>
 
+<demo-block title="{{I18n.t('controlledMode')}}">
+  <view style="padding: 10vh;padding-top:0px;padding-left:8px">
+    <smart-popover 
+      show="{{controlledShow}}" 
+      is-control="{{true}}" 
+      placement="top"
+      custom-style="padding: 12px;width:200px;"
+    >
+      <smart-button class="btnText" bind:tap="onToggleControlled">{{I18n.t('controlledMode')}}</smart-button>
+      <view slot="overlay">
+        <view>{{I18n.t('controlledModeDesc')}}</view>
+      </view>
+    </smart-popover>
+  </view>
+</demo-block>
+
 </view>

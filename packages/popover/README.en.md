@@ -165,7 +165,7 @@ Page({
 Control whether the popup is displayed using the `show` attribute.
 
 ```html
-<smart-popover show="{{show}}" placement="top" bind:close="onClose" bind:show-change=“onShow”>
+<smart-popover show="{{show}}" placement="top" bind:close="onClose" bind:show-change="onShow">
   <smart-button>Top Pop</smart-button>
   <view slot="overlay">
     tip
@@ -189,6 +189,38 @@ Page({
 });
 ```
 
+### Controlled Mode
+
+Enable controlled mode using the `is-control` `v2.10.0` attribute. In controlled mode, the `show` state is completely controlled externally, and clicking will not trigger the `show-change` event. You need to manually control the `show` value.
+
+```html
+<smart-popover 
+  show="{{controlledShow}}" 
+  is-control="{{true}}" 
+  placement="top"
+>
+  <smart-button>Controlled Mode</smart-button>
+  <view slot="overlay">
+    <view>In controlled mode, clicking will not trigger the show-change event</view>
+  </view>
+</smart-popover>
+```
+
+```js
+Page({
+  data: {
+    controlledShow: false,
+  },
+  methods: {
+    onToggle() {
+      this.setData({ 
+        controlledShow: !this.data.controlledShow 
+      });
+    },
+  },
+});
+```
+
 ### Popup Position
 
 Set the popup position using the `position` attribute. The default is to pop to the right, but it can be set to `top`, `topLeft`, `topRight`, `bottom`, `bottomLeft`, `bottomRight`, `left`, `leftTop`, `leftBottom`, `right`, `rightTop`, `rightBottom`.
@@ -205,41 +237,42 @@ Set the popup position using the `position` attribute. The default is to pop to 
 ## API
 
 ### Props
-| Parameter        | Description                                                                                                                                                           | Type      | Default  |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------- |
-| custom-style     | Custom popup style                                                                                                                                                    | _string_  | `''`     |
-| duration         | Delay time for closing (ms)                                                                                                                                          | number    | `3000`   |
-| placement        | Position of the popup, supported values: `top`, `topLeft`, `topRight`, `bottom`, `bottomLeft`, `bottomRight`, `left`, `leftTop`, `leftBottom`, `right`, `rightTop`, `rightBottom` | _string_  | `right`  |
-| show             | Controls whether the popup is displayed and listens for state changes, updating `currentShow` when the value changes                                                  | _boolean_ | `false`  |
-| trigger `v2.5.0`       | Control the trigger method of the popup layer, support `tap`、`longpress`                                                                                                  | _string_ | `tap` |
+| Parameter        | Description                                                                                                                                                                       | Type      | Default |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------- |
+| custom-style     | Custom popup style                                                                                                                                                                | _string_  | `''`    |
+| duration         | Delay time for closing (ms)                                                                                                                                                       | number    | `3000`  |
+| is-control  `v2.10.0`     | Whether to enable controlled mode. When enabled, clicking will not trigger the `show-change` event, and the `show` state is completely controlled externally                      | _boolean_ | `false` |
+| placement        | Position of the popup, supported values: `top`, `topLeft`, `topRight`, `bottom`, `bottomLeft`, `bottomRight`, `left`, `leftTop`, `leftBottom`, `right`, `rightTop`, `rightBottom` | _string_  | `right` |
+| show             | Controls whether the popup is displayed and listens for state changes, updating `currentShow` when the value changes                                                              | _boolean_ | `false` |
+| trigger `v2.5.0` | Control the trigger method of the popup layer, support `tap`、`longpress`                                                                                                         | _string_  | `tap`   |
 
 ### Events
 
-| Event Name       | Description             | Parameters |
-| ---------------- | ----------------------- | ---------- |
-| bind:close       | Triggered on close      | -          |
-| bind:show-change | Triggered on show/hide  | -          |
+| Event Name       | Description            | Parameters |
+| ---------------- | ---------------------- | ---------- |
+| bind:close       | Triggered on close     | -          |
+| bind:show-change | Triggered on show/hide | -          |
 
 ### Popover Slot
 
-| Name    | Description       |
-| ------------ | ------------ |
-| overlay    | Popup content |
+| Name    | Description   |
+| ------- | ------------- |
+| overlay | Popup content |
 
 ### External Styles
 
-| Class Name      | Description        |
-| --------------- | ------------------ |
-| custom-class    | Root node style class |
+| Class Name   | Description           |
+| ------------ | --------------------- |
+| custom-class | Root node style class |
 
 ### Style Variables
 
 The component provides the following CSS variables for custom styling. For usage, see [ConfigProvider Component](/material/smartui?comId=config-provider&appType=miniapp).
 
-| Name                       | Default Value                          | Description  |
-| -------------------------- | -------------------------------------- | ------------ |
-| --popover-background-color | #fff                                   | Popup background color |
-| --popover-border-radius    | 12px                                   | Popup border radius    |
-| --popover-box-shadow       | 0px 6px 12px 0px rgba(0, 0, 0, 0.1)    | Popup box shadow       |
-| --popover-padding          | 12px                                   | Popup padding          |
-| --popover-overlay-color `v2.8.0` | var(--app-B1-N1, rgba(0, 0, 0, 1)) | Text color for the overlay slot |
+| Name                             | Default Value                       | Description                     |
+| -------------------------------- | ----------------------------------- | ------------------------------- |
+| --popover-background-color       | #fff                                | Popup background color          |
+| --popover-border-radius          | 12px                                | Popup border radius             |
+| --popover-box-shadow             | 0px 6px 12px 0px rgba(0, 0, 0, 0.1) | Popup box shadow                |
+| --popover-overlay-color `v2.8.0` | var(--app-B1-N1, rgba(0, 0, 0, 1))  | Text color for the overlay slot |
+| --popover-padding                | 12px                                | Popup padding                   |
