@@ -1,5 +1,19 @@
 # 更新日志
 
+## v2.9.2 (2025-12-31)
+
+### Bug Fixes  🐛
+- 修复 nativeDisabled 属性安卓失效问题([66adfce](https://github.com/Tuya-Community/miniapp-smart-ui/commit/66adfceebeb9d235c0299e4b5718dec6488e73e7))
+
+## v2.9.1 (2025-12-30)
+
+### Features ✨
+- calendar: 新增 first-day-of-select-week 属性，设置不同地区周起始日期不同问题([pull/136](https://github.com/Tuya-Community/miniapp-smart-ui/pull/136))
+
+### Bug Fixes  🐛
+- calendar: 修复海外部分地区选择日期跳变问题([pull/63](https://github.com/Tuya-Community/ray-smart-ui/pull/63))
+
+
 ## v2.9.0 (2025-12-23)
 
 ### Features ✨
@@ -121,8 +135,7 @@
 
 ## v2.6.3(2025-09-16)
 ### Features ✨
-- dialog: 新增 autoClose 属性，修复组件自动关闭问题([36ba91e](https://github.com/Tuya-Community/miniapp-smart-ui/pull/37/commits/36ba91ee495b632aae9ede192364a65d8d999a75));
-- icon 支持自定义图标，新增 iconColor 和 iconSize属性([11328c5](https://github.com/Tuya-Community/miniapp-smart-ui/pull/37/commits/11328c50d0001f7ca40429c21c27ec796d02455d));
+- dialog: 新增 autoClose 属性，修复组件自动关闭问题([36ba91e](https://github.com/Tuya-Community/miniapp-smart-ui/pull/37/commits/36ba91ee495b632aae9ede192364a65d8d999a75));icon 支持自定义图标，新增 iconColor 和 iconSize属性([11328c5](https://github.com/Tuya-Community/miniapp-smart-ui/pull/37/commits/11328c50d0001f7ca40429c21c27ec796d02455d));
 
 ### Bug Fixes 🐛
 - action-sheet: 修复 subname 无法撑开盒子高度问题([4df8c64](https://github.com/Tuya-Community/miniapp-smart-ui/pull/37/commits/4df8c64a0412a2c64bd706b72dd6f4f66e46e2d5));

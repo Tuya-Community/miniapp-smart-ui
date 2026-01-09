@@ -99,8 +99,9 @@ DialogInstance.input({
   emptyDisabled: true,
   cancelButtonText: 'Sub Action',
 })
-  .then(() => {
-    // on confirm
+  .then((res) => {
+    console.log('=== onConfirm', res);
+    const inputValue = res?.data?.inputValue;
   })
   .catch(() => {
     // on cancel
@@ -285,6 +286,7 @@ icon: AlarmIcon,
 | theme        | 样式风格，可选值为`round-button`   | _string_           | `default` |
 | title        | 标题      | _string_       | -         |
 | value        | 输入框的初始值     | _string_           | -         |
+| onInput `v2.10.0` |  输入回调 | _(value: string) => void_ | - |
 | width        | 弹窗宽度，默认单位为`px`   | _string \| number_ | `320px`   |
 | zIndex       | z-index 层级   | _number_           | `100`     |
 | customStyle | 自定义样式 | _string_ | '' |

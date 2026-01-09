@@ -50,7 +50,7 @@ Page({
 
 ### 多列用法
 
-`disabled` `v2.3.5` 属性可以禁用此列；`style` 属性可以设置此列的样式；`fontStyle` `v2.3.5` 属性可以设置此列的字体样式; `activeIndex` 可以设置列的选中项。
+`disabled` `v2.3.5` 属性可以禁用此列；`style` 属性可以设置此列的样式；`fontStyle` `v2.3.5` 属性可以设置此列的字体样式; `activeIndex` 可以设置列的选中项。`unitGap` `v2.10.0` 属性可以设置单位和列表的距离。
 
 ```html
 <smart-picker active-style="color: #000;" columns="{{ columns }}" bind:change="onChange" />
@@ -75,6 +75,7 @@ Page({
       {
         values: new Array(20).fill(1).map((x, i) => i),
         style: 'flex: none;width: auto;min-width: 61px;',
+        unitGap: '10rpx',
         unit: 'Kg',
       },
     ],
@@ -324,6 +325,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数�
 | style `v2.0.0` | 列的样式  |
 | fontStyle `v2.3.5` | 列的文字样式  |
 | unit          | 列对应的单位，默认为空      |
+| unitGap `v2.10.0`       | 单位和值的间隔，默认为 undefined（使用 CSS 默认样式），支持传入数字（自动添加 px 单位）或字符串（如 "8rpx"） | _string \| number_ | `undefined` |
 | values        | 列中对应的备选值            |
 | order `v2.2.0`  | 设置列的顺序，同`flex order`属性，只是从样式角度修改列的顺序，逻辑还是不变            | _number_  | -     |
 | disabled `v2.3.5`  | 禁用此列   | _boolean_  | `false`     |

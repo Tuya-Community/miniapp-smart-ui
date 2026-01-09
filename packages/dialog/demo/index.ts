@@ -114,6 +114,9 @@ SmartComponent({
           value: this.data.inputValue,
           cancelButtonText: 'Sub Action',
           beforeClose,
+          onInput: (value: string) => {
+            console.log(value, '---onInput')
+          },
           confirmButtonText: I18n.t('confirm'),
           emptyDisabled: true,
         })
