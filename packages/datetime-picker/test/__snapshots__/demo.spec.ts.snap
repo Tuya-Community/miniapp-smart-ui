@@ -82,6 +82,7 @@ exports[`should render demo and match snapshot 1`] = `
                       "2033",
                       "2034",
                       "2035",
+                      "2036",
                     ]
                   }}"
                   data-valuekey="text"
@@ -111,6 +112,7 @@ exports[`should render demo and match snapshot 1`] = `
                       "2033",
                       "2034",
                       "2035",
+                      "2036",
                     ]
                   }}"
                   style="height:220px"
@@ -1371,6 +1373,7 @@ exports[`should render demo and match snapshot 1`] = `
                       "2033年",
                       "2034年",
                       "2035年",
+                      "2036年",
                     ]
                   }}"
                   data-valuekey="text"
@@ -1400,6 +1403,7 @@ exports[`should render demo and match snapshot 1`] = `
                       "2033年",
                       "2034年",
                       "2035年",
+                      "2036年",
                     ]
                   }}"
                   style="height:220px"
@@ -2064,6 +2068,7 @@ exports[`should render demo and match snapshot 1`] = `
                       "2033",
                       "2034",
                       "2035",
+                      "2036",
                     ]
                   }}"
                   data-valuekey="text"
@@ -2093,6 +2098,7 @@ exports[`should render demo and match snapshot 1`] = `
                       "2033",
                       "2034",
                       "2035",
+                      "2036",
                     ]
                   }}"
                   style="height:220px"
@@ -4765,7 +4771,7 @@ exports[`should render demo and match snapshot 1`] = `
                 bind:change="onChange"
               >
                 <wx-view
-                  activeindex="{{3}}"
+                  activeindex="{{2}}"
                   animationtime="{{300}}"
                   change:activeindex="{{null}}"
                   change:animationtime="{{null}}"
@@ -4778,7 +4784,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:visibleitemcount="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
-                  data-activeindex="{{3}}"
+                  data-activeindex="{{2}}"
                   data-animationtime="{{300}}"
                   data-changeanimation="{{false}}"
                   data-isdestroy="{{false}}"
@@ -4786,7 +4792,6 @@ exports[`should render demo and match snapshot 1`] = `
                   data-loop="{{false}}"
                   data-options="{{
                     Array [
-                      "2015",
                       "2016",
                       "2017",
                       "2018",
@@ -4807,6 +4812,7 @@ exports[`should render demo and match snapshot 1`] = `
                       "2033",
                       "2034",
                       "2035",
+                      "2036",
                     ]
                   }}"
                   data-valuekey="text"
@@ -4818,7 +4824,6 @@ exports[`should render demo and match snapshot 1`] = `
                   loop="{{false}}"
                   options="{{
                     Array [
-                      "2015",
                       "2016",
                       "2017",
                       "2018",
@@ -4839,6 +4844,7 @@ exports[`should render demo and match snapshot 1`] = `
                       "2033",
                       "2034",
                       "2035",
+                      "2036",
                     ]
                   }}"
                   style="height:220px"
@@ -4867,15 +4873,15 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item "
+                      class="smart-picker-column__item_2 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
                       data-index="{{2}}"
-                      style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
+                      style="transform:rotateX(320deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(235, 87, 41);;"
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item smart-picker-column__item--selected active-class"
+                      class="smart-picker-column__item_3 smart-manrope smart-picker-column__item "
                       data-index="{{3}}"
-                      style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;color: rgb(235, 87, 41);;"
+                      style="transform:rotateX(300deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null
                     />
                     <wx-view
@@ -4903,7 +4909,7 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap=null
                     />
                     <wx-view
-                      class="smart-picker-column__item_8 smart-manrope smart-picker-column__item "
+                      class="smart-picker-column__item_8 smart-picker-column__item "
                       data-index="{{8}}"
                       style="transform:rotateX(200deg) translateZ(110px) translateX(-50%) scale(0.88);top:calc(50% - 22px);height: 44px;"
                       bind:tap=null

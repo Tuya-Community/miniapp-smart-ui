@@ -19,7 +19,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-vertical"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
@@ -47,7 +47,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-vertical"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
@@ -75,7 +75,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-vertical"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
@@ -103,7 +103,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-vertical"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body  smart-battery-body-vertical"
@@ -138,7 +138,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-vertical"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
@@ -180,7 +180,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-horizontal"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
@@ -208,7 +208,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-horizontal"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
@@ -236,7 +236,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-horizontal"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
@@ -264,7 +264,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-horizontal"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
@@ -292,7 +292,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-horizontal"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body  smart-battery-body-horizontal"
@@ -337,7 +337,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-vertical"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
@@ -354,7 +354,7 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </wx-view>
             <wx-view
-              class="smart-battery-text smart-battery-text-vertical"
+              class="smart-battery-text smart-manrope smart-battery-text-vertical"
             >
               80%
             </wx-view>
@@ -370,7 +370,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-vertical"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
@@ -387,7 +387,7 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </wx-view>
             <wx-view
-              class="smart-battery-text smart-battery-text-vertical"
+              class="smart-battery-text smart-manrope smart-battery-text-vertical"
             >
               50%
             </wx-view>
@@ -403,7 +403,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-vertical"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
@@ -420,7 +420,7 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </wx-view>
             <wx-view
-              class="smart-battery-text smart-battery-text-vertical"
+              class="smart-battery-text smart-manrope smart-battery-text-vertical"
             >
               20%
             </wx-view>
@@ -436,7 +436,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-vertical"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body  smart-battery-body-vertical"
@@ -460,7 +460,7 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </wx-view>
             <wx-view
-              class="smart-battery-text smart-battery-text-vertical"
+              class="smart-battery-text smart-manrope smart-battery-text-vertical"
             >
               0%
             </wx-view>
@@ -476,7 +476,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-vertical"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
@@ -497,7 +497,7 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </wx-view>
             <wx-view
-              class="smart-battery-text smart-battery-text-vertical"
+              class="smart-battery-text smart-manrope smart-battery-text-vertical"
             >
               80%
             </wx-view>
@@ -528,7 +528,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-horizontal"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
@@ -545,7 +545,7 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </wx-view>
             <wx-view
-              class="smart-battery-text "
+              class="smart-battery-text smart-manrope "
             >
               100%
             </wx-view>
@@ -561,7 +561,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-horizontal"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
@@ -578,7 +578,7 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </wx-view>
             <wx-view
-              class="smart-battery-text "
+              class="smart-battery-text smart-manrope "
             >
               70%
             </wx-view>
@@ -594,7 +594,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-horizontal"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
@@ -611,7 +611,7 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </wx-view>
             <wx-view
-              class="smart-battery-text "
+              class="smart-battery-text smart-manrope "
             >
               10%
             </wx-view>
@@ -627,7 +627,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-horizontal"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
@@ -644,7 +644,7 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </wx-view>
             <wx-view
-              class="smart-battery-text "
+              class="smart-battery-text smart-manrope "
             >
               3%
             </wx-view>
@@ -660,7 +660,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-horizontal"
-                style="transform: scale(0.5)"
+                style="transform: translateZ(0) scale(0.5)"
               >
                 <wx-view
                   class="smart-battery-body  smart-battery-body-horizontal"
@@ -684,7 +684,7 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </wx-view>
             <wx-view
-              class="smart-battery-text "
+              class="smart-battery-text smart-manrope "
             >
               0%
             </wx-view>
@@ -710,7 +710,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-horizontal"
-                style="transform: scale(0.5833333333333334)"
+                style="transform: translateZ(0) scale(0.5833333333333334)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
@@ -738,7 +738,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-horizontal"
-                style="transform: scale(0.5833333333333334)"
+                style="transform: translateZ(0) scale(0.5833333333333334)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-horizontal"
@@ -755,7 +755,7 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </wx-view>
             <wx-view
-              class="smart-battery-text "
+              class="smart-battery-text smart-manrope "
             >
               100%
             </wx-view>
@@ -775,7 +775,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-vertical"
-                style="transform: scale(0.5833333333333334)"
+                style="transform: translateZ(0) scale(0.5833333333333334)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
@@ -803,7 +803,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <wx-view
                 class="smart-battery-contain smart-battery-contain-vertical"
-                style="transform: scale(0.5833333333333334)"
+                style="transform: translateZ(0) scale(0.5833333333333334)"
               >
                 <wx-view
                   class="smart-battery-body smart-battery-overflow-hidden smart-battery-body-vertical"
@@ -820,7 +820,7 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </wx-view>
             <wx-view
-              class="smart-battery-text smart-battery-text-vertical"
+              class="smart-battery-text smart-manrope smart-battery-text-vertical"
             >
               100%
             </wx-view>
