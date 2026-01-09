@@ -20,5 +20,5 @@
       ></view>
     </view>
   </view>
-  <view class="smart-battery-text {{type === 'vertical' ? 'smart-battery-text-vertical' : ''}}" wx:if="{{ showText }}">{{ value }}%</view>
+  <view class="smart-battery-text smart-manrope {{type === 'vertical' ? 'smart-battery-text-vertical' : ''}}" wx:if="{{ showText }}">{{ value }}%</view>
 </view>
