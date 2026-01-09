@@ -26,6 +26,10 @@ SmartComponent({
       type: Boolean,
       value: false,
     },
+    sidebarStyle: {
+      type: String,
+      value: '',
+    },
     sticky: {
       type: Boolean,
       value: true,
