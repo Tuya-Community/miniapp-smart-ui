@@ -79,9 +79,9 @@ category: 通用
 | ---------------- | ------------------------ | -------------------------- | ---------- |
 | background-color | 电量背景色               | _string_                   | -          |
 | color `v2.6.2`   | 电量的颜色（优先级最高） | _string_                   | -          |
-| high-color       | 电量高的颜色             | _string_                   | `#70CF98`  |
-| middle-color     | 电量中的颜色             | _string_                   | `#F5A623`  |
-| low-color        | 电量低的颜色             | _string_                   | `#FF4444`  |
+| high-color       | 电量高的颜色             | _string_      | `var(--app-B1-N1, rgba(0, 0, 0, 0.9))`  |
+| middle-color     | 电量中的颜色             | _string_                   | `#ffcb00`  |
+| low-color        | 电量低的颜色             | _string_                   | `#ee652e`  |
 | in-charging `v2.10.0`      | 是否处于充电状态         | _boolean_                  | `false`    |
 | charging-color `v2.10.0`      | 充电颜色        | _string_                  | `#2fc755`    |
 | show-text `v2.10.0`        | 是否显示电量文本         | _boolean_                  | `false`    |
