@@ -17,5 +17,10 @@ SmartComponent({
         controlledShow: !this.data.controlledShow,
       });
     },
+    onToggleControlledClose() {
+      this.setData({
+        controlledShow: false,
+      });
+    },
   },
 });
