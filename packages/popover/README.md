@@ -189,38 +189,6 @@ Page({
 });
 ```
 
-### 受控模式
-
-通过`is-control` `v2.10.0` 属性开启受控模式。在受控模式下，`show`状态完全由外部控制，需要手动控制`show`的值。
-
-```html
-<smart-popover 
-  show="{{controlledShow}}" 
-  is-control="{{true}}" 
-  placement="top"
->
-  <smart-button>受控模式</smart-button>
-  <view slot="overlay">
-    <view>受控模式下，点击不会触发 show-change 事件</view>
-  </view>
-</smart-popover>
-```
-
-```js
-Page({
-  data: {
-    controlledShow: false,
-  },
-  methods: {
-    onToggle() {
-      this.setData({ 
-        controlledShow: !this.data.controlledShow 
-      });
-    },
-  },
-});
-```
-
 ### 弹出位置
 
 通过`position`属性设置弹出位置，默认居右弹出，可以设置为`top`、`topLeft`、`topRight`、`bottom`、`bottomLeft`、`bottomRight`、`left`、`leftTop`、`leftBottom`、`right`、`rightTop`、`rightBottom`。
@@ -242,7 +210,6 @@ Page({
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------- |
 | custom-style     | 自定义弹出层样式                                                                                                                                               | _string_  | `''`    |
 | duration         | 延迟关闭的时间(ms)                                                                                                                                             | number    | `3000`  |
-| is-control  `v2.10.0`     | 是否开启受控模式，开启后点击不会触发 `show-change` 事件，`show` 状态完全由外部控制                                                                             | _boolean_ | `false` |
 | placement        | 弹出层的位置，支持值：`top`、`topLeft`、`topRight`、`bottom`、`bottomLeft`、`bottomRight`、`left`、`leftTop`、`leftBottom`、`right`、`rightTop`、`rightBottom` | _string_  | `right` |
 | show             | 控制弹出层是否显示，并监听状态变化，值变更时更新 `currentShow`                                                                                                 | _boolean_ | `false` |
 | trigger `v2.5.0` | 控制弹出层触发方式，支持 `tap`、`longpress`                                                                                                                    | _string_  | `tap`   |
