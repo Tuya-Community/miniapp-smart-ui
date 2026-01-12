@@ -16,5 +16,5 @@
     ]
   },
   "compileType": "miniprogram",
-  "remoteDebug": "lan"
+  "remoteDebug": "mqtt"
 }
