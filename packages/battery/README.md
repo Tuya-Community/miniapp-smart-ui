@@ -85,7 +85,7 @@ category: 通用
 | in-charging `v2.10.0`      | 是否处于充电状态         | _boolean_                  | `false`    |
 | charging-color `v2.10.0`      | 充电颜色        | _string_                  | `#2fc755`    |
 | show-text `v2.10.0`        | 是否显示电量文本         | _boolean_                  | `false`    |
-| size             | 尺寸                     | _number_                   | 10         |
+| size             | 尺寸                     | _number_                   | 10 `v2.0.0` 24 `2.10.0`         |
 | type             | 电池方向                 | `vertical` \| `horizontal` | `vertical` |
 | value            | 电量值                   | _number_                   | 70         |
 

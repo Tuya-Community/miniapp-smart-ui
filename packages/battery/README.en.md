@@ -83,9 +83,9 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 | in-charging `v2.10.0`      | Whether the battery is charging       | _boolean_                  | `false`    |
 | charging-color `v2.10.0`      | Charging Color        | _string_                  | `#2fc755`    |
 | show-text  `v2.10.0`       | Whether to display battery level text | _boolean_                  | `false`    |
-| size             | Size                                  | _number_                   | 24         |
-| type             | Battery orientation                   | `vertical` \| `horizontal` | `vertical` |
-| value            | Battery level                         | _number_                   | 70         |
+| size             | Size              | _number_                   | 10 `v2.0.0` 24 `2.10.0`         |
+| type             | Battery orientation        | `vertical` \| `horizontal` | `vertical` |
+| value            | Battery level         | _number_                   | 70         |
 
 ### Style Variables
 
