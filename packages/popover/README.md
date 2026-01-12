@@ -191,7 +191,7 @@ Page({
 
 ### 受控模式
 
-通过`is-control` `v2.10.0` 属性开启受控模式。在受控模式下，`show`状态完全由外部控制，点击不会触发`show-change`事件，需要手动控制`show`的值。
+通过`is-control` `v2.10.0` 属性开启受控模式。在受控模式下，`show`状态完全由外部控制，需要手动控制`show`的值。
 
 ```html
 <smart-popover 

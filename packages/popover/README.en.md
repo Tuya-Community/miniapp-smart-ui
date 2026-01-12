@@ -191,7 +191,7 @@ Page({
 
 ### Controlled Mode
 
-Enable controlled mode using the `is-control` `v2.10.0` attribute. In controlled mode, the `show` state is completely controlled externally, and clicking will not trigger the `show-change` event. You need to manually control the `show` value.
+Enable controlled mode using the `is-control` `v2.10.0` attribute. In controlled mode, the `show` state is completely controlled externally. You need to manually control the `show` value.
 
 ```html
 <smart-popover 
