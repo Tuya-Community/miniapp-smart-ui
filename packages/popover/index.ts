@@ -29,26 +29,19 @@ SmartComponent({
       type: String,
       value: 'right',
     },
-    isControl: {
-      type: Boolean,
-      value: false,
-    },
     show: {
-      type: null,
+      type: Boolean,
       observer(value) {
-        // 动态设置受控模式：如果 show 有值（不是 undefined 或 null），则为受控模式
-        // 如果 show 为 undefined 或 null，则为非受控模式
-
         if (this.data.cancel_timer) {
           clearTimeout(this.data.cancel_timer);
           this.data.cancel_timer = null as any;
         }
 
-        if (value !== this.data.currentShow || this.data.isControl) {
+        if (value !== this.data.currentShow) {
           if (value) {
-            this.onOpen(!this.data.isControl);
+            this.onOpen();
           } else {
-            this.onClose(!this.data.isControl);
+            this.onClose();
           }
         }
       },
@@ -208,21 +201,11 @@ SmartComponent({
       this.setData(params);
     },
     onClick() {
-      if (this.data.isControl) {
-        // 受控模式下，不触发 show-change 事件，由外部控制
-        return;
-      }
-
-      // 非受控模式下，如果 show 为 false，则不打开
-      if (this.data.show === false) {
-        return;
-      }
-
       this.onOpen();
     },
     noop() {},
 
-    onOpen(trigger = true) {
+    onOpen() {
       this.getButtonPosition();
       this.setData({
         currentShow: true,
@@ -234,14 +217,14 @@ SmartComponent({
         });
       }, 100);
 
-      trigger && this.$emit('show-change', true);
+      this.$emit('show-change', true);
       if (this.data.duration) {
         this.data.cancel_timer = setTimeout(() => {
-          this.onClose(trigger);
+          this.onClose();
         }, this.data.duration);
       }
     },
-    onClose(trigger = true) {
+    onClose() {
       if (this.data.cancel_timer) {
         clearTimeout(this.data.cancel_timer);
         this.data.cancel_timer = null as any;
@@ -255,8 +238,8 @@ SmartComponent({
         this.setData({
           currentShow: false,
         });
-        trigger && this.$emit('show-change', false);
-        trigger && this.$emit('close', false);
+        this.$emit('show-change', false);
+        this.$emit('close', false);
       }, 300);
     },
   },

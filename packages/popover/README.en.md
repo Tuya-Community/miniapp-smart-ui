@@ -165,7 +165,7 @@ Page({
 Control whether the popup is displayed using the `show` attribute.
 
 ```html
-<smart-popover show="{{show}}" placement="top" bind:close="onClose" bind:show-change="onShow">
+<smart-popover show="{{show}}" placement="top" bind:close="onClose" bind:show-change=“onShow”>
   <smart-button>Top Pop</smart-button>
   <view slot="overlay">
     tip
@@ -185,38 +185,6 @@ Page({
     onShow(e) {
       this.setData({ show: e.detail });
     }
-  },
-});
-```
-
-### Controlled Mode
-
-Enable controlled mode using the `is-control` `v2.10.0` attribute. In controlled mode, the `show` state is completely controlled externally. You need to manually control the `show` value.
-
-```html
-<smart-popover 
-  show="{{controlledShow}}" 
-  is-control="{{true}}" 
-  placement="top"
->
-  <smart-button>Controlled Mode</smart-button>
-  <view slot="overlay">
-    <view>In controlled mode, clicking will not trigger the show-change event</view>
-  </view>
-</smart-popover>
-```
-
-```js
-Page({
-  data: {
-    controlledShow: false,
-  },
-  methods: {
-    onToggle() {
-      this.setData({ 
-        controlledShow: !this.data.controlledShow 
-      });
-    },
   },
 });
 ```
@@ -241,7 +209,6 @@ Set the popup position using the `position` attribute. The default is to pop to 
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------- |
 | custom-style     | Custom popup style                                                                                                                                                                | _string_  | `''`    |
 | duration         | Delay time for closing (ms)                                                                                                                                                       | number    | `3000`  |
-| is-control  `v2.10.0`     | Whether to enable controlled mode. When enabled, clicking will not trigger the `show-change` event, and the `show` state is completely controlled externally                      | _boolean_ | `false` |
 | placement        | Position of the popup, supported values: `top`, `topLeft`, `topRight`, `bottom`, `bottomLeft`, `bottomRight`, `left`, `leftTop`, `leftBottom`, `right`, `rightTop`, `rightBottom` | _string_  | `right` |
 | show             | Controls whether the popup is displayed and listens for state changes, updating `currentShow` when the value changes                                                              | _boolean_ | `false` |
 | trigger `v2.5.0` | Control the trigger method of the popup layer, support `tap`、`longpress`                                                                                                         | _string_  | `tap`   |
