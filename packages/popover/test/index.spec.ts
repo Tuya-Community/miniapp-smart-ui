@@ -2,13 +2,9 @@ import path from 'path';
 import simulate from 'miniprogram-simulate';
 
 describe('popover', () => {
-  const SmartPopover = simulate.load(
-    path.resolve(__dirname, '../index'),
-    'smart-popover',
-    {
-      rootPath: path.resolve(__dirname, '../../'),
-    }
-  );
+  const SmartPopover = simulate.load(path.resolve(__dirname, '../index'), 'smart-popover', {
+    rootPath: path.resolve(__dirname, '../../'),
+  });
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -559,5 +555,281 @@ describe('popover', () => {
       expect(wrapper?.data.cancel_timer).toBeNull();
     }
   });
-});
 
+  test('should not emit show-change event when clicked in controlled mode with show false', () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" show="{{ show }}" is-control="{{ true }}" bind:show-change="onShowChange" />`,
+        data: {
+          show: false,
+        },
+        methods: {
+          onShowChange() {
+            // Event handler
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      const showChangeSpy = jest.spyOn(instance, '$emit');
+      instance.onClick();
+
+      // 受控模式下，show变化时不会触发 showChange回调
+      expect(showChangeSpy).not.toHaveBeenCalled();
+      showChangeSpy.mockRestore();
+    }
+  });
+
+  test('should not emit show-change event when clicked in controlled mode with show true', () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" show="{{ show }}" is-control="{{ true }}" bind:show-change="onShowChange" />`,
+        data: {
+          show: true,
+        },
+        methods: {
+          onShowChange() {
+            // Event handler
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      const showChangeSpy = jest.spyOn(instance, '$emit');
+      instance.onClick();
+
+      // 受控模式下，show变化时不会触发 showChange回调
+      expect(showChangeSpy).not.toHaveBeenCalled();
+      showChangeSpy.mockRestore();
+    }
+  });
+
+  test('should not open when show is false in uncontrolled mode', () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" show="{{ false }}" is-control="{{ false }}" />`,
+        data: {
+          show: false,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      const onOpenSpy = jest.spyOn(instance, 'onOpen');
+      instance.onClick();
+
+      expect(onOpenSpy).not.toHaveBeenCalled();
+      onOpenSpy.mockRestore();
+    }
+  });
+
+  test('should open directly when clicked in uncontrolled mode with show undefined', () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" is-control="{{ false }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      const onOpenSpy = jest.spyOn(instance, 'onOpen');
+      instance.onClick();
+
+      expect(onOpenSpy).toHaveBeenCalled();
+      onOpenSpy.mockRestore();
+    }
+  });
+
+  test('should not emit show-change when show changes in controlled mode', () => {
+    let showChangeEvent: any = null;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" show="{{ show }}" is-control="{{ true }}" bind:show-change="onShowChange" />`,
+        data: {
+          show: false,
+        },
+        methods: {
+          onShowChange(event: any) {
+            showChangeEvent = event.detail;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      comp.setData({ show: true });
+      jest.advanceTimersByTime(100);
+
+      expect(wrapper?.data.currentShow).toBe(true);
+      // 在受控模式下，show 变化时不会触发 show-change 事件（因为 onOpen(!this.data.isControl) 传入 false）
+      expect(showChangeEvent).toBeNull();
+    }
+  });
+
+  test('should emit show-change when show changes in uncontrolled mode', () => {
+    let showChangeEvent: any = null;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" show="{{ show }}" is-control="{{ false }}" bind:show-change="onShowChange" />`,
+        data: {
+          show: false,
+        },
+        methods: {
+          onShowChange(event: any) {
+            showChangeEvent = event.detail;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      comp.setData({ show: true });
+      jest.advanceTimersByTime(100);
+
+      expect(wrapper?.data.currentShow).toBe(true);
+      // 在非受控模式下，show 变化时会触发 show-change 事件
+      expect(showChangeEvent).toBe(true);
+    }
+  });
+
+  test('should not emit show-change when closing in controlled mode', () => {
+    let showChangeEvent: any = null;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" show="{{ show }}" is-control="{{ true }}" bind:show-change="onShowChange" />`,
+        data: {
+          show: true,
+        },
+        methods: {
+          onShowChange(event: any) {
+            showChangeEvent = event.detail;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      instance.setData({ currentShow: true });
+      comp.setData({ show: false });
+      jest.advanceTimersByTime(300);
+
+      expect(wrapper?.data.currentShow).toBe(false);
+      // 在受控模式下，show 变化时不会触发 show-change 事件（因为 onClose(!this.data.isControl) 传入 false）
+      expect(showChangeEvent).toBeNull();
+    }
+  });
+
+  test('should emit show-change when closing in uncontrolled mode', () => {
+    let showChangeEvent: any = null;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" show="{{ show }}" is-control="{{ false }}" bind:show-change="onShowChange" />`,
+        data: {
+          show: true,
+        },
+        methods: {
+          onShowChange(event: any) {
+            showChangeEvent = event.detail;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      instance.setData({ currentShow: true });
+      comp.setData({ show: false });
+      jest.advanceTimersByTime(300);
+
+      expect(wrapper?.data.currentShow).toBe(false);
+      // 在非受控模式下，show 变化时会触发 show-change 事件
+      expect(showChangeEvent).toBe(false);
+    }
+  });
+
+  test('should emit show-change and close events when onClose is called with trigger true', () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" bind:show-change="onShowChange" bind:close="onClose" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      instance.setData({ currentShow: true });
+      const showChangeSpy = jest.spyOn(instance, '$emit');
+      instance.onClose(true);
+      jest.advanceTimersByTime(300);
+
+      expect(showChangeSpy).toHaveBeenCalledWith('show-change', false);
+      expect(showChangeSpy).toHaveBeenCalledWith('close', false);
+      showChangeSpy.mockRestore();
+    }
+  });
+});

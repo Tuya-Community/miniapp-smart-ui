@@ -2,7 +2,7 @@
 
 <demo-block title="{{I18n.t('basicUsage')}}">
   <view style="padding: 10vh;padding-top:0px;padding-left:8px">
-    <smart-popover show="{{show}}" bind:close="onClose" placement="bottomLeft" custom-style="padding: 0px;width:200px;">
+    <smart-popover show="{{show}}" bind:show-change="onShow" placement="bottomLeft" custom-style="padding: 0px;width:200px;">
       <smart-button class="btnText">{{I18n.t('popupOnTheLowerLeft')}}</smart-button>
       <view slot="overlay">
         <view class="listItem" wx:for="{{[1,2,3]}}">
@@ -81,6 +81,23 @@
       <smart-button class="btnText">{{I18n.t('popUpInTheMiddle')}}</smart-button>
       <view slot="overlay">
         tip
+      </view>
+    </smart-popover>
+  </view>
+</demo-block>
+
+<demo-block title="{{I18n.t('controlledMode')}}">
+  <view style="padding: 10vh;padding-top:0px;padding-left:30vw">
+    <smart-popover 
+      show="{{controlledShow}}" 
+      is-control="{{true}}" 
+      placement="top"
+      custom-style="padding: 12px;width:200px;"
+      bind:close="onToggleControlledClose"
+    >
+      <smart-button class="btnText" bind:tap="onToggleControlled">{{I18n.t('controlledMode')}}</smart-button>
+      <view slot="overlay">
+        <view>{{I18n.t('controlledModeDesc')}}</view>
       </view>
     </smart-popover>
   </view>

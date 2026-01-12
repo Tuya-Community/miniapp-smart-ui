@@ -5,11 +5,22 @@ SmartComponent({
   data: {
     sunMaxFill: Sun,
     show: true,
+    controlledShow: false,
   },
 
   methods: {
-    onClose(e) {
-      this.setData({ show: false });
+    onShow(e) {
+      this.setData({ show: e.detail });
+    },
+    onToggleControlled() {
+      this.setData({
+        controlledShow: !this.data.controlledShow,
+      });
+    },
+    onToggleControlledClose() {
+      this.setData({
+        controlledShow: false,
+      });
     },
   },
 });
