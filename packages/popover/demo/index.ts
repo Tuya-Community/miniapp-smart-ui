@@ -11,7 +11,6 @@ SmartComponent({
   methods: {
     onShow(e) {
       this.setData({ show: e.detail });
-      console.log('🚀 ~ index ~ e.detail:', e.detail);
     },
     onToggleControlled() {
       this.setData({
