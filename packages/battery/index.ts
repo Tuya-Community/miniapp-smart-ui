@@ -1,7 +1,7 @@
 import { SmartComponent } from '../common/component';
 
-const wrapBatteryD =
-  'M6.5,0 C6.77614237,-5.07265313e-17 7,0.223857625 7,0.5 L7,1 L9.5,1 C10.3284271,1 11,1.67157288 11,2.5 L11,17.5 C11,18.3284271 10.3284271,19 9.5,19 L1.5,19 C0.671572875,19 0,18.3284271 0,17.5 L0,2.5 C0,1.67157288 0.671572875,1 1.5,1 L4,1 L4,0.5 C4,0.223857625 4.22385763,5.07265313e-17 4.5,0 L6.5,0 Z M9.5,2 L1.5,2 C1.22385763,2 1,2.22385763 1,2.5 L1,17.5 C1,17.7761424 1.22385763,18 1.5,18 L9.5,18 C9.77614237,18 10,17.7761424 10,17.5 L10,2.5 C10,2.22385763 9.77614237,2 9.5,2 Z';
+const chargingSvg =
+  '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="6px" height="10px" viewBox="0 0 6 10"><g><path d="M4.3636,1.1364C3.17988,2.32012,1.37897,4.12103,0.507568,4.99243C0.318579,5.18142,0.461728,5.5,0.729,5.5Q1.35,5.5,2.5,5.5Q1.64,7.435,1.1498,8.53795C1.01473,8.84185,1.40124,9.09876,1.6364,8.8636C2.82012,7.67988,4.62103,5.87897,5.49243,5.00757C5.68142,4.81858,5.55435,4.5,5.28708,4.5C4.54814,4.5,3.5,4.5,3.5,4.5C3.5,4.5,4.26261,2.78412,4.84601,1.47148C4.98108,1.16757,4.59876,0.901241,4.3636,1.1364" fill="#FFFFFF" fill-opacity="1"/></g></svg>';
 
 SmartComponent({
   props: {
@@ -11,7 +11,8 @@ SmartComponent({
     },
     size: {
       type: Number,
-      value: 10,
+      value: 24,
+      observer: 'init',
     },
     value: {
       type: Number,
@@ -20,23 +21,42 @@ SmartComponent({
     },
     highColor: {
       type: String,
-      value: '#70CF98',
+      value: 'var(--battery-body-high-background, var(--app-B1-N1, rgba(0, 0, 0, 0.9)))',
     },
     middleColor: {
       type: String,
-      value: '#F5A623',
+      value: 'var(--battery-body-middle-background, #ffcb00)',
     },
     lowColor: {
       type: String,
-      value: '#FF4444',
+      value: 'var(--battery-body-low-background, #ee652e)',
+    },
+    chargingColor: {
+      type: String,
+      value: 'var(--battery-body-charging-background, #2fc755)',
+    },
+    inCharging: {
+      type: Boolean,
+      value: false,
     },
     backgroundColor: String,
-    onCalcColor: null,
     color: String,
+    showText: {
+      type: Boolean,
+      value: false,
+    },
+    onCalcColor: null,
   },
 
   data: {
-    svgUrl: '',
+    insideColor: '',
+    chargingSvg: '',
+    insidePercent: 0,
+    bodyStyle: '',
+    dotStyle: '',
+    zeroStyle: '',
+    zeroInnerStyle: '',
+    containStyle: '',
   },
 
   created() {
@@ -45,69 +65,44 @@ SmartComponent({
 
   methods: {
     init() {
-      const bgColor = this.getBgColor();
-
-      let IValue = this.data.value;
-
-      if (IValue > 100) {
-        IValue = 100;
-      } else if (IValue < 0) {
-        IValue = 0;
-      }
-      const top = 17 - ((17 - 3) * IValue) / 100;
-
-      // 左上、右上、右下、左下
-      const points = `2 ${top} 9 ${top} 9 17 2 17`;
-
-      const insideColor = this.calcColor(top);
-
-      const svgNode = `<svg
-        width="${1.1 * this.data.size}px"
-        height="${1.9 * this.data.size}px"
-        viewBox="0 0 11 19"
-      >
-        <path d='${wrapBatteryD}' fill='${this.data.backgroundColor || bgColor}' />
-        <polygon points='${points}' fill='${insideColor}' />
-      </svg>`;
-
+      const { value, type, size } = this.data;
+      const insidePercent = Math.round(Math.min(100, Math.max(0, value)));
+      const insideColor = this.calcColor(insidePercent);
+      const containStyle = `width: ${size}px;height: ${size}px;`;
+      const insidePercentStr =
+        type === 'vertical' ? `height: ${insidePercent}%` : `width: ${insidePercent}%`;
       this.setData({
-        svgUrl: this.toSvgCssBackground(svgNode),
+        insideColor,
+        insidePercentStr,
+        insideBotBgClass:
+          String(insidePercent) === '100' ? 'smart-battery-high-bg' : 'smart-battery-base-bg',
+        chargingSvg: this.toSvgCssBackground(chargingSvg),
+        containStyle,
       });
     },
 
-    getBgColor() {
-      const WX: any = wx;
-      const bgColor = WX.getThemeInfo();
-      if (bgColor && bgColor['--app-B1-N3']) {
-        return bgColor['--app-B1-N3'];
+    calcColor(value) {
+      if (typeof this.data.onCalcColor === 'function') {
+        return this.data.onCalcColor();
       }
-
-      const d: any = wx.getSystemInfoSync();
-      if (d && d.theme === 'light') {
-        return '#fff';
-      }
-      return 'rgba(0, 0, 0, 0.5)';
-    },
-
-    calcColor(top) {
       if (this.data.color) {
         return this.data.color;
       }
-      // 自定义电量的颜色分配规则
-      const color = typeof this.data.onCalcColor === 'function' && this.data.onCalcColor();
-      if (color) {
-        return color;
+
+      if (this.data.inCharging) {
+        return this.data.chargingColor;
       }
 
-      if (top <= 14.2 && top >= 3) {
+      if (value > 50) {
         return this.data.highColor;
       }
-      if (top <= 15.6 && top > 14.2) {
+      if (value > 20 && value <= 50) {
         return this.data.middleColor;
       }
-      return this.data.lowColor;
+      if (value <= 20) {
+        return this.data.lowColor;
+      }
     },
-
     toSvgCssBackground(svgString: string) {
       let res = svgString;
       res = svgString
@@ -124,11 +119,7 @@ SmartComponent({
         .replace(/>/g, '%3E')
 
         .replace(/\s+/g, ' ');
-      return `background-image: url("data:image/svg+xml,${res}"); width: ${
-        1.1 * this.data.size
-      }px; height: ${1.9 * this.data.size}px; background-repeat: no-repeat; transform: ${
-        this.data.type === 'horizontal' ? 'rotate(90deg)' : '0'
-      }`;
+      return `background-image: url("data:image/svg+xml,${res}");`;
     },
   },
 });
