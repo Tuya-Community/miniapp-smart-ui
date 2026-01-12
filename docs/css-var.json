@@ -754,7 +754,8 @@
   },
   "bottom-sheet-dragger-node-background": {
     "name": "@bottom-sheet-dragger-node-background",
-    "value": "var(--smart-ui-bottom-sheet-dragger-node-background,rgba(0, 0, 0, 0.3))"
+    "value": "var(--smart-ui-bottom-sheet-dragger-node-background,rgba(0, 0, 0, 0.3))",
+    "decs": ""
   },
   "button-mini-height": {
     "name": "@button-mini-height",
@@ -3681,7 +3682,12 @@
   },
   "battery-text-padding": {
     "name": "@battery-text-padding",
-    "value": "6px",
+    "value": "0 0 0 4px",
+    "decs": ""
+  },
+  "battery-text-padding-vertical": {
+    "name": "@battery-text-padding-vertical",
+    "value": "0 4px 0 0",
     "decs": ""
   }
 }
