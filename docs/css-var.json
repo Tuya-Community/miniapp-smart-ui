@@ -56,7 +56,7 @@
   },
   "B1-N1": {
     "name": "@B1-N1",
-    "value": "var(--app-B1-N1, rgba(0, 0, 0, 1))",
+    "value": "var(--app-B1-N1, rgba(0, 0, 0, 0.9))",
     "decs": "背景色 N1 字体色"
   },
   "B1-N2": {
@@ -754,7 +754,7 @@
   },
   "bottom-sheet-dragger-node-background": {
     "name": "@bottom-sheet-dragger-node-background",
-    "value": "var(--smart-ui-bottom-sheet-dragger-node-background, rgba(0, 0, 0, 0.3))",
+    "value": "var(--smart-ui-bottom-sheet-dragger-node-background,rgba(0, 0, 0, 0.3))",
     "decs": ""
   },
   "button-mini-height": {
@@ -799,7 +799,7 @@
   },
   "button-default-color": {
     "name": "@button-default-color",
-    "value": "var(--app-B1-N1, rgba(0, 0, 0, 1))",
+    "value": "var(--app-B1-N1, rgba(0, 0, 0, 0.9))",
     "decs": ""
   },
   "button-default-height": {
@@ -2407,12 +2407,12 @@
   },
   "switch-label-active-color": {
     "name": "@switch-label-active-color",
-    "value": "#FFFFFF",
+    "value": "#ffffff",
     "decs": ""
   },
   "switch-label-inactive-color": {
     "name": "@switch-label-inactive-color",
-    "value": "#FFFFFF",
+    "value": "#ffffff",
     "decs": ""
   },
   "switch-disabled-opacity": {
@@ -3632,7 +3632,62 @@
   },
   "popover-overlay-color": {
     "name": "@popover-overlay-color",
-    "value": "var(--app-B1-N1, rgba(0, 0, 0, 1))",
+    "value": "var(--app-B1-N1, rgba(0, 0, 0, 0.9))",
+    "decs": ""
+  },
+  "battery-body-base-background": {
+    "name": "@battery-body-base-background",
+    "value": "var(--smart-ui-battery-body-base-background, rgba(0, 0, 0, 0.25))",
+    "decs": ""
+  },
+  "battery-text-color": {
+    "name": "@battery-text-color",
+    "value": "var(--smart-ui-battery-text-color, rgba(0, 0, 0, 0.6))",
+    "decs": ""
+  },
+  "battery-slash-border-color": {
+    "name": "@battery-slash-border-color",
+    "value": "var(--smart-ui-battery-slash-border-color, #ffffff)",
+    "decs": ""
+  },
+  "battery-body-high-background": {
+    "name": "@battery-body-high-background",
+    "value": "var(--app-B1-N1, rgba(0, 0, 0, 0.9))",
+    "decs": ""
+  },
+  "battery-body-middle-background": {
+    "name": "@battery-body-middle-background",
+    "value": "#ffcb00",
+    "decs": ""
+  },
+  "battery-body-low-background": {
+    "name": "@battery-body-low-background",
+    "value": "#ee652e",
+    "decs": ""
+  },
+  "battery-body-charging-background": {
+    "name": "@battery-body-charging-background",
+    "value": "#2fc755",
+    "decs": ""
+  },
+  "battery-text-font-size": {
+    "name": "@battery-text-font-size",
+    "value": "11px",
+    "decs": ""
+  },
+  "battery-text-font-weight": {
+    "name": "@battery-text-font-weight",
+    "value": "590",
+    "decs": ""
+  },
+  "battery-text-padding": {
+    "name": "@battery-text-padding",
+    "value": "0 0 0 4px",
+    "decs": ""
+  },
+  "battery-text-padding-vertical": {
+    "name": "@battery-text-padding-vertical",
+    "value": "0 4px 0 0",
     "decs": ""
   }
 }

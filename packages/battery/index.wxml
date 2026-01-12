@@ -1,1 +1,24 @@
-<view style="{{svgUrl}}"></view>
+<view class="smart-battery">
+  <view class="smart-battery-container" style="{{containStyle}}">
+    <view class="smart-battery-contain {{ type === 'vertical' ? 'smart-battery-contain-vertical' : 'smart-battery-contain-horizontal' }}" style="transform: translateZ(0) scale({{ size / 48 }})">
+      <view
+        class="smart-battery-body {{ value === 0 ? '' : 'smart-battery-overflow-hidden' }} {{ type === 'vertical' ? 'smart-battery-body-vertical' : 'smart-battery-body-horizontal' }}"
+        >
+        <view class="smart-battery-bar {{ type === 'vertical' ? 'smart-battery-bar-vertical' : 'smart-battery-bar-horizontal' }}"
+          style="background-color: {{ color || insideColor }}; {{insidePercentStr}}">
+        </view>
+        <view class="smart-battery-icon" wx:if="{{ inCharging }}" style="{{chargingSvg}}"></view>
+        <view wx:if="{{ value === 0 && !inCharging }}"
+          class="smart-battery-zero {{ type === 'vertical' ? 'smart-battery-zero-vertical' : 'smart-battery-zero-horizontal' }}">
+          <view class="smart-battery-zero smart-battery-zero-inner {{ type === 'vertical' ? 'smart-battery-zero-inner-vertical' : 'smart-battery-zero-inner-horizontal' }}">
+          </view>
+        </view>
+      </view>
+      <view 
+        class="smart-battery-dot {{ type === 'vertical' ? 'smart-battery-dot-vertical' : 'smart-battery-dot-horizontal' }} {{ insideBotBgClass }}"
+        style="background-color: {{ value === 100 && color }};"
+      ></view>
+    </view>
+  </view>
+  <view class="smart-battery-text smart-manrope {{type === 'vertical' ? 'smart-battery-text-vertical' : ''}}" wx:if="{{ showText }}">{{ value }}%</view>
+</view>

@@ -50,6 +50,7 @@ interface DialogOptions {
   confirmButtonOpenType?: string;
   value?: null | string;
   ignoreQueue?: boolean;
+  emptyDisabled?: boolean;
   password?: boolean;
   placeholder?: string;
   maxlength?: number;
@@ -91,6 +92,7 @@ const defaultOptions: DialogOptions = {
   ignoreQueue: false,
   value: null,
   password: false,
+  emptyDisabled: false,
   placeholder: '',
   maxlength: 20,
 };
