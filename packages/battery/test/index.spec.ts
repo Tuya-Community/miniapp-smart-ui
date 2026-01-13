@@ -731,4 +731,122 @@ describe('battery', () => {
 
     expect(wrapper?.data.insideBotBgClass).toBe('smart-battery-base-bg');
   });
+
+  test('should use onCalcColor function when provided', async () => {
+    const customColor = '#ABCDEF';
+    const onCalcColor = jest.fn(() => customColor);
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-battery': SmartBattery,
+        },
+        template: `<smart-battery id="wrapper" value="{{ 50 }}" />`,
+        data: {
+          value: 50,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      // Set onCalcColor function directly on data
+      instance.data.onCalcColor = onCalcColor;
+      // Trigger init to recalculate color
+      instance.init();
+      await simulate.sleep(10);
+
+      // onCalcColor should be called
+      expect(onCalcColor).toHaveBeenCalled();
+      // insideColor should be the return value of onCalcColor
+      expect(wrapper?.data.insideColor).toBe(customColor);
+    }
+  });
+
+  test('should handle edge cases for value boundaries', async () => {
+    // Test value exactly at 50
+    const comp1 = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-battery': SmartBattery,
+        },
+        template: `<smart-battery id="wrapper" value="{{ 50 }}" />`,
+        data: {
+          value: 50,
+        },
+      })
+    );
+    comp1.attach(document.createElement('parent-wrapper'));
+
+    const wrapper1 = comp1.querySelector('#wrapper');
+    await simulate.sleep(10);
+
+    // Value 50 should use middleColor (20 < value <= 50)
+    expect(wrapper1?.data.insideColor).toBe('var(--battery-body-middle-background, #ffcb00)');
+
+    // Test value exactly at 20
+    const comp2 = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-battery': SmartBattery,
+        },
+        template: `<smart-battery id="wrapper" value="{{ 20 }}" />`,
+        data: {
+          value: 20,
+        },
+      })
+    );
+    comp2.attach(document.createElement('parent-wrapper'));
+
+    const wrapper2 = comp2.querySelector('#wrapper');
+    await simulate.sleep(10);
+
+    // Value 20 should use lowColor (value <= 20)
+    expect(wrapper2?.data.insideColor).toBe('var(--battery-body-low-background, #ee652e)');
+  });
+
+  test('should clamp value to 0-100 range', async () => {
+    // Test value above 100
+    const comp1 = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-battery': SmartBattery,
+        },
+        template: `<smart-battery id="wrapper" value="{{ 150 }}" />`,
+        data: {
+          value: 150,
+        },
+      })
+    );
+    comp1.attach(document.createElement('parent-wrapper'));
+
+    const wrapper1 = comp1.querySelector('#wrapper');
+    await simulate.sleep(10);
+
+    // Value should be clamped to 100
+    expect(wrapper1?.data.insidePercentStr).toContain('100%');
+
+    // Test value below 0
+    const comp2 = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-battery': SmartBattery,
+        },
+        template: `<smart-battery id="wrapper" value="{{ -10 }}" />`,
+        data: {
+          value: -10,
+        },
+      })
+    );
+    comp2.attach(document.createElement('parent-wrapper'));
+
+    const wrapper2 = comp2.querySelector('#wrapper');
+    await simulate.sleep(10);
+
+    // Value should be clamped to 0
+    expect(wrapper2?.data.insidePercentStr).toContain('0%');
+  });
 });

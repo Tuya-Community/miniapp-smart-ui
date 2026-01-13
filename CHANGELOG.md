@@ -8,7 +8,7 @@
 - battery: 对齐全新 UED 设计，重构样式布局，size默认值修改为24([pull/134](https://github.com/Tuya-Community/miniapp-smart-ui/pull/134), [pull/147](https://github.com/Tuya-Community/miniapp-smart-ui/pull/147))
 
 ### Bug Fixes  🐛
-- dialog: 修复 emptyDisabled 默认值为 false，并且修改提交按钮禁用逻辑([pull/146](https://github.com/Tuya-Community/miniapp-smart-ui/pull/146))
+- dialog: 修复 emptyDisabled 默认值为 false，并且修改提交按钮禁用逻辑([5c88532](https://github.com/Tuya-Community/miniapp-smart-ui/pull/146/commits/5c885324f3f9e3c691f4d840e8fc4120a2088301))
 
 ## v2.9.2 (2025-12-31)
 
