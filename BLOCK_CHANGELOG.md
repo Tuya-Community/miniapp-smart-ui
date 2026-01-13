@@ -1,5 +1,11 @@
 # 升级注意事项
 
+
+## v2.10.0 (2026-1-13)
+
+### Features ✨
+- battery: 对齐全新 UED 设计，重构样式布局，size默认值修改为24([pull/134](https://github.com/Tuya-Community/miniapp-smart-ui/pull/134), [pull/147](https://github.com/Tuya-Community/miniapp-smart-ui/pull/147))
+
 ## v2.9.0 (2025-12-23)
 
 ### Bug Fixes  🐛

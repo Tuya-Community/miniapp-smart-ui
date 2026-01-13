@@ -183,6 +183,41 @@ describe('dialog', () => {
     }
   });
 
+  test('should call onInput callback when provided', async () => {
+    const onInputCallback = jest.fn();
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-dialog': SmartDialog,
+        },
+        template: `<smart-dialog id="wrapper" show="{{ true }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({
+        onInput: onInputCallback,
+      });
+      await simulate.sleep(10);
+
+      instance.onInput({
+        detail: {
+          value: 'test callback',
+        },
+      });
+      await simulate.sleep(10);
+
+      expect(wrapper?.data.inputValue).toBe('test callback');
+      expect(onInputCallback).toHaveBeenCalledWith('test callback');
+    }
+  });
+
   test('should close dialog with action', async () => {
     let closeEvent: any = null;
 
@@ -734,7 +769,9 @@ describe('dialog', () => {
         instance.mounted();
         await simulate.sleep(10);
 
-        expect(consoleErrorSpy).toHaveBeenCalled();
+        expect(consoleErrorSpy).toHaveBeenCalledWith(
+          expect.stringContaining('Dialog component #test-dialog repeated!')
+        );
       }
 
       consoleErrorSpy.mockRestore();
@@ -758,9 +795,16 @@ describe('dialog', () => {
 
     if (instance) {
       instance.id = 'test-dialog';
-      // Add to queue
+      // Set contextRef first
+      contextRef.value['#test-dialog'] = comp.instance;
+      // Add to queue with same id
       queueRef.value.push(instance);
       await simulate.sleep(10);
+
+      // Verify initial state
+      expect(contextRef.value['#test-dialog']).toBeTruthy();
+      expect(queueRef.value.length).toBe(1);
+      expect(queueRef.value.find(item => item.id === 'test-dialog')).toBeTruthy();
 
       // Call destroyed
       if (instance.destroyed) {
@@ -770,6 +814,7 @@ describe('dialog', () => {
         // Should clear contextRef and remove from queue
         expect(contextRef.value['#test-dialog']).toBeNull();
         expect(queueRef.value.length).toBe(0);
+        expect(queueRef.value.find(item => item.id === 'test-dialog')).toBeFalsy();
       }
     }
   });

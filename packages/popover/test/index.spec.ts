@@ -2,13 +2,9 @@ import path from 'path';
 import simulate from 'miniprogram-simulate';
 
 describe('popover', () => {
-  const SmartPopover = simulate.load(
-    path.resolve(__dirname, '../index'),
-    'smart-popover',
-    {
-      rootPath: path.resolve(__dirname, '../../'),
-    }
-  );
+  const SmartPopover = simulate.load(path.resolve(__dirname, '../index'), 'smart-popover', {
+    rootPath: path.resolve(__dirname, '../../'),
+  });
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -559,5 +555,30 @@ describe('popover', () => {
       expect(wrapper?.data.cancel_timer).toBeNull();
     }
   });
-});
 
+  test('should emit show-change and close events when onClose is called with trigger true', () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popover': SmartPopover,
+        },
+        template: `<smart-popover id="wrapper" bind:show-change="onShowChange" bind:close="onClose" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+
+    if (instance) {
+      instance.setData({ currentShow: true });
+      const showChangeSpy = jest.spyOn(instance, '$emit');
+      instance.onClose(true);
+      jest.advanceTimersByTime(300);
+
+      expect(showChangeSpy).toHaveBeenCalledWith('show-change', false);
+      expect(showChangeSpy).toHaveBeenCalledWith('close', false);
+      showChangeSpy.mockRestore();
+    }
+  });
+});

@@ -1,18 +1,46 @@
 <demo-block title="{{I18n.t('basicUsage')}}">
   <view class="line">
-    <battery size="20" value="100" />
-    <battery />
-    <battery value="10" />
-    <battery value="3" />
-    <battery value="0" />
+    <smart-battery value="80" />
+    <smart-battery value="50" />
+    <smart-battery value="20" />
+    <smart-battery value="0" />
+    <smart-battery in-charging value="80" />
   </view>
 </demo-block>
 <demo-block title="{{I18n.t('level')}}">
   <view class="line">
-    <battery type="horizontal" value="100" />
-    <battery type="horizontal" />
-    <battery type="horizontal" value="10" />
-    <battery type="horizontal" value="3" />
-    <battery type="horizontal" value="0" />
+    <smart-battery type="horizontal" value="100" />
+    <smart-battery type="horizontal" />
+    <smart-battery type="horizontal" value="10" />
+    <smart-battery type="horizontal" value="3" />
+    <smart-battery type="horizontal" value="0" />
+  </view>
+</demo-block>
+<demo-block title="{{I18n.t('withPercent')}}">
+  <view class="line">
+    <smart-battery show-text value="80" />
+    <smart-battery show-text value="50" />
+    <smart-battery show-text value="20" />
+    <smart-battery show-text value="0" />
+    <smart-battery show-text in-charging value="80" />
+  </view>
+</demo-block>
+<demo-block title="{{I18n.t('level') + '(' + I18n.t('withPercent') + ')'}}">
+  <view class="line">
+    <smart-battery show-text type="horizontal" value="100" />
+    <smart-battery show-text type="horizontal" />
+    <smart-battery show-text type="horizontal" value="10" />
+    <smart-battery show-text type="horizontal" value="3" />
+    <smart-battery show-text type="horizontal" value="0" />
+  </view>
+</demo-block>
+<demo-block title="{{I18n.t('customSize')}}">
+  <view class="line w-180">
+    <smart-battery type="horizontal" size="28" value="100" />
+    <smart-battery show-text type="horizontal" size="28" value="100" />
+  </view>
+  <view class="line w-180">
+    <smart-battery size="28" value="100" />
+    <smart-battery show-text size="28" value="100" />
   </view>
 </demo-block>

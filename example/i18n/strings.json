@@ -1,5 +1,6 @@
 {
   "en": {
+    "withPercent": "Show Percentage",
     "setTheRangeOfDragging": "Set the range of dragging",
     "draggable": "Draggable",
     "draggableWithTitle": "Draggable with Title",
@@ -578,6 +579,8 @@
     "popOutFromTheLeft": "Left",
     "popUpOnTheRightSide": "Right",
     "popOutFromTheTop": "Top",
+    "controlledMode": "Controlled Mode",
+    "controlledModeDesc": "In controlled mode, the show state is controlled externally",
     "svgPath": "Svg Path",
     "upsideDown": "Upside Down",
     "loop": "Loop List",
@@ -587,6 +590,7 @@
     "themeSwitch": "Theme Switch"
   },
   "zh": {
+    "withPercent": "显示百分比",
     "draggable": "可拖拽",
     "draggableWithTitle": "可拖拽带标题",
     "setTheRangeOfDragging": "设置拖拽的范围",
@@ -1166,6 +1170,8 @@
     "popOutFromTheLeft": "左侧弹出",
     "popOutFromTheTop": "上侧弹出",
     "popUpOnTheRightSide": "右侧弹出",
+    "controlledMode": "受控模式",
+    "controlledModeDesc": "受控模式下，show 状态由外部控制",
     "svgPath": "Svg Path",
     "upsideDown": "上下颠倒",
     "loop": "循环列表",

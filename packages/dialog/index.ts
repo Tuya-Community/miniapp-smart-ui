@@ -109,6 +109,7 @@ SmartComponent({
       action: string,
       context: WechatMiniprogram.Component.TrivialInstance
     ) => void,
+    onInput: (() => {}) as (value: string) => void,
   },
   mounted: function () {
     if (!this.id) return;
@@ -139,7 +140,11 @@ SmartComponent({
     },
 
     onInput(evt) {
-      this.setData({ inputValue: evt?.detail?.value ?? '' });
+      const inputValue = evt?.detail?.value ?? '';
+      this.setData({ inputValue });
+      if (this.data.onInput) {
+        this.data.onInput(inputValue);
+      }
     },
 
     close(action) {

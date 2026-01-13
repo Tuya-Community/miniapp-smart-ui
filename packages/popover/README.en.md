@@ -25,7 +25,7 @@ Introduce the component in `app.json` or `index.json`. For detailed instructions
 ### Basic Usage
 
 ```html
-<smart-popover show="{{show}}" placement="bottomLeft">
+<smart-popover placement="bottomLeft" show="{{show}}" bind:show-change="onShow">
   <smart-button>Bottom Left Pop</smart-button>
   <view slot="overlay">
     <smart-cell-group inset>
@@ -153,8 +153,8 @@ Page({
     sunMaxFill: Sun,
   },
   methods: {
-    onClose() {
-      this.setData({ show: false });
+    onShow(e) {
+      this.setData({ show: e.detail });
     },
   },
 });
@@ -205,41 +205,41 @@ Set the popup position using the `position` attribute. The default is to pop to 
 ## API
 
 ### Props
-| Parameter        | Description                                                                                                                                                           | Type      | Default  |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------- |
-| custom-style     | Custom popup style                                                                                                                                                    | _string_  | `''`     |
-| duration         | Delay time for closing (ms)                                                                                                                                          | number    | `3000`   |
-| placement        | Position of the popup, supported values: `top`, `topLeft`, `topRight`, `bottom`, `bottomLeft`, `bottomRight`, `left`, `leftTop`, `leftBottom`, `right`, `rightTop`, `rightBottom` | _string_  | `right`  |
-| show             | Controls whether the popup is displayed and listens for state changes, updating `currentShow` when the value changes                                                  | _boolean_ | `false`  |
-| trigger `v2.5.0`       | Control the trigger method of the popup layer, support `tap`、`longpress`                                                                                                  | _string_ | `tap` |
+| Parameter        | Description                                                                                                                                                                       | Type      | Default |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------- |
+| custom-style     | Custom popup style                                                                                                                                                                | _string_  | `''`    |
+| duration         | Delay time for closing (ms)                                                                                                                                                       | number    | `3000`  |
+| placement        | Position of the popup, supported values: `top`, `topLeft`, `topRight`, `bottom`, `bottomLeft`, `bottomRight`, `left`, `leftTop`, `leftBottom`, `right`, `rightTop`, `rightBottom` | _string_  | `right` |
+| show             | Controls whether the popup is displayed and listens for state changes, updating `currentShow` when the value changes                                                              | _boolean_ | `false` |
+| trigger `v2.5.0` | Control the trigger method of the popup layer, support `tap`、`longpress`                                                                                                         | _string_  | `tap`   |
 
 ### Events
 
-| Event Name       | Description             | Parameters |
-| ---------------- | ----------------------- | ---------- |
-| bind:close       | Triggered on close      | -          |
-| bind:show-change | Triggered on show/hide  | -          |
+| Event Name       | Description            | Parameters |
+| ---------------- | ---------------------- | ---------- |
+| bind:close       | Triggered on close     | -          |
+| bind:show-change | Triggered on show/hide | -          |
 
 ### Popover Slot
 
-| Name    | Description       |
-| ------------ | ------------ |
-| overlay    | Popup content |
+| Name    | Description   |
+| ------- | ------------- |
+| overlay | Popup content |
 
 ### External Styles
 
-| Class Name      | Description        |
-| --------------- | ------------------ |
-| custom-class    | Root node style class |
+| Class Name   | Description           |
+| ------------ | --------------------- |
+| custom-class | Root node style class |
 
 ### Style Variables
 
 The component provides the following CSS variables for custom styling. For usage, see [ConfigProvider Component](/material/smartui?comId=config-provider&appType=miniapp).
 
-| Name                       | Default Value                          | Description  |
-| -------------------------- | -------------------------------------- | ------------ |
-| --popover-background-color | #fff                                   | Popup background color |
-| --popover-border-radius    | 12px                                   | Popup border radius    |
-| --popover-box-shadow       | 0px 6px 12px 0px rgba(0, 0, 0, 0.1)    | Popup box shadow       |
-| --popover-padding          | 12px                                   | Popup padding          |
-| --popover-overlay-color `v2.8.0` | var(--app-B1-N1, rgba(0, 0, 0, 1)) | Text color for the overlay slot |
+| Name                             | Default Value                       | Description                     |
+| -------------------------------- | ----------------------------------- | ------------------------------- |
+| --popover-background-color       | #fff                                | Popup background color          |
+| --popover-border-radius          | 12px                                | Popup border radius             |
+| --popover-box-shadow             | 0px 6px 12px 0px rgba(0, 0, 0, 0.1) | Popup box shadow                |
+| --popover-overlay-color `v2.8.0` | var(--app-B1-N1, rgba(0, 0, 0, 1))  | Text color for the overlay slot |
+| --popover-padding                | 12px                                | Popup padding                   |

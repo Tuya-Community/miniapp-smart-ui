@@ -42,6 +42,7 @@ SmartComponent({
         values: new Array(20).fill(1).map((x, i) => i),
         style: 'flex: none;width: auto;min-width: 61px;',
         unit: 'Kg',
+        unitGap: '10rpx'
       },
     ],
     column6: [
