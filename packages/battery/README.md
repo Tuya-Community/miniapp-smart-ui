@@ -23,7 +23,6 @@ category: 通用
 ### 基础用法
 
 ```html
-<smart-battery size="20" value="100" />
 <smart-battery value="80" />
 <smart-battery value="50" />
 <smart-battery value="20" />
@@ -44,22 +43,21 @@ category: 通用
 ### 显示百分比
 
 ```html
-<smart-battery size="20" value="100" />
-<smart-battery value="80" />
-<smart-battery value="50" />
-<smart-battery value="20" />
-<smart-battery value="0" />
-<smart-battery in-charging value="80" />
+<smart-battery show-text value="80" />
+<smart-battery show-text value="50" />
+<smart-battery show-text value="20" />
+<smart-battery show-text value="0" />
+<smart-battery show-text in-charging value="80" />
 ```
 
 ### 水平(显示百分比)
 
 ```html
-<smart-battery type="horizontal" value="100" />
-<smart-battery type="horizontal" />
-<smart-battery type="horizontal" value="10" />
-<smart-battery type="horizontal" value="3" />
-<smart-battery type="horizontal" value="0" />
+<smart-battery show-text type="horizontal" value="100" />
+<smart-battery show-text type="horizontal" />
+<smart-battery show-text type="horizontal" value="10" />
+<smart-battery show-text type="horizontal" value="3" />
+<smart-battery show-text type="horizontal" value="0" />
 ```
 
 ### 自定义大小

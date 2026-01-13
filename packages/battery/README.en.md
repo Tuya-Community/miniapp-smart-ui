@@ -43,21 +43,21 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 ### Show Percentage
 
 ```html
-<smart-battery value="80" />
-<smart-battery value="50" />
-<smart-battery value="20" />
-<smart-battery value="0" />
-<smart-battery in-charging value="80" />
+<smart-battery show-text value="80" />
+<smart-battery show-text value="50" />
+<smart-battery show-text value="20" />
+<smart-battery show-text value="0" />
+<smart-battery show-text in-charging value="80" />
 ```
 
 ### Horizontal(Show Percentage)
 
 ```html
-<smart-battery type="horizontal" value="100" />
-<smart-battery type="horizontal" />
-<smart-battery type="horizontal" value="10" />
-<smart-battery type="horizontal" value="3" />
-<smart-battery type="horizontal" value="0" />
+<smart-battery show-text type="horizontal" value="100" />
+<smart-battery show-text type="horizontal" />
+<smart-battery show-text type="horizontal" value="10" />
+<smart-battery show-text type="horizontal" value="3" />
+<smart-battery show-text type="horizontal" value="0" />
 ```
 
 ### Custom Size
