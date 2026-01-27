@@ -87,18 +87,50 @@ Page({
 });
 ```
 
+### 自定义侧边栏样式 `v2.10.1`
+
+`sidebar-font-size` 和 `sidebar-line-height` 属性可以设置侧边栏的字体样式
+
+```html
+<smart-index-bar sidebar-font-size="16px" sidebar-line-height="20px">
+  <view wx:for="{{ indexList }}" wx:for-item="item" wx:key="item">
+    <smart-index-anchor index="{{ item }}" />
+    <smart-cell title="文本" />
+    <smart-cell title="文本" />
+    <smart-cell title="文本" />
+  </view>
+</smart-index-bar>
+```
+
+```javascript
+const indexList = [];
+const charCodeOfA = 'A'.charCodeAt(0);
+
+for (let i = 0; i < 26; i++) {
+  indexList.push(String.fromCharCode(charCodeOfA + i));
+}
+
+Page({
+  data: {
+    indexList, // A-Z 字母列表
+  },
+});
+```
+
 ## API
 
 ### IndexBar Props
 
-| 参数                | 说明                       | 类型                   | 默认值    |
-| ------------------- | -------------------------- | ---------------------- | --------- |
-| highlight-color     | 索引字符高亮颜色           | _string_               | `#07c160` |
-| index-list          | 索引字符列表               | _string[] \| number[]_ | `A-Z`     |
-| sticky              | 是否开启锚点自动吸顶       | _boolean_              | `true`    |
-| sticky-offset-top   | 锚点自动吸顶时与顶部的距离 | _number_               | `0`       |
-| z-index             | z-index 层级               | _number_               | `1`       |
-| scrollable `v2.1.7` | SideBar 是否可滚动定位     | _boolean_              | `false`   |
+| 参数                          | 说明                       | 类型                   | 默认值    |
+| ----------------------------- | -------------------------- | ---------------------- | --------- |
+| highlight-color               | 索引字符高亮颜色           | _string_               | `#07c160` |
+| index-list                    | 索引字符列表               | _string[] \| number[]_ | `A-Z`     |
+| sticky                        | 是否开启锚点自动吸顶       | _boolean_              | `true`    |
+| sticky-offset-top             | 锚点自动吸顶时与顶部的距离 | _number_               | `0`       |
+| z-index                       | z-index 层级               | _number_               | `1`       |
+| scrollable `v2.1.7`           | SideBar 是否可滚动定位     | _boolean_              | `false`   |
+| sidebar-font-size `v2.10.1`   | SideBar 字体大小           | _string_               | -         |
+| sidebar-line-height `v2.10.1` | SideBar 字体行高           | _string_               | -         |
 
 ### IndexAnchor Props
 

@@ -30,6 +30,12 @@ SmartComponent({
       type: Boolean,
       value: true,
     },
+    sidebarFontSize: {
+      type: String,
+    },
+    sidebarLineHeight: {
+      type: String,
+    },
     zIndex: {
       type: Number,
       value: 1,
@@ -95,7 +101,7 @@ SmartComponent({
     },
 
     setRect() {
-      return Promise.all([this.setAnchorsRect(), this.setListRect(), this.setSiderbarRect()]);
+      return Promise.all([this.setAnchorsRect(), this.setListRect(), this.setSidebarRect()]);
     },
 
     setAnchorsRect() {
@@ -123,7 +129,7 @@ SmartComponent({
       });
     },
 
-    setSiderbarRect() {
+    setSidebarRect() {
       return getRect(this, '.smart-index-bar__sidebar').then(res => {
         if (!isDef(res)) {
           return;
