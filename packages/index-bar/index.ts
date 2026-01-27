@@ -30,6 +30,12 @@ SmartComponent({
       type: Boolean,
       value: true,
     },
+    sidebarFontSize: {
+      type: String,
+    },
+    sidebarLineHeight: {
+      type: String,
+    },
     zIndex: {
       type: Number,
       value: 1,

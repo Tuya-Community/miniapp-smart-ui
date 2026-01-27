@@ -24,6 +24,8 @@
     <smart-index-bar
       wx:if="{{ activeTab === 1 }}"
       index-list="{{ customIndexList }}"
+      sidebar-font-size="16px"
+      sidebar-line-height="20px"
     >
       <view
         wx:for="{{ customIndexList }}"

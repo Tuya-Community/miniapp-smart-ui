@@ -87,6 +87,36 @@ Page({
 });
 ```
 
+### Custom Sidebar Style `v2.10.1`
+
+The `sidebar-font-size` and `sidebar-line-height` properties can set the font style of the sidebar.
+
+```html
+<smart-index-bar sidebar-font-size="16px" sidebar-line-height="20px">
+  <view wx:for="{{ indexList }}" wx:for-item="item" wx:key="item">
+    <smart-index-anchor index="{{ item }}" />
+    <smart-cell title="Text" />
+    <smart-cell title="Text" />
+    <smart-cell title="Text" />
+  </view>
+</smart-index-bar>
+```
+
+```javascript
+const indexList = [];
+const charCodeOfA = 'A'.charCodeAt(0);
+
+for (let i = 0; i < 26; i++) {
+  indexList.push(String.fromCharCode(charCodeOfA + i));
+}
+
+Page({
+  data: {
+    indexList, // A-Z alphabet list
+  },
+});
+```
+
 ## API
 
 ### IndexBar Props
@@ -99,6 +129,8 @@ Page({
 | sticky-offset-top   | Distance from top when anchor auto-sticky | _number_               | `0`       |
 | z-index             | z-index level                             | _number_               | `1`       |
 | scrollable `v2.1.7` | Whether the SideBar can scroll            | _boolean_              | `false`   |
+| sidebar-font-size `v2.10.1`   | SideBar font size           | _string_               | -         |
+| sidebar-line-height `v2.10.1` | SideBar line height           | _string_               | -         |
 
 ### IndexAnchor Props
 
