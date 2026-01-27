@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/popup/index",
     "pages/dashboard/index",
+    "pages/popup/index",
     "pages/bottom-sheet/index",
     "pages/datetime-picker/index",
     "pages/picker/index",
