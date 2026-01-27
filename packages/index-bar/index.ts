@@ -95,7 +95,7 @@ SmartComponent({
     },
 
     setRect() {
-      return Promise.all([this.setAnchorsRect(), this.setListRect(), this.setSiderbarRect()]);
+      return Promise.all([this.setAnchorsRect(), this.setListRect(), this.setSidebarRect()]);
     },
 
     setAnchorsRect() {
@@ -123,7 +123,7 @@ SmartComponent({
       });
     },
 
-    setSiderbarRect() {
+    setSidebarRect() {
       return getRect(this, '.smart-index-bar__sidebar').then(res => {
         if (!isDef(res)) {
           return;
