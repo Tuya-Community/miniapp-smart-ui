@@ -272,6 +272,8 @@ SmartComponent({
       const touch = event.touches[0];
       const itemHeight = this.sidebar.height / sidebarLength;
       let index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
+
+      // 有时候会莫名间断出现 -90多的情况
       if (index < -20) {
         return;
       }
@@ -306,14 +308,25 @@ SmartComponent({
         return;
       }
       this.pendingAnchor = [anchor];
-      anchor.scrollIntoView(this.scrollTop).then(() => {
-        if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
-          this.scrollToAnchor(this.pendingAnchor[0].data.index);
+      anchor
+        .scrollIntoView(this.scrollTop)
+        .then(() => {
+          if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
+            this.scrollToAnchor(this.pendingAnchor[0].data.index);
+            this.pendingAnchor = [];
+            return;
+          }
           this.pendingAnchor = [];
-          return;
-        }
-        this.pendingAnchor = [];
-      });
+        })
+        .catch(err => {
+          console.error(err);
+          if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
+            this.scrollToAnchor(this.pendingAnchor[0].data.index);
+            this.pendingAnchor = [];
+            return;
+          }
+          this.pendingAnchor = [];
+        });
       this.$emit('select', anchor.data.index);
     },
   },
