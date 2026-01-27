@@ -48,17 +48,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="hideBasic"
         bind:enter="enter"
         bind:leave="leave"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
     </wx-view>
   </demo-block>
   <demo-block>
@@ -203,56 +193,16 @@ exports[`should render demo and match snapshot 1`] = `
       </smart-cell>
       <smart-popup
         bind:close="hideTop"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
       <smart-popup
         bind:close="hideBottom"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
       <smart-popup
         bind:close="hideLeft"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
       <smart-popup
         bind:close="hideRight"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
     </wx-view>
   </demo-block>
   <demo-block>
@@ -363,43 +313,13 @@ exports[`should render demo and match snapshot 1`] = `
       </smart-cell>
       <smart-popup
         bind:close="hideCloseIcon"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
       <smart-popup
         bind:close="hideCustomCloseIcon"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
       <smart-popup
         bind:close="hideCustomIconPosition"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
     </wx-view>
   </demo-block>
   <demo-block>
@@ -442,17 +362,7 @@ exports[`should render demo and match snapshot 1`] = `
       </smart-cell>
       <smart-popup
         bind:close="hideRound"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
     </wx-view>
   </demo-block>
 </main>

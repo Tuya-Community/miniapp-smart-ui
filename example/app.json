@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/popup/index",
     "pages/dashboard/index",
     "pages/bottom-sheet/index",
     "pages/datetime-picker/index",
@@ -27,7 +28,6 @@
     "pages/icon/index",
     "pages/image/index",
     "pages/loading/index",
-    "pages/popup/index",
     "pages/popover/index",
     "pages/sticky/index",
     "pages/slider/index",
