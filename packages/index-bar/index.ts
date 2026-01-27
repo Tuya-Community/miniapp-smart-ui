@@ -312,7 +312,8 @@ SmartComponent({
         .scrollIntoView(this.scrollTop)
         .then(() => {
           if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
-            this.scrollToAnchor(this.pendingAnchor[0].data.index);
+            const index = this.data.indexList.indexOf(this.pendingAnchor[0].data.index);
+            this.scrollToAnchor(index);
             this.pendingAnchor = [];
             return;
           }
@@ -321,7 +322,8 @@ SmartComponent({
         .catch(err => {
           console.error(err);
           if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
-            this.scrollToAnchor(this.pendingAnchor[0].data.index);
+            const index = this.data.indexList.indexOf(this.pendingAnchor[0].data.index);
+            this.scrollToAnchor(index);
             this.pendingAnchor = [];
             return;
           }
