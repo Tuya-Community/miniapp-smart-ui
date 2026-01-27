@@ -433,7 +433,7 @@ describe('index-bar', () => {
     await simulate.sleep(10);
 
     if (instance) {
-      await instance.setSiderbarRect();
+      await instance.setSidebarRect();
       await simulate.sleep(10);
 
       expect(instance.sidebar).toBeTruthy();
@@ -466,7 +466,7 @@ describe('index-bar', () => {
     await simulate.sleep(10);
 
     if (instance) {
-      await instance.setSiderbarRect();
+      await instance.setSidebarRect();
       await simulate.sleep(10);
 
       // Should not throw error
