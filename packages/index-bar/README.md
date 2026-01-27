@@ -19,7 +19,6 @@ category: 导航
 }
 ```
 
-
 ```warning:⚠️注意
 组件是监听整个page 滚动事件来做动态的 fixed 标题元素，所以渲染此组件的页面必须配置 页面可滚动。
 
@@ -38,12 +37,8 @@ export default {
 点击索引栏时，会自动跳转到对应的`IndexAnchor`锚点位置。
 
 ```html
-<smart-index-bar>
-  <view
-    wx:for="{{ indexList }}"
-    wx:for-item="item"
-    wx:key="item"
-  >
+<smart-index-bar scrollable>
+  <view wx:for="{{ indexList }}" wx:for-item="item" wx:key="item">
     <smart-index-anchor index="{{ item }}" />
     <smart-cell title="文本" />
     <smart-cell title="文本" />
@@ -73,14 +68,8 @@ Page({
 
 ```html
 <smart-index-bar index-list="{{ customIndexList }}">
-  <view
-    wx:for="{{ customIndexList }}"
-    wx:key="index"
-  >
-    <smart-index-anchor
-      use-slot
-      index="{{ item }}"
-    >
+  <view wx:for="{{ customIndexList }}" wx:key="index">
+    <smart-index-anchor use-slot index="{{ item }}">
       <text>标题{{ item }}</text>
     </smart-index-anchor>
     <smart-cell title="文本" />
@@ -102,14 +91,14 @@ Page({
 
 ### IndexBar Props
 
-| 参数              | 说明                       | 类型                   | 默认值    |
-| ----------------- | -------------------------- | ---------------------- | --------- |
-| highlight-color   | 索引字符高亮颜色           | _string_               | `#07c160` |
-| index-list        | 索引字符列表               | _string[] \| number[]_ | `A-Z`     |
-| sticky            | 是否开启锚点自动吸顶       | _boolean_              | `true`    |
-| sticky-offset-top | 锚点自动吸顶时与顶部的距离 | _number_               | `0`       |
-| z-index           | z-index 层级               | _number_               | `1`       |
-| scrollable `v2.1.7`          | SideBar 是否可滚动定位               | _boolean_               | `false`       |
+| 参数                | 说明                       | 类型                   | 默认值    |
+| ------------------- | -------------------------- | ---------------------- | --------- |
+| highlight-color     | 索引字符高亮颜色           | _string_               | `#07c160` |
+| index-list          | 索引字符列表               | _string[] \| number[]_ | `A-Z`     |
+| sticky              | 是否开启锚点自动吸顶       | _boolean_              | `true`    |
+| sticky-offset-top   | 锚点自动吸顶时与顶部的距离 | _number_               | `0`       |
+| z-index             | z-index 层级               | _number_               | `1`       |
+| scrollable `v2.1.7` | SideBar 是否可滚动定位     | _boolean_              | `false`   |
 
 ### IndexAnchor Props
 
@@ -130,15 +119,14 @@ Page({
 | ---- | -------------------------------- |
 | -    | 锚点位置显示内容，默认为索引字符 |
 
-
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider&appType=miniapp)。
 
-| 名称                          | 默认值                                 | 描述 |
-| ----------------------------- | -------------------------------------- | ---- |
-| --index-bar-index-font-size | _10px_ | 索引字体大小 |
-| --index-bar-index-line-height | _14px_ | 索引行高 |
+| 名称                          | 默认值 | 描述         |
+| ----------------------------- | ------ | ------------ |
+| --index-bar-index-font-size   | _10px_ | 索引字体大小 |
+| --index-bar-index-line-height | _14px_ | 索引行高     |
 
 ## 常见问题
 

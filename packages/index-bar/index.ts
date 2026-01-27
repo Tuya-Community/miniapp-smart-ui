@@ -60,6 +60,9 @@ SmartComponent({
     showSidebar: false,
   },
 
+  // @ts-ignore
+  pendingAnchor: null,
+
   watch: {
     activeAnchorIndex(newVal) {
       if (newVal !== null && newVal !== -1) {
@@ -270,12 +273,15 @@ SmartComponent({
       const itemHeight = this.sidebar.height / sidebarLength;
       let index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
 
+      // 有时候会莫名间断出现 -90多的情况
+      if (index < -20) {
+        return;
+      }
       if (index < 0) {
         index = 0;
       } else if (index > sidebarLength - 1) {
         index = sidebarLength - 1;
       }
-
       this.scrollToAnchor(index);
     },
 
@@ -292,11 +298,38 @@ SmartComponent({
       this.scrollToAnchorIndex = index;
 
       const anchor = this.children.find(item => item.data.index === this.data.indexList[index]);
-
-      if (anchor) {
-        anchor.scrollIntoView(this.scrollTop);
-        this.$emit('select', anchor.data.index);
+      if (!anchor) return;
+      // 如果当前有正在进行的滚动，将新的滚动任务加入队列
+      if (!this.pendingAnchor) {
+        this.pendingAnchor = [];
       }
+      if (this.pendingAnchor.length > 0) {
+        this.pendingAnchor = [anchor];
+        return;
+      }
+      this.pendingAnchor = [anchor];
+      anchor
+        .scrollIntoView(this.scrollTop)
+        .then(() => {
+          if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
+            const index = this.data.indexList.indexOf(this.pendingAnchor[0].data.index);
+            this.scrollToAnchor(index);
+            this.pendingAnchor = [];
+            return;
+          }
+          this.pendingAnchor = [];
+        })
+        .catch(err => {
+          console.error(err);
+          if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
+            const index = this.data.indexList.indexOf(this.pendingAnchor[0].data.index);
+            this.scrollToAnchor(index);
+            this.pendingAnchor = [];
+            return;
+          }
+          this.pendingAnchor = [];
+        });
+      this.$emit('select', anchor.data.index);
     },
   },
 });

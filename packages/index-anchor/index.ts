@@ -18,10 +18,17 @@ SmartComponent({
 
   methods: {
     scrollIntoView(scrollTop) {
-      getRect(this, '.smart-index-anchor-wrapper').then(rect => {
-        wx.pageScrollTo({
-          duration: 0,
-          scrollTop: scrollTop + rect.top - this.parent.data.stickyOffsetTop,
+      return new Promise((resolve, reject) => {
+        getRect(this, '.smart-index-anchor-wrapper').then(rect => {
+          wx.pageScrollTo({
+            duration: 0,
+            scrollTop: scrollTop + rect.top - this.parent.data.stickyOffsetTop,
+            complete: () => {
+              setTimeout(() => {
+                resolve('success');
+              }, 50);
+            },
+          });
         });
       });
     },
