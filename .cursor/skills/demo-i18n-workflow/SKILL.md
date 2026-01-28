@@ -27,6 +27,7 @@ description: Adds or updates component demo and corresponding I18n entries in ex
 - 每一个新增的 demo 都需要带上一段描述文字
 - 如果是新增书写的 demo 则需要在标题后面带上当前开发的版本号 如： 这是一个新增 demo `v2.10.0`
 - api 等表格内 新增的属性也需要带上版本号 如： newColor `v2.10.0`
+- strings.json 内的文案不需要加上版本号 版本号只需要在 README 内书写即可
 
 ## 流程
 
