@@ -117,6 +117,25 @@ Customize button color with the `color` attribute.
 </smart-button>
 ```
 
+### Text Color `v2.10.1`
+
+Use the `my-text-color` attribute to customize button text color, often together with `color` and `plain`.
+
+```html
+<smart-button type="primary" my-text-color="#fff">Text Color</smart-button>
+<smart-button type="primary" plain my-text-color="#1989fa">Text Color</smart-button>
+<smart-button color="#7232dd" my-text-color="#fff">Text Color</smart-button>
+```
+
+### Text Style `v2.10.1`
+
+Use the `text-style` attribute to customize button text style (e.g. font-size, font-weight, letter-spacing).
+
+```html
+<smart-button type="primary" text-style="font-size: 18px; font-weight: 600;">Text Style</smart-button>
+<smart-button type="info" text-style="letter-spacing: 2px;">Text Style</smart-button>
+```
+
 ## API
 
 ### Props
@@ -135,6 +154,7 @@ Customize button color with the `color` attribute.
 | loading      | Whether to display loading state                         | _boolean_ | `false`      |
 | loading-size | Loading icon size                                        | _string_  | `20px`       |
 | loading-text | Loading state text                                       | _string_  | -            |
+| my-text-color `v2.10.1` | Button text color                                        | _string_  | -            |
 | text-style   | Button Text Style                                         | _string_  | -            |
 | loading-type | Loading icon type, options: `spinner`                    | _string_  | `circular`   |
 | plain        | Whether it's a plain button                              | _boolean_ | `false`      |

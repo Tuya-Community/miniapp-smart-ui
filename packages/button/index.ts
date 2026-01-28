@@ -18,6 +18,7 @@ SmartComponent({
       type: String,
       value: 'smart-icon',
     },
+    myTextColor: String,
     plain: Boolean,
     block: Boolean,
     round: Boolean,

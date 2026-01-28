@@ -117,6 +117,25 @@ category: 通用
 </smart-button>
 ```
 
+### 文字颜色 `v2.10.1`
+
+通过`my-text-color`属性可以自定义按钮文字颜色，与`color`、`plain`等配合使用。
+
+```html
+<smart-button type="primary" my-text-color="#fff">文字颜色</smart-button>
+<smart-button type="primary" plain my-text-color="#1989fa">文字颜色</smart-button>
+<smart-button color="#7232dd" my-text-color="#fff">文字颜色</smart-button>
+```
+
+### 文字样式 `v2.10.1`
+
+通过`text-style`属性可以自定义按钮文字样式，如字号、字重、字间距等。
+
+```html
+<smart-button type="primary" text-style="font-size: 18px; font-weight: 600;">文字样式</smart-button>
+<smart-button type="info" text-style="letter-spacing: 2px;">文字样式</smart-button>
+```
+
 ## API
 
 ### Props
@@ -135,6 +154,7 @@ category: 通用
 | loading      | 是否显示为加载状态                                       | _boolean_ | `false`      |
 | loading-size | 加载图标大小                                             | _string_  | `20px`       |
 | loading-text | 加载状态提示文字                                         | _string_  | -            |
+| my-text-color `v2.10.1` | 按钮文字颜色                                             | _string_  | -            |
 | text-style   | 按钮文字样式                                         | _string_  | -            |
 | loading-type | 加载状态图标类型，可选值为 `spinner`                     | _string_  | `circular`   |
 | plain        | 是否为朴素按钮                                           | _boolean_ | `false`      |

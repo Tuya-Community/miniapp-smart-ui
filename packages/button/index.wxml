@@ -49,7 +49,7 @@
       class="smart-button__icon"
       custom-style="line-height: inherit;"
     />
-    <view class="smart-button__text" style="{{textStyle}}">
+    <view class="smart-button__text" style="{{textStyle}}; color: {{ myTextColor }};">
       <slot />
     </view>
     <smart-icon

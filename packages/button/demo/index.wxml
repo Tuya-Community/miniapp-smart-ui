@@ -78,3 +78,14 @@
 <demo-block title="{{I18n.t('projection')}}" padding>
   <smart-button color="#006EDE" custom-style="box-shadow: 0px 6px 15px 0px rgba(0, 110, 222, 0.2);" block>{{I18n.t('projection')}}</smart-button>
 </demo-block>
+
+<demo-block title="{{I18n.t('buttonTextColor')}}" padding>
+  <smart-button type="primary" my-text-color="#fff" class="demo-margin-right">{{I18n.t('buttonTextColor')}}</smart-button>
+  <smart-button type="primary" plain my-text-color="#1989fa" class="demo-margin-right">{{I18n.t('buttonTextColor')}}</smart-button>
+  <smart-button color="#7232dd" my-text-color="#fff">{{I18n.t('buttonTextColor')}}</smart-button>
+</demo-block>
+
+<demo-block title="{{I18n.t('buttonTextStyle')}}" padding>
+  <smart-button type="primary" text-style="font-size: 18px; font-weight: 600;" class="demo-margin-right">{{I18n.t('buttonTextStyle')}}</smart-button>
+  <smart-button type="info" text-style="letter-spacing: 2px;">{{I18n.t('buttonTextStyle')}}</smart-button>
+</demo-block>
