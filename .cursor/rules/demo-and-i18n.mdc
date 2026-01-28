@@ -17,6 +17,8 @@ alwaysApply: false
   - `en` 下对应 key 的英文
   - `zh` 下对应 key 的中文
 - README 内的示例按中/英区块书写，不调用 I18n
+- README 内每一个 demo 都必须有一段描述信息
+- 新属性的 demo 在 README 内的标题后要加上版本 比如 这是一个新属性 demo `v2.10.0`
 
 ## 测试
 
