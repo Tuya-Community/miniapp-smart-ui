@@ -27,7 +27,7 @@ description: Adds or updates component demo, I18n (example/i18n/strings.json), a
 - 每一个新增的 demo 都需要带上一段描述文字
 - **版本号**：仅 README/README.en 需要带版本号，strings.json 不需要。
   - **新增 demo 区块**：该 demo 的标题后面加空格和版本号，例如：`### 文字颜色 \`v2.10.0\``。
-  - **API/Props 表格新增属性或参数**：在该行「说明」列末尾或参数名列后加版本号，例如：`my-text-color \`v2.10.0\`` 或说明写为「按钮文字颜色 \`v2.10.0\`」。
+  - **API/Props 表格新增属性或参数**：在该行「说明」列末尾或参数名列后加版本号，例如：`| my-text-color \`v2.10.1\` | 按钮文字颜色 | _string_ | - |`。
   - 版本号以当前开发版本为准（可从项目根目录 `package.json` 的 `version` 获取，或询问用户）。
 
 ## 流程
