@@ -109,12 +109,14 @@ jobs:
           body: |
             The merge has been completed successfully. The current npm version is `${{ env.NEXT_VERSION }}`.
 
-      - name: Get Changed Components
+      - name: Get Changed Components and Base SHA
         id: changed_components
         run: |
           # 获取 PR 中 packages 下变动的目录名
           COMPONENTS=$(git diff --name-only HEAD^ HEAD | grep '^packages/' | cut -d '/' -f 2 | sort -u | jq -R . | jq -s -c .)
           echo "COMPONENTS=${COMPONENTS}" >> $GITHUB_OUTPUT
+          # 合并提交的 base（第一父提交），供 ray-smart-ui 用 Compare API 直接拉取 PR diff
+          echo "BASE_SHA=$(git rev-parse HEAD^)" >> $GITHUB_OUTPUT
 
       - name: Trigger Ray UI Sync
         id: trigger_workflow
@@ -130,6 +132,8 @@ jobs:
               "branch": "${{ github.event.pull_request.head.ref }}",
               "components": ${{ steps.changed_components.outputs.COMPONENTS }},
               "source_sha": "${{ github.sha }}",
+              "base_sha": "${{ steps.changed_components.outputs.BASE_SHA }}",
+              "pull_number": "${{ github.event.pull_request.number }}",
               "pr_url": "${{ github.event.pull_request.html_url }}"
             }
 
