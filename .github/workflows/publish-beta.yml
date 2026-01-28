@@ -134,6 +134,7 @@ jobs:
             }
 
       - name: Wait for Workflow Completion
+        if: startsWith(github.event.pull_request.head.ref, 'fix/')
         id: wait_workflow
         uses: actions/github-script@v7
         with:
