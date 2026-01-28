@@ -1,0 +1,25 @@
+---
+description: SmartUI demo 多语言规范
+globs: packages/**/demo/**/\*
+alwaysApply: false
+---
+
+# Demo 多语言
+
+## 文案与 I18n
+
+- Demo 中所有用户可见文案使用 I18n：`title="{{I18n.t('basicUsage')}}"`。
+- 不要在各 demo 的 wxml 中写死中文或英文。
+
+## 维护 strings.json
+
+- 新增或修改文案时，在 `example/i18n/strings.json` 中同时维护：
+  - `en` 下对应 key 的英文
+  - `zh` 下对应 key 的中文
+- README 内的示例按中/英区块书写，不调用 I18n
+
+## 测试
+
+- Demo 入口为各组件下的 `demo/index`，测试通过加载该入口做快照；改 demo 后执行 `yarn test` 并视情况更新快照。
+- 更新快照可以运行 npx jest -u
+- 如果更新快照出现报错，则需要修改对应的测试用例，直到可以正常生成快照
