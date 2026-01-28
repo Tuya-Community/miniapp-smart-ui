@@ -1,4 +1,5 @@
-const systemInfo = wx.getSystemInfoSync();
+import { getSystemInfoSync } from './version';
+const systemInfo = getSystemInfoSync();
 const isIOS = systemInfo.platform === 'ios';
 const tyApi = {
   vibrateShort: (v: any) => {
@@ -34,11 +35,16 @@ const tyApi = {
       ty.nativeDisabled?.(v);
     }
   },
+  themeInfo: null as Record<string, unknown> | null,
   getThemeInfo: () => {
+    if (tyApi.themeInfo) {
+      return tyApi.themeInfo;
+    }
     // @ts-ignore
     if (typeof ty !== 'undefined') {
       // @ts-ignore
-      return ty.getThemeInfo?.();
+      tyApi.themeInfo = ty.getThemeInfo?.();
+      return tyApi.themeInfo;
     }
   },
   isWX: () => {
