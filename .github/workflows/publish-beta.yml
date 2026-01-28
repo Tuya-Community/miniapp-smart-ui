@@ -76,10 +76,10 @@ jobs:
             echo "Package version is already ${NEXT_VERSION}, skipping version update"
           fi
 
-      - name: Publish Package
-        run: npm publish --access public --tag beta
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish Package
+      #   run: npm publish --access public --tag beta
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Commit Changes
         run: |
