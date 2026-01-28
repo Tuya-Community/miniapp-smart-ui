@@ -19,7 +19,14 @@ description: Adds or updates component demo and corresponding I18n entries in ex
 - 新增或修改文案时，在同一 key 下同时维护：
   - `en[key]`：英文
   - `zh[key]`：中文
+
+## 维护 README 和 README.en
+
+- 如果有新增 demo 需要同步书写到 README 和 README.en 内
 - README 内的示例按中/英区块书写，不调用 I18n。
+- 每一个新增的 demo 都需要带上一段描述文字
+- 如果是新增书写的 demo 则需要在标题后面带上当前开发的版本号 如： 这是一个新增 demo `v2.10.0`
+- api 等表格内 新增的属性也需要带上版本号 如： newColor `v2.10.0`
 
 ## 流程
 
