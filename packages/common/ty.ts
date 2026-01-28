@@ -35,7 +35,7 @@ const tyApi = {
       ty.nativeDisabled?.(v);
     }
   },
-  themeInfo: null as Record<string, unknown> | null,
+  themeInfo: null as Record<string, string> | null,
   getThemeInfo: () => {
     if (tyApi.themeInfo) {
       return tyApi.themeInfo;
