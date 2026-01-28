@@ -118,7 +118,7 @@ jobs:
           repo: Tuya-Community/ray-smart-ui
           token: ${{ secrets.PROTECT_WRITE_TOKEN }}
           ref: release/2.x
-          inputs: '{"version":"${{ env.NEXT_VERSION }}"}'
+          inputs: '{"version":"${{ env.NEXT_VERSION }}","mr_id":"${{ github.event.pull_request.number }}"}'
 
       - name: Wait for Workflow Completion
         if: startsWith(github.event.pull_request.head.ref, 'fix/')
