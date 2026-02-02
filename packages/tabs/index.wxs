@@ -2,16 +2,16 @@
 var utils = require('../wxs/utils.wxs');
 var style = require('../wxs/style.wxs');
 
-function tabClass(active, ellipsis) {
+function tabClass(active) {
   var classes = ['tab-class'];
 
   if (active) {
     classes.push('tab-active-class');
   }
 
-  if (ellipsis) {
-    classes.push('smart-ellipsis');
-  }
+  // if (ellipsis) {
+  //   classes.push('smart-ellipsis');
+  // }
 
   return classes.join(' ');
 }

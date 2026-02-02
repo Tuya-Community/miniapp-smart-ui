@@ -1,5 +1,5 @@
 <demo-block title="{{I18n.t('basicUsage')}}">
-  <smart-tabs active="{{ 1 }}" bind:change="onChange">
+  <smart-tabs active="{{ 1 }}" ellipsis="{{false}}" bind:change="onChange">
     <smart-tab
       wx:for="{{ tabs4 }}"
       wx:key="index"
@@ -130,7 +130,8 @@
   <smart-tabs active="{{ 1 }}" bind:change="onChange" tab-class="special-tab" tab-active-class="special-tab-active">
     <smart-icon
       slot="nav-right"
-      name="search"
+      name="{{SearchIcon}}"
+      color="#1989fa"
       custom-class="right-nav"
       bind:click="onClickNavRight"
     />
@@ -170,6 +171,7 @@
       title="{{ I18n.t(item.name) }}"
       subtitle="{{ item.content }}"
       subtitle-style="color: black;"
+      dot="{{ index === 1 }}"
     >
     </smart-tab>
   </smart-tabs>
