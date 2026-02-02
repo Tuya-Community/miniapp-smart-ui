@@ -1,7 +1,9 @@
 import { SmartComponent } from '../../common/component';
+import SearchIcon from '@tuya-miniapp/icons/dist/svg/Search';
 
 SmartComponent({
   data: {
+    SearchIcon,
     tabs2: [1, 2],
     tabs3: [1, 2, 3],
     tabs4: [1, 2, 3, 4],

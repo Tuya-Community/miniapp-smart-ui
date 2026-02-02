@@ -11,11 +11,11 @@
     &--scrollable {
       .smart-tab {
         flex: 0 0 22%;
+      }
 
-        &--complete {
-          flex: 1 0 auto !important;
-          padding: 0 @padding-sm;
-        }
+      .smart-tab--complete {
+        flex: 1 0 auto;
+        padding: 0 @padding-sm;
       }
 
       .smart-tabs__nav {
@@ -150,6 +150,13 @@
   font-size: var(--tab-font-size, @tab-font-size);
   line-height: var(--tabs-line-height, @tabs-line-height);
 
+  &-content {
+    width: fit-content;
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
   &--active {
     font-weight: var(--font-weight-bold, @font-weight-bold);
     color: var(--tabs-card-text-active-color, @tabs-card-text-active-color);
@@ -161,9 +168,8 @@
 
   &__title {
     &__info {
-      position: relative !important;
-      top: -1px !important;
-      transform: translateX(0) !important;
+      right: 0;
+      transform: translateX(100%);
     }
   }
 }
