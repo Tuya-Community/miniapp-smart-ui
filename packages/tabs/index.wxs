@@ -9,10 +9,6 @@ function tabClass(active) {
     classes.push('tab-active-class');
   }
 
-  // if (ellipsis) {
-  //   classes.push('smart-ellipsis');
-  // }
-
   return classes.join(' ');
 }
 
