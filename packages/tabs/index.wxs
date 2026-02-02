@@ -77,10 +77,8 @@ function cardStyle(data) {
     transform: 'translateX(' + data.lineOffsetLeft + 'px)',
     '-webkit-transform': 'translate(' + data.lineOffsetLeft + 'px, 0px)',
     'background-color': data.color,
-    'transition-duration': !data.skipTransition ? data.duration + 's' : null,
-    '-webkit-transition-duration': !data.skipTransition
-      ? data.duration + 's'
-      : null,
+    'transition-duration': data.skipTransition ? null : data.duration + 's',
+    '-webkit-transition-duration': data.skipTransition ? null : data.duration + 's'
   });
 }
 
