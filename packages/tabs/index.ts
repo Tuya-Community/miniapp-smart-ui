@@ -261,7 +261,7 @@ SmartComponent({
           // waiting transition end
           setTimeout(() => {
             this.setData({ skipTransition: false });
-          }, this.data.duration);
+          }, this.data.duration * 1000);
         }
       });
     },
