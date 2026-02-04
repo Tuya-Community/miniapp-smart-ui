@@ -87,7 +87,7 @@ Page({
 });
 ```
 
-### Custom Sidebar Style `v2.10.1`
+### Custom Sidebar Style `v2.11.0`
 
 The `sidebar-font-size` and `sidebar-line-height` properties can set the font style of the sidebar.
 
@@ -129,8 +129,8 @@ Page({
 | sticky-offset-top   | Distance from top when anchor auto-sticky | _number_               | `0`       |
 | z-index             | z-index level                             | _number_               | `1`       |
 | scrollable `v2.1.7` | Whether the SideBar can scroll            | _boolean_              | `false`   |
-| sidebar-font-size `v2.10.1`   | SideBar font size           | _string_               | -         |
-| sidebar-line-height `v2.10.1` | SideBar line height           | _string_               | -         |
+| sidebar-font-size `v2.11.0`   | SideBar font size           | _string_               | -         |
+| sidebar-line-height `v2.11.0` | SideBar line height           | _string_               | -         |
 
 ### IndexAnchor Props
 
