@@ -383,7 +383,7 @@
 
 ### Bug Fixes 🐛
 
-- Icon: 修复异常 repeat 现象
+- icon: 修复异常 repeat 现象
 - picker: 修复滚动丝滑问题
 - nav-bar: 修复初始化顶部安全距离位移问题
 - slider: 修复垂直方向值计算
@@ -437,7 +437,7 @@
 - dialog: 新增 --dialog-cancel-color & --dialog-confirm-color CSS 变量支持
 - notice-bar：新增 --notice-bar-right-icon-color CSS 变量
 - stepper：新增 --stepper-container-background-color CSS 变量
-- Circle：新增 customStyle 属性，提示废弃 style 属性，size 属性支持字符串
+- circle：新增 customStyle 属性，提示废弃 style 属性，size 属性支持字符串
 
 ## v2.1.6 (2024-12-19)
 
@@ -463,8 +463,8 @@
 
 ### Bug Fixes 🐛
 
-- 修复 DropDown 组件 向上展开时展开框的位置问题
-- 修复 Tab 组件 card 模式时滑块样式问题，多层嵌套切换控制台错误提示问题
+- dropdown-menu: 修复组件 向上展开时展开框的位置问题
+- tab: 修复组件card模式时滑块样式问题，多层嵌套切换控制台错误提示问题
 
 ### Features ✨
 
