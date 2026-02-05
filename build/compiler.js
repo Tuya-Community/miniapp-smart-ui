@@ -123,9 +123,13 @@ const cleaner = path =>
 
 const copyChangelog = () =>
   function copyChangelog() {
-    if (!process.env.PIPELINE_DATA) return;
-    gulp.src(blockChangelogPath).pipe(gulp.dest(docsDir));
-    gulp.src(changelogPath).pipe(gulp.dest(docsDir));
+    if (!process.env.PIPELINE_DATA) {
+      return Promise.resolve();
+    }
+    return merge2(
+      gulp.src(blockChangelogPath).pipe(gulp.dest(docsDir)),
+      gulp.src(changelogPath).pipe(gulp.dest(docsDir))
+    );
   };
 
 const tasks = [
