@@ -110,7 +110,6 @@ jobs:
             The merge has been completed successfully. The current npm version is `${{ env.NEXT_VERSION }}`.
 
       - name: Call Publish Manual Workflow
-        if: startsWith(github.event.pull_request.head.ref, 'fix/')
         id: trigger_workflow
         uses: benc-uk/workflow-dispatch@v1
         with:
