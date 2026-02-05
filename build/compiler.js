@@ -25,6 +25,7 @@ const exampleAppJsonPath = path.resolve(__dirname, '../example/app.json');
 const baseWxssPath = path.resolve(__dirname, '../packages/common/index.wxss');
 const baseCssPath = path.resolve(__dirname, '../packages/common/index.css');
 const blockChangelogPath = path.resolve(__dirname, '../BLOCK_CHANGELOG.md');
+const changelogPath = path.resolve(__dirname, '../CHANGELOG.md');
 const docsDir = path.resolve(__dirname, '../docs');
 
 const lessCompiler2Wxss = dist =>
@@ -120,9 +121,15 @@ const cleaner = path =>
     return exec(`npx rimraf ${path}`);
   };
 
-const copyBlockChangelog = () =>
+const copyChangelog = () =>
   function copyChangelog() {
-    return gulp.src(blockChangelogPath).pipe(gulp.dest(docsDir));
+    if (!process.env.PIPELINE_DATA) {
+      return Promise.resolve();
+    }
+    return merge2(
+      gulp.src(blockChangelogPath).pipe(gulp.dest(docsDir)),
+      gulp.src(changelogPath).pipe(gulp.dest(docsDir))
+    );
   };
 
 const tasks = [
@@ -136,7 +143,7 @@ const tasks = [
       lessCompiler2Wxss(...args),
       lessCompiler2Css(...args),
       staticCopier(...args),
-      copyBlockChangelog()
+      copyChangelog()
     )
   );
   return prev;
@@ -152,7 +159,7 @@ if (isBuild) {
       lessCompiler2Wxss(exampleDistDir),
       lessCompiler2Css(exampleDistDir),
       staticCopier(exampleDistDir),
-      copyBlockChangelog()
+      copyChangelog()
     )
   );
 } else {
@@ -163,7 +170,7 @@ if (isBuild) {
       lessCompiler2Wxss(exampleDistDir),
       lessCompiler2Css(exampleDistDir),
       staticCopier(exampleDistDir),
-      copyBlockChangelog(),
+      copyChangelog(),
       () => {
         const appJson = JSON.parse(fs.readFileSync(exampleAppJsonPath));
         const excludePages = ['pages/dashboard/index'];

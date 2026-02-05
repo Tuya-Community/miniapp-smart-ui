@@ -1,6 +1,20 @@
 import path from 'path';
 import simulate from 'miniprogram-simulate';
 
+// Mock version module - must mock version first
+jest.mock('../../common/version', () => {
+  const actual = jest.requireActual('../../common/version');
+  return {
+    ...actual,
+    canIUseModel: jest.fn(() => false),
+    getSystemInfoSync: jest.fn(() => ({
+      SDKVersion: '2.8.0',
+    })),
+  };
+});
+
+import { canIUseModel } from '../../common/version';
+
 describe('rate', () => {
   const SmartRate = simulate.load(
     path.resolve(__dirname, '../index'),
@@ -11,6 +25,9 @@ describe('rate', () => {
   );
 
   beforeEach(() => {
+    // Reset mock to return false by default
+    (canIUseModel as jest.Mock).mockReturnValue(false);
+
     // Mock wx.createSelectorQuery
     const originalCreateSelectorQuery = wx.createSelectorQuery;
     wx.createSelectorQuery = jest.fn(() => {
@@ -303,6 +320,43 @@ describe('rate', () => {
     await simulate.sleep(10);
 
     expect(wrapper?.data.innerCountArray.length).toBe(10);
+  });
+
+  test('should set value when canIUseModel returns true', async () => {
+    // Mock canIUseModel to return true
+    (canIUseModel as jest.Mock).mockReturnValueOnce(true);
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-rate': SmartRate,
+        },
+        template: `<smart-rate id="wrapper" value="{{ value }}" />`,
+        data: {
+          value: 0,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.onSelect({
+        currentTarget: {
+          dataset: {
+            score: 2,
+          },
+        },
+      });
+      await simulate.sleep(10);
+
+      // When canIUseModel returns true, value should be set
+      expect(wrapper?.data.value).toBe(3);
+      expect(wrapper?.data.innerValue).toBe(3);
+    }
   });
 });
 

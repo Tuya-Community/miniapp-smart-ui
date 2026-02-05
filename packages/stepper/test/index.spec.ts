@@ -700,6 +700,72 @@ describe('stepper', () => {
     }
   });
 
+  test('should handle input event with undefined detail', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-stepper': SmartStepper,
+        },
+        template: `<smart-stepper id="wrapper" value="{{ 5 }}" />`,
+        data: {
+          value: 5,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const emitChangeSpy = jest.spyOn(instance, 'emitChange');
+      const mockEvent = {
+        detail: undefined,
+      } as any;
+      instance.onInput(mockEvent);
+      await simulate.sleep(10);
+
+      // Should handle undefined detail gracefully (value defaults to '')
+      // and return early, so emitChange should not be called
+      expect(emitChangeSpy).not.toHaveBeenCalled();
+      emitChangeSpy.mockRestore();
+    }
+  });
+
+  test('should handle input event with null detail', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-stepper': SmartStepper,
+        },
+        template: `<smart-stepper id="wrapper" value="{{ 5 }}" />`,
+        data: {
+          value: 5,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const emitChangeSpy = jest.spyOn(instance, 'emitChange');
+      const mockEvent = {
+        detail: null,
+      } as any;
+      instance.onInput(mockEvent);
+      await simulate.sleep(10);
+
+      // Should handle null detail gracefully (value defaults to '')
+      // and return early, so emitChange should not be called
+      expect(emitChangeSpy).not.toHaveBeenCalled();
+      emitChangeSpy.mockRestore();
+    }
+  });
+
   test('should emit change with asyncChange', async () => {
     let changeEmitted = false;
     let changeValue: any = null;
@@ -1106,6 +1172,102 @@ describe('stepper', () => {
 
       // Should handle float addition correctly (0.1 + 0.2 = 0.3)
       expect(String(wrapper?.data.currentValue)).toBe('0.3');
+    }
+  });
+
+  test('should handle longPressStep recursive call', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-stepper': SmartStepper,
+        },
+        template: `<smart-stepper id="wrapper" value="{{ 5 }}" long-press="{{ true }}" />`,
+        data: {
+          value: 5,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ longPress: true, currentValue: '5', step: 1, min: 1, max: 10 });
+      instance.type = 'plus';
+      
+      // Mock onChange to track calls
+      const onChangeSpy = jest.spyOn(instance, 'onChange');
+      
+      // Call longPressStep directly to test the recursive logic
+      instance.longPressStep();
+      await simulate.sleep(250); // Wait for LONG_PRESS_INTERVAL (200ms) + buffer
+
+      // onChange should be called from longPressStep
+      expect(onChangeSpy).toHaveBeenCalled();
+      
+      // Clean up timer
+      if (instance.longPressTimer) {
+        clearTimeout(instance.longPressTimer);
+        instance.longPressTimer = undefined;
+      }
+      
+      onChangeSpy.mockRestore();
+    }
+  });
+
+  test('should trigger long press after LONG_PRESS_START_TIME', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-stepper': SmartStepper,
+        },
+        template: `<smart-stepper id="wrapper" value="{{ 5 }}" long-press="{{ true }}" />`,
+        data: {
+          value: 5,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ longPress: true, currentValue: '5', step: 1, min: 1, max: 10 });
+      
+      const mockEvent = {
+        currentTarget: {
+          dataset: { type: 'plus' },
+        },
+      } as any;
+      
+      // Mock onChange and longPressStep to track calls
+      const onChangeSpy = jest.spyOn(instance, 'onChange');
+      const longPressStepSpy = jest.spyOn(instance, 'longPressStep');
+      
+      // Start touch
+      instance.onTouchStart(mockEvent);
+      expect(instance.isLongPress).toBe(false);
+      
+      // Wait for LONG_PRESS_START_TIME (600ms) + buffer
+      await simulate.sleep(650);
+      
+      // After long press, isLongPress should be true, onChange and longPressStep should be called
+      expect(instance.isLongPress).toBe(true);
+      expect(onChangeSpy).toHaveBeenCalled();
+      expect(longPressStepSpy).toHaveBeenCalled();
+      
+      // Clean up timer
+      if (instance.longPressTimer) {
+        clearTimeout(instance.longPressTimer);
+        instance.longPressTimer = undefined;
+      }
+      
+      onChangeSpy.mockRestore();
+      longPressStepSpy.mockRestore();
     }
   });
 });

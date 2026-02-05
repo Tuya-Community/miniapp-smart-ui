@@ -1,0 +1,36 @@
+---
+description: SmartUI 组件目录结构及修改范围
+globs: packages/**/*
+alwaysApply: false
+---
+
+# 组件目录与修改范围
+
+## 修改范围
+
+- **仅修改 `packages/` 下代码**；`example/` 为打包产物目录，勿直接改。
+- 开发时只改动 packages 内组件与 demo，打包会把 packages 下 demo 打到 example/dist。
+
+## 单组件目录结构
+
+| 路径 | 说明 |
+|------|------|
+| `demo/` | 组件 demo 入口，含 index.wxml/ts/less/json |
+| `test/` | 测试用例，至少含 demo.spec.ts，可选 index.spec.ts |
+| `index.json` | 基础配置，子组件在 `usingComponents` 中声明 |
+| `index.less` | 样式，会自动加载 |
+| `index.ts` | 主逻辑，使用 SmartComponent 封装 |
+| `index.wxml` | 模板 |
+| `index.wxs` | 可选，模板内计算逻辑，**仅 ES5** |
+| `README.md` / `README.en.md` | 文档 |
+
+## index.json 与子组件
+
+- 声明 `"component": true`。
+- 依赖子组件用相对路径，例如：`"smart-icon": "../icon/index"`。
+
+## 组件封装方式
+
+- 使用 `SmartComponent`（来自 `../common/component`）。
+- 选项映射：`data`、`props`→properties、`watch`→observers、`mixins`→behaviors、`created`→attached、`mounted`→ready、`destroyed`→detached。
+- 常用从 `../mixins/` 或 `../common/` 引入能力。

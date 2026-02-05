@@ -19,6 +19,15 @@ jobs:
         with:
           token: ${{ secrets.PROTECT_WRITE_TOKEN }}
 
+      # 必须在 Commit/Push 之前保存合并提交的 SHA，否则 Push 后 HEAD^ 会变成 merge 提交，导致 base_sha=source_sha，Compare API 空 diff
+      # 比较 BASE_SHA..MERGE_SHA 即「合并前 base」到「合并后 HEAD」，PR 内无论 1 个还是多个 commit 都会体现在该 diff 中
+      - name: Capture merge SHAs for ray-smart-ui sync
+        id: merge_shas
+        run: |
+          echo "MERGE_SHA=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          echo "BASE_SHA=$(git rev-parse HEAD^)" >> $GITHUB_OUTPUT
+          echo "Merge commit: $(git rev-parse HEAD), Base (parent): $(git rev-parse HEAD^)"
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -76,10 +85,10 @@ jobs:
             echo "Package version is already ${NEXT_VERSION}, skipping version update"
           fi
 
-      - name: Publish Package
-        run: npm publish --access public --tag beta
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish Package
+      #   run: npm publish --access public --tag beta
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Commit Changes
         run: |
@@ -109,8 +118,17 @@ jobs:
           body: |
             The merge has been completed successfully. The current npm version is `${{ env.NEXT_VERSION }}`.
 
-      - name: Call Publish Manual Workflow
-        if: startsWith(github.event.pull_request.head.ref, 'fix/')
+      - name: Get Changed Components and Base SHA
+        id: changed_components
+        run: |
+          # 使用合并前的 base 与合并提交计算 PR 变更（不能用 HEAD^ HEAD，Push 后 HEAD 已是 version bump 提交）
+          BASE_SHA="${{ steps.merge_shas.outputs.BASE_SHA }}"
+          MERGE_SHA="${{ steps.merge_shas.outputs.MERGE_SHA }}"
+          COMPONENTS=$(git diff --name-only "$BASE_SHA" "$MERGE_SHA" | grep '^packages/' | cut -d '/' -f 2 | sort -u | jq -R . | jq -s -c .)
+          echo "COMPONENTS=${COMPONENTS}" >> $GITHUB_OUTPUT
+          echo "Components from $BASE_SHA..$MERGE_SHA: $COMPONENTS"
+
+      - name: Trigger Ray UI Sync
         id: trigger_workflow
         uses: benc-uk/workflow-dispatch@v1
         with:
@@ -122,7 +140,11 @@ jobs:
             {
               "version": "${{ env.NEXT_VERSION }}",
               "branch": "${{ github.event.pull_request.head.ref }}",
-              "mr_id":"${{ github.event.pull_request.number }}"
+              "components": ${{ steps.changed_components.outputs.COMPONENTS }},
+              "source_sha": "${{ steps.merge_shas.outputs.MERGE_SHA }}",
+              "base_sha": "${{ steps.merge_shas.outputs.BASE_SHA }}",
+              "pull_number": "${{ github.event.pull_request.number }}",
+              "pr_url": "${{ github.event.pull_request.html_url }}"
             }
 
       - name: Wait for Workflow Completion

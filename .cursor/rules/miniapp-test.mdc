@@ -1,0 +1,40 @@
+---
+description: SmartUI 组件测试规范（jest + miniprogram-simulate）
+globs: packages/**/test/**/*.spec.ts
+alwaysApply: false
+---
+
+# 测试约定
+
+## 工具与入口
+
+- 使用 `miniprogram-simulate`：`simulate.load(demo/index, { rootPath })`、`simulate.render(id)`、`comp.attach(parent)`、`comp.toJSON()`、`toMatchSnapshot()`。
+- 入口为各组件下的 `demo/index`，rootPath 为包根目录。
+
+## 标准 demo 快照写法
+
+```typescript
+import path from 'path';
+import simulate from 'miniprogram-simulate';
+
+test('should render demo and match snapshot', () => {
+  const id = simulate.load(path.resolve(__dirname, '../demo/index'), {
+    rootPath: path.resolve(__dirname, '../../'),
+  });
+  const comp = simulate.render(id);
+  comp.attach(document.createElement('parent-wrapper'));
+  expect(comp.toJSON()).toMatchSnapshot();
+});
+```
+
+## 文件约定
+
+- 每个组件至少有 `test/demo.spec.ts` 做 demo 快照。
+- 逻辑复杂、快照覆盖不全时，增加 `test/index.spec.ts` 做单测。
+- 修改 demo 后需跑 `yarn test`，必要时执行 `npx jest -u` 更新快照；若更新快照报错，需先修正测试 直到快照可正常生成。
+
+## 命令
+
+- `yarn test`：跑全量测试
+- `yarn test:cover`：跑测试并算覆盖率
+- `npx jest -u`：更新快照

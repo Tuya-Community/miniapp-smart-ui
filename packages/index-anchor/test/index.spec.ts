@@ -22,9 +22,13 @@ describe('index-anchor', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     (getRect as jest.Mock).mockResolvedValue({ width: 100, height: 50, top: 100 });
-    
-    // Mock wx.pageScrollTo
-    wx.pageScrollTo = jest.fn() as any;
+
+    // Mock wx.pageScrollTo to call complete callback
+    wx.pageScrollTo = jest.fn((options: any) => {
+      if (options.complete) {
+        options.complete();
+      }
+    }) as any;
   });
 
   test('should handle scrollIntoView', async () => {
@@ -48,24 +52,24 @@ describe('index-anchor', () => {
       const mockParent = {
         data: { stickyOffsetTop: 0 },
       } as any;
-      
+
       // Mock getRelationNodes to return parent instance
       // This is how relations work - getRelationNodes returns the parent component
       // The parent property is defined in relation.ts as: get: () => this.getRelationNodes(path)[0]
       (anchorInstance as any).getRelationNodes = jest.fn(() => [mockParent]);
-      
+
       // Access parent to trigger getter with mocked getRelationNodes
       // This is necessary because parent is defined as a getter that calls getRelationNodes
       // We need to access it once to cache it (if needed) or ensure the getter works
       const _ = (anchorInstance as any).parent;
 
       await anchorInstance.scrollIntoView(50);
-      await simulate.sleep(10);
-
+      await simulate.sleep(100); // Wait for setTimeout(50ms) in complete callback
       expect(getRect).toHaveBeenCalledWith(anchorInstance, '.smart-index-anchor-wrapper');
       expect(wx.pageScrollTo).toHaveBeenCalledWith({
         duration: 0,
         scrollTop: 150, // 50 + 100 - 0
+        complete: expect.any(Function),
       });
     }
   });
@@ -90,19 +94,21 @@ describe('index-anchor', () => {
       const mockParent = {
         data: { stickyOffsetTop: 20 },
       } as any;
-      
+
       // Mock getRelationNodes to return parent instance
       (anchorInstance as any).getRelationNodes = jest.fn(() => [mockParent]);
-      
+
       // Access parent to trigger getter with mocked getRelationNodes
       const _ = (anchorInstance as any).parent;
 
       await anchorInstance.scrollIntoView(100);
-      await simulate.sleep(10);
+      await simulate.sleep(100); // Wait for setTimeout(50ms) in complete callback
 
+      expect(getRect).toHaveBeenCalledWith(anchorInstance, '.smart-index-anchor-wrapper');
       expect(wx.pageScrollTo).toHaveBeenCalledWith({
         duration: 0,
         scrollTop: 180, // 100 + 100 - 20
+        complete: expect.any(Function),
       });
     }
   });

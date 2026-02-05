@@ -2,15 +2,11 @@
 var utils = require('../wxs/utils.wxs');
 var style = require('../wxs/style.wxs');
 
-function tabClass(active, ellipsis) {
+function tabClass(active) {
   var classes = ['tab-class'];
 
   if (active) {
     classes.push('tab-active-class');
-  }
-
-  if (ellipsis) {
-    classes.push('smart-ellipsis');
   }
 
   return classes.join(' ');
@@ -81,10 +77,8 @@ function cardStyle(data) {
     transform: 'translateX(' + data.lineOffsetLeft + 'px)',
     '-webkit-transform': 'translate(' + data.lineOffsetLeft + 'px, 0px)',
     'background-color': data.color,
-    'transition-duration': !data.skipTransition ? data.duration + 's' : null,
-    '-webkit-transition-duration': !data.skipTransition
-      ? data.duration + 's'
-      : null,
+    'transition-duration': data.skipTransition ? null : data.duration + 's',
+    '-webkit-transition-duration': data.skipTransition ? null : data.duration + 's'
   });
 }
 
