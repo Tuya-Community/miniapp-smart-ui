@@ -76,6 +76,10 @@ SmartComponent({
       type: String,
       value: 'middle',
     },
+    fullCoverView: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   data: {

@@ -11,6 +11,7 @@
   native-disabled="{{ nativeDisabled }}"
   close-on-click-overlay="{{ closeOnClickOverlay }}"
   root-portal="{{ rootPortal }}"
+  full-cover-view="{{ fullCoverView }}"
   bind:close="onClickOverlay"
   bind:before-enter="onBeforeEnter"
   bind:enter="onEnter"

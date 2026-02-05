@@ -83,6 +83,10 @@ SmartComponent({
       type: Boolean,
       value: false,
     },
+    fullCoverView: {
+      type: Boolean,
+      value: false,
+    },
     value: null,
     password: {
       type: Boolean,

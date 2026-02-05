@@ -54,6 +54,7 @@ interface DialogOptions {
   password?: boolean;
   placeholder?: string;
   maxlength?: number;
+  fullCoverView?: boolean;
 }
 
 interface DialogInputOptions extends DialogOptions {
@@ -95,6 +96,7 @@ const defaultOptions: DialogOptions = {
   emptyDisabled: false,
   placeholder: '',
   maxlength: 20,
+  fullCoverView: false,
 };
 
 let currentOptions: DialogOptions = { ...defaultOptions };
