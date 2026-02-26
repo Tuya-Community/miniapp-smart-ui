@@ -50,6 +50,7 @@ interface DialogOptions {
   confirmButtonOpenType?: string;
   value?: null | string;
   ignoreQueue?: boolean;
+  emptyDisabled?: boolean;
   password?: boolean;
   placeholder?: string;
   maxlength?: number;
@@ -62,6 +63,7 @@ interface DialogInputOptions extends DialogOptions {
   placeholder?: string;
   maxlength?: number;
   emptyDisabled?: boolean;
+  onInput?: (value: string) => void;
 }
 
 const defaultOptions: DialogOptions = {
@@ -90,6 +92,7 @@ const defaultOptions: DialogOptions = {
   ignoreQueue: false,
   value: null,
   password: false,
+  emptyDisabled: false,
   placeholder: '',
   maxlength: 20,
 };
@@ -187,7 +190,9 @@ Dialog.confirm = (options: DialogOptions) =>
   });
 
 Dialog.input = ((options: DialogInputOptions) =>
-  Dialog({ showCancelButton: true, ...options })) as (options: DialogInputOptions) => Promise<
+  Dialog({ showCancelButton: true, ...options, value: options.value ?? '' })) as (
+  options: DialogInputOptions
+) => Promise<
   WechatMiniprogram.Component.Instance<
     {
       /**

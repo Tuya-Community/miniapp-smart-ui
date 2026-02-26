@@ -2613,17 +2613,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:after-leave="onClosed"
             bind:close="onClose"
             bind:enter="onOpen"
-          >
-            <smart-overlay
-              bind:click="onClickOverlay"
-            >
-              <smart-transition
-                customClass="smart-overlay custom-class"
-                bind:tap="onClick"
-                catch:touchmove="noop"
-              />
-            </smart-overlay>
-          </smart-popup>
+          />
         </smart-calendar>
       </wx-view>
     </demo-block>

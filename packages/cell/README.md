@@ -28,12 +28,7 @@ category: 展示
 ```html
 <smart-cell-group>
   <smart-cell title="单元格" value="内容" is-link />
-  <smart-cell
-    title="单元格"
-    value="内容"
-    label="描述信息"
-    is-link
-  />
+  <smart-cell title="单元格" value="内容" label="描述信息" is-link />
 </smart-cell-group>
 ```
 
@@ -54,24 +49,9 @@ category: 展示
 
 ```html
 <smart-cell-group>
-  <smart-cell
-    title="单元格"
-    value="内容"
-    icon="{{ sunMaxFill }}"
-    is-link
-  />
-  <smart-cell
-    title="自定义 Icon"
-    value="内容"
-    is-link
-  >
-    <smart-icon
-      class="cell-icon"
-      slot="icon"
-      name="{{ sunMaxFill }}"
-      size="24px"
-      color="#3678E3"
-    />
+  <smart-cell title="单元格" value="内容" icon="{{ sunMaxFill }}" is-link />
+  <smart-cell title="自定义 Icon" value="内容" is-link>
+    <smart-icon class="cell-icon" slot="icon" name="{{ sunMaxFill }}" size="24px" color="#3678E3" />
   </smart-cell>
 </smart-cell-group>
 ```
@@ -95,8 +75,13 @@ category: 展示
 ```html
 <smart-cell-group>
   <smart-cell title="URL跳转(navigateTo)" is-link url="/pages/dashboard/index" />
-  <smart-cell title="URL重定向(redirectTo)" is-link url="/pages/dashboard/index" link-type="redirectTo" />
-  <smart-cell title="打开H5容器(openInnerH5)" is-link bind:click="onNavTo"/>
+  <smart-cell
+    title="URL重定向(redirectTo)"
+    is-link
+    url="/pages/dashboard/index"
+    link-type="redirectTo"
+  />
+  <smart-cell title="打开H5容器(openInnerH5)" is-link bind:click="onNavTo" />
 </smart-cell-group>
 ```
 
@@ -131,11 +116,7 @@ category: 展示
   <smart-cell title="Title">
     <smart-checkbox value="{{ false }}" />
   </smart-cell>
-  <smart-cell
-    title="Title"
-    label="Bedroom"
-    is-link
-  >
+  <smart-cell title="Title" label="Bedroom" is-link>
     <smart-icon
       class="cell-icon"
       slot="icon"
@@ -168,13 +149,12 @@ category: 展示
 
 ### CellGroup Props
 
-| 参数   | 说明                   | 类型      | 默认值  |
-| ------ | ---------------------- | --------- | ------- |
-| border | 是否显示外边框         | _boolean_ | `true`  |
-| inset  | 是否展示为圆角卡片风格 | _boolean_ | `false` |
-| title  | 分组标题               | _string_  | `-`     |
-| inset-border-radius `v2.6.2` | 圆角卡片风格时的圆角值  | _string \| number_  | `-`  |
-
+| 参数                         | 说明                   | 类型               | 默认值  |
+| ---------------------------- | ---------------------- | ------------------ | ------- |
+| border                       | 是否显示外边框         | _boolean_          | `true`  |
+| inset                        | 是否展示为圆角卡片风格 | _boolean_          | `false` |
+| title                        | 分组标题               | _string_           | `-`     |
+| inset-border-radius `v2.6.2` | 圆角卡片风格时的圆角值 | _string \| number_ | `-`     |
 
 ### CellGroup 外部样式类
 
@@ -184,22 +164,22 @@ category: 展示
 
 ### Cell Props
 
-| 参数            | 说明                                                       | 类型               | 默认值       |
-| --------------- | ---------------------------------------------------------- | ------------------ | ------------ |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down`                      | _string_           | -            |
-| border          | 是否显示下边框                                             | _boolean_          | `true`       |
-| clickable       | 是否开启点击反馈                                           | _boolean_          | `false`      |
-| icon            | 左侧图标svg值或图片链接，可选值见 [Icon 组件](/material/smartui?comId=icon&appType=miniapp)       | _string_           | -            |
-| is-link         | 是否展示右侧箭头并开启点击反馈                             | _boolean_          | `false`      |
-| label           | 标题下方的描述信息                                         | _string_           | -            |
-| link-type       | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_           | `navigateTo` |
-| required        | 是否显示表单必填星号                                       | _boolean_          | `false`      |
-| title           | 左侧标题                                                   | _string \| number_ | -            |
-| title-style     | 标题样式                                                   | _string_           | -            |
-| title-width     | 标题宽度，须包含单位                                       | _string_           | -            |
-| url             | 点击后跳转的链接地址                                       | _string_           | -            |
-| use-label-slot  | 是否使用 label slot                                        | _boolean_          | `false`      |
-| value           | 右侧内容                                                   | _string \| number_ | -            |
+| 参数            | 说明                                                                                                                                       | 类型               | 默认值       |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ | ------------ |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down`                                                                                                      | _string_           | -            |
+| border          | 是否显示下边框                                                                                                                             | _boolean_          | `true`       |
+| clickable       | 是否开启点击反馈                                                                                                                           | _boolean_          | `false`      |
+| icon            | 左侧图标 svg 值或图片链接，可选值见 [Icon 组件](/material/smartui?comId=icon&appType=miniapp)                                              | _string_           | -            |
+| is-link         | 是否展示右侧箭头并开启点击反馈                                                                                                             | _boolean_          | `false`      |
+| label           | 标题下方的描述信息                                                                                                                         | _string_           | -            |
+| link-type       | 链接跳转类型，可选值为 `redirectTo` [`switchTab`](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html) `reLaunch` | _string_           | `navigateTo` |
+| required        | 是否显示表单必填星号                                                                                                                       | _boolean_          | `false`      |
+| title           | 左侧标题                                                                                                                                   | _string \| number_ | -            |
+| title-style     | 标题样式                                                                                                                                   | _string_           | -            |
+| title-width     | 标题宽度，须包含单位                                                                                                                       | _string_           | -            |
+| url             | 点击后跳转的链接地址                                                                                                                       | _string_           | -            |
+| use-label-slot  | 是否使用 label slot                                                                                                                        | _boolean_          | `false`      |
+| value           | 右侧内容                                                                                                                                   | _string \| number_ | -            |
 
 ### Cell Event
 
@@ -230,31 +210,31 @@ category: 展示
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider&appType=miniapp)。
 
-| 名称                                      | 默认值                                        | 描述                                     |
-| ----------------------------------------- | --------------------------------------------- | ---------------------------------------- |
-| --cell-font-size                          | _16px_                                        | 单元格字体大小                           |
-| --cell-line-height                        | _24px_                                        | 单元格行高                               |
-| --cell-vertical-padding                   | _16px_                                        | 单元格垂直内边距                         |
-| --cell-horizontal-padding                 | _16px_                                        | 单元格水平内边距                         |
-| --cell-text-color                         | _var(--app-B6-N1, rgba(0, 0, 0, 1))_          | 单元格文字颜色                           |
-| --cell-background-color                   | _var(--app-B6, #fff)_                         | 单元格背景颜色                           |
-| --cell-active-color                       | _var(--app-B1, #f6f7fb)_                      | 单元格激活颜色                           |
-| --cell-required-color                     | _var(--app-M2, #f04c4c)_                      | 单元格必填项颜色                         |
-| --cell-label-color                        | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_        | 单元格标签文字颜色                       |
-| --cell-label-font-size                    | _14px_                                        | 单元格标签字体大小                       |
-| --cell-label-line-height                  | _18px_                                        | 单元格标签行高                           |
-| --cell-label-margin-top                   | _3px_                                         | 单元格标签上边距                         |
-| --cell-value-color                        | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_        | 单元格值文字颜色                         |
-| --cell-icon-size                          | _24px_                                        | 单元格图标大小                           |
-| --cell-right-icon-color                   | _var(--app-B6-N6, rgba(0, 0, 0, 0.2))_        | 单元格右侧图标颜色                       |
-| --cell-border-color `v2.1.4`              | _var(--app-B6-N7, rgba(0, 0, 0, 0.1))_        | 单元格边框颜色                           |
-| --cell-border-left-position `v2.1.4`      | _16px_                                        | 单元格左边框位置                         |
-| --cell-border-right-position `v2.1.4`     | _16px_                                        | 单元格右边框位置                         |
-| --cell-group-background-color             | _var(--app-B6, #fff)_                         | 单元格组背景颜色                         |
-| --cell-group-title-color                  | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_        | 单元格组标题颜色                         |
-| --cell-group-title-padding                | _@padding-md @padding-md @padding-xs_         | 单元格组标题内边距                       |
-| --cell-group-title-font-size              | _16px_                                        | 单元格组标题字体大小                     |
-| --cell-group-title-line-height            | _16px_                                        | 单元格组标题行高                         |
-| --cell-group-inset-padding                | _0 @padding-md_                               | 单元格组嵌入内边距                       |
-| --cell-group-inset-border-radius          | _16px_                                        | 单元格组嵌入边框圆角半径                 |
-| --cell-group-inset-title-padding          | _@padding-md @padding-md @padding-xs @padding-xl_ | 单元格组嵌入标题内边距                   |
+| 名称                                  | 默认值                                            | 描述                     |
+| ------------------------------------- | ------------------------------------------------- | ------------------------ |
+| --cell-font-size                      | _16px_                                            | 单元格字体大小           |
+| --cell-line-height                    | _24px_                                            | 单元格行高               |
+| --cell-vertical-padding               | _16px_                                            | 单元格垂直内边距         |
+| --cell-horizontal-padding             | _16px_                                            | 单元格水平内边距         |
+| --cell-text-color                     | _var(--app-B6-N1, rgba(0, 0, 0, 1))_              | 单元格文字颜色           |
+| --cell-background-color               | _var(--app-B6, #fff)_                             | 单元格背景颜色           |
+| --cell-active-color                   | _var(--app-B1, #f6f7fb)_                          | 单元格激活颜色           |
+| --cell-required-color                 | _var(--app-M2, #f04c4c)_                          | 单元格必填项颜色         |
+| --cell-label-color                    | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_            | 单元格标签文字颜色       |
+| --cell-label-font-size                | _14px_                                            | 单元格标签字体大小       |
+| --cell-label-line-height              | _18px_                                            | 单元格标签行高           |
+| --cell-label-margin-top               | _3px_                                             | 单元格标签上边距         |
+| --cell-value-color                    | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_            | 单元格值文字颜色         |
+| --cell-icon-size                      | _24px_                                            | 单元格图标大小           |
+| --cell-right-icon-color               | _var(--app-B6-N6, rgba(0, 0, 0, 0.2))_            | 单元格右侧图标颜色       |
+| --cell-border-color `v2.1.4`          | _var(--app-B6-N7, rgba(0, 0, 0, 0.1))_            | 单元格边框颜色           |
+| --cell-border-left-position `v2.1.4`  | _16px_                                            | 单元格左边框位置         |
+| --cell-border-right-position `v2.1.4` | _16px_                                            | 单元格右边框位置         |
+| --cell-group-background-color         | _var(--app-B6, #fff)_                             | 单元格组背景颜色         |
+| --cell-group-title-color              | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_            | 单元格组标题颜色         |
+| --cell-group-title-padding            | _@padding-md @padding-md @padding-xs_             | 单元格组标题内边距       |
+| --cell-group-title-font-size          | _16px_                                            | 单元格组标题字体大小     |
+| --cell-group-title-line-height        | _16px_                                            | 单元格组标题行高         |
+| --cell-group-inset-padding            | _0 @padding-md_                                   | 单元格组嵌入内边距       |
+| --cell-group-inset-border-radius      | _16px_                                            | 单元格组嵌入边框圆角半径 |
+| --cell-group-inset-title-padding      | _@padding-md @padding-md @padding-xs @padding-xl_ | 单元格组嵌入标题内边距   |

@@ -1,0 +1,33 @@
+---
+description: WXS 仅允许 ES5，用于模板内性能敏感计算
+globs: packages/**/*.wxs
+alwaysApply: false
+---
+
+# WXS 规范
+
+## 语法限制
+
+- **仅写 ES5 语法**：使用 `function`、`var`，禁止 `const`/`let`、箭头函数、模板字符串、解构、class 等。
+- 适用于在模板侧做的计算，减轻 index.ts 与 setData 压力；简单逻辑仍可放在 ts。
+
+## 正确写法示例
+
+```javascript
+// ✅ 使用 function、var、字符串拼接
+function getHeight(contentHeight) {
+  var height = contentHeight
+    ? typeof contentHeight === 'number'
+      ? contentHeight + 'rpx'
+      : contentHeight
+    : 'undefined';
+  return 'height: ' + height + ';';
+}
+```
+
+## 避免
+
+- ❌ `const` / `let`
+- ❌ `() => {}`
+- ❌ `` `height: ${h}` ``
+- ❌ 解构、展开、class、import/require

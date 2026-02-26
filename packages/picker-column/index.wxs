@@ -3,6 +3,15 @@ var style = require('../wxs/style.wxs');
 var addUnit = require('../wxs/add-unit.wxs');
 var wxUtils = require('../wxs/utils.wxs');
 
+function unitGapStyle(unitGap) {
+  if (unitGap === undefined || unitGap === null) {
+    return '';
+  }
+  return style({
+    'margin-left': addUnit(unitGap)
+  });
+}
+
 function setStyle(ownerInstance, style, selector) {
   var dom = wxUtils.queryComponent(ownerInstance, selector);
   if (!dom) {
@@ -628,4 +637,5 @@ module.exports = {
   touchMove: touchMove,
   touchEnd: touchEnd,
   tapItem: tapItem,
+  unitGapStyle: unitGapStyle,
 };

@@ -66,7 +66,7 @@ SmartComponent({
   methods: {
     init() {
       const { value, type, size } = this.data;
-      const insidePercent = Math.round(Math.min(100, Math.max(0, Math.round(value))));
+      const insidePercent = Math.round(Math.min(100, Math.max(0, value)));
       const insideColor = this.calcColor(insidePercent);
       const containStyle = `width: ${size}px;height: ${size}px;`;
       const insidePercentStr =

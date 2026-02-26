@@ -1,0 +1,266 @@
+name: Publish Beta Package
+
+on:
+  pull_request:
+    branches:
+      - 'release/2.x'
+    types:
+      - closed
+
+jobs:
+  publish_beta:
+    runs-on: ubuntu-latest
+    # 只在 PR 被合并时执行，避免取消合并时也触发
+    if: github.event.pull_request.merged == true
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+
+      # 必须在 Commit/Push 之前保存合并提交的 SHA，否则 Push 后 HEAD^ 会变成 merge 提交，导致 base_sha=source_sha，Compare API 空 diff
+      # 比较 BASE_SHA..MERGE_SHA 即「合并前 base」到「合并后 HEAD」，PR 内无论 1 个还是多个 commit 都会体现在该 diff 中
+      - name: Capture merge SHAs for ray-smart-ui sync
+        id: merge_shas
+        run: |
+          echo "MERGE_SHA=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          echo "BASE_SHA=$(git rev-parse HEAD^)" >> $GITHUB_OUTPUT
+          echo "Merge commit: $(git rev-parse HEAD), Base (parent): $(git rev-parse HEAD^)"
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Configure Git Identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: build
+        run: yarn build
+
+      - name: Get Package Information
+        id: package_info
+        run: |
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          PACKAGE_BASE_VERSION=$(node -p "require('./package.json').version" | cut -d '-' -f 1)
+          echo "PACKAGE_NAME=${PACKAGE_NAME}" >> $GITHUB_ENV
+          echo "PACKAGE_BASE_VERSION=${PACKAGE_BASE_VERSION}" >> $GITHUB_ENV
+
+      - name: Get Latest Beta Version
+        id: latest_version
+        run: |
+          existing_versions=$(npm show $PACKAGE_NAME versions --json | jq -r '.[]' | grep -E "^${PACKAGE_BASE_VERSION}-beta-" || true )
+          if [ -z "$existing_versions" ]; then
+            echo "LATEST_VERSION=${PACKAGE_BASE_VERSION}" >> $GITHUB_ENV
+          else
+            latest_version=$(echo "$existing_versions" | sort -V | tail -n 1)
+            echo "LATEST_VERSION=${latest_version}" >> $GITHUB_ENV
+          fi
+      - name: Calculate Next Beta Version
+        id: next_version
+        run: |
+          if [ "$LATEST_VERSION" = "${PACKAGE_BASE_VERSION}" ]; then
+            next_version="${PACKAGE_BASE_VERSION}-beta-0"
+          else
+            beta_number=$(echo "${LATEST_VERSION}" | tr '-' ' ' | awk '{print $NF}')
+            next_beta=$((beta_number + 1))
+            next_version="${PACKAGE_BASE_VERSION}-beta-${next_beta}"
+          fi
+          echo "NEXT_VERSION=${next_version}" >> $GITHUB_ENV
+
+      - name: Update Package.json with Next Version
+        run: |
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          if [ "$CURRENT_VERSION" != "${NEXT_VERSION}" ]; then
+            npm version "${NEXT_VERSION}" --no-git-tag-version
+          else
+            echo "Package version is already ${NEXT_VERSION}, skipping version update"
+          fi
+
+      # - name: Publish Package
+      #   run: npm publish --access public --tag beta
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Commit Changes
+        run: |
+          git config pull.rebase false
+          git pull origin ${{ github.event.pull_request.base.ref }}
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(release): ${NEXT_VERSION} release by Github Actions"
+            git log -1  # 检查最后的commit结果
+          fi
+
+      - name: Push
+        # 使用个人访问令牌来推送更改以避免保护分支限制
+        run: |
+          git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{github.ref}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment on PR
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          body: |
+            The merge has been completed successfully. The current npm version is `${{ env.NEXT_VERSION }}`.
+
+      - name: Get Changed Components and Base SHA
+        id: changed_components
+        run: |
+          # 使用合并前的 base 与合并提交计算 PR 变更（不能用 HEAD^ HEAD，Push 后 HEAD 已是 version bump 提交）
+          BASE_SHA="${{ steps.merge_shas.outputs.BASE_SHA }}"
+          MERGE_SHA="${{ steps.merge_shas.outputs.MERGE_SHA }}"
+          COMPONENTS=$(git diff --name-only "$BASE_SHA" "$MERGE_SHA" | grep '^packages/' | cut -d '/' -f 2 | sort -u | jq -R . | jq -s -c .)
+          echo "COMPONENTS=${COMPONENTS}" >> $GITHUB_OUTPUT
+          echo "Components from $BASE_SHA..$MERGE_SHA: $COMPONENTS"
+
+      - name: Trigger Ray UI Sync
+        id: trigger_workflow
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: publish-manual.yml
+          repo: Tuya-Community/ray-smart-ui
+          token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+          ref: release/2.x
+          inputs: |
+            {
+              "version": "${{ env.NEXT_VERSION }}",
+              "branch": "${{ github.event.pull_request.head.ref }}",
+              "components": ${{ steps.changed_components.outputs.COMPONENTS }},
+              "source_sha": "${{ steps.merge_shas.outputs.MERGE_SHA }}",
+              "base_sha": "${{ steps.merge_shas.outputs.BASE_SHA }}",
+              "pull_number": "${{ github.event.pull_request.number }}",
+              "pr_url": "${{ github.event.pull_request.html_url }}"
+            }
+
+      - name: Wait for Workflow Completion
+        if: startsWith(github.event.pull_request.head.ref, 'fix/')
+        id: wait_workflow
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+          script: |
+            const targetOwner = 'Tuya-Community';
+            const targetRepo = 'ray-smart-ui';
+            const workflowName = 'publish-manual.yml';
+            const maxWaitTime = 30 * 60 * 1000; // 30 分钟超时
+            const pollInterval = 10 * 1000; // 每 10 秒检查一次
+            const startTime = Date.now();
+
+            console.log('⏳ Waiting for workflow to complete...');
+
+            // 使用工作流文件名作为 ID（GitHub API 支持文件名或数字 ID）
+            const workflowId = workflowName;
+            console.log(`📋 Using workflow: ${workflowId}`);
+
+            // 等待一小段时间，让工作流开始运行
+            await new Promise(resolve => setTimeout(resolve, 5000));
+
+            // 轮询检查工作流状态
+            let runId = null;
+            let attempts = 0;
+            const maxAttempts = 10;
+
+            // 首先找到最新触发的工作流运行
+            while (!runId && attempts < maxAttempts) {
+              try {
+                const runs = await github.rest.actions.listWorkflowRuns({
+                  owner: targetOwner,
+                  repo: targetRepo,
+                  workflow_id: workflowId,
+                  per_page: 1,
+                });
+                
+                if (runs.data.workflow_runs.length > 0) {
+                  const latestRun = runs.data.workflow_runs[0];
+                  // 检查是否是最近 2 分钟内触发的（避免匹配到旧运行）
+                  const runTime = new Date(latestRun.created_at).getTime();
+                  const timeDiff = Date.now() - runTime;
+                  
+                  if (timeDiff < 2 * 60 * 1000) {
+                    runId = latestRun.id;
+                    console.log(`✅ Found workflow run ID: ${runId}`);
+                    console.log(`   Status: ${latestRun.status}, Conclusion: ${latestRun.conclusion || 'pending'}`);
+                  }
+                }
+              } catch (error) {
+                console.log(`⚠️  Error finding workflow run (attempt ${attempts + 1}): ${error.message}`);
+              }
+              
+              if (!runId) {
+                attempts++;
+                await new Promise(resolve => setTimeout(resolve, 3000));
+              }
+            }
+
+            if (!runId) {
+              throw new Error('Could not find the triggered workflow run');
+            }
+
+            // 轮询等待工作流完成
+            while (true) {
+              const elapsed = Date.now() - startTime;
+              if (elapsed > maxWaitTime) {
+                throw new Error(`Workflow did not complete within ${maxWaitTime / 1000 / 60} minutes`);
+              }
+              
+              try {
+                const run = await github.rest.actions.getWorkflowRun({
+                  owner: targetOwner,
+                  repo: targetRepo,
+                  run_id: runId,
+                });
+                
+                const status = run.data.status;
+                const conclusion = run.data.conclusion;
+                
+                console.log(`📊 Workflow status: ${status}, Conclusion: ${conclusion || 'pending'}`);
+                
+                // 检查是否完成
+                if (status === 'completed') {
+                  const runUrl = run.data.html_url;
+                  console.log(`✅ Workflow completed!`);
+                  console.log(`🔗 Run URL: ${runUrl}`);
+                  
+                  if (conclusion === 'success') {
+                    console.log('✅ Workflow completed successfully');
+                    return;
+                  } else {
+                    throw new Error(`Workflow completed with conclusion: ${conclusion}. Check ${runUrl} for details.`);
+                  }
+                }
+                
+                // 如果还在运行，等待后继续检查
+                await new Promise(resolve => setTimeout(resolve, pollInterval));
+              } catch (error) {
+                if (error.message.includes('completed')) {
+                  throw error;
+                }
+                console.log(`⚠️  Error checking workflow status: ${error.message}`);
+                await new Promise(resolve => setTimeout(resolve, pollInterval));
+              }
+            }
+
+      - name: Comment on PR - Publish Success
+        if: startsWith(github.event.pull_request.head.ref, 'fix/') && steps.wait_workflow.outcome == 'success'
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          body: |
+            Publishing @ray-js/smart-ui has been completed successfully. The current npm version is `${{ env.NEXT_VERSION }}`.

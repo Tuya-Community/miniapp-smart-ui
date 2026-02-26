@@ -59,6 +59,10 @@ SmartComponent({
       type: String,
       value: '',
     },
+    unitGap: {
+      type: null,
+      value: undefined,
+    },
     animationTime: {
       type: Number,
       value: 300,

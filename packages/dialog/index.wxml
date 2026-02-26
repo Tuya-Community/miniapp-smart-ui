@@ -117,7 +117,7 @@
         size="large"
         class="smart-dialog__button"
         loading="{{ loading.confirm }}"
-        custom-class="smart-dialog__confirm {{ !inputValue && emptyDisabled ? 'smart-dialog__confirm--disabled' : '' }} confirm-button-class"
+        custom-class="smart-dialog__confirm {{ inputValue === '' && emptyDisabled ? 'smart-dialog__confirm--disabled' : '' }} confirm-button-class"
         custom-style="color: {{ confirmButtonColor || 'var(--dialog-confirm-color, var(--app-B4-N1, rgba(0, 0, 0, 1)))' }}"
         button-id="{{ confirmButtonId }}"
         open-type="{{ confirmButtonOpenType }}"

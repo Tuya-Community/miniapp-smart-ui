@@ -23,7 +23,6 @@ category: 通用
 ### 基础用法
 
 ```html
-<smart-battery size="20" value="100" />
 <smart-battery value="80" />
 <smart-battery value="50" />
 <smart-battery value="20" />
@@ -44,22 +43,21 @@ category: 通用
 ### 显示百分比
 
 ```html
-<smart-battery size="20" value="100" />
-<smart-battery value="80" />
-<smart-battery value="50" />
-<smart-battery value="20" />
-<smart-battery value="0" />
-<smart-battery in-charging value="80" />
+<smart-battery show-text value="80" />
+<smart-battery show-text value="50" />
+<smart-battery show-text value="20" />
+<smart-battery show-text value="0" />
+<smart-battery show-text in-charging value="80" />
 ```
 
 ### 水平(显示百分比)
 
 ```html
-<smart-battery type="horizontal" value="100" />
-<smart-battery type="horizontal" />
-<smart-battery type="horizontal" value="10" />
-<smart-battery type="horizontal" value="3" />
-<smart-battery type="horizontal" value="0" />
+<smart-battery show-text type="horizontal" value="100" />
+<smart-battery show-text type="horizontal" />
+<smart-battery show-text type="horizontal" value="10" />
+<smart-battery show-text type="horizontal" value="3" />
+<smart-battery show-text type="horizontal" value="0" />
 ```
 
 ### 自定义大小
@@ -79,13 +77,13 @@ category: 通用
 | ---------------- | ------------------------ | -------------------------- | ---------- |
 | background-color | 电量背景色               | _string_                   | -          |
 | color `v2.6.2`   | 电量的颜色（优先级最高） | _string_                   | -          |
-| high-color       | 电量高的颜色             | _string_                   | `#70CF98`  |
-| middle-color     | 电量中的颜色             | _string_                   | `#F5A623`  |
-| low-color        | 电量低的颜色             | _string_                   | `#FF4444`  |
+| high-color       | 电量高的颜色             | _string_      | `var(--app-B1-N1, rgba(0, 0, 0, 0.9))`  |
+| middle-color     | 电量中的颜色             | _string_                   | `#ffcb00`  |
+| low-color        | 电量低的颜色             | _string_                   | `#ee652e`  |
 | in-charging `v2.10.0`      | 是否处于充电状态         | _boolean_                  | `false`    |
 | charging-color `v2.10.0`      | 充电颜色        | _string_                  | `#2fc755`    |
 | show-text `v2.10.0`        | 是否显示电量文本         | _boolean_                  | `false`    |
-| size             | 尺寸                     | _number_                   | 10         |
+| size             | 尺寸                     | _number_                   | 10 `v2.0.0` 24 `2.10.0`         |
 | type             | 电池方向                 | `vertical` \| `horizontal` | `vertical` |
 | value            | 电量值                   | _number_                   | 70         |
 

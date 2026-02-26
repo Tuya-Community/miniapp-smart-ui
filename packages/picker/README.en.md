@@ -50,7 +50,7 @@ Page({
 
 ### Multi-column Usage
 
-`disabled` `v2.3.5` attribute can disable this column; `style` attribute can set the style of this column; `fontStyle` `v2.3.5` attribute can set the font style of this column; `activeIndex` can set the selected item of the column.
+`disabled` `v2.3.5` attribute can disable this column; `style` attribute can set the style of this column; `fontStyle` `v2.3.5` attribute can set the font style of this column; `activeIndex` can set the selected item of the column; `unitGap` `v2.10.0` property can set the distance between units and the list.
 
 ```html
 <smart-picker active-style="color: #000;" columns="{{ columns }}" bind:change="onChange" />
@@ -75,6 +75,7 @@ Page({
       {
         values: new Array(20).fill(1).map((x, i) => i),
         style: 'flex: none;width: auto;min-width: 61px;',
+        unitGap: '10rpx',
         unit: 'Kg',
       },
     ],
@@ -323,6 +324,7 @@ When passing in multi-column data, `columns` is an array of objects. Each object
 | style `v2.0.0` | Column style                       |
 | fontStyle `v2.3.5` | Column text style  |
 | unit          | Unit corresponding to the column, default is empty |
+| unitGap `v2.10.0`       | Gap between unit and value, default is undefined (uses CSS default style), supports number (auto adds px unit) or string (e.g., "8rpx") | _string \| number_ | `undefined` |
 | values        | Array of options corresponding to the column       |
 | order `v2.2.0`  | Set the order of columns, similar to `flex order` property, only changing the order from a style perspective; logic remains unchanged | _number_  | -     |
 | disabled `v2.3.5`  | Disable this column   | _boolean_  | `false`     |

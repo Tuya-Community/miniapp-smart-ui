@@ -37,12 +37,8 @@ export default {
 Clicking the index bar will automatically jump to the corresponding `IndexAnchor` anchor point.
 
 ```html
-<smart-index-bar>
-  <view
-    wx:for="{{ indexList }}"
-    wx:for-item="item"
-    wx:key="item"
-  >
+<smart-index-bar scrollable>
+  <view wx:for="{{ indexList }}" wx:for-item="item" wx:key="item">
     <smart-index-anchor index="{{ item }}" />
     <smart-cell title="Text" />
     <smart-cell title="Text" />
@@ -72,14 +68,8 @@ You can customize the list of index characters displayed through the `index-list
 
 ```html
 <smart-index-bar index-list="{{ customIndexList }}">
-  <view
-    wx:for="{{ customIndexList }}"
-    wx:key="index"
-  >
-    <smart-index-anchor
-      use-slot
-      index="{{ item }}"
-    >
+  <view wx:for="{{ customIndexList }}" wx:key="index">
+    <smart-index-anchor use-slot index="{{ item }}">
       <text>Title {{ item }}</text>
     </smart-index-anchor>
     <smart-cell title="Text" />
@@ -97,48 +87,78 @@ Page({
 });
 ```
 
+### Custom Sidebar Style `v2.11.0`
+
+The `sidebar-font-size` and `sidebar-line-height` properties can set the font style of the sidebar.
+
+```html
+<smart-index-bar sidebar-font-size="16px" sidebar-line-height="20px">
+  <view wx:for="{{ indexList }}" wx:for-item="item" wx:key="item">
+    <smart-index-anchor index="{{ item }}" />
+    <smart-cell title="Text" />
+    <smart-cell title="Text" />
+    <smart-cell title="Text" />
+  </view>
+</smart-index-bar>
+```
+
+```javascript
+const indexList = [];
+const charCodeOfA = 'A'.charCodeAt(0);
+
+for (let i = 0; i < 26; i++) {
+  indexList.push(String.fromCharCode(charCodeOfA + i));
+}
+
+Page({
+  data: {
+    indexList, // A-Z alphabet list
+  },
+});
+```
+
 ## API
 
 ### IndexBar Props
 
-| Parameter         | Description                | Type                   | Default   | 
-| ----------------- | -------------------------- | ---------------------- | --------- |
-| highlight-color   | Index character highlight color | _string_               | `#07c160` |
-| index-list        | List of index characters   | _string[] \| number[]_ | `A-Z`     |
-| sticky            | Whether to enable anchor auto-sticky | _boolean_              | `true`    |
-| sticky-offset-top | Distance from top when anchor auto-sticky | _number_               | `0`       |
-| z-index           | z-index level              | _number_               | `1`       |
-| scrollable `v2.1.7` | Whether the SideBar can scroll | _boolean_ | `false` |
+| Parameter           | Description                               | Type                   | Default   |
+| ------------------- | ----------------------------------------- | ---------------------- | --------- |
+| highlight-color     | Index character highlight color           | _string_               | `#07c160` |
+| index-list          | List of index characters                  | _string[] \| number[]_ | `A-Z`     |
+| sticky              | Whether to enable anchor auto-sticky      | _boolean_              | `true`    |
+| sticky-offset-top   | Distance from top when anchor auto-sticky | _number_               | `0`       |
+| z-index             | z-index level                             | _number_               | `1`       |
+| scrollable `v2.1.7` | Whether the SideBar can scroll            | _boolean_              | `false`   |
+| sidebar-font-size `v2.11.0`   | SideBar font size           | _string_               | -         |
+| sidebar-line-height `v2.11.0` | SideBar line height           | _string_               | -         |
 
 ### IndexAnchor Props
 
-| Parameter | Description             | Type               | Default |
-| --------- | ----------------------- | ------------------ | ------- | 
-| index     | Index character         | _string \| number_ | -       | 
-| use-slot  | Whether to use custom content slot | _boolean_          | `false` | 
+| Parameter | Description                        | Type               | Default |
+| --------- | ---------------------------------- | ------------------ | ------- |
+| index     | Index character                    | _string \| number_ | -       |
+| use-slot  | Whether to use custom content slot | _boolean_          | `false` |
 
 ### IndexBar Events
 
-| Event Name | Description          | Callback Parameters |
-| ---------- | -------------------- | ------------------- |
+| Event Name | Description                        | Callback Parameters    |
+| ---------- | ---------------------------------- | ---------------------- |
 | select     | Fires when a character is selected | index: Index character |
 
 ### IndexAnchor Slots
 
-| Name | Description                        |
-| ---- | ---------------------------------- |
+| Name | Description                                                  |
+| ---- | ------------------------------------------------------------ |
 | -    | Anchor position display content, defaults to index character |
-
 
 ### Style Variables
 
 The component provides the following CSS variables that can be used for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider&appType=miniapp).
 
-| Name                          | Default Value                           | Description       |
-| ----------------------------- | ---------------------------------------- | ----------------- |
-| --index-bar-index-font-size   | _10px_                                   | Index font size   |
-| --index-bar-index-line-height | _14px_                                   | Index line height |
-
+| Name                          | Default Value | Description       |
+| ----------------------------- | ------------- | ----------------- |
+| --index-bar-index-font-size   | _10px_        | Index font size   |
+| --index-bar-index-line-height | _14px_        | Index line height |
 
 ## FAQ
 

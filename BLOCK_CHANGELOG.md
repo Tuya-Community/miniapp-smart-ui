@@ -1,11 +1,18 @@
 # 升级注意事项
 
+
+## v2.10.0 (2026-1-13)
+
+### Features ✨
+- battery: 对齐全新 UED 设计，重构样式布局，size默认值修改为24([pull/134](https://github.com/Tuya-Community/miniapp-smart-ui/pull/134), [pull/147](https://github.com/Tuya-Community/miniapp-smart-ui/pull/147))
+
 ## v2.9.0 (2025-12-23)
 
 ### Bug Fixes  🐛
 
 - nav-bar: 对齐涂鸦 UI 标准，sideWidth 默认值从 mid 调整为 max([64281c8](https://github.com/Tuya-Community/miniapp-smart-ui/pull/125/commits/64281c830cde83b908320085014f394058b257c1))
 - calendar: 对齐涂鸦 UI 标准，删除 --calendar-day-disabled-color，采用 opacity 实现禁用样式，修复深色模式禁用样式问题([pull/126](https://github.com/Tuya-Community/miniapp-smart-ui/pull/126))
+- nativeDisabled: 属性 安卓失效 2.9.2 版本修复
 
 
 ## v2.8.0 (2025-12-09)

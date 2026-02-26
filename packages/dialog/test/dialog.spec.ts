@@ -265,6 +265,55 @@ describe('dialog.ts', () => {
     }
   });
 
+  test('should warn and return when dialog with same id is already in queue', async () => {
+    const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    // Create a mock dialog instance with id
+    const mockDialogInstance = {
+      id: 'test-dialog',
+      setData: jest.fn(),
+      data: { show: false },
+    } as any;
+
+    // Add mock dialog to queue
+    queueRef.value.push(mockDialogInstance);
+    expect(queueRef.value.length).toBe(1);
+
+    // Mock context that returns the same dialog instance
+    const mockContext = {
+      selectComponent: jest.fn(() => mockDialogInstance),
+    } as any;
+
+    // Try to call alert with same id - should warn and return early
+    DialogInstance.alert({
+      context: mockContext,
+      selector: '#smart-dialog',
+      title: 'Test Title',
+      ignoreQueue: false, // Explicitly set to false
+    });
+
+    await simulate.sleep(10);
+
+    // Should have warned about duplicate call
+    expect(consoleWarnSpy).toHaveBeenCalledWith(
+      expect.stringContaining('相同选择器的 Dialog 调用过于频繁')
+    );
+    expect(consoleWarnSpy).toHaveBeenCalledWith(
+      expect.stringContaining('test-dialog')
+    );
+
+    // Dialog should not be opened (setData should not be called for show)
+    const setDataCalls = mockDialogInstance.setData.mock.calls;
+    const showSetCalls = setDataCalls.filter((call: any[]) => 
+      call[0] && call[0].show === true
+    );
+    expect(showSetCalls.length).toBe(0);
+    
+    // Clean up
+    queueRef.value = [];
+    consoleWarnSpy.mockRestore();
+  });
+
   test('should handle Dialog callback with confirm action', async () => {
     const comp = simulate.render(
       simulate.load({

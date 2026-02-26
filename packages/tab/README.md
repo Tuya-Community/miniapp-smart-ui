@@ -194,7 +194,12 @@ Page({
 通过 `before-change` 事件可以在切换标签前执行特定的逻辑，实现切换前校验、异步切换的目的
 
 ```html
-<smart-tabs active="{{ active }}" use-before-change="{{ true }}" bind:change="onChange" bind:before-change="onBeforeChange" >
+<smart-tabs
+  active="{{ active }}"
+  use-before-change="{{ true }}"
+  bind:change="onChange"
+  bind:before-change="onBeforeChange"
+>
   <smart-tab title="标签 1">内容 1</smart-tab>
   <smart-tab title="标签 2">内容 2</smart-tab>
   <smart-tab title="标签 3">内容 3</smart-tab>
@@ -216,35 +221,40 @@ Page({
   },
   onBeforeChange(event) {
     const { callback, title } = event.detail;
-    
+
     ty.showModal({
       title: '异步切换',
       content: `确定要切换至 ${title} tab吗？`,
-      success: (res) => {
+      success: res => {
         if (res.confirm) {
-          callback(true)
+          callback(true);
         } else if (res.cancel) {
-          callback(false)
+          callback(false);
         }
       },
-    })
-  }
+    });
+  },
 });
 ```
-
 
 ### 副标题
 
 通过 `subtitle` 可以设置二级标题
 
 ```html
-<smart-tabs active="{{ 1 }}" bind:change="onChange" swipe-threshold="7" title-active-color="#1989FA">
+<smart-tabs
+  active="{{ 1 }}"
+  bind:change="onChange"
+  swipe-threshold="7"
+  title-active-color="#1989FA"
+>
   <smart-tab
     wx:for="{{ tabsRenders }}"
     wx:key="name"
     title="{{ item.name }}"
     subtitle="{{ item.content }}"
     subtitle-style="color: black;"
+    dot="{{ index === 1 }}"
   >
   </smart-tab>
 </smart-tabs>
@@ -270,10 +280,9 @@ Page({
       title: `切换到标签 ${event.detail.name}`,
       icon: 'none',
     });
-  }
+  },
 });
 ```
-
 
 ## API
 
@@ -281,14 +290,14 @@ Page({
 
 | 参数                         | 说明                                                           | 类型               | 默认值    |
 | ---------------------------- | -------------------------------------------------------------- | ------------------ | --------- |
-| active                       | 当前选中标签的标识符                                           | _string_ | `0`       |
+| active                       | 当前选中标签的标识符                                           | _string_           | `0`       |
 | animated                     | 是否开启切换标签内容时的转场动画                               | _boolean_          | `false`   |
 | border                       | 是否展示外边框，仅在 `line` 风格下生效                         | _boolean_          | `false`   |
-| color                        | 标签主题色，仅在非`card`模式可用 | _string_           | `#ee0a24` |
+| color                        | 标签主题色，仅在非`card`模式可用                               | _string_           | `#ee0a24` |
 | duration                     | 动画时间，单位秒                                               | _number_           | `0.3`     |
 | ellipsis                     | 是否省略过长的标题文字                                         | _boolean_          | `true`    |
-| lazy-render                  | 是否开启标签页内容延迟渲染(不销毁组件)                                     | _boolean_          | `true`    |
-| inactive-destroy `v2.1.0`      | 标签未被选择时是否销毁tab插槽内容               | _boolean_          | `false`    |
+| lazy-render                  | 是否开启标签页内容延迟渲染(不销毁组件)                         | _boolean_          | `true`    |
+| inactive-destroy `v2.1.0`    | 标签未被选择时是否销毁 tab 插槽内容                            | _boolean_          | `false`   |
 | line-height                  | 底部条高度，默认单位`px`                                       | _string \| number_ | `3px`     |
 | line-width                   | 底部条宽度，默认单位`px`                                       | _string \| number_ | `40px`    |
 | offset-top                   | 粘性定位布局下与顶部的最小距离，单位`px`                       | _number_           | -         |
@@ -303,16 +312,16 @@ Page({
 
 ### Tab Props
 
-| 参数        | 说明                       | 类型               | 默认值       |
-| ----------- | -------------------------- | ------------------ | ------------ |
-| disabled    | 是否禁用标签               | _boolean_          | `false`      |
-| dot         | 是否显示小红点             | _boolean_          | -            |
-| info        | 图标右上角提示信息         | _string \| number_ | -            |
-| name        | 标签名称，作为匹配的标识符 | _string_ | - |
-| title       | 标题                       | _string_           | -            |
-| title-style | 自定义标题样式             | _string_           | -            |
-| subtitle `v2.3.5`       | 二级标题                       | _string_           | -            |
-| subtitle-style `v2.3.5` | 自定义二级标题样式             | _string_           | -            |
+| 参数                    | 说明                       | 类型               | 默认值  |
+| ----------------------- | -------------------------- | ------------------ | ------- |
+| disabled                | 是否禁用标签               | _boolean_          | `false` |
+| dot                     | 是否显示小红点             | _boolean_          | -       |
+| info                    | 图标右上角提示信息         | _string \| number_ | -       |
+| name                    | 标签名称，作为匹配的标识符 | _string_           | -       |
+| title                   | 标题                       | _string_           | -       |
+| title-style             | 自定义标题样式             | _string_           | -       |
+| subtitle `v2.3.5`       | 二级标题                   | _string_           | -       |
+| subtitle-style `v2.3.5` | 自定义二级标题样式         | _string_           | -       |
 
 ### Tabs Slot
 
@@ -329,13 +338,13 @@ Page({
 
 ### Tabs Event
 
-| 事件名    | 说明    | 参数         |
-| ----- | -------------- | --------- |
+| 事件名                        | 说明                                                                                                                | 参数                                                                                                                                                                                                      |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | bind:before-change `v1.10.10` | tab 切换前会触发，在回调函数中返回 `false` 可终止 tab 切换，绑定事件的同时需要将`use-before-change`属性设置为`true` | `event.detail.name`: 当前切换的 tab 标识符， `event.detail.title`: 当前切换的 tab 标题， `event.detail.index`: 当前切换的 tab 下标，`event.detail.callback`: 回调函数，调用`callback(false)`终止 tab 切换 |
-| bind:change      | 当前激活的标签改变时触发     | name：标签标识符，title：标题      |
-| bind:click    | 点击标签时触发         | name：标签标识符，title：标题        |
-| bind:disabled     | 点击被禁用的标签时触发   | name：标签标识符，title：标题      |
-| bind:scroll     | 滚动时触发 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
+| bind:change                   | 当前激活的标签改变时触发                                                                                            | name：标签标识符，title：标题                                                                                                                                                                             |
+| bind:click                    | 点击标签时触发                                                                                                      | name：标签标识符，title：标题                                                                                                                                                                             |
+| bind:disabled                 | 点击被禁用的标签时触发                                                                                              | name：标签标识符，title：标题                                                                                                                                                                             |
+| bind:scroll                   | 滚动时触发                                                                                                          | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 }                                                                                                                                                            |
 
 ### 外部样式类
 
@@ -347,31 +356,30 @@ Page({
 | tab-class        | 标签样式类         |
 | wrap-class       | 标签栏根节点样式类 |
 
-
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider&appType=miniapp)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --tabs-background-color | _var(--app-B3, #fff)_ | 背景色    |
-| --tabs-default-color | _var(--app-M4)_ | 默认文字颜色    |
-| --tabs-line-height | _32px_ | 默认文字字高    |
-| --tabs-sub-line-height `v2.3.5` | _64px_ | 默认二级文字字高    |
-| --tabs-bottom-bar-height  | _3px_ | 底部滑块高度    |
-| --tabs-bottom-bar-color | _var(--tabs-default-color)_ | 底部滑块背景色    |
-| --tabs-card-text-color | _var(--app-B6-N3)_ | card模式文字颜色    |
-| --tabs-card-text-active-color | _var(--app-B6-N1)_ | card模式选中的文字颜色    |
-| --tabs-card-height | _32px_ | card模式滑块高度    |
-| --tabs-card-border-radius | _8px_ | card模式radius    |
-| --tabs-card-active-border-radius `v2.0.0` | _6px_ | card模式滑块radius    |
-| --tabs-card-active-background-color | _var(--app-B3, #fff)_ | card模式滑块背景色  |
-| --tabs-card-active-top `v2.0.0`  | _0_    | card模式滑块top定位    |
-| --tabs-card-active-left `v2.0.0`  | _0_    | card模式滑块left定位    |
-| --tabs-card-padding `v2.0.0`  | _2px_    | card模式padding   |
-| --tab-panel-background-color `v2.0.0`  | _var(--app-B3)_    | panel背景色   |
-| --tab-panel-text-color `v2.0.0`  | _var(--app-B3-N1)_    | panel文字颜色   |
-| --tabs-card-background-color `v2.1.0`  | _var(--app-B6-N9, rgba(0, 0, 0, 0.05))_    | 卡片模式背景颜色   |
+| 名称                                      | 默认值                                  | 描述                    |
+| ----------------------------------------- | --------------------------------------- | ----------------------- |
+| --tabs-background-color                   | _var(--app-B3, #fff)_                   | 背景色                  |
+| --tabs-default-color                      | _var(--app-M4)_                         | 默认文字颜色            |
+| --tabs-line-height                        | _32px_                                  | 默认文字字高            |
+| --tabs-sub-line-height `v2.3.5`           | _64px_                                  | 默认二级文字字高        |
+| --tabs-bottom-bar-height                  | _3px_                                   | 底部滑块高度            |
+| --tabs-bottom-bar-color                   | _var(--tabs-default-color)_             | 底部滑块背景色          |
+| --tabs-card-text-color                    | _var(--app-B6-N3)_                      | card 模式文字颜色       |
+| --tabs-card-text-active-color             | _var(--app-B6-N1)_                      | card 模式选中的文字颜色 |
+| --tabs-card-height                        | _32px_                                  | card 模式滑块高度       |
+| --tabs-card-border-radius                 | _8px_                                   | card 模式 radius        |
+| --tabs-card-active-border-radius `v2.0.0` | _6px_                                   | card 模式滑块 radius    |
+| --tabs-card-active-background-color       | _var(--app-B3, #fff)_                   | card 模式滑块背景色     |
+| --tabs-card-active-top `v2.0.0`           | _0_                                     | card 模式滑块 top 定位  |
+| --tabs-card-active-left `v2.0.0`          | _0_                                     | card 模式滑块 left 定位 |
+| --tabs-card-padding `v2.0.0`              | _2px_                                   | card 模式 padding       |
+| --tab-panel-background-color `v2.0.0`     | _var(--app-B3)_                         | panel 背景色            |
+| --tab-panel-text-color `v2.0.0`           | _var(--app-B3-N1)_                      | panel 文字颜色          |
+| --tabs-card-background-color `v2.1.0`     | _var(--app-B6-N9, rgba(0, 0, 0, 0.05))_ | 卡片模式背景颜色        |
 
 ### 方法
 

@@ -4,6 +4,7 @@
 >
   <smart-tab title="{{I18n.t('basicUsage')}}">
     <smart-index-bar
+      scrollable
       wx:if="{{ activeTab === 0 }}"
     >
       <view
@@ -23,6 +24,8 @@
     <smart-index-bar
       wx:if="{{ activeTab === 1 }}"
       index-list="{{ customIndexList }}"
+      sidebar-font-size="16px"
+      sidebar-line-height="20px"
     >
       <view
         wx:for="{{ customIndexList }}"

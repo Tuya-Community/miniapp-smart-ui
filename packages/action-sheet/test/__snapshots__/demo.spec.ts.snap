@@ -59,17 +59,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:close="onClickOverlay"
           bind:enter="onEnter"
           bind:leave="onLeave"
-        >
-          <smart-overlay
-            bind:click="onClickOverlay"
-          >
-            <smart-transition
-              customClass="smart-overlay custom-class"
-              bind:tap="onClick"
-              catch:touchmove="noop"
-            />
-          </smart-overlay>
-        </smart-popup>
+        />
       </smart-action-sheet>
     </wx-view>
   </demo-block>
@@ -130,17 +120,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:close="onClickOverlay"
           bind:enter="onEnter"
           bind:leave="onLeave"
-        >
-          <smart-overlay
-            bind:click="onClickOverlay"
-          >
-            <smart-transition
-              customClass="smart-overlay custom-class"
-              bind:tap="onClick"
-              catch:touchmove="noop"
-            />
-          </smart-overlay>
-        </smart-popup>
+        />
       </smart-action-sheet>
     </wx-view>
   </demo-block>
@@ -200,17 +180,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:close="onClickOverlay"
           bind:enter="onEnter"
           bind:leave="onLeave"
-        >
-          <smart-overlay
-            bind:click="onClickOverlay"
-          >
-            <smart-transition
-              customClass="smart-overlay custom-class"
-              bind:tap="onClick"
-              catch:touchmove="noop"
-            />
-          </smart-overlay>
-        </smart-popup>
+        />
       </smart-action-sheet>
     </wx-view>
   </demo-block>
@@ -269,17 +239,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:close="onClickOverlay"
           bind:enter="onEnter"
           bind:leave="onLeave"
-        >
-          <smart-overlay
-            bind:click="onClickOverlay"
-          >
-            <smart-transition
-              customClass="smart-overlay custom-class"
-              bind:tap="onClick"
-              catch:touchmove="noop"
-            />
-          </smart-overlay>
-        </smart-popup>
+        />
       </smart-action-sheet>
     </wx-view>
   </demo-block>
@@ -340,17 +300,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:close="onClickOverlay"
           bind:enter="onEnter"
           bind:leave="onLeave"
-        >
-          <smart-overlay
-            bind:click="onClickOverlay"
-          >
-            <smart-transition
-              customClass="smart-overlay custom-class"
-              bind:tap="onClick"
-              catch:touchmove="noop"
-            />
-          </smart-overlay>
-        </smart-popup>
+        />
       </smart-action-sheet>
     </wx-view>
   </demo-block>
@@ -409,17 +359,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:close="onClickOverlay"
           bind:enter="onEnter"
           bind:leave="onLeave"
-        >
-          <smart-overlay
-            bind:click="onClickOverlay"
-          >
-            <smart-transition
-              customClass="smart-overlay custom-class"
-              bind:tap="onClick"
-              catch:touchmove="noop"
-            />
-          </smart-overlay>
-        </smart-popup>
+        />
       </smart-action-sheet>
     </wx-view>
   </demo-block>
@@ -480,17 +420,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:close="onClickOverlay"
           bind:enter="onEnter"
           bind:leave="onLeave"
-        >
-          <smart-overlay
-            bind:click="onClickOverlay"
-          >
-            <smart-transition
-              customClass="smart-overlay custom-class"
-              bind:tap="onClick"
-              catch:touchmove="noop"
-            />
-          </smart-overlay>
-        </smart-popup>
+        />
       </smart-action-sheet>
     </wx-view>
   </demo-block>
@@ -552,17 +482,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:close="onClickOverlay"
           bind:enter="onEnter"
           bind:leave="onLeave"
-        >
-          <smart-overlay
-            bind:click="onClickOverlay"
-          >
-            <smart-transition
-              customClass="smart-overlay custom-class"
-              bind:tap="onClick"
-              catch:touchmove="noop"
-            />
-          </smart-overlay>
-        </smart-popup>
+        />
       </smart-action-sheet>
     </wx-view>
   </demo-block>
@@ -628,17 +548,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:close="onClickOverlay"
           bind:enter="onEnter"
           bind:leave="onLeave"
-        >
-          <smart-overlay
-            bind:click="onClickOverlay"
-          >
-            <smart-transition
-              customClass="smart-overlay custom-class"
-              bind:tap="onClick"
-              catch:touchmove="noop"
-            />
-          </smart-overlay>
-        </smart-popup>
+        />
       </smart-action-sheet>
     </wx-view>
   </demo-block>
@@ -699,17 +609,7 @@ exports[`should render demo and match snapshot 1`] = `
           bind:close="onClickOverlay"
           bind:enter="onEnter"
           bind:leave="onLeave"
-        >
-          <smart-overlay
-            bind:click="onClickOverlay"
-          >
-            <smart-transition
-              customClass="smart-overlay custom-class"
-              bind:tap="onClick"
-              catch:touchmove="noop"
-            />
-          </smart-overlay>
-        </smart-popup>
+        />
       </smart-action-sheet>
     </wx-view>
   </demo-block>

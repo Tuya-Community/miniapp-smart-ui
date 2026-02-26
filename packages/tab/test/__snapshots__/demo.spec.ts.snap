@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render demo and match snapshot 1`] = `
+exports[`tab demo should render demo and match snapshot 1`] = `
 <main>
   <demo-block>
     <wx-view
@@ -24,17 +24,17 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="smart-tabs--line smart-tabs__wrap   wrap-class"
+                  class="smart-tabs--line smart-tabs__wrap smart-tabs__wrap--scrollable   wrap-class"
                 >
                   <wx-scroll-view
                     class="smart-tabs__scroll smart-tabs__scroll--line"
                     scrollLeft="{{0}}"
                     scrollWithAnimation="{{false}}"
-                    scrollX="{{false}}"
+                    scrollX="{{true}}"
                     style=""
                   >
                     <wx-view
-                      class="smart-tabs__nav smart-tabs__nav--line nav-class"
+                      class="smart-tabs__nav smart-tabs__nav--line smart-tabs__nav--complete nav-class"
                       style=""
                     >
                       <wx-view
@@ -42,63 +42,79 @@ exports[`should render demo and match snapshot 1`] = `
                         style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
                       />
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab smart-tab--complete"
                         data-index="{{0}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 1
+                          <wx-view
+                            class="smart-tab-text "
+                            style=""
+                          >
+                            
+                undefined 1
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        class="tab-class tab-active-class smart-tab smart-tab--active smart-tab--complete"
                         data-index="{{1}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 2
+                          <wx-view
+                            class="smart-tab-text "
+                            style=""
+                          >
+                            
+                undefined 2
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab smart-tab--complete"
                         data-index="{{2}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 3
+                          <wx-view
+                            class="smart-tab-text "
+                            style=""
+                          >
+                            
+                undefined 3
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab smart-tab--complete"
                         data-index="{{3}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 4
+                          <wx-view
+                            class="smart-tab-text "
+                            style=""
+                          >
+                            
+                undefined 4
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                     </wx-view>
@@ -194,48 +210,60 @@ exports[`should render demo and match snapshot 1`] = `
                         style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
                       />
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{0}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 1
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 1
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        class="tab-class tab-active-class smart-tab smart-tab--active"
                         data-index="{{1}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 2
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 2
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{2}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 3
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 3
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                     </wx-view>
@@ -327,48 +355,60 @@ exports[`should render demo and match snapshot 1`] = `
                         style="opacity:0;transform:translateX(0px);-webkit-transform:translate(0px, 0px)"
                       />
                       <wx-view
-                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        class="tab-class tab-active-class smart-tab smart-tab--active"
                         data-index="{{0}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 1
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 1
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{1}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 2
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 2
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{2}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 3
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 3
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                     </wx-view>
@@ -458,93 +498,117 @@ exports[`should render demo and match snapshot 1`] = `
                         style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
                       />
                       <wx-view
-                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        class="tab-class tab-active-class smart-tab smart-tab--active"
                         data-index="{{0}}"
                         style="flex-basis:17.6%"
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 1
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 1
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{1}}"
                         style="flex-basis:17.6%"
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 2
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 2
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{2}}"
                         style="flex-basis:17.6%"
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 3
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 3
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{3}}"
                         style="flex-basis:17.6%"
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 4
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 4
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{4}}"
                         style="flex-basis:17.6%"
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 5
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 5
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{5}}"
                         style="flex-basis:17.6%"
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 6
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 6
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                     </wx-view>
@@ -654,48 +718,60 @@ exports[`should render demo and match snapshot 1`] = `
                         style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
                       />
                       <wx-view
-                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        class="tab-class tab-active-class smart-tab smart-tab--active"
                         data-index="{{0}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 1
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 1
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab smart-tab--disabled"
+                        class="tab-class smart-tab smart-tab--disabled"
                         data-index="{{1}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 2
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 2
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{2}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 3
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 3
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                     </wx-view>
@@ -787,33 +863,41 @@ exports[`should render demo and match snapshot 1`] = `
                         style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
                       />
                       <wx-view
-                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        class="tab-class tab-active-class smart-tab smart-tab--active"
                         data-index="{{0}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 1
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 1
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{1}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 2
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 2
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                     </wx-view>
@@ -897,63 +981,79 @@ exports[`should render demo and match snapshot 1`] = `
                         style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
                       />
                       <wx-view
-                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        class="tab-class tab-active-class smart-tab smart-tab--active"
                         data-index="{{0}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 1
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 1
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{1}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 2
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 2
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{2}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 3
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 3
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{3}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 4
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 4
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                     </wx-view>
@@ -1049,63 +1149,79 @@ exports[`should render demo and match snapshot 1`] = `
                         style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
                       />
                       <wx-view
-                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        class="tab-class tab-active-class smart-tab smart-tab--active"
                         data-index="{{0}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 1
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 1
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{1}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 2
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 2
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{2}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 3
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 3
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{3}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 4
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 4
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                     </wx-view>
@@ -1201,63 +1317,79 @@ exports[`should render demo and match snapshot 1`] = `
                         style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
                       />
                       <wx-view
-                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        class="tab-class tab-active-class smart-tab smart-tab--active"
                         data-index="{{0}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 1
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 1
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{1}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 2
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 2
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{2}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 3
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 3
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{3}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 4
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 4
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                     </wx-view>
@@ -1357,33 +1489,41 @@ exports[`should render demo and match snapshot 1`] = `
                         style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
                       />
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{0}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 1
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 1
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        class="tab-class tab-active-class smart-tab smart-tab--active"
                         data-index="{{1}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 2
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 2
               
+                          </wx-view>
                           <smart-info
                             customClass="smart-tab__title__info"
                           >
@@ -1397,18 +1537,22 @@ exports[`should render demo and match snapshot 1`] = `
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{2}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 3
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 3
               
+                          </wx-view>
                           <smart-info
                             customClass="smart-tab__title__info"
                           >
@@ -1422,18 +1566,22 @@ exports[`should render demo and match snapshot 1`] = `
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{3}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 4
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 4
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                     </wx-view>
@@ -1444,10 +1592,15 @@ exports[`should render demo and match snapshot 1`] = `
                     bind:click="onClickNavRight"
                   >
                     <wx-view
-                      class="custom-class smart-icon smart-icon-search"
-                      style=""
+                      class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      style="color:#1989fa"
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view
+                        class="smart-icon__svg"
+                        style="-webkit-mask-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20t%3D%221730112390884%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%229522%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M888.888889%20798.833778L772.778667%20682.666667a387.584%20387.584%200%200%200%2082.944-241.777778A391.509333%20391.509333%200%200%200%20464.611556%2049.777778%20391.509333%20391.509333%200%200%200%2073.500444%20440.888889a391.509333%20391.509333%200%200%200%20391.111112%20391.111111%20392.590222%20392.590222%200%200%200%20241.777777-82.944l116.167111%20116.110222c9.443556%209.500444%2021.333333%2014.222222%2033.166223%2014.222222a46.762667%2046.762667%200%200%200%2033.166222-14.222222%2045.795556%2045.795556%200%200%200%200-66.332444zM168.391111%20440.888889a296.391111%20296.391111%200%200%201%20296.277333-296.277333%20296.391111%20296.391111%200%200%201%20296.277334%20296.277333%20296.391111%20296.391111%200%200%201-296.277334%20296.277333A296.391111%20296.391111%200%200%201%20168.334222%20440.888889z%22%20p-id%3D%229523%22%2F%3E%3C%2Fsvg%3E);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;background:#1989fa"
+                      />
+                    </wx-view>
                   </smart-icon>
                 </wx-view>
               </wx-view>
@@ -1543,63 +1696,79 @@ exports[`should render demo and match snapshot 1`] = `
                         style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
                       />
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{0}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 1
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 1
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        class="tab-class tab-active-class smart-tab smart-tab--active"
                         data-index="{{1}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 2
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 2
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{2}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 3
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 3
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{3}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
-              undefined 4
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                undefined 4
               
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                     </wx-view>
@@ -1697,164 +1866,202 @@ exports[`should render demo and match snapshot 1`] = `
                         style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
                       />
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{0}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                
               
+                          </wx-view>
+                          <wx-view
+                            class="smart-ellipsis"
+                            style="color: black;"
+                          >
+                            
+                12
               
-                        </wx-view>
-                        <wx-view
-                          class="smart-ellipsis"
-                          style="color: black;"
-                        >
-                          
-              12
-            
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                        class="tab-class tab-active-class smart-tab smart-tab--active"
                         data-index="{{1}}"
                         style="color:#1989FA"
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                
               
+                          </wx-view>
+                          <wx-view
+                            class="smart-ellipsis"
+                            style="color: black;"
+                          >
+                            
+                13
               
-                        </wx-view>
-                        <wx-view
-                          class="smart-ellipsis"
-                          style="color: black;"
-                        >
-                          
-              13
-            
+                          </wx-view>
+                          <smart-info
+                            customClass="smart-tab__title__info"
+                          >
+                            <wx-view
+                              class="smart-info smart-info--dot custom-class"
+                              style=""
+                            >
+                              
+                            </wx-view>
+                          </smart-info>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{2}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                
               
+                          </wx-view>
+                          <wx-view
+                            class="smart-ellipsis"
+                            style="color: black;"
+                          >
+                            
+                14
               
-                        </wx-view>
-                        <wx-view
-                          class="smart-ellipsis"
-                          style="color: black;"
-                        >
-                          
-              14
-            
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{3}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                
               
+                          </wx-view>
+                          <wx-view
+                            class="smart-ellipsis"
+                            style="color: black;"
+                          >
+                            
+                15
               
-                        </wx-view>
-                        <wx-view
-                          class="smart-ellipsis"
-                          style="color: black;"
-                        >
-                          
-              15
-            
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{4}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                
               
+                          </wx-view>
+                          <wx-view
+                            class="smart-ellipsis"
+                            style="color: black;"
+                          >
+                            
+                16
               
-                        </wx-view>
-                        <wx-view
-                          class="smart-ellipsis"
-                          style="color: black;"
-                        >
-                          
-              16
-            
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{5}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                
               
+                          </wx-view>
+                          <wx-view
+                            class="smart-ellipsis"
+                            style="color: black;"
+                          >
+                            
+                17
               
-                        </wx-view>
-                        <wx-view
-                          class="smart-ellipsis"
-                          style="color: black;"
-                        >
-                          
-              17
-            
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                       <wx-view
-                        class="tab-class smart-ellipsis smart-tab"
+                        class="tab-class smart-tab"
                         data-index="{{6}}"
                         style=""
                         bind:tap="onTap"
                       >
                         <wx-view
-                          class="smart-ellipsis"
-                          style=""
+                          class="smart-tab-content"
                         >
-                          
+                          <wx-view
+                            class="smart-tab-text smart-ellipsis"
+                            style=""
+                          >
+                            
+                
               
+                          </wx-view>
+                          <wx-view
+                            class="smart-ellipsis"
+                            style="color: black;"
+                          >
+                            
+                18
               
-                        </wx-view>
-                        <wx-view
-                          class="smart-ellipsis"
-                          style="color: black;"
-                        >
-                          
-              18
-            
+                          </wx-view>
                         </wx-view>
                       </wx-view>
                     </wx-view>

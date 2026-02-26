@@ -38,33 +38,41 @@ exports[`should render demo and match snapshot 1`] = `
                     style="width:16px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px);background-color:#1989fa"
                   />
                   <wx-view
-                    class="tab-class tab-active-class smart-ellipsis smart-tab smart-tab--active"
+                    class="tab-class tab-active-class smart-tab smart-tab--active"
                     data-index="{{0}}"
                     style=""
                     bind:tap="onTap"
                   >
                     <wx-view
-                      class="smart-ellipsis"
-                      style=""
+                      class="smart-tab-content"
                     >
-                      
-              Svg 
+                      <wx-view
+                        class="smart-tab-text smart-ellipsis"
+                        style=""
+                      >
+                        
+                Svg 
               
+                      </wx-view>
                     </wx-view>
                   </wx-view>
                   <wx-view
-                    class="tab-class smart-ellipsis smart-tab"
+                    class="tab-class smart-tab"
                     data-index="{{1}}"
                     style=""
                     bind:tap="onTap"
                   >
                     <wx-view
-                      class="smart-ellipsis"
-                      style=""
+                      class="smart-tab-content"
                     >
-                      
+                      <wx-view
+                        class="smart-tab-text smart-ellipsis"
+                        style=""
+                      >
+                        
+                
               
-              
+                      </wx-view>
                     </wx-view>
                   </wx-view>
                 </wx-view>

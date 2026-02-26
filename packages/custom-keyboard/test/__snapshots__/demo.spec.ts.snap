@@ -27,17 +27,7 @@ exports[`should render demo and match snapshot 1`] = `
       </wx-view>
       <smart-popup
         bind:close="onMaskPress"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
     </smart-custom-keyboard>
   </demo-block>
   <demo-block
@@ -72,17 +62,7 @@ exports[`should render demo and match snapshot 1`] = `
       </wx-view>
       <smart-popup
         bind:close="onMaskPress"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
     </smart-custom-keyboard>
   </demo-block>
   <demo-block
@@ -107,17 +87,7 @@ exports[`should render demo and match snapshot 1`] = `
       </wx-view>
       <smart-popup
         bind:close="onMaskPress"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
     </smart-custom-keyboard>
   </demo-block>
   <demo-block
@@ -142,17 +112,7 @@ exports[`should render demo and match snapshot 1`] = `
       </wx-view>
       <smart-popup
         bind:close="onMaskPress"
-      >
-        <smart-overlay
-          bind:click="onClickOverlay"
-        >
-          <smart-transition
-            customClass="smart-overlay custom-class"
-            bind:tap="onClick"
-            catch:touchmove="noop"
-          />
-        </smart-overlay>
-      </smart-popup>
+      />
     </smart-custom-keyboard>
   </demo-block>
 </main>

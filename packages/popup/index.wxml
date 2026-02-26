@@ -3,19 +3,21 @@
 
 <import src="./popup.wxml" />
 
-<smart-overlay
-  wx:if="{{ overlay }}"
-  show="{{ show }}"
-  z-index="{{ zIndex }}"
-  custom-style="{{ overlayStyle }}"
-  duration="{{ duration }}"
-  bind:click="onClickOverlay"
-  lock-scroll="{{ lockScroll }}"
-  root-portal="{{ rootPortal }}"
-/>
+<block wx:if="{{ isShowed }}">
+  <smart-overlay
+    wx:if="{{ overlay }}"
+    show="{{ show }}"
+    z-index="{{ zIndex }}"
+    custom-style="{{ overlayStyle }}"
+    duration="{{ duration }}"
+    bind:click="onClickOverlay"
+    lock-scroll="{{ lockScroll }}"
+    root-portal="{{ rootPortal }}"
+  />
 
-<root-portal wx:if="{{ rootPortal }}">
-  <include src="./popup.wxml" />
-</root-portal>
+  <root-portal wx:if="{{ rootPortal }}">
+    <include src="./popup.wxml" />
+  </root-portal>
 
- <include wx:else src="./popup.wxml" />
+  <include wx:else src="./popup.wxml" />
+</block>
