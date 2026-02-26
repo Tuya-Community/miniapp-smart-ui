@@ -16,10 +16,7 @@
 
     &.smart-popup--round {
       overflow: hidden;
-      border-radius: var(
-        --popup-round-border-radius,
-        @popup-round-border-radius
-      );
+      border-radius: var(--popup-round-border-radius, @popup-round-border-radius);
     }
   }
 
@@ -147,6 +144,14 @@
       opacity: 0.6;
     }
   }
+}
+
+.smart-popup-full-cover-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .smart-scale-enter-active,
