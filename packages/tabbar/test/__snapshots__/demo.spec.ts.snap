@@ -507,7 +507,7 @@ exports[`should render demo and match snapshot 1`] = `
                 <wx-image
                   mode="aspectFit"
                   slot="icon"
-                  src=""
+                  src="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
                   style="width: 30px; height: 18px;"
                 />
                 <smart-info

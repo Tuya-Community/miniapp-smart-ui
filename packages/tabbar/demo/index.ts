@@ -13,7 +13,7 @@ SmartComponent({
     active5: 0,
     active6: 0,
     icon: {
-      normal: '',
+      normal: 'https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png',
       active:
         'https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png',
     },
