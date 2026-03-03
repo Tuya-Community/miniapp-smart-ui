@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.11.1 (2026-3-3)
+
+### Features ✨
+
+- popup: Added fullCoverView property, which wraps the full-screen CoverView by default when the popup is opened ([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
+- action-sheet: Added fullCoverView property, which wraps the full-screen CoverView by default when the action sheet is opened ([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
+- bottom-sheet: Added fullCoverView property, which wraps the full-screen CoverView by default when the bottom sheet is opened ([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
+- dialog: Added fullCoverView property, which wraps the full-screen CoverView by default when the dialog is opened ([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
+
+### Bug Fixes 🐛
+
+- Fixed the issue where non-JSX types led to errors when inserting components into slots ([1904e59](https://github.com/Tuya-Community/ray-smart-ui/commit/1904e59705c9161112d33af2ddf03fdbd4ec71cb))
+
 ## v2.11.0 (2026-2-5)
 
 ### Features ✨

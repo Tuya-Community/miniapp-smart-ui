@@ -1,5 +1,18 @@
 # 更新日志
 
+## v2.11.1 (2026-3-3)
+
+### Features ✨
+
+- popup：新增 fullCoverView 属性，弹框打开时默认包裹全屏的 CoverView([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
+- action-sheet：新增 fullCoverView 属性，弹框打开时默认包裹全屏的 CoverView([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
+- bottom-sheet：新增 fullCoverView 属性，弹框打开时默认包裹全屏的 CoverView([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
+- dialog: 新增 fullCoverView 属性，弹框打开时默认包裹全屏的 CoverView([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
+
+### Bug Fixes 🐛
+
+- 修复组件插槽 slot 插入非 JSX 类型时报错问题([1904e59](https://github.com/Tuya-Community/ray-smart-ui/commit/1904e59705c9161112d33af2ddf03fdbd4ec71cb))
+
 ## v2.11.0 (2026-2-5)
 
 ### Features ✨
@@ -197,7 +210,7 @@
 
 - nav-bar: 修复 left-text-type 为 home 或者 title 时，文案超长不省略问题([97f91f5](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/97f91f5869860d4cbf8994e11f5a0cffa8ac987e))
 - picker: 修复单位换行问题([b8075bd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/b8075bd2b48b369db549554bd80c23e5305e9426))
-- stepper: 修复组件到达 max 或者 min 时，禁用样式不生效问题([58ce5af](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/58ce5af24c715c9534026fd07121426973578dce))；修改--stepper-button-disabled-color 默认值为 _var(--app-B6, #ffffff)_ ([e0e55fa](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/e0e55fa18f517fafc603a6b9c3035276d6ccaa16))；修复设置 min 或 decimalLength 导致输入框无法删除问题([7cf1cfe](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/7cf1cfe9d0e7ac77db1007d902960b83dde45d9e))
+- stepper: 修复组件到达 max 或者 min 时，禁用样式不生效问题([58ce5af](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/58ce5af24c715c9534026fd07121426973578dce))；修改--stepper-button-disabled-color 默认值为 *var(--app-B6, #ffffff)* ([e0e55fa](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/e0e55fa18f517fafc603a6b9c3035276d6ccaa16))；修复设置 min 或 decimalLength 导致输入框无法删除问题([7cf1cfe](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/7cf1cfe9d0e7ac77db1007d902960b83dde45d9e))
 - image: 修复组件上下多余空隙问题([a42f0ad](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/a42f0ad7e964b0d63de2b5e1dde7aed2efd99b17))
 
 ## v2.6.0(2025-07-31)
@@ -419,9 +432,9 @@
 ### Bug Fixes 🐛
 
 - dialog:
-  1.  修复快速调用 DialogInstance 导致渲染异常无效销毁
-  2.  修复方法调用缺失 confirmButtonColor & cancelButtonColor 类型
-  3.  删除 dialog 组件方式使用的 beforeClose 类型;
+  1. 修复快速调用 DialogInstance 导致渲染异常无效销毁
+  2. 修复方法调用缺失 confirmButtonColor & cancelButtonColor 类型
+  3. 删除 dialog 组件方式使用的 beforeClose 类型;
 - circle：style 属性警告修复
 - config-provider: 修复内部对 dialog 缺失的主题变量
 - progress： 暂无相关业务场景，隐藏此组件
@@ -522,3 +535,4 @@
 ### Bug Fixes 🐛
 
 - picker: 修复 pickerColumn 了滚动到极端时未触发`change`事件的问题。
+
