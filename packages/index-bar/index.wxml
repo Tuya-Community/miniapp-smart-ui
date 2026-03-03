@@ -10,6 +10,7 @@
     catch:touchcancel="onTouchStop"
   >
   <view
+    wx:if="{{ showMoveTip }}"
     class="smart-index-bar__move-tip {{ showMoveIcon ? 'smart-index-bar__move-tip--visible' : '' }}"
     style="top: {{ moveTipTop }}px;"
   >

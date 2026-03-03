@@ -53,6 +53,10 @@ SmartComponent({
       type: Array,
       value: indexList(),
     },
+    showMoveTip: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   mixins: [
