@@ -58,6 +58,10 @@ SmartComponent({
       type: Boolean,
       value: false,
     },
+    fullCoverView: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   data: {

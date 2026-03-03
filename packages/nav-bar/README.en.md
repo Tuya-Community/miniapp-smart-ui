@@ -48,7 +48,7 @@ Page({
 
 ### Second Page-Single Icon
 
-When the title content in the middle is relatively long, and the content on both sides is relatively short, you can set `v2.7.3` `side-width` to `min`.
+When the title content in the middle is relatively long, and the content on both sides is relatively short, you can set `side-width` `v2.7.3` to `min`.
 
 ```html
 <smart-nav-bar
@@ -153,7 +153,7 @@ Page({
 
 ### Second Page-Short Title
 
-When there are many operation contents on both sides, you can set `v2.7.3` `side-width` to `max` to reduce the size of the title area.
+When there are many operation contents on both sides, you can set `side-width` `v2.7.3` to `max` to reduce the size of the title area.
 
 ```html
 <smart-nav-bar
