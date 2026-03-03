@@ -73,6 +73,8 @@ SmartComponent({
 
   // @ts-ignore
   pendingAnchor: null,
+  // 用于过滤 clientY 偶现跳变：保留最近 3 次有效值，与其中至少 2 个都超阈值才判定本帧为异常
+  lastValidOffsetYHistory: null,
 
   watch: {
     activeAnchorIndex(newVal) {
@@ -281,23 +283,27 @@ SmartComponent({
       if (!this.data.scrollable) return;
       const sidebarLength = this.children.length;
       const touch = event.touches[0];
-      const itemHeight = this.sidebar.height / sidebarLength;
-      const offsetY = touch.clientY - this.sidebar.top;
-      let index = Math.floor(offsetY / itemHeight);
-      // 有时候会莫名间断出现 -90多的情况
-      if (index < -20) {
+      let offsetY = touch.clientY - this.sidebar.top;
+      const threshold = this.sidebar.height * 0.25;
+      if (!this.lastValidOffsetYHistory) {
+        this.lastValidOffsetYHistory = [];
+      }
+      const farCount = this.lastValidOffsetYHistory.filter(
+        h => Math.abs(offsetY - h) < threshold
+      ).length;
+      // 与最近 3 次中至少 2 个都超阈值则判定本帧为异常，沿用上次有效值
+      if (this.lastValidOffsetYHistory.length === 3 && farCount < 2) {
         return;
       }
-      if (index < 0) {
-        index = 0;
-      } else if (index > sidebarLength - 1) {
-        index = sidebarLength - 1;
-      }
-      if (!this.data.showMoveIcon) {
-        this.setData({
-          showMoveIcon: true,
-        });
-      }
+      this.lastValidOffsetYHistory.push(offsetY);
+      if (this.lastValidOffsetYHistory.length > 3) this.lastValidOffsetYHistory.shift();
+      offsetY = Math.max(0, Math.min(offsetY, this.sidebar.height));
+      const itemHeight = this.sidebar.height / sidebarLength;
+      const index = Math.floor(offsetY / itemHeight);
+      this.setData({
+        showMoveIcon: true,
+        moveTipTop: offsetY,
+      });
       this.scrollToAnchor(index);
     },
 
@@ -307,15 +313,13 @@ SmartComponent({
         showMoveIcon: false,
       });
       this.scrollToAnchorIndex = null;
+      this.lastValidOffsetYHistory = [];
     },
 
     scrollToAnchor(index) {
       if (typeof index !== 'number' || this.scrollToAnchorIndex === index) {
         return;
       }
-
-      this.scrollToAnchorIndex = index;
-
       const anchor = this.children.find(item => item.data.index === this.data.indexList[index]);
       if (!anchor) return;
       // 如果当前有正在进行的滚动，将新的滚动任务加入队列
@@ -327,18 +331,17 @@ SmartComponent({
         return;
       }
       this.pendingAnchor = [anchor];
-      const offsetY = (this.sidebar.height / this.children.length) * index;
       this.setData({
         currentMoveIconText: anchor.data.index,
-        moveTipTop: Math.max(0, Math.min(offsetY, this.sidebar.height)),
       });
+      this.scrollToAnchorIndex = index;
       anchor
         .scrollIntoView(this.scrollTop)
         .then(() => {
           if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
             const index = this.data.indexList.indexOf(this.pendingAnchor[0].data.index);
-            this.scrollToAnchor(index);
             this.pendingAnchor = [];
+            this.scrollToAnchor(index);
             return;
           }
           this.pendingAnchor = [];
@@ -347,8 +350,8 @@ SmartComponent({
           console.error(err);
           if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
             const index = this.data.indexList.indexOf(this.pendingAnchor[0].data.index);
-            this.scrollToAnchor(index);
             this.pendingAnchor = [];
+            this.scrollToAnchor(index);
             return;
           }
           this.pendingAnchor = [];
