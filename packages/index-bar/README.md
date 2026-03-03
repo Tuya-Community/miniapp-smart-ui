@@ -155,10 +155,14 @@ Page({
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider&appType=miniapp)。
 
-| 名称                          | 默认值 | 描述         |
-| ----------------------------- | ------ | ------------ |
-| --index-bar-index-font-size   | _10px_ | 索引字体大小 |
-| --index-bar-index-line-height | _14px_ | 索引行高     |
+| 名称                                      | 默认值   | 描述                   |
+| ----------------------------------------- | -------- | ---------------------- |
+| --index-bar-index-font-size               | _10px_   | 索引字体大小           |
+| --index-bar-index-line-height             | _14px_   | 索引行高               |
+| --index-bar-move-tip-text-padding `v2.12.0` | _0 10px 0 0_   | 拖动提示文字内边距   |
+| --index-bar-move-tip-text-font-size `v2.12.0`     | _24px_   | 拖动提示文字字体大小   |
+| --index-bar-move-tip-text-line-height `v2.12.0`   | _32px_   | 拖动提示文字行高       |
+| --index-bar-move-tip-text-color `v2.12.0`        | _#fff_   | 拖动提示文字颜色       |
 
 ## 常见问题
 

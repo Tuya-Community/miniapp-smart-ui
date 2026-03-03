@@ -155,10 +155,14 @@ Page({
 
 The component provides the following CSS variables that can be used for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider&appType=miniapp).
 
-| Name                          | Default Value | Description       |
-| ----------------------------- | ------------- | ----------------- |
-| --index-bar-index-font-size   | _10px_        | Index font size   |
-| --index-bar-index-line-height | _14px_        | Index line height |
+| Name                                        | Default Value | Description                    |
+| ------------------------------------------- | ------------- | ------------------------------ |
+| --index-bar-index-font-size                 | _10px_        | Index font size                |
+| --index-bar-index-line-height               | _14px_        | Index line height              |
+| --index-bar-move-tip-text-padding-right `v2.12.0` | _0 10px 0 0_        | Move tip text padding   |
+| --index-bar-move-tip-text-font-size `v2.12.0`     | _24px_        | Move tip text font size        |
+| --index-bar-move-tip-text-line-height `v2.12.0`   | _32px_        | Move tip text line height      |
+| --index-bar-move-tip-text-color `v2.12.0`        | _#fff_        | Move tip text color            |
 
 ## FAQ
 

@@ -3,6 +3,7 @@ import { SmartComponent } from '../common/component';
 import { useChildren } from '../common/relation';
 import { getRect, isDef } from '../common/utils';
 import { pageScrollMixin } from '../mixins/page-scroll';
+import iconSvg from './icon';
 import ty from '../common/ty';
 
 const indexList = () => {
@@ -62,8 +63,12 @@ SmartComponent({
   ],
 
   data: {
+    iconSvg,
     activeAnchorIndex: null,
     showSidebar: false,
+    showMoveIcon: false,
+    currentMoveIconText: '',
+    moveTipTop: 0,
   },
 
   // @ts-ignore
@@ -277,8 +282,8 @@ SmartComponent({
       const sidebarLength = this.children.length;
       const touch = event.touches[0];
       const itemHeight = this.sidebar.height / sidebarLength;
-      let index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
-
+      const offsetY = touch.clientY - this.sidebar.top;
+      let index = Math.floor(offsetY / itemHeight);
       // 有时候会莫名间断出现 -90多的情况
       if (index < -20) {
         return;
@@ -288,11 +293,19 @@ SmartComponent({
       } else if (index > sidebarLength - 1) {
         index = sidebarLength - 1;
       }
+      if (!this.data.showMoveIcon) {
+        this.setData({
+          showMoveIcon: true,
+        });
+      }
       this.scrollToAnchor(index);
     },
 
     onTouchStop() {
       if (!this.data.scrollable) return;
+      this.setData({
+        showMoveIcon: false,
+      });
       this.scrollToAnchorIndex = null;
     },
 
@@ -314,6 +327,11 @@ SmartComponent({
         return;
       }
       this.pendingAnchor = [anchor];
+      const offsetY = (this.sidebar.height / this.children.length) * index;
+      this.setData({
+        currentMoveIconText: anchor.data.index,
+        moveTipTop: Math.max(0, Math.min(offsetY, this.sidebar.height)),
+      });
       anchor
         .scrollIntoView(this.scrollTop)
         .then(() => {

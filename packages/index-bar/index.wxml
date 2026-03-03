@@ -9,6 +9,16 @@
     catch:touchend="onTouchStop"
     catch:touchcancel="onTouchStop"
   >
+  <view
+    class="smart-index-bar__move-tip {{ showMoveIcon ? 'smart-index-bar__move-tip--visible' : '' }}"
+    style="top: {{ moveTipTop }}px;"
+  >
+    <view class="smart-index-bar__move-tip-inner">
+      <slot name="move-tip" />
+      <smart-icon name="{{iconSvg}}" size="44px" customStyle="width: 1.18em;" />
+      <text class="smart-index-bar__move-tip-text">{{ currentMoveIconText }}</text>
+    </view>
+  </view>
     <view
       wx:for="{{ indexList }}"
       wx:key="index"
