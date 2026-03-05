@@ -1,7 +1,12 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 <wxs src="./index.wxs" module="computed" />
 
-<view class="{{ utils.bem('checkbox', [{ horizontal: direction === 'horizontal' }]) }} custom-class">
+<view 
+  role="checkbox" 
+  aria-checked="{{ value ? 'true' : 'false' }}" 
+  aria-disabled="{{ (disabled || parentDisabled) ? 'true' : 'false' }}" 
+  class="{{ utils.bem('checkbox', [{ horizontal: direction === 'horizontal' }]) }} custom-class"
+>
   <view
     wx:if="{{ labelPosition === 'left' }}"
     class="label-class {{ utils.bem('checkbox__label', [labelPosition, { disabled: disabled || parentDisabled }]) }}"
