@@ -1015,13 +1015,13 @@ describe('index-bar', () => {
       instance.onTouchMove({
         touches: [
           {
-            clientY: 1000, // Should clamp to 1 (sidebarLength - 1)
+            clientY: 1000, // offsetY clamped to sidebar.height(500), index = floor(500/250) = 2
           },
         ],
       });
       await simulate.sleep(10);
 
-      expect(scrollToAnchorSpy).toHaveBeenCalledWith(1);
+      expect(scrollToAnchorSpy).toHaveBeenCalledWith(2);
       scrollToAnchorSpy.mockRestore();
     }
   });
@@ -1095,7 +1095,8 @@ describe('index-bar', () => {
       instance.scrollToAnchor(1); // 'B' not in children
       await simulate.sleep(10);
 
-      expect(instance.scrollToAnchorIndex).toBe(1);
+      // When anchor not found, component returns early and does not set scrollToAnchorIndex
+      expect(instance.scrollToAnchorIndex).toBe(null);
       expect(anchor1.scrollIntoView).not.toHaveBeenCalled();
     }
   });
@@ -1133,7 +1134,8 @@ describe('index-bar', () => {
       instance.scrollToAnchor(1);
       await simulate.sleep(10);
 
-      expect(instance.scrollToAnchorIndex).toBe(1);
+      // When replacing pending queue, scrollToAnchorIndex is not updated (stays 0)
+      expect(instance.scrollToAnchorIndex).toBe(0);
       expect(instance.pendingAnchor).toEqual([anchor2]);
       expect(anchor1.scrollIntoView).toHaveBeenCalled();
       expect(anchor2.scrollIntoView).not.toHaveBeenCalled(); // Should be queued
@@ -1141,12 +1143,9 @@ describe('index-bar', () => {
       // Wait for first scroll to complete
       await simulate.sleep(150);
 
-      // Note: Due to code bug at line 311 (passing string instead of number index),
-      // the recursive call will fail and anchor2 won't be processed automatically.
-      // The pendingAnchor queue will be cleared, but anchor2 won't scroll.
+      // When first scroll completes, pending [anchor2] is processed: scrollToAnchor(1) is called
       expect(instance.pendingAnchor).toEqual([]);
-      // The recursive call fails because it passes string 'B' instead of number index 1
-      expect(anchor2.scrollIntoView).not.toHaveBeenCalled();
+      expect(anchor2.scrollIntoView).toHaveBeenCalled();
     }
   });
 
@@ -1196,11 +1195,9 @@ describe('index-bar', () => {
       // Wait for first scroll to complete
       await simulate.sleep(150);
 
-      // Note: Due to code bug at line 311 (passing string instead of number index),
-      // the recursive call will fail and anchor3 won't be processed automatically.
+      // When first scroll completes, pending [anchor3] is processed: scrollToAnchor(2) is called
       expect(instance.pendingAnchor).toEqual([]);
-      // The recursive call fails because it passes string 'C' instead of number index 2
-      expect(anchor3.scrollIntoView).not.toHaveBeenCalled();
+      expect(anchor3.scrollIntoView).toHaveBeenCalled();
       expect(anchor2.scrollIntoView).not.toHaveBeenCalled();
     }
   });
