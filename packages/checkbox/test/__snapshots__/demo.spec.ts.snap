@@ -12,7 +12,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -47,7 +50,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange2"
       >
         <wx-view
+          ariaChecked="false"
+          ariaDisabled="false"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -86,7 +92,10 @@ exports[`should render demo and match snapshot 1`] = `
         customClass="demo-checkbox-inline"
       >
         <wx-view
+          ariaChecked="false"
+          ariaDisabled="true"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -119,7 +128,10 @@ exports[`should render demo and match snapshot 1`] = `
         customClass="demo-checkbox-inline"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="true"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -160,7 +172,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -195,7 +210,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange2"
       >
         <wx-view
+          ariaChecked="false"
+          ariaDisabled="false"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -236,7 +254,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -271,7 +292,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange2"
       >
         <wx-view
+          ariaChecked="false"
+          ariaDisabled="false"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -312,7 +336,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -347,7 +374,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange2"
       >
         <wx-view
+          ariaChecked="false"
+          ariaDisabled="false"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -388,7 +418,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -433,7 +466,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -468,7 +504,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-checkbox custom-class"
+          role="checkbox"
         >
           <wx-view
             class="smart-checkbox__icon-wrap"
@@ -528,7 +567,10 @@ exports[`should render demo and match snapshot 1`] = `
             ty:key="*this"
           >
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="false"
               class="smart-checkbox custom-class"
+              role="checkbox"
             >
               <wx-view
                 class="smart-checkbox__icon-wrap"
@@ -590,7 +632,10 @@ exports[`should render demo and match snapshot 1`] = `
             ty:key="*this"
           >
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="false"
               class="smart-checkbox smart-checkbox--horizontal custom-class"
+              role="checkbox"
             >
               <wx-view
                 class="smart-checkbox__icon-wrap"
@@ -652,7 +697,10 @@ exports[`should render demo and match snapshot 1`] = `
             ty:key="*this"
           >
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="false"
               class="smart-checkbox custom-class"
+              role="checkbox"
             >
               <wx-view
                 class="smart-checkbox__icon-wrap"
@@ -729,7 +777,10 @@ exports[`should render demo and match snapshot 1`] = `
                     catch:tap="noop"
                   >
                     <wx-view
+                      ariaChecked="false"
+                      ariaDisabled="false"
                       class="smart-checkbox custom-class"
+                      role="checkbox"
                     >
                       <wx-view
                         class="smart-checkbox__icon-wrap"
@@ -789,7 +840,10 @@ exports[`should render demo and match snapshot 1`] = `
                     catch:tap="noop"
                   >
                     <wx-view
+                      ariaChecked="false"
+                      ariaDisabled="false"
                       class="smart-checkbox custom-class"
+                      role="checkbox"
                     >
                       <wx-view
                         class="smart-checkbox__icon-wrap"
@@ -849,7 +903,10 @@ exports[`should render demo and match snapshot 1`] = `
                     catch:tap="noop"
                   >
                     <wx-view
+                      ariaChecked="false"
+                      ariaDisabled="false"
                       class="smart-checkbox custom-class"
+                      role="checkbox"
                     >
                       <wx-view
                         class="smart-checkbox__icon-wrap"

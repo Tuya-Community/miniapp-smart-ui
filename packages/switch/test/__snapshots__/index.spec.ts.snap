@@ -2,7 +2,10 @@
 
 exports[`switch should allow to custom active-value and inactive-value 1`] = `
 <wx-view
+  ariaChecked="true"
+  ariaDisabled="false"
   class="smart-switch smart-switch--on custom-class"
+  role="switch"
   style="font-size:30px;background:#07c160"
   bind:tap="onClick"
 >
@@ -18,7 +21,10 @@ exports[`switch should allow to custom active-value and inactive-value 1`] = `
 
 exports[`switch should allow to custom active-value and inactive-value 2`] = `
 <wx-view
+  ariaChecked="false"
+  ariaDisabled="false"
   class="smart-switch custom-class"
+  role="switch"
   style="font-size:30px;background:#ee0a24"
   bind:tap="onClick"
 >
