@@ -17,8 +17,12 @@
       custom-class="smart-tabbar-item__icon__inner"
     />
     <block wx:else>
-      <slot wx:if="{{ active }}" name="icon-active" />
-      <slot wx:else name="icon" />
+      <view class="smart-tabbar-item__icon-slot {{active ? 'smart-tabbar-item__icon-slot--hidden': ''}}">
+        <slot name="icon" />
+      </view>
+      <view class="smart-tabbar-item__icon-slot {{active ? '' : 'smart-tabbar-item__icon-slot--hidden'}}">
+        <slot name="icon-active" />
+      </view>
     </block>
     <smart-info
       dot="{{ dot }}"
