@@ -5,7 +5,7 @@
   style="color: {{ active ? activeColor : inactiveColor }}"
   bindtap="onClick"
 >
-  <view class="smart-tabbar-item__text smart-tabbar-item__text-up" wx:if="{{upsideDown}}">
+  <view wx:if="{{upsideDown}}" class="smart-tabbar-item__text smart-tabbar-item__text-up">
     <slot />
   </view>
   <view class="smart-tabbar-item__icon">
