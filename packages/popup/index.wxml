@@ -4,7 +4,7 @@
 <import src="./popup.wxml" />
 
 <block wx:if="{{ isShowed }}">
-  <cover-view wx:if="{{ fullCoverView && isShowed && show }}" class="smart-popup-full-cover-view">
+  <cover-view wx:if="{{ fullCoverView && isShowed && show }}" class="smart-popup-full-cover-view" style="z-index: {{ zIndex }};">
     <smart-overlay
       wx:if="{{ overlay }}"
       show="{{ show }}"
