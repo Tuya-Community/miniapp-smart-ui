@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/field/index",
     "pages/dashboard/index",
     "pages/popup/index",
     "pages/bottom-sheet/index",
@@ -7,7 +8,6 @@
     "pages/picker/index",
     "pages/radio/index",
     "pages/notice-bar/index",
-    "pages/field/index",
     "pages/tabbar/index",
     "pages/dialog/index",
     "pages/nav-bar/index",

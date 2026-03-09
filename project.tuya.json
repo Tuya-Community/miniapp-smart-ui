@@ -11,7 +11,9 @@
     "MiniKit": "3.0.0"
   },
   "compilerOptions": {
-    "compatible": ["wx"]
+    "compatible": [
+      "wx"
+    ]
   },
   "compileType": "miniprogram",
   "remoteDebug": "mqtt"

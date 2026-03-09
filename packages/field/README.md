@@ -186,6 +186,30 @@ Page({
 </smart-cell-group>
 ```
 
+### 数字格式化 `v2.12.0`
+
+开启 `number-format` 后，数字输入会按千分位、小数位格式化展示；通过 `locale` 可指定地区格式（如 `de` 为德语 1.234,56，默认与英文为 1,234.56）。
+
+```html
+<smart-cell-group>
+  <smart-field
+    value="{{ numberFormatValue }}"
+    type="number"
+    number-format
+    label="金额"
+    placeholder="请输入"
+  />
+  <smart-field
+    value="{{ numberFormatValueDe }}"
+    type="number"
+    number-format
+    locale="de"
+    label="金额（德语格式）"
+    placeholder="请输入"
+  />
+</smart-cell-group>
+```
+
 ### 留言
 
 设置 type 为 `textarea` 模式时，可以在末尾显示输入的字数数量和限制数量。
@@ -299,6 +323,8 @@ Page({
 | left-icon                     | 左侧图标svg值或图片链接，可选值见 [Icon 组件](/material/smartui?comId=icon&appType=miniapp)                                                           | _string_            | -       |
 | maxlength                     | 最大输入长度，设置为 -1 的时候不限制最大长度                                                                   | _number_            | `-1`    |
 | name                          | 在表单内提交时的标识符。可以通过配置 `name` 来扩大点击区域                                                     | _string_            | -       |
+| number-format `v2.12.0`       | 是否开启数字格式化（千分位、小数位按 locale 展示）                                                             | _boolean_           | `false` |
+| locale `v2.12.0`              | 数字格式化使用的地区，如 `de`、`fr`，空则跟随系统                                                               | _string_            | `''`    |
 | password                      | 是否是密码类型                                                                                                 | _boolean_           | `false` |
 | placeholder                   | 输入框为空时占位符                                                                                             | _string_            | -       |
 | placeholder-style             | 指定 placeholder 的样式                                                                                        | _string_            | -       |

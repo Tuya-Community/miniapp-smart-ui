@@ -11,7 +11,9 @@ SmartComponent({
     autoHeight: {
       maxHeight: 200,
       minHeight: 100,
-    }
+    },
+    numberFormatValue: 12345.67,
+    numberFormatValueDe: 12345.67,
   },
 
   methods: {

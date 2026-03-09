@@ -1216,5 +1216,182 @@ exports[`should render demo and match snapshot 1`] = `
       </smart-field>
     </wx-view>
   </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
+      <smart-cell-group>
+        <wx-view
+          class="custom-class smart-cell-group "
+          style=""
+        >
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    />
+                    <wx-view
+                      class="smart-field__label"
+                    />
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--number"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--number input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="number"
+                        value="12,345.67"
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+          <smart-field>
+            <smart-cell
+              center="{{false}}"
+              customClass="custom-class smart-field"
+              size=""
+            >
+              <wx-view
+                class="custom-class smart-cell smart-cell--borderless"
+                hoverClass="smart-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="smart-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em"
+                />
+                <wx-view
+                  class="smart-cell__value value-class"
+                >
+                  <wx-view
+                    class="smart-field__left__body"
+                  >
+                    <wx-view
+                      class="smart-field__left__icon"
+                    />
+                    <wx-view
+                      class="smart-field__label"
+                    />
+                  </wx-view>
+                  <wx-view
+                    class="smart-field__body__box"
+                  >
+                    <wx-view
+                      class="smart-field__body smart-field__body--number"
+                    >
+                      <wx-view
+                        class="smart-field__control smart-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="smart-field__control smart-field__control--number input-class"
+                        confirmHold="{{false}}"
+                        confirmType=""
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        id=""
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder=""
+                        placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="number"
+                        value="12.345,67"
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:nicknamereview="onBindNicknameReview"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="smart-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="smart-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </smart-cell>
+          </smart-field>
+        </wx-view>
+      </smart-cell-group>
+    </wx-view>
+  </demo-block>
 </main>
 `;

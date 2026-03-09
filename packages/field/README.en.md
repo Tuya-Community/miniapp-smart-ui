@@ -186,6 +186,30 @@ You can insert a button at the end of the input box through the button slot.
 </smart-cell-group>
 ```
 
+### Number Format `v2.12.0`
+
+When `number-format` is enabled, numeric input is displayed with thousands and decimal separators according to locale. Use `locale` to specify a region (e.g. `de` for German 1.234,56; default is 1,234.56).
+
+```html
+<smart-cell-group>
+  <smart-field
+    value="{{ numberFormatValue }}"
+    type="number"
+    number-format
+    label="Amount"
+    placeholder="Please enter"
+  />
+  <smart-field
+    value="{{ numberFormatValueDe }}"
+    type="number"
+    number-format
+    locale="de"
+    label="Amount (German format)"
+    placeholder="Please enter"
+  />
+</smart-cell-group>
+```
+
 ### Message
 
 When the type is set to `textarea` mode, the number of entered words and the limit number can be displayed at the end.
@@ -299,6 +323,8 @@ Upgrade to version 1.10.21 or above, and configure the `name` attribute.
 | left-icon                    | Left icon svg value or image link, optional values see [Icon component](/material/smartui?comId=icon&appType=miniapp)                               | _string_            | -       |
 | maxlength                    | Maximum input length, setting it to -1 will not limit the maximum length                                      | _number_            | `-1`    |
 | name                         | Identifier when submitting in the form. Can expand the clickable area by configuring `name`                    | _string_            | -       |
+| number-format `v2.12.0`      | Whether to enable number formatting (thousands/decimal separators by locale)                                   | _boolean_           | `false` |
+| locale `v2.12.0`            | Locale for number formatting, e.g. `de`, `fr`; empty to follow system                                         | _string_            | `''`    |
 | password                     | Whether it is a password type                                                                                 | _boolean_           | `false` |
 | placeholder                  | Placeholder text when the input box is empty                                                                  | _string_            | -       |
 | placeholder-style            | Specify the style of the placeholder                                                                          | _string_            | -       |
