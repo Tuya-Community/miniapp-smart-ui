@@ -1,4 +1,9 @@
-<view class="contain">
+<view class="contain"
+  aria-valuemin="{{min}}"
+  aria-valuemax="{{max}}"
+  aria-valuenow="{{value}}"
+  aria-disabled="{{disable}}"
+>
 <ty-slider 
 instanceId="{{instanceId}}"
 className="{{className}}"
