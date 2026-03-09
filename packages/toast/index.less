@@ -13,8 +13,10 @@
   // allow newline charactor
   white-space: pre-wrap;
   word-wrap: break-word;
-  background-color: var(--toast-background-color, @toast-background-color);
+  background-color: var(--toast-panel-background, var(--toast-background-color, @toast-background-color));
   border-radius: var(--toast-border-radius, @toast-border-radius);
+  border: 1px solid var(--toast-panel-border-color, transparent);
+  box-shadow: var(--toast-panel-box-shadow, none);
 
   &__container {
     position: fixed;
