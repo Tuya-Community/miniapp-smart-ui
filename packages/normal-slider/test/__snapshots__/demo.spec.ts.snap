@@ -11,7 +11,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <smart-slider>
           <wx-view
-            ariaDisabled="{{false}}"
+            ariaDisabled="false"
             ariaValuemax="{{100}}"
             ariaValuemin="{{0}}"
             ariaValuenow="{{50}}"
@@ -60,7 +60,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <smart-slider>
           <wx-view
-            ariaDisabled="{{false}}"
+            ariaDisabled="false"
             ariaValuemax="{{100}}"
             ariaValuemin="{{0}}"
             ariaValuenow="{{50}}"
@@ -109,7 +109,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <smart-slider>
           <wx-view
-            ariaDisabled="{{false}}"
+            ariaDisabled="false"
             ariaValuemax="{{90}}"
             ariaValuemin="{{0}}"
             ariaValuenow="{{50}}"
@@ -158,7 +158,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <smart-slider>
           <wx-view
-            ariaDisabled="{{false}}"
+            ariaDisabled="false"
             ariaValuemax="{{100}}"
             ariaValuemin="{{0}}"
             ariaValuenow="{{50}}"
@@ -207,7 +207,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <smart-slider>
           <wx-view
-            ariaDisabled="{{false}}"
+            ariaDisabled="false"
             ariaValuemax="{{100}}"
             ariaValuemin="{{0}}"
             ariaValuenow="{{50}}"
@@ -256,7 +256,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <smart-slider>
           <wx-view
-            ariaDisabled="{{false}}"
+            ariaDisabled="false"
             ariaValuemax="{{100}}"
             ariaValuemin="{{0}}"
             ariaValuenow="{{50}}"
@@ -360,7 +360,7 @@ exports[`should render demo and match snapshot 1`] = `
           useParcelPadding="{{false}}"
         >
           <wx-view
-            ariaDisabled="{{false}}"
+            ariaDisabled="false"
             ariaValuemax="{{100}}"
             ariaValuemin="{{0}}"
             ariaValuenow="{{0}}"
