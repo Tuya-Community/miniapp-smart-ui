@@ -2,7 +2,7 @@
   aria-valuemin="{{min}}"
   aria-valuemax="{{max}}"
   aria-valuenow="{{value}}"
-  aria-disabled="{{disable}}"
+  aria-disabled="{{disable ? 'true' : 'false'}}"
 >
 <ty-slider 
 instanceId="{{instanceId}}"
