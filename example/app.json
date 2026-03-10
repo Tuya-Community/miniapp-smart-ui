@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/field/index",
     "pages/dashboard/index",
     "pages/popup/index",
     "pages/bottom-sheet/index",
     "pages/datetime-picker/index",
+    "pages/field/index",
     "pages/picker/index",
     "pages/radio/index",
     "pages/notice-bar/index",
