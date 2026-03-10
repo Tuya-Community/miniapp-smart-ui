@@ -40,11 +40,11 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
-    
-    if (instance) {
-      const result = instance.formatValue('123456789');
-      expect(result).toBe('12345');
-    }
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    if (!instance) return;
+    const result = instance.formatValue('123456789');
+    expect(result).toBe('12345');
   });
 
   test('should format value without maxlength limit', () => {
@@ -60,11 +60,11 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
-    
-    if (instance) {
-      const result = instance.formatValue('123456789');
-      expect(result).toBe('123456789');
-    }
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    if (!instance) return;
+    const result = instance.formatValue('123456789');
+    expect(result).toBe('123456789');
   });
 
   test('should handle onInput event', async () => {
@@ -91,18 +91,19 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onInput({
+      detail: { value: '123456' },
+    });
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.onInput({
-        detail: { value: '123456' },
-      });
-      await simulate.sleep(10);
-
-      expect(instance.value).toBe('12345');
-      expect(inputEvent).toBeTruthy();
-      expect(changeEvent).toBeTruthy();
-    }
+    expect(instance.value).toBe('12345');
+    expect(inputEvent).toBeTruthy();
+    expect(changeEvent).toBeTruthy();
   });
 
   test('should handle onInput with empty detail', async () => {
@@ -118,14 +119,15 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onInput({});
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.onInput({});
-      await simulate.sleep(10);
-
-      expect(instance.value).toBe('');
-    }
+    expect(instance.value).toBe('');
   });
 
   test('should handle onFocus event', async () => {
@@ -148,18 +150,19 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onFocus({
+      detail: { value: 'test', cursor: 4 },
+    });
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.onFocus({
-        detail: { value: 'test', cursor: 4 },
-      });
-      await simulate.sleep(10);
-
-      expect(instance.focused).toBe(true);
-      expect(focusEvent).toBeTruthy();
-      expect(focusEvent.value).toBe('test');
-    }
+    expect(instance.focused).toBe(true);
+    expect(focusEvent).toBeTruthy();
+    expect(focusEvent.value).toBe('test');
   });
 
   test('should handle onBlur event', async () => {
@@ -182,18 +185,19 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onBlur({
+      detail: { value: 'test' },
+    });
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.onBlur({
-        detail: { value: 'test' },
-      });
-      await simulate.sleep(10);
-
-      expect(instance.focused).toBe(false);
-      expect(blurEvent).toBeTruthy();
-      expect(blurEvent.value).toBe('test');
-    }
+    expect(instance.focused).toBe(false);
+    expect(blurEvent).toBeTruthy();
+    expect(blurEvent.value).toBe('test');
   });
 
   test('should handle onClickIcon event', async () => {
@@ -216,14 +220,15 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onClickIcon();
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.onClickIcon();
-      await simulate.sleep(10);
-
-      expect(clickIconEvent).toBe(true);
-    }
+    expect(clickIconEvent).toBe(true);
   });
 
   test('should handle onClickInput event', async () => {
@@ -246,17 +251,18 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onClickInput({
+      detail: { x: 100, y: 200 },
+    });
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.onClickInput({
-        detail: { x: 100, y: 200 },
-      });
-      await simulate.sleep(10);
-
-      expect(clickInputEvent).toBeTruthy();
-      expect(clickInputEvent.x).toBe(100);
-    }
+    expect(clickInputEvent).toBeTruthy();
+    expect(clickInputEvent.x).toBe(100);
   });
 
   test('should handle onClear', async () => {
@@ -283,22 +289,23 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.value = 'test';
+    instance.setData({ innerValue: 'test' });
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.value = 'test';
-      instance.setData({ innerValue: 'test' });
-      await simulate.sleep(10);
+    instance.onClear();
+    await simulate.sleep(50);
 
-      instance.onClear();
-      await simulate.sleep(50);
-
-      expect(instance.value).toBe('');
-      expect(wrapper?.data.innerValue).toBe('');
-      expect(clearEvent).toBe('');
-      // changeEvent might be empty string or object depending on extraEventParams
-      expect(changeEvent !== null && changeEvent !== undefined).toBe(true);
-    }
+    expect(instance.value).toBe('');
+    expect(wrapper?.data.innerValue).toBe('');
+    expect(clearEvent).toBe('');
+    // changeEvent might be empty string or object depending on extraEventParams
+    expect(changeEvent !== null && changeEvent !== undefined).toBe(true);
   });
 
   test('should handle onConfirm event', async () => {
@@ -321,17 +328,18 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onConfirm({
+      detail: { value: 'confirmed' },
+    });
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.onConfirm({
-        detail: { value: 'confirmed' },
-      });
-      await simulate.sleep(10);
-
-      expect(instance.value).toBe('confirmed');
-      expect(confirmEvent).toBe('confirmed');
-    }
+    expect(instance.value).toBe('confirmed');
+    expect(confirmEvent).toBe('confirmed');
   });
 
   test('should handle onConfirm with empty detail', async () => {
@@ -347,14 +355,15 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onConfirm({});
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.onConfirm({});
-      await simulate.sleep(10);
-
-      expect(instance.value).toBe('');
-    }
+    expect(instance.value).toBe('');
   });
 
   test('should handle setValue', async () => {
@@ -377,15 +386,16 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.setValue('new value');
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.setValue('new value');
-      await simulate.sleep(10);
-
-      expect(instance.value).toBe('new value');
-      expect(changeEvent).toBeTruthy();
-    }
+    expect(instance.value).toBe('new value');
+    expect(changeEvent).toBeTruthy();
   });
 
   test('should handle setValue with empty string', async () => {
@@ -401,19 +411,20 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.value = 'test';
+    instance.setData({ innerValue: 'test' });
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.value = 'test';
-      instance.setData({ innerValue: 'test' });
-      await simulate.sleep(10);
+    instance.setValue('');
+    await simulate.sleep(10);
 
-      instance.setValue('');
-      await simulate.sleep(10);
-
-      expect(instance.value).toBe('');
-      expect(wrapper?.data.innerValue).toBe('');
-    }
+    expect(instance.value).toBe('');
+    expect(wrapper?.data.innerValue).toBe('');
   });
 
   test('should handle onLineChange event', async () => {
@@ -436,17 +447,18 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onLineChange({
+      detail: { height: 100, heightRpx: 200, lineCount: 5 },
+    });
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.onLineChange({
-        detail: { height: 100, heightRpx: 200, lineCount: 5 },
-      });
-      await simulate.sleep(10);
-
-      expect(lineChangeEvent).toBeTruthy();
-      expect(lineChangeEvent.height).toBe(100);
-    }
+    expect(lineChangeEvent).toBeTruthy();
+    expect(lineChangeEvent.height).toBe(100);
   });
 
   test('should handle onKeyboardHeightChange event', async () => {
@@ -469,17 +481,18 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onKeyboardHeightChange({
+      detail: { height: 300, duration: 250 },
+    });
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.onKeyboardHeightChange({
-        detail: { height: 300, duration: 250 },
-      });
-      await simulate.sleep(10);
-
-      expect(keyboardHeightChangeEvent).toBeTruthy();
-      expect(keyboardHeightChangeEvent.height).toBe(300);
-    }
+    expect(keyboardHeightChangeEvent).toBeTruthy();
+    expect(keyboardHeightChangeEvent.height).toBe(300);
   });
 
   test('should handle onBindNicknameReview event', async () => {
@@ -502,17 +515,18 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onBindNicknameReview({
+      detail: { pass: true, timeout: false },
+    });
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.onBindNicknameReview({
-        detail: { pass: true, timeout: false },
-      });
-      await simulate.sleep(10);
-
-      expect(nicknamereviewEvent).toBeTruthy();
-      expect(nicknamereviewEvent.pass).toBe(true);
-    }
+    expect(nicknamereviewEvent).toBeTruthy();
+    expect(nicknamereviewEvent.pass).toBe(true);
   });
 
   test('should handle emitChange without extraEventParams', async () => {
@@ -539,17 +553,18 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    const result = instance.emitChange({ value: 'test' });
     await simulate.sleep(10);
 
-    if (instance) {
-      const result = instance.emitChange({ value: 'test' });
-      await simulate.sleep(10);
-
-      expect(wrapper?.data.value).toBe('test');
-      expect(inputEvent).toBe('test');
-      expect(changeEvent).toBe('test');
-      expect(result).toBeUndefined();
-    }
+    expect(wrapper?.data.value).toBe('test');
+    expect(inputEvent).toBe('test');
+    expect(changeEvent).toBe('test');
+    expect(result).toBeUndefined();
   });
 
   test('should handle emitChange with extraEventParams', async () => {
@@ -576,28 +591,29 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    const result = instance.emitChange({ value: 'test' });
     await simulate.sleep(10);
 
-    if (instance) {
-      const result = instance.emitChange({ value: 'test' });
-      await simulate.sleep(10);
+    expect(wrapper?.data.value).toBe('test');
+    expect(inputEvent).toBeTruthy();
+    expect(inputEvent.value).toBe('test');
+    expect(typeof inputEvent.callback).toBe('function');
+    expect(changeEvent).toBeTruthy();
+    expect(changeEvent.value).toBe('test');
 
-      expect(wrapper?.data.value).toBe('test');
-      expect(inputEvent).toBeTruthy();
-      expect(inputEvent.value).toBe('test');
-      expect(typeof inputEvent.callback).toBe('function');
-      expect(changeEvent).toBeTruthy();
-      expect(changeEvent.value).toBe('test');
-      
-      // Test callback
-      if (inputEvent.callback) {
-        inputEvent.callback({ value: 'updated' });
-        await simulate.sleep(10);
-        expect(wrapper?.data.innerValue).toBe('updated');
-      }
-      
-      expect(result).toBeUndefined();
+    // Test callback
+    if (inputEvent.callback) {
+      inputEvent.callback({ value: 'updated' });
+      await simulate.sleep(10);
+      expect(wrapper?.data.innerValue).toBe('updated');
     }
+
+    expect(result).toBeUndefined();
   });
 
   test('should handle clearTrigger watch', async () => {
@@ -612,6 +628,7 @@ describe('field', () => {
     comp.attach(document.createElement('parent-wrapper'));
 
     const wrapper = comp.querySelector('#field');
+    expect(wrapper).toBeTruthy();
     await simulate.sleep(10);
 
     // Change clearTrigger to trigger watch
@@ -635,15 +652,16 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.value = 'test';
+    instance.setShowClear();
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.value = 'test';
-      instance.setShowClear();
-      await simulate.sleep(10);
-
-      expect(wrapper?.data.showClear).toBe(true);
-    }
+    expect(wrapper?.data.showClear).toBe(true);
   });
 
   test('should setShowClear with clearTrigger focus and not focused', async () => {
@@ -659,16 +677,17 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.value = 'test';
+    instance.focused = false;
+    instance.setShowClear();
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.value = 'test';
-      instance.focused = false;
-      instance.setShowClear();
-      await simulate.sleep(10);
-
-      expect(wrapper?.data.showClear).toBe(false);
-    }
+    expect(wrapper?.data.showClear).toBe(false);
   });
 
   test('should setShowClear with clearTrigger focus and focused', async () => {
@@ -684,16 +703,17 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.value = 'test';
+    instance.focused = true;
+    instance.setShowClear();
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.value = 'test';
-      instance.focused = true;
-      instance.setShowClear();
-      await simulate.sleep(10);
-
-      expect(wrapper?.data.showClear).toBe(true);
-    }
+    expect(wrapper?.data.showClear).toBe(true);
   });
 
   test('should setShowClear with no value', async () => {
@@ -709,15 +729,16 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.value = '';
+    instance.setShowClear();
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.value = '';
-      instance.setShowClear();
-      await simulate.sleep(10);
-
-      expect(wrapper?.data.showClear).toBe(false);
-    }
+    expect(wrapper?.data.showClear).toBe(false);
   });
 
   test('should setShowClear with readonly', async () => {
@@ -733,15 +754,16 @@ describe('field', () => {
 
     const wrapper = comp.querySelector('#field');
     const instance = wrapper?.instance;
+    expect(wrapper).toBeTruthy();
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.value = 'test';
+    instance.setShowClear();
     await simulate.sleep(10);
 
-    if (instance) {
-      instance.value = 'test';
-      instance.setShowClear();
-      await simulate.sleep(10);
-
-      expect(wrapper?.data.showClear).toBe(false);
-    }
+    expect(wrapper?.data.showClear).toBe(false);
   });
 });
 

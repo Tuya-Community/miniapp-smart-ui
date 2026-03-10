@@ -186,6 +186,30 @@ You can insert a button at the end of the input box through the button slot.
 </smart-cell-group>
 ```
 
+### Number Format `v2.12.0`
+
+When `number-format` is enabled, numeric input is displayed with thousands and decimal separators according to locale. Use `locale` to specify a region (e.g. `de` for German 1.234,56; default is 1,234.56).
+
+```html
+<smart-cell-group>
+  <smart-field
+    value="{{ numberFormatValue }}"
+    type="number"
+    number-format
+    label="Amount"
+    placeholder="Please enter"
+  />
+  <smart-field
+    value="{{ numberFormatValueDe }}"
+    type="number"
+    number-format
+    locale="de"
+    label="Amount (German format)"
+    placeholder="Please enter"
+  />
+</smart-cell-group>
+```
+
 ### Message
 
 When the type is set to `textarea` mode, the number of entered words and the limit number can be displayed at the end.
@@ -231,38 +255,6 @@ Page({
 });
 ```
 
-## Frequently Asked Questions
-
-### Why does the placeholder appear bold and flicker when focusing on a real device?
-
-Since the input component and textarea component of the WeChat Mini Program are native components, focusing will cover the corresponding position with a native input box, causing this phenomenon.
-
-Related discussion can be seen at [WeChat Open Community](https://developers.weixin.qq.com/community/search?query=placeholder%20%E9%97%AA%E7%83%81%20%E5%8A%A0%E7%B2%97).
-
-### Why does the placeholder cover other components like popup on a real device?
-
-Due to the native component constraints of the WeChat Mini Program's input and textarea components, more details can be found in [Native Component Description](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html).
-
-### Why does the placeholder of the textarea shift on real devices?
-
-The textarea component in WeChat Mini Program has different default styles in Android and iOS. In iOS, there is default padding that cannot be set to zero.
-
-Additionally, many CSS properties like `vertical-align` and `line-height` do not apply to `placeholder-style`.
-
-This causes the placeholder to possibly shift on real devices.
-
-WeChat has supported the removal of default padding since the `2.10.0` base library version, but lower versions still have this problem. More details can be found at [WeChat Open Community](https://developers.weixin.qq.com/community/develop/issue/96).
-
-### Why does the handwriting input method lose some characters / not trigger the input event?
-
-This is an issue with the WeChat Mini Program's input component. To accommodate handwriting input scenarios, you can get the input value in the `blur` event.
-
-Related discussion can be seen at [WeChat Open Community](https://developers.weixin.qq.com/community/search?query=input%20%E6%89%8B%E5%86%99%E8%BE%93%E5%85%A5&page=1&block=1&random=1567079239098).
-
-### How to enlarge the clickable area? How to trigger the keyboard by clicking the label or error message?
-
-Upgrade to version 1.10.21 or above, and configure the `name` attribute.
-
 ## API
 
 ### Props
@@ -299,6 +291,8 @@ Upgrade to version 1.10.21 or above, and configure the `name` attribute.
 | left-icon                    | Left icon svg value or image link, optional values see [Icon component](/material/smartui?comId=icon&appType=miniapp)                               | _string_            | -       |
 | maxlength                    | Maximum input length, setting it to -1 will not limit the maximum length                                      | _number_            | `-1`    |
 | name                         | Identifier when submitting in the form. Can expand the clickable area by configuring `name`                    | _string_            | -       |
+| number-format `v2.12.0`      | Whether to enable number formatting (thousands/decimal separators by locale)                                   | _boolean_           | `false` |
+| locale `v2.12.0`            | Locale for number formatting, e.g. `de`, `fr`; empty to follow system                                         | _string_            | `''`    |
 | password                     | Whether it is a password type                                                                                 | _boolean_           | `false` |
 | placeholder                  | Placeholder text when the input box is empty                                                                  | _string_            | -       |
 | placeholder-style            | Specify the style of the placeholder                                                                          | _string_            | -       |
@@ -410,3 +404,35 @@ The component provides the following CSS variables for custom styles. For usage,
 | --field-textarea-border-radius `v2.1.0`   | _8px_   | Rounded corners of input box    |
 | --field-textarea-padding `v2.1.0`   | _12px 8px_   | Enter inner margin    |
 | --field-textarea-limit-padding-bottom `v2.1.0`   | _20px_   | The bottom of the input box displays the margin when limiting the number of strings    |
+
+## FAQ
+
+### Why does the placeholder appear bold and flicker when focusing on a real device?
+
+Since the input component and textarea component of the WeChat Mini Program are native components, focusing will cover the corresponding position with a native input box, causing this phenomenon.
+
+Related discussion can be seen at [WeChat Open Community](https://developers.weixin.qq.com/community/search?query=placeholder%20%E9%97%AA%E7%83%81%20%E5%8A%A0%E7%B2%97).
+
+### Why does the placeholder cover other components like popup on a real device?
+
+Due to the native component constraints of the WeChat Mini Program's input and textarea components, more details can be found in [Native Component Description](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html).
+
+### Why does the placeholder of the textarea shift on real devices?
+
+The textarea component in WeChat Mini Program has different default styles in Android and iOS. In iOS, there is default padding that cannot be set to zero.
+
+Additionally, many CSS properties like `vertical-align` and `line-height` do not apply to `placeholder-style`.
+
+This causes the placeholder to possibly shift on real devices.
+
+WeChat has supported the removal of default padding since the `2.10.0` base library version, but lower versions still have this problem. More details can be found at [WeChat Open Community](https://developers.weixin.qq.com/community/develop/issue/96).
+
+### Why does the handwriting input method lose some characters / not trigger the input event?
+
+This is an issue with the WeChat Mini Program's input component. To accommodate handwriting input scenarios, you can get the input value in the `blur` event.
+
+Related discussion can be seen at [WeChat Open Community](https://developers.weixin.qq.com/community/search?query=input%20%E6%89%8B%E5%86%99%E8%BE%93%E5%85%A5&page=1&block=1&random=1567079239098).
+
+### How to enlarge the clickable area? How to trigger the keyboard by clicking the label or error message?
+
+Upgrade to version 1.10.21 or above, and configure the `name` attribute.

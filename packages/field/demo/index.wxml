@@ -130,3 +130,21 @@
     maxlength="{{ 200 }}"
   />
 </demo-block>
+
+<demo-block title="{{I18n.t('fieldNumberFormat')}}">
+  <smart-cell-group>
+    <smart-field
+      value="{{ numberFormatValue }}"
+      number-format
+      label="{{I18n.t('fieldAmount')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+    />
+    <smart-field
+      value="{{ numberFormatValueDe }}"
+      number-format
+      locale="de"
+      label="{{I18n.t('fieldAmountLocaleDe')}}"
+      placeholder="{{I18n.t('pleaseEnter')}}"
+    />
+  </smart-cell-group>
+</demo-block>
