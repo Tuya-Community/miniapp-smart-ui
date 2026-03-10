@@ -13,9 +13,9 @@
   --smart-ui-battery-slash-border-color: #fff;
 
   // Toast 浅色面板：背景、描边、外投影
-  --toast-panel-background: #5C5C5C;
-  --toast-panel-border-color: rgba(255, 255, 255, 0.05);
-  --toast-panel-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.12);
+  --smart-ui-toast-background: #5C5C5C;
+  --smart-ui-toast-border: 1px solid rgba(255, 255, 255, 0.05);
+  --smart-ui-toast-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.12);
 
   // Overlay 毛玻璃遮罩（支持 backdrop-filter 时）/ 半透明遮罩（降级）
   --smart-ui-overlay-blur-background: rgba(40, 44, 53, 0.22);
@@ -35,9 +35,9 @@
     --smart-ui-battery-slash-border-color: #000;
 
     // Toast 深色面板
-    --toast-panel-background: #3C3C3C;
-    --toast-panel-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-
+    --smart-ui-toast-background: #3C3C3C;
+    --smart-ui-toast-border: none;
+    --smart-ui-toast-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     // Overlay 深色模式
     --smart-ui-overlay-blur-background: rgba(0, 0, 0, 0.6);
   }
@@ -104,6 +104,9 @@
 );
 @dialog-bg: var(--smart-ui-dialog-background, rgba(255, 255, 255, 1)); // 弹窗背景色
 @overlay-blur-background: var(--smart-ui-overlay-blur-background, rgba(40, 44, 53, 0.22));
+@toast-bg: var(--smart-ui-toast-background, #5C5C5C);
+@toast-base-border: var(--smart-ui-toast-border, 1px solid rgba(255, 255, 255, 0.05));
+@toast-base-box-shadow: var(--smart-ui-toast-box-shadow, 0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.12));
 
 // Color Palette
 @black: #000;
@@ -769,7 +772,9 @@
 @toast-text-color: @white;
 @toast-line-height: 20px;
 @toast-border-radius: 12px;
-@toast-background-color: fade(@black, 70%);
+@toast-background-color: @toast-bg;
+@toast-border: @toast-base-border;
+@toast-box-shadow: @toast-base-box-shadow;
 @toast-icon-size: 36px;
 @toast-text-min-width: 96px;
 @toast-text-padding: 14px 16px;
