@@ -22,7 +22,8 @@ category: 导航
 
 ### 首页
 
-首页的文本样式默认左对齐并加粗，点击左侧文本时触发事件；background `v2.7.0` 属性可以设置nav-bar的背景色。
+首页的文本样式默认左对齐并加粗，点击左侧文本时触发事件；background `v2.7.0` 属性可以设置nav-bar的背景色。  
+通过 `slot="left"` 可在左侧区域插入自定义内容（如图标），插入的内容使用 `margin-left: auto` 可在不脱离文档流的情况下在左侧容器内居右排列 `v2.11.1`。
 
 ```html
 <smart-nav-bar
@@ -36,6 +37,19 @@ category: 导航
   left-text-type="home"
   bind:click-left-text="onClickLeftText"
 />
+<smart-nav-bar
+  background="#E4EDFF"
+  custom-class="demo-nav-bar"
+  left-text="HomeHomeHomeHomeHome"
+  left-text-type="home"
+  bind:click-left-text="onClickLeftText"
+>
+  <smart-icon 
+    style="margin-left: auto;padding-left: 16px;" 
+    slot="left" 
+    name="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png" size="24px" 
+  />
+</smart-nav-bar>
 ```
 
 ```js
