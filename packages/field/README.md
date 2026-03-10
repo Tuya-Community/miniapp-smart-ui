@@ -253,38 +253,6 @@ Page({
 });
 ```
 
-## 常见问题
-
-### 真机上为什么会出现聚焦时 placeholder 加粗、闪烁的现象？
-
-由于微信小程序的 input 组件和 textarea 组件是原生组件，聚焦时会将原生的输入框覆盖在对应位置上，导致了这个现象的产生。
-
-相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=placeholder%20%E9%97%AA%E7%83%81%20%E5%8A%A0%E7%B2%97)。
-
-### 真机上 placeholder 为什么会盖过 popup 等其它组件？
-
-由于微信小程序的 input 组件和 textarea 组件是原生组件，遵循原生组件的限制，详情可以查看[原生组件说明](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html)。
-
-### textarea 的 placeholder 在真机上为什么会偏移？
-
-微信小程序的 textarea 组件在 Android 和 iOS 中默认样式不同，在 iOS 中会有默认的 `padding`，且无法置 0。
-
-同时 `placeholder-style` 对 `vertical-align`、`line-height` 等大量 css 属性都不生效。
-
-这一系列的问题导致了 placeholder 在真机上可能会出现偏移。
-
-微信已经在 `2.10.0` 基础库版本后支持移除默认的 `padding`，但低版本仍有问题。详情可以查看 [微信开放社区](https://developers.weixin.qq.com/community/develop/issue/96)。
-
-### 手写输入法为什么会丢失部分字符 / 手写输入法为什么不会触发 input 事件？
-
-这是微信小程序的 input 组件本身的问题，如果需要兼容手写输入法的场景，可以在 `blur` 事件中取到输入的值。
-
-相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=input%20%E6%89%8B%E5%86%99%E8%BE%93%E5%85%A5&page=1&block=1&random=1567079239098)。
-
-### 如何扩大点击区域？点击 label、错误信息 都能聚焦唤起键盘呢？
-
-升级至 1.10.21 版本及以上，配置 `name` 属性即可
-
 ## API
 
 ### Props
@@ -434,3 +402,36 @@ Page({
 | --field-textarea-border-radius `v2.1.0`   | _8px_   | 输入框圆角    |
 | --field-textarea-padding `v2.1.0`   | _12px 8px_   | 输入内边距    |
 | --field-textarea-limit-padding-bottom `v2.1.0`   | _20px_   | 输入框底部显示限制字符串数量时的内边距    |
+
+
+## 常见问题
+
+### 真机上为什么会出现聚焦时 placeholder 加粗、闪烁的现象？
+
+由于微信小程序的 input 组件和 textarea 组件是原生组件，聚焦时会将原生的输入框覆盖在对应位置上，导致了这个现象的产生。
+
+相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=placeholder%20%E9%97%AA%E7%83%81%20%E5%8A%A0%E7%B2%97)。
+
+### 真机上 placeholder 为什么会盖过 popup 等其它组件？
+
+由于微信小程序的 input 组件和 textarea 组件是原生组件，遵循原生组件的限制，详情可以查看[原生组件说明](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html)。
+
+### textarea 的 placeholder 在真机上为什么会偏移？
+
+微信小程序的 textarea 组件在 Android 和 iOS 中默认样式不同，在 iOS 中会有默认的 `padding`，且无法置 0。
+
+同时 `placeholder-style` 对 `vertical-align`、`line-height` 等大量 css 属性都不生效。
+
+这一系列的问题导致了 placeholder 在真机上可能会出现偏移。
+
+微信已经在 `2.10.0` 基础库版本后支持移除默认的 `padding`，但低版本仍有问题。详情可以查看 [微信开放社区](https://developers.weixin.qq.com/community/develop/issue/96)。
+
+### 手写输入法为什么会丢失部分字符 / 手写输入法为什么不会触发 input 事件？
+
+这是微信小程序的 input 组件本身的问题，如果需要兼容手写输入法的场景，可以在 `blur` 事件中取到输入的值。
+
+相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=input%20%E6%89%8B%E5%86%99%E8%BE%93%E5%85%A5&page=1&block=1&random=1567079239098)。
+
+### 如何扩大点击区域？点击 label、错误信息 都能聚焦唤起键盘呢？
+
+升级至 1.10.21 版本及以上，配置 `name` 属性即可

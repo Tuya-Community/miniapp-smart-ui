@@ -1259,7 +1259,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="smart-field__body__box"
                   >
                     <wx-view
-                      class="smart-field__body smart-field__body--number"
+                      class="smart-field__body smart-field__body--text"
                     >
                       <wx-view
                         class="smart-field__control smart-field__control--custom"
@@ -1269,7 +1269,7 @@ exports[`should render demo and match snapshot 1`] = `
                         adjustPosition="{{true}}"
                         alwaysEmbed="{{false}}"
                         autoFocus="{{false}}"
-                        class="smart-field__control smart-field__control--number input-class"
+                        class="smart-field__control smart-field__control--text input-class"
                         confirmHold="{{false}}"
                         confirmType=""
                         cursor="{{-1}}"
@@ -1284,7 +1284,7 @@ exports[`should render demo and match snapshot 1`] = `
                         placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
                         selectionEnd="{{-1}}"
                         selectionStart="{{-1}}"
-                        type="number"
+                        type="text"
                         value="12,345.67"
                         bind:blur="onBlur"
                         bind:confirm="onConfirm"
@@ -1341,7 +1341,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="smart-field__body__box"
                   >
                     <wx-view
-                      class="smart-field__body smart-field__body--number"
+                      class="smart-field__body smart-field__body--text"
                     >
                       <wx-view
                         class="smart-field__control smart-field__control--custom"
@@ -1351,7 +1351,7 @@ exports[`should render demo and match snapshot 1`] = `
                         adjustPosition="{{true}}"
                         alwaysEmbed="{{false}}"
                         autoFocus="{{false}}"
-                        class="smart-field__control smart-field__control--number input-class"
+                        class="smart-field__control smart-field__control--text input-class"
                         confirmHold="{{false}}"
                         confirmType=""
                         cursor="{{-1}}"
@@ -1366,7 +1366,7 @@ exports[`should render demo and match snapshot 1`] = `
                         placeholderStyle="color: var(--field-placeholder-text-color, var(--app-B6-N4, rgba(0, 0, 0, 0.4)));"
                         selectionEnd="{{-1}}"
                         selectionStart="{{-1}}"
-                        type="number"
+                        type="text"
                         value="12.345,67"
                         bind:blur="onBlur"
                         bind:confirm="onConfirm"
