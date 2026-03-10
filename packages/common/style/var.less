@@ -19,8 +19,6 @@
 
   // Overlay 毛玻璃遮罩（支持 backdrop-filter 时）/ 半透明遮罩（降级）
   --overlay-blur-background: rgba(40, 44, 53, 0.22);
-  --overlay-blur-radius: 24px;
-  --overlay-fallback-background: rgba(0, 0, 0, 0.4);
 
   &[theme='dark'] {
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
@@ -42,7 +40,6 @@
 
     // Overlay 深色模式
     --overlay-blur-background: rgba(0, 0, 0, 0.6);
-    --overlay-fallback-background: rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -100,12 +97,13 @@
 @B6-N7: var(--app-B6-N7, rgba(0, 0, 0, 0.1)); // 列表 N7 字体色
 @B6-N8: var(--app-B6-N8, rgba(0, 0, 0, 0.4)); // 列表 N8 字体色
 @B6-N9: var(--app-B6-N9, rgba(0, 0, 0, 0.05)); // 列表 N9 字体色
-@overlay: var(--smart-ui-overlay, rgba(0, 0, 0, 0.6)); // 遮罩层
+@overlay: var(--smart-ui-overlay, rgba(0, 0, 0, 0.7)); // 遮罩层
 @border-image: var(
   --smart-ui-border-image,
   linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))
 );
 @dialog-bg: var(--smart-ui-dialog-background, rgba(255, 255, 255, 1)); // 弹窗背景色
+@overlay-blur-background: var(--overlay-blur-background, rgba(40, 44, 53, 0.22));
 
 // Color Palette
 @black: #000;
@@ -536,6 +534,8 @@
 
 // Overlay
 @overlay-background-color: @overlay;
+@overlay-blur-background: @overlay-blur-background;
+@overlay-blur-radius: 24px;
 
 // Picker
 @picker-background-color: @B4;

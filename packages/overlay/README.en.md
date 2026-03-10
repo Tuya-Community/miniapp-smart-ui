@@ -126,7 +126,6 @@ The overlay automatically uses a **blur backdrop** when the device supports `bac
 
 | Name                           | Default (light / dark)                   | Description |
 | ------------------------------ | ---------------------------------------- | ----------- |
-| --overlay-background-color     | -                                        | Override overlay background; when set, blur/fallback variables are not used |
-| --overlay-blur-background      | _rgba(40,44,53,0.22)_ / _rgba(0,0,0,0.6)_ | Background when blur is supported |
-| --overlay-blur-radius          | _24px_                                   | Blur radius for backdrop |
-| --overlay-fallback-background  | _rgba(0,0,0,0.4)_ / _rgba(0,0,0,0.7)_    | Background when blur is not supported |
+| --overlay-background-color     | _rgba(0,0,0,0.4)_ / _rgba(0,0,0,0.7)_    | Override overlay background; when set, blur/fallback variables are not used |
+| --overlay-blur-background `v2.12.0`      | _rgba(40,44,53,0.22)_ / _rgba(0,0,0,0.6)_ | Background when blur is supported |
+| --overlay-blur-radius  `v2.12.0`         | _24px_                                   | Blur radius for backdrop |
