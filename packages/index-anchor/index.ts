@@ -26,12 +26,12 @@ SmartComponent({
             complete: () => {
               setTimeout(() => {
                 resolve('success');
-              }, 80);
+              }, 50);
             },
             fail: err => {
               setTimeout(() => {
                 reject(err);
-              }, 80);
+              }, 50);
             },
           });
         });
