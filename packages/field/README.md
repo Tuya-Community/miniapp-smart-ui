@@ -194,14 +194,12 @@ Page({
 <smart-cell-group>
   <smart-field
     value="{{ numberFormatValue }}"
-    type="number"
     number-format
     label="金额"
     placeholder="请输入"
   />
   <smart-field
     value="{{ numberFormatValueDe }}"
-    type="number"
     number-format
     locale="de"
     label="金额（德语格式）"

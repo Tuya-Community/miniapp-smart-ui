@@ -78,8 +78,13 @@ export function getNumberFormatConfig(locale: string): NumberFormatConfig {
   return { thousandsSeparator: ',', decimalSeparator: '.' };
 }
 
+export interface FormatNumberOptions {
+  /** 为 true 时保留末尾的小数点（用于聚焦输入中，避免 "23." 被格式成 "23" 打断输入） */
+  preserveTrailingDecimal?: boolean;
+}
+
 // 格式化数字：将 "1000.1312" 格式化为带分隔符的字符串
-export function formatNumber(value: string, locale: string): string {
+export function formatNumber(value: string, locale: string, options?: FormatNumberOptions): string {
   if (!value || value === '') {
     return '';
   }
@@ -90,8 +95,12 @@ export function formatNumber(value: string, locale: string): string {
     return '';
   }
 
+  // 聚焦输入时可能为 "23."，保留末尾小数点以便用户继续输入小数
+  const hasTrailingDecimal = options?.preserveTrailingDecimal && /\.$/.test(cleanValue);
+
   // 分离整数部分和小数部分（处理多个小数点的情况）
-  const parts = cleanValue.split('.');
+  const valueToFormat = hasTrailingDecimal ? cleanValue.slice(0, -1) : cleanValue;
+  const parts = valueToFormat.split('.');
   const integerPart = parts[0] || '';
   const decimalPart = parts.length > 1 ? parts.slice(1).join('') : '';
 
@@ -112,6 +121,9 @@ export function formatNumber(value: string, locale: string): string {
   // 组合结果
   if (decimalPart) {
     return formattedInteger + config.decimalSeparator + decimalPart;
+  }
+  if (hasTrailingDecimal) {
+    return (formattedInteger || '0') + config.decimalSeparator;
   }
   return formattedInteger || '0';
 }

@@ -135,14 +135,12 @@
   <smart-cell-group>
     <smart-field
       value="{{ numberFormatValue }}"
-      type="number"
       number-format
       label="{{I18n.t('fieldAmount')}}"
       placeholder="{{I18n.t('pleaseEnter')}}"
     />
     <smart-field
       value="{{ numberFormatValueDe }}"
-      type="number"
       number-format
       locale="de"
       label="{{I18n.t('fieldAmountLocaleDe')}}"

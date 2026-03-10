@@ -119,14 +119,15 @@ SmartComponent({
     },
 
     // 更新显示值（根据 numberFormat 决定是否格式化）
+    // 聚焦时保留末尾小数点（如 23.）不格式化掉，避免打断用户输入；失焦后再做完整格式化
     updateDisplayValue() {
       const { numberFormat, locale } = this.data;
       let displayValue = this.value || '';
 
       if (numberFormat && displayValue) {
-        displayValue = formatNumber(displayValue, locale);
+        const preserveTrailingDecimal = !!this.focused;
+        displayValue = formatNumber(displayValue, locale, { preserveTrailingDecimal });
       }
-
       this.setData({ innerValue: displayValue });
     },
 
@@ -135,7 +136,6 @@ SmartComponent({
       const { numberFormat, locale } = this.data;
 
       let rawValue = value;
-
       // 如果启用了数字格式化，需要将格式化后的输入值解析为原始格式
       if (numberFormat) {
         rawValue = parseFormattedNumber(value, locale);
@@ -164,6 +164,21 @@ SmartComponent({
 
     onBlur(event: WechatMiniprogram.InputBlur | WechatMiniprogram.TextareaBlur) {
       this.focused = false;
+      const { numberFormat, locale } = this.data;
+      // 失焦时再做一次完整格式化，去掉多余的小数点（如 23. -> 23），并同步内部 value
+      if (numberFormat && this.value) {
+        const displayValue = formatNumber(this.value, locale);
+        const normalizedValue = parseFormattedNumber(displayValue, locale);
+        if (normalizedValue !== this.value) {
+          this.value = normalizedValue;
+          this.setData({ innerValue: displayValue });
+          this.emitChange({ value: this.value });
+        } else {
+          this.updateDisplayValue();
+        }
+      } else {
+        this.updateDisplayValue();
+      }
       this.setShowClear();
       this.$emit('blur', event.detail);
     },
