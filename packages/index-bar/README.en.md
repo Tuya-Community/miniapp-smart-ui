@@ -161,7 +161,7 @@ The component provides the following CSS variables that can be used for custom s
 | Name                                        | Default Value | Description                    |
 | ------------------------------------------- | ------------- | ------------------------------ |
 | --index-bar-index-font-size                 | _10px_        | Sidebar index font size        |
-| --index-bar-index-line-height               | _14px_        | Sidebar index line height      |
+| --index-bar-index-line-height               | _14px_ `v2.0.0` _16px_ `v2.12.0`       | Sidebar index line height      |
 | --index-bar-move-tip-text-padding `v2.12.0`       | _0 10px 0 0_  | Move tip text padding          |
 | --index-bar-move-tip-text-font-size `v2.12.0`     | _24px_        | Move tip text font size        |
 | --index-bar-move-tip-text-line-height `v2.12.0`   | _32px_        | Move tip text line height      |

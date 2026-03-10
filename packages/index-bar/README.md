@@ -161,7 +161,7 @@ Page({
 | 名称                                      | 默认值       | 描述                   |
 | ----------------------------------------- | ------------ | ---------------------- |
 | --index-bar-index-font-size               | _10px_        | 侧边栏索引字体大小     |
-| --index-bar-index-line-height             | _14px_        | 侧边栏索引行高         |
+| --index-bar-index-line-height             | _14px_ `v2.0.0` _16px_ `v2.12.0` | 侧边栏索引行高     |
 | --index-bar-move-tip-text-padding `v2.12.0` | _0 10px 0 0_ | 拖动提示文字内边距     |
 | --index-bar-move-tip-text-font-size `v2.12.0`     | _24px_   | 拖动提示文字字体大小   |
 | --index-bar-move-tip-text-line-height `v2.12.0`   | _32px_   | 拖动提示文字行高       |
