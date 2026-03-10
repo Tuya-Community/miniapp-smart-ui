@@ -14,7 +14,7 @@
 @supports (backdrop-filter: blur(@overlay-blur-radius)) or
   (-webkit-backdrop-filter: blur(@overlay-blur-radius)) {
   .smart-overlay {
-    background-color: var(--overlay-background-color, @overlay-blur-background);
+    background-color: var(--overlay-blur-background, @overlay-blur-background);
     backdrop-filter: blur(var(--overlay-blur-radius, @overlay-blur-radius));
     -webkit-backdrop-filter: blur(var(--overlay-blur-radius, @overlay-blur-radius));
   }

@@ -18,7 +18,7 @@
   --toast-panel-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.12);
 
   // Overlay 毛玻璃遮罩（支持 backdrop-filter 时）/ 半透明遮罩（降级）
-  --overlay-blur-background: rgba(40, 44, 53, 0.22);
+  --smart-ui-overlay-blur-background: rgba(40, 44, 53, 0.22);
 
   &[theme='dark'] {
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
@@ -39,7 +39,7 @@
     --toast-panel-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 
     // Overlay 深色模式
-    --overlay-blur-background: rgba(0, 0, 0, 0.6);
+    --smart-ui-overlay-blur-background: rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -103,7 +103,7 @@
   linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))
 );
 @dialog-bg: var(--smart-ui-dialog-background, rgba(255, 255, 255, 1)); // 弹窗背景色
-@overlay-blur-background: var(--overlay-blur-background, rgba(40, 44, 53, 0.22));
+@overlay-blur-background: var(--smart-ui-overlay-blur-background, rgba(40, 44, 53, 0.22));
 
 // Color Palette
 @black: #000;
