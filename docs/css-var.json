@@ -3405,6 +3405,11 @@
     "value": "var(--app-M1, #3678e3)",
     "decs": ""
   },
+  "index-anchor-index-padding": {
+    "name": "@index-anchor-index-padding",
+    "value": "0 4px 0 20px",
+    "decs": ""
+  },
   "index-bar-index-font-size": {
     "name": "@index-bar-index-font-size",
     "value": "10px",
@@ -3412,7 +3417,27 @@
   },
   "index-bar-index-line-height": {
     "name": "@index-bar-index-line-height",
-    "value": "14px",
+    "value": "16px",
+    "decs": ""
+  },
+  "index-bar-move-tip-text-padding": {
+    "name": "@index-bar-move-tip-text-padding",
+    "value": "0 10px 0 0",
+    "decs": ""
+  },
+  "index-bar-move-tip-text-font-size": {
+    "name": "@index-bar-move-tip-text-font-size",
+    "value": "24px",
+    "decs": ""
+  },
+  "index-bar-move-tip-text-line-height": {
+    "name": "@index-bar-move-tip-text-line-height",
+    "value": "32px",
+    "decs": ""
+  },
+  "index-bar-move-tip-text-color": {
+    "name": "@index-bar-move-tip-text-color",
+    "value": "#fff",
     "decs": ""
   },
   "skeleton-padding": {
