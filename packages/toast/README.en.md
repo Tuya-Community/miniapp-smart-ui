@@ -199,16 +199,18 @@ The component provides the following CSS variables for custom styling. For usage
 
 | Name                          | Default Value                                 | Description |
 | ----------------------------- | -------------------------------------- | ---- |
-| --toast-min-width `v2.6.0` | _88px_ | Minimum width prompt |
-| --toast-max-width | _70%_ | Maximum width of the notification |
+| --toast-min-width `v2.6.0` | _56px_ | Minimum width of the notification |
+| --toast-max-width | _calc(100vw - 48px)_ | Maximum width of the notification |
 | --toast-font-size | _14px_ | Notification font size |
 | --toast-text-color | _#fff_ | Notification text color |
 | --toast-line-height | _20px_ | Notification line height |
-| --toast-border-radius | _10px_ | Notification border radius |
-| --toast-background-color | _fade(@black, 70%)_ | Notification background color |
+| --toast-background-color | _rgba(0,0,0,.7)_  `v2.0.0` _#5C5C5C_ `v2.12.0` | Notification background color |
+| --toast-border-radius | _12px_ | Notification border radius |
+| --toast-border `v2.12.0` | _1px solid rgba(255, 255, 255, 0.05)_ | Notification border |
+| --toast-box-shadow `v2.12.0` | _0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.12)_ | Notification box shadow |
 | --toast-icon-size | _36px_ | Notification icon size |
 | --toast-text-min-width `@deprecated v2.6.0` | _96px_ | Minimum width of the notification text |
-| --toast-text-padding | _@padding-xs @padding-sm_ | Notification text padding |
-| --toast-default-padding | _16px_ | Default notification padding |
-| --toast-default-width | _88px_ | Default notification width |
-| --toast-default-min-height | _88px_ | Default minimum height of the notification |
+| --toast-text-padding | _14px 16px_ | Notification text padding |
+| --toast-default-padding | _22px 14px 14px_ | Default notification padding |
+| --toast-default-width | _56px_ | Default notification width |
+| --toast-default-min-height | _56px_ | Default minimum height of the notification |
