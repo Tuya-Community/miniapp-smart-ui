@@ -260,12 +260,7 @@ SmartComponent({
       // 程序化滚动（如 sidebar 点击）未完成时，不根据当前 scrollTop 更新 UI，
       // 避免 scrollTop 已变而 anchor 几何未重测导致 getActiveAnchorIndex 算错引发闪动。
       // 滚动结束后在 scrollToAnchor 的 then 里会 setRect + onScroll 做一次正确更新。
-      if (
-        currScrollGetIndex === this.data.activeAnchorIndex &&
-        this.pendingAnchor &&
-        this.pendingAnchor.length > 0 &&
-        !hasIndex
-      ) {
+      if (this.pendingAnchor && this.pendingAnchor.length > 0 && !hasIndex) {
         return;
       }
       // lowestActiveIndex 已改为在 setRect 后由 computeLowestActiveIndex() 几何计算，此处不再根据滚动推断
@@ -425,10 +420,10 @@ SmartComponent({
       this.setData({
         currentMoveIconText: anchor.data.index,
       });
-      this.onScroll(safeIndex);
       safeAnchor
         .scrollIntoView(this.scrollTop)
         .then(() => {
+          this.onScroll(safeIndex);
           if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
             const index = this.data.indexList.indexOf(this.pendingAnchor[0].data.index);
             this.pendingAnchor = [];
