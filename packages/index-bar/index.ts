@@ -365,18 +365,18 @@ SmartComponent({
       if (!this.lastValidOffsetYHistory) {
         this.lastValidOffsetYHistory = [];
       }
-      const farCount = this.lastValidOffsetYHistory.filter(
+      const nearCount = this.lastValidOffsetYHistory.filter(
         h => Math.abs(offsetY - h) < threshold
       ).length;
       // 与最近 3 次中至少 2 个都超阈值则判定本帧为异常，沿用上次有效值
-      if (this.lastValidOffsetYHistory.length === 3 && farCount < 2) {
+      if (this.lastValidOffsetYHistory.length === 3 && nearCount < 2) {
         return;
       }
       this.lastValidOffsetYHistory.push(offsetY);
       if (this.lastValidOffsetYHistory.length > 3) this.lastValidOffsetYHistory.shift();
       offsetY = Math.max(0, Math.min(offsetY, this.sidebar.height));
       const itemHeight = this.sidebar.height / sidebarLength;
-      const index = Math.round(offsetY / itemHeight);
+      const index = Math.floor(offsetY / itemHeight);
       this.setData({
         showMoveIcon: true,
         moveTipTop: index * itemHeight + itemHeight / 2,
