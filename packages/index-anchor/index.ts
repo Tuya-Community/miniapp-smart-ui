@@ -28,6 +28,11 @@ SmartComponent({
                 resolve('success');
               }, 50);
             },
+            fail: err => {
+              setTimeout(() => {
+                reject(err);
+              }, 50);
+            },
           });
         });
       });

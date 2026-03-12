@@ -34,10 +34,10 @@ export default {
 
 ### Basic Usage
 
-Clicking the index bar will automatically jump to the corresponding `IndexAnchor` anchor point.
+Clicking the index bar will automatically jump to the corresponding `IndexAnchor` anchor point. With `scrollable` you can scroll to position by sliding; with `show-move-tip` (`v2.12.0`) a tip follows your finger when dragging the sidebar.
 
 ```html
-<smart-index-bar scrollable>
+<smart-index-bar scrollable show-move-tip>
   <view wx:for="{{ indexList }}" wx:for-item="item" wx:key="item">
     <smart-index-anchor index="{{ item }}" />
     <smart-cell title="Text" />
@@ -129,6 +129,7 @@ Page({
 | sticky-offset-top   | Distance from top when anchor auto-sticky | _number_               | `0`       |
 | z-index             | z-index level                             | _number_               | `1`       |
 | scrollable `v2.1.7` | Whether the SideBar can scroll            | _boolean_              | `false`   |
+| show-move-tip `v2.12.0` | Whether to show a tip that follows the finger when dragging the sidebar | _boolean_ | `false`   |
 | sidebar-font-size `v2.11.0`   | SideBar font size           | _string_               | -         |
 | sidebar-line-height `v2.11.0` | SideBar line height           | _string_               | -         |
 
@@ -155,10 +156,30 @@ Page({
 
 The component provides the following CSS variables that can be used for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider&appType=miniapp).
 
-| Name                          | Default Value | Description       |
-| ----------------------------- | ------------- | ----------------- |
-| --index-bar-index-font-size   | _10px_        | Index font size   |
-| --index-bar-index-line-height | _14px_        | Index line height |
+**IndexBar**
+
+| Name                                        | Default Value | Description                    |
+| ------------------------------------------- | ------------- | ------------------------------ |
+| --index-bar-index-font-size                 | _10px_        | Sidebar index font size        |
+| --index-bar-index-line-height               | _14px_ `v2.0.0` _16px_ `v2.12.0`       | Sidebar index line height      |
+| --index-bar-move-tip-text-padding `v2.12.0`       | _0 10px 0 0_  | Move tip text padding          |
+| --index-bar-move-tip-text-font-size `v2.12.0`     | _24px_        | Move tip text font size        |
+| --index-bar-move-tip-text-line-height `v2.12.0`   | _32px_        | Move tip text line height      |
+| --index-bar-move-tip-text-color `v2.12.0`        | _#fff_        | Move tip text color            |
+
+**IndexAnchor**
+
+| Name                                      | Default Value   | Description                    |
+| ----------------------------------------- | --------------- | ------------------------------ |
+| --index-anchor-padding                    | _0 16px_         | Anchor padding                 |
+| --index-anchor-text-color                 | _rgba(0,0,0,1)_ | Anchor text color              |
+| --index-anchor-font-weight                | _500_            | Anchor font weight             |
+| --index-anchor-font-size                  | _14px_           | Anchor font size               |
+| --index-anchor-line-height                | _32px_           | Anchor line height             |
+| --index-anchor-background-color           | _transparent_    | Anchor background color        |
+| --index-anchor-active-background-color    | _#ffffff_        | Anchor background when sticky  |
+| --index-anchor-active-text-color          | _#3678e3_        | Anchor text color when sticky  |
+| --index-anchor-index-padding              | _0 4px 0 20px_  | Anchor index padding (right)  |
 
 ## FAQ
 
