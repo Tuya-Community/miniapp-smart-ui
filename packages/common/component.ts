@@ -1,5 +1,6 @@
 import { basic } from '../mixins/basic';
 import { SmartComponentOptions } from 'definitions/index';
+import { guardComponentMethods } from '@ray-core/event-guard';
 
 function mapKeys(
   source: Record<string, any>,
@@ -58,6 +59,10 @@ function SmartComponent<
     multipleSlots: true,
     addGlobalClass: true,
   };
+
+  if (options.methods) {
+    options.methods = guardComponentMethods(options.methods);
+  }
 
   Component(options);
 }
