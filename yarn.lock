@@ -2165,6 +2165,11 @@
   resolved "https://registry.npmjs.org/@pkgr/core/-/core-0.2.9.tgz#d229a7b7f9dac167a156992ef23c7f023653f53b"
   integrity sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==
 
+"@ray-core/event-guard@0.4.13-beta.0":
+  version "0.4.13-beta.0"
+  resolved "https://registry.yarnpkg.com/@ray-core/event-guard/-/event-guard-0.4.13-beta.0.tgz#928dc300389b953816cb8fad08388510b53c08bc"
+  integrity sha512-wLsb5kNKPXfEIhCm0mcpdJv6WQDoQxRWy4uKM20VwUa0400TPN5jmfpDDxAhRyuvecTa4v+1wXat8PPbiDSDcw==
+
 "@ray-js/components-ty-slider@^0.3.8":
   version "0.3.8"
   resolved "https://registry.npmjs.org/@ray-js/components-ty-slider/-/components-ty-slider-0.3.8.tgz#ff3caf6b503f8361f5f019fed1150b28903ebf42"
