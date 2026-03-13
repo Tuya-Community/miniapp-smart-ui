@@ -2,7 +2,7 @@
   wx:if="{{ mask || forbidClick }}"
   show="{{ show }}"
   z-index="{{ zIndex }}"
-  custom-style="{{ mask ? '' : 'background-color: transparent;backdrop-filter: none;' }}"
+  custom-style="{{ mask ? '' : 'background-color: transparent;backdrop-filter: none;-webkit-backdrop-filter: none;' }}"
 />
 <smart-transition
   show="{{ show }}"

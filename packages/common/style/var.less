@@ -36,8 +36,8 @@
 
     // Toast 深色面板
     --smart-ui-toast-background: #3C3C3C;
-    --smart-ui-toast-border: none;
-    --smart-ui-toast-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --smart-ui-toast-border: 1px solid rgba(255, 255, 255, 0.05);
+    --smart-ui-toast-box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.15);
     // Overlay 深色模式
     --smart-ui-overlay-blur-background: rgba(0, 0, 0, 0.6);
   }
@@ -766,11 +766,13 @@
 @tag-plain-background-color: transparent;
 
 // Toast
-@toast-min-width: 56px;
-@toast-max-width: calc(100vw - 48px);
+@toast-text-min-width: 124px;
+@toast-text-max-width: 280px;
+@toast-min-width: 82px;
+@toast-max-width: 280px;
 @toast-font-size: 14px;
 @toast-text-color: @white;
-@toast-line-height: 20px;
+@toast-line-height: 16px;
 @toast-border-radius: 12px;
 @toast-background-color: @toast-bg;
 @toast-border: @toast-base-border;
@@ -778,9 +780,10 @@
 @toast-icon-size: 36px;
 @toast-text-min-width: 96px;
 @toast-text-padding: 14px 16px;
-@toast-default-padding: 22px 14px 14px;
+@toast-default-padding: 19px 15px;
 @toast-default-width: 56px;
 @toast-default-min-height: 56px;
+@toast-icon-text-padding-top: 8px;
 
 // GridItem
 @grid-item-content-padding: @padding-md @padding-xs;
