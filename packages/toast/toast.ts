@@ -41,6 +41,8 @@ const defaultOptions = {
   forbidClick: false,
   loadingType: 'circular',
   selector: '#smart-toast',
+  textColor: '',
+  iconColor: 'white',
   width: '',
 };
 
