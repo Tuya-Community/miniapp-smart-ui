@@ -1134,7 +1134,7 @@
     "areYouSureYouWantToSwitchTo": "确定要切换至",
     "clickTheTab": "点击标签",
     "promptContent": "提示内容",
-    "toastDemoTip1": "这是一条长文字提示，超过一定字数就会换行",
+    "toastDemoTip1": "这是一条非常长的长文字提示，可以使 Text 模式的 Toast 超过一定字数就会换行",
     "countdown": "倒计时",
     "yiwu": "义乌",
     "jiangsu": "江苏",

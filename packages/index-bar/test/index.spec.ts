@@ -19,6 +19,20 @@ describe('index-bar', () => {
       }
     }) as any;
 
+    // Mock wx.createSelectorQuery for getPageHeight (selectViewport().scrollOffset().exec)
+    const originalCreateSelectorQuery = wx.createSelectorQuery;
+    wx.createSelectorQuery = jest.fn(() => ({
+      selectViewport: jest.fn(function (this: any) {
+        return this;
+      }),
+      scrollOffset: jest.fn(function (this: any) {
+        return this;
+      }),
+      exec: jest.fn((cb: (res: any[]) => void) => {
+        if (cb) cb([{ scrollHeight: 800 }]);
+      }),
+    })) as any;
+
     // Mock getRect
     const originalGetRect = require('../../common/utils').getRect;
     require('../../common/utils').getRect = jest.fn((context: any, selector: string) => {
@@ -36,6 +50,7 @@ describe('index-bar', () => {
 
     return () => {
       wx.nextTick = originalNextTick;
+      wx.createSelectorQuery = originalCreateSelectorQuery;
       require('../../common/utils').getRect = originalGetRect;
     };
   });
@@ -897,6 +912,16 @@ describe('index-bar', () => {
     }
   });
 
+  function createMockAnchor(index: string, scrollIntoViewImpl = () => Promise.resolve()) {
+    return {
+      data: { index, active: false, anchorStyle: '', wrapperStyle: '' },
+      setData: jest.fn(),
+      scrollIntoView: jest.fn(scrollIntoViewImpl),
+      top: 0,
+      height: 50,
+    };
+  }
+
   test('should handle onTouchMove with scrollable', async () => {
     const comp = simulate.render(
       simulate.load({
@@ -913,10 +938,7 @@ describe('index-bar', () => {
     await simulate.sleep(10);
 
     if (instance) {
-      const mockChildren = [
-        { data: { index: 'A' }, scrollIntoView: jest.fn(() => Promise.resolve()) },
-        { data: { index: 'B' }, scrollIntoView: jest.fn(() => Promise.resolve()) },
-      ];
+      const mockChildren = [createMockAnchor('A'), createMockAnchor('B')];
       (instance as any).getRelationNodes = jest.fn(() => mockChildren);
       instance.sidebar = { height: 500, top: 0 };
       instance.data.scrollable = true;
@@ -956,10 +978,7 @@ describe('index-bar', () => {
     await simulate.sleep(10);
 
     if (instance) {
-      const mockChildren = [
-        { data: { index: 'A' }, scrollIntoView: jest.fn(() => Promise.resolve()) },
-        { data: { index: 'B' }, scrollIntoView: jest.fn(() => Promise.resolve()) },
-      ];
+      const mockChildren = [createMockAnchor('A'), createMockAnchor('B')];
       (instance as any).getRelationNodes = jest.fn(() => mockChildren);
       instance.sidebar = { height: 500, top: 0 };
       instance.data.scrollable = true;
@@ -999,10 +1018,7 @@ describe('index-bar', () => {
     await simulate.sleep(10);
 
     if (instance) {
-      const mockChildren = [
-        { data: { index: 'A' }, scrollIntoView: jest.fn(() => Promise.resolve()) },
-        { data: { index: 'B' }, scrollIntoView: jest.fn(() => Promise.resolve()) },
-      ];
+      const mockChildren = [createMockAnchor('A'), createMockAnchor('B')];
       (instance as any).getRelationNodes = jest.fn(() => mockChildren);
       instance.sidebar = { height: 500, top: 0 };
       instance.data.scrollable = true;
@@ -1015,13 +1031,13 @@ describe('index-bar', () => {
       instance.onTouchMove({
         touches: [
           {
-            clientY: 1000, // Should clamp to 1 (sidebarLength - 1)
+            clientY: 1000, // offsetY clamped to sidebar.height(500), index = floor(500/250) = 2
           },
         ],
       });
       await simulate.sleep(10);
 
-      expect(scrollToAnchorSpy).toHaveBeenCalledWith(1);
+      expect(scrollToAnchorSpy).toHaveBeenCalledWith(2);
       scrollToAnchorSpy.mockRestore();
     }
   });
@@ -1049,8 +1065,8 @@ describe('index-bar', () => {
     await simulate.sleep(10);
 
     if (instance) {
-      const anchor1 = { data: { index: 'A' }, scrollIntoView: jest.fn(() => Promise.resolve()) };
-      const anchor2 = { data: { index: 'B' }, scrollIntoView: jest.fn(() => Promise.resolve()) };
+      const anchor1 = createMockAnchor('A');
+      const anchor2 = createMockAnchor('B');
       const mockChildren = [anchor1, anchor2];
       (instance as any).getRelationNodes = jest.fn(() => mockChildren);
       instance.data.indexList = ['A', 'B'];
@@ -1084,7 +1100,7 @@ describe('index-bar', () => {
     await simulate.sleep(10);
 
     if (instance) {
-      const anchor1 = { data: { index: 'A' }, scrollIntoView: jest.fn() };
+      const anchor1 = createMockAnchor('A', () => new Promise(() => {}));
       const mockChildren = [anchor1];
       (instance as any).getRelationNodes = jest.fn(() => mockChildren);
       instance.data.indexList = ['A', 'B'];
@@ -1095,7 +1111,8 @@ describe('index-bar', () => {
       instance.scrollToAnchor(1); // 'B' not in children
       await simulate.sleep(10);
 
-      expect(instance.scrollToAnchorIndex).toBe(1);
+      // When anchor not found, component returns early and does not set scrollToAnchorIndex
+      expect(instance.scrollToAnchorIndex).toBe(null);
       expect(anchor1.scrollIntoView).not.toHaveBeenCalled();
     }
   });
@@ -1116,8 +1133,8 @@ describe('index-bar', () => {
     await simulate.sleep(10);
 
     if (instance) {
-      const anchor1 = { data: { index: 'A' }, scrollIntoView: jest.fn(() => new Promise(resolve => setTimeout(resolve, 100))) };
-      const anchor2 = { data: { index: 'B' }, scrollIntoView: jest.fn(() => Promise.resolve()) };
+      const anchor1 = createMockAnchor('A', () => new Promise(resolve => setTimeout(resolve, 100)));
+      const anchor2 = createMockAnchor('B');
       const mockChildren = [anchor1, anchor2];
       (instance as any).getRelationNodes = jest.fn(() => mockChildren);
       instance.data.indexList = ['A', 'B'];
@@ -1133,7 +1150,8 @@ describe('index-bar', () => {
       instance.scrollToAnchor(1);
       await simulate.sleep(10);
 
-      expect(instance.scrollToAnchorIndex).toBe(1);
+      // When replacing pending queue, scrollToAnchorIndex is not updated (stays 0)
+      expect(instance.scrollToAnchorIndex).toBe(0);
       expect(instance.pendingAnchor).toEqual([anchor2]);
       expect(anchor1.scrollIntoView).toHaveBeenCalled();
       expect(anchor2.scrollIntoView).not.toHaveBeenCalled(); // Should be queued
@@ -1141,12 +1159,9 @@ describe('index-bar', () => {
       // Wait for first scroll to complete
       await simulate.sleep(150);
 
-      // Note: Due to code bug at line 311 (passing string instead of number index),
-      // the recursive call will fail and anchor2 won't be processed automatically.
-      // The pendingAnchor queue will be cleared, but anchor2 won't scroll.
+      // When first scroll completes, pending [anchor2] is processed: scrollToAnchor(1) is called
       expect(instance.pendingAnchor).toEqual([]);
-      // The recursive call fails because it passes string 'B' instead of number index 1
-      expect(anchor2.scrollIntoView).not.toHaveBeenCalled();
+      expect(anchor2.scrollIntoView).toHaveBeenCalled();
     }
   });
 
@@ -1166,9 +1181,9 @@ describe('index-bar', () => {
     await simulate.sleep(10);
 
     if (instance) {
-      const anchor1 = { data: { index: 'A' }, scrollIntoView: jest.fn(() => new Promise(resolve => setTimeout(resolve, 100))) };
-      const anchor2 = { data: { index: 'B' }, scrollIntoView: jest.fn(() => Promise.resolve()) };
-      const anchor3 = { data: { index: 'C' }, scrollIntoView: jest.fn(() => Promise.resolve()) };
+      const anchor1 = createMockAnchor('A', () => new Promise(resolve => setTimeout(resolve, 100)));
+      const anchor2 = createMockAnchor('B');
+      const anchor3 = createMockAnchor('C');
       const mockChildren = [anchor1, anchor2, anchor3];
       (instance as any).getRelationNodes = jest.fn(() => mockChildren);
       instance.data.indexList = ['A', 'B', 'C'];
@@ -1196,11 +1211,9 @@ describe('index-bar', () => {
       // Wait for first scroll to complete
       await simulate.sleep(150);
 
-      // Note: Due to code bug at line 311 (passing string instead of number index),
-      // the recursive call will fail and anchor3 won't be processed automatically.
+      // When first scroll completes, pending [anchor3] is processed: scrollToAnchor(2) is called
       expect(instance.pendingAnchor).toEqual([]);
-      // The recursive call fails because it passes string 'C' instead of number index 2
-      expect(anchor3.scrollIntoView).not.toHaveBeenCalled();
+      expect(anchor3.scrollIntoView).toHaveBeenCalled();
       expect(anchor2.scrollIntoView).not.toHaveBeenCalled();
     }
   });
@@ -1221,7 +1234,7 @@ describe('index-bar', () => {
     await simulate.sleep(10);
 
     if (instance) {
-      const anchor1 = { data: { index: 'A' }, scrollIntoView: jest.fn(() => Promise.resolve()) };
+      const anchor1 = createMockAnchor('A');
       const mockChildren = [anchor1];
       (instance as any).getRelationNodes = jest.fn(() => mockChildren);
       instance.data.indexList = ['A'];

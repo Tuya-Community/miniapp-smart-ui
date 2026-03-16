@@ -70,6 +70,7 @@ describe('index-anchor', () => {
         duration: 0,
         scrollTop: 150, // 50 + 100 - 0
         complete: expect.any(Function),
+        fail: expect.any(Function),
       });
     }
   });
@@ -109,6 +110,7 @@ describe('index-anchor', () => {
         duration: 0,
         scrollTop: 180, // 100 + 100 - 20
         complete: expect.any(Function),
+        fail: expect.any(Function),
       });
     }
   });

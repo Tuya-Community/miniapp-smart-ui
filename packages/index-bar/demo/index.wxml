@@ -5,6 +5,7 @@
   <smart-tab title="{{I18n.t('basicUsage')}}">
     <smart-index-bar
       scrollable
+      show-move-tip
       wx:if="{{ activeTab === 0 }}"
     >
       <view

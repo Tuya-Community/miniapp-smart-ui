@@ -87,6 +87,63 @@ exports[`should render demo and match snapshot 1`] = `
           </wx-view>
         </wx-view>
       </smart-nav-bar>
+      <smart-nav-bar
+        customClass="demo-nav-bar"
+        bind:click-left-text="onClickLeftText"
+      >
+        <wx-view
+          class="smart-nav-bar smart-nav-bar--safe custom-class "
+          style="z-index:1;padding-top:20px;background:#E4EDFF; "
+        >
+          <wx-view
+            class="smart-nav-bar__content"
+          >
+            <wx-view
+              class="smart-nav-bar__left smart-nav-bar__left--max smart-nav-bar__left--home smart-nav-bar__left--text"
+              style=""
+              bind:tap="onClickLeft"
+            >
+              <wx-view
+                class="smart-nav-bar__text left-text-class"
+                hoverClass=""
+                hoverStayTime="70"
+                catch:tap="onClickLeftText"
+              >
+                
+        HomeHomeHomeHomeHome
+      
+              </wx-view>
+              <smart-icon
+                slot="left"
+                style="margin-left: auto;padding-left: 16px;"
+              >
+                <wx-view
+                  class="custom-class smart-icon smart-icon--image"
+                  style="font-size:24px"
+                  bind:tap="onClick"
+                >
+                  <wx-image
+                    class="smart-icon__image"
+                    mode="aspectFit"
+                    src="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
+                  />
+                </wx-view>
+              </smart-icon>
+            </wx-view>
+            <wx-view
+              class="smart-nav-bar__title title-class smart-ellipsis"
+              bind:tap="onClickTitle"
+            >
+              
+            </wx-view>
+            <wx-view
+              class="smart-nav-bar__right smart-nav-bar__right--max"
+              style=""
+              bind:tap="onClickRight"
+            />
+          </wx-view>
+        </wx-view>
+      </smart-nav-bar>
     </wx-view>
   </demo-block>
   <demo-block>
