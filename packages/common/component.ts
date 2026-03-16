@@ -1,5 +1,6 @@
 import { basic } from '../mixins/basic';
 import { SmartComponentOptions } from 'definitions/index';
+import { wrapMethodsWithPropagationCheck } from '@ray-core/event-propagation';
 
 function mapKeys(
   source: Record<string, any>,
@@ -58,7 +59,9 @@ function SmartComponent<
     multipleSlots: true,
     addGlobalClass: true,
   };
-
+  if (options.methods) {
+    options.methods = wrapMethodsWithPropagationCheck(options.methods);
+  }
   Component(options);
 }
 
