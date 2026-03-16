@@ -7,7 +7,7 @@ import { contextRef, queueRef, type Action } from './dialog';
 
 SmartComponent({
   mixins: [button],
-  classes: ['cancel-button-class', 'cancle-button-class', 'confirm-button-class'],
+  classes: ['cancel-button-class', 'confirm-button-class'],
 
   props: {
     show: {
