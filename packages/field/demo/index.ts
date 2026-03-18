@@ -23,5 +23,17 @@ SmartComponent({
         title: I18n.t('clickTheIcon'),
       });
     },
+    onNumberFormatInput(e) {
+      this.setData({
+        numberFormatValue: e.detail,
+      });
+      console.log(e.detail, '--onNumberFormatInput');
+    },
+    onNumberFormatInputDe(e) {
+      this.setData({
+        numberFormatValueDe: e.detail,
+      });
+      console.log(e.detail, '--onNumberFormatInputDe');
+    },
   },
 });

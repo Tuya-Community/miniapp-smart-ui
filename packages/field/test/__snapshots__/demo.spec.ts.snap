@@ -1225,7 +1225,9 @@ exports[`should render demo and match snapshot 1`] = `
           class="custom-class smart-cell-group "
           style=""
         >
-          <smart-field>
+          <smart-field
+            bind:input="onNumberFormatInput"
+          >
             <smart-cell
               center="{{false}}"
               customClass="custom-class smart-field"
@@ -1307,7 +1309,9 @@ exports[`should render demo and match snapshot 1`] = `
               </wx-view>
             </smart-cell>
           </smart-field>
-          <smart-field>
+          <smart-field
+            bind:input="onNumberFormatInputDe"
+          >
             <smart-cell
               center="{{false}}"
               customClass="custom-class smart-field"

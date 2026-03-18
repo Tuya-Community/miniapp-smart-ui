@@ -138,6 +138,7 @@
       number-format
       label="{{I18n.t('fieldAmount')}}"
       placeholder="{{I18n.t('pleaseEnter')}}"
+      bind:input="onNumberFormatInput"
     />
     <smart-field
       value="{{ numberFormatValueDe }}"
@@ -145,6 +146,7 @@
       locale="de"
       label="{{I18n.t('fieldAmountLocaleDe')}}"
       placeholder="{{I18n.t('pleaseEnter')}}"
+      bind:input="onNumberFormatInputDe"
     />
   </smart-cell-group>
 </demo-block>
