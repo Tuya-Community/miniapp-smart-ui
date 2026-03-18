@@ -188,7 +188,7 @@ You can insert a button at the end of the input box through the button slot.
 
 ### Number Format `v2.12.0`
 
-When `number-format` is enabled, numeric input is displayed with thousands and decimal separators according to locale. Use `locale` to specify a region (e.g. `de` for German 1.234,56; default is 1,234.56).
+After enabling `number-format`, the component will format the display of numerical inputs with thousand separators and decimal points according to the current language environment; of course, the `locale` can specify regional formats (e.g., `de` for German 1.234,56, defaulting to English as 1,234.56).
 
 ```html
 <smart-cell-group>
