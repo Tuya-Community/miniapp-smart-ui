@@ -46,8 +46,6 @@ export function getNumberFormatConfig(locale: string): NumberFormatConfig {
   const formatMap: Record<string, NumberFormatConfig> = {
     // 德语地区：1.000,1312 (点作为千分位，逗号作为小数)
     de: { thousandsSeparator: '.', decimalSeparator: ',' },
-    // 瑞士德语：1'000.1312 (单引号作为千分位) - 特殊处理
-    'de-ch': { thousandsSeparator: "'", decimalSeparator: '.' },
     // 法语地区：1 000,1312 (空格作为千分位，逗号作为小数)
     fr: { thousandsSeparator: ' ', decimalSeparator: ',' },
     // 意大利语：1.000,1312
@@ -58,9 +56,14 @@ export function getNumberFormatConfig(locale: string): NumberFormatConfig {
     pt: { thousandsSeparator: '.', decimalSeparator: ',' },
     // 俄语：1 000,1312 (空格作为千分位，逗号作为小数)
     ru: { thousandsSeparator: ' ', decimalSeparator: ',' },
-    // 部分阿拉伯国家：1 234,56 (空格作为千分位，逗号作为小数) - 特殊处理
+    // 部分阿拉伯国家
+    'es-419': { thousandsSeparator: ',', decimalSeparator: '.' }, // 拉丁美洲西班牙语
+    'pt-br': { thousandsSeparator: '.', decimalSeparator: ',' }, // 拉丁美洲葡萄牙语
     'ar-ma': { thousandsSeparator: ' ', decimalSeparator: ',' }, // 摩洛哥
     'ar-tn': { thousandsSeparator: ' ', decimalSeparator: ',' }, // 突尼斯
+    'de-ch': { thousandsSeparator: "'", decimalSeparator: '.' }, // 瑞士德语
+    'es-mx': { thousandsSeparator: ',', decimalSeparator: '.' }, // 墨西哥西班牙语
+    'fr-ch': { thousandsSeparator: "'", decimalSeparator: '.' }, // 瑞士法语
   };
 
   // 策略1: 先尝试完整匹配（处理特殊国家，如 'de-ch', 'ar-ma', 'ar-tn'）
