@@ -86,16 +86,22 @@ export interface FormatNumberOptions {
   preserveTrailingDecimal?: boolean;
 }
 
-// 格式化数字：将 "1000.1312" 格式化为带分隔符的字符串
+// 格式化数字：将 "1000.1312" 或 "-1000.1312" 格式化为带分隔符的字符串
 export function formatNumber(value: string, locale: string, options?: FormatNumberOptions): string {
   if (!value || value === '') {
     return '';
   }
 
-  // 移除所有非数字和小数点的字符（保留一个小数点）
-  const cleanValue = value.replace(/[^\d.]/g, '');
+  // 仅保留数字、小数点、减号；连续前导减号按「负负得正」处理
+  const raw = value.replace(/[^-0-9.]/g, '');
+  let i = 0;
+  while (i < raw.length && raw[i] === '-') {
+    i++;
+  }
+  const negative = i % 2 === 1;
+  const cleanValue = raw.slice(i).replace(/-/g, '');
   if (!cleanValue) {
-    return '';
+    return negative ? '-' : '';
   }
 
   // 聚焦输入时可能为 "23."，保留末尾小数点以便用户继续输入小数
@@ -112,36 +118,49 @@ export function formatNumber(value: string, locale: string, options?: FormatNumb
   // 格式化整数部分（添加千分位分隔符）
   let formattedInteger = '';
   if (integerPart) {
-    for (let i = integerPart.length - 1, count = 0; i >= 0; i--) {
+    for (let j = integerPart.length - 1, count = 0; j >= 0; j--) {
       if (count > 0 && count % 3 === 0) {
         formattedInteger = config.thousandsSeparator + formattedInteger;
       }
-      formattedInteger = integerPart[i] + formattedInteger;
+      formattedInteger = integerPart[j] + formattedInteger;
       count++;
     }
   }
 
-  // 组合结果
+  const prefix = negative ? '-' : '';
+
   if (decimalPart) {
-    return formattedInteger + config.decimalSeparator + decimalPart;
+    return prefix + formattedInteger + config.decimalSeparator + decimalPart;
   }
   if (hasTrailingDecimal) {
-    return (formattedInteger || '0') + config.decimalSeparator;
+    return prefix + (formattedInteger || '0') + config.decimalSeparator;
   }
-  return formattedInteger || '0';
+  return prefix + (formattedInteger || '0');
 }
 
-// 解析格式化后的数字：将格式化字符串转换回 "1000.1312" 格式
+// 解析格式化后的数字：将格式化字符串转换回 "1000.1312" 或 "-1000.1312" 格式
 export function parseFormattedNumber(formattedValue: string, locale: string): string {
   if (!formattedValue || formattedValue === '') {
     return '';
+  }
+
+  let body = formattedValue.trim();
+  let negative = false;
+  const ch0 = body.charAt(0);
+  if (ch0 === '-' || ch0 === '\u2212') {
+    negative = true;
+    body = body.slice(1).trim();
+  }
+
+  if (!body) {
+    return negative ? '-' : '';
   }
 
   const config = getNumberFormatConfig(locale);
 
   // 移除千分位分隔符（需要转义特殊字符）
   const escapedSeparator = config.thousandsSeparator.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  let cleaned = formattedValue.replace(new RegExp(escapedSeparator, 'g'), '');
+  let cleaned = body.replace(new RegExp(escapedSeparator, 'g'), '');
 
   // 将小数分隔符转换为标准小数点（只替换第一个，因为可能有多个）
   if (config.decimalSeparator !== '.') {
@@ -157,6 +176,9 @@ export function parseFormattedNumber(formattedValue: string, locale: string): st
     cleaned = parts[0] + '.' + parts.slice(1).join('');
   }
 
-  // 只保留数字和小数点
-  return cleaned.replace(/[^\d.]/g, '');
+  const num = cleaned.replace(/[^\d.]/g, '');
+  if (!num) {
+    return negative ? '-' : '';
+  }
+  return negative ? '-' + num : num;
 }
