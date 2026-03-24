@@ -49,11 +49,13 @@ const tyApi = {
   },
   accessibilityModeData: null as { isAccessibilityMode: boolean } | null,
   getAccessibilityMode: (params: any) => {
+    const { success = () => {}, fail = () => {}, complete = () => {} } = params || {};
     // @ts-ignore
     if (ty?.getAccessibilityMode === undefined) {
-      return false;
+      success({ isAccessibilityMode: false });
+      complete();
+      return;
     }
-    const { success = () => {}, fail = () => {}, complete = () => {} } = params || {};
     if (tyApi.accessibilityModeData) {
       success(tyApi.accessibilityModeData);
       complete();
