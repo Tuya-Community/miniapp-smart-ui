@@ -419,7 +419,7 @@ SmartComponent({
 
       const safeAnchor = this.children[safeIndex];
       if (!safeAnchor) {
-        console.log('没有找到锚点');
+        console.log('No anchor found');
         return;
       }
       // 如果当前有正在进行的滚动，将新的滚动任务加入队列
@@ -437,9 +437,9 @@ SmartComponent({
         .then(() => {
           this.onScroll(safeAnchor.data.index);
           if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
-            const index = this.data.indexList.indexOf(this.pendingAnchor[0].data.index);
+            const dataIndex = this.pendingAnchor[0].data.index;
             this.pendingAnchor = [];
-            this.scrollToAnchor(index);
+            this.scrollToAnchor(dataIndex);
             return;
           }
           this.pendingAnchor = [];
@@ -447,9 +447,9 @@ SmartComponent({
         .catch(err => {
           console.error(err);
           if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
-            const index = this.data.indexList.indexOf(this.pendingAnchor[0].data.index);
+            const dataIndex = this.pendingAnchor[0].data.index;
             this.pendingAnchor = [];
-            this.scrollToAnchor(index);
+            this.scrollToAnchor(dataIndex);
             return;
           }
           this.pendingAnchor = [];

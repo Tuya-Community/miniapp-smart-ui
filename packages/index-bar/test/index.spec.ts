@@ -1162,9 +1162,9 @@ describe('index-bar', () => {
       // Wait for first scroll to complete
       await simulate.sleep(150);
 
-      // then 内用 indexList.indexOf 得到数字再 scrollToAnchor(number)，当前实现仅接受 string，不会继续滚动
+      // 首段完成后用 pending 锚点的 data.index（string）继续 scrollToAnchor
       expect(instance.pendingAnchor).toEqual([]);
-      expect(anchor2.scrollIntoView).not.toHaveBeenCalled();
+      expect(anchor2.scrollIntoView).toHaveBeenCalled();
     }
   });
 
@@ -1215,7 +1215,7 @@ describe('index-bar', () => {
       await simulate.sleep(150);
 
       expect(instance.pendingAnchor).toEqual([]);
-      expect(anchor3.scrollIntoView).not.toHaveBeenCalled();
+      expect(anchor3.scrollIntoView).toHaveBeenCalled();
       expect(anchor2.scrollIntoView).not.toHaveBeenCalled();
     }
   });
