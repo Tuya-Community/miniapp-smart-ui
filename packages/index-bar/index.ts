@@ -260,7 +260,7 @@ SmartComponent({
 
       const hasIndex = controlActiveIndexData !== undefined;
       const scrollChildrenGetIndex = this.getActiveAnchorIndex();
-      const scrollChildrenGetIndexData = this.children[scrollChildrenGetIndex].data.index;
+      const scrollChildrenGetIndexData = this.children[scrollChildrenGetIndex]?.data.index;
       // 程序化滚动（如 sidebar 点击）未完成时，不根据当前 scrollTop 更新 UI，
       // 避免 scrollTop 已变而 anchor 几何未重测导致 getActiveAnchorIndex 算错引发闪动。
       // 滚动结束后在 scrollToAnchor 的 then 里会 setRect + onScroll 做一次正确更新。
@@ -272,6 +272,9 @@ SmartComponent({
       const { sticky, stickyOffsetTop, zIndex, highlightColor } = this.data;
 
       const activeData = hasIndex ? controlActiveIndexData : scrollChildrenGetIndexData;
+      if (activeData === undefined) {
+        return;
+      }
       const activeIndex = this.children.findIndex(item => item.data.index === activeData);
       const preActiveData = this.children[activeIndex - 1]?.data?.index;
 
