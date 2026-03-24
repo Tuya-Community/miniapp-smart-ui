@@ -23,7 +23,7 @@ Import the component in `app.json` or `index.json`, for detailed introduction se
 ### Home Page
 
 The text style on the home page is aligned to the left and bold by default, clicking on the left text triggers an event; the `background` `v2.7.0` property can set the background color of the nav-bar.   
-Use `slot="left"` to insert custom content (e.g. an icon) in the left area; with `margin-left: auto` on the inserted content, it can be aligned to the right within the left container without leaving the document flow `v2.11.1`.
+Use `slot="left"` to insert custom content (e.g. an icon) in the left area; with `margin-left: auto` on the inserted content, it can be aligned to the right within the left container without leaving the document flow `v2.12.0`.
 
 ```html
 <smart-nav-bar
