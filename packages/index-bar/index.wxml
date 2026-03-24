@@ -24,8 +24,9 @@
       wx:for="{{ indexList }}"
       wx:key="index"
       class="smart-index-bar__index"
-      style="z-index: {{ zIndex + 1 }};color: {{ activeAnchorIndex === index ? highlightColor : '' }};font-size: {{ sidebarFontSize }};line-height: {{ sidebarLineHeight }};"
+      style="z-index: {{ zIndex + 1 }};color: {{ activeAnchorIndexData === item ? highlightColor : '' }};font-size: {{ sidebarFontSize }};line-height: {{ sidebarLineHeight }};"
       data-index="{{ index }}"
+      data-item="{{ item }}"
     >
       {{ item }}
     </view>

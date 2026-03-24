@@ -68,7 +68,7 @@ SmartComponent({
 
   data: {
     iconSvg,
-    activeAnchorIndex: null,
+    activeAnchorIndexData: null,
     showSidebar: false,
     showMoveIcon: false,
     lowestActiveIndex: -1,
@@ -231,6 +231,10 @@ SmartComponent({
       }));
     },
 
+    getChildrenIndexList() {
+      return this.children.map(item => item.data.index);
+    },
+
     getActiveAnchorIndex() {
       const { children, scrollTop } = this;
       const { sticky, stickyOffsetTop } = this.data;
@@ -247,16 +251,16 @@ SmartComponent({
       return -1;
     },
 
-    onScroll(controlActiveIndex?: number) {
+    onScroll(controlActiveIndexData?: string) {
       const { children = [], scrollTop } = this;
 
       if (!children.length) {
         return;
       }
 
-      const hasIndex = controlActiveIndex !== undefined;
-      const currScrollGetIndex = this.getActiveAnchorIndex();
-
+      const hasIndex = controlActiveIndexData !== undefined;
+      const scrollChildrenGetIndex = this.getActiveAnchorIndex();
+      const scrollChildrenGetIndexData = this.children[scrollChildrenGetIndex].data.index;
       // 程序化滚动（如 sidebar 点击）未完成时，不根据当前 scrollTop 更新 UI，
       // 避免 scrollTop 已变而 anchor 几何未重测导致 getActiveAnchorIndex 算错引发闪动。
       // 滚动结束后在 scrollToAnchor 的 then 里会 setRect + onScroll 做一次正确更新。
@@ -267,25 +271,29 @@ SmartComponent({
 
       const { sticky, stickyOffsetTop, zIndex, highlightColor } = this.data;
 
-      const active = hasIndex ? controlActiveIndex : currScrollGetIndex;
+      const activeData = hasIndex ? controlActiveIndexData : scrollChildrenGetIndexData;
+      const activeIndex = this.children.findIndex(item => item.data.index === activeData);
+      const preActiveData = this.children[activeIndex - 1]?.data?.index;
 
       this.setDiffData({
         target: this,
         data: {
-          activeAnchorIndex: active,
+          activeAnchorIndexData: activeData,
         },
       });
 
       if (sticky) {
         let isActiveAnchorSticky = false;
 
-        if (active !== -1) {
-          isActiveAnchorSticky = children[active].top <= stickyOffsetTop + scrollTop;
+        if (activeData !== null) {
+          isActiveAnchorSticky =
+            children.find(item => item.data.index === activeData)?.top <=
+            stickyOffsetTop + scrollTop;
         }
-
         children.forEach((item, index) => {
+          const itemData = item.data.index;
           // 为当前的 anchor 设置 fixed 吸顶和文字颜色
-          if (index === active) {
+          if (itemData === activeData) {
             let wrapperStyle = '';
             let anchorStyle = `
               color: ${highlightColor};
@@ -313,7 +321,7 @@ SmartComponent({
               },
             });
             // 滚动模式时 上一个tab 要有种慢慢被滚动切换的效果
-          } else if (index === active - 1 && !hasIndex) {
+          } else if (preActiveData === itemData && !hasIndex) {
             const currentAnchor = children[index];
 
             const currentOffsetTop = currentAnchor.top;
@@ -353,12 +361,12 @@ SmartComponent({
 
     onClick(event) {
       ty.vibrateShort({ type: 'light' });
-      this.scrollToAnchor(event.target.dataset.index);
+      this.scrollToAnchor(event.target.dataset.item);
     },
 
     onTouchMove(event) {
       if (!this.data.scrollable) return;
-      const sidebarLength = this.children.length;
+      const sidebarLength = this.data.indexList.length;
       const touch = event.touches[0];
       let offsetY = touch.clientY - this.sidebar.top;
       const threshold = this.sidebar.height * 0.25;
@@ -377,11 +385,13 @@ SmartComponent({
       offsetY = Math.max(0, Math.min(offsetY, this.sidebar.height));
       const itemHeight = this.sidebar.height / sidebarLength;
       const index = Math.floor(offsetY / itemHeight);
+      const indexData = this.data.indexList[index];
       this.setData({
         showMoveIcon: true,
         moveTipTop: index * itemHeight + itemHeight / 2,
+        currentMoveIconText: indexData,
       });
-      this.scrollToAnchor(index);
+      this.scrollToAnchor(indexData);
     },
 
     onTouchStop() {
@@ -389,24 +399,26 @@ SmartComponent({
       this.setData({
         showMoveIcon: false,
       });
-      this.scrollToAnchorIndex = null;
+      this.scrollToAnchorIndexData = null;
       this.lastValidOffsetYHistory = [];
     },
 
-    scrollToAnchor(index) {
-      if (typeof index !== 'number' || this.scrollToAnchorIndex === index) {
+    scrollToAnchor(indexData: string) {
+      if (typeof indexData !== 'string' || this.scrollToAnchorIndexData === indexData) {
         return;
       }
+      const childrenIndex = this.children.findIndex(item => item.data.index === indexData);
+      const anchor = this.children[childrenIndex];
       const safeIndex =
-        this.data.lowestActiveIndex !== -1 && index > this.data.lowestActiveIndex
+        this.data.lowestActiveIndex !== -1 && childrenIndex > this.data.lowestActiveIndex
           ? this.data.lowestActiveIndex
-          : index;
+          : childrenIndex;
 
-      const safeAnchor = this.children.find(
-        item => item.data.index === this.data.indexList[safeIndex]
-      );
-      const anchor = this.children.find(item => item.data.index === this.data.indexList[index]);
-      if (!anchor || !safeAnchor) return;
+      const safeAnchor = this.children[safeIndex];
+      if (!safeAnchor) {
+        console.log('没有找到锚点');
+        return;
+      }
       // 如果当前有正在进行的滚动，将新的滚动任务加入队列
       if (!this.pendingAnchor) {
         this.pendingAnchor = [];
@@ -416,14 +428,11 @@ SmartComponent({
         return;
       }
       this.pendingAnchor = [anchor];
-      this.scrollToAnchorIndex = index;
-      this.setData({
-        currentMoveIconText: anchor.data.index,
-      });
+      this.scrollToAnchorIndexData = indexData;
       safeAnchor
         .scrollIntoView(this.scrollTop)
         .then(() => {
-          this.onScroll(safeIndex);
+          this.onScroll(safeAnchor.data.index);
           if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
             const index = this.data.indexList.indexOf(this.pendingAnchor[0].data.index);
             this.pendingAnchor = [];
