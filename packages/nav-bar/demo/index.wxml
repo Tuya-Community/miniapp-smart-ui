@@ -11,6 +11,15 @@
     left-text-type="home"
     bind:click-left-text="onClickLeftText"
   />
+  <smart-nav-bar
+    background="#E4EDFF"
+    custom-class="demo-nav-bar"
+    left-text="HomeHomeHomeHomeHome"
+    left-text-type="home"
+    bind:click-left-text="onClickLeftText"
+  >
+    <smart-icon style="margin-left: auto;padding-left: 16px;" slot="left" name="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png" size="24px" />
+  </smart-nav-bar>
 </demo-block>
 
 <demo-block title="{{I18n.t('secondPageSingleIcon')}}">

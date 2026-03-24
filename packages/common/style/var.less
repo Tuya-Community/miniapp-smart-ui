@@ -12,6 +12,14 @@
   --smart-ui-battery-text-color: rgba(0, 0, 0, 0.6);
   --smart-ui-battery-slash-border-color: #fff;
 
+  // Toast 浅色面板：背景、描边、外投影
+  --smart-ui-toast-background: #5C5C5C;
+  --smart-ui-toast-border: 1px solid rgba(255, 255, 255, 0.05);
+  --smart-ui-toast-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.12);
+
+  // Overlay 毛玻璃遮罩（支持 backdrop-filter 时）/ 半透明遮罩（降级）
+  --smart-ui-overlay-blur-background: rgba(40, 44, 53, 0.22);
+
   &[theme='dark'] {
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
     --smart-ui-bottom-sheet-dragger-node-background: rgba(255, 255, 255, 0.3);
@@ -25,6 +33,13 @@
     --smart-ui-battery-body-base-background: rgba(255, 255, 255, 0.4);
     --smart-ui-battery-text-color: rgba(255, 255, 255, 1);
     --smart-ui-battery-slash-border-color: #000;
+
+    // Toast 深色面板
+    --smart-ui-toast-background: #3C3C3C;
+    --smart-ui-toast-border: 1px solid rgba(255, 255, 255, 0.05);
+    --smart-ui-toast-box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.15);
+    // Overlay 深色模式
+    --smart-ui-overlay-blur-background: rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -82,12 +97,16 @@
 @B6-N7: var(--app-B6-N7, rgba(0, 0, 0, 0.1)); // 列表 N7 字体色
 @B6-N8: var(--app-B6-N8, rgba(0, 0, 0, 0.4)); // 列表 N8 字体色
 @B6-N9: var(--app-B6-N9, rgba(0, 0, 0, 0.05)); // 列表 N9 字体色
-@overlay: var(--smart-ui-overlay, rgba(0, 0, 0, 0.6)); // 遮罩层
+@overlay: var(--smart-ui-overlay, rgba(0, 0, 0, 0.7)); // 遮罩层
 @border-image: var(
   --smart-ui-border-image,
   linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))
 );
 @dialog-bg: var(--smart-ui-dialog-background, rgba(255, 255, 255, 1)); // 弹窗背景色
+@overlay-base-blur-background: var(--smart-ui-overlay-blur-background, rgba(40, 44, 53, 0.22));
+@toast-bg: var(--smart-ui-toast-background, #5C5C5C);
+@toast-base-border: var(--smart-ui-toast-border, 1px solid rgba(255, 255, 255, 0.05));
+@toast-base-box-shadow: var(--smart-ui-toast-box-shadow, 0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.12));
 
 // Color Palette
 @black: #000;
@@ -518,6 +537,8 @@
 
 // Overlay
 @overlay-background-color: @overlay;
+@overlay-blur-background: @overlay-base-blur-background;
+@overlay-blur-radius: 16px;
 
 // Picker
 @picker-background-color: @B4;
@@ -745,19 +766,23 @@
 @tag-plain-background-color: transparent;
 
 // Toast
-@toast-min-width: 56px;
-@toast-max-width: calc(100vw - 48px);
+@toast-text-min-width: 124px;
+@toast-text-max-width: 280px;
+@toast-min-width: 82px;
+@toast-max-width: 280px;
 @toast-font-size: 14px;
 @toast-text-color: @white;
-@toast-line-height: 20px;
+@toast-line-height: 16px;
 @toast-border-radius: 12px;
-@toast-background-color: fade(@black, 70%);
+@toast-background-color: @toast-bg;
+@toast-border: @toast-base-border;
+@toast-box-shadow: @toast-base-box-shadow;
 @toast-icon-size: 36px;
-@toast-text-min-width: 96px;
 @toast-text-padding: 14px 16px;
-@toast-default-padding: 22px 14px 14px;
+@toast-default-padding: 19px 15px;
 @toast-default-width: 56px;
 @toast-default-min-height: 56px;
+@toast-icon-text-padding-top: 8px;
 
 // GridItem
 @grid-item-content-padding: @padding-md @padding-xs;
@@ -832,10 +857,15 @@
 @index-anchor-background-color: transparent;
 @index-anchor-active-background-color: @B3;
 @index-anchor-active-text-color: @M1;
+@index-anchor-index-padding: 0 4px 0 20px;
 
 // IndexBar
-@index-bar-index-font-size: @font-size-xs;
-@index-bar-index-line-height: 14px;
+@index-bar-index-font-size: 10px;
+@index-bar-index-line-height: 16px;
+@index-bar-move-tip-text-padding: 0 10px 0 0;
+@index-bar-move-tip-text-font-size: 24px;
+@index-bar-move-tip-text-line-height: 32px;
+@index-bar-move-tip-text-color: #fff;
 
 // skeleton
 @skeleton-padding: 0 @padding-md;

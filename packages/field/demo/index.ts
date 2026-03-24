@@ -11,7 +11,9 @@ SmartComponent({
     autoHeight: {
       maxHeight: 200,
       minHeight: 100,
-    }
+    },
+    numberFormatValue: 12345.67,
+    numberFormatValueDe: 12345.67,
   },
 
   methods: {
@@ -20,6 +22,18 @@ SmartComponent({
         icon: 'none',
         title: I18n.t('clickTheIcon'),
       });
+    },
+    onNumberFormatInput(e) {
+      this.setData({
+        numberFormatValue: e.detail,
+      });
+      console.log(e.detail, '--onNumberFormatInput');
+    },
+    onNumberFormatInputDe(e) {
+      this.setData({
+        numberFormatValueDe: e.detail,
+      });
+      console.log(e.detail, '--onNumberFormatInputDe');
     },
   },
 });
