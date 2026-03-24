@@ -1,4 +1,0 @@
-### Q: index-bar 在 onClick 时从下往上位移导致页面闪动，原因与解决办法（事件触发在 index.ts:65）
-
-- **答**：闪动原因：点击侧栏触发 scrollToAnchor → scrollIntoView → wx.pageScrollTo；页面滚动会触发 onPageScroll，pageScrollMixin 回调（约 62–65 行）执行 `this.scrollTop = event.scrollTop; this.onScroll();`。onScroll() 用**当前 scrollTop** 和 **children[].top** 算 getActiveAnchorIndex()，而 children[].top 来自 setAnchorsRect()，是上次测量的 rect.top + 当时的 scrollTop，程序化滚动时未重新测量。从下往上滚时 scrollTop 已变小，anchor 的 top 仍是基于旧 scrollTop 的大值，导致算出错误 active（如 -1），错误更新 activeAnchorIndex 和 sticky 样式，产生闪动。解决办法：在 onScroll() 开头若 `this.pendingAnchor && this.pendingAnchor.length > 0` 则直接 return，跳过本次 UI 更新；在 scrollToAnchor 里 scrollIntoView 的 then/catch 中清空 pendingAnchor 后调用 `this.setRect().then(() => this.onScroll())`，用最新几何和当前 scrollTop 做一次正确更新。涉及：packages/index-bar/index.ts（onScroll 早期 return、scrollToAnchor 的 then/catch 里 setRect+onScroll）。
-- 时间：2025-03-11

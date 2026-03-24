@@ -419,7 +419,6 @@ SmartComponent({
 
       const safeAnchor = this.children[safeIndex];
       if (!safeAnchor) {
-        console.log('No anchor found');
         return;
       }
       // 如果当前有正在进行的滚动，将新的滚动任务加入队列
