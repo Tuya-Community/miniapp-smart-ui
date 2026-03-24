@@ -372,19 +372,19 @@ SmartComponent({
       const sidebarLength = this.data.indexList.length;
       const touch = event.touches[0];
       let offsetY = touch.clientY - this.sidebar.top;
-      const threshold = this.sidebar.height * 0.25;
+      const threshold = (this.sidebar.height / sidebarLength) * 3;
       if (!this.lastValidOffsetYHistory) {
         this.lastValidOffsetYHistory = [];
       }
       const nearCount = this.lastValidOffsetYHistory.filter(
         h => Math.abs(offsetY - h) < threshold
       ).length;
+      this.lastValidOffsetYHistory.push(offsetY);
+      if (this.lastValidOffsetYHistory.length > 3) this.lastValidOffsetYHistory.shift();
       // 与最近 3 次中至少 2 个都超阈值则判定本帧为异常，沿用上次有效值
       if (this.lastValidOffsetYHistory.length === 3 && nearCount < 2) {
         return;
       }
-      this.lastValidOffsetYHistory.push(offsetY);
-      if (this.lastValidOffsetYHistory.length > 3) this.lastValidOffsetYHistory.shift();
       offsetY = Math.max(0, Math.min(offsetY, this.sidebar.height));
       const itemHeight = this.sidebar.height / sidebarLength;
       const index = Math.floor(offsetY / itemHeight);
