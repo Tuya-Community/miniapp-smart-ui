@@ -70,7 +70,7 @@ SmartComponent({
         duration: 0,
         forbidClick: true,
         message: text(3),
-        width: 88,
+        width: 120,
       });
 
       let second = 3;

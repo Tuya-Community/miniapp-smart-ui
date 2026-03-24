@@ -9,12 +9,24 @@
     catch:touchend="onTouchStop"
     catch:touchcancel="onTouchStop"
   >
+  <view
+    wx:if="{{ showMoveTip }}"
+    class="smart-index-bar__move-tip {{ showMoveIcon ? 'smart-index-bar__move-tip--visible' : '' }}"
+    style="top: {{ moveTipTop }}px;"
+  >
+    <view class="smart-index-bar__move-tip-inner">
+      <slot name="move-tip" />
+      <smart-icon name="{{iconSvg}}" size="44px" customStyle="width: 1.18em;" />
+      <text class="smart-index-bar__move-tip-text">{{ currentMoveIconText }}</text>
+    </view>
+  </view>
     <view
       wx:for="{{ indexList }}"
       wx:key="index"
       class="smart-index-bar__index"
-      style="z-index: {{ zIndex + 1 }};color: {{ activeAnchorIndex === index ? highlightColor : '' }};font-size: {{ sidebarFontSize }};line-height: {{ sidebarLineHeight }};"
+      style="z-index: {{ zIndex + 1 }};color: {{ activeAnchorIndexData === item ? highlightColor : '' }};font-size: {{ sidebarFontSize }};line-height: {{ sidebarLineHeight }};"
       data-index="{{ index }}"
+      data-item="{{ item }}"
     >
       {{ item }}
     </view>

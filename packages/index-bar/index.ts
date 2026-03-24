@@ -3,6 +3,7 @@ import { SmartComponent } from '../common/component';
 import { useChildren } from '../common/relation';
 import { getRect, isDef } from '../common/utils';
 import { pageScrollMixin } from '../mixins/page-scroll';
+import iconSvg from './icon';
 import ty from '../common/ty';
 
 const indexList = () => {
@@ -52,6 +53,10 @@ SmartComponent({
       type: Array,
       value: indexList(),
     },
+    showMoveTip: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   mixins: [
@@ -62,17 +67,29 @@ SmartComponent({
   ],
 
   data: {
-    activeAnchorIndex: null,
+    iconSvg,
+    activeAnchorIndexData: null,
     showSidebar: false,
+    showMoveIcon: false,
+    lowestActiveIndex: -1,
+    currentMoveIconText: '',
+    moveTipTop: 0,
   },
 
   // @ts-ignore
   pendingAnchor: null,
+  // 用于过滤 clientY 偶现跳变：保留最近 3 次有效值，与其中至少 2 个都超阈值才判定本帧为异常
+  lastValidOffsetYHistory: null,
+  preMoveTipTop: null,
 
   watch: {
-    activeAnchorIndex(newVal) {
-      if (newVal !== null && newVal !== -1) {
+    moveTipTop(newVal) {
+      if (this.preMoveTipTop === null) {
+        this.preMoveTipTop = newVal;
+      }
+      if (newVal !== null && newVal !== 0 && newVal !== this.preMoveTipTop) {
         ty.vibrateShort({ type: 'light' });
+        this.preMoveTipTop = newVal;
       }
     },
   },
@@ -83,6 +100,10 @@ SmartComponent({
 
   methods: {
     updateData() {
+      // 列表更新时重置记录的最低滚动节点
+      this.setData({
+        lowestActiveIndex: -1,
+      });
       wx.nextTick(() => {
         if (this.timer != null) {
           clearTimeout(this.timer);
@@ -94,6 +115,7 @@ SmartComponent({
           });
 
           this.setRect().then(() => {
+            this.computeLowestActiveIndex();
             this.onScroll();
           });
         }, 0);
@@ -101,7 +123,12 @@ SmartComponent({
     },
 
     setRect() {
-      return Promise.all([this.setAnchorsRect(), this.setListRect(), this.setSidebarRect()]);
+      return Promise.all([
+        this.setAnchorsRect(),
+        this.setListRect(),
+        this.setSidebarRect(),
+        this.getPageHeight(),
+      ]);
     },
 
     setAnchorsRect() {
@@ -115,6 +142,19 @@ SmartComponent({
           })
         )
       );
+    },
+
+    getPageHeight() {
+      return new Promise(resolve => {
+        const query = wx.createSelectorQuery();
+        query.selectViewport().scrollOffset(); // 也可以使用 .boundingClientRect()
+        query.exec(res => {
+          resolve(res[0].scrollHeight);
+          Object.assign(this, {
+            pageHeight: res[0].scrollHeight,
+          });
+        });
+      });
     },
 
     setListRect() {
@@ -141,6 +181,35 @@ SmartComponent({
       });
     },
 
+    /**
+     * 用视口高度与内容高度几何计算「能滚动到吸顶位置」的最底部锚点索引，
+     * 用于 scrollToAnchor 时限制目标索引，避免点击无法滚到顶的锚点。
+     */
+    computeLowestActiveIndex() {
+      const { children } = this;
+      if (!children || children.length === 0) {
+        this.setData({ lowestActiveIndex: -1 });
+        return;
+      }
+      const { stickyOffsetTop } = this.data;
+      // 页面滚动内容总高度 = 最后一个锚点的 top + height（与 setAnchorsRect 中存的一致：文档坐标）
+      const contentHeight = this.pageHeight;
+      const sysInfo = wx.getSystemInfoSync && wx.getSystemInfoSync();
+      // @ts-ignore
+      const viewportHeight = (sysInfo && sysInfo.useableWindowHeight) || sysInfo.windowHeight;
+      const maxScrollTop = Math.max(0, contentHeight - viewportHeight);
+      // 锚点 i 能滚到吸顶 ⟺ 所需 scrollTop = anchor[i].top - stickyOffsetTop ≤ maxScrollTop
+      // 即 anchor[i].top ≤ maxScrollTop + stickyOffsetTop；从后往前取第一个满足的 i
+      let lowest = -1;
+      for (let i = children.length - 1; i >= 0; i--) {
+        if (children[i].top <= maxScrollTop + stickyOffsetTop) {
+          lowest = i;
+          break;
+        }
+      }
+      this.setData({ lowestActiveIndex: lowest });
+    },
+
     setDiffData({ target, data }) {
       const diffData = {};
 
@@ -162,6 +231,10 @@ SmartComponent({
       }));
     },
 
+    getChildrenIndexList() {
+      return this.children.map(item => item.data.index);
+    },
+
     getActiveAnchorIndex() {
       const { children, scrollTop } = this;
       const { sticky, stickyOffsetTop } = this.data;
@@ -178,33 +251,52 @@ SmartComponent({
       return -1;
     },
 
-    onScroll() {
+    onScroll(controlActiveIndexData?: string) {
       const { children = [], scrollTop } = this;
 
       if (!children.length) {
         return;
       }
 
+      const hasIndex = controlActiveIndexData !== undefined;
+      const scrollChildrenGetIndex = this.getActiveAnchorIndex();
+      const scrollChildrenGetIndexData = this.children[scrollChildrenGetIndex]?.data.index;
+      // 程序化滚动（如 sidebar 点击）未完成时，不根据当前 scrollTop 更新 UI，
+      // 避免 scrollTop 已变而 anchor 几何未重测导致 getActiveAnchorIndex 算错引发闪动。
+      // 滚动结束后在 scrollToAnchor 的 then 里会 setRect + onScroll 做一次正确更新。
+      if (this.pendingAnchor && this.pendingAnchor.length > 0 && !hasIndex) {
+        return;
+      }
+      // lowestActiveIndex 已改为在 setRect 后由 computeLowestActiveIndex() 几何计算，此处不再根据滚动推断
+
       const { sticky, stickyOffsetTop, zIndex, highlightColor } = this.data;
 
-      const active = this.getActiveAnchorIndex();
+      const activeData = hasIndex ? controlActiveIndexData : scrollChildrenGetIndexData;
+      if (activeData === undefined) {
+        return;
+      }
+      const activeIndex = this.children.findIndex(item => item.data.index === activeData);
+      const preActiveData = this.children[activeIndex - 1]?.data?.index;
 
       this.setDiffData({
         target: this,
         data: {
-          activeAnchorIndex: active,
+          activeAnchorIndexData: activeData,
         },
       });
 
       if (sticky) {
         let isActiveAnchorSticky = false;
 
-        if (active !== -1) {
-          isActiveAnchorSticky = children[active].top <= stickyOffsetTop + scrollTop;
+        if (activeData !== null) {
+          isActiveAnchorSticky =
+            children.find(item => item.data.index === activeData)?.top <=
+            stickyOffsetTop + scrollTop;
         }
-
         children.forEach((item, index) => {
-          if (index === active) {
+          const itemData = item.data.index;
+          // 为当前的 anchor 设置 fixed 吸顶和文字颜色
+          if (itemData === activeData) {
             let wrapperStyle = '';
             let anchorStyle = `
               color: ${highlightColor};
@@ -231,7 +323,8 @@ SmartComponent({
                 wrapperStyle,
               },
             });
-          } else if (index === active - 1) {
+            // 滚动模式时 上一个tab 要有种慢慢被滚动切换的效果
+          } else if (preActiveData === itemData && !hasIndex) {
             const currentAnchor = children[index];
 
             const currentOffsetTop = currentAnchor.top;
@@ -255,6 +348,7 @@ SmartComponent({
               },
             });
           } else {
+            // 其他恢复原样
             this.setDiffData({
               target: item,
               data: {
@@ -269,42 +363,65 @@ SmartComponent({
     },
 
     onClick(event) {
-      this.scrollToAnchor(event.target.dataset.index);
+      ty.vibrateShort({ type: 'light' });
+      this.scrollToAnchor(event.target.dataset.item);
     },
 
     onTouchMove(event) {
       if (!this.data.scrollable) return;
-      const sidebarLength = this.children.length;
+      const sidebarLength = this.data.indexList.length;
       const touch = event.touches[0];
-      const itemHeight = this.sidebar.height / sidebarLength;
-      let index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
-
-      // 有时候会莫名间断出现 -90多的情况
-      if (index < -20) {
+      let offsetY = touch.clientY - this.sidebar.top;
+      const threshold = (this.sidebar.height / sidebarLength) * 3;
+      if (!this.lastValidOffsetYHistory) {
+        this.lastValidOffsetYHistory = [];
+      }
+      const nearCount = this.lastValidOffsetYHistory.filter(
+        h => Math.abs(offsetY - h) < threshold
+      ).length;
+      this.lastValidOffsetYHistory.push(offsetY);
+      if (this.lastValidOffsetYHistory.length > 3) this.lastValidOffsetYHistory.shift();
+      // 与最近 3 次中至少 2 个都超阈值则判定本帧为异常，沿用上次有效值
+      if (this.lastValidOffsetYHistory.length === 3 && nearCount < 2) {
         return;
       }
-      if (index < 0) {
-        index = 0;
-      } else if (index > sidebarLength - 1) {
-        index = sidebarLength - 1;
-      }
-      this.scrollToAnchor(index);
+      offsetY = Math.max(0, Math.min(offsetY, this.sidebar.height));
+      const itemHeight = this.sidebar.height / sidebarLength;
+      const index = Math.floor(offsetY / itemHeight);
+      const indexData = this.data.indexList[index];
+      this.setData({
+        showMoveIcon: true,
+        moveTipTop: index * itemHeight + itemHeight / 2,
+        currentMoveIconText: indexData,
+      });
+      this.scrollToAnchor(indexData);
     },
 
     onTouchStop() {
       if (!this.data.scrollable) return;
-      this.scrollToAnchorIndex = null;
+      this.setData({
+        showMoveIcon: false,
+      });
+      this.scrollToAnchorIndexData = null;
+      this.lastValidOffsetYHistory = [];
     },
 
-    scrollToAnchor(index) {
-      if (typeof index !== 'number' || this.scrollToAnchorIndex === index) {
+    scrollToAnchor(indexData: string) {
+      if (typeof indexData !== 'string' || this.scrollToAnchorIndexData === indexData) {
         return;
       }
+      const childrenIndex = this.children.findIndex(item => item.data.index === indexData);
+      const anchor = this.children[childrenIndex];
+      const safeIndex =
+        this.data.lowestActiveIndex !== -1 && childrenIndex > this.data.lowestActiveIndex
+          ? this.data.lowestActiveIndex
+          : childrenIndex;
 
-      this.scrollToAnchorIndex = index;
-
-      const anchor = this.children.find(item => item.data.index === this.data.indexList[index]);
-      if (!anchor) return;
+      const safeAnchor = this.children[safeIndex];
+      if (!safeAnchor) {
+        console.log('No anchor found');
+        return;
+      }
       // 如果当前有正在进行的滚动，将新的滚动任务加入队列
       if (!this.pendingAnchor) {
         this.pendingAnchor = [];
@@ -314,13 +431,15 @@ SmartComponent({
         return;
       }
       this.pendingAnchor = [anchor];
-      anchor
+      this.scrollToAnchorIndexData = indexData;
+      safeAnchor
         .scrollIntoView(this.scrollTop)
         .then(() => {
+          this.onScroll(safeAnchor.data.index);
           if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
-            const index = this.data.indexList.indexOf(this.pendingAnchor[0].data.index);
-            this.scrollToAnchor(index);
+            const dataIndex = this.pendingAnchor[0].data.index;
             this.pendingAnchor = [];
+            this.scrollToAnchor(dataIndex);
             return;
           }
           this.pendingAnchor = [];
@@ -328,9 +447,9 @@ SmartComponent({
         .catch(err => {
           console.error(err);
           if (this.pendingAnchor.length > 0 && this.pendingAnchor[0] !== anchor) {
-            const index = this.data.indexList.indexOf(this.pendingAnchor[0].data.index);
-            this.scrollToAnchor(index);
+            const dataIndex = this.pendingAnchor[0].data.index;
             this.pendingAnchor = [];
+            this.scrollToAnchor(dataIndex);
             return;
           }
           this.pendingAnchor = [];

@@ -22,7 +22,8 @@ Import the component in `app.json` or `index.json`, for detailed introduction se
 
 ### Home Page
 
-The text style on the home page is aligned to the left and bold by default, clicking on the left text triggers an event; the `background` `v2.7.0` property can set the background color of the nav-bar.
+The text style on the home page is aligned to the left and bold by default, clicking on the left text triggers an event; the `background` `v2.7.0` property can set the background color of the nav-bar.   
+Use `slot="left"` to insert custom content (e.g. an icon) in the left area; with `margin-left: auto` on the inserted content, it can be aligned to the right within the left container without leaving the document flow `v2.11.1`.
 
 ```html
 <smart-nav-bar
@@ -36,6 +37,19 @@ The text style on the home page is aligned to the left and bold by default, clic
   left-text-type="home"
   bind:click-left-text="onClickLeftText"
 />
+<smart-nav-bar
+  background="#E4EDFF"
+  custom-class="demo-nav-bar"
+  left-text="HomeHomeHomeHomeHome"
+  left-text-type="home"
+  bind:click-left-text="onClickLeftText"
+>
+  <smart-icon 
+    style="margin-left: auto;padding-left: 16px;" 
+    slot="left" 
+    name="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png" size="24px" 
+  />
+</smart-nav-bar>
 ```
 
 ```js

@@ -2165,10 +2165,15 @@
   resolved "https://registry.npmjs.org/@pkgr/core/-/core-0.2.9.tgz#d229a7b7f9dac167a156992ef23c7f023653f53b"
   integrity sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==
 
-"@ray-js/components-ty-slider@^0.3.9":
-  version "0.3.9"
-  resolved "https://registry.npmjs.org/@ray-js/components-ty-slider/-/components-ty-slider-0.3.9.tgz#0c6cf95c591b8fa72340eca6d99f9b75cb5ecb86"
-  integrity sha512-TeRV7fs5HkXrcClQUvtqEQruSRhDn2eGBDwElX6XN9EC8MZDfWil5Z3FIVNGTyRW4uGGGQIOK44IK8glgx8a0w==
+"@ray-core/event-propagation@^0.4.13":
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/@ray-core/event-propagation/-/event-propagation-0.4.13.tgz#cc0eb210f172d5bfa1a964d63650bfa3a189b4c6"
+  integrity sha512-azE2x20BHpNSeGwa9xz6aOa/Y4sQNbbOxQ8A+904lZkGzbRS0w1o2NobplqyzNbs9yma9dz7NEY8pwHMULRZYw==
+
+"@ray-js/components-ty-slider@^0.3.8":
+  version "0.3.8"
+  resolved "https://registry.npmjs.org/@ray-js/components-ty-slider/-/components-ty-slider-0.3.8.tgz#ff3caf6b503f8361f5f019fed1150b28903ebf42"
+  integrity sha512-1FZ9zvQ9IuxA7OPAIYKDMO9HTQoSrV0wpJe6f6bPAHuN7NGWxo00200OWgad4Jf8bvsP7bX5E/HqHxLKvkhI0Q==
   dependencies:
     clsx "^1.2.1"
     lodash "^4.17.21"

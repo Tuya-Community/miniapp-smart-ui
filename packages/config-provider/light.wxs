@@ -97,5 +97,9 @@ lightVars["--smart-ui-border-image"] = "linear-gradient(to right,rgba(0, 0, 0, 0
 lightVars["--smart-ui-battery-body-base-background"] = "rgba(0, 0, 0, 0.25)"; // 电池主体背景色
 lightVars["--smart-ui-battery-text-color"] = "rgba(0, 0, 0, 0.6)"; // 电量文本颜色
 lightVars["--smart-ui-battery-slash-border-color"] = v10; // 电池边框颜色
+lightVars["--smart-ui-toast-background"] = "#5C5C5C"; // Toast 浅色面板背景
+lightVars["--smart-ui-toast-border"] = "1px solid rgba(255, 255, 255, 0.05)"; // Toast 描边
+lightVars["--smart-ui-toast-box-shadow"] = "0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.12)"; // Toast 外投影
+lightVars["--smart-ui-overlay-blur-background"] = "rgba(40, 44, 53, 0.22)"; // Overlay 毛玻璃/半透明遮罩
 
 module.exports = lightVars;
