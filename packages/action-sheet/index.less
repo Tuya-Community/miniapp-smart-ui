@@ -145,6 +145,7 @@
       --action-sheet-description-line-height,
       @a11y-action-sheet-description-line-height
     );
+    color: var(--action-sheet-description-color, @a11y-action-sheet-description-color);
   }
 
   .smart-action-sheet__item,
@@ -162,6 +163,8 @@
   .smart-action-sheet__subname {
     font-size: var(--action-sheet-subname-font-size, @a11y-action-sheet-subname-font-size);
     line-height: var(--action-sheet-subname-line-height, @a11y-action-sheet-subname-line-height);
+    color: var(--action-sheet-subname-color, @a11y-action-sheet-subname-color);
+    margin-top: 0;
   }
 
   .smart-action-sheet__icon {

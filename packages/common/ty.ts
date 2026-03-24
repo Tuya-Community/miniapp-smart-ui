@@ -47,6 +47,32 @@ const tyApi = {
       return tyApi.themeInfo;
     }
   },
+  accessibilityModeData: null as { isAccessibilityMode: boolean } | null,
+  getAccessibilityMode: (params: any) => {
+    // @ts-ignore
+    if (ty?.getAccessibilityMode === undefined) {
+      return false;
+    }
+    const { success = () => {}, fail = () => {}, complete = () => {} } = params || {};
+    if (tyApi.accessibilityModeData) {
+      success(tyApi.accessibilityModeData);
+      complete();
+      return;
+    }
+    // @ts-ignore
+    ty.getAccessibilityMode({
+      success: (res: { isAccessibilityMode: boolean }) => {
+        tyApi.accessibilityModeData = res;
+        success(res);
+      },
+      fail: err => {
+        fail(err);
+      },
+      complete: () => {
+        complete();
+      },
+    });
+  },
   isWX: () => {
     // @ts-ignore
     return typeof ty === 'undefined' && !!wx;
