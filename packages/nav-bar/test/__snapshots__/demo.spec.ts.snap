@@ -11,7 +11,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -52,7 +52,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px;background:#E4EDFF; "
+          style="z-index:1;background:#E4EDFF; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -93,7 +93,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px;background:#E4EDFF; "
+          style="z-index:1;background:#E4EDFF; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -157,7 +157,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -236,7 +236,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -325,7 +325,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -380,7 +380,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -446,7 +446,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -496,7 +496,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -551,7 +551,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -618,7 +618,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -698,7 +698,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"

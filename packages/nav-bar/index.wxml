@@ -1,11 +1,14 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 <wxs src="./index.wxs" module="computed" />
 
-<view wx:if="{{ fixed && placeholder }}" style="height: {{ height }}px;" />
+<view
+  wx:if="{{ fixed && placeholder }}"
+  class="smart-nav-bar__placeholder{{ safeAreaInsetTop ? ' smart-nav-bar__placeholder--safe' : '' }}{{ round ? ' smart-nav-bar__placeholder--round' : '' }}"
+/>
 
 <view
   class="{{ utils.bem('nav-bar', { fixed, round, safe: safeAreaInsetTop }) }} custom-class {{ border ? 'smart-hairline--bottom' : '' }}"
-  style="{{ computed.barStyle({ zIndex, statusBarHeight, safeAreaInsetTop, background }) }}; {{ customStyle }}"
+  style="{{ computed.barStyle({ zIndex, background }) }}; {{ customStyle }}"
 >
   <view class="smart-nav-bar__content">
     <view class="{{ computed.leftClass({ sideWidth, leftTextType, leftText, leftArrow, leftIcon }) }}" style="{{ computed.sideStyle({ sideWidth }) }}" bind:tap="onClickLeft">
