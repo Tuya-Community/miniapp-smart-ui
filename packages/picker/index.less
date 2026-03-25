@@ -88,6 +88,14 @@
 
 :root[data-a11y='true'] {
   .smart-picker {
+    &__frame {
+      background: var(--a11y-picker-frame-background, @a11y-picker-frame-background);
+      &::after {
+        content: '';
+        display: none;
+      }
+    }
+
     &__toolbar {
       height: var(--picker-toolbar-height, @a11y-picker-toolbar-height);
       line-height: var(--picker-toolbar-height, @a11y-picker-toolbar-height);

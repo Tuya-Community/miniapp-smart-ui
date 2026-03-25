@@ -1,3 +1,15 @@
+:root {
+  --smart-a11y-action-sheet-item-text-color: #000;
+
+  &[theme='dark'] {
+    --smart-a11y-action-sheet-item-text-color: #fff;
+  }
+}
+
+@B6-N2: var(--app-B6-N2, rgba(0, 0, 0, 0.7)); // 列表 N2 字体色
+@B6-N7: var(--app-B6-N7, rgba(0, 0, 0, 0.1)); // 列表 N7 字体色
+@Smart-a11y-action-sheet-item-text-color: var(--smart-a11y-action-sheet-item-text-color, #000);
+
 /** Toast */
 @a11y-toast-font-size: 18px;
 @a11y-toast-font-weight: 600;
@@ -9,12 +21,12 @@
 @a11y-dialog-header-line-height: 30px;
 
 @a11y-dialog-has-title-message-font-size: 18px;
-@a11y-dialog-has-title-message-text-color: rgba(0, 0, 0, 0.7);
+@a11y-dialog-has-title-message-text-color: @B6-N2;
 
 @a11y-dialog-message-font-size: 18px;
 @a11y-dialog-message-line-height: 27px;
 @a11y-dialog-message-font-weight: 500;
-@a11y-dialog-message-text-color: rgba(0, 0, 0, 0.7);
+@a11y-dialog-message-text-color: @B6-N2;
 
 @a11y-dialog-confirm-font-weight: 500;
 @a11y-dialog-input-height: 47px;
@@ -32,9 +44,9 @@
 @a11y-action-sheet-header-font-size: 20px;
 @a11y-action-sheet-header-font-weight: 600;
 @a11y-action-sheet-header-height: 62px;
-@a11y-action-sheet-header-color: rgba(0, 0, 0, 0.7);
+@a11y-action-sheet-header-color: @B6-N2;
 
-@a11y-action-sheet-item-text-color: #000000;
+@a11y-action-sheet-item-text-color: @Smart-a11y-action-sheet-item-text-color;
 @a11y-action-sheet-item-font-size: 20px;
 @a11y-action-sheet-item-line-height: 30px;
 @a11y-action-sheet-item-font-weight: 600;
@@ -43,11 +55,11 @@
 
 @a11y-action-sheet-subname-font-size: 18px;
 @a11y-action-sheet-subname-line-height: 27px;
-@a11y-action-sheet-subname-color: rgba(0, 0, 0, 0.7);
+@a11y-action-sheet-subname-color: @B6-N2;
 
 @a11y-action-sheet-description-font-size: 18px;
 @a11y-action-sheet-description-line-height: 27px;
-@a11y-action-sheet-description-color: rgba(0, 0, 0, 0.7);
+@a11y-action-sheet-description-color: @B6-N2;
 
 @a11y-action-sheet-item-icon-size: 32px;
 
@@ -62,4 +74,5 @@
 @a11y-picker-option-font-weight: 600;
 @a11y-picker-option-unit-font-size: 16px;
 @a11y-picker-option-unit-line-height: 24px;
-@a11y-picker-option-unit-text-color: rgba(0, 0, 0, 0.7);
+@a11y-picker-option-unit-text-color: @B6-N2;
+@a11y-picker-frame-background: @B6-N7;
