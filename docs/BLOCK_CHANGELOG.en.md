@@ -1,5 +1,11 @@
 # Upgrade Notes
 
+## v2.12.0 (2026-3-24)
+
+### Features ✨
+- toast: UED-aligned background color; added border and shadow; adjusted default min/max width ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
+
+
 ## v2.10.0 (2026-1-13)
 
 ### Features ✨
