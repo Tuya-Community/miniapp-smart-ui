@@ -6,11 +6,11 @@
 
 - nav-bar: In home mode (left-text-type="home"), support custom content (e.g. icons) via slot="left"; no new component properties ([4175796](https://github.com/Tuya-Community/miniapp-smart-ui/pull/163/commits/417579676d3088e066abba7ccca9e7010f68ee3d))
 - index-bar: Add showMoveTip property for a bubble hint while dragging the index sidebar ([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178))
-- toast: UED-aligned background, border, and shadow; default min/max width tweaks; overridable via CSS variables such as --toast-background-color, --toast-border, --toast-box-shadow, --toast-text-min-width, --toast-text-max-width, --toast-min-width, and --toast-max-width ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
+- toast: UED-aligned background color; added border and shadow; adjusted default min/max width ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
 - overlay: backdrop-filter frosted-glass mask where supported; new CSS variables --overlay-blur-background and --overlay-blur-radius ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
-- field: Add numberFormat and locale properties; export helpers getNumberFormatConfig, parseFormattedNumber, and formatNumber ([pull/162](https://github.com/Tuya-Community/miniapp-smart-ui/pull/162))
+- field: Add numberFormat and locale properties for locale-aware digit/group separator formatting; export helpers getNumberFormatConfig, parseFormattedNumber, and formatNumber ([pull/162](https://github.com/Tuya-Community/miniapp-smart-ui/pull/162))
 - config-provider: Theme mapping adds --smart-ui-toast-background, --smart-ui-toast-border, --smart-ui-toast-box-shadow, and --smart-ui-overlay-blur-background ([572effd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/176/commits/572effdee81ed77ea0699e0bb44fab40255e81ad))
-- SmartUI native mini programs: Ray event objects support e.origin.stopPropagation() to stop bubbling (framework event API, not component properties) ([9c6a4ae](https://github.com/Tuya-Community/miniapp-smart-ui/pull/174/commits/9c6a4ae1cd9acd6c0179f625eb9eccd8aec7f2cf))
+- SmartUI native mini program Ray event objects support e.origin.stopPropagation() to stop bubbling (framework event API, not component properties) ([9c6a4ae](https://github.com/Tuya-Community/miniapp-smart-ui/pull/174/commits/9c6a4ae1cd9acd6c0179f625eb9eccd8aec7f2cf))
 
 ### Bug Fixes 🐛
 

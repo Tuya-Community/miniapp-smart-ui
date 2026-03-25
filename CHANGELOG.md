@@ -6,11 +6,11 @@
 
 - nav-bar: home 模式（left-text-type="home"）支持通过 slot="left" 插入自定义内容；无新增组件 properties([4175796](https://github.com/Tuya-Community/miniapp-smart-ui/pull/163/commits/417579676d3088e066abba7ccca9e7010f68ee3d))
 - index-bar: 新增 showMoveTip 属性，支持拖动索引栏时显示气泡提示([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178))
-- toast: 调整背景色以对齐 UED，新增边框与阴影，调整默认最大/最小宽度；可通过 CSS 变量 --toast-background-color、--toast-border、--toast-box-shadow、--toast-text-min-width、--toast-text-max-width、--toast-min-width、--toast-max-width 等覆盖([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
+- toast: 调整背景色以对齐 UED，新增边框与阴影，调整默认最大/最小宽度([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
 - overlay: 支持 iOS 等设备上 backdrop-filter 毛玻璃遮罩；新增 CSS 变量 --overlay-blur-background、--overlay-blur-radius ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
-- field: 新增 numberFormat、locale 属性；导出工具 getNumberFormatConfig、parseFormattedNumber、formatNumber([pull/162](https://github.com/Tuya-Community/miniapp-smart-ui/pull/162))
+- field: 新增 numberFormat、locale 属性，支持地区数字分隔符格式化；并导出工具函数 getNumberFormatConfig、parseFormattedNumber、formatNumber([pull/162](https://github.com/Tuya-Community/miniapp-smart-ui/pull/162))
 - config-provider: 主题变量映射新增 --smart-ui-toast-background、--smart-ui-toast-border、--smart-ui-toast-box-shadow、--smart-ui-overlay-blur-background([572effd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/176/commits/572effdee81ed77ea0699e0bb44fab40255e81ad))
-- SmartUI 原生小程序：Ray 事件对象支持 e.origin.stopPropagation() 阻止冒泡（框架事件能力，非组件 properties）([9c6a4ae](https://github.com/Tuya-Community/miniapp-smart-ui/pull/174/commits/9c6a4ae1cd9acd6c0179f625eb9eccd8aec7f2cf))
+- SmartUI 原生小程序 Ray 事件对象支持 e.origin.stopPropagation() 阻止冒泡（框架事件能力，非组件 properties）([9c6a4ae](https://github.com/Tuya-Community/miniapp-smart-ui/pull/174/commits/9c6a4ae1cd9acd6c0179f625eb9eccd8aec7f2cf))
 
 ### Bug Fixes 🐛
 
