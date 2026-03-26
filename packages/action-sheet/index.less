@@ -137,6 +137,8 @@
     font-weight: var(--action-sheet-header-font-weight, @a11y-action-sheet-header-font-weight);
     line-height: var(--action-sheet-header-height, @a11y-action-sheet-header-height);
     color: var(--action-sheet-header-color, @a11y-action-sheet-header-color);
+    border-bottom: 1px solid
+      var(--action-sheet-header-border-color, @a11y-action-sheet-header-border-color);
   }
 
   .smart-action-sheet__description {
@@ -174,5 +176,12 @@
   .smart-action-sheet__footer {
     font-size: var(--action-sheet-item-font-size, @a11y-action-sheet-item-font-size);
     line-height: var(--action-sheet-item-line-height, @a11y-action-sheet-item-line-height);
+  }
+
+  .smart-action-sheet__gap {
+    background-color: var(
+      --action-sheet-footer-padding-color,
+      @a11y-action-sheet-footer-padding-color
+    );
   }
 }

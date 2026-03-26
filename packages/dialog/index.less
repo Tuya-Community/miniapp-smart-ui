@@ -170,8 +170,17 @@
     font-weight: var(--dialog-confirm-font-weight, @a11y-dialog-confirm-font-weight);
   }
   .smart-dialog__input {
+    background-color: var(--dialog-input-background-color, @a11y-dialog-input-background-color);
     font-size: var(--dialog-input-font-size, @a11y-dialog-input-font-size);
     font-weight: var(--dialog-input-font-weight, @a11y-dialog-input-font-weight);
     height: var(--dialog-input-height, @a11y-dialog-input-height);
+  }
+  .smart-hairline--top::after {
+    border: 0 solid var(--hairline-color, @a11y-hairline-color);
+    border-top-width: var(--hairline-top-width, @a11y-hairline-top-width);
+  }
+  .smart-hairline--right::after {
+    border: 0 solid var(--hairline-color, @a11y-hairline-color);
+    border-right-width: var(--hairline-right-width, @a11y-hairline-right-width);
   }
 }
