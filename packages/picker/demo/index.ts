@@ -1,18 +1,38 @@
+import tyApi from '../../common/ty';
 import { SmartComponent } from '../../common/component';
 import Toast from '../../toast/toast';
 
 SmartComponent({
   data: {
+    isA11y: false,
     activeIndex: 3,
-    column1: [I18n.t('hangzhou'), I18n.t('ningbo'), I18n.t('wenzhou'), I18n.t('jiaxing'), I18n.t('huzhou')],
+    column1: [
+      I18n.t('hangzhou'),
+      I18n.t('ningbo'),
+      I18n.t('wenzhou'),
+      I18n.t('jiaxing'),
+      I18n.t('huzhou'),
+    ],
     column2: [
       { text: I18n.t('hangzhou'), disabled: true },
       { text: I18n.t('ningbo') },
       { text: I18n.t('wenzhou') },
     ],
     column3: {
-      [I18n.t('zhejiang')]: [I18n.t('hangzhou'), I18n.t('ningbo'), I18n.t('wenzhou'), I18n.t('jiaxing'), I18n.t('huzhou')],
-      [I18n.t('fujian')]: [I18n.t('fuzhou'), I18n.t('xiamen'), I18n.t('putian'), I18n.t('sanming'), I18n.t('quanzhou')],
+      [I18n.t('zhejiang')]: [
+        I18n.t('hangzhou'),
+        I18n.t('ningbo'),
+        I18n.t('wenzhou'),
+        I18n.t('jiaxing'),
+        I18n.t('huzhou'),
+      ],
+      [I18n.t('fujian')]: [
+        I18n.t('fuzhou'),
+        I18n.t('xiamen'),
+        I18n.t('putian'),
+        I18n.t('sanming'),
+        I18n.t('quanzhou'),
+      ],
     },
     column4: [
       {
@@ -21,7 +41,13 @@ SmartComponent({
         unit: I18n.t('province'),
       },
       {
-        values: [I18n.t('hangzhou'), I18n.t('ningbo'), I18n.t('wenzhou'), I18n.t('jiaxing'), I18n.t('huzhou')],
+        values: [
+          I18n.t('hangzhou'),
+          I18n.t('ningbo'),
+          I18n.t('wenzhou'),
+          I18n.t('jiaxing'),
+          I18n.t('huzhou'),
+        ],
         className: 'column2',
         defaultIndex: 2,
         unit: I18n.t('city'),
@@ -31,35 +57,51 @@ SmartComponent({
       {
         values: new Array(100).fill(1).map((x, i) => i),
         style: 'flex: none;width: auto;min-width: 61px;',
-        fontStyle: 'font-size: 16px;'
+        fontStyle: 'color: rgb(135, 180, 244);',
       },
       {
         values: ['.'],
         disabled: true,
-        style: 'flex: none;width: 8px;display:flex;justify-content: center;'
+        style: 'flex: none;width: 8px;display:flex;justify-content: center;',
       },
       {
         values: new Array(20).fill(1).map((x, i) => i),
         style: 'flex: none;width: auto;min-width: 61px;',
         unit: 'Kg',
-        unitGap: '10rpx'
+        unitGap: '10rpx',
       },
     ],
     column6: [
       {
         values: [I18n.t('zhejiang'), I18n.t('fujian')],
-        order: 2
+        order: 2,
       },
       {
-        values: [I18n.t('hangzhou'), I18n.t('ningbo'), I18n.t('wenzhou'), I18n.t('jiaxing'), I18n.t('huzhou')],
-        order: 1
+        values: [
+          I18n.t('hangzhou'),
+          I18n.t('ningbo'),
+          I18n.t('wenzhou'),
+          I18n.t('jiaxing'),
+          I18n.t('huzhou'),
+        ],
+        order: 1,
       },
     ],
     column7: [
       {
         values: new Array(100).fill(1).map((x, i) => i),
       },
-    ]
+    ],
+  },
+
+  mounted() {
+    tyApi.getAccessibilityMode({
+      success: res => {
+        this.setData({
+          isA11y: !!res.isAccessibilityMode,
+        });
+      },
+    });
   },
 
   methods: {
@@ -100,6 +142,6 @@ SmartComponent({
     },
     animationEnd() {
       console.log('animationEnd');
-    }
+    },
   },
 });

@@ -287,6 +287,15 @@ global.ty = {
   getLogManager: () => {},
   notificationVibrate: () => {},
   getThemeInfo: () => THEME_INFO,
+  /** 与真机一致走 success 回调，避免 demo 快照依赖「未调用 success」的偶然行为 */
+  getAccessibilityMode: jest.fn(({ success, complete } = {}) => {
+    if (typeof success === 'function') {
+      success({ isAccessibilityMode: false });
+    }
+    if (typeof complete === 'function') {
+      complete();
+    }
+  }),
   vibrateShort: jest.fn(),
   createCanvasContext: id => {
     const canvas = document.createElement('canvas');

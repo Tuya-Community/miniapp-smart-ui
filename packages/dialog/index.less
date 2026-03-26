@@ -1,4 +1,5 @@
 @import '../common/style/var.less';
+@import '../common/style/a11y-var.less';
 
 .smart-dialog {
   --button-default-background-color: transparent;
@@ -35,10 +36,7 @@
     }
 
     &--isolated {
-      padding: var(
-        --dialog-header-isolated-padding,
-        @dialog-header-isolated-padding
-      );
+      padding: var(--dialog-header-isolated-padding, @dialog-header-isolated-padding);
     }
   }
 
@@ -61,14 +59,8 @@
         --dialog-has-title-message-padding-top,
         @dialog-has-title-message-padding-top
       );
-      font-size: var(
-        --dialog-has-title-message-font-size,
-        @dialog-has-title-message-font-size
-      );
-      color: var(
-        --dialog-has-title-message-text-color,
-        @dialog-has-title-message-text-color
-      );
+      font-size: var(--dialog-has-title-message-font-size, @dialog-has-title-message-font-size);
+      color: var(--dialog-has-title-message-text-color, @dialog-has-title-message-text-color);
     }
 
     &--round-button {
@@ -143,10 +135,52 @@
   }
 }
 
-
 .smart-dialog--round-button {
   .smart-dialog__confirm,
   .smart-dialog__cancel {
-    border-radius: var(--dialog--round-button-border-radius, @dialog--round-button-border-radius) !important;
+    border-radius: var(
+      --dialog--round-button-border-radius,
+      @dialog--round-button-border-radius
+    ) !important;
+  }
+}
+
+:root[data-a11y='true'] {
+  .smart-dialog {
+    font-size: var(--a11y-dialog-message-font-size, @a11y-dialog-message-font-size);
+    font-weight: var(--a11y-dialog-message-font-weight, @a11y-dialog-message-font-weight);
+    color: var(--a11y-dialog-message-text-color, @a11y-dialog-message-text-color);
+  }
+  .smart-dialog__header {
+    font-size: var(--dialog-header-font-size, @a11y-dialog-header-font-size);
+    font-weight: var(--dialog-header-font-weight, @a11y-dialog-header-font-weight);
+    line-height: var(--dialog-header-line-height, @a11y-dialog-header-line-height);
+  }
+  .smart-dialog__message {
+    color: var(--dialog-message-text-color, @a11y-dialog-message-text-color);
+    font-size: var(--dialog-message-font-size, @a11y-dialog-message-font-size);
+    line-height: var(--dialog-message-line-height, @a11y-dialog-message-line-height);
+    font-weight: var(--dialog-message-font-weight, @a11y-dialog-message-font-weight);
+  }
+  .smart-dialog__message--hasTitle {
+    color: var(--dialog-has-title-message-text-color, @a11y-dialog-has-title-message-text-color);
+    font-size: var(--dialog-has-title-message-font-size, @a11y-dialog-has-title-message-font-size);
+  }
+  .smart-dialog__confirm {
+    font-weight: var(--dialog-confirm-font-weight, @a11y-dialog-confirm-font-weight);
+  }
+  .smart-dialog__input {
+    background-color: var(--dialog-input-background-color, @a11y-dialog-input-background-color);
+    font-size: var(--dialog-input-font-size, @a11y-dialog-input-font-size);
+    font-weight: var(--dialog-input-font-weight, @a11y-dialog-input-font-weight);
+    height: var(--dialog-input-height, @a11y-dialog-input-height);
+  }
+  .smart-hairline--top::after {
+    border: 0 solid var(--hairline-color, @a11y-hairline-color);
+    border-top-width: var(--hairline-top-width, @a11y-hairline-top-width);
+  }
+  .smart-hairline--right::after {
+    border: 0 solid var(--hairline-color, @a11y-hairline-color);
+    border-right-width: var(--hairline-right-width, @a11y-hairline-right-width);
   }
 }

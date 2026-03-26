@@ -78,7 +78,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="false"
+          ariaDisabled="false"
           class="smart-switch custom-class"
+          role="switch"
           style="font-size:24px"
           bind:tap="onClick"
         >

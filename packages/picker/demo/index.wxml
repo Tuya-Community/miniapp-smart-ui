@@ -1,5 +1,6 @@
 <demo-block title="{{I18n.t('basicUsage')}}">
   <smart-picker
+    item-height="{{ isA11y ? 52 : 44 }}"
     active-index="{{ activeIndex }}"
     change-animation
     columns="{{ column1 }}"
@@ -9,6 +10,7 @@
 
 <demo-block title="{{I18n.t('multipleUsage')}}">
   <smart-picker
+    item-height="{{ isA11y ? 52 : 44 }}"
     columns="{{ column5 }}"
     active-style="color: rgb(135, 180, 244);"
     bind:change="onChange1"
@@ -21,6 +23,7 @@
 <demo-block title="{{I18n.t('loop')}}">
   <smart-picker
     loop
+    item-height="{{ isA11y ? 52 : 44 }}"
     columns="{{ column7 }}"
     bind:change="onChange1"
   />
@@ -29,6 +32,7 @@
 <demo-block title="{{I18n.t('defaultSelectedItem')}}">
   <smart-picker
     columns="{{ column1 }}"
+    item-height="{{ isA11y ? 52 : 44 }}"
     default-index="{{ 2 }}"
     bind:change="onChange1"
   />
@@ -37,6 +41,7 @@
 <demo-block title="{{I18n.t('showTheTopBar')}}">
   <smart-picker
     show-toolbar
+    item-height="{{ isA11y ? 52 : 44 }}"
     title="{{I18n.t('title')}}"
     columns="{{ column1 }}"
     bind:change="onChange1"
@@ -47,24 +52,27 @@
 
 <demo-block title="{{I18n.t('multipleColumnsLinkage')}}">
   <smart-picker
+    item-height="{{ isA11y ? 52 : 44 }}"
     columns="{{ column4 }}"
     bind:change="onChange2"
   />
 </demo-block>
 
 <demo-block title="{{I18n.t('disableOption')}}">
-  <smart-picker columns="{{ column2 }}" bind:change="onChange1" />
+  <smart-picker columns="{{ column2 }}" item-height="{{ isA11y ? 52 : 44 }}" bind:change="onChange1" />
 </demo-block>
 
 <demo-block title="{{I18n.t('loading')}}">
   <smart-picker
     loading
     columns="{{ column4 }}"
+    item-height="{{ isA11y ? 52 : 44 }}"
   />
 </demo-block>
 
 <demo-block title="{{I18n.t('setTheOrderOfColumnStyles')}}">
   <smart-picker
+    item-height="{{ isA11y ? 52 : 44 }}"
     columns="{{ column6 }}"
   />
 </demo-block>
@@ -74,6 +82,7 @@
   <smart-picker
     loop
     fullHeight
+    item-height="{{ isA11y ? 52 : 44 }}"
     columns="{{ column7 }}"
     bind:change="onChange1"
   />

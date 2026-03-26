@@ -1,5 +1,6 @@
 import { getDateString } from '../../common/utils';
 import { SmartComponent } from '../../common/component';
+import tyApi from '../../common/ty';
 
 SmartComponent({
   data: {
@@ -14,6 +15,7 @@ SmartComponent({
     showPicker: false,
     showDoubleSelector: false,
     isReady: false,
+    isA11y: false,
     action1: [{ name: 'Action' }, { name: 'Action' }, { name: 'Action', subname: 'Description' }],
     action2: [
       { name: I18n.t('coloringOptions'), color: '#ee0a24' },
@@ -48,6 +50,16 @@ SmartComponent({
     maxHour: 23,
     tempColumnIdx: 3,
     tempColumns: [39, 40, 41, 42, 43, 44, 45],
+  },
+
+  mounted() {
+    tyApi.getAccessibilityMode({
+      success: res => {
+        this.setData({
+          isA11y: !!res.isAccessibilityMode,
+        });
+      },
+    });
   },
 
   methods: {
@@ -102,7 +114,7 @@ SmartComponent({
     },
 
     onAfterEnter() {
-      this.setData({ isReady: true })
+      this.setData({ isReady: true });
     },
 
     onChange(event) {
@@ -111,7 +123,7 @@ SmartComponent({
 
     onSelect(evt) {
       const { id } = evt.detail;
-      const newActionSelect = this.data.actionSelect.map((item) => {
+      const newActionSelect = this.data.actionSelect.map(item => {
         if (item.id === id) return { ...item, checked: true };
         return { ...item, checked: false };
       });
@@ -134,7 +146,11 @@ SmartComponent({
     },
 
     onDoubleSelectorConfirm() {
-      console.log('Current Double Selector Result', this.data.current12Date, this.data.tempColumnIdx);
+      console.log(
+        'Current Double Selector Result',
+        this.data.current12Date,
+        this.data.tempColumnIdx
+      );
       this.setData({
         showDoubleSelector: false,
       });
@@ -146,7 +162,6 @@ SmartComponent({
       });
     },
 
-    
     onTempColumnChange(event) {
       const { index } = event.detail;
       this.setData({
