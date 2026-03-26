@@ -127,6 +127,8 @@
 
 :root[data-a11y='true'] {
   .smart-action-sheet {
+    --picker-padding: 0;
+
     color: var(--action-sheet-item-text-color, @a11y-action-sheet-item-text-color);
     font-size: var(--action-sheet-item-font-size, @a11y-action-sheet-item-font-size);
     font-weight: var(--action-sheet-item-font-weight, @a11y-action-sheet-item-font-weight);
@@ -183,5 +185,9 @@
       --action-sheet-footer-padding-color,
       @a11y-action-sheet-footer-padding-color
     );
+  }
+  .smart-action-sheet__item:not(:last-child) {
+    border-bottom: 1px solid
+      var(--action-sheet-header-border-color, @a11y-action-sheet-header-border-color);
   }
 }
