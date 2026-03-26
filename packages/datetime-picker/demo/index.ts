@@ -66,7 +66,7 @@ SmartComponent({
     },
     fontStyles: {
       month: 'color: rgb(23, 138, 237);',
-      '12HourClock': 'color: var(--app-B6-N1,#000));',
+      '12HourClock': 'color: var(--app-B6-N1,#000);',
     },
     activeStyle: 'color: rgb(235, 87, 41);',
   },
