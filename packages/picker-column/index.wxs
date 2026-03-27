@@ -626,6 +626,15 @@ function tapItem(instanceId) {
   }
 }
 
+function unitFontStyle(fontStyle) {
+  var newStyleArr = []
+  fontStyle.split(';').forEach(function (item) {
+    if (item.includes('color:') || item.includes('text-shadow:')) return;
+    newStyleArr.push(item);
+  });
+  return newStyleArr.join(';');
+}
+
 module.exports = {
   optionText: optionText,
   rootStyle: rootStyle,
@@ -638,4 +647,5 @@ module.exports = {
   touchEnd: touchEnd,
   tapItem: tapItem,
   unitGapStyle: unitGapStyle,
+  unitFontStyle: unitFontStyle,
 };
