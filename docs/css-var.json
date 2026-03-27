@@ -2189,7 +2189,7 @@
   },
   "picker-option-text-color": {
     "name": "@picker-option-text-color",
-    "value": "var(--app-B6-N3, rgba(0, 0, 0, 0.5))",
+    "value": "var(--app-B6-N1, rgba(0, 0, 0, 1))",
     "decs": ""
   },
   "picker-option-unit-text-color": {
