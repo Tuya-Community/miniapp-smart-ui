@@ -19,6 +19,7 @@
         hover-stay-time="70"
         name="{{ leftArrowIcon }}"
         data-type="leftArrow"
+        color="{{ leftIconColor }}"
         custom-class="smart-nav-bar__arrow"
       />
       <view
