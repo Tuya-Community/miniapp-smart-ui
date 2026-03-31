@@ -19,7 +19,6 @@
         hover-stay-time="70"
         name="{{ leftArrowIcon }}"
         data-type="leftArrow"
-        color="{{ leftIconColor }}"
         custom-class="smart-nav-bar__arrow"
       />
       <view
@@ -30,7 +29,13 @@
         class="smart-nav-bar__icon-wrap"
         catch:tap="onClickLeftIcon"
       >
-        <smart-icon class="left-icon-class" custom-class="smart-nav-bar__icon" size="{{ leftIconSize }}" name="{{ leftIcon }}" color="{{ leftIconColor }}" />
+        <smart-icon 
+         class="left-icon-class" 
+         custom-class="smart-nav-bar__icon" 
+         size="{{ leftIconSize }}" 
+         name="{{ leftIcon }}" 
+         color="{{ leftIconColor }}" 
+        />
       </view>
       <view
         wx:if="{{ leftText }}"

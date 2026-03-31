@@ -302,7 +302,7 @@ Page({
 | right-icon `v2.7.0` | 右侧图标    | _string_  | -   |
 | right-icon-color `v2.7.0` | 右侧图标颜色    | _string_  | -   |
 | right-icon-size `v2.7.0` | 右侧图标大小    | _number_  | `32px`   |
-| left-icon-color `v2.7.0` | 左侧图标颜色    | _string_  | -   |
+| left-icon-color `v2.7.0` | 左侧图标颜色 （非返回 icon）    | _string_  | -   |
 | background `v2.7.0` | 整体背景色    | _string_  | -   |
 | side-width `v2.7.3` | 两边控制栏的宽度, 提供 `min`、`mid`、`max`三档内置值；也可以传具体宽度值    | _string\/number\/`min`\/`mid`\/`max`_  | `mid` `v2.7.3` `max` `v2.9.0`   |
 
@@ -321,7 +321,7 @@ Page({
 | bind:click-left  | 点击左侧返回 icon 时触发 | -    |
 | bind:click-right | 点击右侧按钮时触发 | -    |
 | bind:click-title `v2.0.0` | 点击中央标题时触发 | -    |
-| bind:click-left-icon `v2.0.0` | 点击左侧 icon 时触发 | -    |
+| bind:click-left-icon `v2.0.0` | 点击左侧 icon 时触发（非返回 icon） | -    |
 | bind:click-left-text `v2.0.0` | 点击左侧文本时触发 | -    |
 | bind:click-right-icon `v2.7.0` | 点击右侧图标时触发 | -    |
 | bind:click-right-text `v2.7.0` | 点击右侧文本时触发 | -    |
