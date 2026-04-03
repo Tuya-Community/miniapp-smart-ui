@@ -51,12 +51,14 @@
   <block wx:else>
     <view class="smart-bottom-sheet__header">
       <view wx:if="{{ title }}">{{ title }}</view>
-      <smart-icon 
-        wx:if="{{ title && showClose }}" 
-        name="{{ xmarkIcon }}" 
-        class="smart-bottom-sheet__icon" 
-        size="{{ iconSize }}" 
-        color="{{ xmarkIconColor }}" 
+      <smart-icon
+        wx:if="{{ title && showClose }}"
+        name="{{ xmarkIcon }}"
+        class="smart-bottom-sheet__icon"
+        size="{{ iconSize }}"
+        color="{{ xmarkIconColor }}"
+        ariaRole="button"
+        ariaLabel="{{ closeIconAriaLabel }}"
         bind:click="onClose"
       />
       <slot name="title" />

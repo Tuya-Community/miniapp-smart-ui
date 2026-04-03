@@ -10,8 +10,10 @@
     wx:if="{{ closeable }}"
     name="{{crossIcon}}"
     custom-class="smart-tag__close"
+    ariaRole="button"
+    ariaLabel="{{ closeIconAriaLabel }}"
     bind:click="onClose"
     color="{{textColor || closeColor}}"
-/>
+  />
   
 </view>

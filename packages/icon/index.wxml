@@ -4,6 +4,8 @@
   class="{{ computed.rootClass({ classPrefix, name }) }}"
   style="{{ computed.rootStyle({ customStyle, color, size }) }}"
   bindtap="onClick"
+  aria-role="{{ ariaRole }}"
+  aria-label="{{ ariaLabel }}"
 >
   <smart-info
     wx:if="{{ info !== null || dot }}"

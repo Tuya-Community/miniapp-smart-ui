@@ -277,6 +277,8 @@ exports[`should render demo and match snapshot 1`] = `
             bind:click="onClose"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style="color:#fff"
               bind:tap="onClick"
@@ -304,6 +306,8 @@ exports[`should render demo and match snapshot 1`] = `
             bind:click="onClose"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style="color:#fff"
               bind:tap="onClick"

@@ -54,6 +54,10 @@ SmartComponent({
       type: String,
       value: closeIcon,
     },
+    closeIconAriaLabel: {
+      type: String,
+      value: '',
+    },
     useTitleSlot: Boolean,
   },
 

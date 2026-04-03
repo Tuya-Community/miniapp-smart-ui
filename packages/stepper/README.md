@@ -136,7 +136,9 @@ Page({
 | long-press            | 是否开启长按手势                                                                | _boolean_          | `true`  |
 | max                   | 最大值                                                                          | _string \| number_ | -       |
 | min                   | 最小值                                                                          | _string \| number_ | `1`     |
+| minus-aria-label `v2.12.1` | 减少按钮的无障碍读屏文案                                                   | _string_           | -       |
 | name                  | 在表单内提交时的标识符                                                          | _string_           | -       |
+| plus-aria-label `v2.12.1` | 增加按钮的无障碍读屏文案                                                    | _string_           | -       |
 | show-minus            | 是否显示减少按钮                                                                | _boolean_          | `true`  |
 | show-plus             | 是否显示增加按钮                                                                | _boolean_          | `true`  |
 | step                  | 步长                                                                            | _string \| number_ | `1`     |

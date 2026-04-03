@@ -21,6 +21,10 @@ SmartComponent({
     badge: null,
     text: String,
     useSlot: Boolean,
+    ariaLabel: {
+      type: String,
+      value: '',
+    },
   },
 
   data: {

@@ -136,7 +136,9 @@ Set the input box width via the `input-width` attribute, and set the button size
 | long-press             | Whether to enable long-press gesture                                                | _boolean_          | `true`   |
 | max                    | Maximum value                                                                       | _string \| number_ | -        |
 | min                    | Minimum value                                                                       | _string \| number_ | `1`      |
+| minus-aria-label `v2.12.1` | Accessible label for the minus button                                           | _string_           | -        |
 | name                   | Identifier when submitting in a form                                                | _string_           | -        |
+| plus-aria-label `v2.12.1` | Accessible label for the plus button                                             | _string_           | -        |
 | show-minus             | Whether to show the decrement button                                                | _boolean_          | `true`   |
 | show-plus              | Whether to show the increment button                                                | _boolean_          | `true`   |
 | step                   | Step size                                                                           | _string \| number_ | `1`      |

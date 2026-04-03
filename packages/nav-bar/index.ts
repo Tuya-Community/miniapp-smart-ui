@@ -56,6 +56,18 @@ SmartComponent({
       type: Boolean,
       value: true,
     },
+    leftArrowAriaLabel: {
+      type: String,
+      value: '',
+    },
+    leftIconAriaLabel: {
+      type: String,
+      value: '',
+    },
+    rightIconAriaLabel: {
+      type: String,
+      value: '',
+    },
   },
 
   data: {

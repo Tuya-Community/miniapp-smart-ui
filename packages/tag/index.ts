@@ -17,6 +17,10 @@ SmartComponent({
       value: 'default',
     },
     closeable: Boolean,
+    closeIconAriaLabel: {
+      type: String,
+      value: '',
+    },
   },
   data: {
     crossIcon: Xmark,

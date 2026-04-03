@@ -61,6 +61,8 @@ exports[`should render demo and match snapshot 1`] = `
                     infoClass="info-class"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon-chat-o"
                       style=""
                       bind:tap="onClick"
@@ -130,6 +132,8 @@ exports[`should render demo and match snapshot 1`] = `
                     infoClass="info-class"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon-cart-o"
                       style=""
                       bind:tap="onClick"
@@ -321,6 +325,8 @@ exports[`should render demo and match snapshot 1`] = `
                     infoClass="info-class"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon-chat-o"
                       style=""
                       bind:tap="onClick"
@@ -395,6 +401,8 @@ exports[`should render demo and match snapshot 1`] = `
                     infoClass="info-class"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon-cart-o"
                       style=""
                       bind:tap="onClick"
@@ -469,6 +477,8 @@ exports[`should render demo and match snapshot 1`] = `
                     infoClass="info-class"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon-shop-o"
                       style=""
                       bind:tap="onClick"
@@ -656,6 +666,8 @@ exports[`should render demo and match snapshot 1`] = `
                     infoClass="info-class"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon-chat-o"
                       style=""
                       bind:tap="onClick"
@@ -723,6 +735,8 @@ exports[`should render demo and match snapshot 1`] = `
                     infoClass="info-class"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon-shop-o"
                       style=""
                       bind:tap="onClick"
@@ -910,6 +924,8 @@ exports[`should render demo and match snapshot 1`] = `
                     infoClass="info-class"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon-chat-o"
                       style=""
                       bind:tap="onClick"
@@ -977,6 +993,8 @@ exports[`should render demo and match snapshot 1`] = `
                     infoClass="info-class"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon-shop-o"
                       style=""
                       bind:tap="onClick"

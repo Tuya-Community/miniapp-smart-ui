@@ -149,6 +149,7 @@ import Warning from '@tuya-miniapp/icons/dist/svg/Warning';
 | btn-text-color   | 按钮文本颜色                       | _string_  | `''`       |
 | type   | 通知类型，可选值为 `info` `warning` `error`   | _string_  | `'info'`       |
 | background | 滚动条背景                               | _string_  | `rgba(25, 137, 250, 0.1)`  |
+| close-icon-aria-label `v2.12.1` | 关闭按钮的无障碍读屏文案，透传至关闭图标的 `ariaLabel` | _string_  | -          |
 | color      | 通知文本颜色                             | _string_  | `#1989fa`  |
 | delay      | 动画延迟时间 (ms)                        | _number_  | `1`        |
 | left-icon  | 左侧[图标](/material/smartui?comId=icon&appType=miniapp)或图片链接              | _string_  | -          |

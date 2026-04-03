@@ -93,6 +93,8 @@ exports[`should render demo and match snapshot 1`] = `
             bind:click="start"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="custom-class smart-grid-item"
               style="width:33.333333333333336%;padding-right:0px"
               bind:tap="onClick"
@@ -106,6 +108,8 @@ exports[`should render demo and match snapshot 1`] = `
                 >
                   <smart-icon>
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style=""
                       bind:tap="onClick"
@@ -127,6 +131,8 @@ exports[`should render demo and match snapshot 1`] = `
             bind:click="pause"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="custom-class smart-grid-item"
               style="width:33.333333333333336%;padding-right:0px"
               bind:tap="onClick"
@@ -140,6 +146,8 @@ exports[`should render demo and match snapshot 1`] = `
                 >
                   <smart-icon>
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style=""
                       bind:tap="onClick"
@@ -161,6 +169,8 @@ exports[`should render demo and match snapshot 1`] = `
             bind:click="reset"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="custom-class smart-grid-item"
               style="width:33.333333333333336%;padding-right:0px"
               bind:tap="onClick"
@@ -174,6 +184,8 @@ exports[`should render demo and match snapshot 1`] = `
                 >
                   <smart-icon>
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style=""
                       bind:tap="onClick"
