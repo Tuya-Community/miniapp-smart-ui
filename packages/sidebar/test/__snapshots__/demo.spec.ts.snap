@@ -9,6 +9,8 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <smart-grid-item>
         <wx-view
+          ariaLabel=""
+          ariaRole="button"
           class="custom-class smart-grid-item"
           style="width:50%;padding-right:0px"
           bind:tap="onClick"
@@ -71,6 +73,8 @@ exports[`should render demo and match snapshot 1`] = `
       </smart-grid-item>
       <smart-grid-item>
         <wx-view
+          ariaLabel=""
+          ariaRole="button"
           class="custom-class smart-grid-item"
           style="width:50%;padding-right:0px"
           bind:tap="onClick"
@@ -160,6 +164,8 @@ exports[`should render demo and match snapshot 1`] = `
       </smart-grid-item>
       <smart-grid-item>
         <wx-view
+          ariaLabel=""
+          ariaRole="button"
           class="custom-class smart-grid-item"
           style="width:50%;padding-right:0px;margin-top:0px"
           bind:tap="onClick"
@@ -222,6 +228,8 @@ exports[`should render demo and match snapshot 1`] = `
       </smart-grid-item>
       <smart-grid-item>
         <wx-view
+          ariaLabel=""
+          ariaRole="button"
           class="custom-class smart-grid-item"
           style="width:50%;padding-right:0px;margin-top:0px"
           bind:tap="onClick"

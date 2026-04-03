@@ -13,6 +13,14 @@ SmartComponent({
       value: 'smart-icon',
     },
     name: String,
+    ariaLabel: {
+      type: String,
+      value: '',
+    },
+    ariaRole: {
+      type: String,
+      value: '',
+    },
   },
 
   methods: {

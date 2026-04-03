@@ -889,6 +889,8 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-button__icon"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole=""
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style="font-size:1.8em;line-height: inherit;"
               bind:tap="onClick"
@@ -942,6 +944,8 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-button__icon"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole=""
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style="font-size:1.8em;line-height: inherit;"
               bind:tap="onClick"
@@ -999,6 +1003,8 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-button__right-icon"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole=""
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style="font-size:1.6em;line-height: inherit;"
               bind:tap="onClick"
@@ -1049,6 +1055,8 @@ exports[`should render demo and match snapshot 1`] = `
               class="smart-button__icon"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
                 style="font-size:1.8em;line-height: inherit;"
                 bind:tap="onClick"
@@ -1102,6 +1110,8 @@ exports[`should render demo and match snapshot 1`] = `
               class="smart-button__icon"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image"
                 style="font-size:1.8em;line-height: inherit;"
                 bind:tap="onClick"

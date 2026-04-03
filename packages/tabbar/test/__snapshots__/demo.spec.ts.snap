@@ -28,6 +28,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style="color:var(--tabbar-item-active-color, var(--app-M1, #3678e3))"
                     bind:tap="onClick"
@@ -62,6 +64,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -96,6 +100,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -130,6 +136,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -181,6 +189,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style="color:var(--tabbar-item-active-color, var(--app-M1, #3678e3))"
                     bind:tap="onClick"
@@ -215,6 +225,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -249,6 +261,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -283,6 +297,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -334,6 +350,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style="color:var(--tabbar-item-active-color, var(--app-M1, #3678e3))"
                     bind:tap="onClick"
@@ -368,6 +386,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -409,6 +429,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -450,6 +472,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -557,6 +581,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -591,6 +617,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -642,6 +670,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style="color:#07c160"
                     bind:tap="onClick"
@@ -676,6 +706,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style="color:@tabbar-item-text-color"
                     bind:tap="onClick"
@@ -710,6 +742,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style="color:@tabbar-item-text-color"
                     bind:tap="onClick"
@@ -744,6 +778,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style="color:@tabbar-item-text-color"
                     bind:tap="onClick"
@@ -795,6 +831,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style="color:var(--tabbar-item-active-color, var(--app-M1, #3678e3))"
                     bind:tap="onClick"
@@ -829,6 +867,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -863,6 +903,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -897,6 +939,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -956,6 +1000,8 @@ exports[`should render demo and match snapshot 1`] = `
                     slot="icon"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style=""
                       bind:tap="onClick"
@@ -974,6 +1020,8 @@ exports[`should render demo and match snapshot 1`] = `
                     slot="icon-active"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style="color:red"
                       bind:tap="onClick"
@@ -1014,6 +1062,8 @@ exports[`should render demo and match snapshot 1`] = `
                     slot="icon"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style=""
                       bind:tap="onClick"
@@ -1032,6 +1082,8 @@ exports[`should render demo and match snapshot 1`] = `
                     slot="icon-active"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style="color:red"
                       bind:tap="onClick"
@@ -1072,6 +1124,8 @@ exports[`should render demo and match snapshot 1`] = `
                     slot="icon"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style=""
                       bind:tap="onClick"
@@ -1090,6 +1144,8 @@ exports[`should render demo and match snapshot 1`] = `
                     slot="icon-active"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style="color:red"
                       bind:tap="onClick"
@@ -1130,6 +1186,8 @@ exports[`should render demo and match snapshot 1`] = `
                     slot="icon"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style=""
                       bind:tap="onClick"
@@ -1148,6 +1206,8 @@ exports[`should render demo and match snapshot 1`] = `
                     slot="icon-active"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon--image smart-icon--svg"
                       style="color:red"
                       bind:tap="onClick"
@@ -1207,6 +1267,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style="color:var(--tabbar-item-active-color, var(--app-M1, #3678e3))"
                     bind:tap="onClick"
@@ -1241,6 +1303,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -1275,6 +1339,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"
@@ -1309,6 +1375,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-tabbar-item__icon__inner"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style=""
                     bind:tap="onClick"

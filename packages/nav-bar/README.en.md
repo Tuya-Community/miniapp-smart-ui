@@ -288,9 +288,11 @@ Page({
 | custom-style        | Custom style for the root node                   | _string_  | -       |
 | fixed               | Whether to fix at the top                     | _boolean_ | `false` |
 | left-arrow          | Whether to show the left arrow                   | _boolean_ | `false` |
+| left-arrow-aria-label `v2.12.1` | Accessible label for the left back arrow | _string_  | -       |
 | left-text           | Left text                           | _string_  | `''`    |
 | left-text-type `v2.0.0`          | The style type of the left text, can be `home`, `title`, `back`                           | _string_  | `back`    |
 | left-icon `v2.0.0`         | Left icon                           | _string_  | `''`    |
+| left-icon-aria-label `v2.12.1` | Accessible label for the left icon button | _string_  | -       |
 | left-icon-size `v2.0.0`        | Left icon size, default is 32                           | _string \| number_  | `32`    |
 | round `v2.1.0`               | Whether to show rounded corners                     | _boolean_ | `false` |
 | placeholder         | Whether to enable placeholder when fixed at the top           | _boolean_ | `false` |
@@ -300,6 +302,7 @@ Page({
 | z-index             | Element z-index                       | _number_  | `1`     |
 | right-text-color `v2.7.0` | Color of the right text    | _string_  | -   |
 | right-icon `v2.7.0` | Right icon    | _string_  | -   |
+| right-icon-aria-label `v2.12.1` | Accessible label for the right icon button | _string_  | -   |
 | right-icon-color `v2.7.0` | Color of the right icon    | _string_  | -   |
 | right-icon-size `v2.7.0` | Size of the right icon    | _number_  | `32px`   |
 | left-icon-color `v2.7.0` | Left icon color(non-return icon)   | _string_  | -   |

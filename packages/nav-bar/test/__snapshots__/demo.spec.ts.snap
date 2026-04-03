@@ -118,6 +118,8 @@ exports[`should render demo and match snapshot 1`] = `
                 style="margin-left: auto;padding-left: 16px;"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image"
                   style="font-size:24px"
                   bind:tap="onClick"
@@ -174,6 +176,8 @@ exports[`should render demo and match snapshot 1`] = `
                 hoverStayTime="70"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="font-size:24px"
                   bind:tap="onClick"
@@ -197,6 +201,8 @@ exports[`should render demo and match snapshot 1`] = `
               bind:tap="onClickRight"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole="button"
                 class="smart-nav-bar__icon-wrap"
                 data-type="rightIcon"
                 hoverClass="smart-nav-bar__icon--hover"
@@ -208,6 +214,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-nav-bar__icon"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style="font-size:24px"
                     bind:tap="onClick"
@@ -253,6 +261,8 @@ exports[`should render demo and match snapshot 1`] = `
                 hoverStayTime="70"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="font-size:24px"
                   bind:tap="onClick"
@@ -276,6 +286,8 @@ exports[`should render demo and match snapshot 1`] = `
               bind:tap="onClickRight"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole="button"
                 class="smart-nav-bar__icon-wrap"
                 data-type="rightIcon"
                 hoverClass="smart-nav-bar__icon--hover"
@@ -287,6 +299,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-nav-bar__icon"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style="font-size:24px"
                     bind:tap="onClick"
@@ -303,6 +317,8 @@ exports[`should render demo and match snapshot 1`] = `
                 style="margin-right: 16px;"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="font-size:24px"
                   bind:tap="onClick"
@@ -397,6 +413,8 @@ exports[`should render demo and match snapshot 1`] = `
                 hoverStayTime="70"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="font-size:24px"
                   bind:tap="onClick"
@@ -463,6 +481,8 @@ exports[`should render demo and match snapshot 1`] = `
                 hoverStayTime="70"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="font-size:24px"
                   bind:tap="onClick"
@@ -568,6 +588,8 @@ exports[`should render demo and match snapshot 1`] = `
                 hoverStayTime="70"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="font-size:24px"
                   bind:tap="onClick"
@@ -635,6 +657,8 @@ exports[`should render demo and match snapshot 1`] = `
                 hoverStayTime="70"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="font-size:24px"
                   bind:tap="onClick"
@@ -658,6 +682,8 @@ exports[`should render demo and match snapshot 1`] = `
               bind:tap="onClickRight"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole="button"
                 class="smart-nav-bar__icon-wrap"
                 data-type="rightIcon"
                 hoverClass="smart-nav-bar__icon--hover"
@@ -669,6 +695,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-nav-bar__icon"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
                     style="font-size:24px"
                     bind:tap="onClick"
@@ -709,6 +737,8 @@ exports[`should render demo and match snapshot 1`] = `
               bind:tap="onClickLeft"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole="button"
                 class="smart-nav-bar__icon-wrap"
                 data-type="leftIcon"
                 hoverClass="smart-nav-bar__icon--hover"
@@ -720,6 +750,8 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-nav-bar__icon"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image"
                     style="font-size:32px"
                     bind:tap="onClick"

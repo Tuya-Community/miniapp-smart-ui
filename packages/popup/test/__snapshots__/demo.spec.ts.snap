@@ -28,6 +28,8 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="smart-cell__right-icon"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole=""
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style=""
               bind:tap="onClick"
@@ -77,6 +79,8 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="smart-cell__right-icon"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole=""
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style=""
               bind:tap="onClick"
@@ -111,6 +115,8 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="smart-cell__right-icon"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole=""
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style=""
               bind:tap="onClick"
@@ -145,6 +151,8 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="smart-cell__right-icon"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole=""
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style=""
               bind:tap="onClick"
@@ -179,6 +187,8 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="smart-cell__right-icon"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole=""
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style=""
               bind:tap="onClick"
@@ -231,6 +241,8 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="smart-cell__right-icon"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole=""
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style=""
               bind:tap="onClick"
@@ -265,6 +277,8 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="smart-cell__right-icon"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole=""
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style=""
               bind:tap="onClick"
@@ -299,6 +313,8 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="smart-cell__right-icon"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole=""
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style=""
               bind:tap="onClick"
@@ -348,6 +364,8 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="smart-cell__right-icon"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole=""
               class="custom-class smart-icon smart-icon--image smart-icon--svg"
               style=""
               bind:tap="onClick"

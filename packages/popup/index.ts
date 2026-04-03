@@ -37,6 +37,10 @@ SmartComponent({
       type: String,
       value: closeIcon,
     },
+    closeIconAriaLabel: {
+      type: String,
+      value: '',
+    },
     closeIconPosition: {
       type: String,
       value: 'top-right',

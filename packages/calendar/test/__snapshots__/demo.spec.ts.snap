@@ -51,6 +51,8 @@ exports[`should render demo and match snapshot 1`] = `
                       class="smart-calendar__header-subtitle_left_icon"
                     >
                       <wx-view
+                        ariaLabel=""
+                        ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
                         style="color:var(--calendar-header-icon_color)"
                         bind:tap="onClick"
@@ -78,6 +80,8 @@ exports[`should render demo and match snapshot 1`] = `
                       class="smart-calendar__header-subtitle_right_icon"
                     >
                       <wx-view
+                        ariaLabel=""
+                        ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
                         style="color:var(--calendar-header-icon_color)"
                         bind:tap="onClick"
@@ -512,6 +516,8 @@ exports[`should render demo and match snapshot 1`] = `
                       class="smart-calendar__header-subtitle_left_icon"
                     >
                       <wx-view
+                        ariaLabel=""
+                        ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
                         style="color:var(--calendar-header-icon_color)"
                         bind:tap="onClick"
@@ -539,6 +545,8 @@ exports[`should render demo and match snapshot 1`] = `
                       class="smart-calendar__header-subtitle_right_icon"
                     >
                       <wx-view
+                        ariaLabel=""
+                        ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
                         style="color:var(--calendar-header-icon_color)"
                         bind:tap="onClick"
@@ -973,6 +981,8 @@ exports[`should render demo and match snapshot 1`] = `
                       class="smart-calendar__header-subtitle_left_icon"
                     >
                       <wx-view
+                        ariaLabel=""
+                        ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
                         style="color:var(--calendar-header-icon_color)"
                         bind:tap="onClick"
@@ -1000,6 +1010,8 @@ exports[`should render demo and match snapshot 1`] = `
                       class="smart-calendar__header-subtitle_right_icon"
                     >
                       <wx-view
+                        ariaLabel=""
+                        ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
                         style="color:var(--calendar-header-icon_color)"
                         bind:tap="onClick"
@@ -1449,6 +1461,8 @@ exports[`should render demo and match snapshot 1`] = `
                       class="smart-calendar__header-subtitle_left_icon"
                     >
                       <wx-view
+                        ariaLabel=""
+                        ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
                         style="color:var(--calendar-header-icon_color)"
                         bind:tap="onClick"
@@ -1476,6 +1490,8 @@ exports[`should render demo and match snapshot 1`] = `
                       class="smart-calendar__header-subtitle_right_icon"
                     >
                       <wx-view
+                        ariaLabel=""
+                        ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
                         style="color:var(--calendar-header-icon_color)"
                         bind:tap="onClick"
@@ -1925,6 +1941,8 @@ exports[`should render demo and match snapshot 1`] = `
                       class="smart-calendar__header-subtitle_left_icon"
                     >
                       <wx-view
+                        ariaLabel=""
+                        ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
                         style="color:var(--calendar-header-icon_color)"
                         bind:tap="onClick"
@@ -1952,6 +1970,8 @@ exports[`should render demo and match snapshot 1`] = `
                       class="smart-calendar__header-subtitle_right_icon"
                     >
                       <wx-view
+                        ariaLabel=""
+                        ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
                         style="color:var(--calendar-header-icon_color)"
                         bind:tap="onClick"
@@ -2252,6 +2272,8 @@ exports[`should render demo and match snapshot 1`] = `
                       class="smart-calendar__header-subtitle_left_icon"
                     >
                       <wx-view
+                        ariaLabel=""
+                        ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
                         style="color:var(--calendar-header-icon_color)"
                         bind:tap="onClick"
@@ -2279,6 +2301,8 @@ exports[`should render demo and match snapshot 1`] = `
                       class="smart-calendar__header-subtitle_right_icon"
                     >
                       <wx-view
+                        ariaLabel=""
+                        ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
                         style="color:var(--calendar-header-icon_color)"
                         bind:tap="onClick"
@@ -2589,6 +2613,8 @@ exports[`should render demo and match snapshot 1`] = `
               customClass="smart-cell__right-icon"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
                 style=""
                 bind:tap="onClick"

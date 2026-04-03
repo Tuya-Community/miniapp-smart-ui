@@ -19,6 +19,8 @@
         hover-stay-time="70"
         name="{{ leftArrowIcon }}"
         data-type="leftArrow"
+        aria-role="button"
+        aria-label="{{ leftArrowAriaLabel }}"
         custom-class="smart-nav-bar__arrow"
       />
       <view
@@ -28,6 +30,8 @@
         hover-stay-time="70"
         class="smart-nav-bar__icon-wrap"
         catch:tap="onClickLeftIcon"
+        aria-role="button"
+        aria-label="{{ leftIconAriaLabel }}"
       >
         <smart-icon 
          class="left-icon-class" 
@@ -60,6 +64,8 @@
         hover-stay-time="70"
         class="smart-nav-bar__icon-wrap"
         bind:tap="onClickRightIcon"
+        aria-role="button"
+        aria-label="{{ rightIconAriaLabel }}"
       >
         <smart-icon class="right-icon-class" custom-class="smart-nav-bar__icon" size="{{ rightIconSize }}" name="{{ rightIcon }}" color="{{ rightIconColor }}" />
       </view>

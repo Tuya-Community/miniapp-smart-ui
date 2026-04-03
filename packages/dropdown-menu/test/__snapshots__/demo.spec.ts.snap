@@ -32,6 +32,8 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-dropdown-menu__title__triangle"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="color:#CCCCCC"
                   bind:tap="onClick"
@@ -64,6 +66,8 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-dropdown-menu__title__triangle"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="color:#CCCCCC"
                   bind:tap="onClick"
@@ -112,6 +116,8 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-dropdown-menu__title__triangle"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="color:#CCCCCC"
                   bind:tap="onClick"
@@ -144,6 +150,8 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-dropdown-menu__title__triangle"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="color:#CCCCCC"
                   bind:tap="onClick"
@@ -194,6 +202,8 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-dropdown-menu__title__triangle"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="color:#CCCCCC"
                   bind:tap="onClick"
@@ -226,6 +236,8 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-dropdown-menu__title__triangle"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="color:#CCCCCC"
                   bind:tap="onClick"
@@ -274,6 +286,8 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-dropdown-menu__title__triangle smart-dropdown-menu__title__triangle--up"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="color:#CCCCCC"
                   bind:tap="onClick"
@@ -306,6 +320,8 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-dropdown-menu__title__triangle smart-dropdown-menu__title__triangle--up"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="color:#CCCCCC"
                   bind:tap="onClick"
@@ -354,6 +370,8 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-dropdown-menu__title__triangle"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="color:#CCCCCC"
                   bind:tap="onClick"
@@ -386,6 +404,8 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-dropdown-menu__title__triangle"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="color:#CCCCCC"
                   bind:tap="onClick"
@@ -434,6 +454,8 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-dropdown-menu__title__triangle"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
                   style="color:#CCCCCC"
                   bind:tap="onClick"
