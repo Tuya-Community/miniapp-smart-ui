@@ -121,6 +121,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image"
+                  role=""
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -179,6 +180,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role="button"
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -207,6 +209,7 @@ exports[`should render demo and match snapshot 1`] = `
                 data-type="rightIcon"
                 hoverClass="smart-nav-bar__icon--hover"
                 hoverStayTime="70"
+                role="button"
                 bind:tap="onClickRightIcon"
               >
                 <smart-icon
@@ -217,6 +220,7 @@ exports[`should render demo and match snapshot 1`] = `
                     ariaLabel=""
                     ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="font-size:24px"
                     bind:tap="onClick"
                   >
@@ -264,6 +268,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role="button"
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -292,6 +297,7 @@ exports[`should render demo and match snapshot 1`] = `
                 data-type="rightIcon"
                 hoverClass="smart-nav-bar__icon--hover"
                 hoverStayTime="70"
+                role="button"
                 bind:tap="onClickRightIcon"
               >
                 <smart-icon
@@ -302,6 +308,7 @@ exports[`should render demo and match snapshot 1`] = `
                     ariaLabel=""
                     ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="font-size:24px"
                     bind:tap="onClick"
                   >
@@ -320,6 +327,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -416,6 +424,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role="button"
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -484,6 +493,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role="button"
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -591,6 +601,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role="button"
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -660,6 +671,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role="button"
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -688,6 +700,7 @@ exports[`should render demo and match snapshot 1`] = `
                 data-type="rightIcon"
                 hoverClass="smart-nav-bar__icon--hover"
                 hoverStayTime="70"
+                role="button"
                 bind:tap="onClickRightIcon"
               >
                 <smart-icon
@@ -698,6 +711,7 @@ exports[`should render demo and match snapshot 1`] = `
                     ariaLabel=""
                     ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="font-size:24px"
                     bind:tap="onClick"
                   >
@@ -743,6 +757,7 @@ exports[`should render demo and match snapshot 1`] = `
                 data-type="leftIcon"
                 hoverClass="smart-nav-bar__icon--hover"
                 hoverStayTime="70"
+                role="button"
                 catch:tap="onClickLeftIcon"
               >
                 <smart-icon
@@ -753,6 +768,7 @@ exports[`should render demo and match snapshot 1`] = `
                     ariaLabel=""
                     ariaRole=""
                     class="custom-class smart-icon smart-icon--image"
+                    role=""
                     style="font-size:32px"
                     bind:tap="onClick"
                   >

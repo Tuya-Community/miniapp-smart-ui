@@ -12,6 +12,7 @@ exports[`should render demo and match snapshot 1`] = `
           ariaLabel=""
           ariaRole="button"
           class="custom-class smart-grid-item"
+          role="button"
           style="width:50%;padding-right:0px"
           bind:tap="onClick"
         >
@@ -76,6 +77,7 @@ exports[`should render demo and match snapshot 1`] = `
           ariaLabel=""
           ariaRole="button"
           class="custom-class smart-grid-item"
+          role="button"
           style="width:50%;padding-right:0px"
           bind:tap="onClick"
         >
@@ -167,6 +169,7 @@ exports[`should render demo and match snapshot 1`] = `
           ariaLabel=""
           ariaRole="button"
           class="custom-class smart-grid-item"
+          role="button"
           style="width:50%;padding-right:0px;margin-top:0px"
           bind:tap="onClick"
         >
@@ -231,6 +234,7 @@ exports[`should render demo and match snapshot 1`] = `
           ariaLabel=""
           ariaRole="button"
           class="custom-class smart-grid-item"
+          role="button"
           style="width:50%;padding-right:0px;margin-top:0px"
           bind:tap="onClick"
         >

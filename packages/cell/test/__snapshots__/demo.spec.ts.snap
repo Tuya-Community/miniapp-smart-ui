@@ -34,6 +34,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -68,6 +69,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -115,6 +117,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -149,6 +152,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -189,6 +193,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -213,6 +218,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -240,6 +246,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style="color:#3678E3;font-size:24px"
                   bind:tap="onClick"
                 >
@@ -266,6 +273,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -336,6 +344,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -375,6 +384,7 @@ exports[`should render demo and match snapshot 1`] = `
                       data-type="minus"
                       hoverClass="smart-stepper__minus--hover"
                       hoverStayTime="70"
+                      role="button"
                       style=""
                       bind:tap="onTap"
                       bind:touchend="onTouchEnd"
@@ -387,6 +397,7 @@ exports[`should render demo and match snapshot 1`] = `
                           ariaLabel=""
                           ariaRole=""
                           class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                          role=""
                           style=""
                           bind:tap="onClick"
                         >
@@ -415,6 +426,7 @@ exports[`should render demo and match snapshot 1`] = `
                       data-type="plus"
                       hoverClass="smart-stepper__plus--hover"
                       hoverStayTime="70"
+                      role="button"
                       style=""
                       bind:tap="onTap"
                       bind:touchend="onTouchEnd"
@@ -427,6 +439,7 @@ exports[`should render demo and match snapshot 1`] = `
                           ariaLabel=""
                           ariaRole=""
                           class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                          role=""
                           style=""
                           bind:tap="onClick"
                         >
@@ -480,6 +493,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -516,6 +530,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -554,6 +569,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -608,6 +624,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -656,6 +673,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -740,6 +758,7 @@ exports[`should render demo and match snapshot 1`] = `
                     ariaLabel=""
                     ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:#3678E3;font-size:28px"
                     bind:tap="onClick"
                   >
@@ -789,6 +808,7 @@ exports[`should render demo and match snapshot 1`] = `
                           ariaLabel=""
                           ariaRole=""
                           class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                          role=""
                           style="color:none;font-size:1em;line-height: 1.25em;"
                           bind:tap="onClick"
                         >
@@ -845,6 +865,7 @@ exports[`should render demo and match snapshot 1`] = `
                           ariaLabel=""
                           ariaRole=""
                           class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                          role=""
                           style="color:none;font-size:1em;line-height: 1.25em;"
                           bind:tap="onClick"
                         >
@@ -880,6 +901,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image"
+                  role=""
                   style="font-size:50px"
                   bind:tap="onClick"
                 >
@@ -912,6 +934,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -952,6 +975,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -994,6 +1018,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -1027,6 +1052,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >

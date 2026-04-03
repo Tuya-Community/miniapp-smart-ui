@@ -59,6 +59,7 @@ exports[`should render demo and match snapshot 1`] = `
                             ariaLabel=""
                             ariaRole=""
                             class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                            role=""
                             style="font-size:18px"
                             bind:tap="onClick"
                           >
@@ -116,6 +117,7 @@ exports[`should render demo and match snapshot 1`] = `
                           ariaLabel=""
                           ariaRole="button"
                           class="smart-field__icon-container"
+                          role="button"
                           bind:tap="onClickIcon"
                         />
                         <wx-view
@@ -190,6 +192,7 @@ exports[`should render demo and match snapshot 1`] = `
                             ariaLabel=""
                             ariaRole=""
                             class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                            role=""
                             style="font-size:18px"
                             bind:tap="onClick"
                           >
@@ -247,6 +250,7 @@ exports[`should render demo and match snapshot 1`] = `
                           ariaLabel=""
                           ariaRole="button"
                           class="smart-field__icon-container"
+                          role="button"
                           bind:tap="onClickIcon"
                         />
                         <wx-view
@@ -322,6 +326,7 @@ exports[`should render demo and match snapshot 1`] = `
                             ariaLabel=""
                             ariaRole=""
                             class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                            role=""
                             style="font-size:18px"
                             bind:tap="onClick"
                           >
@@ -379,6 +384,7 @@ exports[`should render demo and match snapshot 1`] = `
                           ariaLabel=""
                           ariaRole="button"
                           class="smart-field__icon-container"
+                          role="button"
                           bind:tap="onClickIcon"
                         />
                         <wx-view
@@ -462,6 +468,7 @@ exports[`should render demo and match snapshot 1`] = `
                             ariaLabel=""
                             ariaRole=""
                             class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                            role=""
                             style="font-size:18px"
                             bind:tap="onClick"
                           >
@@ -519,6 +526,7 @@ exports[`should render demo and match snapshot 1`] = `
                           ariaLabel=""
                           ariaRole="button"
                           class="smart-field__icon-container"
+                          role="button"
                           bind:tap="onClickIcon"
                         />
                         <wx-view
@@ -590,6 +598,7 @@ exports[`should render demo and match snapshot 1`] = `
                             ariaLabel=""
                             ariaRole=""
                             class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                            role=""
                             style="font-size:18px"
                             bind:tap="onClick"
                           >
@@ -647,6 +656,7 @@ exports[`should render demo and match snapshot 1`] = `
                           ariaLabel=""
                           ariaRole="button"
                           class="smart-field__icon-container"
+                          role="button"
                           bind:tap="onClickIcon"
                         />
                         <wx-view
@@ -721,6 +731,7 @@ exports[`should render demo and match snapshot 1`] = `
                             ariaLabel=""
                             ariaRole=""
                             class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                            role=""
                             style="font-size:18px"
                             bind:tap="onClick"
                           >
@@ -778,6 +789,7 @@ exports[`should render demo and match snapshot 1`] = `
                           ariaLabel=""
                           ariaRole="button"
                           class="smart-field__icon-container"
+                          role="button"
                           bind:tap="onClickIcon"
                         />
                         <wx-view
@@ -827,6 +839,7 @@ exports[`should render demo and match snapshot 1`] = `
                   ariaLabel=""
                   ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style="font-size:12px"
                   bind:tap="onClick"
                 >
@@ -880,6 +893,7 @@ exports[`should render demo and match snapshot 1`] = `
                             ariaLabel=""
                             ariaRole=""
                             class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                            role=""
                             style="font-size:18px"
                             bind:tap="onClick"
                           >
@@ -937,6 +951,7 @@ exports[`should render demo and match snapshot 1`] = `
                           ariaLabel=""
                           ariaRole="button"
                           class="smart-field__icon-container"
+                          role="button"
                           bind:tap="onClickIcon"
                         />
                         <wx-view
