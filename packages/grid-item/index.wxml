@@ -5,6 +5,7 @@
   class="custom-class {{ utils.bem('grid-item', { square }) }}"
   style="{{ computed.wrapperStyle({ square, gutter, columnNum, index }) }}"
   aria-role="button"
+  role="button"
   aria-label="{{ ariaLabel }}"
   bindtap="onClick"
 >

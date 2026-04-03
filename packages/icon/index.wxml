@@ -4,6 +4,7 @@
   class="{{ computed.rootClass({ classPrefix, name }) }}"
   style="{{ computed.rootStyle({ customStyle, color, size }) }}"
   bindtap="onClick"
+  role="{{ ariaRole }}"
   aria-role="{{ ariaRole }}"
   aria-label="{{ ariaLabel }}"
 >

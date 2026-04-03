@@ -44,6 +44,7 @@
         class="smart-field__icon-container"
         bind:tap="onClickIcon"
         aria-role="button"
+        role="button"
         aria-label="{{ rightIconButtonAriaLabel }}"
       >
         <smart-icon
