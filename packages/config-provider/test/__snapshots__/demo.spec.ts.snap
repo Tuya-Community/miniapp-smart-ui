@@ -349,6 +349,7 @@ exports[`should render demo and match snapshot 1`] = `
                         ariaLabel=""
                         ariaRole=""
                         class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                        role=""
                         style=""
                         bind:tap="onClick"
                       >
