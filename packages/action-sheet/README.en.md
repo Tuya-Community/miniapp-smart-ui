@@ -468,6 +468,13 @@ Page({
 | bind:leave          | Triggered when the overlay is leaving                    | -                              |
 | bind:select         | Triggered when an option is selected, not triggering in disabled or loading state | event.detail: Option object   |
 
+### Slot
+
+| Name    | Description |
+| ------- | ----------- |
+| default | Custom panel content, typically used to insert custom menu content |
+| title   | Custom title content. Takes effect when `use-title-slot` is `true` and the `title` prop is not set |
+
 
 ### actions
 
