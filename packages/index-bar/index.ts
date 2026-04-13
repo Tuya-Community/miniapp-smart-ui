@@ -31,6 +31,10 @@ SmartComponent({
       type: Boolean,
       value: true,
     },
+    stickyPush: {
+      type: Boolean,
+      value: true,
+    },
     sidebarFontSize: {
       type: String,
     },
@@ -269,12 +273,9 @@ SmartComponent({
       }
       // lowestActiveIndex 已改为在 setRect 后由 computeLowestActiveIndex() 几何计算，此处不再根据滚动推断
 
-      const { sticky, stickyOffsetTop, zIndex, highlightColor } = this.data;
+      const { sticky, stickyOffsetTop, zIndex, highlightColor, stickyPush } = this.data;
 
       const activeData = hasIndex ? controlActiveIndexData : scrollChildrenGetIndexData;
-      if (activeData === undefined) {
-        return;
-      }
       const activeIndex = this.children.findIndex(item => item.data.index === activeData);
       const preActiveData = this.children[activeIndex - 1]?.data?.index;
 
@@ -302,7 +303,7 @@ SmartComponent({
               color: ${highlightColor};
             `;
 
-            if (isActiveAnchorSticky) {
+            if (isActiveAnchorSticky || !stickyPush) {
               wrapperStyle = `
                 height: ${children[index].height}px;
               `;
@@ -323,8 +324,8 @@ SmartComponent({
                 wrapperStyle,
               },
             });
-            // 滚动模式时 上一个tab 要有种慢慢被滚动切换的效果
-          } else if (preActiveData === itemData && !hasIndex) {
+            // 滚动模式时，上一个 tab 默认会有被逐步上推切换的过渡效果
+          } else if (stickyPush && preActiveData === itemData && !hasIndex) {
             const currentAnchor = children[index];
 
             const currentOffsetTop = currentAnchor.top;
