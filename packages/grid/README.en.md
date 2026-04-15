@@ -150,7 +150,7 @@ The `dot` attribute displays a small red dot in the top-right corner of the icon
 
 | Parameter            | Description                                                                                                                                     | Type               | Default      |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------------ |
-| aria-label `v2.12.1` | Accessible label set on the root node's `aria-label`                                                                                           | _string_           | -            |
+| aria-label `v2.13.0` | Accessible label set on the root node's `aria-label`                                                                                           | _string_           | -            |
 | badge                | Content of the top-right badge of the icon                                                                                                      | _string \| number_ | -            |
 | dot                  | Show a small red dot on the top-right of the icon                                                                                               | _boolean_          | `false`      |
 | icon                 | Icon Svg Value or image link, see [Icon Component](/material/smartui?comId=icon&appType=miniapp)                                                | _string_           | -            |

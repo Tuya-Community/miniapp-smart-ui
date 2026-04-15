@@ -132,7 +132,7 @@ Page({
 
 | Parameter  | Description                                               | Type      | Default |
 | ---------- | --------------------------------------------------------- | --------- | ------- |
-| close-icon-aria-label `v2.12.1` | Accessible label for the close icon, passed to the close icon's `ariaLabel` | _string_  | -       |
+| close-icon-aria-label `v2.13.0` | Accessible label for the close icon, passed to the close icon's `ariaLabel` | _string_  | -       |
 | closeable  | Whether it's a closeable tag                              | _boolean_ | `false` |
 | color      | Tag color                                                 | _string_  | -       |
 | mark       | Whether it's a mark style                                 | _boolean_ | `false` |

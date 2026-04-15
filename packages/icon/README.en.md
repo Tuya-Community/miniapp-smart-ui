@@ -104,8 +104,8 @@ Components now also support rendering by passing the path.
 
 | Parameter     | Description                              | Type               | Default    |
 | ------------- | ---------------------------------------- | ------------------ | ---------- |
-| aria-label `v2.12.1` | Accessible label; when non-empty, root `aria-role` is `button` | _string_           | -          |
-| aria-role `v2.12.1` | `aria-role` on root | _string_           | -          |
+| aria-label `v2.13.0` | Accessible label; when non-empty, root `aria-role` is `button` | _string_           | -          |
+| aria-role `v2.13.0` | `aria-role` on root | _string_           | -          |
 | class-prefix  | Class name prefix                        | _string_           | `smart-icon` |
 | color         | Icon color                               | _string_           | `inherit`  |
 | custom-style  | Custom styles                            | _string_           | -          |

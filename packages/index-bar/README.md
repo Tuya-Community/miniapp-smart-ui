@@ -126,7 +126,7 @@ Page({
 | highlight-color               | 索引字符高亮颜色           | _string_               | `#07c160` |
 | index-list                    | 索引字符列表               | _string[] \| number[]_ | `A-Z`     |
 | sticky                        | 是否开启锚点自动吸顶       | _boolean_              | `true`    |
-| sticky-push `v2.12.1`         | 滚动时是否开启上一个吸顶锚点的上推动画效果 | _boolean_ | `true`    |
+| sticky-push `v2.13.0`         | 滚动时是否开启上一个吸顶锚点的上推动画效果 | _boolean_ | `true`    |
 | sticky-offset-top             | 锚点自动吸顶时与顶部的距离 | _number_               | `0`       |
 | z-index                       | z-index 层级               | _number_               | `1`       |
 | scrollable `v2.1.7`           | SideBar 是否可滚动定位     | _boolean_              | `false`   |

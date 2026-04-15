@@ -76,9 +76,9 @@
 - [x] index-bar: 新增拖动气泡提示功能；修复右侧栏拖动时定位不准，页面闪现分割线问题，fixed导航闪现位移问题，修复右侧列表和内容不一致时定位错误问题；([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178)), 测试版本：`2.11.2-beta-7`
 
 
-# v2.12.1
+# v2.13.0
 
-发布计划（发布正式时间：2026.4.14 周二）
+发布计划（发布正式时间：2026.4.16 周四）
 
 - [x] nav-bar: 修改顶部安全距离获取方式全部采用基础库CSS 变量；并适配 fixed 和 placeholder 参数 ([95ac811](https://github.com/Tuya-Community/miniapp-smart-ui/pull/180/commits/95ac8112501cc842c887544845d41ab279e7281a)), 测试版本：`2.12.1-beta-0`
 - [x] checkbox、radio、switch、slider：新增无障碍点读功能 ([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168)), 测试版本：`2.12.1-beta-1`
