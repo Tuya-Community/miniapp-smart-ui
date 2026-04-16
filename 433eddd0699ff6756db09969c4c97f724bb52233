@@ -1,0 +1,29 @@
+packages/popover/README.en.md
+  22648228b313a68d 211
+packages/popover/README.md
+  22648228b313a68d 212
+packages/popover/index.ts
+  22648228b313a68d 53-56
+packages/popover/index.wxml
+  22648228b313a68d 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "433eddd0699ff6756db09969c4c97f724bb52233",
+  "prompts": {
+    "22648228b313a68d": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "2dbd7b89-c6d4-42ea-af18-4306de139a6a",
+        "model": "default"
+      },
+      "human_author": "muhai",
+      "messages": [],
+      "total_additions": 7,
+      "total_deletions": 1,
+      "accepted_lines": 7,
+      "overriden_lines": 0
+    }
+  }
+}
