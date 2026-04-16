@@ -6,7 +6,9 @@
   <smart-icon
     wx:if="{{ closeable }}"
     name="{{ closeIcon }}"
+    aria-role="button"
     class="smart-cascader__close-icon"
+    aria-label="{{ closeIconAriaLabel }}"
     bind:tap="onClose"
   />
 </view>

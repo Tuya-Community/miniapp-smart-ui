@@ -25,7 +25,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -48,7 +51,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -71,7 +77,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -94,7 +103,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -117,7 +129,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -155,7 +170,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -178,7 +196,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -201,7 +222,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -224,7 +248,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -247,7 +274,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -285,7 +315,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:#ffd21e"
                 bind:tap="onClick"
               >
@@ -308,7 +341,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:#ffd21e"
                 bind:tap="onClick"
               >
@@ -331,7 +367,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:#ffd21e"
                 bind:tap="onClick"
               >
@@ -354,7 +393,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:#eee"
                 bind:tap="onClick"
               >
@@ -377,7 +419,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:#eee"
                 bind:tap="onClick"
               >
@@ -415,7 +460,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -433,7 +481,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -456,7 +507,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -474,7 +528,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -497,7 +554,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:#eee"
                 bind:tap="onClick"
               >
@@ -515,7 +575,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -538,7 +601,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:#eee"
                 bind:tap="onClick"
               >
@@ -556,7 +622,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:#eee"
                 bind:tap="onClick"
               >
@@ -579,7 +648,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:#eee"
                 bind:tap="onClick"
               >
@@ -597,7 +669,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:#eee"
                 bind:tap="onClick"
               >
@@ -635,7 +710,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -658,7 +736,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -681,7 +762,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -704,7 +788,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -727,7 +814,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -750,7 +840,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -788,7 +881,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -811,7 +907,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -834,7 +933,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -857,7 +959,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -880,7 +985,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -918,7 +1026,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -941,7 +1052,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -964,7 +1078,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -987,7 +1104,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -1010,7 +1130,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -1049,7 +1172,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -1072,7 +1198,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-M4)"
                 bind:tap="onClick"
               >
@@ -1095,7 +1224,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -1118,7 +1250,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >
@@ -1141,7 +1276,10 @@ exports[`should render demo and match snapshot 1`] = `
               bind:click="onSelect"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole=""
                 class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                role=""
                 style="color:var(--app-B3-N7)"
                 bind:tap="onClick"
               >

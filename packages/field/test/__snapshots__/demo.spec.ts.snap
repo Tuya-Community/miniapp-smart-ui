@@ -81,7 +81,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -153,7 +156,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -248,7 +254,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -330,7 +339,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -425,7 +437,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -507,7 +522,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -562,7 +580,10 @@ exports[`should render demo and match snapshot 1`] = `
                         slot="left-icon"
                       >
                         <wx-view
+                          ariaLabel=""
+                          ariaRole=""
                           class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                          role=""
                           style="color:#3678E3;font-size:22px"
                           bind:tap="onClick"
                         >
@@ -617,7 +638,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -705,7 +729,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -806,7 +833,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -894,7 +924,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -988,7 +1021,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -1085,7 +1121,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -1297,7 +1336,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view
@@ -1381,7 +1423,10 @@ exports[`should render demo and match snapshot 1`] = `
                         bind:tap="onClickInput"
                       />
                       <wx-view
+                        ariaLabel=""
+                        ariaRole="button"
                         class="smart-field__icon-container"
+                        role="button"
                         bind:tap="onClickIcon"
                       />
                       <wx-view

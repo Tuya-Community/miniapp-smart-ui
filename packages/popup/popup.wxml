@@ -11,6 +11,8 @@
     wx:if="{{ closeable }}"
     name="{{ closeIcon }}"
     class="close-icon-class smart-popup__close-icon smart-popup__close-icon--{{ closeIconPosition }}"
+    aria-role="button"
+    aria-label="{{ closeIconAriaLabel }}"
     bind:tap="onClickCloseIcon"
   />
 </view>

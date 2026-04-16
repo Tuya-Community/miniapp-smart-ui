@@ -109,6 +109,7 @@ Setting the `round` property adds different rounded corner styles based on the p
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | close-icon | Name or URL of the close icon | _string_ | `cross` |
+| close-icon-aria-label `v2.13.0` | Accessible label for the close icon, passed to inner `smart-icon` as `aria-label` | _string_ | - |
 | close-icon-position | Close icon position, options: `top-left`, `bottom-left`, `bottom-right` | _string_ | `top-right` |
 | close-on-click-overlay | Whether to close when clicking the overlay | _boolean_ | `true` |
 | closeable | Whether to show the close icon | _boolean_ | `false` |

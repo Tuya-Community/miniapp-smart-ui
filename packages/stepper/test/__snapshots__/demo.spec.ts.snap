@@ -24,10 +24,13 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -37,7 +40,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__minus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -60,10 +66,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:input="onInput"
             />
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="plus-class smart-stepper__plus"
               data-type="plus"
               hoverClass="smart-stepper__plus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -73,7 +82,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__plus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -111,10 +123,13 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -124,7 +139,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__minus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -147,10 +165,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:input="onInput"
             />
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="plus-class smart-stepper__plus"
               data-type="plus"
               hoverClass="smart-stepper__plus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -160,7 +181,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__plus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -198,10 +222,13 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -211,7 +238,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__minus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -234,10 +264,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:input="onInput"
             />
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="plus-class smart-stepper__plus"
               data-type="plus"
               hoverClass="smart-stepper__plus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -247,7 +280,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__plus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -285,10 +321,13 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -298,7 +337,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__minus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -321,10 +363,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:input="onInput"
             />
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="plus-class smart-stepper__plus"
               data-type="plus"
               hoverClass="smart-stepper__plus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -334,7 +379,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__plus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -372,10 +420,13 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -385,7 +436,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__minus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -408,10 +462,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:input="onInput"
             />
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="plus-class smart-stepper__plus smart-stepper__plus--disabled"
               data-type="plus"
               hoverClass="smart-stepper__plus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -421,7 +478,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__plus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -459,10 +519,13 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -472,7 +535,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__minus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -495,10 +561,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:input="onInput"
             />
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="plus-class smart-stepper__plus"
               data-type="plus"
               hoverClass="smart-stepper__plus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -508,7 +577,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__plus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -546,10 +618,13 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -559,7 +634,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__minus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -582,10 +660,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:input="onInput"
             />
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="plus-class smart-stepper__plus"
               data-type="plus"
               hoverClass="smart-stepper__plus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -595,7 +676,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__plus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -635,10 +719,13 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -648,7 +735,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__minus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -671,10 +761,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:input="onInput"
             />
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="plus-class smart-stepper__plus"
               data-type="plus"
               hoverClass="smart-stepper__plus--hover"
               hoverStayTime="70"
+              role="button"
               style=""
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -684,7 +777,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__plus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -722,10 +818,13 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper custom-class"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
+              role="button"
               style="width:32px;height:32px"
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -735,7 +834,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__minus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -758,10 +860,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:input="onInput"
             />
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="plus-class smart-stepper__plus"
               data-type="plus"
               hoverClass="smart-stepper__plus--hover"
               hoverStayTime="70"
+              role="button"
               style="width:32px;height:32px"
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -771,7 +876,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__plus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -809,10 +917,13 @@ exports[`should render demo and match snapshot 1`] = `
             class="smart-stepper smart-stepper--round custom-class"
           >
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="minus-class smart-stepper__minus smart-stepper__minus--disabled"
               data-type="minus"
               hoverClass="smart-stepper__minus--hover"
               hoverStayTime="70"
+              role="button"
               style="width:22px;height:22px"
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -822,7 +933,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__minus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >
@@ -845,10 +959,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:input="onInput"
             />
             <wx-view
+              ariaLabel=""
+              ariaRole="button"
               class="plus-class smart-stepper__plus"
               data-type="plus"
               hoverClass="smart-stepper__plus--hover"
               hoverStayTime="70"
+              role="button"
               style="width:22px;height:22px"
               bind:tap="onTap"
               bind:touchend="onTouchEnd"
@@ -858,7 +975,10 @@ exports[`should render demo and match snapshot 1`] = `
                 class="smart-stepper__plus-icon"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style=""
                   bind:tap="onClick"
                 >

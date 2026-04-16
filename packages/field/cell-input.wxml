@@ -36,9 +36,17 @@
         wx:if="{{ showClear }}"
         name="{{ clearIcon }}"
         class="smart-field__clear-root smart-field__icon-root"
+        aria-label="{{ clearIconAriaLabel }}"
+        aria-role="button"
         catch:touchstart="onClear"
       />
-      <view class="smart-field__icon-container" bind:tap="onClickIcon">
+      <view
+        class="smart-field__icon-container"
+        bind:tap="onClickIcon"
+        aria-role="button"
+        role="button"
+        aria-label="{{ rightIconButtonAriaLabel }}"
+      >
         <smart-icon
           wx:if="{{ rightIcon || icon }}"
           name="{{ rightIcon || icon }}"

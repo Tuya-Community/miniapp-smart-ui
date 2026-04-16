@@ -23,6 +23,11 @@ SmartComponent({
       type: Boolean,
       value: true,
     },
+    /** 关闭图标读屏文案；不传则仅有 button 角色，由业务自行多语言传入 */
+    closeIconAriaLabel: {
+      type: String,
+      value: '',
+    },
     contentHeight: null,
     round: {
       type: Boolean,

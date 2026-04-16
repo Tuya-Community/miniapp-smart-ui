@@ -70,6 +70,14 @@ SmartComponent({
     },
     theme: String,
     alwaysEmbed: Boolean,
+    minusAriaLabel: {
+      type: String,
+      value: '',
+    },
+    plusAriaLabel: {
+      type: String,
+      value: '',
+    },
   },
 
   data: {

@@ -75,6 +75,14 @@ SmartComponent({
       type: String,
       value: '',
     },
+    clearIconAriaLabel: {
+      type: String,
+      value: '',
+    },
+    rightIconButtonAriaLabel: {
+      type: String,
+      value: '',
+    },
   },
 
   data: {

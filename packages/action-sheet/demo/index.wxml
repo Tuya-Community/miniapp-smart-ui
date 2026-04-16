@@ -163,6 +163,7 @@
         type="time"
         data-type="time"
         is-12-hour-clock
+        item-height="{{ isA11y ? 52 : 44 }}"
         show-toolbar="{{ false }}"
         value="{{ current12Date }}"
         max-hour="{{ maxHour }}"
@@ -172,6 +173,7 @@
       <smart-picker
         class="flex1"
         unit="℃"
+        item-height="{{ isA11y ? 52 : 44 }}"
         active-index="{{ tempColumnIdx }}"
         columns="{{ tempColumns }}"
         bind:change="onTempColumnChange"

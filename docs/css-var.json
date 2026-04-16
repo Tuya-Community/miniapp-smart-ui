@@ -1422,6 +1422,11 @@
     "value": "0",
     "decs": ""
   },
+  "dialog-header-padding-side": {
+    "name": "@dialog-header-padding-side",
+    "value": "16px",
+    "decs": ""
+  },
   "dialog-header-isolated-padding": {
     "name": "@dialog-header-isolated-padding",
     "value": "@padding-lg 0",
@@ -2169,7 +2174,7 @@
   },
   "picker-confirm-action-color": {
     "name": "@picker-confirm-action-color",
-    "value": "#576b95",
+    "value": "#007AFF",
     "decs": ""
   },
   "picker-cancel-action-color": {
@@ -2189,7 +2194,7 @@
   },
   "picker-option-text-color": {
     "name": "@picker-option-text-color",
-    "value": "var(--app-B6-N3, rgba(0, 0, 0, 0.5))",
+    "value": "var(--app-B6-N1, rgba(0, 0, 0, 1))",
     "decs": ""
   },
   "picker-option-unit-text-color": {
