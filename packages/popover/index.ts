@@ -50,6 +50,10 @@ SmartComponent({
       type: String,
       value: '',
     },
+    overlayStyle: {
+      type: String,
+      value: '',
+    },
     trigger: {
       type: String,
       // tap | longpress

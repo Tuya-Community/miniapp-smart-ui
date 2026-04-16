@@ -3,11 +3,11 @@
   <smart-overlay
     show="{{ currentShow }}"
     z-index="{{ zIndex }}"
+    custom-style="{{ overlayStyle }}"
     bind:click="onClose"
     duration="{{ 1 }}"
     close-on-click-overlay
     bind:close="onClose"
-    z-index="{{zIndex}}"
   >
    
   </smart-overlay>
