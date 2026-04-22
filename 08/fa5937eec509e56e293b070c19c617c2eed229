@@ -1,0 +1,42 @@
+packages/calendar/index.less
+  1e88aecdc9505e46 26
+packages/calendar-header/index.less
+  1e88aecdc9505e46 18,49-51,66-68,91-94
+packages/calendar-month-list/index.less
+  1e88aecdc9505e46 4
+packages/calendar/README.md
+  1e88aecdc9505e46 427,430-431,437-438,453
+packages/calendar/demo/index.less
+  1e88aecdc9505e46 2
+packages/calendar-month/index.less
+  1e88aecdc9505e46 10-12
+packages/calendar/README.en.md
+  1e88aecdc9505e46 423,426-427,433-434,449
+packages/calendar-year-list/index.less
+  1e88aecdc9505e46 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "08fa5937eec509e56e293b070c19c617c2eed229",
+  "prompts": {
+    "1e88aecdc9505e46": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "5f1eb2cc-285a-4f62-934a-099eaf259942",
+        "model": "default"
+      },
+      "human_author": "muhai",
+      "messages": [],
+      "total_additions": 30,
+      "total_deletions": 30,
+      "accepted_lines": 30,
+      "overriden_lines": 0
+    }
+  },
+  "humans": {
+    "h_998775e1d36971": {
+      "author": "muhai"
+    }
+  }
+}
