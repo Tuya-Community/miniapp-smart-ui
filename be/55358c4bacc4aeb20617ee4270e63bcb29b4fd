@@ -1,0 +1,23 @@
+packages/common/style/var.less
+  1e88aecdc9505e46 281,283-285,287,289,303
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "be55358c4bacc4aeb20617ee4270e63bcb29b4fd",
+  "prompts": {
+    "1e88aecdc9505e46": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "5f1eb2cc-285a-4f62-934a-099eaf259942",
+        "model": "default"
+      },
+      "human_author": "muhai",
+      "messages": [],
+      "total_additions": 7,
+      "total_deletions": 7,
+      "accepted_lines": 7,
+      "overriden_lines": 0
+    }
+  }
+}
