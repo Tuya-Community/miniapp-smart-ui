@@ -217,7 +217,7 @@ SmartComponent({
       const value = this.format(add(+this.data.currentValue, diff), true);
 
       this.emitChange(value);
-      this.$emit(type);
+      this.$emit(type, value);
       tyApi.vibrateShort({ type: 'light' });
     },
 
