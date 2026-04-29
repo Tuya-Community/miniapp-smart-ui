@@ -22,8 +22,12 @@
   bind:after-leave="onAfterLeave"
 >
   <view wx:if="{{ title || useTitleSlot }}" class="smart-action-sheet__header">
-    <block wx:if="{{ title }}">{{ title }}</block>
-    <slot wx:else name="title" />
+    <view wx:if="{{ title }}">
+      {{ title }}
+    </view>
+    <view wx:else>
+      <slot name="title" />
+    </view>
   </view>
   <view wx:if="{{ description }}" class="smart-action-sheet__description smart-hairline--bottom">
     {{ description }}
@@ -61,7 +65,9 @@
       <smart-loading wx:else custom-class="smart-action-sheet__loading" size="22px" />
     </button>
   </scroll-view>
-  <slot />
+  <view>
+    <slot />
+  </view>
   <block wx:if="{{ cancelText || confirmText }}">
     <view class="smart-action-sheet__gap" />
     <view class="smart-action-sheet__footer">
