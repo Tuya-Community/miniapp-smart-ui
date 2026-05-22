@@ -1,7 +1,7 @@
 :root {
   --smart-ui-overlay: rgba(0, 0, 0, 0.4);
   --smart-ui-bottom-sheet-dragger-node-background: rgba(0, 0, 0, 0.3);
-  --smart-ui-dialog-background: rgba(255, 255, 255, 1);
+  --smart-ui-dialog-background: var(--app-B4, rgba(255, 255, 255, 1));
   --smart-ui-border-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
@@ -23,7 +23,7 @@
   &[theme='dark'] {
     --smart-ui-overlay: rgba(0, 0, 0, 0.7);
     --smart-ui-bottom-sheet-dragger-node-background: rgba(255, 255, 255, 0.3);
-    --smart-ui-dialog-background: #333;
+    --smart-ui-dialog-background:  linear-gradient(0deg, var(--app-B4-N6), var(--app-B4-N6)), var(--app-B1);
     --smart-ui-border-image: linear-gradient(
       to right,
       rgba(255, 255, 255, 0),
