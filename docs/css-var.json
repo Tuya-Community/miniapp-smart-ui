@@ -1507,6 +1507,11 @@
     "value": "var(--app-B4-N9, rgba(0, 0, 0, 0.05))",
     "decs": ""
   },
+  "dialog-input-color": {
+    "name": "@dialog-input-color",
+    "value": "var(--app-B4-N1, rgba(0, 0, 0, 1))",
+    "decs": ""
+  },
   "dialog-input-margin": {
     "name": "@dialog-input-margin",
     "value": "0 16px 24px",
