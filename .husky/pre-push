@@ -1,0 +1,4 @@
+#!/bin/sh
+# Agent Blame - Report code generation rate on push (async, non-blocking)
+# Silently skips if clix is not installed. Runs in background so git push is not delayed.
+(command -v clix >/dev/null 2>&1 && clix dev blame report 2>/dev/null || true) &
