@@ -2647,7 +2647,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <smart-popup
             closeIconClass="smart-calendar__close-icon"
-            customClass="smart-calendar__popup--bottom"
+            customClass="smart-calendar__popup--bottom smart-calendar__popup--type-single"
             bind:after-enter="onOpened"
             bind:after-leave="onClosed"
             bind:close="onClose"

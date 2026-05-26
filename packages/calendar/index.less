@@ -17,13 +17,23 @@
     height: var(--calendar-popup-height, @calendar-popup-height);
   }
 
+  &__popup--top&__popup--type-month,
+  &__popup--bottom&__popup--type-month {
+    height: var(--calendar-popup-height-month, @calendar-popup-height-month);
+  }
+
+  &__popup--top&__popup--type-year,
+  &__popup--bottom&__popup--type-year {
+    height: var(--calendar-popup-height-year, @calendar-popup-height-year);
+  }
+
   &__popup--left,
   &__popup--right {
     height: 100%;
   }
 
   &-month {
-    margin-top: 0rpx;
+    margin-top: 0px;
   }
 
   &__body {

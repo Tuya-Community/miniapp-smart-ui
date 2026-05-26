@@ -10,7 +10,7 @@
   width: var(--dialog-width, @dialog-width);
   font-size: var(--dialog-font-size, @dialog-font-size);
   border-radius: var(--dialog-border-radius, @dialog-border-radius);
-  background-color: var(--dialog-background-color, @dialog-background-color);
+  background: var(--dialog-background-color, @dialog-background-color);
 
   @media (max-width: 321px) {
     width: var(--dialog-small-screen-width, @dialog-small-screen-width);
@@ -91,6 +91,7 @@
     padding: var(--dialog-input-padding, @dialog-input-padding);
     border-radius: var(--dialog-input-border-radius, @dialog-input-border-radius);
     font-size: var(--dialog-input-font-size, @dialog-input-font-size);
+    color: var(--dialog-input-color, @dialog-input-color);
   }
 
   &__footer {
