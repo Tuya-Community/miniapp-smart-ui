@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Agent Blame - Auto-process commits for AI attribution
+# Silently skips if clix is not installed
+command -v clix >/dev/null 2>&1 && clix dev blame process HEAD 2>/dev/null || true
+
+# Push notes to remote - if successful, configure fetch refspec for auto-pull
+if git push origin refs/notes/agentblame:refs/notes/agentblame 2>/dev/null; then
+  # Add fetch refspec if not already configured (so notes auto-fetch on git pull)
+  git config --local --get-all remote.origin.fetch 2>/dev/null | grep -q 'refs/notes/agentblame' ||     git config --local --add remote.origin.fetch '+refs/notes/agentblame:refs/notes/agentblame' 2>/dev/null
+fi
