@@ -5,11 +5,11 @@
 ### Features ✨
 
 - popover: Add `overlayStyle` property to support custom overlay styles ([433eddd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/190/commits/433eddd0699ff6756db09969c4c97f724bb52233))
+- dialog: Update background color to rely on APP system variables and change the background CSS property from `background-color` to `background` ([a61d606](https://github.com/Tuya-Community/miniapp-smart-ui/pull/194/commits/a61d606f35951c307a2fa6739c33b457e724f9f2)); add `--dialog-input-color` CSS variable ([08b1eee](https://github.com/Tuya-Community/miniapp-smart-ui/pull/196/commits/08b1eee36bc6f9c0311510ccbd49c912e92760cb))
 
 ### Bug Fixes 🐛
 
 - stepper: Fix `plus` and `minus` callbacks to correctly pass the current `value` ([d60b64a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/192/commits/d60b64a176aa1bcb79f1abb4a1fee8620313f3fe))
-- dialog: Remove dependency on APP system variables for background color and add `--dialog-input-color` CSS variable ([a61d606](https://github.com/Tuya-Community/miniapp-smart-ui/pull/194/commits/a61d606f35951c307a2fa6739c33b457e724f9f2), [08b1eee](https://github.com/Tuya-Community/miniapp-smart-ui/pull/196/commits/08b1eee36bc6f9c0311510ccbd49c912e92760cb))
 
 ## v2.13.0 (2026-4-16)
 

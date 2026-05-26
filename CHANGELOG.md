@@ -5,11 +5,11 @@
 ### Features ✨
 
 - popover: 新增 `overlayStyle` 属性，支持自定义遮罩层样式([433eddd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/190/commits/433eddd0699ff6756db09969c4c97f724bb52233))
+- dialog: 修改背景色依赖 APP 系统变量，修改背景CSS属性从 background-color 变成 background([a61d606](https://github.com/Tuya-Community/miniapp-smart-ui/pull/194/commits/a61d606f35951c307a2fa6739c33b457e724f9f2))；新增 `--dialog-input-color` CSS 变量([08b1eee](https://github.com/Tuya-Community/miniapp-smart-ui/pull/196/commits/08b1eee36bc6f9c0311510ccbd49c912e92760cb))
 
 ### Bug Fixes 🐛
 
 - stepper: 修复增减按钮 `plus`、`minus` 事件回调正确传递当前 `value` 参数([d60b64a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/192/commits/d60b64a176aa1bcb79f1abb4a1fee8620313f3fe))
-- dialog: 修复背景色依赖 APP 系统变量，新增 `--dialog-input-color` CSS 变量([a61d606](https://github.com/Tuya-Community/miniapp-smart-ui/pull/194/commits/a61d606f35951c307a2fa6739c33b457e724f9f2), [08b1eee](https://github.com/Tuya-Community/miniapp-smart-ui/pull/196/commits/08b1eee36bc6f9c0311510ccbd49c912e92760cb))
 
 ## v2.13.0 (2026-4-16)
 
