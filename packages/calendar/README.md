@@ -450,7 +450,7 @@ Page({
 | --calendar-month-mark-color                        | _fade(@gray-4, 60%)_                    | 月份标记颜色           |
 | --calendar-month-mark-font-size                    | _160px_                                 | 月份标记字体大小       |
 | --calendar-month-title-font-size                   | _14px_                                  | 月份标题字体大小       |
-| --calendar-popup-height `v2.5.0`                   | _848rpx_                                | 日历弹窗高度           |
+| --calendar-popup-height `v2.5.0`                   | _980rpx_                                | 日历弹窗高度           |
 | --calendar-range-edge-background-color             | _#3678e3_                               | 日期范围边缘背景色     |
 | --calendar-range-edge-color                        | _#fff_                                  | 日期范围边缘颜色       |
 | --calendar-range-middle-background-opacity         | _0.1_                                   | 日期范围中间背景透明度 |

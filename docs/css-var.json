@@ -1119,7 +1119,7 @@
   },
   "calendar-popup-height": {
     "name": "@calendar-popup-height",
-    "value": "848rpx",
+    "value": "980rpx",
     "decs": ""
   },
   "calendar-header-save-color": {
