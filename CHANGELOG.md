@@ -10,6 +10,7 @@
 ### Bug Fixes 🐛
 
 - stepper: 修复增减按钮 `plus`、`minus` 事件回调正确传递当前 `value` 参数([d60b64a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/192/commits/d60b64a176aa1bcb79f1abb4a1fee8620313f3fe))
+- calendar: 更新样式单位从 `rpx` 到 `px`，保持组件样式、变量定义及中英文文档一致([pull/191](https://github.com/Tuya-Community/miniapp-smart-ui/pull/191))
 
 ## v2.13.0 (2026-4-16)
 

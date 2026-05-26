@@ -10,6 +10,7 @@
 ### Bug Fixes 🐛
 
 - stepper: Fix `plus` and `minus` callbacks to correctly pass the current `value` ([d60b64a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/192/commits/d60b64a176aa1bcb79f1abb4a1fee8620313f3fe))
+- calendar: Update style units from `rpx` to `px` and keep component styles, variable definitions, and Chinese/English documentation consistent ([pull/191](https://github.com/Tuya-Community/miniapp-smart-ui/pull/191))
 
 ## v2.13.0 (2026-4-16)
 
