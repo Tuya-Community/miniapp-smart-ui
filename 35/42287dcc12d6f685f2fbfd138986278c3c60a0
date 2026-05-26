@@ -1,0 +1,20 @@
+docs/css-var.json
+  h_eabc34dcaf7833 1122
+packages/common/style/var.less
+  h_eabc34dcaf7833 304
+packages/calendar/README.md
+  h_eabc34dcaf7833 453
+packages/calendar/README.en.md
+  h_eabc34dcaf7833 449
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "3542287dcc12d6f685f2fbfd138986278c3c60a0",
+  "prompts": {},
+  "humans": {
+    "h_eabc34dcaf7833": {
+      "author": "muhai <muhai.li@tuya.com>"
+    }
+  }
+}
