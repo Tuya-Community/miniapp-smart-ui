@@ -1122,6 +1122,16 @@
     "value": "490px",
     "decs": ""
   },
+  "calendar-popup-height-month": {
+    "name": "@calendar-popup-height-month",
+    "value": "350px",
+    "decs": ""
+  },
+  "calendar-popup-height-year": {
+    "name": "@calendar-popup-height-year",
+    "value": "350px",
+    "decs": ""
+  },
   "calendar-header-save-color": {
     "name": "@calendar-header-save-color",
     "value": "#1989fa",
