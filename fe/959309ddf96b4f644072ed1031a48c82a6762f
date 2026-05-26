@@ -1,0 +1,30 @@
+packages/calendar/README.en.md
+  s_c42cb8c7623e7c::t_c0235d1b3dde1f 450-451
+packages/calendar/index.wxml
+  s_c42cb8c7623e7c::t_c0235d1b3dde1f 8
+packages/common/style/var.less
+  s_c42cb8c7623e7c::t_c0235d1b3dde1f 304-305
+packages/calendar/README.md
+  s_c42cb8c7623e7c::t_c0235d1b3dde1f 454-455
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "fe959309ddf96b4f644072ed1031a48c82a6762f",
+  "prompts": {},
+  "humans": {
+    "h_eabc34dcaf7833": {
+      "author": "muhai <muhai.li@tuya.com>"
+    }
+  },
+  "sessions": {
+    "s_c42cb8c7623e7c": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e6311-1b52-77d2-b15b-f904781f9c58",
+        "model": "gpt-5.4"
+      },
+      "human_author": "muhai <muhai.li@tuya.com>"
+    }
+  }
+}
