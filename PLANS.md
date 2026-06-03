@@ -104,5 +104,5 @@
 发布计划（发布正式时间：2026.6.23 周二）
 
 - [ ] stepper: 支持输入负数
-- [ ] button: 修复深色模式反转问题
+- [ ] button: 修复深色模式反转问题，issue: [#23](https://registry.code.tuya-inc.top/tuyarn-kit/ray-smart-ui/-/issues/23)
 - [ ] picker: `date` 模式支持12小时制，issue: [#31](https://registry.code.tuya-inc.top/tuyarn-kit/base/ray-smart-ui/-/issues/31)
