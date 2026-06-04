@@ -7,7 +7,7 @@
   "description": "轻量、可靠的智能小程序 UI 组件库",
   "scripts": {
     "prepublishOnly": "node ./build/prepublishOnly.js",
-    "dev": "NODE_OPTIONS=--no-experimental-fetch node build/dev.mjs",
+    "dev": "cross-env NODE_OPTIONS=--no-experimental-fetch node build/dev.mjs",
     "lint": "eslint ./packages --ext .js,.ts --fix",
     "lint:style": "stylelint \"packages/**/*.less\" --fix",
     "prepare": "husky install",
@@ -54,6 +54,7 @@
     "@types/jest": "^27.0.2",
     "canvas": "^3.1.0",
     "conventional-changelog-cli": "^5.0.0",
+    "cross-env": "^10.1.0",
     "eslint-config-tuya-panel": "^0.4.2",
     "eslint-plugin-literal-check": "^0.1.2",
     "eslint-plugin-prettier": "^5.2.1",
@@ -87,9 +88,9 @@
     "iOS >= 9"
   ],
   "dependencies": {
+    "@ray-core/event-propagation": "^0.4.13",
     "@ray-js/components-ty-slider": "^0.3.9",
-    "@tuya-miniapp/icons": "^2.3.0",
-    "@ray-core/event-propagation": "^0.4.13"
+    "@tuya-miniapp/icons": "^2.3.0"
   },
   "maintainers": [
     {
