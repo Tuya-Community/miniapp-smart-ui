@@ -10,6 +10,10 @@
   <smart-stepper value="{{ 1 }}" min="5" max="8" />
 </smart-cell>
 
+<smart-cell center title="{{I18n.t('negativeNumberInput')}}">
+  <smart-stepper value="{{ -3 }}" min="{{ -10 }}" max="{{ 10 }}" />
+</smart-cell>
+
 <smart-cell center title="{{I18n.t('limitInputToIntegers')}}">
   <smart-stepper value="{{ 1 }}" integer />
 </smart-cell>

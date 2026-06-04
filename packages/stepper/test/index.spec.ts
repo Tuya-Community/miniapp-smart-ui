@@ -540,6 +540,56 @@ describe('stepper', () => {
     }
   });
 
+  test('should keep a leading minus when min is below zero', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-stepper': SmartStepper,
+        },
+        template: `<smart-stepper id="wrapper" value="{{ -1 }}" min="{{ -10 }}" />`,
+        data: {
+          value: -1,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ min: -10 });
+      const formatted = instance.format('--1..2', false);
+      expect(formatted).toBe('-1.2');
+    }
+  });
+
+  test('should strip minus sign when min does not allow negative values', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-stepper': SmartStepper,
+        },
+        template: `<smart-stepper id="wrapper" value="{{ 1 }}" min="{{ 1 }}" />`,
+        data: {
+          value: 1,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ min: 1 });
+      const formatted = instance.format('-3', false);
+      expect(formatted).toBe('3');
+    }
+  });
+
   test('should format value with range limits', async () => {
     const comp = simulate.render(
       simulate.load({
@@ -618,6 +668,44 @@ describe('stepper', () => {
     }
   });
 
+  test('should allow typing a lone minus sign without emitting change', async () => {
+    let changeCount = 0;
+
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-stepper': SmartStepper,
+        },
+        template: `<smart-stepper id="wrapper" min="{{ -10 }}" bind:change="onChange" />`,
+        methods: {
+          onChange() {
+            changeCount++;
+          },
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ min: -10, currentValue: '0' });
+      await simulate.sleep(10);
+      const initialChangeCount = changeCount;
+
+      const mockEvent = {
+        detail: { value: '-' },
+      } as any;
+      instance.onInput(mockEvent);
+      await simulate.sleep(10);
+
+      expect(changeCount).toBe(initialChangeCount);
+      expect(wrapper?.data.currentValue).toBe('-');
+    }
+  });
+
   test('should handle input event', async () => {
     let changeEmitted = false;
     let changeValue: any = null;
@@ -651,6 +739,36 @@ describe('stepper', () => {
 
       expect(changeEmitted).toBe(true);
       expect(changeValue).toBe('5.5');
+    }
+  });
+
+  test('should keep negative value on blur when min allows negative numbers', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-stepper': SmartStepper,
+        },
+        template: `<smart-stepper id="wrapper" value="{{ -3 }}" min="{{ -10 }}" max="{{ 10 }}" step="1" />`,
+        data: {
+          value: -3,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      instance.setData({ min: -10, max: 10, step: 1, currentValue: '-' });
+      const mockEvent = {
+        detail: { value: '-3' },
+      } as any;
+      instance.onBlur(mockEvent);
+      await simulate.sleep(10);
+
+      expect(String(wrapper?.data.currentValue)).toBe('-3');
     }
   });
 
