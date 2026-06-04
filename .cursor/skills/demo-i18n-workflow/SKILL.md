@@ -28,7 +28,8 @@ description: Adds or updates component demo, I18n (example/i18n/strings.json), a
 - **版本号**：仅 README/README.en 需要带版本号，strings.json 不需要。
   - **新增 demo 区块**：该 demo 的标题后面加空格和版本号，例如：`### 文字颜色 \`v2.10.0\``。
   - **API/Props 表格新增属性或参数**：在该行「说明」列末尾或参数名列后加版本号，例如：`| my-text-color \`v2.11.0\` | 按钮文字颜色 | _string_ | - |`。
-  - 版本号以当前开发版本为准（可从项目根目录 `package.json` 的 `version` 获取，或询问用户）。
+  - 版本号以当前对外正式版本为准（可从项目根目录 `package.json` 的 `version` 获取主版本号）。
+  - 如果 `package.json` 中的版本带有预发布后缀，如 `2.13.2-beta-0`、`2.13.2-rc.1`，README/README.en 中只写正式版本号部分：`v2.13.2`。
 
 ## 流程
 
@@ -42,5 +43,5 @@ description: Adds or updates component demo, I18n (example/i18n/strings.json), a
 - [ ] Demo 中无硬编码中文/英文，均通过 I18n.t('key') 展示
 - [ ] 所用 key 在 strings.json 的 en、zh 中均有对应文案
 - [ ] 所有 README 内 demo 的标题以及内容均和 `packages/<组件名>/demo/` 内代码一一对应
-- [ ] **新增 demo 或新增 API 属性时**：README/README.en 中已为新增 demo 标题、新增 API 行补充版本号
+- [ ] **新增 demo 或新增 API 属性时**：README/README.en 中已为新增 demo 标题、新增 API 行补充正式版本号，且不带 `-beta-0` 等预发布后缀
 - [ ] `yarn test` 通过，必要时已更新快照

@@ -9,6 +9,9 @@
 </demo-block>
 
 <demo-block title="{{I18n.t('simpleButton')}}" padding>
+  <smart-button plain class="demo-margin-right">
+    {{I18n.t('simpleButton')}}
+  </smart-button>
   <smart-button type="info" plain class="demo-margin-right">{{I18n.t('simpleButton')}}</smart-button>
   <smart-button type="primary" plain>{{I18n.t('simpleButton')}}</smart-button>
 </demo-block>
