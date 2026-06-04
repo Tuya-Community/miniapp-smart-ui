@@ -52,6 +52,14 @@ Limit the input value range through `min` and `max` attributes.
 <smart-stepper value="{{ 5 }}" min="5" max="8" />
 ```
 
+### Support Negative Input `v2.13.2`
+
+When `min` is less than `0`, the input box supports manual negative number input, which is useful for values like temperatures or offsets.
+
+```html
+<smart-stepper value="{{ -3 }}" min="{{ -10 }}" max="{{ 10 }}" />
+```
+
 ### Restrict Integer Input
 
 Once the `integer` attribute is set, the input box will only allow integer input.
