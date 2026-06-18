@@ -159,6 +159,14 @@ SmartComponent({
     // limit value range
     format(value, isFormatAll = false) {
       value = String(value).replace(/[^0-9.-]/g, '');
+
+      // handle negative sign: only allow at the beginning, and only one
+      const isNegative = value.charAt(0) === '-';
+      value = value.replace(/-/g, '');
+      if (isNegative && this.data.min < 0) {
+        value = '-' + value;
+      }
+
       if (this.data.integer && value.indexOf('.') !== -1) {
         value = value.split('.')[0];
       }
@@ -169,9 +177,15 @@ SmartComponent({
           value.substring(0, firstDotIndex + 1) +
           value.substring(firstDotIndex + 1).replace(/\./g, '');
       }
+
+      // allow typing a lone minus sign without clamping
+      if (value === '-' && !isFormatAll) {
+        return value;
+      }
+
       // format range
       if (isFormatAll) {
-        value = value === '' ? 0 : +value;
+        value = value === '' || value === '-' ? 0 : +value;
         value = Math.min(this.data.max, value);
         value = Math.max(value, this.data.min);
       }
@@ -192,6 +206,12 @@ SmartComponent({
       }
 
       const formatted = this.format(value);
+
+      // allow typing a lone minus sign without triggering change
+      if (formatted === '-') {
+        this.setData({ currentValue: formatted });
+        return;
+      }
 
       this.emitChange(formatted);
     },

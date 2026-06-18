@@ -116,6 +116,14 @@ const staticCopier = dist =>
     copier(dist, 'rjs')
   );
 
+const readmeCopier = dist =>
+  function copyReadme() {
+    if (![esDir, libDir].includes(dist)) {
+      return Promise.resolve();
+    }
+    return gulp.src([`${src}/**/README.md`]).pipe(gulp.dest(dist));
+  };
+
 const cleaner = path =>
   function clean() {
     return exec(`npx rimraf ${path}`);
@@ -143,6 +151,7 @@ const tasks = [
       lessCompiler2Wxss(...args),
       lessCompiler2Css(...args),
       staticCopier(...args),
+      readmeCopier(...args),
       copyChangelog()
     )
   );

@@ -942,6 +942,11 @@
     "value": "600",
     "decs": ""
   },
+  "button-plain-color": {
+    "name": "@button-plain-color",
+    "value": "rgba(0, 0, 0, 0.9)",
+    "decs": ""
+  },
   "calendar-background-color": {
     "name": "@calendar-background-color",
     "value": "var(--app-B6, #fff)",

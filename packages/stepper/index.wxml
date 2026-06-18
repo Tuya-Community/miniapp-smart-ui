@@ -20,7 +20,7 @@
     <smart-icon name="{{ Minus }}" class="{{ utils.bem('stepper__minus-icon') }}" />
   </view>
   <input
-    type="{{ integer ? 'number' : 'digit' }}"
+    type="{{ min < 0 ? 'text' : (integer ? 'number' : 'digit') }}"
     class="smart-manrope input-class {{ utils.bem('stepper__input', { disabled: disabled || disableInput }) }}"
     style="{{ computed.inputStyle({ buttonSize, inputWidth }) }}"
     value="{{ currentValue }}"
