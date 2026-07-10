@@ -1,0 +1,504 @@
+wc/smart-slider-example.html
+  s_23769c3aab3149::t_76282cc8461263 200-204
+  s_23769c3aab3149::t_4e6933daec1704 1-63,66-98,180,182,197-199,205-211
+  s_23769c3aab3149::t_b4100a8a9f95af 64,99-179,181,183-196
+  s_23769c3aab3149::t_6f1b11ac6d36f9 65
+wc/smart-slider.md
+  s_23769c3aab3149::t_4e6933daec1704 1-76
+wc/smart-cascader-example.html
+  s_f22be4c02a2dcf::t_f277f79394fa4a 1-237,239-240
+  s_f22be4c02a2dcf::t_6d99d7dd1ead42 238
+wc/smart-cell.js
+  s_f22be4c02a2dcf::t_2c8398bfbe2cc8 1-153
+wc/smart-range-slider-example.html
+  s_23769c3aab3149::t_1f60cc66b2dce7 1-76
+wc/smart-button-example.html
+  s_053afc188d5d5e::t_a55313161d64a3 1-306
+wc/smart-calendar-example.html
+  s_f22be4c02a2dcf::t_d11bb69a371a4b 1-198,200-272,284-285
+  s_f22be4c02a2dcf::t_6af70c5232cef5 273
+  s_f22be4c02a2dcf::t_617468b6c95b5d 199,274-283
+wc/smart-row.js
+  s_f22be4c02a2dcf::t_e14c17886af5ad 1-26,30-52,54-143
+  s_f22be4c02a2dcf::t_8ea692d8f052c7 29
+  s_f22be4c02a2dcf::t_2c5a83d7af4550 27-28,53
+wc/smart-tabbar-example.html
+  s_053afc188d5d5e::t_a55313161d64a3 1-272
+wc/smart-col.js
+  s_f22be4c02a2dcf::t_4baa2e027e7948 1-142
+wc/smart-normal-slider-example.html
+  s_23769c3aab3149::t_1143f7ffbd7acc 1-227
+wc/smart-range-slider.md
+  s_23769c3aab3149::t_1f60cc66b2dce7 1-53
+wc/smart-config-provider-example.html
+  s_053afc188d5d5e::t_a55313161d64a3 1-170
+wc/smart-cell-example.html
+  s_053afc188d5d5e::t_a55313161d64a3 1-213
+wc/smart-image.js
+  s_f22be4c02a2dcf::t_75132aae5095f7 139
+  s_f22be4c02a2dcf::t_d4d88143c97a4f 18,112
+  s_f22be4c02a2dcf::t_c81b9ed40b9dda 27-28
+  s_f22be4c02a2dcf::t_5c1379ec10eb10 1-17,19-26,29-40,42-111,113-138,140-144
+  s_f22be4c02a2dcf::t_efe468c3affef8 41
+wc/smart-icon-example.html
+  s_053afc188d5d5e::t_a55313161d64a3 1-287
+wc/smart-transition.js
+  s_f22be4c02a2dcf::t_bc63a13175ae7f 1-320
+wc/smart-cascader.js
+  s_f22be4c02a2dcf::t_770c53aedd3d8a 1-177
+wc/smart-transition-example.html
+  s_f22be4c02a2dcf::t_8ac4cb273ec605 146-147
+  s_f22be4c02a2dcf::t_32294a7ed123b5 119
+  s_f22be4c02a2dcf::t_5615f3274bcf7d 1-118,120-145,149-150
+  s_f22be4c02a2dcf::t_fae0e652e56bc8 148
+wc/smart-popup-example.html
+  s_f22be4c02a2dcf::t_7e17d6b7f9ca7b 112,117,122,127,140,148,156,167
+  s_f22be4c02a2dcf::t_4b986bdf139b01 86,103-106,131-133,160
+  s_f22be4c02a2dcf::t_b0a87dd5fd757e 1-85,87-102,107-111,113-116,118-121,123-126,128-130,134-139,141-147,149-155,157-159,161-166,168-210
+wc/smart-range-slider.js
+  s_23769c3aab3149::t_6dd88a21fa4cf2 15
+  s_23769c3aab3149::t_1f60cc66b2dce7 1-14,16-292
+wc/smart-calendar.js
+  s_f22be4c02a2dcf::t_f733110ac63f5f 1-166,169-204,206-208,211-347,349-470
+  s_f22be4c02a2dcf::t_2c4432a519205b 205,209-210
+  s_f22be4c02a2dcf::t_c15aacd737b0c7 167-168
+  s_f22be4c02a2dcf::t_2c2c7aaa930669 348
+wc/smart-slider.js
+  s_23769c3aab3149::t_66d67fe431e68f 1-2,23-25,43,311-312,314-315
+  s_23769c3aab3149::t_dc7e03a333e7d2 136
+  s_23769c3aab3149::t_be86f70ccedcab 205
+  s_23769c3aab3149::t_48658f71b1f171 217,226
+  s_23769c3aab3149::t_1a42e306a7b7ba 245,247-251
+  s_23769c3aab3149::t_293bbc9e77ff1b 3-10,12-22,26-35,42,44-58,60-135,137-191,199-200,204,206-210,212,215-216,222-225,227-244,252,254-258,260-264,268-310,313
+  s_23769c3aab3149::t_b61f5f70a618a8 211
+  s_23769c3aab3149::t_3655b214fbf2f4 11,36-41,192-198,219,221
+  s_23769c3aab3149::t_a6bc637ffab803 201-203
+  s_23769c3aab3149::t_18bf9d0ebfba2a 59,246,259
+  s_23769c3aab3149::t_ebfe73dad93d2e 213-214,218,220
+  s_23769c3aab3149::t_585105435eeb6d 253
+  s_23769c3aab3149::t_b6af4c1c85cc74 265-267
+wc/home.html
+  s_23769c3aab3149::t_1143f7ffbd7acc 1-115
+.agents/skills/tuya-ray-to-html/SKILL.md
+  s_f22be4c02a2dcf::t_756e59f704d0ba 1-159
+.agents/skills/tuya-ray-to-html/references/pitfalls.md
+  s_f22be4c02a2dcf::t_c253951f8244b8 1-179
+.agents/skills/tuya-ray-to-html/references/ray-to-wc-mapping.md
+  s_f22be4c02a2dcf::t_cded6ea42ab812 1-46
+skills-lock.json
+  s_f22be4c02a2dcf::t_1ea4f81fbc6c05 1-15
+wc/smart-action-sheet-example.html
+  s_053afc188d5d5e::t_0a8f7571637ddc 1-435
+wc/smart-action-sheet.js
+  s_053afc188d5d5e::t_6b8f0925008120 1-533
+wc/smart-action-sheet.md
+  s_053afc188d5d5e::t_20ec1cc8011843 1-104
+wc/smart-battery-example.html
+  s_053afc188d5d5e::t_f14438c5a84863 1-148
+wc/smart-battery.js
+  s_053afc188d5d5e::t_ff911d6c41beee 1-348
+wc/smart-battery.md
+  s_053afc188d5d5e::t_dd608f81d3859e 1-41
+wc/smart-bottom-sheet-example.html
+  s_053afc188d5d5e::t_1cbed1e346d5f0 1-305
+wc/smart-bottom-sheet.js
+  s_053afc188d5d5e::t_8abc872f9c448b 1-431
+wc/smart-bottom-sheet.md
+  s_053afc188d5d5e::t_6750f48eed9c1c 1-73
+wc/smart-button.js
+  s_053afc188d5d5e::t_b481cd98f54e9a 1-430
+wc/smart-button.md
+  s_053afc188d5d5e::t_93d048034168e5 1-59
+wc/smart-calendar-header-example.html
+  s_053afc188d5d5e::t_2dfb292494d7f5 1-93
+wc/smart-calendar-header.js
+  s_053afc188d5d5e::t_29c4662903f9a5 1-141
+wc/smart-calendar-header.md
+  s_053afc188d5d5e::t_aaa8f5c63594a5 1-44
+wc/smart-calendar-month-example.html
+  s_053afc188d5d5e::t_c631aaa249ac52 1-93
+wc/smart-calendar-month-list-example.html
+  s_053afc188d5d5e::t_22cfdb4d3aa796 1-93
+wc/smart-calendar-month-list.js
+  s_053afc188d5d5e::t_57c6e8590ef95b 1-141
+wc/smart-calendar-month-list.md
+  s_053afc188d5d5e::t_e1afbff848263e 1-44
+wc/smart-calendar-month.js
+  s_053afc188d5d5e::t_3cce53abd61f94 1-141
+wc/smart-calendar-month.md
+  s_053afc188d5d5e::t_53e8502f38148e 1-42
+wc/smart-calendar-year-list-example.html
+  s_053afc188d5d5e::t_ae813f17c62e1d 1-93
+wc/smart-calendar-year-list.js
+  s_053afc188d5d5e::t_fc4daccd90db13 1-141
+wc/smart-calendar-year-list.md
+  s_053afc188d5d5e::t_bba04012c1f422 1-44
+wc/smart-calendar.md
+  s_053afc188d5d5e::t_39c5ee303f12dc 1-61
+wc/smart-cascader.md
+  s_053afc188d5d5e::t_93ec7153ec5bf1 1-52
+wc/smart-cell-group-example.html
+  s_053afc188d5d5e::t_ff290e61230200 1-93
+wc/smart-cell-group.js
+  s_053afc188d5d5e::t_6b70a9bc8b9d9e 1-148
+wc/smart-cell-group.md
+  s_053afc188d5d5e::t_630cb86c5eaef6 1-38
+wc/smart-cell.md
+  s_053afc188d5d5e::t_14fb5953ed43a3 1-46
+wc/smart-checkbox-example.html
+  s_053afc188d5d5e::t_a49f9978fded60 1-381
+wc/smart-checkbox-group-example.html
+  s_053afc188d5d5e::t_e2c448ea0f71c2 1-93
+wc/smart-checkbox-group.js
+  s_053afc188d5d5e::t_6c0c4a35582177 1-141
+wc/smart-checkbox-group.md
+  s_053afc188d5d5e::t_26890828dd1a16 1-42
+wc/smart-checkbox.js
+  s_053afc188d5d5e::t_916c32c60f042f 1-141
+wc/smart-checkbox.md
+  s_053afc188d5d5e::t_1bed5c6f8cfe35 1-45
+wc/smart-circle-example.html
+  s_053afc188d5d5e::t_98b1b80130b70a 1-144
+wc/smart-circle.js
+  s_053afc188d5d5e::t_66f8641d87a244 1-141
+wc/smart-circle.md
+  s_053afc188d5d5e::t_a413e5b0fb2be0 1-42
+wc/smart-col-example.html
+  s_053afc188d5d5e::t_cbc9657ab0a1d7 1-134
+wc/smart-col.md
+  s_053afc188d5d5e::t_d7b41a4b299c28 1-42
+wc/smart-collapse-example.html
+  s_053afc188d5d5e::t_6543aae9c8d7b9 1-156
+wc/smart-collapse-item-example.html
+  s_053afc188d5d5e::t_a7145c6d2ff1e3 1-93
+wc/smart-collapse-item.js
+  s_053afc188d5d5e::t_309f7adcb4d002 1-141
+wc/smart-collapse-item.md
+  s_053afc188d5d5e::t_e2eb2b2c46f6ed 1-44
+wc/smart-collapse.js
+  s_053afc188d5d5e::t_928f2fee981194 1-141
+wc/smart-collapse.md
+  s_053afc188d5d5e::t_c99ad7e8f7035f 1-42
+wc/smart-common.css
+  s_053afc188d5d5e::t_af1e493020fb42 1-179
+wc/smart-config-provider.js
+  s_053afc188d5d5e::t_48fc4601e71b12 1-172
+wc/smart-config-provider.md
+  s_053afc188d5d5e::t_16812a2233c873 1-37
+wc/smart-count-down-example.html
+  s_053afc188d5d5e::t_b3c4974adcef86 1-161
+wc/smart-count-down.js
+  s_053afc188d5d5e::t_8549d0f4870e4a 1-141
+wc/smart-count-down.md
+  s_053afc188d5d5e::t_061e9befa7d5e8 1-40
+wc/smart-custom-keyboard-example.html
+  s_053afc188d5d5e::t_41527a0c0ee0e3 1-128
+wc/smart-custom-keyboard.js
+  s_053afc188d5d5e::t_7e85460e026206 1-141
+wc/smart-custom-keyboard.md
+  s_053afc188d5d5e::t_b94b21c750620d 1-46
+wc/smart-datetime-picker-example.html
+  s_053afc188d5d5e::t_2e6b2394acab57 1-245
+wc/smart-datetime-picker.js
+  s_053afc188d5d5e::t_b27dd740ad2c07 1-141
+wc/smart-datetime-picker.md
+  s_053afc188d5d5e::t_5628f63f05d707 1-68
+wc/smart-dialog-example.html
+  s_053afc188d5d5e::t_6f17537f69363c 1-178
+wc/smart-dialog.js
+  s_053afc188d5d5e::t_d8a9b44bbd2f6e 1-141
+wc/smart-dialog.md
+  s_053afc188d5d5e::t_3464bab088b5c0 1-72
+wc/smart-divider-example.html
+  s_053afc188d5d5e::t_1bc23ff52dbbb8 1-110
+wc/smart-divider.js
+  s_053afc188d5d5e::t_f85a9d3fc3496e 1-141
+wc/smart-divider.md
+  s_053afc188d5d5e::t_638ac44ef555bc 1-39
+wc/smart-dropdown-item-example.html
+  s_053afc188d5d5e::t_a67cee1c2dfe9e 1-93
+wc/smart-dropdown-item.js
+  s_053afc188d5d5e::t_efcf2060c7c237 1-141
+wc/smart-dropdown-item.md
+  s_053afc188d5d5e::t_42c957a4b0ea6f 1-44
+wc/smart-dropdown-menu-example.html
+  s_053afc188d5d5e::t_394a2c61c9ae5a 1-196
+wc/smart-dropdown-menu.js
+  s_053afc188d5d5e::t_a351aea5ea9a40 1-141
+wc/smart-dropdown-menu.md
+  s_053afc188d5d5e::t_a27e164e7b8beb 1-44
+wc/smart-empty-example.html
+  s_053afc188d5d5e::t_27e51ecf1b6806 1-127
+wc/smart-empty.js
+  s_053afc188d5d5e::t_0c6c7f1938e032 1-141
+wc/smart-empty.md
+  s_053afc188d5d5e::t_4d352bcd961944 1-40
+wc/smart-field-example.html
+  s_053afc188d5d5e::t_74883e205599e8 1-270
+wc/smart-field.js
+  s_053afc188d5d5e::t_9147ef2459d1b1 1-141
+wc/smart-field.md
+  s_053afc188d5d5e::t_33661bf3aeba7f 1-97
+wc/smart-goods-action-button-example.html
+  s_053afc188d5d5e::t_4adbc93d052f66 1-93
+wc/smart-goods-action-button.js
+  s_053afc188d5d5e::t_87e55a5253bc67 1-141
+wc/smart-goods-action-button.md
+  s_053afc188d5d5e::t_5b15c806b2f594 1-44
+wc/smart-goods-action-example.html
+  s_053afc188d5d5e::t_0ae37e066a72cc 1-149
+wc/smart-goods-action-icon-example.html
+  s_053afc188d5d5e::t_71eafcc988b82f 1-93
+wc/smart-goods-action-icon.js
+  s_053afc188d5d5e::t_9b04130b734f03 1-141
+wc/smart-goods-action-icon.md
+  s_053afc188d5d5e::t_907f767bee3934 1-44
+wc/smart-goods-action.js
+  s_053afc188d5d5e::t_e4fe2b075a9741 1-141
+wc/smart-goods-action.md
+  s_053afc188d5d5e::t_79785d3972f3d5 1-42
+wc/smart-grid-example.html
+  s_053afc188d5d5e::t_0a8b8f8a133ccb 1-488
+wc/smart-grid-item-example.html
+  s_053afc188d5d5e::t_7d155fbf5c35e1 1-93
+wc/smart-grid-item.js
+  s_053afc188d5d5e::t_3e6334680f3fac 1-141
+wc/smart-grid-item.md
+  s_053afc188d5d5e::t_c256c65d065f32 1-44
+wc/smart-grid.js
+  s_053afc188d5d5e::t_9735e9ed4e8c9f 1-141
+wc/smart-grid.md
+  s_053afc188d5d5e::t_5db993616941fe 1-42
+wc/smart-icon.js
+  s_053afc188d5d5e::t_66c53cd9cca600 1-321
+wc/smart-icon.md
+  s_053afc188d5d5e::t_7d275f4a5c3772 1-41
+wc/smart-image-example.html
+  s_053afc188d5d5e::t_d23ca94cfed995 1-392
+wc/smart-image.md
+  s_053afc188d5d5e::t_c55ac2d3db0a53 1-52
+wc/smart-index-anchor-example.html
+  s_053afc188d5d5e::t_de9412749a2fb7 1-93
+wc/smart-index-anchor.js
+  s_053afc188d5d5e::t_9e04936d8600fd 1-141
+wc/smart-index-anchor.md
+  s_053afc188d5d5e::t_e16d9a44459f06 1-42
+wc/smart-index-bar-example.html
+  s_053afc188d5d5e::t_27b12adb6e7d9d 1-179
+wc/smart-index-bar.js
+  s_053afc188d5d5e::t_fcc251cf7ed03f 1-141
+wc/smart-index-bar.md
+  s_053afc188d5d5e::t_4b9b34f5a89935 1-44
+wc/smart-info-example.html
+  s_053afc188d5d5e::t_a012ad665173f2 1-93
+wc/smart-info.js
+  s_053afc188d5d5e::t_6fc88808cbfbb1 1-141
+wc/smart-info.md
+  s_053afc188d5d5e::t_30eddf1605a5c4 1-42
+wc/smart-loading-example.html
+  s_053afc188d5d5e::t_082c9119737d92 1-122
+wc/smart-loading.js
+  s_053afc188d5d5e::t_52d8aeffacef8c 1-193
+wc/smart-loading.md
+  s_053afc188d5d5e::t_c30e85a3cec561 1-33
+wc/smart-nav-bar-example.html
+  s_053afc188d5d5e::t_7b432c9e495293 1-248
+wc/smart-nav-bar.js
+  s_053afc188d5d5e::t_d8c062bc7297e0 1-141
+wc/smart-nav-bar.md
+  s_053afc188d5d5e::t_a2c33ffcb95e22 1-66
+wc/smart-normal-slider.js
+  s_053afc188d5d5e::t_5b837af0c18343 1-141
+wc/smart-normal-slider.md
+  s_053afc188d5d5e::t_58dc997d32a571 1-76
+wc/smart-notice-bar-example.html
+  s_053afc188d5d5e::t_79c5df8aca0142 1-203
+wc/smart-notice-bar.js
+  s_053afc188d5d5e::t_9b1423ae80aaad 1-141
+wc/smart-notice-bar.md
+  s_053afc188d5d5e::t_0264451b48f001 1-58
+wc/smart-notify-example.html
+  s_053afc188d5d5e::t_7350fb3de24c1d 1-118
+wc/smart-notify.js
+  s_053afc188d5d5e::t_bdc8ff2569ed81 1-141
+wc/smart-notify.md
+  s_053afc188d5d5e::t_3a0cb3b0f82bde 1-43
+wc/smart-overlay-example.html
+  s_053afc188d5d5e::t_cdc13ecd0377eb 1-131
+wc/smart-overlay.js
+  s_053afc188d5d5e::t_3915c33d0f6187 1-141
+wc/smart-overlay.md
+  s_053afc188d5d5e::t_cbeb7ce3ce944d 1-42
+wc/smart-picker-column-example.html
+  s_053afc188d5d5e::t_5b2d3839a5fc89 1-93
+wc/smart-picker-column.js
+  s_053afc188d5d5e::t_875b4542769887 1-141
+wc/smart-picker-column.md
+  s_053afc188d5d5e::t_d88cc193d8dd89 1-41
+wc/smart-picker-example.html
+  s_053afc188d5d5e::t_b6afbd0e755c43 1-522
+wc/smart-picker.js
+  s_053afc188d5d5e::t_b1748d8d9bd0c8 1-141
+wc/smart-picker.md
+  s_053afc188d5d5e::t_09cad62020821b 1-59
+wc/smart-popover-example.html
+  s_053afc188d5d5e::t_de500a7727850c 1-267
+wc/smart-popover.js
+  s_053afc188d5d5e::t_d36cd105fd5f32 1-141
+wc/smart-popover.md
+  s_053afc188d5d5e::t_c4d3a645052273 1-43
+wc/smart-popup.js
+  s_053afc188d5d5e::t_47ea94915ea6e6 1-641
+wc/smart-popup.md
+  s_053afc188d5d5e::t_cb4d6aebe0d67a 1-66
+wc/smart-progress-example.html
+  s_053afc188d5d5e::t_dc6c9d7423daf1 1-119
+wc/smart-progress.js
+  s_053afc188d5d5e::t_9dc3455fb97de8 1-141
+wc/smart-progress.md
+  s_053afc188d5d5e::t_b5dfca797db2ce 1-44
+wc/smart-radio-example.html
+  s_053afc188d5d5e::t_a0ad84dfccacce 1-259
+wc/smart-radio-group-example.html
+  s_053afc188d5d5e::t_c8ff6a81f56812 1-93
+wc/smart-radio-group.js
+  s_053afc188d5d5e::t_9b02fb3430120d 1-141
+wc/smart-radio-group.md
+  s_053afc188d5d5e::t_86479d38abccda 1-42
+wc/smart-radio.js
+  s_053afc188d5d5e::t_7ac1c8d3dff6d7 1-141
+wc/smart-radio.md
+  s_053afc188d5d5e::t_2148f098507a34 1-45
+wc/smart-rate-example.html
+  s_053afc188d5d5e::t_076faefc9d9c73 1-174
+wc/smart-rate.js
+  s_053afc188d5d5e::t_023c5ba15346e8 1-141
+wc/smart-rate.md
+  s_053afc188d5d5e::t_9a9ee9592f0104 1-50
+wc/smart-row-example.html
+  s_053afc188d5d5e::t_63813ce37fc0a5 1-93
+wc/smart-row.md
+  s_053afc188d5d5e::t_a5e765a1cdcc1b 1-42
+wc/smart-search-example.html
+  s_053afc188d5d5e::t_20b11fe408d5a8 1-177
+wc/smart-search.js
+  s_053afc188d5d5e::t_5b46ca55523c24 1-141
+wc/smart-search.md
+  s_053afc188d5d5e::t_0077dd5c4af99c 1-67
+wc/smart-sidebar-example.html
+  s_053afc188d5d5e::t_9b1fbcc9cd8fb0 1-146
+wc/smart-sidebar-item-example.html
+  s_053afc188d5d5e::t_b97c0ec9112de9 1-93
+wc/smart-sidebar-item.js
+  s_053afc188d5d5e::t_8d22dd12e1e93f 1-141
+wc/smart-sidebar-item.md
+  s_053afc188d5d5e::t_5069024620c3da 1-44
+wc/smart-sidebar.js
+  s_053afc188d5d5e::t_40ba3aacdda398 1-141
+wc/smart-sidebar.md
+  s_053afc188d5d5e::t_bc05cac552fe9a 1-42
+wc/smart-skeleton-example.html
+  s_053afc188d5d5e::t_cd377aec9b9e26 1-164
+wc/smart-skeleton.js
+  s_053afc188d5d5e::t_d56b524666fc32 1-141
+wc/smart-skeleton.md
+  s_053afc188d5d5e::t_5de054034d32ce 1-44
+wc/smart-stepper-example.html
+  s_053afc188d5d5e::t_d94f2bab476e59 1-144
+wc/smart-stepper.js
+  s_053afc188d5d5e::t_dee5265fa01263 1-141
+wc/smart-stepper.md
+  s_053afc188d5d5e::t_f9ed8271085297 1-62
+wc/smart-sticky-example.html
+  s_053afc188d5d5e::t_10c4cd6e421985 1-148
+wc/smart-sticky.js
+  s_053afc188d5d5e::t_5fd139b6aab6b6 1-141
+wc/smart-sticky.md
+  s_053afc188d5d5e::t_418fc9781e3bb0 1-38
+wc/smart-swipe-cell-example.html
+  s_053afc188d5d5e::t_f614cdcb1147fe 1-141
+wc/smart-swipe-cell.js
+  s_053afc188d5d5e::t_c361334f603df7 1-141
+wc/smart-swipe-cell.md
+  s_053afc188d5d5e::t_c431f49c9f2ba9 1-40
+wc/smart-switch-example.html
+  s_053afc188d5d5e::t_b4ba69b29ad2c0 1-215
+wc/smart-switch.js
+  s_053afc188d5d5e::t_a75b7e3875f994 1-141
+wc/smart-switch.md
+  s_053afc188d5d5e::t_4fbee7ae239207 1-48
+wc/smart-tab-example.html
+  s_053afc188d5d5e::t_f506d2b9e87863 1-659
+wc/smart-tab.js
+  s_053afc188d5d5e::t_7dea8add690e79 1-141
+wc/smart-tab.md
+  s_053afc188d5d5e::t_09150b2fe64ca2 1-42
+wc/smart-tabbar-item-example.html
+  s_053afc188d5d5e::t_19d615525829d2 1-93
+wc/smart-tabbar-item.js
+  s_053afc188d5d5e::t_0184355d7e0169 1-313
+wc/smart-tabbar-item.md
+  s_053afc188d5d5e::t_82dc559ef26721 1-44
+wc/smart-tabbar.js
+  s_053afc188d5d5e::t_b134ab8dd8a6db 1-255
+wc/smart-tabbar.md
+  s_053afc188d5d5e::t_9cfa569c663967 1-42
+wc/smart-tabs-example.html
+  s_053afc188d5d5e::t_a18f73e0c3be8e 1-93
+wc/smart-tabs.js
+  s_053afc188d5d5e::t_07a1f33eb1ce5f 1-141
+wc/smart-tabs.md
+  s_053afc188d5d5e::t_79a07ab3278978 1-44
+wc/smart-tag-example.html
+  s_053afc188d5d5e::t_3359ee625a9d89 1-160
+wc/smart-tag.js
+  s_053afc188d5d5e::t_b10f4b7c73efa5 1-141
+wc/smart-tag.md
+  s_053afc188d5d5e::t_f340c704864d43 1-45
+wc/smart-toast-example.html
+  s_053afc188d5d5e::t_6f1b1289c0ec51 1-131
+wc/smart-toast.js
+  s_053afc188d5d5e::t_ca4283e2de8843 1-141
+wc/smart-toast.md
+  s_053afc188d5d5e::t_91f65930b52662 1-43
+wc/smart-transition.md
+  s_053afc188d5d5e::t_1d4bded4649a2f 1-43
+wc/smart-tree-select-example.html
+  s_053afc188d5d5e::t_8eea09ab37a0a7 1-260
+wc/smart-tree-select.js
+  s_053afc188d5d5e::t_a734e9db9fde48 1-141
+wc/smart-tree-select.md
+  s_053afc188d5d5e::t_3037a7a269ae40 1-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "855d955e62d435d126525042f8355d9ba108da5b",
+  "prompts": {},
+  "sessions": {
+    "s_053afc188d5d5e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f45a6-530f-7023-ac9b-235eb7cdaa18",
+        "model": "gpt-5.5"
+      },
+      "human_author": "muhai <muhai.li@tuya.com>"
+    },
+    "s_23769c3aab3149": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f4ade-f1f8-7691-bef3-1395df3b11dc",
+        "model": "gpt-5.5"
+      },
+      "human_author": "muhai <muhai.li@tuya.com>"
+    },
+    "s_f22be4c02a2dcf": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f4b19-4058-71c3-8c59-f5553f091fb9",
+        "model": "gpt-5.5"
+      },
+      "human_author": "muhai <muhai.li@tuya.com>"
+    }
+  }
+}
