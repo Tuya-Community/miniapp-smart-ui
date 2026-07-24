@@ -116,6 +116,8 @@ export function replacePlaceholders(template, values) {
 export const getSafeAreaInsetMin = () => 16;
 
 // 获取安全底部高度，适用于 iOS 和 Android
+// @deprecated 组件底部安全距离已改用 CSS `max(env(safe-area-inset-bottom), 16px)` 实现，
+// 无需再通过逻辑层计算；此方法仅为兼容历史外部调用保留。
 export function getSafeBottomOffset() {
   const safeAreaInsetBottomMin = getSafeAreaInsetMin();
   const { safeArea, screenHeight, statusBarHeight } = getSystemInfoSync() || {};

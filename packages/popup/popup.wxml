@@ -3,7 +3,7 @@
 <view
   wx:if="{{ inited }}"
   class="custom-class {{ classes }} {{ utils.bem('popup', [position, { round, safeTop: safeAreaInsetTop, safeTabBar: safeAreaTabBar }]) }}"
-  style="{{ computed.popupStyle({ position, status, zIndex, currentDuration, display, customStyle, bottomSafeHeight }) }}"
+  style="{{ computed.popupStyle({ position, status, zIndex, currentDuration, display, customStyle, safeAreaInsetBottom, safeAreaInsetBottomMin }) }}"
   catch:touchmove="{{ lockScroll ? 'noop' : ''}}"
 >
   <slot />

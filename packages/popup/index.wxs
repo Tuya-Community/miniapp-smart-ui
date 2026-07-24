@@ -2,12 +2,26 @@
 var style = require('../wxs/style.wxs');
 
 function popupStyle(data) {
-  var transformStyle = data.position === 'bottom' ? "transform: translate3d(0, calc(100% + " + data.bottomSafeHeight + "px), 0)" : null;
+  // 底部安全距离：整体逻辑与原 getSafeBottomOffset 一致——
+  // 「底部安全距离 + 16px 基础安全值」再与 safeAreaInsetBottomMin 取较大值；
+  // 区别仅在于安全距离改用全局注入的 CSS 变量 env(safe-area-inset-bottom) 获取，
+  // 不再从 systemInfo（screenHeight - safeArea.height - statusBarHeight）计算。
+  // 其中 16px 对应 utils.getSafeAreaInsetMin()。
+  var safeBottom = data.safeAreaInsetBottom
+    ? 'max(calc(env(safe-area-inset-bottom) + 16px), ' + (data.safeAreaInsetBottomMin || 0) + 'px)'
+    : null;
 
-  
+  var transformStyle = null;
+  if (data.position === 'bottom') {
+    // 隐藏态需在自身高度基础上再位移底部安全距离，保证弹层完全移出屏幕
+    transformStyle = safeBottom
+      ? 'transform: translate3d(0, calc(100% + ' + safeBottom + '), 0)'
+      : 'transform: translate3d(0, 100%, 0)';
+  }
+
   return style([
     {
-      'margin-bottom': data.bottomSafeHeight + 'px',
+      'margin-bottom': safeBottom,
       'z-index': data.zIndex,
       '-webkit-transition-duration': data.currentDuration + 'ms',
       'transition-duration': data.currentDuration + 'ms',
