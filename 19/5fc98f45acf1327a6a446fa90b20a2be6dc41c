@@ -1,0 +1,129 @@
+packages/search/index.ts
+  s_a9b5930fda980b::t_c7c8f9cdc6e66e 69-75,92-97
+packages/picker-column/index.wxs
+  s_a9b5930fda980b::t_891e5e1aa854f1 273,275-281,305
+build/prepare-wc.mjs
+  s_a9b5930fda980b::t_a1cb1280e2b992 2-5,7-10,18,26,29,31-32,57-65,102-105,122,148,151-152,282-283
+  s_0ea0c2ca73e4dd::t_77ff8bb429e019 19-20,25,27-28,33
+  s_a9b5930fda980b::t_ec4d5dbe7cc18d 48,143-144
+  s_a9b5930fda980b::t_78486b1a9fa805 312-315
+  s_a9b5930fda980b::t_fcf8a4e88ad43f 49,339,719
+  s_a9b5930fda980b::t_73f5803efe58c5 126-127,137
+  s_a9b5930fda980b::t_3c4357cad71eeb 341,514-515,517-519,523-524
+  s_a9b5930fda980b::t_62fb689984b405 44,136
+  s_a9b5930fda980b::t_824ec901d43872 284-285,723-726,745-748,751-761
+  s_a9b5930fda980b::t_ce590c44d12efa 332
+  s_a9b5930fda980b::t_36504e57d80ce7 171-220
+  s_a9b5930fda980b::t_d957793c4ecd2b 140,146-147
+  s_a9b5930fda980b::t_f6d02a74314d52 652,655,665
+  s_0ea0c2ca73e4dd::t_4c6120c1a21d3c 673-674
+  s_0ea0c2ca73e4dd::t_29db7440497bac 353-358
+  s_a9b5930fda980b::t_5713c8a393dd0f 740-741
+  s_a9b5930fda980b::t_249154078ea6b3 304
+  s_a9b5930fda980b::t_e2e894a5ff942b 348-349,399-402
+  s_a9b5930fda980b::t_aafcba780f7a15 510-513
+  s_a9b5930fda980b::t_6390f75691395a 342,418-504,520-522,530-539
+  s_a9b5930fda980b::t_0a68b7e8cf2bec 343
+  s_a9b5930fda980b::t_72bfa7d5dc562f 47,141-142,145
+  s_a9b5930fda980b::t_dc87ea76ffd0bf 72
+  s_a9b5930fda980b::t_04110939a43f1c 516
+  s_a9b5930fda980b::t_891e5e1aa854f1 344-345,544-581
+  s_0ea0c2ca73e4dd::t_76eb2aec663e93 683,687
+  s_a9b5930fda980b::t_0a6f734c28e87e 696
+  s_0ea0c2ca73e4dd::t_4ca8bfd80f49da 684-686,688-690
+  s_a9b5930fda980b::t_d7ba7036c292e3 11-12
+  s_0ea0c2ca73e4dd::t_cc2fc3603c151f 333-337
+  s_0ea0c2ca73e4dd::t_b0f1b64b79064d 364-384,386-394
+  s_a9b5930fda980b::t_73dfc49c7d8a32 1,13-14,286-303,305-311,316
+  s_0ea0c2ca73e4dd::t_e906e5a4edf65f 691
+  s_0ea0c2ca73e4dd::t_d19a7189de6a19 722
+  s_a9b5930fda980b::t_34e0001078057c 45
+  s_a9b5930fda980b::t_47c1d36b42a9bd 50-53
+  s_a9b5930fda980b::t_08ba05b33c66f3 595-599
+  s_0ea0c2ca73e4dd::t_34e21048a4ac52 21-24,385,395-398,403-406,408-411,414-417,505-508,525-529,540-543,582-589,616-619,626-629,666-672,675-682,692-695,720-721
+  s_a9b5930fda980b::t_664191cd9be364 30,34-39,42-43,106-109,118-119,123-125,149-150,153-163,166-170,221,224,231,239,272-281,749
+  s_a9b5930fda980b::t_02d00e1d6d55a7 15-17,66-71,73-101,750
+  s_a9b5930fda980b::t_2f2c905c6d03e4 54-55,138,164-165,244-247,249-252,254,256-266,268-271
+  s_0ea0c2ca73e4dd::t_c09f0e76b70a0a 222-223,225-230,232-238,240-243,248,253,255,267
+  s_0ea0c2ca73e4dd::t_77e272b6418460 350-352
+  s_a9b5930fda980b::t_9e6de21db4daeb 317-318,331,590-593,614-615
+  s_a9b5930fda980b::t_d10cabf7a6cbab 40-41,116-117,120-121,132-135,139
+  s_a9b5930fda980b::t_8638cf70ee617b 727-739,742-744
+  s_a9b5930fda980b::t_0524950cbbc075 6,319-330,340,346-347,407,412-413,697-718
+  s_a9b5930fda980b::t_cd6129a438abfe 509
+  s_a9b5930fda980b::t_d770ade95b06e4 46,338,359-363,594,600-613,620-625,630-651
+  s_a9b5930fda980b::t_d066d618abcec0 110-115
+  s_a9b5930fda980b::t_055a8b3ca91182 56,128-131
+  s_a9b5930fda980b::t_26be08ef67fd7a 653-654,656-664
+packages/circle/index.render.ts
+  s_a9b5930fda980b::t_d3ace8f8ebd3a7 2-3,18-31,33-35,38-71,73-114,116-118,120-121,123-127,129-179,181-183,185-187,189-193,195-243,246-257,259-263,265-266
+  s_a9b5930fda980b::t_0db41cf06a4fee 4-8,10-13,16-17
+  s_a9b5930fda980b::t_4ef921a9cf2802 1
+  s_a9b5930fda980b::t_ad26b30c3e0af3 14-15
+  s_0ea0c2ca73e4dd::t_b4b6ebe0acc1e3 264
+mp-compiler.config.ts
+  s_a9b5930fda980b::t_a1cb1280e2b992 1,3,5-6,8-12,14-29,37,47
+  s_a9b5930fda980b::t_0524950cbbc075 13,30,32-36
+  s_a9b5930fda980b::t_73dfc49c7d8a32 31
+  h_eabc34dcaf7833 2,4,7,38-46,48-58
+mp-runtime-wc-patches-issue.md
+  s_0ea0c2ca73e4dd::t_2de981376681ce 1-147
+package.json
+  s_a9b5930fda980b::t_d7ba7036c292e3 17
+.gitignore
+  s_a9b5930fda980b::t_a1cb1280e2b992 25
+  s_a9b5930fda980b::t_73dfc49c7d8a32 7
+  s_0ea0c2ca73e4dd::t_eef8a079b4425d 26-29
+packages/collapse-item/index.wxml
+  s_a9b5930fda980b::t_aafcba780f7a15 36
+packages/picker-column/index.wxml
+  s_0ea0c2ca73e4dd::t_86b49504b9a047 47
+packages/calendar/calendar.wxml
+  s_a9b5930fda980b::t_fcf8a4e88ad43f 4,22
+packages/calendar/index.json
+  s_a9b5930fda980b::t_fcf8a4e88ad43f 4,12
+packages/search/test/index.spec.ts
+  s_a9b5930fda980b::t_c7c8f9cdc6e66e 44-57,160-166
+packages/circle/index.ts
+  s_a9b5930fda980b::t_d7ba7036c292e3 7
+build/wx.mjs
+  s_a9b5930fda980b::t_d7ba7036c292e3 33-35
+packages/tree-select/index.ts
+  s_a9b5930fda980b::t_89ed3946154bd9 63-65
+  s_a9b5930fda980b::t_6dabdcc3f50433 62,67
+packages/config-provider/index.less
+  s_a9b5930fda980b::t_e69d6499aab1cf 1
+packages/calendar/test/__snapshots__/demo.spec.ts.snap
+  s_a9b5930fda980b::t_d092751cdf711a 23,153,490,620,957,1087,1439,1569,1921,1998,2254,2331
+packages/collapse/test/__snapshots__/demo.spec.ts.snap
+  s_a9b5930fda980b::t_531dca368cc83c 68,269
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "195fc98f45acf1327a6a446fa90b20a2be6dc41c",
+  "prompts": {},
+  "humans": {
+    "h_eabc34dcaf7833": {
+      "author": "muhai <muhai.li@tuya.com>"
+    }
+  },
+  "sessions": {
+    "s_0ea0c2ca73e4dd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "506ea13b-1f7a-444a-84ae-96373d0aa462",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "muhai <muhai.li@tuya.com>"
+    },
+    "s_a9b5930fda980b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5fe4-7184-7c01-98d9-72674c12efa1",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "muhai <muhai.li@tuya.com>"
+    }
+  }
+}
