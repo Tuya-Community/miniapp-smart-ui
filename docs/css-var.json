@@ -2424,7 +2424,7 @@
   },
   "switch-node-z-index": {
     "name": "@switch-node-z-index",
-    "value": "1",
+    "value": "0",
     "decs": ""
   },
   "switch-node-background-color": {
