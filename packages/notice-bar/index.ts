@@ -48,6 +48,10 @@ SmartComponent({
       type: Number,
       value: 1,
     },
+    closeIconAriaLabel: {
+      type: String,
+      value: '',
+    },
     customStyle: {
       type: String,
       value: '',

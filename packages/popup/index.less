@@ -97,12 +97,10 @@
     }
   }
 
-  // 由于 Popup/ActionSheet 等底部在 safe-area-inset-bottom 为 0 的情况下，
-  // 也需要固定留有 16px 的安全距离，因此改成了逻辑层获取实现
-  // &--bottom&--safe {
-  //   margin-bottom: constant(safe-area-inset-bottom);
-  //   margin-bottom: env(safe-area-inset-bottom);
-  // }
+  // Popup/ActionSheet 等底部弹层的安全距离改由 index.wxs 输出为
+  // `max(calc(env(safe-area-inset-bottom) + 16px), <min>px)` 的内联样式：
+  // 逻辑与原 getSafeBottomOffset 一致（安全距离 + 16px 基础值，再与最小值取大），
+  // 仅将安全距离来源从 systemInfo 改为全局注入的 env(safe-area-inset-bottom)。
 
   &--bottom&--safeTabBar,
   &--top&--safeTabBar {

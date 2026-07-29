@@ -104,6 +104,8 @@ import warningIcon from '@tuya-miniapp/icons/dist/svg/Warning';
 
 | 参数         | 说明                                       | 类型               | 默认值       |
 | ------------ | ------------------------------------------ | ------------------ | ------------ |
+| aria-label `v2.13.0` | 无障碍读屏文案；非空时根节点 `aria-role` 为 `button` | _string_           | -            |
+| aria-role `v2.13.0` | 无障碍 `aria-role` | _string_           | -            |
 | class-prefix | 类名前缀                                   | _string_           | `smart-icon` |
 | color        | 图标颜色                                   | _string_           | `inherit`    |
 | custom-style | 自定义样式                                 | _string_           | -            |

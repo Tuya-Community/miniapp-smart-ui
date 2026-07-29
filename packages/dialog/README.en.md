@@ -388,6 +388,7 @@ The component provides the following CSS variables for custom styles. Please ref
 | --dialog-header-line-height | _24px_ | Header line height |
 | --dialog-header-padding `v2.3.5` | _0_ | Header Title Padding |
 | --dialog-header-padding-top | _24px_ | Header Title Top padding |
+| --dialog-header-padding-side `v2.13.0` | _16px_ | Header left and right padding |
 | --dialog-header-isolated-padding | _@padding-lg 0_ | Header padding |
 | --dialog-message-padding | _24px_ | Message padding |
 | --dialog-message-font-size | _16px_ | Message font size |
@@ -400,6 +401,7 @@ The component provides the following CSS variables for custom styles. Please ref
 | --dialog-header-icon-size | _39px_ | Icon size |
 | --dialog-input-height | _40px_ | Input height |
 | --dialog-input-background-color | _var(--app-B4-N9, rgba(0, 0, 0, 0.05))_ | Input background color |
+| --dialog-input-color `v2.13.1` | _var(--app-B4-N1, rgba(0, 0, 0, 1))_ | Input text color |
 | --dialog-input-margin | _0 16px 24px_ | Input margin |
 | --dialog-input-padding | _0 10px_ | Input padding |
 | --dialog-input-border-radius | _10px_ | Input border radius |

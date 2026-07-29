@@ -3,6 +3,9 @@
 
 <block wx:if="{{stopClickPropagation}}">
   <view
+    role="switch"
+    aria-checked="{{ checked === activeValue ? 'true' : 'false' }}"
+    aria-disabled="{{ disabled ? 'true' : 'false' }}"
     class="{{ utils.bem('switch', { on: checked === activeValue, disabled, label: activeText || inactiveText }) }} custom-class"
     style="{{ computed.rootStyle({ size, checked, activeColor, inactiveColor, activeValue }) }}"
     catch:tap="onClick"
@@ -26,6 +29,9 @@
 </block>
 <block wx:else>
   <view
+    role="switch"
+    aria-checked="{{ checked === activeValue ? 'true' : 'false' }}"
+    aria-disabled="{{ disabled ? 'true' : 'false' }}"
     class="{{ utils.bem('switch', { on: checked === activeValue, disabled, label: activeText || inactiveText }) }} custom-class"
     style="{{ computed.rootStyle({ size, checked, activeColor, inactiveColor, activeValue }) }}"
     bind:tap="onClick"

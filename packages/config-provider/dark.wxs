@@ -100,5 +100,6 @@ darkVars["--smart-ui-toast-background"] = "#3C3C3C"; // Toast 深色面板背景
 darkVars["--smart-ui-toast-border"] = "1px solid rgba(255, 255, 255, 0.05)"; // Toast 描边
 darkVars["--smart-ui-toast-box-shadow"] = "0 8px 24px 0 rgba(0, 0, 0, 0.15)"; // Toast 外投影
 darkVars["--smart-ui-overlay-blur-background"] = "rgba(0, 0, 0, 0.6)"; // Overlay 深色模式毛玻璃/遮罩
+darkVars["--smart-a11y-action-sheet-item-text-color"] = "#fff"; // 无障碍 action sheet item text color
 
 module.exports = darkVars;

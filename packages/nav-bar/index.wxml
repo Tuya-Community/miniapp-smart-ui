@@ -1,11 +1,14 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 <wxs src="./index.wxs" module="computed" />
 
-<view wx:if="{{ fixed && placeholder }}" style="height: {{ height }}px;" />
+<view
+  wx:if="{{ fixed && placeholder }}"
+  class="smart-nav-bar__placeholder{{ safeAreaInsetTop ? ' smart-nav-bar__placeholder--safe' : '' }}{{ round ? ' smart-nav-bar__placeholder--round' : '' }}"
+/>
 
 <view
   class="{{ utils.bem('nav-bar', { fixed, round, safe: safeAreaInsetTop }) }} custom-class {{ border ? 'smart-hairline--bottom' : '' }}"
-  style="{{ computed.barStyle({ zIndex, statusBarHeight, safeAreaInsetTop, background }) }}; {{ customStyle }}"
+  style="{{ computed.barStyle({ zIndex, background }) }}; {{ customStyle }}"
 >
   <view class="smart-nav-bar__content">
     <view class="{{ computed.leftClass({ sideWidth, leftTextType, leftText, leftArrow, leftIcon }) }}" style="{{ computed.sideStyle({ sideWidth }) }}" bind:tap="onClickLeft">
@@ -16,6 +19,8 @@
         hover-stay-time="70"
         name="{{ leftArrowIcon }}"
         data-type="leftArrow"
+        aria-role="button"
+        aria-label="{{ leftArrowAriaLabel }}"
         custom-class="smart-nav-bar__arrow"
       />
       <view
@@ -25,8 +30,17 @@
         hover-stay-time="70"
         class="smart-nav-bar__icon-wrap"
         catch:tap="onClickLeftIcon"
+        aria-role="button"
+        role="button"
+        aria-label="{{ leftIconAriaLabel }}"
       >
-        <smart-icon class="left-icon-class" custom-class="smart-nav-bar__icon" size="{{ leftIconSize }}" name="{{ leftIcon }}" color="{{ leftIconColor }}" />
+        <smart-icon 
+         class="left-icon-class" 
+         custom-class="smart-nav-bar__icon" 
+         size="{{ leftIconSize }}" 
+         name="{{ leftIcon }}" 
+         color="{{ leftIconColor }}" 
+        />
       </view>
       <view
         wx:if="{{ leftText }}"
@@ -51,6 +65,9 @@
         hover-stay-time="70"
         class="smart-nav-bar__icon-wrap"
         bind:tap="onClickRightIcon"
+        aria-role="button"
+        role="button"
+        aria-label="{{ rightIconAriaLabel }}"
       >
         <smart-icon class="right-icon-class" custom-class="smart-nav-bar__icon" size="{{ rightIconSize }}" name="{{ rightIcon }}" color="{{ rightIconColor }}" />
       </view>

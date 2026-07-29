@@ -1,6 +1,5 @@
 import Left from '@tuya-miniapp/icons/dist/svg/Left';
 import { SmartComponent } from '../common/component';
-import { getRect, getSystemInfoSync } from '../common/utils';
 
 SmartComponent({
   classes: [
@@ -17,14 +16,8 @@ SmartComponent({
       type: null,
       value: 'max',
     },
-    fixed: {
-      type: Boolean,
-      observer: 'setHeight',
-    },
-    placeholder: {
-      type: Boolean,
-      observer: 'setHeight',
-    },
+    fixed: Boolean,
+    placeholder: Boolean,
     background: String,
     leftTextType: {
       type: String,
@@ -63,24 +56,22 @@ SmartComponent({
       type: Boolean,
       value: true,
     },
+    leftArrowAriaLabel: {
+      type: String,
+      value: '',
+    },
+    leftIconAriaLabel: {
+      type: String,
+      value: '',
+    },
+    rightIconAriaLabel: {
+      type: String,
+      value: '',
+    },
   },
 
   data: {
-    height: 46,
     leftArrowIcon: Left,
-  },
-
-  created() {
-    const { statusBarHeight } = getSystemInfoSync();
-
-    this.setData({
-      statusBarHeight,
-      height: 46 + statusBarHeight,
-    });
-  },
-
-  mounted() {
-    this.setHeight();
   },
 
   methods: {
@@ -110,20 +101,6 @@ SmartComponent({
 
     onClickRightText() {
       this.$emit('click-right-text');
-    },
-
-    setHeight() {
-      if (!this.data.fixed || !this.data.placeholder) {
-        return;
-      }
-
-      wx.nextTick(() => {
-        getRect(this, '.smart-nav-bar').then(res => {
-          if (res && 'height' in res) {
-            this.setData({ height: res.height });
-          }
-        });
-      });
     },
   },
 });

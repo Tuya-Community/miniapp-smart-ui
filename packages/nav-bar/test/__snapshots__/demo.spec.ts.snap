@@ -11,7 +11,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -52,7 +52,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px;background:#E4EDFF; "
+          style="z-index:1;background:#E4EDFF; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -93,7 +93,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px;background:#E4EDFF; "
+          style="z-index:1;background:#E4EDFF; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -118,7 +118,10 @@ exports[`should render demo and match snapshot 1`] = `
                 style="margin-left: auto;padding-left: 16px;"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image"
+                  role=""
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -157,7 +160,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -174,7 +177,10 @@ exports[`should render demo and match snapshot 1`] = `
                 hoverStayTime="70"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role="button"
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -197,10 +203,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:tap="onClickRight"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole="button"
                 class="smart-nav-bar__icon-wrap"
                 data-type="rightIcon"
                 hoverClass="smart-nav-bar__icon--hover"
                 hoverStayTime="70"
+                role="button"
                 bind:tap="onClickRightIcon"
               >
                 <smart-icon
@@ -208,7 +217,10 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-nav-bar__icon"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="font-size:24px"
                     bind:tap="onClick"
                   >
@@ -236,7 +248,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -253,7 +265,10 @@ exports[`should render demo and match snapshot 1`] = `
                 hoverStayTime="70"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role="button"
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -276,10 +291,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:tap="onClickRight"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole="button"
                 class="smart-nav-bar__icon-wrap"
                 data-type="rightIcon"
                 hoverClass="smart-nav-bar__icon--hover"
                 hoverStayTime="70"
+                role="button"
                 bind:tap="onClickRightIcon"
               >
                 <smart-icon
@@ -287,7 +305,10 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-nav-bar__icon"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="font-size:24px"
                     bind:tap="onClick"
                   >
@@ -303,7 +324,10 @@ exports[`should render demo and match snapshot 1`] = `
                 style="margin-right: 16px;"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole=""
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role=""
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -325,7 +349,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -380,7 +404,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -397,7 +421,10 @@ exports[`should render demo and match snapshot 1`] = `
                 hoverStayTime="70"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role="button"
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -446,7 +473,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -463,7 +490,10 @@ exports[`should render demo and match snapshot 1`] = `
                 hoverStayTime="70"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role="button"
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -496,7 +526,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -551,7 +581,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -568,7 +598,10 @@ exports[`should render demo and match snapshot 1`] = `
                 hoverStayTime="70"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role="button"
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -618,7 +651,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -635,7 +668,10 @@ exports[`should render demo and match snapshot 1`] = `
                 hoverStayTime="70"
               >
                 <wx-view
+                  ariaLabel=""
+                  ariaRole="button"
                   class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                  role="button"
                   style="font-size:24px"
                   bind:tap="onClick"
                 >
@@ -658,10 +694,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:tap="onClickRight"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole="button"
                 class="smart-nav-bar__icon-wrap"
                 data-type="rightIcon"
                 hoverClass="smart-nav-bar__icon--hover"
                 hoverStayTime="70"
+                role="button"
                 bind:tap="onClickRightIcon"
               >
                 <smart-icon
@@ -669,7 +708,10 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-nav-bar__icon"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="font-size:24px"
                     bind:tap="onClick"
                   >
@@ -698,7 +740,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <wx-view
           class="smart-nav-bar smart-nav-bar--safe custom-class "
-          style="z-index:1;padding-top:20px; "
+          style="z-index:1; "
         >
           <wx-view
             class="smart-nav-bar__content"
@@ -709,10 +751,13 @@ exports[`should render demo and match snapshot 1`] = `
               bind:tap="onClickLeft"
             >
               <wx-view
+                ariaLabel=""
+                ariaRole="button"
                 class="smart-nav-bar__icon-wrap"
                 data-type="leftIcon"
                 hoverClass="smart-nav-bar__icon--hover"
                 hoverStayTime="70"
+                role="button"
                 catch:tap="onClickLeftIcon"
               >
                 <smart-icon
@@ -720,7 +765,10 @@ exports[`should render demo and match snapshot 1`] = `
                   customClass="smart-nav-bar__icon"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image"
+                    role=""
                     style="font-size:32px"
                     bind:tap="onClick"
                   >

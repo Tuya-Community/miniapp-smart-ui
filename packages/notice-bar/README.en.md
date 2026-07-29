@@ -149,6 +149,7 @@ import Warning from '@tuya-miniapp/icons/dist/svg/Warning';
 | btn-text-color | Button text color                | _string_  | `''`          |
 | type        | Notification type, options are `info`, `warning`, `error` | _string_  | `'info'`      |
 | background  | Background color of the scrolling bar | _string_  | `rgba(25, 137, 250, 0.1)` |
+| close-icon-aria-label `v2.13.0` | Accessible label for the close icon, passed to the close icon's `ariaLabel` | _string_  | -             |
 | color       | Notification text color              | _string_  | `#1989fa`     |
 | delay       | Animation delay time (ms)            | _number_  | `1`           |
 | left-icon   | Left [icon](/material/smartui?comId=icon&appType=miniapp) or image link    | _string_  | -             |

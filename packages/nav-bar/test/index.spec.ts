@@ -1,14 +1,5 @@
 import path from 'path';
 import simulate from 'miniprogram-simulate';
-import { getRect } from '../../common/utils';
-
-jest.mock('../../common/utils', () => {
-  const actual = jest.requireActual('../../common/utils');
-  return {
-    ...actual,
-    getRect: jest.fn(),
-  };
-});
 
 describe('nav-bar', () => {
   const SmartNavBar = simulate.load(
@@ -18,23 +9,6 @@ describe('nav-bar', () => {
       rootPath: path.resolve(__dirname, '../../'),
     }
   );
-
-  beforeEach(() => {
-    jest.clearAllMocks();
-    (getRect as jest.Mock).mockResolvedValue({ width: 100, height: 50, top: 0 });
-    
-    // Mock wx.nextTick
-    const originalNextTick = wx.nextTick;
-    wx.nextTick = jest.fn((callback: () => void) => {
-      if (callback) {
-        callback();
-      }
-    }) as any;
-
-    return () => {
-      wx.nextTick = originalNextTick;
-    };
-  });
 
   test('should handle onClickLeft', async () => {
     let clickLeftEvent = false;
@@ -243,116 +217,6 @@ describe('nav-bar', () => {
       await simulate.sleep(10);
 
       expect(clickRightTextEvent).toBe(true);
-    }
-  });
-
-  test('should handle setHeight when fixed and placeholder are true', async () => {
-    const comp = simulate.render(
-      simulate.load({
-        usingComponents: {
-          'smart-nav-bar': SmartNavBar,
-        },
-        template: `<smart-nav-bar id="nav-bar" fixed="{{ true }}" placeholder="{{ true }}" />`,
-      })
-    );
-    comp.attach(document.createElement('parent-wrapper'));
-
-    const navBar = comp.querySelector('#nav-bar');
-    const instance = navBar?.instance;
-    await simulate.sleep(10);
-
-    if (instance) {
-      instance.setData({ fixed: true, placeholder: true });
-      (getRect as jest.Mock).mockResolvedValue({ width: 100, height: 60, top: 0 });
-
-      instance.setHeight();
-      await new Promise(resolve => setTimeout(resolve, 20));
-
-      expect(getRect).toHaveBeenCalledWith(instance, '.smart-nav-bar');
-      expect(navBar?.data.height).toBe(60);
-    }
-  });
-
-  test('should handle setHeight when fixed is false', async () => {
-    const comp = simulate.render(
-      simulate.load({
-        usingComponents: {
-          'smart-nav-bar': SmartNavBar,
-        },
-        template: `<smart-nav-bar id="nav-bar" fixed="{{ false }}" />`,
-      })
-    );
-    comp.attach(document.createElement('parent-wrapper'));
-
-    const navBar = comp.querySelector('#nav-bar');
-    const instance = navBar?.instance;
-    await simulate.sleep(10);
-
-    if (instance) {
-      instance.setData({ fixed: false, placeholder: true });
-      const originalHeight = navBar?.data.height;
-
-      instance.setHeight();
-      await simulate.sleep(10);
-
-      // Should not change height
-      expect(navBar?.data.height).toBe(originalHeight);
-      expect(getRect).not.toHaveBeenCalled();
-    }
-  });
-
-  test('should handle setHeight when placeholder is false', async () => {
-    const comp = simulate.render(
-      simulate.load({
-        usingComponents: {
-          'smart-nav-bar': SmartNavBar,
-        },
-        template: `<smart-nav-bar id="nav-bar" fixed="{{ true }}" placeholder="{{ false }}" />`,
-      })
-    );
-    comp.attach(document.createElement('parent-wrapper'));
-
-    const navBar = comp.querySelector('#nav-bar');
-    const instance = navBar?.instance;
-    await simulate.sleep(10);
-
-    if (instance) {
-      instance.setData({ fixed: true, placeholder: false });
-      const originalHeight = navBar?.data.height;
-
-      instance.setHeight();
-      await simulate.sleep(10);
-
-      // Should not change height
-      expect(navBar?.data.height).toBe(originalHeight);
-      expect(getRect).not.toHaveBeenCalled();
-    }
-  });
-
-  test('should handle setHeight when res does not have height', async () => {
-    const comp = simulate.render(
-      simulate.load({
-        usingComponents: {
-          'smart-nav-bar': SmartNavBar,
-        },
-        template: `<smart-nav-bar id="nav-bar" fixed="{{ true }}" placeholder="{{ true }}" />`,
-      })
-    );
-    comp.attach(document.createElement('parent-wrapper'));
-
-    const navBar = comp.querySelector('#nav-bar');
-    const instance = navBar?.instance;
-    await simulate.sleep(10);
-
-    if (instance) {
-      instance.setData({ fixed: true, placeholder: true });
-      (getRect as jest.Mock).mockResolvedValue({ width: 100, top: 0 }); // No height property
-
-      instance.setHeight();
-      await new Promise(resolve => setTimeout(resolve, 20));
-
-      expect(getRect).toHaveBeenCalledWith(instance, '.smart-nav-bar');
-      // Height should not change if res doesn't have height property
     }
   });
 });

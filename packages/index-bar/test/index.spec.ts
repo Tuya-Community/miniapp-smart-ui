@@ -785,6 +785,45 @@ describe('index-bar', () => {
     }
   });
 
+  test('should not push previous anchor when stickyPush is false', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-index-bar': SmartIndexBar,
+        },
+        template: `<smart-index-bar id="wrapper" sticky="{{true}}" sticky-push="{{false}}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      const mockChildren = [
+        { height: 50, top: 0, data: { index: 'A' }, setData: jest.fn() },
+        { height: 50, top: 100, data: { index: 'B' }, setData: jest.fn() },
+      ];
+      (instance as any).getRelationNodes = jest.fn(() => mockChildren);
+      instance.top = 200;
+      instance.scrollTop = 150;
+      instance.data.sticky = true;
+      instance.data.stickyPush = false;
+      instance.data.zIndex = 1;
+      instance.data.highlightColor = '#1989fa';
+
+      instance.onScroll();
+      await simulate.sleep(10);
+
+      expect(mockChildren[0].setData).toHaveBeenCalledWith({
+        active: false,
+        anchorStyle: '',
+        wrapperStyle: '',
+      });
+    }
+  });
+
   test('should handle onScroll with active - 1 anchor at last index', async () => {
     const comp = simulate.render(
       simulate.load({

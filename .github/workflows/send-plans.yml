@@ -24,13 +24,20 @@ jobs:
           exit 1
         fi
         
-        # 提取最后一个大标题（以 # 开头）及其后面的内容
-        # 找到最后一个以 # 开头的行号
-        LAST_HEADER_LINE=$(grep -n '^#' PLANS.md | tail -1 | cut -d: -f1)
-        
-        if [ -n "$LAST_HEADER_LINE" ]; then
-          # 从最后一个标题行开始提取到文件末尾
-          CONTENT=$(sed -n "${LAST_HEADER_LINE},\$p" PLANS.md)
+        # 提取第一个大标题（以 # 开头，即最新版本）及其后面的内容
+        # 找到第一个以 # 开头的行号
+        FIRST_HEADER_LINE=$(grep -n '^#' PLANS.md | sed -n '1p' | cut -d: -f1)
+        # 找到第二个以 # 开头的行号（下一个版本块的起始）
+        SECOND_HEADER_LINE=$(grep -n '^#' PLANS.md | sed -n '2p' | cut -d: -f1)
+
+        if [ -n "$FIRST_HEADER_LINE" ]; then
+          if [ -n "$SECOND_HEADER_LINE" ]; then
+            # 提取第一个标题到第二个标题之前的内容
+            CONTENT=$(sed -n "${FIRST_HEADER_LINE},$((SECOND_HEADER_LINE - 1))p" PLANS.md)
+          else
+            # 只有一个标题，提取到文件末尾
+            CONTENT=$(sed -n "${FIRST_HEADER_LINE},\$p" PLANS.md)
+          fi
         else
           # 如果没有找到标题，使用整个文件
           CONTENT=$(cat PLANS.md)

@@ -288,9 +288,11 @@ Page({
 | custom-style        | 根节点自定义样式                   | _string_  | -       |
 | fixed               | 是否固定在顶部                     | _boolean_ | `false` |
 | left-arrow          | 是否显示左侧箭头                   | _boolean_ | `false` |
+| left-arrow-aria-label `v2.13.0` | 左侧返回箭头的无障碍读屏文案 | _string_  | -       |
 | left-text           | 左侧文案                           | _string_  | `''`    |
 | left-text-type `v2.0.0`          | 左侧文本的样式类型，范围为 `home`、`title`、`back`                           | _string_  | `back`    |
 | left-icon `v2.0.0`         | 左侧 Icon                           | _string_  | `''`    |
+| left-icon-aria-label `v2.13.0` | 左侧图标按钮的无障碍读屏文案 | _string_  | -       |
 | left-icon-size `v2.0.0`        | 左侧 Icon 大小，默认为 32                           | _string \| number_  | `32`    |
 | round `v2.1.0`               | 是否显示圆角                     | _boolean_ | `false` |
 | placeholder         | 固定在顶部时是否开启占位           | _boolean_ | `false` |
@@ -300,9 +302,10 @@ Page({
 | z-index             | 元素 z-index                       | _number_  | `1`     |
 | right-text-color `v2.7.0` | 右侧文案的颜色    | _string_  | -   |
 | right-icon `v2.7.0` | 右侧图标    | _string_  | -   |
+| right-icon-aria-label `v2.13.0` | 右侧图标按钮的无障碍读屏文案 | _string_  | -   |
 | right-icon-color `v2.7.0` | 右侧图标颜色    | _string_  | -   |
 | right-icon-size `v2.7.0` | 右侧图标大小    | _number_  | `32px`   |
-| left-icon-color `v2.7.0` | 左侧图标颜色    | _string_  | -   |
+| left-icon-color `v2.7.0` | 左侧图标颜色 （非返回 icon）    | _string_  | -   |
 | background `v2.7.0` | 整体背景色    | _string_  | -   |
 | side-width `v2.7.3` | 两边控制栏的宽度, 提供 `min`、`mid`、`max`三档内置值；也可以传具体宽度值    | _string\/number\/`min`\/`mid`\/`max`_  | `mid` `v2.7.3` `max` `v2.9.0`   |
 
@@ -321,7 +324,7 @@ Page({
 | bind:click-left  | 点击左侧返回 icon 时触发 | -    |
 | bind:click-right | 点击右侧按钮时触发 | -    |
 | bind:click-title `v2.0.0` | 点击中央标题时触发 | -    |
-| bind:click-left-icon `v2.0.0` | 点击左侧 icon 时触发 | -    |
+| bind:click-left-icon `v2.0.0` | 点击左侧 icon 时触发（非返回 icon） | -    |
 | bind:click-left-text `v2.0.0` | 点击左侧文本时触发 | -    |
 | bind:click-right-icon `v2.7.0` | 点击右侧图标时触发 | -    |
 | bind:click-right-text `v2.7.0` | 点击右侧文本时触发 | -    |

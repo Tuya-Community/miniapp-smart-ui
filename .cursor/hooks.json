@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeSubmitPrompt": [
+      {
+        "command": "clix dev blame capture --provider cursor --event beforeSubmitPrompt 2>/dev/null || true"
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "clix dev blame capture --provider cursor --event afterFileEdit 2>/dev/null || true"
+      }
+    ]
+  }
+}

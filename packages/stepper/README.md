@@ -52,6 +52,14 @@ Page({
 <smart-stepper value="{{ 5 }}" min="5" max="8" />
 ```
 
+### 支持负数输入 `v2.13.2`
+
+当`min`小于`0`时，输入框支持手动输入负数，适合温度、偏移量等允许负值的场景。
+
+```html
+<smart-stepper value="{{ -3 }}" min="{{ -10 }}" max="{{ 10 }}" />
+```
+
 ### 限制输入整数
 
 设置`integer`属性后，输入框将限制只能输入整数。
@@ -136,7 +144,9 @@ Page({
 | long-press            | 是否开启长按手势                                                                | _boolean_          | `true`  |
 | max                   | 最大值                                                                          | _string \| number_ | -       |
 | min                   | 最小值                                                                          | _string \| number_ | `1`     |
+| minus-aria-label `v2.13.0` | 减少按钮的无障碍读屏文案                                                   | _string_           | -       |
 | name                  | 在表单内提交时的标识符                                                          | _string_           | -       |
+| plus-aria-label `v2.13.0` | 增加按钮的无障碍读屏文案                                                    | _string_           | -       |
 | show-minus            | 是否显示减少按钮                                                                | _boolean_          | `true`  |
 | show-plus             | 是否显示增加按钮                                                                | _boolean_          | `true`  |
 | step                  | 步长                                                                            | _string \| number_ | `1`     |

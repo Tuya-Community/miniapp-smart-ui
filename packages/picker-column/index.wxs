@@ -77,7 +77,7 @@ function wrapperStyle(data) {
   }, {});
 
   var styleObj = {
-    'text-indent': data.unit ? '-8rpx' : '0',
+    'text-indent': data.unit ? '-4px' : '0',
     transition: !data.changeAnimation ? 'none' : 'transform ' + data.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)',
     'line-height': addUnit(data.itemHeight),
     transform: 'rotateX(' + rotate + 'deg)'
@@ -626,6 +626,15 @@ function tapItem(instanceId) {
   }
 }
 
+function unitFontStyle(fontStyle) {
+  var newStyleArr = []
+  fontStyle.split(';').forEach(function (item) {
+    if (item.includes('color:') || item.includes('text-shadow:')) return;
+    newStyleArr.push(item);
+  });
+  return newStyleArr.join(';');
+}
+
 module.exports = {
   optionText: optionText,
   rootStyle: rootStyle,
@@ -638,4 +647,5 @@ module.exports = {
   touchEnd: touchEnd,
   tapItem: tapItem,
   unitGapStyle: unitGapStyle,
+  unitFontStyle: unitFontStyle,
 };

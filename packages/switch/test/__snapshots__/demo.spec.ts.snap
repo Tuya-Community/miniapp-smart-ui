@@ -10,7 +10,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-switch smart-switch--on custom-class"
+          role="switch"
           style="font-size:30px"
           bind:tap="onClick"
         >
@@ -27,7 +30,10 @@ exports[`should render demo and match snapshot 1`] = `
         customClass="demo-right"
       >
         <wx-view
+          ariaChecked="false"
+          ariaDisabled="false"
           class="smart-switch custom-class"
+          role="switch"
           style="font-size:30px"
           bind:tap="onClick"
         >
@@ -50,7 +56,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-switch smart-switch--on custom-class"
+          role="switch"
           style="font-size:30px"
           bind:tap="onClick"
         >
@@ -67,7 +76,10 @@ exports[`should render demo and match snapshot 1`] = `
         customClass="demo-right"
       >
         <wx-view
+          ariaChecked="false"
+          ariaDisabled="false"
           class="smart-switch custom-class"
+          role="switch"
           style="font-size:30px"
           bind:tap="onClick"
         >
@@ -88,7 +100,10 @@ exports[`should render demo and match snapshot 1`] = `
           bind:change="onChange"
         >
           <wx-view
+            ariaChecked="true"
+            ariaDisabled="false"
             class="smart-switch smart-switch--on custom-class"
+            role="switch"
             style="font-size:30px"
             bind:tap="onClick"
           >
@@ -105,7 +120,10 @@ exports[`should render demo and match snapshot 1`] = `
           customClass="demo-right"
         >
           <wx-view
+            ariaChecked="false"
+            ariaDisabled="false"
             class="smart-switch custom-class"
+            role="switch"
             style="font-size:30px"
             bind:tap="onClick"
           >
@@ -129,7 +147,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="true"
           class="smart-switch smart-switch--on smart-switch--disabled custom-class"
+          role="switch"
           style="font-size:30px"
           bind:tap="onClick"
         >
@@ -152,7 +173,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-switch smart-switch--on custom-class"
+          role="switch"
           style="font-size:30px"
           bind:tap="onClick"
         >
@@ -197,7 +221,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-switch smart-switch--on custom-class"
+          role="switch"
           style="font-size:24px"
           bind:tap="onClick"
         >
@@ -242,7 +269,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-switch smart-switch--on custom-class"
+          role="switch"
           style="font-size:30px;background:#07c160"
           bind:tap="onClick"
         >
@@ -265,7 +295,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-switch smart-switch--on custom-class"
+          role="switch"
           style="font-size:30px;background:linear-gradient(to right, #ff7e5f, #987AFF)"
           bind:tap="onClick"
         >
@@ -288,7 +321,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange2"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-switch smart-switch--on custom-class"
+          role="switch"
           style="font-size:30px"
           bind:tap="onClick"
         >
@@ -311,7 +347,10 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
+          ariaChecked="true"
+          ariaDisabled="false"
           class="smart-switch smart-switch--on custom-class"
+          role="switch"
           style="font-size:30px"
           catch:tap="onClick"
         >
@@ -354,7 +393,10 @@ exports[`should render demo and match snapshot 1`] = `
                   bind:change="onChange"
                 >
                   <wx-view
+                    ariaChecked="true"
+                    ariaDisabled="false"
                     class="smart-switch smart-switch--on custom-class"
+                    role="switch"
                     style="font-size:30px"
                     bind:tap="onClick"
                   >

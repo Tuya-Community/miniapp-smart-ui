@@ -17,7 +17,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio-inline"
           >
             <wx-view
+              ariaChecked="true"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -30,7 +33,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:#fff;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -51,7 +57,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio-inline"
           >
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -64,7 +73,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:none;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -100,7 +112,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio-inline"
           >
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="true"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -113,7 +128,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:none;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -134,7 +152,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio-inline"
           >
             <wx-view
+              ariaChecked="true"
+              ariaDisabled="true"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -147,7 +168,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:#fff;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -183,7 +207,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio-inline"
           >
             <wx-view
+              ariaChecked="true"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -196,7 +223,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:#fff;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -217,7 +247,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio-inline"
           >
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -230,7 +263,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:none;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -266,7 +302,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio-inline"
           >
             <wx-view
+              ariaChecked="true"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -279,7 +318,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px;border-color:#10D0D0;background-color:#10D0D0"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:#fff;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -300,7 +342,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio-inline"
           >
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -313,7 +358,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:none;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -349,7 +397,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio-inline"
           >
             <wx-view
+              ariaChecked="true"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -362,7 +413,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:28px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:#fff;font-size:1em;line-height:28px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -383,7 +437,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio-inline"
           >
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -396,7 +453,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:28px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:none;font-size:1em;line-height:28px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -432,7 +492,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio"
           >
             <wx-view
+              ariaChecked="true"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -445,7 +508,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:#fff;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -468,7 +534,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio"
           >
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -481,7 +550,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:none;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -519,7 +591,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio"
           >
             <wx-view
+              ariaChecked="true"
+              ariaDisabled="false"
               class="smart-radio smart-radio--horizontal custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -532,7 +607,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:#fff;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -555,7 +633,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio"
           >
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="false"
               class="smart-radio smart-radio--horizontal custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -568,7 +649,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:none;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -606,7 +690,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio"
           >
             <wx-view
+              ariaChecked="true"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -634,7 +721,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio"
           >
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -677,7 +767,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio"
           >
             <wx-view
+              ariaChecked="true"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -690,7 +783,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:#fff;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -713,7 +809,10 @@ exports[`should render demo and match snapshot 1`] = `
             customClass="demo-radio"
           >
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -726,7 +825,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:none;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -786,7 +888,10 @@ exports[`should render demo and match snapshot 1`] = `
                     slot="right-icon"
                   >
                     <wx-view
+                      ariaChecked="true"
+                      ariaDisabled="false"
                       class="smart-radio custom-class"
+                      role="radio"
                     >
                       <wx-view
                         class="smart-radio__icon-wrap"
@@ -799,7 +904,10 @@ exports[`should render demo and match snapshot 1`] = `
                           style="font-size:24px"
                         >
                           <wx-view
+                            ariaLabel=""
+                            ariaRole=""
                             class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                            role=""
                             style="color:#fff;font-size:1em;line-height:24px;font-size:.8em;display:block"
                             bind:tap="onClick"
                           >
@@ -842,7 +950,10 @@ exports[`should render demo and match snapshot 1`] = `
                     slot="right-icon"
                   >
                     <wx-view
+                      ariaChecked="false"
+                      ariaDisabled="false"
                       class="smart-radio custom-class"
+                      role="radio"
                     >
                       <wx-view
                         class="smart-radio__icon-wrap"
@@ -855,7 +966,10 @@ exports[`should render demo and match snapshot 1`] = `
                           style="font-size:24px"
                         >
                           <wx-view
+                            ariaLabel=""
+                            ariaRole=""
                             class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                            role=""
                             style="color:none;font-size:1em;line-height:24px;font-size:.8em;display:block"
                             bind:tap="onClick"
                           >
@@ -892,7 +1006,10 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <smart-radio>
             <wx-view
+              ariaChecked="true"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -905,7 +1022,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:#fff;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >
@@ -926,7 +1046,10 @@ exports[`should render demo and match snapshot 1`] = `
           </smart-radio>
           <smart-radio>
             <wx-view
+              ariaChecked="false"
+              ariaDisabled="false"
               class="smart-radio custom-class"
+              role="radio"
             >
               <wx-view
                 class="smart-radio__icon-wrap"
@@ -939,7 +1062,10 @@ exports[`should render demo and match snapshot 1`] = `
                   style="font-size:24px"
                 >
                   <wx-view
+                    ariaLabel=""
+                    ariaRole=""
                     class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                    role=""
                     style="color:none;font-size:1em;line-height:24px;font-size:.8em;display:block"
                     bind:tap="onClick"
                   >

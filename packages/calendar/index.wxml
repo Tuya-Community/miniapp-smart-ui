@@ -5,7 +5,7 @@
 
 <smart-popup
   wx:if="{{ poppable }}"
-  custom-class="smart-calendar__popup--{{ position }}"
+  custom-class="smart-calendar__popup--{{ position }} smart-calendar__popup--type-{{ type }}"
   close-icon-class="smart-calendar__close-icon"
   show="{{ show }}"
   round="{{ round }}"

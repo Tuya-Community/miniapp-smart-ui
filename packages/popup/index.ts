@@ -1,7 +1,6 @@
 import closeIcon from '@tuya-miniapp/icons/dist/svg/Xmark';
 import { SmartComponent } from '../common/component';
 import { transition } from '../mixins/transition';
-import { getSafeBottomOffset } from '../common/utils';
 
 SmartComponent({
   classes: [
@@ -36,6 +35,10 @@ SmartComponent({
     closeIcon: {
       type: String,
       value: closeIcon,
+    },
+    closeIconAriaLabel: {
+      type: String,
+      value: '',
     },
     closeIconPosition: {
       type: String,
@@ -82,15 +85,6 @@ SmartComponent({
 
   data: {
     closeIcon,
-    bottomSafeHeight: 0,
-  },
-
-  mounted() {
-    if (!this.data.safeAreaInsetBottom) return;
-    const bottomSafeHeight = getSafeBottomOffset();
-    this.setData({
-      bottomSafeHeight: Math.max(bottomSafeHeight, this.data.safeAreaInsetBottomMin),
-    });
   },
 
   created() {

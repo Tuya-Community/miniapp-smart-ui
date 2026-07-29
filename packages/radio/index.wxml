@@ -1,7 +1,12 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 <wxs src="./index.wxs" module="computed" />
 
-<view class="{{ utils.bem('radio', [direction]) }} custom-class">
+<view 
+  role="radio" 
+  aria-checked="{{ value === name ? 'true' : 'false' }}" 
+  aria-disabled="{{ (disabled || parentDisabled) ? 'true' : 'false' }}" 
+  class="{{ utils.bem('radio', [direction]) }} custom-class"
+>
   <view
     wx:if="{{ labelPosition === 'left' }}"
     class="{{ utils.bem('radio__label', [labelPosition, { disabled: disabled || parentDisabled }]) }} label-class"

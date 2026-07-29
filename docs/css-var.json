@@ -942,6 +942,11 @@
     "value": "600",
     "decs": ""
   },
+  "button-plain-color": {
+    "name": "@button-plain-color",
+    "value": "rgba(0, 0, 0, 0.9)",
+    "decs": ""
+  },
   "calendar-background-color": {
     "name": "@calendar-background-color",
     "value": "var(--app-B6, #fff)",
@@ -1009,7 +1014,7 @@
   },
   "calendar-day-height": {
     "name": "@calendar-day-height",
-    "value": "100rpx",
+    "value": "50px",
     "decs": ""
   },
   "calendar-cell-item-font-size": {
@@ -1019,17 +1024,17 @@
   },
   "calendar-cell-item-width": {
     "name": "@calendar-cell-item-width",
-    "value": "104rpx",
+    "value": "52px",
     "decs": ""
   },
   "calendar-cell-item-height": {
     "name": "@calendar-cell-item-height",
-    "value": "104rpx",
+    "value": "52px",
     "decs": ""
   },
   "calendar-cell-item-margin": {
     "name": "@calendar-cell-item-margin",
-    "value": "14rpx",
+    "value": "7px",
     "decs": ""
   },
   "calendar-cell-item-font-color": {
@@ -1039,7 +1044,7 @@
   },
   "calendar-cell-item-border-radius": {
     "name": "@calendar-cell-item-border-radius",
-    "value": "104rpx",
+    "value": "52px",
     "decs": ""
   },
   "calendar-day-font-weight": {
@@ -1049,7 +1054,7 @@
   },
   "calendar-day-select-border-radius": {
     "name": "@calendar-day-select-border-radius",
-    "value": "34rpx",
+    "value": "17px",
     "decs": ""
   },
   "calendar-range-edge-color": {
@@ -1119,7 +1124,17 @@
   },
   "calendar-popup-height": {
     "name": "@calendar-popup-height",
-    "value": "848rpx",
+    "value": "490px",
+    "decs": ""
+  },
+  "calendar-popup-height-month": {
+    "name": "@calendar-popup-height-month",
+    "value": "350px",
+    "decs": ""
+  },
+  "calendar-popup-height-year": {
+    "name": "@calendar-popup-height-year",
+    "value": "350px",
     "decs": ""
   },
   "calendar-header-save-color": {
@@ -1422,6 +1437,11 @@
     "value": "0",
     "decs": ""
   },
+  "dialog-header-padding-side": {
+    "name": "@dialog-header-padding-side",
+    "value": "16px",
+    "decs": ""
+  },
   "dialog-header-isolated-padding": {
     "name": "@dialog-header-isolated-padding",
     "value": "@padding-lg 0",
@@ -1500,6 +1520,11 @@
   "dialog-input-background-color": {
     "name": "@dialog-input-background-color",
     "value": "var(--app-B4-N9, rgba(0, 0, 0, 0.05))",
+    "decs": ""
+  },
+  "dialog-input-color": {
+    "name": "@dialog-input-color",
+    "value": "var(--app-B4-N1, rgba(0, 0, 0, 1))",
     "decs": ""
   },
   "dialog-input-margin": {
@@ -2169,7 +2194,7 @@
   },
   "picker-confirm-action-color": {
     "name": "@picker-confirm-action-color",
-    "value": "#576b95",
+    "value": "#007AFF",
     "decs": ""
   },
   "picker-cancel-action-color": {
@@ -2189,7 +2214,7 @@
   },
   "picker-option-text-color": {
     "name": "@picker-option-text-color",
-    "value": "var(--app-B6-N3, rgba(0, 0, 0, 0.5))",
+    "value": "var(--app-B6-N1, rgba(0, 0, 0, 1))",
     "decs": ""
   },
   "picker-option-unit-text-color": {

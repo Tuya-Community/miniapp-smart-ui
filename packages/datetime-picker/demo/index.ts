@@ -31,7 +31,7 @@ SmartComponent({
         '11': 'November',
         '12': 'December',
       },
-      day: '{{day}}日'
+      day: '{{day}}日',
     },
     fontStylesTwo: {
       year: 'font-family: "Manrope", sans-serif;',
@@ -48,7 +48,7 @@ SmartComponent({
     },
     filter(type, options) {
       if (type === 'minute') {
-        return options.filter((option) => option % 5 === 0);
+        return options.filter(option => option % 5 === 0);
       }
 
       return options;
@@ -62,13 +62,13 @@ SmartComponent({
       second: I18n.t('second'),
     },
     columnStyles: {
-      year: "background: rgba(0, 0, 0, 0.1)",
+      year: 'background: rgba(0, 0, 0, 0.1)',
     },
     fontStyles: {
-      month: "color: rgb(23, 138, 237);",
-      '12HourClock': 'font-size: 14px;'
+      month: 'color: rgb(23, 138, 237);',
+      '12HourClock': 'color: var(--app-B6-N1,#000);',
     },
-    activeStyle: "color: rgb(235, 87, 41);"
+    activeStyle: 'color: rgb(235, 87, 41);',
   },
 
   methods: {
@@ -85,8 +85,8 @@ SmartComponent({
     onInputChange(event) {
       const { detail, currentTarget } = event;
       this.setData({
-        currentDate5: detail
-      })
+        currentDate5: detail,
+      });
       const result = this.getResult(detail, currentTarget.dataset.type);
 
       Toast({
@@ -116,6 +116,6 @@ SmartComponent({
     },
     animationEnd() {
       console.log('animationEnd');
-    }
+    },
   },
 });

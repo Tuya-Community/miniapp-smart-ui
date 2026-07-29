@@ -1592,7 +1592,10 @@ exports[`tab demo should render demo and match snapshot 1`] = `
                     bind:click="onClickNavRight"
                   >
                     <wx-view
+                      ariaLabel=""
+                      ariaRole=""
                       class="custom-class smart-icon smart-icon--image smart-icon--svg"
+                      role=""
                       style="color:#1989fa"
                       bind:tap="onClick"
                     >

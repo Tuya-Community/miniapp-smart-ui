@@ -52,6 +52,14 @@ Limit the input value range through `min` and `max` attributes.
 <smart-stepper value="{{ 5 }}" min="5" max="8" />
 ```
 
+### Support Negative Input `v2.13.2`
+
+When `min` is less than `0`, the input box supports manual negative number input, which is useful for values like temperatures or offsets.
+
+```html
+<smart-stepper value="{{ -3 }}" min="{{ -10 }}" max="{{ 10 }}" />
+```
+
 ### Restrict Integer Input
 
 Once the `integer` attribute is set, the input box will only allow integer input.
@@ -136,7 +144,9 @@ Set the input box width via the `input-width` attribute, and set the button size
 | long-press             | Whether to enable long-press gesture                                                | _boolean_          | `true`   |
 | max                    | Maximum value                                                                       | _string \| number_ | -        |
 | min                    | Minimum value                                                                       | _string \| number_ | `1`      |
+| minus-aria-label `v2.13.0` | Accessible label for the minus button                                           | _string_           | -        |
 | name                   | Identifier when submitting in a form                                                | _string_           | -        |
+| plus-aria-label `v2.13.0` | Accessible label for the plus button                                             | _string_           | -        |
 | show-minus             | Whether to show the decrement button                                                | _boolean_          | `true`   |
 | show-plus              | Whether to show the increment button                                                | _boolean_          | `true`   |
 | step                   | Step size                                                                           | _string \| number_ | `1`      |

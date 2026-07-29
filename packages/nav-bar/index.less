@@ -10,6 +10,20 @@
   background-color: var(--nav-bar-background-color, @nav-bar-background-color);
   box-sizing: content-box;
 
+  &__placeholder {
+    box-sizing: content-box;
+    height: var(--nav-bar-height, var(--app-device-navbar-height, @nav-bar-height));
+
+    &--round {
+      min-height: var(--nav-bar-round-min-height, @nav-bar-round-min-height);
+      border-radius: var(--nav-bar-round-border-radius, @nav-bar-round-border-radius);
+    }
+
+    &--safe {
+      padding-top: var(--app-device-status-height, 20px);
+    }
+  }
+
   &__content {
     position: relative;
     height: 100%;

@@ -1,23 +1,10 @@
 import path from 'path';
 import simulate from 'miniprogram-simulate';
 
-// Mock dependencies
-jest.mock('../../common/utils', () => {
-  const actual = jest.requireActual('../../common/utils');
-  return {
-    ...actual,
-    getSafeBottomOffset: jest.fn(() => 20),
-  };
-});
-
 describe('popup', () => {
-  const SmartPopup = simulate.load(
-    path.resolve(__dirname, '../index'),
-    'smart-popup',
-    {
-      rootPath: path.resolve(__dirname, '../../'),
-    }
-  );
+  const SmartPopup = simulate.load(path.resolve(__dirname, '../index'), 'smart-popup', {
+    rootPath: path.resolve(__dirname, '../../'),
+  });
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -72,13 +59,13 @@ describe('popup', () => {
     if (instance) {
       // Spy on $emit to verify it's called
       const emitSpy = jest.spyOn(instance, '$emit');
-      
+
       instance.onClickCloseIcon();
       await simulate.sleep(10);
 
       expect(closeEmitted).toBe(true);
       expect(emitSpy).toHaveBeenCalledWith('close');
-      
+
       emitSpy.mockRestore();
     }
   });
@@ -115,7 +102,7 @@ describe('popup', () => {
     if (instance) {
       // Spy on $emit to verify it's called
       const emitSpy = jest.spyOn(instance, '$emit');
-      
+
       instance.setData({ closeOnClickOverlay: true });
       instance.onClickOverlay();
       await simulate.sleep(10);
@@ -124,7 +111,7 @@ describe('popup', () => {
       expect(closeEmitted).toBe(true);
       expect(emitSpy).toHaveBeenCalledWith('click-overlay');
       expect(emitSpy).toHaveBeenCalledWith('close');
-      
+
       emitSpy.mockRestore();
     }
   });
@@ -161,7 +148,7 @@ describe('popup', () => {
     if (instance) {
       // Spy on $emit to verify it's called
       const emitSpy = jest.spyOn(instance, '$emit');
-      
+
       instance.setData({ closeOnClickOverlay: false });
       instance.onClickOverlay();
       await simulate.sleep(10);
@@ -171,7 +158,7 @@ describe('popup', () => {
       expect(emitSpy).toHaveBeenCalledWith('click-overlay');
       expect(emitSpy).not.toHaveBeenCalledWith('close');
       expect(emitSpy).toHaveBeenCalledTimes(1);
-      
+
       emitSpy.mockRestore();
     }
   });
@@ -197,7 +184,7 @@ describe('popup', () => {
     if (instance) {
       // Set initial duration
       instance.setData({ transition: 'none', duration: 300 });
-      
+
       // Call observeClass to trigger transition === 'none' branch
       instance.observeClass();
       await simulate.sleep(10);
@@ -323,13 +310,13 @@ describe('popup', () => {
     expect(wrapper?.data.name).toBeDefined();
   });
 
-  test('should update bottomSafeHeight when safeAreaInsetBottom is true', async () => {
+  test('safeAreaInsetBottomMin should default to 0', async () => {
     const comp = simulate.render(
       simulate.load({
         usingComponents: {
           'smart-popup': SmartPopup,
         },
-        template: `<smart-popup id="wrapper" show="{{ true }}" safe-area-inset-bottom="{{ true }}" />`,
+        template: `<smart-popup id="wrapper" show="{{ true }}" position="bottom" safe-area-inset-bottom="{{ true }}" />`,
         data: {
           show: true,
         },
@@ -340,17 +327,16 @@ describe('popup', () => {
     const wrapper = comp.querySelector('#wrapper');
     await simulate.sleep(10);
 
-    // bottomSafeHeight should be set in mounted
-    expect(wrapper?.data.bottomSafeHeight).toBeGreaterThanOrEqual(0);
+    expect(wrapper?.data.safeAreaInsetBottomMin).toBe(0);
   });
 
-  test('should not update bottomSafeHeight when safeAreaInsetBottom is false', async () => {
+  test('should apply CSS env(safe-area-inset-bottom) + 16px floored by min when safeAreaInsetBottom is true', async () => {
     const comp = simulate.render(
       simulate.load({
         usingComponents: {
           'smart-popup': SmartPopup,
         },
-        template: `<smart-popup id="wrapper" show="{{ true }}" safe-area-inset-bottom="{{ false }}" />`,
+        template: `<smart-popup id="wrapper" show="{{ true }}" position="bottom" safe-area-inset-bottom="{{ true }}" safe-area-inset-bottom-min="{{ 16 }}" />`,
         data: {
           show: true,
         },
@@ -358,11 +344,33 @@ describe('popup', () => {
     );
     comp.attach(document.createElement('parent-wrapper'));
 
-    const wrapper = comp.querySelector('#wrapper');
-    await simulate.sleep(10);
+    const wrapper: any = comp.querySelector('#wrapper');
+    await simulate.sleep(50);
 
-    // bottomSafeHeight should remain 0 when safeAreaInsetBottom is false
-    expect(wrapper?.data.bottomSafeHeight).toBe(0);
+    const html = wrapper?.dom?.innerHTML || '';
+    expect(html).toContain(
+      'margin-bottom:max(calc(env(safe-area-inset-bottom) + 16px), 16px)'
+    );
+  });
+
+  test('should not apply safe-area margin when safeAreaInsetBottom is false', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-popup': SmartPopup,
+        },
+        template: `<smart-popup id="wrapper" show="{{ true }}" position="bottom" safe-area-inset-bottom="{{ false }}" />`,
+        data: {
+          show: true,
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper: any = comp.querySelector('#wrapper');
+    await simulate.sleep(50);
+
+    const html = wrapper?.dom?.innerHTML || '';
+    expect(html).not.toContain('env(safe-area-inset-bottom)');
   });
 });
-

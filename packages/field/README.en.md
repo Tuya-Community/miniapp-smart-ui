@@ -268,6 +268,7 @@ Page({
 | autosize                     | Whether to adapt the content height, only effective for textarea, <br>can pass an object, such as { maxHeight: 100, minHeight: 50 }, <br>unit is `px` | _boolean \| object_ | `false` |
 | border                       | Whether to show the inner border                                                                              | _boolean_           | `false` |
 | center                       | Whether to vertically center the content                                                                      | _boolean_           | `false` |
+| clear-icon-aria-label `v2.13.0` | Accessible label for the clear button, passed to the clear icon's `aria-label`                               | _string_            | -       |
 | clear-trigger `v1.8.4`       | When to show the clear icon, `always` means to display when the input box is not empty, <br>`focus` means to display when the input box is focused and not empty | _string_            | `focus` |
 | clearable                    | Whether to enable the clear control                                                                           | _boolean_           | `false` |
 | clickable                    | Whether to enable click feedback                                                                              | _boolean_           | `false` |
@@ -299,6 +300,7 @@ Page({
 | readonly                     | Whether it is read-only                                                                                       | _boolean_           | `false` |
 | required                     | Whether to show the required asterisk of the form                                                             | _boolean_           | `false` |
 | right-icon                   | Right icon svg value or image link, optional values see [Icon component](/material/smartui?comId=icon&appType=miniapp)                              | _string_            | -       |
+| right-icon-button-aria-label `v2.13.0` | Accessible label for the right icon button, set on the icon container's `aria-label`                        | _string_            | -       |
 | selection-end                | Cursor end position, valid when auto-focused, need to use with selection-start                                | _number_            | `-1`    |
 | selection-start              | Cursor start position, valid when auto-focused, need to use with selection-end                                | _number_            | `-1`    |
 | show-confirm-bar             | Whether to display the "Done" button above the keyboard, valid only for textarea                              | _boolean_           | `true`  |

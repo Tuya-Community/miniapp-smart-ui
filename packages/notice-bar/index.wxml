@@ -39,6 +39,8 @@
     name="{{ Xmark }}"
     style="{{ computed.rootStyle(rightIconStyle) }}"
     color=" {{ rightIconColor }} "
+    aria-role="button"
+    aria-label="{{ closeIconAriaLabel }}"
     catch:tap="onClickIcon"
   />
   <smart-icon 

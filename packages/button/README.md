@@ -34,9 +34,11 @@ category: 通用
 
 ### 朴素按钮
 
-通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色。
+通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色；默认背景为白色，字体为黑色。
+
 
 ```html
+<smart-button plain>朴素按钮</smart-button>
 <smart-button plain type="primary">朴素按钮</smart-button>
 <smart-button plain type="info">朴素按钮</smart-button>
 ```
@@ -196,6 +198,7 @@ category: 通用
 | --button-border-width                         | _1px_                                          | 按钮边框宽度                       |
 | --button-border-radius                        | _10px_                                         | 按钮边框圆角半径                   |
 | --button-round-border-radius                  | _999px_                                        | 圆形按钮边框圆角半径               |
+| --button-plain-color `v2.13.2`        | _rgba(0, 0, 0, 0.9)_                           | 纯按钮文字颜色                     |
 | --button-plain-background-color               | _#fff_                                         | 纯按钮背景颜色                     |
 | --button-disabled-opacity                     | _0.3_                                          | 禁用按钮不透明度                   |
 | --button-font-weight                          | _normal_                                       | 按钮字体粗细                       |
