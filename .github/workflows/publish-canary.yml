@@ -1,0 +1,99 @@
+name: Publish Canary (standalone preview)
+
+# 独立预览通道：可以从「任意分支」手动发一个 canary 预览包，
+# 无需先合并进 release/2.x。用于功能合并前的单点验证。
+#
+# 与官方 beta 的区别：
+#   - 触发：手动 workflow_dispatch（在 Actions 页面选分支运行），不依赖合并事件
+#   - 版本：2.13.3-canary.<分支>.<sha>，带 commit sha 天然唯一
+#   - dist-tag：canary（不碰 latest，也不碰官方 beta）
+#   - 不把版本号 commit 回任何分支，release/2.x 与 main 全程零影响
+#
+# 安装验证：yarn add @tuya-miniapp/smart-ui@canary
+#          或指定完整版本：yarn add @tuya-miniapp/smart-ui@2.13.3-canary.feat-toast.a1b2c3d
+
+on:
+  workflow_dispatch:
+    inputs:
+      dist_tag:
+        description: 'npm dist-tag（默认 canary；禁止填 latest / beta）'
+        required: false
+        default: 'canary'
+
+# 同一分支的 canary 发布串行执行，避免并发发布互相干扰
+concurrency:
+  group: publish-canary-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish_canary:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Guard dist-tag
+        env:
+          DIST_TAG: ${{ github.event.inputs.dist_tag }}
+        run: |
+          if [ "$DIST_TAG" = "latest" ] || [ "$DIST_TAG" = "beta" ]; then
+            echo "❌ dist-tag 不能是 latest 或 beta（会污染正式版 / 官方 beta 线）"
+            exit 1
+          fi
+          echo "DIST_TAG=${DIST_TAG:-canary}" >> $GITHUB_ENV
+
+      - name: Checkout Code
+        # 默认 checkout 触发时选中的分支/ref，无需合并
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - name: Compute Canary Version
+        run: |
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          # 取基础版本（剥掉已有的 -beta / -canary 后缀）
+          BASE_VERSION=$(node -p "require('./package.json').version" | cut -d '-' -f 1)
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          # 分支名清洗成 npm 预发布标识符允许的字符集 [0-9A-Za-z-]
+          SLUG=$(echo "${GITHUB_REF_NAME}" | sed 's#[/._]#-#g' | tr -cd '[:alnum:]-' | cut -c1-24)
+          [ -z "$SLUG" ] && SLUG="branch"
+          CANARY_VERSION="${BASE_VERSION}-canary.${SLUG}.${SHORT_SHA}"
+          echo "PACKAGE_NAME=${PACKAGE_NAME}" >> $GITHUB_ENV
+          echo "CANARY_VERSION=${CANARY_VERSION}" >> $GITHUB_ENV
+          echo "✅ Canary version: ${CANARY_VERSION}"
+
+      - name: Set Version (no commit / no tag)
+        run: npm version "${CANARY_VERSION}" --no-git-tag-version --allow-same-version
+
+      - name: Publish Package
+        run: npm publish --access public --tag "${DIST_TAG}"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Job Summary
+        run: |
+          {
+            echo "## 🐤 Canary 预览包已发布"
+            echo ""
+            echo "| 项 | 值 |"
+            echo "| --- | --- |"
+            echo "| 分支 | \`${GITHUB_REF_NAME}\` |"
+            echo "| 版本 | \`${CANARY_VERSION}\` |"
+            echo "| dist-tag | \`${DIST_TAG}\` |"
+            echo ""
+            echo "### 安装"
+            echo '```bash'
+            echo "yarn add ${PACKAGE_NAME}@${CANARY_VERSION}"
+            echo "# 或取该 tag 最新一次预览："
+            echo "yarn add ${PACKAGE_NAME}@${DIST_TAG}"
+            echo '```'
+          } >> $GITHUB_STEP_SUMMARY
