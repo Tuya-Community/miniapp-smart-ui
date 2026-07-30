@@ -1,5 +1,16 @@
 # Changelog
 
+## v2.13.3 (2026-7-30)
+
+### Features ✨
+
+- popup: Update the bottom safe-area implementation to use `safe-area-inset-bottom` for compatibility with the bottom Hey Tuya bar ([4d4d57b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/206/commits/4d4d57b4057663b6dbd71f91bd67a20880e920bc))
+
+### Bug Fixes 🐛
+
+- switch: Change the default value of the `--switch-node-z-index` CSS variable to 0, fixing the case where switch-node floats above other elements ([5d718cb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/207/commits/5d718cbfde2944464975c4d992d076630a5c9c5a))
+- picker: Fix the `wrapperItemStyle` parameter in picker-column and remove the duplicate index ([6e1beed](https://github.com/Tuya-Community/miniapp-smart-ui/pull/204/commits/6e1beeda02a94c70f95a10bd08c9f4914c53d9ef))
+
 ## v2.13.2 (2026-6-18)
 
 ### Features ✨

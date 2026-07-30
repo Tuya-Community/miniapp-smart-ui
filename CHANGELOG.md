@@ -1,5 +1,16 @@
 # 更新日志
 
+## v2.13.3 (2026-7-30)
+
+### Features ✨
+
+- popup: 更新组件底部安全距离实现，使用 `safe-area-inset-bottom`，兼容底部 Hey Tuya([4d4d57b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/206/commits/4d4d57b4057663b6dbd71f91bd67a20880e920bc))
+
+### Bug Fixes 🐛
+
+- switch: 修改 `--switch-node-z-index` CSS 变量默认值为 0，修复 switch-node 悬浮在其他元素之上的情况([5d718cb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/207/commits/5d718cbfde2944464975c4d992d076630a5c9c5a))
+- picker: 修复 picker-column 中 `wrapperItemStyle` 的参数，移除重复的 index([6e1beed](https://github.com/Tuya-Community/miniapp-smart-ui/pull/204/commits/6e1beeda02a94c70f95a10bd08c9f4914c53d9ef))
+
 ## v2.13.2 (2026-6-18)
 
 ### Features ✨
