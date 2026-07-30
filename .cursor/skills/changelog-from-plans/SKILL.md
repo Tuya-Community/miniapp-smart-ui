@@ -2,21 +2,23 @@
 name: changelog-from-plans
 description: >-
   Drafts or updates root CHANGELOG.md and docs/CHANGELOG.en.md from PLANS.md
-  completed items for a target version, matching existing changelog section
-  structure and link style. Use when preparing release notes, syncing changelog
-  with PLANS, adding a version block to CHANGELOG, or keeping English changelog
-  in docs/CHANGELOG.en.md aligned with the Chinese CHANGELOG.
+  completed items for a target version, then optionally opens a release Pull
+  Request to main whose title is the version and whose body is the bilingual
+  changelog. Use when preparing release notes, syncing changelog with PLANS,
+  adding a version block to CHANGELOG, keeping the English changelog aligned
+  with the Chinese one, or raising the "PLANS → changelog → main" release MR.
 ---
 
-# 从 PLANS 同步更新日志
+# 从 PLANS 同步更新日志 →（可选）开发布 MR
 
-根据 `PLANS.md` 中**已勾选**的某版本发布计划，在仓库根目录 `CHANGELOG.md` 与 `docs/CHANGELOG.en.md` 顶部插入对应版本区块；条目、顺序与链接以 PLANS 为准，版式沿用历史 CHANGELOG。
+根据 `PLANS.md` 中**已勾选**的某版本发布计划，在仓库根目录 `CHANGELOG.md` 与 `docs/CHANGELOG.en.md` 顶部插入对应版本区块；条目、顺序与链接以 PLANS 为准，版式沿用历史 CHANGELOG。写好 changelog 后，**可选**继续走 git 提交并对 `main` 开一个发布 PR（标题=版本号，正文=中英文 changelog 拼接）。
 
 ## 适用场景
 
 - 发版前根据 PLANS 补齐或修订某一版本（如 `v2.12.0`）的更新说明
 - 用户要求「按 PLANS 写 CHANGELOG」「中英文 changelog 对齐」
 - 仅中文版更新后，需要同步 `docs/CHANGELOG.en.md`
+- 用户要求「从 plans 到 changelog 再到 main 的 MR / PR」——一条龙：写 changelog → 提交 → 开 PR
 
 ## 输入与范围
 
@@ -63,12 +65,48 @@ description: >-
 4. 在 `docs/CHANGELOG.en.md` 顶部写入同版本英文块，**条目一一对应**，链接复制中文版。
 5. 快速自检：无遗漏已完成项、无写入未完成项、英文块与中文章节数量一致。
 
-## 检查清单
+## 检查清单（changelog 部分）
 
 - [ ] 仅包含 PLANS 该版本中已勾选项
 - [ ] `CHANGELOG.md` 与 `docs/CHANGELOG.en.md` 版本号与日期一致
 - [ ] 中英文条目顺序与链接一致
 - [ ] 分类（Features / Bug Fixes）合理且与历史风格接近
+
+## 开发布 MR（可选，写完 changelog 后）
+
+仅当用户要求「开 PR / MR / 到 main」时执行。前置：本机已装并登录 `gh`（`gh auth status` 通过）。
+
+### 分支与提交策略
+
+- **分支**：默认**用当前分支直接开**（本仓库发布流为 `release/2.x` → `main`，PR 标题就是版本号）。不要新建分支，除非用户另行指定。
+- **提交**：只提交 changelog 改动（`CHANGELOG.md`、`docs/CHANGELOG.en.md`）；若同一版本还改了 `package.json` version，可一并提交。提交信息用约定式：`docs: 更新 vX.Y.Z 中英文 changelog`（尾部保留仓库要求的 Co-Authored-By）。
+
+### PR 版式（对齐历史 PR，如 [pull/203](https://github.com/Tuya-Community/miniapp-smart-ui/pull/203)）
+
+- **base**：`main`；**head**：当前分支（如 `release/2.x`）。
+- **标题**：版本号，形如 `v2.13.3`（不带日期）。
+- **正文**：从刚写好的 changelog 中取该版本区块，**去掉 `## vX.Y.Z (日期)` 顶层标题**，按下面顺序拼接：
+  1. 中文段：`### Features ✨` / `### Bug Fixes 🐛`（直接来自 `CHANGELOG.md`）
+  2. 分隔标题：`## English`
+  3. 英文段：`### Features ✨` / `### Bug Fixes 🐛`（直接来自 `docs/CHANGELOG.en.md`）
+  - 中英文条目、链接与 changelog 完全一致；无对应分类时该 `###` 小节可省略。
+
+### 执行步骤
+
+1. `gh auth status` 确认已登录；`git branch --show-current` 记录当前分支。
+2. `git add CHANGELOG.md docs/CHANGELOG.en.md`（含其他随发版改动则一并 add）。
+3. 生成 PR 正文文件（写入临时目录，避免 shell 转义问题），内容按上面版式拼接。
+4. **停下确认**：向用户展示 `git diff --staged` 摘要 + PR 标题与正文草稿，**等用户明确同意后**再继续 push / 开 PR。
+5. 用户同意后：`git commit` → `git push -u origin <当前分支>` → `gh pr create --base main --head <当前分支> --title "vX.Y.Z" --body-file <正文文件>`。
+6. 回传 `gh pr create` 输出的 PR 链接。若同版本 PR 已存在，改用 `gh pr edit <n> --title/--body-file` 更新，不要重复创建。
+
+### 检查清单（MR 部分）
+
+- [ ] `gh auth status` 通过，确认开 PR 的账号符合预期
+- [ ] base=`main`、head=当前分支正确
+- [ ] 标题为纯版本号；正文含中文段 + `## English` + 英文段
+- [ ] push / 开 PR 前已获用户明确同意（不可逆对外动作）
+- [ ] 未把仍为 `[ ]` 的未完成项写进 PR
 
 ## 与其他 skill 的关系
 
