@@ -20,5 +20,6 @@ dist
 lib
 micro-app
 example/micro-app
+.npmrc
 typings/
 miniprogram_npm
