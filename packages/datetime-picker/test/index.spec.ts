@@ -917,5 +917,103 @@ describe('datetime-picker', () => {
       instance.getOriginColumns = originalGetOriginColumns;
     }
   });
+
+  test('should loop every column except year by default', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-datetime-picker': SmartDateTimePicker,
+        },
+        template: `<smart-datetime-picker id="wrapper" type="datetime" value="{{ ${new Date(
+          2018,
+          2,
+          15
+        ).getTime()} }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    await simulate.sleep(50);
+
+    const loops = wrapper?.data.columns.map((column: any) => column.loop);
+    // year, month, day, hour, minute
+    expect(loops).toEqual([false, true, true, true, true]);
+  });
+
+  test('should control the loop of a single column with loopMap', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-datetime-picker': SmartDateTimePicker,
+        },
+        data: {
+          loopMap: { day: false, year: true },
+        },
+        template: `<smart-datetime-picker id="wrapper" type="date" loop-map="{{ loopMap }}" value="{{ ${new Date(
+          2018,
+          2,
+          15
+        ).getTime()} }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    await simulate.sleep(50);
+
+    // year, month, day
+    expect(wrapper?.data.columns.map((column: any) => column.loop)).toEqual([true, true, false]);
+  });
+
+  test('should update the loop of columns when loopMap changes', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-datetime-picker': SmartDateTimePicker,
+        },
+        data: {
+          loopMap: undefined as undefined | Record<string, boolean>,
+        },
+        template: `<smart-datetime-picker id="wrapper" type="date" loop-map="{{ loopMap }}" value="{{ ${new Date(
+          2018,
+          2,
+          15
+        ).getTime()} }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    await simulate.sleep(50);
+
+    expect(wrapper?.data.columns[2].loop).toBe(true);
+
+    comp.setData({ loopMap: { day: false } });
+    await simulate.sleep(50);
+
+    expect(wrapper?.data.columns[2].loop).toBe(false);
+  });
+
+  test('should control the loop of the 12HourClock column with loopMap', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-datetime-picker': SmartDateTimePicker,
+        },
+        data: {
+          loopMap: { part: true, hour: false },
+        },
+        template: `<smart-datetime-picker id="wrapper" type="time" is12-hour-clock="{{ true }}" loop-map="{{ loopMap }}" value="11:00" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    await simulate.sleep(50);
+
+    // 12HourClock, hour, minute
+    expect(wrapper?.data.columns.map((column: any) => column.loop)).toEqual([true, false, true]);
+  });
 });
 

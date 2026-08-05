@@ -255,6 +255,37 @@ Page({
 });
 ```
 
+### 控制某一列是否循环滚动 `v2.13.4`
+
+默认情况下，`year`（年）与 `12HourClock`（上午/下午）列不循环滚动，其余列（月、日、时、分）循环滚动。通过 `loop-map` 可以按列覆盖该默认行为，未配置的列保持默认。
+
+```html
+<smart-datetime-picker
+  type="date"
+  value="{{ currentDate }}"
+  loop-map="{{ loopMap }}"
+  bind:input="onInput"
+/>
+```
+
+```js
+Page({
+  data: {
+    currentDate: new Date().getTime(),
+    loopMap: {
+      day: false, // 日不循环
+      year: true, // 年循环
+    },
+  },
+
+  onInput(event) {
+    this.setData({
+      currentDate: event.detail,
+    });
+  },
+});
+```
+
 ### 样式风格 `v2.3.7`
 
 `active-style` 可以修改选中项的样式；`column-styles` 可以设置每一列的样式；`font-styles` 可以设置每一列文字的样式。
@@ -326,6 +357,7 @@ Page({
 | columnStyles `v2.3.7`  | 任意列的样式          | _Record\<string, string>_  | -     |
 | font-styles `v2.3.7`  | 任意列的字体样式           | _Record\<string, string>_  | -     |
 | active-style `v2.3.7`  | 选中项的样式           | _string_  | -     |
+| loop-map `v2.13.4`  | 控制每一列是否循环滚动(`type` 可选值为 `year`, `month`, `day`, `hour`, `minute`, `12HourClock`)，未配置的列保持默认行为：`year` 与 `12HourClock` 不循环，其余列循环           | _Record\<type, boolean>_  | -     |
 
 ### Events
 
