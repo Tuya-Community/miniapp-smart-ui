@@ -18,6 +18,8 @@ jobs:
         fetch-depth: 0
 
     - name: Read PLANS.md and Send to WeChat Bot
+      env:
+        FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
       run: |
         if [ ! -f PLANS.md ]; then
           echo "PLANS.md not found"
@@ -84,3 +86,36 @@ jobs:
         fi
         
         echo "Message sent successfully!"
+
+        # ---- 同步发送到飞书群（自定义机器人 Webhook）----
+        if [ -z "$FEISHU_WEBHOOK" ]; then
+          echo "⚠️  FEISHU_WEBHOOK 未配置，跳过飞书通知"
+        else
+          # markdown 标题行(#/##/###)转飞书卡片 lark_md 加粗，链接原样保留可点击
+          BODY_MD=$(echo "$CONTENT" | sed -E 's/^#{1,6}[[:space:]]+(.*)$/**\1**/')
+          FS_PAYLOAD=$(jq -n --arg content "$BODY_MD" '{
+              msg_type: "interactive",
+              card: {
+                config: { wide_screen_mode: true },
+                header: {
+                  template: "blue",
+                  title: { tag: "plain_text", content: "📋 Smart UI 小程序 PLANS 更新" }
+                },
+                elements: [
+                  { tag: "div", text: { tag: "lark_md", content: $content } }
+                ]
+              }
+            }')
+          FS_RESP=$(curl -s -w "\n%{http_code}" "$FEISHU_WEBHOOK" \
+            -H 'Content-Type: application/json' \
+            -d "$FS_PAYLOAD")
+          FS_BODY=$(echo "$FS_RESP" | head -n -1)
+          FS_HTTP=$(echo "$FS_RESP" | tail -n 1)
+          echo "Feishu HTTP: $FS_HTTP, Response: $FS_BODY"
+          FS_CODE=$(echo "$FS_BODY" | jq -r '.code // 0')
+          if [ "$FS_CODE" != "0" ]; then
+            echo "⚠️  Feishu 发送失败: $FS_BODY（不阻断流程）"
+          else
+            echo "✅ Feishu notification sent successfully"
+          fi
+        fi
