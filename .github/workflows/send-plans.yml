@@ -1,4 +1,4 @@
-name: Send PLANS to WeChat
+name: Send PLANS to WeChat & Feishu
 
 on:
   push:
