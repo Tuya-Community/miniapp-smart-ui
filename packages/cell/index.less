@@ -35,24 +35,10 @@
 
   &__title {
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-  }
-
-  &__value {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    overflow: hidden;
-    text-align: right;
-    vertical-align: middle;
-    color: var(--cell-value-color, @cell-value-color);
-  }
-
-  &__title,
-  &__value {
-    flex: 1;
 
     &:empty {
       display: none;
@@ -60,9 +46,20 @@
   }
 
   &__value {
+    display: flex;
     flex: none;
-    margin-left: 8px;
-    max-width: 120px;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: var(--cell-value-max-width, @cell-value-max-width);
+    margin-left: var(--padding-xs, @padding-xs);
+    overflow: hidden;
+    text-align: right;
+    vertical-align: middle;
+    color: var(--cell-value-color, @cell-value-color);
+
+    &:empty {
+      display: none;
+    }
   }
 
   &__left-icon-wrap,
