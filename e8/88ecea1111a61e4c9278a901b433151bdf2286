@@ -1,0 +1,31 @@
+packages/cell/README.md
+  s_a65cb7ca58a55c::t_365e8bf13a7dff 228
+packages/cell/index.less
+  s_a65cb7ca58a55c::t_01fe195489507d 38,42-45
+  s_a65cb7ca58a55c::t_ec1521f0f37d34 50,53-54
+packages/common/style/var.less
+  s_a65cb7ca58a55c::t_6fa5c5efd75bf5 326
+packages/cell/README.en.md
+  s_a65cb7ca58a55c::t_d8abafdd9285e2 228
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "e888ecea1111a61e4c9278a901b433151bdf2286",
+  "prompts": {},
+  "humans": {
+    "h_eabc34dcaf7833": {
+      "author": "muhai <muhai.li@tuya.com>"
+    }
+  },
+  "sessions": {
+    "s_a65cb7ca58a55c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a8fda3ef-c5bb-45b0-923c-a696dac50a5b",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "muhai <muhai.li@tuya.com>"
+    }
+  }
+}
