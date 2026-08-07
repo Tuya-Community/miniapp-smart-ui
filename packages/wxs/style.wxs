@@ -28,7 +28,7 @@ function style(styles) {
       .join(';') || '';
   }
 
-  if (typeof styles === 'object' && 'Object' === styles.constructor) {
+  if (typeof styles === 'object') {
     return object
     .keys(styles)
     .filter(function (key) {
