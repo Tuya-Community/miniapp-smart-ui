@@ -1,0 +1,30 @@
+packages/cell/README.en.md
+  s_848fae3d392ce4::t_30f160b5ec420d 229
+packages/cell/README.md
+  s_848fae3d392ce4::t_d74dbbe00880d8 229
+packages/cell/index.less
+  s_848fae3d392ce4::t_956a3c4e065483 54
+packages/common/style/var.less
+  s_848fae3d392ce4::t_a17ad68f12604d 327
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "049f9ea4d6a24ec00b29a5572c81dbefedc1937a",
+  "prompts": {},
+  "humans": {
+    "h_eabc34dcaf7833": {
+      "author": "muhai <muhai.li@tuya.com>"
+    }
+  },
+  "sessions": {
+    "s_848fae3d392ce4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "affa7d3b-64e9-4490-a4aa-10525a7f05db",
+        "model": "unknown"
+      },
+      "human_author": "muhai <muhai.li@tuya.com>"
+    }
+  }
+}
