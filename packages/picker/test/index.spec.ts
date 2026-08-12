@@ -1106,11 +1106,22 @@ describe('picker', () => {
     });
 
     test('should NOT window when loop is enabled', async () => {
-      const instance = renderBig('loop');
+      // 仅需超过阈值 2000 即可验证「不窗口化」；用 2500 而非 10w，
+      // 避免 loop 关闭窗口化后把超长数组真渲染给子组件导致测试超时
+      const overThreshold = 2500;
+      const comp = simulate.render(
+        simulate.load({
+          usingComponents: { 'smart-picker': SmartPicker },
+          template: `<smart-picker id="wrapper" loop columns="{{ columns }}" />`,
+          data: { columns: new Array(overThreshold).fill(0).map((_, i) => i) },
+        })
+      );
+      comp.attach(document.createElement('parent-wrapper'));
+      const instance = comp.querySelector('#wrapper')?.instance;
       await simulate.sleep(20);
 
       expect(instance._windows[0].windowed).toBe(false);
-      expect(instance.data.renderColumns[0].values.length).toBe(100000);
+      expect(instance.data.renderColumns[0].values.length).toBe(overThreshold);
     });
   });
 });
