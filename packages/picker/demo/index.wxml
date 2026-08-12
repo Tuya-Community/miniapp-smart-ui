@@ -78,6 +78,19 @@
 </demo-block>
 
 
+<demo-block title="{{I18n.t('bigDataUsage')}}">
+  <view wx:if="{{ !bigColumn.length }}" class="big-data-btn" bind:tap="loadBigData">加载 10w 选项</view>
+  <block wx:else>
+    <view class="big-data-tip">options.length = {{ bigColumn.length }}，注入耗时 {{ bigDataCost }}ms（子列仅接收 1000 条窗口切片，滚动停稳后自动回中）</view>
+    <smart-picker
+      item-height="{{ isA11y ? 52 : 44 }}"
+      columns="{{ bigColumn }}"
+      default-index="{{ 50000 }}"
+      bind:change="onChange1"
+    />
+  </block>
+</demo-block>
+
 <demo-block title="{{I18n.t('more3d')}}">
   <smart-picker
     loop

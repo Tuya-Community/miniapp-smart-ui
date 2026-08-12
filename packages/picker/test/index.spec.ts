@@ -1037,5 +1037,81 @@ describe('picker', () => {
       expect(children).toEqual([]);
     }
   });
+
+  describe('windowing for large columns (> 2000, non-loop)', () => {
+    const bigValues = new Array(100000).fill(0).map((_, i) => i);
+
+    const renderBig = (extra = '') => {
+      const comp = simulate.render(
+        simulate.load({
+          usingComponents: {
+            'smart-picker': SmartPicker,
+          },
+          template: `<smart-picker id="wrapper" columns="{{ columns }}" ${extra} />`,
+          data: {
+            columns: bigValues,
+          },
+        })
+      );
+      comp.attach(document.createElement('parent-wrapper'));
+      return comp.querySelector('#wrapper')?.instance;
+    };
+
+    test('should only pass a 1000-item window to the child, not the full array', async () => {
+      const instance = renderBig();
+      await simulate.sleep(20);
+
+      // 只切一段交给渲染层，完整数据留在逻辑层实例属性
+      expect(instance._windows[0].windowed).toBe(true);
+      expect(instance._windows[0].full.length).toBe(100000);
+      expect(instance.data.renderColumns[0].values.length).toBe(1000);
+    });
+
+    test('should report the global index, not the local window index', async () => {
+      const instance = renderBig();
+      await simulate.sleep(20);
+
+      // 跳到全局第 87000 项：窗口以其为中心重建，getColumnIndex 应还原为全局下标
+      await instance.setColumnIndex(0, 87000);
+      await simulate.sleep(20);
+
+      expect(instance.getColumnIndex(0)).toBe(87000);
+      // 该全局项被切进窗口，取值正确
+      expect(instance.getColumnValue(0)).toBe(87000);
+      // 局部下标居中，窗口大小不变
+      expect(instance.data.renderColumns[0].values.length).toBe(1000);
+    });
+
+    test('getColumnValues should return the full data set', async () => {
+      const instance = renderBig();
+      await simulate.sleep(20);
+
+      expect(instance.getColumnValues(0).length).toBe(100000);
+    });
+
+    test('should NOT window a small column (<= 2000)', async () => {
+      const comp = simulate.render(
+        simulate.load({
+          usingComponents: { 'smart-picker': SmartPicker },
+          template: `<smart-picker id="wrapper" columns="{{ columns }}" />`,
+          data: { columns: new Array(1500).fill(0).map((_, i) => i) },
+        })
+      );
+      comp.attach(document.createElement('parent-wrapper'));
+      const instance = comp.querySelector('#wrapper')?.instance;
+      await simulate.sleep(20);
+
+      expect(instance._windows[0].windowed).toBe(false);
+      expect(instance.data.renderColumns[0].values.length).toBe(1500);
+    });
+
+    test('should NOT window when loop is enabled', async () => {
+      const instance = renderBig('loop');
+      await simulate.sleep(20);
+
+      expect(instance._windows[0].windowed).toBe(false);
+      expect(instance.data.renderColumns[0].values.length).toBe(100000);
+    });
+  });
 });
 

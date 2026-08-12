@@ -92,6 +92,9 @@ SmartComponent({
         values: new Array(100).fill(1).map((x, i) => i),
       },
     ],
+    // 10w 大数据量：验证超长列表的初始化与滚动性能（点击按钮按需加载，避免每次进页面都灌 10w）
+    bigColumn: [] as number[],
+    bigDataCost: 0,
   },
 
   mounted() {
@@ -136,6 +139,14 @@ SmartComponent({
       const { picker, value } = event.detail;
       picker.setColumnValues(1, this.data.column3[value[0]]);
       getApp().picker = picker;
+    },
+    // 按需生成 10w 选项并注入，记录 setData 往返耗时
+    loadBigData() {
+      const bigColumn = new Array(100000).fill(0).map((x, i) => i);
+      const start = Date.now();
+      this.setData({ bigColumn }, () => {
+        this.setData({ bigDataCost: Date.now() - start });
+      });
     },
     animationStart() {
       console.log('animationStart');
