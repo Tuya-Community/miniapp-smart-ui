@@ -68,6 +68,16 @@
   />
 </demo-block>
 
+<demo-block title="{{I18n.t('controlColumnLoop')}}">
+  <smart-datetime-picker
+    type="date"
+    data-type="date"
+    value="{{ currentDate1 }}"
+    loop-map="{{ loopMap }}"
+    bind:input="onInput"
+  />
+</demo-block>
+
 <demo-block title="{{I18n.t('optionFilter')}}">
   <smart-datetime-picker
     type="time"

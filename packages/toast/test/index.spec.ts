@@ -44,8 +44,8 @@ describe('toast', () => {
     const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation();
     const appLogInfoSpy = jest.spyOn(appLog, 'info');
 
-    // First toast component - simulate it already mounted
-    contextRef.value['#toast1'] = mockPage;
+    // First toast component - simulate it already mounted on the same page
+    contextRef.value['#toast1'] = [{ page: mockPage, instance: {} as any }];
 
     // Second toast component with same id
     const comp = simulate.render(
@@ -94,7 +94,9 @@ describe('toast', () => {
     // Attach will trigger ready lifecycle
     comp.attach(document.createElement('parent-wrapper'));
 
-    expect(contextRef.value['#toast1']).toBe(mockPage);
+    const entries = contextRef.value['#toast1'] as any[];
+    expect(entries).toHaveLength(1);
+    expect(entries[0].page).toBe(mockPage);
     expect(appLogInfoSpy).toHaveBeenCalledWith('Toast #toast1 mounted');
   });
 
@@ -128,9 +130,6 @@ describe('toast', () => {
     (getCurrentPage as jest.Mock).mockReturnValue(mockPage);
     const appLogInfoSpy = jest.spyOn(appLog, 'info');
 
-    // First set up contextRef as if component was mounted
-    contextRef.value['#toast1'] = mockPage;
-
     const comp = simulate.render(
       simulate.load({
         usingComponents: {
@@ -139,22 +138,22 @@ describe('toast', () => {
         template: `<smart-toast id="toast1" />`,
       })
     );
-    
+
     const toast1 = comp.querySelector('#toast1');
     if (toast1 && toast1.instance) {
       toast1.instance.id = 'toast1';
     }
-    
+
     comp.attach(document.createElement('parent-wrapper'));
 
-    // Verify it was set during mount
-    expect(contextRef.value['#toast1']).toBe(mockPage);
+    // Verify it was registered during mount
+    expect(contextRef.value['#toast1']).toHaveLength(1);
 
     // Detach will trigger detached lifecycle (which maps to destroyed)
     comp.detach();
 
-    // Should clear contextRef when destroyed
-    expect(contextRef.value['#toast1']).toBeNull();
+    // Should remove its own entry when destroyed
+    expect(contextRef.value['#toast1']).toEqual([]);
     expect(appLogInfoSpy).toHaveBeenCalledWith('Toast #toast1 destroyed');
   });
 
@@ -526,6 +525,50 @@ describe('toast', () => {
     Toast('test message');
 
     expect(mockPage2.selectComponent).toHaveBeenCalledWith('#smart-toast');
+  });
+
+  test('should allow same selector on multiple pages and target current page', () => {
+    const toastOnPageA = { setData: jest.fn(), clear: null, timer: null };
+    const toastOnPageB = { setData: jest.fn(), clear: null, timer: null };
+    const pageA = { selectComponent: jest.fn(() => toastOnPageA) } as any;
+    const pageB = { selectComponent: jest.fn(() => toastOnPageB) } as any;
+
+    // 两个页面挂载了相同 id 的 toast（不再报冲突、互不覆盖）
+    contextRef.value['#smart-toast'] = [
+      { page: pageA, instance: toastOnPageA as any },
+      { page: pageB, instance: toastOnPageB as any },
+    ];
+
+    // 当前栈顶是 pageA，Toast() 应命中 pageA 而非最后挂载的 pageB
+    (getCurrentPage as jest.Mock).mockReturnValue(pageA);
+    Toast('on page A');
+    expect(pageA.selectComponent).toHaveBeenCalledWith('#smart-toast');
+    expect(toastOnPageA.setData).toHaveBeenCalledWith(
+      expect.objectContaining({ message: 'on page A' })
+    );
+    expect(pageB.selectComponent).not.toHaveBeenCalled();
+
+    // 切到 pageB 后再调用，命中 pageB
+    (getCurrentPage as jest.Mock).mockReturnValue(pageB);
+    Toast('on page B');
+    expect(pageB.selectComponent).toHaveBeenCalledWith('#smart-toast');
+    expect(toastOnPageB.setData).toHaveBeenCalledWith(
+      expect.objectContaining({ message: 'on page B' })
+    );
+  });
+
+  test('should fall back to registered instance when selectComponent returns null', () => {
+    const registeredToast = { setData: jest.fn(), clear: null, timer: null };
+    // 当前页 selectComponent 取不到节点（如跨页/时序问题），退回已登记实例
+    const page = { selectComponent: jest.fn(() => null) } as any;
+    contextRef.value['#smart-toast'] = [{ page, instance: registeredToast as any }];
+    (getCurrentPage as jest.Mock).mockReturnValue(page);
+
+    Toast('fallback');
+
+    expect(registeredToast.setData).toHaveBeenCalledWith(
+      expect.objectContaining({ message: 'fallback' })
+    );
   });
 
   test('should use context function when provided', () => {

@@ -33,6 +33,10 @@ SmartComponent({
       },
       day: '{{day}}日',
     },
+    loopMap: {
+      day: false,
+      year: true,
+    },
     fontStylesTwo: {
       year: 'font-family: "Manrope", sans-serif;',
       day: 'font-family: "Manrope", sans-serif;',
