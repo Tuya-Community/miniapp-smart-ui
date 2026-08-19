@@ -1822,5 +1822,32 @@ describe('tabs', () => {
       expect(instance.data.lineOffsetLeft).toBeGreaterThan(0);
     }
   });
-});
 
+  test('should not throw when scrollIntoView gets null rects', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-tabs': SmartTabs,
+        },
+        template: `<smart-tabs id="wrapper" type="line" swipe-threshold="{{ 4 }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance = wrapper?.instance;
+    await simulate.sleep(10);
+
+    if (instance) {
+      // Android can resolve the layout query before the tabs are laid out
+      (getAllRect as jest.Mock).mockResolvedValueOnce(null);
+      (getRect as jest.Mock).mockResolvedValueOnce(null);
+      instance.setData({ scrollable: true, currentIndex: 0, scrollLeft: 0 });
+
+      expect(() => instance.scrollIntoView()).not.toThrow();
+      await simulate.sleep(50);
+
+      expect(instance.data.scrollLeft).toBe(0);
+    }
+  });
+});

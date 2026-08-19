@@ -276,7 +276,14 @@ SmartComponent({
 
       Promise.all([getAllRect(this, '.smart-tab'), getRect(this, '.smart-tabs__nav')]).then(
         ([tabRects, navRect]) => {
-          const tabRect = tabRects[currentIndex];
+          const tabRect = tabRects?.[currentIndex];
+
+          // On Android the layout query can resolve before the tabs are laid out,
+          // in which case there is nothing to scroll to yet.
+          if (tabRect == null || navRect == null) {
+            return;
+          }
+
           const offsetLeft = tabRects
             .slice(0, currentIndex)
             .reduce((prev, curr) => prev + curr.width, 0);

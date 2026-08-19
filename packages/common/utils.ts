@@ -56,7 +56,7 @@ export function getRect(context: WechatMiniprogram.Component.TrivialInstance, se
       .in(context)
       .select(selector)
       .boundingClientRect()
-      .exec((rect = []) => resolve(rect[0]));
+      .exec((rect = []) => resolve((rect || [])[0]));
   });
 }
 
@@ -66,7 +66,7 @@ export function getAllRect(context: WechatMiniprogram.Component.TrivialInstance,
       .in(context)
       .selectAll(selector)
       .boundingClientRect()
-      .exec((rect = []) => resolve(rect[0]));
+      .exec((rect = []) => resolve((rect || [])[0] || []));
   });
 }
 
