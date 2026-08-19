@@ -85,8 +85,8 @@ SmartComponent({
 
       const { clientX } = event.touches[0];
 
-      getAllRect(this, '.smart-rate__icon').then(list => {
-        const target = list
+      getAllRect(this, '.smart-rate__icon').then((list = []) => {
+        const target = (list || [])
           .sort((cur, next) => cur.dataset.score - next.dataset.score)
           .find(item => clientX >= item.left && clientX <= item.right);
 
