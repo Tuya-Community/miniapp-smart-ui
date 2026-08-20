@@ -72,12 +72,11 @@ npm view @tuya-miniapp/smart-ui dist-tags --json
 
 1. **同步分支**：`git pull --ff-only origin release/2.x`（ray 的 CI 会往这个分支推 `CI(template)` 和 `chore(release)` 提交，本地常落后）。
 
-2. **升级依赖**（`package.json`）。格式与 `build/updatePackage.js` 保持一致：正式版用 `^`，beta 用精确号。
-   ```
-   "@tuya-miniapp/smart-ui": "2.13.4-beta-3"  →  "^2.13.4"
-   ```
+2. **依赖不用手改，交给 CI**。`build/updatePackage.js` 会读 miniapp 仓库 `package.json` 的 `version` 并写进依赖：非 beta 写 `^X.Y.Z`，beta 写精确号。只要**在 miniapp 正式版本发布之后**触发一次 `CI(template)`（往 `release/2.x` 推任意提交即可），它就会把依赖和 yarn.lock 一起改对。
 
-3. **更新 yarn.lock**。取 npm 元数据后改 entry 的 key/version/resolved/integrity：
+   ⚠️ **顺序反了会被回滚**：在 miniapp 的 `package.json` 还是 `X.Y.Z-beta-N` 时手动改成 `^X.Y.Z`，随后跑的 CI 会按 miniapp 当时的版本把它改回 beta 号——2.13.4 就是这么让正式包依赖上 beta 的（见「坑」）。
+
+3. **若确实要手改**（比如等不及 CI），改完 `package.json` 后同步 yarn.lock 的 entry：
    ```bash
    npm view @tuya-miniapp/smart-ui@X.Y.Z dist.shasum dist.integrity
    ```
@@ -86,6 +85,7 @@ npm view @tuya-miniapp/smart-ui dist-tags --json
    yarn install --frozen-lockfile --ignore-scripts
    grep '"version"' node_modules/@tuya-miniapp/smart-ui/package.json
    ```
+   并且**确认 miniapp 的 package.json 已经是正式号**，否则下一次 CI 会推翻它。
 
 4. **同步 PLANS.md**：`build/copyPLANS.js` 是**全量覆盖**，所以直接把 miniapp 的 PLANS.md 拷过来，保证两边逐字一致。
    ```bash
@@ -115,6 +115,8 @@ npm view @tuya-miniapp/smart-ui dist-tags --json
 
 ## 坑（都踩过）
 
+- **依赖降级事故（2.13.4 踩过）**：miniapp 的 PR 合并后，它的 CI 才会把 `package.json` 打成正式号。如果在这之前就在 ray 手改依赖并推送，ray 的 `CI(template)` 会读到 miniapp 仍是 beta 的 `package.json`，把依赖改回 `X.Y.Z-beta-N`，而这个回滚后的内容就是最终合并、发布的版本——结果正式包 `@ray-js/smart-ui@X.Y.Z` 依赖 `@tuya-miniapp/smart-ui@X.Y.Z-beta-N`。已发布的包改不了，只能下个版本带上。**正确做法：确认 miniapp 正式包发布（阶段 B）后再动 ray，并让 CI 去写依赖。**
+- **合并前后都要复查依赖**：开 PR 前和合并前各看一次 `git show origin/release/2.x:package.json | grep tuya-miniapp`，确保没被 CI 改回 beta。
 - **PLANS 里的「测试版本 `X.Y.Z-beta-N`」两仓库编号不一定对得上**：各自 CI 各自递增。要确认某个修复落在哪个 beta，看**本仓库** `git log` 里 `chore(release)` 提交与该修复合并提交的先后，不要信 PLANS 的数字。
 - **ray 的 changelog 可能落后一版**，见阶段 C 第 5 步。
 - **PLANS 的变量名/属性名会有笔误**（如同一个变量写两遍），以代码为准。
@@ -133,13 +135,15 @@ npm view @tuya-miniapp/smart-ui dist-tags --json
 - [ ] `npm view @tuya-miniapp/smart-ui dist-tags` 的 `latest` 已是目标正式版本
 
 阶段 C（ray-smart-ui）
-- [ ] 依赖为 `^X.Y.Z`，`yarn install --frozen-lockfile` 通过，`node_modules` 内实际版本正确
+- [ ] 依赖为 `^X.Y.Z`（CI 写的或手改后确认未被回滚），`yarn install --frozen-lockfile` 通过，`node_modules` 内实际版本正确
+- [ ] 合并前再确认一次远端 `release/2.x` 的依赖仍是 `^X.Y.Z`
 - [ ] `PLANS.md` 与 miniapp 逐字一致（`diff` 无输出）
 - [ ] changelog 用 Ray 命名，且没有漏写的历史版本
 - [ ] PR：base `main`、head `release/2.x`、标题为纯版本号、正文含 `## English`
 
 收尾
 - [ ] 两个 PR 链接都回传给用户，并说明合并后由 CI 打正式版本号、发 npm
+- [ ] 合并后把 `main` 合回两个仓库的 `release/2.x`（拿到 CI 打的正式版本号），并核对 `npm view <包名>@X.Y.Z dependencies` 无误
 
 ## 与其他 skill 的关系
 
