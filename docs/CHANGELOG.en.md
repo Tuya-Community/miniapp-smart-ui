@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.13.4 (2026-8-20)
+
+### Features ✨
+
+- datetime-picker: Add the `loop-map` property to control whether each column scrolls in a loop (for example, disabling the loop on the day column) ([1127c20](https://github.com/Tuya-Community/miniapp-smart-ui/pull/210/commits/1127c203e61df0c10c0eb66608c4fab9bc5858e2))
+- cell: Add the `--cell-value-max-width` and `--cell-value-margin-left` CSS variables to limit the max width of the value area and adjust its spacing from the title ([pull/211](https://github.com/Tuya-Community/miniapp-smart-ui/pull/211))
+
+### Bug Fixes 🐛
+
+- toast: Fix Toast failing to open when the same `selector` is instantiated on multiple pages ([c214934](https://github.com/Tuya-Community/miniapp-smart-ui/pull/208/commits/c2149342c2abcc214e65a8a66780659d166f815a))
+- cell: Fix the spacing style issue inside the cell ([pull/211](https://github.com/Tuya-Community/miniapp-smart-ui/pull/211))
+- tabs: Fix the `Cannot read property '0' of null` error on Android when tabs scroll horizontally (tab count exceeds `swipe-threshold`) and the layout query resolves before the tabs are laid out; also harden the null handling of `getRect` / `getAllRect` ([pull/214](https://github.com/Tuya-Community/miniapp-smart-ui/pull/214))
+
 ## v2.13.3 (2026-7-30)
 
 ### Features ✨
