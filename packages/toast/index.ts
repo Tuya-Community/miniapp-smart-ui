@@ -1,7 +1,6 @@
 import { Success, Alarm, Error } from './icons';
 import { SmartComponent } from '../common/component';
-import { contextRef } from './toast';
-import { getCurrentPage } from '../common/utils';
+import { registerToastContext, unregisterToastContext } from './toast';
 import appLog from '../common/appLog';
 
 SmartComponent({
@@ -43,16 +42,16 @@ SmartComponent({
   },
   mounted: function () {
     if (!this.id) return;
-    if (contextRef.value[`#${this.id}`]) {
+    const repeated = registerToastContext(`#${this.id}`, this);
+    if (repeated) {
       console.error(`Toast component #${this.id} repeated!`);
       appLog.info(`Toast component #${this.id} repeated!`);
     }
-    contextRef.value[`#${this.id}`] = getCurrentPage();
     appLog.info(`Toast #${this.id} mounted`);
   },
   destroyed: function () {
     if (!this.id) return;
-    contextRef.value[`#${this.id}`] = null;
+    unregisterToastContext(`#${this.id}`, this);
     appLog.info(`Toast #${this.id} destroyed`);
   },
   methods: {

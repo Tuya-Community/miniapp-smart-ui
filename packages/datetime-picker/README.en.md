@@ -254,6 +254,37 @@ Page({
 });
 ```
 
+### Control whether a column scrolls in a loop `v2.13.4`
+
+By default the `year` and `12HourClock` columns do not loop, while the other columns (month, day, hour, minute) do. `loop-map` overrides that default per column; columns that are not listed keep the default behavior.
+
+```html
+<smart-datetime-picker
+  type="date"
+  value="{{ currentDate }}"
+  loop-map="{{ loopMap }}"
+  bind:input="onInput"
+/>
+```
+
+```javascript
+Page({
+  data: {
+    currentDate: new Date().getTime(),
+    loopMap: {
+      day: false, // the day column does not loop
+      year: true, // the year column loops
+    },
+  },
+
+  onInput(event) {
+    this.setData({
+      currentDate: event.detail,
+    });
+  },
+});
+```
+
 ### Style `v2.3.7`
 
 `active-style` can modify the style of the selected item; `column-styles` can set the style of each column; `font-styles` can set the text style of each column.
@@ -325,6 +356,7 @@ Page({
 | columnStyles `v2.3.7`  | Style of any column          | _Record\<string, string>_  | -     |
 | font-styles `v2.3.7`  | Font style of any column           | _Record\<string, string>_  | -     |
 | active-style `v2.3.7`  | Selected Item Style           | _string_  | -     |
+| loop-map `v2.13.4`  | Whether each column scrolls in a loop (`type` possible values are `year`, `month`, `day`, `hour`, `minute`, `12HourClock`). Columns not listed keep the default: `year` and `12HourClock` do not loop, other columns do | _Record\<type, boolean>_  | -     |
 
 ### Events
 

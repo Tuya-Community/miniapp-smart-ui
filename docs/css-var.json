@@ -1217,6 +1217,16 @@
     "value": "var(--app-B6-N3, rgba(0, 0, 0, 0.5))",
     "decs": ""
   },
+  "cell-value-max-width": {
+    "name": "@cell-value-max-width",
+    "value": "none",
+    "decs": ""
+  },
+  "cell-value-margin-left": {
+    "name": "@cell-value-margin-left",
+    "value": "8px",
+    "decs": ""
+  },
   "cell-icon-size": {
     "name": "@cell-icon-size",
     "value": "24px",

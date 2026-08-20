@@ -139,6 +139,11 @@ SmartComponent({
       type: Object,
       value: undefined,
     },
+    loopMap: {
+      type: Object,
+      value: undefined,
+      observer: 'updateValue',
+    },
   },
 
   data: {
@@ -224,6 +229,16 @@ SmartComponent({
       return formatter(type, value);
     },
 
+    // 某一列是否循环滚动，loopMap 未配置该列时使用默认值（年份、12 小时制上下午不循环）
+    getColumnLoop(type: string) {
+      const { loopMap } = this.data;
+      const loop = loopMap?.[type] ?? (type === '12HourClock' ? loopMap?.part : undefined);
+      if (typeof loop === 'boolean') {
+        return loop;
+      }
+      return !['12HourClock', 'year'].includes(type);
+    },
+
     updateColumns(values: Array<string | number>) {
       const { locale, columnStyles, fontStyles } = this.data;
       const results = this.getOriginColumns().map((column, index) => {
@@ -237,7 +252,7 @@ SmartComponent({
           style: columnStyles?.[column.type],
           fontStyle: fontStyles?.[column.type],
           activeIndex: activeIndex === -1 ? 0 : activeIndex,
-          loop: !['12HourClock', 'year'].includes(column.type),
+          loop: this.getColumnLoop(column.type),
         };
       });
       return this.setData({ columns: results });
