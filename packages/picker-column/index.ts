@@ -20,6 +20,11 @@ SmartComponent({
     className: String,
     itemHeight: Number,
     disabled: Boolean,
+    // 是否为父级窗口化列：为 true 时对大幅度的 active-index 跳变强制关闭过渡（用于停稳回中的静默重定位）
+    windowed: {
+      type: Boolean,
+      value: false,
+    },
     visibleItemCount: Number,
     activeStyle: {
       type: String,
@@ -31,7 +36,13 @@ SmartComponent({
       observer(value) {
         if (!this.data.isInit) return;
         this.updateUint(value);
-        this.updateCurrentIndex(this.data.currentIndex);
+        // 窗口化列：切片与 activeIndex（局部）在同一批 setData 到达，
+        // 此处直接采用新的 activeIndex，使「新切片 + 新下标」原子落地，避免差一帧的错位闪烁
+        const nextIndex =
+          this.data.windowed && this.data.activeIndex !== null && this.data.activeIndex !== undefined
+            ? this.data.activeIndex
+            : this.data.currentIndex;
+        this.updateCurrentIndex(nextIndex);
         this.updateVisibleOptions();
       },
     },

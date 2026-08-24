@@ -54,6 +54,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -62,31 +63,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{false}}"
-                  data-options="{{
-                    Array [
-                      "2018",
-                      "2019",
-                      "2020",
-                      "2021",
-                      "2022",
-                      "2023",
-                      "2024",
-                      "2025",
-                      "2026",
-                      "2027",
-                      "2028",
-                      "2029",
-                      "2030",
-                      "2031",
-                      "2032",
-                      "2033",
-                      "2034",
-                      "2035",
-                      "2036",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-0"
                   instanceId="smart-picker-column-0"
                   isdestroy="{{false}}"
@@ -118,6 +97,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -280,6 +260,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{2}}"
@@ -288,24 +269,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-1"
                   instanceId="smart-picker-column-1"
                   isdestroy="{{false}}"
@@ -330,6 +296,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -492,6 +459,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{30}}"
@@ -500,43 +468,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                      "21",
-                      "22",
-                      "23",
-                      "24",
-                      "25",
-                      "26",
-                      "27",
-                      "28",
-                      "29",
-                      "30",
-                      "31",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-2"
                   instanceId="smart-picker-column-2"
                   isdestroy="{{false}}"
@@ -580,6 +514,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -742,6 +677,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -750,36 +686,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "00",
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                      "21",
-                      "22",
-                      "23",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-3"
                   instanceId="smart-picker-column-3"
                   isdestroy="{{false}}"
@@ -816,6 +725,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -978,6 +888,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -986,72 +897,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "00",
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                      "21",
-                      "22",
-                      "23",
-                      "24",
-                      "25",
-                      "26",
-                      "27",
-                      "28",
-                      "29",
-                      "30",
-                      "31",
-                      "32",
-                      "33",
-                      "34",
-                      "35",
-                      "36",
-                      "37",
-                      "38",
-                      "39",
-                      "40",
-                      "41",
-                      "42",
-                      "43",
-                      "44",
-                      "45",
-                      "46",
-                      "47",
-                      "48",
-                      "49",
-                      "50",
-                      "51",
-                      "52",
-                      "53",
-                      "54",
-                      "55",
-                      "56",
-                      "57",
-                      "58",
-                      "59",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-4"
                   instanceId="smart-picker-column-4"
                   isdestroy="{{false}}"
@@ -1124,6 +972,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -1350,6 +1199,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -1358,31 +1208,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{false}}"
-                  data-options="{{
-                    Array [
-                      "2018年",
-                      "2019年",
-                      "2020年",
-                      "2021年",
-                      "2022年",
-                      "2023年",
-                      "2024年",
-                      "2025年",
-                      "2026年",
-                      "2027年",
-                      "2028年",
-                      "2029年",
-                      "2030年",
-                      "2031年",
-                      "2032年",
-                      "2033年",
-                      "2034年",
-                      "2035年",
-                      "2036年",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-5"
                   instanceId="smart-picker-column-5"
                   isdestroy="{{false}}"
@@ -1414,6 +1242,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -1557,6 +1386,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -1565,24 +1395,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "January",
-                      "February",
-                      "March",
-                      "April",
-                      "May",
-                      "June",
-                      "July",
-                      "August",
-                      "September",
-                      "October",
-                      "November",
-                      "December",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-6"
                   instanceId="smart-picker-column-6"
                   isdestroy="{{false}}"
@@ -1607,6 +1422,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -1750,6 +1566,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -1758,43 +1575,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "01日",
-                      "02日",
-                      "03日",
-                      "04日",
-                      "05日",
-                      "06日",
-                      "07日",
-                      "08日",
-                      "09日",
-                      "10日",
-                      "11日",
-                      "12日",
-                      "13日",
-                      "14日",
-                      "15日",
-                      "16日",
-                      "17日",
-                      "18日",
-                      "19日",
-                      "20日",
-                      "21日",
-                      "22日",
-                      "23日",
-                      "24日",
-                      "25日",
-                      "26日",
-                      "27日",
-                      "28日",
-                      "29日",
-                      "30日",
-                      "31日",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-7"
                   instanceId="smart-picker-column-7"
                   isdestroy="{{false}}"
@@ -1838,6 +1621,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -2045,6 +1829,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -2053,31 +1838,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{false}}"
-                  data-options="{{
-                    Array [
-                      "2018",
-                      "2019",
-                      "2020",
-                      "2021",
-                      "2022",
-                      "2023",
-                      "2024",
-                      "2025",
-                      "2026",
-                      "2027",
-                      "2028",
-                      "2029",
-                      "2030",
-                      "2031",
-                      "2032",
-                      "2033",
-                      "2034",
-                      "2035",
-                      "2036",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-8"
                   instanceId="smart-picker-column-8"
                   isdestroy="{{false}}"
@@ -2109,6 +1872,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -2252,6 +2016,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -2260,24 +2025,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-9"
                   instanceId="smart-picker-column-9"
                   isdestroy="{{false}}"
@@ -2302,6 +2052,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -2509,6 +2260,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{2}}"
@@ -2517,23 +2269,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-10"
                   instanceId="smart-picker-column-10"
                   isdestroy="{{false}}"
@@ -2557,6 +2295,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -2700,6 +2439,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -2708,72 +2448,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "00",
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                      "21",
-                      "22",
-                      "23",
-                      "24",
-                      "25",
-                      "26",
-                      "27",
-                      "28",
-                      "29",
-                      "30",
-                      "31",
-                      "32",
-                      "33",
-                      "34",
-                      "35",
-                      "36",
-                      "37",
-                      "38",
-                      "39",
-                      "40",
-                      "41",
-                      "42",
-                      "43",
-                      "44",
-                      "45",
-                      "46",
-                      "47",
-                      "48",
-                      "49",
-                      "50",
-                      "51",
-                      "52",
-                      "53",
-                      "54",
-                      "55",
-                      "56",
-                      "57",
-                      "58",
-                      "59",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-11"
                   instanceId="smart-picker-column-11"
                   isdestroy="{{false}}"
@@ -2846,6 +2523,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -3053,6 +2731,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -3061,14 +2740,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{false}}"
-                  data-options="{{
-                    Array [
-                      "AM",
-                      "PM",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-12"
                   instanceId="smart-picker-column-12"
                   isdestroy="{{false}}"
@@ -3083,6 +2757,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -3226,6 +2901,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{11}}"
@@ -3234,24 +2910,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "12",
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-13"
                   instanceId="smart-picker-column-13"
                   isdestroy="{{false}}"
@@ -3276,6 +2937,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -3419,6 +3081,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -3427,72 +3090,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "00",
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                      "21",
-                      "22",
-                      "23",
-                      "24",
-                      "25",
-                      "26",
-                      "27",
-                      "28",
-                      "29",
-                      "30",
-                      "31",
-                      "32",
-                      "33",
-                      "34",
-                      "35",
-                      "36",
-                      "37",
-                      "38",
-                      "39",
-                      "40",
-                      "41",
-                      "42",
-                      "43",
-                      "44",
-                      "45",
-                      "46",
-                      "47",
-                      "48",
-                      "49",
-                      "50",
-                      "51",
-                      "52",
-                      "53",
-                      "54",
-                      "55",
-                      "56",
-                      "57",
-                      "58",
-                      "59",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-14"
                   instanceId="smart-picker-column-14"
                   isdestroy="{{false}}"
@@ -3565,6 +3165,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -3772,6 +3373,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{11}}"
@@ -3780,36 +3382,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "00",
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                      "21",
-                      "22",
-                      "23",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-15"
                   instanceId="smart-picker-column-15"
                   isdestroy="{{false}}"
@@ -3846,6 +3421,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -3989,6 +3565,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -3997,72 +3574,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "00",
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                      "21",
-                      "22",
-                      "23",
-                      "24",
-                      "25",
-                      "26",
-                      "27",
-                      "28",
-                      "29",
-                      "30",
-                      "31",
-                      "32",
-                      "33",
-                      "34",
-                      "35",
-                      "36",
-                      "37",
-                      "38",
-                      "39",
-                      "40",
-                      "41",
-                      "42",
-                      "43",
-                      "44",
-                      "45",
-                      "46",
-                      "47",
-                      "48",
-                      "49",
-                      "50",
-                      "51",
-                      "52",
-                      "53",
-                      "54",
-                      "55",
-                      "56",
-                      "57",
-                      "58",
-                      "59",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-16"
                   instanceId="smart-picker-column-16"
                   isdestroy="{{false}}"
@@ -4135,6 +3649,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -4342,6 +3857,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{2}}"
@@ -4350,33 +3866,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "2016",
-                      "2017",
-                      "2018",
-                      "2019",
-                      "2020",
-                      "2021",
-                      "2022",
-                      "2023",
-                      "2024",
-                      "2025",
-                      "2026",
-                      "2027",
-                      "2028",
-                      "2029",
-                      "2030",
-                      "2031",
-                      "2032",
-                      "2033",
-                      "2034",
-                      "2035",
-                      "2036",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-17"
                   instanceId="smart-picker-column-17"
                   isdestroy="{{false}}"
@@ -4410,6 +3902,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -4553,6 +4046,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{2}}"
@@ -4561,24 +4055,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-18"
                   instanceId="smart-picker-column-18"
                   isdestroy="{{false}}"
@@ -4603,6 +4082,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -4746,6 +4226,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{30}}"
@@ -4754,43 +4235,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{false}}"
-                  data-options="{{
-                    Array [
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                      "21",
-                      "22",
-                      "23",
-                      "24",
-                      "25",
-                      "26",
-                      "27",
-                      "28",
-                      "29",
-                      "30",
-                      "31",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-19"
                   instanceId="smart-picker-column-19"
                   isdestroy="{{false}}"
@@ -4834,6 +4281,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -5038,6 +4486,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{12}}"
@@ -5046,36 +4495,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "00",
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                      "21",
-                      "22",
-                      "23",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-20"
                   instanceId="smart-picker-column-20"
                   isdestroy="{{false}}"
@@ -5112,6 +4534,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -5255,6 +4678,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -5263,24 +4687,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "00",
-                      "05",
-                      "10",
-                      "15",
-                      "20",
-                      "25",
-                      "30",
-                      "35",
-                      "40",
-                      "45",
-                      "50",
-                      "55",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-21"
                   instanceId="smart-picker-column-21"
                   isdestroy="{{false}}"
@@ -5305,6 +4714,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -5486,6 +4896,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{2}}"
@@ -5494,33 +4905,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{false}}"
-                  data-options="{{
-                    Array [
-                      "2016",
-                      "2017",
-                      "2018",
-                      "2019",
-                      "2020",
-                      "2021",
-                      "2022",
-                      "2023",
-                      "2024",
-                      "2025",
-                      "2026",
-                      "2027",
-                      "2028",
-                      "2029",
-                      "2030",
-                      "2031",
-                      "2032",
-                      "2033",
-                      "2034",
-                      "2035",
-                      "2036",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-22"
                   instanceId="smart-picker-column-22"
                   isdestroy="{{false}}"
@@ -5554,6 +4941,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -5697,6 +5085,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{2}}"
@@ -5705,24 +5094,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-23"
                   instanceId="smart-picker-column-23"
                   isdestroy="{{false}}"
@@ -5747,6 +5121,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -5890,6 +5265,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{30}}"
@@ -5898,43 +5274,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                      "21",
-                      "22",
-                      "23",
-                      "24",
-                      "25",
-                      "26",
-                      "27",
-                      "28",
-                      "29",
-                      "30",
-                      "31",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-24"
                   instanceId="smart-picker-column-24"
                   isdestroy="{{false}}"
@@ -5978,6 +5320,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -6121,6 +5464,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -6129,36 +5473,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "00",
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                      "21",
-                      "22",
-                      "23",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-25"
                   instanceId="smart-picker-column-25"
                   isdestroy="{{false}}"
@@ -6195,6 +5512,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
@@ -6338,6 +5656,7 @@ exports[`should render demo and match snapshot 1`] = `
                   change:options="{{null}}"
                   change:valuekey="{{null}}"
                   change:visibleitemcount="{{null}}"
+                  change:windowed="{{null}}"
                   changeanimation="{{false}}"
                   class="smart-picker-column custom-class"
                   data-activeindex="{{0}}"
@@ -6346,72 +5665,9 @@ exports[`should render demo and match snapshot 1`] = `
                   data-isdestroy="{{false}}"
                   data-itemheight="{{44}}"
                   data-loop="{{true}}"
-                  data-options="{{
-                    Array [
-                      "00",
-                      "01",
-                      "02",
-                      "03",
-                      "04",
-                      "05",
-                      "06",
-                      "07",
-                      "08",
-                      "09",
-                      "10",
-                      "11",
-                      "12",
-                      "13",
-                      "14",
-                      "15",
-                      "16",
-                      "17",
-                      "18",
-                      "19",
-                      "20",
-                      "21",
-                      "22",
-                      "23",
-                      "24",
-                      "25",
-                      "26",
-                      "27",
-                      "28",
-                      "29",
-                      "30",
-                      "31",
-                      "32",
-                      "33",
-                      "34",
-                      "35",
-                      "36",
-                      "37",
-                      "38",
-                      "39",
-                      "40",
-                      "41",
-                      "42",
-                      "43",
-                      "44",
-                      "45",
-                      "46",
-                      "47",
-                      "48",
-                      "49",
-                      "50",
-                      "51",
-                      "52",
-                      "53",
-                      "54",
-                      "55",
-                      "56",
-                      "57",
-                      "58",
-                      "59",
-                    ]
-                  }}"
                   data-valuekey="text"
                   data-visibleitemcount="{{5}}"
+                  data-windowed="{{false}}"
                   id="smart-picker-column-26"
                   instanceId="smart-picker-column-26"
                   isdestroy="{{false}}"
@@ -6484,6 +5740,7 @@ exports[`should render demo and match snapshot 1`] = `
                   style="height:220px"
                   valuekey="text"
                   visibleitemcount="{{5}}"
+                  windowed="{{false}}"
                   bind:touchcancel=null
                   bind:touchend=null
                   catch:touchmove=null
