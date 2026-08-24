@@ -2,7 +2,7 @@
  * @Author: mjh
  * @Date: 2026-04-01 14:55:38
  * @LastEditors: mjh
- * @LastEditTime: 2026-08-24 11:44:37
+ * @LastEditTime: 2026-08-24 11:46:40
  * @Description: 
 -->
 [English](./README.md) | 简体中文
@@ -84,7 +84,6 @@ yarn dev
 ## 更新日志
 
 > 本项目遵从 [Angular Style Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)
-
 
 [官网更新日志](https://developer.tuya.com/material/smartui?comId=help-changelog&appType=miniapp)  
 
