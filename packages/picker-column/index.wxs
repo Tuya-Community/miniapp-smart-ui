@@ -226,7 +226,8 @@ function getDomState(ownerInstance) {
 
 function initDomState(instanceId, ownerInstance) {
   var state = getDomState(ownerInstance);
-  updateState(instanceId, 'options', state.options)
+  // options 不再通过 data-options 传入（避免把全量数组塞进 dataset / getDataset），
+  // 由 change:options -> updateValue('options', ...) 单独维护 state.options
   updateState(instanceId, 'valueKey', state.valuekey)
   updateState(instanceId, 'itemHeight', state.itemheight)
   updateState(instanceId, 'visibleItemCount', state.visibleitemcount)
@@ -234,6 +235,7 @@ function initDomState(instanceId, ownerInstance) {
   updateState(instanceId, 'loop', state.loop)
   updateState(instanceId, 'animationTime', state.animationtime)
   updateState(instanceId, 'changeAnimation', state.changeanimation)
+  updateState(instanceId, 'windowed', state.windowed)
 }
 
 
@@ -262,10 +264,14 @@ function updateListView(instanceId, ownerInstance) {
   var animationIndex = state.animationIndex || 0;
   var newAnimationIndex = getNewAnimationIndex(animationIndex, activeIndex, length, state.loop);
   var isSame = newAnimationIndex === animationIndex;
+  // 窗口化列的「停稳回中/重定位」会产生大幅度的 activeIndex 跳变，此时强制关闭过渡：
+  // 因为切片内容与位置是同步平移的，直接吸附即像素级一致，避免整轮旋转动画造成抖动。
+  var vOptionLength = state.visibleItemCount * 4 - 2;
+  var isWindowReposition = state.windowed && Math.abs(newAnimationIndex - animationIndex) > vOptionLength;
   updateState(instanceId, 'animationIndex', newAnimationIndex)
   updateVisibleOptions(state.animationIndex, instanceId);
   updateWrapperStyle(instanceId, ownerInstance, {
-    transition: (!state.changeAnimation || isSame) ? 'none' : 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
+    transition: (!state.changeAnimation || isSame || isWindowReposition) ? 'none' : 'transform ' + state.animationTime + 'ms cubic-bezier(0.2, 0.9, 0.25, 1)'
   });
 }
 
@@ -373,7 +379,8 @@ function touchEnd(instanceId) {
 
     // 惯性滚动参数配置
     var minVelocity = 0.1; // 最小速度阈值，低于此值停止滚动
-    var maxInertiaDistance = state.itemHeight * Math.max(Math.floor(state.options.length/4), 6); // 最大惯性滚动距离
+    // 最大惯性滚动距离：下限 6 项，上限 100 项，避免超长列表单次快滑滚动上万项
+    var maxInertiaDistance = state.itemHeight * Math.min(Math.max(Math.floor(state.options.length/4), 6), 100);
     // 计算惯性滚动距离
     var inertiaDistance = 0;
     if (recentVelocity > minVelocity) {

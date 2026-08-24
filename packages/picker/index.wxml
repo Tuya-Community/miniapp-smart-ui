@@ -14,7 +14,7 @@
   >
     <picker-column
       class="smart-picker__column"
-      wx:for="{{ computed.columns(columns) }}"
+      wx:for="{{ renderColumns }}"
       wx:key="index"
       data-index="{{ index }}"
       animation-time="{{ animationTime }}"
@@ -24,6 +24,7 @@
       active-style="{{ activeStyle }}"
       font-style="{{fontStyle ? fontStyle + ';' + computed.style(item.fontStyle): computed.style(item.fontStyle)}}"
       options="{{ item.values }}"
+      windowed="{{ item._windowed || false }}"
       disabled="{{ item.disabled || false }}"
       unit="{{ item.unit || unit }}"
       unit-gap="{{ item.unitGap }}"
