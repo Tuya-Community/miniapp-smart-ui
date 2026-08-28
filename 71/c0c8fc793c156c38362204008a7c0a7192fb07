@@ -1,0 +1,23 @@
+packages/common/style/var.less
+  s_d2952ba946c777::t_78c2ade13e4dd2 328
+packages/field/index.less
+  s_d2952ba946c777::t_c6f50721d6398b 5-7
+packages/cell/index.less
+  s_d2952ba946c777::t_24e255c5cf06b1 50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "71c0c8fc793c156c38362204008a7c0a7192fb07",
+  "prompts": {},
+  "sessions": {
+    "s_d2952ba946c777": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fcaef3dc-4701-4ba2-964f-dd9ea63f3fa9",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "muhai <muhai.li@tuya.com>"
+    }
+  }
+}
