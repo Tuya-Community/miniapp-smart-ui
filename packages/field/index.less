@@ -5,6 +5,9 @@
   // field 把 label 与 input 都放进 cell 的 value 区,需要 value 撑满整行,
   // 输入框才能靠右对齐(cell 默认 value 为 flex:none,仅内容宽)
   --cell-value-flex: 1;
+  // field 的 label 是 value 区最左内容,需与普通 cell 的 title 左对齐,
+  // 抵消 cell value 默认的 margin-left,避免 label 相对 title 右移
+  --cell-value-margin-left: 0;
 
   &__left__body {
     display: flex;

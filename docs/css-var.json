@@ -1229,7 +1229,7 @@
   },
   "cell-value-flex": {
     "name": "@cell-value-flex",
-    "value": "none",
+    "value": "0 1 auto",
     "decs": ""
   },
   "cell-icon-size": {
