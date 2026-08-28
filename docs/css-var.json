@@ -1227,6 +1227,11 @@
     "value": "8px",
     "decs": ""
   },
+  "cell-value-flex": {
+    "name": "@cell-value-flex",
+    "value": "none",
+    "decs": ""
+  },
   "cell-icon-size": {
     "name": "@cell-icon-size",
     "value": "24px",
