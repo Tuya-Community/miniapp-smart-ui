@@ -1667,6 +1667,11 @@
     "value": "16px",
     "decs": ""
   },
+  "field-value-margin-left": {
+    "name": "@field-value-margin-left",
+    "value": "0",
+    "decs": ""
+  },
   "field-card-border-radius": {
     "name": "@field-card-border-radius",
     "value": "8px",
