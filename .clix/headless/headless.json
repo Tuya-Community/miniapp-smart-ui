@@ -1,0 +1,6 @@
+{
+  "_comment": "clix headless 项目级配置。functionalPages: 把功能页(__functional__ 子模块)指到本地源码仓库，serve 启动构建并覆盖云端下载版；miniPrograms: 把 navigateToMiniProgram 跳转的独立小程序指到本地源码仓库，serve 启动构建并起独立产物 server，从而支持 headless 里 A 小程序跳转到本地 B 小程序。两者键都是 appid，值={ \"local\": \"源码仓库路径\" }。serve: headless serve 的项目级缺省参数（route/deviceId/groupId/region/env/lang/theme/deviceModel/gpu/screenWidth/screenHeight/dpr/debug），优先级 命令行 > 这里 > IDE 当前状态 > 内置缺省。",
+  "functionalPages": {},
+  "miniPrograms": {},
+  "serve": {}
+}
