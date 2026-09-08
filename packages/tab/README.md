@@ -14,8 +14,8 @@ category: 布局
 
 ```json
 "usingComponents": {
-  "smart-tab": "@tuya-miniapp/smart-ui/lib/tab/index",
-  "smart-tabs": "@tuya-miniapp/smart-ui/lib/tabs/index"
+  "smart-tab": "@tuya/miniapp-smart-ui/lib/tab/index",
+  "smart-tabs": "@tuya/miniapp-smart-ui/lib/tabs/index"
 }
 ```
 

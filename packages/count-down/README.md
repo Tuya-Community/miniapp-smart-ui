@@ -14,7 +14,7 @@ category: 反馈
 
 ```json
 "usingComponents": {
-  "smart-count-down": "@tuya-miniapp/smart-ui/lib/count-down/index"
+  "smart-count-down": "@tuya/miniapp-smart-ui/lib/count-down/index"
 }
 ```
 

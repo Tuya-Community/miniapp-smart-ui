@@ -17,7 +17,7 @@ new: true
 
 ```json
 "usingComponents": {
-  "smart-empty": "@tuya-miniapp/smart-ui/lib/empty/index"
+  "smart-empty": "@tuya/miniapp-smart-ui/lib/empty/index"
 }
 ```
 

@@ -14,7 +14,7 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 
 ```json
 "usingComponents": {
-  "smart-stepper": "@tuya-miniapp/smart-ui/lib/stepper/index"
+  "smart-stepper": "@tuya/miniapp-smart-ui/lib/stepper/index"
 }
 ```
 

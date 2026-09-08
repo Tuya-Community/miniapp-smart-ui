@@ -14,7 +14,7 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 
 ```json
 "usingComponents": {
-  "smart-progress": "@tuya-miniapp/smart-ui/lib/progress/index"
+  "smart-progress": "@tuya/miniapp-smart-ui/lib/progress/index"
 }
 ```
 

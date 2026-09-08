@@ -14,8 +14,8 @@ category: 布局
 
 ```json
 "usingComponents": {
-  "smart-dropdown-menu": "@tuya-miniapp/smart-ui/lib/dropdown-menu/index",
-  "smart-dropdown-item": "@tuya-miniapp/smart-ui/lib/dropdown-item/index"
+  "smart-dropdown-menu": "@tuya/miniapp-smart-ui/lib/dropdown-menu/index",
+  "smart-dropdown-item": "@tuya/miniapp-smart-ui/lib/dropdown-item/index"
 }
 ```
 

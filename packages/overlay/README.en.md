@@ -14,7 +14,7 @@ Import the component in `app.json` or `index.json`. For details, see [Quick Star
 
 ```json
 "usingComponents": {
-  "smart-overlay": "@tuya-miniapp/smart-ui/lib/overlay/index"
+  "smart-overlay": "@tuya/miniapp-smart-ui/lib/overlay/index"
 }
 ```
 

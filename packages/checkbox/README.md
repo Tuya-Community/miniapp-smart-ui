@@ -14,8 +14,8 @@ category: 数据录入
 
 ```json
 "usingComponents": {
-  "smart-checkbox": "@tuya-miniapp/smart-ui/lib/checkbox/index",
-  "smart-checkbox-group": "@tuya-miniapp/smart-ui/lib/checkbox-group/index"
+  "smart-checkbox": "@tuya/miniapp-smart-ui/lib/checkbox/index",
+  "smart-checkbox-group": "@tuya/miniapp-smart-ui/lib/checkbox-group/index"
 }
 ```
 

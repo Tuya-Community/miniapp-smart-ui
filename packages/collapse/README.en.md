@@ -14,8 +14,8 @@ Import the component in `app.json` or `index.json`. See detailed instructions in
 
 ```json
 "usingComponents": {
-  "smart-collapse": "@tuya-miniapp/smart-ui/lib/collapse/index",
-  "smart-collapse-item": "@tuya-miniapp/smart-ui/lib/collapse-item/index"
+  "smart-collapse": "@tuya/miniapp-smart-ui/lib/collapse/index",
+  "smart-collapse-item": "@tuya/miniapp-smart-ui/lib/collapse-item/index"
 }
 ```
 

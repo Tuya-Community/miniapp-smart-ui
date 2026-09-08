@@ -14,7 +14,7 @@ Import the component in `app.json` or `index.json`. For details, see [Quick Star
 
 ```json
 "usingComponents": {
-  "smart-popup": "@tuya-miniapp/smart-ui/lib/popup/index"
+  "smart-popup": "@tuya/miniapp-smart-ui/lib/popup/index"
 }
 ```
 

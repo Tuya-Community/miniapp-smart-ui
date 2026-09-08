@@ -14,7 +14,7 @@ category: 反馈
 
 ```json
 "usingComponents": {
-  "smart-action-sheet": "@tuya-miniapp/smart-ui/lib/action-sheet/index"
+  "smart-action-sheet": "@tuya/miniapp-smart-ui/lib/action-sheet/index"
 }
 ```
 

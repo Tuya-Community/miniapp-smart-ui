@@ -16,7 +16,7 @@ Introduce the component in `app.json` or `index.json`. For detailed instructions
 
 ```json
 "usingComponents": {
-  "smart-popover": "@tuya-miniapp/smart-ui/lib/popover/index"
+  "smart-popover": "@tuya/miniapp-smart-ui/lib/popover/index"
 }
 ```
 

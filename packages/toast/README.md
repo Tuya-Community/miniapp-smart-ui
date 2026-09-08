@@ -14,7 +14,7 @@ category: 反馈
 
 ```json
 "usingComponents": {
-  "smart-toast": "@tuya-miniapp/smart-ui/lib/toast/index"
+  "smart-toast": "@tuya/miniapp-smart-ui/lib/toast/index"
 }
 ```
 
@@ -23,7 +23,7 @@ category: 反馈
 ### 文字提示
 
 ```javascript
-import ToastInstance from '@tuya-miniapp/smart-ui/toast/toast';
+import ToastInstance from '@tuya/miniapp-smart-ui/toast/toast';
 
 ToastInstance('我是提示文案，建议不超过十五字~');
 ```

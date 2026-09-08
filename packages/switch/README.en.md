@@ -14,7 +14,7 @@ Import the component in `app.json` or `index.json`, see [Quick Start](/material/
 
 ```json
 "usingComponents": {
-  "smart-switch": "@tuya-miniapp/smart-ui/lib/switch/index"
+  "smart-switch": "@tuya/miniapp-smart-ui/lib/switch/index"
 }
 ```
 

@@ -14,8 +14,8 @@ category: 数据录入
 
 ```json
 "usingComponents": {
-  "smart-radio": "@tuya-miniapp/smart-ui/lib/radio/index",
-  "smart-radio-group": "@tuya-miniapp/smart-ui/lib/radio-group/index"
+  "smart-radio": "@tuya/miniapp-smart-ui/lib/radio/index",
+  "smart-radio-group": "@tuya/miniapp-smart-ui/lib/radio-group/index"
 }
 ```
 

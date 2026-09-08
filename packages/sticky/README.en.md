@@ -14,7 +14,7 @@ Import the component in `app.json` or `index.json`. For detailed introduction, s
 
 ```json
 "usingComponents": {
-  "smart-sticky": "@tuya-miniapp/smart-ui/lib/sticky/index"
+  "smart-sticky": "@tuya/miniapp-smart-ui/lib/sticky/index"
 }
 ```
 

@@ -9,8 +9,8 @@ name: Publish Canary (standalone preview)
 #   - dist-tag：canary（不碰 latest，也不碰官方 beta）
 #   - 不把版本号 commit 回任何分支，release/2.x 与 main 全程零影响
 #
-# 安装验证：yarn add @tuya-miniapp/smart-ui@canary
-#          或指定完整版本：yarn add @tuya-miniapp/smart-ui@2.13.3-canary.feat-toast.a1b2c3d
+# 安装验证：yarn add @tuya/miniapp-smart-ui@canary
+#          或指定完整版本：yarn add @tuya/miniapp-smart-ui@2.13.3-canary.feat-toast.a1b2c3d
 
 on:
   workflow_dispatch:

@@ -15,7 +15,7 @@ new: true
 
 ```json
 "usingComponents": {
-  "smart-bottom-sheet": "@tuya-miniapp/smart-ui/bottom-sheet/index"
+  "smart-bottom-sheet": "@tuya/miniapp-smart-ui/bottom-sheet/index"
 }
 ```
 

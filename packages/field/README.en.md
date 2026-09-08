@@ -14,7 +14,7 @@ Introduce the component in `app.json` or `index.json`, detailed description can 
 
 ```json
 "usingComponents": {
-  "smart-field": "@tuya-miniapp/smart-ui/lib/field/index"
+  "smart-field": "@tuya/miniapp-smart-ui/lib/field/index"
 }
 ```
 

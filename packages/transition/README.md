@@ -14,7 +14,7 @@ category: 展示
 
 ```json
 "usingComponents": {
-  "smart-transition": "@tuya-miniapp/smart-ui/lib/transition/index"
+  "smart-transition": "@tuya/miniapp-smart-ui/lib/transition/index"
 }
 ```
 

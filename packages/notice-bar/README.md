@@ -17,7 +17,7 @@ new: true
 
 ```json
 "usingComponents": {
-  "smart-notice-bar": "@tuya-miniapp/smart-ui/lib/notice-bar/index"
+  "smart-notice-bar": "@tuya/miniapp-smart-ui/lib/notice-bar/index"
 }
 ```
 

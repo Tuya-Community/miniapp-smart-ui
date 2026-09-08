@@ -14,7 +14,7 @@ category: 展示
 
 ```json
 "usingComponents": {
-  "smart-skeleton": "@tuya-miniapp/smart-ui/lib/skeleton/index"
+  "smart-skeleton": "@tuya/miniapp-smart-ui/lib/skeleton/index"
 }
 ```
 

@@ -14,8 +14,8 @@ Introduce the component in `app.json` or `index.json`. For details, see [Quickst
 
 ```json
 "usingComponents": {
-  "smart-index-bar": "@tuya-miniapp/smart-ui/lib/index-bar/index",
-  "smart-index-anchor": "@tuya-miniapp/smart-ui/lib/index-anchor/index"
+  "smart-index-bar": "@tuya/miniapp-smart-ui/lib/index-bar/index",
+  "smart-index-anchor": "@tuya/miniapp-smart-ui/lib/index-anchor/index"
 }
 ```
 

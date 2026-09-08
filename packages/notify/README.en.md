@@ -10,7 +10,7 @@ Introduce the component in `app.json` or `index.json`, see [Quick Start](/materi
 
 ```json
 "usingComponents": {
-  "smart-notify": "@tuya-miniapp/smart-ui/lib/notify/index"
+  "smart-notify": "@tuya/miniapp-smart-ui/lib/notify/index"
 }
 ```
 
@@ -19,7 +19,7 @@ Introduce the component in `app.json` or `index.json`, see [Quick Start](/materi
 ### Basic Usage
 
 ```js
-import Notify from '@tuya-miniapp/smart-ui/notify/notify';
+import Notify from '@tuya/miniapp-smart-ui/notify/notify';
 
 Notify('Notification content');
 ```

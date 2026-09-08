@@ -14,7 +14,7 @@ category: 数据录入
 
 ```json
 "usingComponents": {
-  "smart-custom-keyboard": "@tuya-miniapp/smart-ui/lib/custom-keyboard/index"
+  "smart-custom-keyboard": "@tuya/miniapp-smart-ui/lib/custom-keyboard/index"
 }
 ```
 
