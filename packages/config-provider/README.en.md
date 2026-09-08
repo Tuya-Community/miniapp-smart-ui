@@ -15,7 +15,7 @@ Import the component in `app.json` or `index.json`. For details, see [Getting St
 
 ```json
 "usingComponents": {
-  "smart-config-provider": "@tuya-miniapp/smart-ui/lib/config-provider/index"
+  "smart-config-provider": "@tuya/miniapp-smart-ui/lib/config-provider/index"
 }
 ```
 

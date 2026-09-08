@@ -14,7 +14,7 @@ category: 通用
 
 ```json
 "usingComponents": {
-  "smart-button": "@tuya-miniapp/smart-ui/lib/button/index"
+  "smart-button": "@tuya/miniapp-smart-ui/lib/button/index"
 }
 ```
 

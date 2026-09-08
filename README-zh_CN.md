@@ -7,13 +7,13 @@
 -->
 [English](./README.md) | 简体中文
 
-# @tuya-miniapp/smart-ui
+# @tuya/miniapp-smart-ui
 
-![CI status](https://github.com/Tuya-Community/miniapp-smart-ui/actions/workflows/test.yml/badge.svg) ![coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Tuya-Community/miniapp-smart-ui/release/2.x/.github/coverage/coverage-summary.json) ![npm](https://img.shields.io/npm/v/@tuya-miniapp/smart-ui) ![down](https://img.shields.io/npm/dt/@tuya-miniapp/smart-ui)
+![CI status](https://github.com/Tuya-Community/miniapp-smart-ui/actions/workflows/test.yml/badge.svg) ![coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Tuya-Community/miniapp-smart-ui/release/2.x/.github/coverage/coverage-summary.json) ![npm](https://img.shields.io/npm/v/@tuya/miniapp-smart-ui) ![down](https://img.shields.io/npm/dt/@tuya/miniapp-smart-ui)
 
 ## 介绍
 
-`@tuya-miniapp/smart-ui` 是一个**轻量、可靠的智能小程序组件库**，其基于 `vant-weapp` 实现，提供了一整套符合智能小程序移动端设计规范的 UI 组件（暂不支持微信小程序，此组件库只支持涂鸦小程序）。
+`@tuya/miniapp-smart-ui` 是一个**轻量、可靠的智能小程序组件库**，其基于 `vant-weapp` 实现，提供了一整套符合智能小程序移动端设计规范的 UI 组件（暂不支持微信小程序，此组件库只支持涂鸦小程序）。
 
 ## 预览
 
@@ -29,10 +29,10 @@
 
 ```bash
 # 通过 yarn 安装（推荐）
-yarn add @tuya-miniapp/smart-ui
+yarn add @tuya/miniapp-smart-ui
 
 # 通过 npm 安装
-npm i @tuya-miniapp/smart-ui
+npm i @tuya/miniapp-smart-ui
 ```
 
 ## 使用组件
@@ -42,7 +42,7 @@ npm i @tuya-miniapp/smart-ui
 ```json
 {
   "usingComponents": {
-    "smart-button": "@tuya-miniapp/smart-ui/lib/button/index"
+    "smart-button": "@tuya/miniapp-smart-ui/lib/button/index"
   }
 }
 ```
@@ -67,7 +67,7 @@ yarn dev
 
 ## 基础库版本
 
-`@tuya-miniapp/smart-ui` 从智能小程序基础库 `2.19.0` 版本开始提供稳定的支持。
+`@tuya/miniapp-smart-ui` 从智能小程序基础库 `2.19.0` 版本开始提供稳定的支持。
 
 
 ## 相关链接

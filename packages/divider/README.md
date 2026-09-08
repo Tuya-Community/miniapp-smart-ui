@@ -14,7 +14,7 @@ category: 展示
 
 ```json
 "usingComponents": {
-  "smart-divider": "@tuya-miniapp/smart-ui/lib/divider/index"
+  "smart-divider": "@tuya/miniapp-smart-ui/lib/divider/index"
 }
 ```
 

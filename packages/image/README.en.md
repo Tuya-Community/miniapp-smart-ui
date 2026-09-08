@@ -14,7 +14,7 @@ Introduce the component in `app.json` or `index.json`. For details, see [Quick S
 
 ```json
 "usingComponents": {
-  "smart-image": "@tuya-miniapp/smart-ui/lib/image/index"
+  "smart-image": "@tuya/miniapp-smart-ui/lib/image/index"
 }
 ```
 

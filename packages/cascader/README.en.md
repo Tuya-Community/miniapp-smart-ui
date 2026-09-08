@@ -14,7 +14,7 @@ Introduce the component in `app.json` or `index.json`. For detailed instructions
 
 ```json
 "usingComponents": {
-  "smart-cascader": "@tuya-miniapp/smart-ui/lib/cascader/index"
+  "smart-cascader": "@tuya/miniapp-smart-ui/lib/cascader/index"
 }
 ```
 

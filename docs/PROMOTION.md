@@ -6,8 +6,8 @@
 
 `@ray-js/smart-ui` 是专为**涂鸦智能小程序 Ray开发**打造的 UI 组件库，基于成熟的 `vant-weapp` 架构实现，提供了一整套符合涂鸦小程序移动端设计规范的 UI 组件。无论你是开发智能家居控制面板、设备管理界面，还是构建复杂的业务场景，Smart UI 都能为你提供开箱即用的解决方案。
 
-![npm version](https://img.shields.io/npm/v/@tuya-miniapp/smart-ui)
-![npm downloads](https://img.shields.io/npm/dt/@tuya-miniapp/smart-ui)
+![npm version](https://img.shields.io/npm/v/@tuya/miniapp-smart-ui)
+![npm downloads](https://img.shields.io/npm/dt/@tuya/miniapp-smart-ui)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## ✨ 核心特性

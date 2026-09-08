@@ -3,7 +3,7 @@ name: dual-repo-release
 description: >-
   Drives the paired formal release of miniapp-smart-ui and ray-smart-ui: writes
   the bilingual CHANGELOG from PLANS in miniapp-smart-ui and raises its release
-  PR to main, then bumps @tuya-miniapp/smart-ui in ray-smart-ui, syncs PLANS,
+  PR to main, then bumps @tuya/miniapp-smart-ui in ray-smart-ui, syncs PLANS,
   writes the Ray-flavoured CHANGELOG and raises the matching PR. Use when the
   user asks to release/发版 both repos, to sync the Ray repo after the miniapp
   formal version is published, or to raise the "双仓库发布 MR".
@@ -11,7 +11,7 @@ description: >-
 
 # 双仓库发布（miniapp-smart-ui + ray-smart-ui）
 
-正式发版时两个仓库要一起走：`miniapp-smart-ui` 是源仓库（原生小程序组件），`ray-smart-ui` 是它的 Ray/React 封装，依赖 npm 包 `@tuya-miniapp/smart-ui`。两边各自从 `release/2.x` 向 `main` 开一个标题为版本号的 PR。
+正式发版时两个仓库要一起走：`miniapp-smart-ui` 是源仓库（原生小程序组件），`ray-smart-ui` 是它的 Ray/React 封装，依赖 npm 包 `@tuya/miniapp-smart-ui`。两边各自从 `release/2.x` 向 `main` 开一个标题为版本号的 PR。
 
 ## 适用场景
 
@@ -23,7 +23,7 @@ description: >-
 
 | 角色 | 默认路径 | 分支 | npm 包 |
 |------|----------|------|--------|
-| 源仓库 | `~/Documents/github/miniapp-smart-ui` | `release/2.x` → `main` | `@tuya-miniapp/smart-ui` |
+| 源仓库 | `~/Documents/github/miniapp-smart-ui` | `release/2.x` → `main` | `@tuya/miniapp-smart-ui` |
 | Ray 封装 | `~/Documents/github/ray-smart-ui` | `release/2.x` → `main` | `@ray-js/smart-ui` |
 
 开工前：`gh auth status` 通过（确认账号符合预期）、两仓库 `git fetch` 且工作区干净、当前分支为 `release/2.x`。
@@ -61,7 +61,7 @@ description: >-
 合并后 CI 才会发正式包。**确认 latest 已是目标版本再动 ray 仓库**：
 
 ```bash
-npm view @tuya-miniapp/smart-ui dist-tags --json
+npm view @tuya/miniapp-smart-ui dist-tags --json
 ```
 
 `latest` 不等于 `X.Y.Z` 就停下等待，不要提前把 ray 的依赖指过去。
@@ -78,12 +78,12 @@ npm view @tuya-miniapp/smart-ui dist-tags --json
 
 3. **若确实要手改**（比如等不及 CI），改完 `package.json` 后同步 yarn.lock 的 entry：
    ```bash
-   npm view @tuya-miniapp/smart-ui@X.Y.Z dist.shasum dist.integrity
+   npm view @tuya/miniapp-smart-ui@X.Y.Z dist.shasum dist.integrity
    ```
-   `resolved` 用 `https://registry.yarnpkg.com/@tuya-miniapp/smart-ui/-/smart-ui-X.Y.Z.tgz#<shasum>`。改完必须校验：
+   `resolved` 用 `https://registry.yarnpkg.com/@tuya/miniapp-smart-ui/-/miniapp-smart-ui-X.Y.Z.tgz#<shasum>`。改完必须校验：
    ```bash
    yarn install --frozen-lockfile --ignore-scripts
-   grep '"version"' node_modules/@tuya-miniapp/smart-ui/package.json
+   grep '"version"' node_modules/@tuya/miniapp-smart-ui/package.json
    ```
    并且**确认 miniapp 的 package.json 已经是正式号**，否则下一次 CI 会推翻它。
 
@@ -115,7 +115,7 @@ npm view @tuya-miniapp/smart-ui dist-tags --json
 
 ## 坑（都踩过）
 
-- **依赖降级事故（2.13.4 踩过）**：miniapp 的 PR 合并后，它的 CI 才会把 `package.json` 打成正式号。如果在这之前就在 ray 手改依赖并推送，ray 的 `CI(template)` 会读到 miniapp 仍是 beta 的 `package.json`，把依赖改回 `X.Y.Z-beta-N`，而这个回滚后的内容就是最终合并、发布的版本——结果正式包 `@ray-js/smart-ui@X.Y.Z` 依赖 `@tuya-miniapp/smart-ui@X.Y.Z-beta-N`。已发布的包改不了，只能下个版本带上。**正确做法：确认 miniapp 正式包发布（阶段 B）后再动 ray，并让 CI 去写依赖。**
+- **依赖降级事故（2.13.4 踩过）**：miniapp 的 PR 合并后，它的 CI 才会把 `package.json` 打成正式号。如果在这之前就在 ray 手改依赖并推送，ray 的 `CI(template)` 会读到 miniapp 仍是 beta 的 `package.json`，把依赖改回 `X.Y.Z-beta-N`，而这个回滚后的内容就是最终合并、发布的版本——结果正式包 `@ray-js/smart-ui@X.Y.Z` 依赖 `@tuya/miniapp-smart-ui@X.Y.Z-beta-N`。已发布的包改不了，只能下个版本带上。**正确做法：确认 miniapp 正式包发布（阶段 B）后再动 ray，并让 CI 去写依赖。**
 - **合并前后都要复查依赖**：开 PR 前和合并前各看一次 `git show origin/release/2.x:package.json | grep tuya-miniapp`，确保没被 CI 改回 beta。
 - **PLANS 里的「测试版本 `X.Y.Z-beta-N`」两仓库编号不一定对得上**：各自 CI 各自递增。要确认某个修复落在哪个 beta，看**本仓库** `git log` 里 `chore(release)` 提交与该修复合并提交的先后，不要信 PLANS 的数字。
 - **ray 的 changelog 可能落后一版**，见阶段 C 第 5 步。
@@ -132,7 +132,7 @@ npm view @tuya-miniapp/smart-ui dist-tags --json
 - [ ] PR：base `main`、head `release/2.x`、标题为纯版本号、正文含 `## English`
 
 阶段 B
-- [ ] `npm view @tuya-miniapp/smart-ui dist-tags` 的 `latest` 已是目标正式版本
+- [ ] `npm view @tuya/miniapp-smart-ui dist-tags` 的 `latest` 已是目标正式版本
 
 阶段 C（ray-smart-ui）
 - [ ] 依赖为 `^X.Y.Z`（CI 写的或手改后确认未被回滚），`yarn install --frozen-lockfile` 通过，`node_modules` 内实际版本正确

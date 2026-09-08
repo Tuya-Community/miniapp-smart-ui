@@ -14,8 +14,8 @@ Import the components in `app.json` or `index.json`. For detailed instructions, 
 
 ```json
 "usingComponents": {
-  "smart-row": "@tuya-miniapp/smart-ui/lib/row/index",
-  "smart-col": "@tuya-miniapp/smart-ui/lib/col/index"
+  "smart-row": "@tuya/miniapp-smart-ui/lib/row/index",
+  "smart-col": "@tuya/miniapp-smart-ui/lib/col/index"
 }
 ```
 

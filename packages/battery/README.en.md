@@ -14,7 +14,7 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 
 ```json
 "usingComponents": {
-  "smart-battery": "@tuya-miniapp/smart-ui/lib/battery/index"
+  "smart-battery": "@tuya/miniapp-smart-ui/lib/battery/index"
 }
 ```
 

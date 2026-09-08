@@ -18,7 +18,7 @@ Introduce the component in `app.json` or `index.json`, for detailed instructions
 
 ```json
 "usingComponents": {
-  "smart-circle": "@tuya-miniapp/smart-ui/lib/circle/index"
+  "smart-circle": "@tuya/miniapp-smart-ui/lib/circle/index"
 }
 ```
 

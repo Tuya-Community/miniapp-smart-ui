@@ -15,7 +15,7 @@ category: 通用
 
 ```json
 "usingComponents": {
-  "smart-config-provider": "@tuya-miniapp/smart-ui/lib/config-provider/index"
+  "smart-config-provider": "@tuya/miniapp-smart-ui/lib/config-provider/index"
 }
 ```
 

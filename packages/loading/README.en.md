@@ -14,7 +14,7 @@ Import the component in `app.json` or `index.json`. For details, see [Quick Star
 
 ```json
 "usingComponents": {
-  "smart-loading": "@tuya-miniapp/smart-ui/lib/loading/index"
+  "smart-loading": "@tuya/miniapp-smart-ui/lib/loading/index"
 }
 ```
 

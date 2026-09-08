@@ -14,8 +14,8 @@ category: 展示
 
 ```json
 "usingComponents": {
-  "smart-cell": "@tuya-miniapp/smart-ui/lib/cell/index",
-  "smart-cell-group": "@tuya-miniapp/smart-ui/lib/cell-group/index"
+  "smart-cell": "@tuya/miniapp-smart-ui/lib/cell/index",
+  "smart-cell-group": "@tuya/miniapp-smart-ui/lib/cell-group/index"
 }
 ```
 

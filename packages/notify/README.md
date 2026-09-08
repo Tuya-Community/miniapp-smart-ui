@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "smart-notify": "@tuya-miniapp/smart-ui/lib/notify/index"
+  "smart-notify": "@tuya/miniapp-smart-ui/lib/notify/index"
 }
 ```
 
@@ -19,7 +19,7 @@
 ### 基础用法
 
 ```js
-import Notify from '@tuya-miniapp/smart-ui/notify/notify';
+import Notify from '@tuya/miniapp-smart-ui/notify/notify';
 
 Notify('通知内容');
 ```

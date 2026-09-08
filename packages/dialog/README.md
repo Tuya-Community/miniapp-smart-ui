@@ -14,7 +14,7 @@ category: 反馈
 
 ```json
 "usingComponents": {
-  "smart-dialog": "@tuya-miniapp/smart-ui/lib/dialog/index"
+  "smart-dialog": "@tuya/miniapp-smart-ui/lib/dialog/index"
 }
 ```
 
@@ -29,7 +29,7 @@ category: 反馈
 ```
 
 ```javascript
-import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import DialogInstance from '@tuya/miniapp-smart-ui/dialog/dialog';
 
 DialogInstance.alert({
   title: '标题',
@@ -54,7 +54,7 @@ DialogInstance.alert({
 ```
 
 ```javascript
-import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import DialogInstance from '@tuya/miniapp-smart-ui/dialog/dialog';
 
 DialogInstance.confirm({
   title: '标题',
@@ -77,7 +77,7 @@ DialogInstance.confirm({
 ```
 
 ```javascript
-import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import DialogInstance from '@tuya/miniapp-smart-ui/dialog/dialog';
 
 const beforeClose = (action: 'confirm' | 'cancel' | 'overlay', value?: string): Promise<boolean> => {
   return new Promise((resolve) => {
@@ -117,7 +117,7 @@ DialogInstance.input({
 ```
 
 ```javascript
-import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import DialogInstance from '@tuya/miniapp-smart-ui/dialog/dialog';
 
 DialogInstance.alert({
   title: '标题',
@@ -144,7 +144,7 @@ DialogInstance.alert({
 ```
 
 ```javascript
-import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import DialogInstance from '@tuya/miniapp-smart-ui/dialog/dialog';
 
 const beforeClose = (action) =>
   new Promise((resolve) => {
@@ -174,7 +174,7 @@ icon 属性支持传入svg string，底层用的是 SmartUI 的 Icon 组件，ic
 ```
 
 ```javascript
-import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import DialogInstance from '@tuya/miniapp-smart-ui/dialog/dialog';
 import AlarmIcon from '@tuya-miniapp/icons/dist/svg/Alarm';
 
 DialogInstance.confirm({

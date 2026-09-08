@@ -14,7 +14,7 @@ category: 数据录入
 
 ```json
 "usingComponents": {
-  "smart-slider": "@tuya-miniapp/smart-ui/lib/normal-slider/index"
+  "smart-slider": "@tuya/miniapp-smart-ui/lib/normal-slider/index"
 }
 ```
 
@@ -215,7 +215,7 @@ Page({
 
 ```json
 "usingComponents": {
-  "smart-range-slider": "@tuya-miniapp/smart-ui/lib/slider/index"
+  "smart-range-slider": "@tuya/miniapp-smart-ui/lib/slider/index"
 }
 ```
 
