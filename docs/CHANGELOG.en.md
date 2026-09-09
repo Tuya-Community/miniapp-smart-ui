@@ -4,6 +4,7 @@
 
 ### Features ✨
 
+- Rename the package from `@tuya-miniapp/smart-ui` to `@tuya/miniapp-smart-ui`
 - package.json: Support tree-shaking ([d78ea06](https://github.com/Tuya-Community/ray-smart-ui/pull/103/commits/d78ea0609266731abbbdf575fe2af6e1c70c1bc6))
 - field: Add the `--field-value-margin-left` CSS variable to adjust the spacing between the value area and the title ([pull/219](https://github.com/Tuya-Community/miniapp-smart-ui/pull/219))
 

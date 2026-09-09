@@ -4,6 +4,7 @@
 
 ### Features ✨
 
+- 包名从 `@tuya-miniapp/smart-ui` 修改为 `@tuya/miniapp-smart-ui`
 - package.json: 支持 tree-shaking([d78ea06](https://github.com/Tuya-Community/ray-smart-ui/pull/103/commits/d78ea0609266731abbbdf575fe2af6e1c70c1bc6))
 - field: 新增 `--field-value-margin-left` CSS 变量，支持调整值区域与标题的间距([pull/219](https://github.com/Tuya-Community/miniapp-smart-ui/pull/219))
 
