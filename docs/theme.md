@@ -87,7 +87,7 @@ Page({
 ```
 
 ```js
-import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+import Toast from '@tuya/miniapp-smart-ui/toast/toast';
 
 Page({
   onClick() {

@@ -14,7 +14,7 @@ category: 数据录入
 
 ```json
 "usingComponents": {
-  "smart-field": "@tuya-miniapp/smart-ui/lib/field/index"
+  "smart-field": "@tuya/miniapp-smart-ui/lib/field/index"
 }
 ```
 

@@ -14,7 +14,7 @@ category: 反馈
 
 ```json
 "usingComponents": {
-  "smart-popup": "@tuya-miniapp/smart-ui/lib/popup/index"
+  "smart-popup": "@tuya/miniapp-smart-ui/lib/popup/index"
 }
 ```
 

@@ -14,7 +14,7 @@ category: 反馈
 
 ```json
 "usingComponents": {
-  "smart-switch": "@tuya-miniapp/smart-ui/lib/switch/index"
+  "smart-switch": "@tuya/miniapp-smart-ui/lib/switch/index"
 }
 ```
 

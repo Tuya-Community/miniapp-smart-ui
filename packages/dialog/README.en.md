@@ -14,7 +14,7 @@ Introduce the component in `app.json` or `index.json`. For detailed instructions
 
 ```json
 "usingComponents": {
-  "smart-dialog": "@tuya-miniapp/smart-ui/lib/dialog/index"
+  "smart-dialog": "@tuya/miniapp-smart-ui/lib/dialog/index"
 }
 ```
 
@@ -29,7 +29,7 @@ Used to display some messages, containing only a confirm button.
 ```
 
 ```javascript
-import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import DialogInstance from '@tuya/miniapp-smart-ui/dialog/dialog';
 
 DialogInstance.alert({
   title: 'Title',
@@ -54,7 +54,7 @@ Used for message confirmation, containing both a cancel and a confirm button.
 ```
 
 ```javascript
-import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import DialogInstance from '@tuya/miniapp-smart-ui/dialog/dialog';
 
 DialogInstance.confirm({
   title: 'Title',
@@ -77,7 +77,7 @@ Used to input copy information, the default maximum input limit `maxlength` is `
 ```
 
 ```javascript
-import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import DialogInstance from '@tuya/miniapp-smart-ui/dialog/dialog';
 
 const beforeClose = (action: 'confirm' | 'cancel' | 'overlay', value?: string): Promise<boolean> => {
   return new Promise((resolve) => {
@@ -117,7 +117,7 @@ Set the theme option to `round-button` to display a dialog box with rounded butt
 ```
 
 ```javascript
-import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import DialogInstance from '@tuya/miniapp-smart-ui/dialog/dialog';
 
 DialogInstance.alert({
   title: 'Title',
@@ -144,7 +144,7 @@ You can pass in a callback function using the `beforeClose` property to perform 
 ```
 
 ```javascript
-import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import DialogInstance from '@tuya/miniapp-smart-ui/dialog/dialog';
 
 const beforeClose = (action) =>
   new Promise((resolve) => {
@@ -174,7 +174,7 @@ The icon attribute supports passing in an SVG string, and it uses the SmartUI Ic
 ```
 
 ```javascript
-import DialogInstance from '@tuya-miniapp/smart-ui/dialog/dialog';
+import DialogInstance from '@tuya/miniapp-smart-ui/dialog/dialog';
 import AlarmIcon from '@tuya-miniapp/icons/dist/svg/Alarm';
 
 DialogInstance.confirm({

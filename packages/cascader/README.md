@@ -14,7 +14,7 @@ category: 数据录入
 
 ```json
 "usingComponents": {
-  "smart-cascader": "@tuya-miniapp/smart-ui/lib/cascader/index"
+  "smart-cascader": "@tuya/miniapp-smart-ui/lib/cascader/index"
 }
 ```
 

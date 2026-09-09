@@ -14,7 +14,7 @@ Import the component in `app.json` or `index.json`. For detailed instructions, s
 
 ```json
 "usingComponents": {
-  "smart-skeleton": "@tuya-miniapp/smart-ui/lib/skeleton/index"
+  "smart-skeleton": "@tuya/miniapp-smart-ui/lib/skeleton/index"
 }
 ```
 

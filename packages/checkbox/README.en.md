@@ -14,8 +14,8 @@ Introduce the component in `app.json` or `index.json`. See [Quick Start](/materi
 
 ```json
 "usingComponents": {
-  "smart-checkbox": "@tuya-miniapp/smart-ui/lib/checkbox/index",
-  "smart-checkbox-group": "@tuya-miniapp/smart-ui/lib/checkbox-group/index"
+  "smart-checkbox": "@tuya/miniapp-smart-ui/lib/checkbox/index",
+  "smart-checkbox-group": "@tuya/miniapp-smart-ui/lib/checkbox-group/index"
 }
 ```
 

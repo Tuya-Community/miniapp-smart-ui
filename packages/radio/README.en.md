@@ -14,8 +14,8 @@ Import the component in `app.json` or `index.json`, as detailed in [Quick Start]
 
 ```json
 "usingComponents": {
-  "smart-radio": "@tuya-miniapp/smart-ui/lib/radio/index",
-  "smart-radio-group": "@tuya-miniapp/smart-ui/lib/radio-group/index"
+  "smart-radio": "@tuya/miniapp-smart-ui/lib/radio/index",
+  "smart-radio-group": "@tuya/miniapp-smart-ui/lib/radio-group/index"
 }
 ```
 

@@ -14,8 +14,8 @@ category: 布局
 
 ```json
 "usingComponents": {
-  "smart-grid": "@tuya-miniapp/smart-ui/lib/grid/index",
-  "smart-grid-item": "@tuya-miniapp/smart-ui/lib/grid-item/index"
+  "smart-grid": "@tuya/miniapp-smart-ui/lib/grid/index",
+  "smart-grid-item": "@tuya/miniapp-smart-ui/lib/grid-item/index"
 }
 ```
 

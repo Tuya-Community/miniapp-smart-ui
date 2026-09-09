@@ -14,8 +14,8 @@ category: 导航
 
 ```json
 "usingComponents": {
-  "smart-sidebar": "@tuya-miniapp/smart-ui/lib/sidebar/index",
-  "smart-sidebar-item": "@tuya-miniapp/smart-ui/lib/sidebar-item/index"
+  "smart-sidebar": "@tuya/miniapp-smart-ui/lib/sidebar/index",
+  "smart-sidebar-item": "@tuya/miniapp-smart-ui/lib/sidebar-item/index"
 }
 ```
 
@@ -80,7 +80,7 @@ Page({
 ```
 
 ```js
-import Notify from '@tuya-miniapp/smart-ui/notify/notify';
+import Notify from '@tuya/miniapp-smart-ui/notify/notify';
 
 Page({
   data: {

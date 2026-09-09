@@ -14,8 +14,8 @@ category: 导航
 
 ```json
 "usingComponents": {
-  "smart-index-bar": "@tuya-miniapp/smart-ui/lib/index-bar/index",
-  "smart-index-anchor": "@tuya-miniapp/smart-ui/lib/index-anchor/index"
+  "smart-index-bar": "@tuya/miniapp-smart-ui/lib/index-bar/index",
+  "smart-index-anchor": "@tuya/miniapp-smart-ui/lib/index-anchor/index"
 }
 ```
 

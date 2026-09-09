@@ -17,7 +17,7 @@ Import the component in `app.json` or `index.json`. The default is the `ES6` ver
 
 ```json
 "usingComponents": {
-  "smart-empty": "@tuya-miniapp/smart-ui/lib/empty/index"
+  "smart-empty": "@tuya/miniapp-smart-ui/lib/empty/index"
 }
 ```
 

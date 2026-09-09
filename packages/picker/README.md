@@ -14,7 +14,7 @@ category: 反馈
 
 ```json
 "usingComponents": {
-  "smart-picker": "@tuya-miniapp/smart-ui/lib/picker/index"
+  "smart-picker": "@tuya/miniapp-smart-ui/lib/picker/index"
 }
 ```
 
@@ -34,7 +34,7 @@ category: 反馈
 ```
 
 ```javascript
-import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+import Toast from '@tuya/miniapp-smart-ui/toast/toast';
 
 Page({
   data: {
@@ -57,7 +57,7 @@ Page({
 ```
 
 ```javascript
-import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+import Toast from '@tuya/miniapp-smart-ui/toast/toast';
 
 Page({
   data: {
@@ -99,7 +99,7 @@ Page({
 ```
 
 ```javascript
-import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+import Toast from '@tuya/miniapp-smart-ui/toast/toast';
 
 Page({
   data: {
@@ -142,7 +142,7 @@ Page({
 ```
 
 ```javascript
-import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+import Toast from '@tuya/miniapp-smart-ui/toast/toast';
 
 Page({
   data: {
@@ -257,7 +257,7 @@ Page({
 ```
 
 ```javascript
-import Toast from '@tuya-miniapp/smart-ui/toast/toast';
+import Toast from '@tuya/miniapp-smart-ui/toast/toast';
 
 Page({
   data: {

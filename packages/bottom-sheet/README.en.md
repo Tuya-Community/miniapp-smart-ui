@@ -15,7 +15,7 @@ Import the component in `app.json` or `index.json`. For details, see [Quick Star
 
 ```json
 "usingComponents": {
-  "smart-bottom-sheet": "@tuya-miniapp/smart-ui/bottom-sheet/index"
+  "smart-bottom-sheet": "@tuya/miniapp-smart-ui/bottom-sheet/index"
 }
 ```
 

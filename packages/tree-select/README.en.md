@@ -14,7 +14,7 @@ Introduce the component in `app.json` or `index.json`, for details see [Quick St
 
 ```json
 "usingComponents": {
-  "smart-tree-select": "@tuya-miniapp/smart-ui/lib/tree-select/index"
+  "smart-tree-select": "@tuya/miniapp-smart-ui/lib/tree-select/index"
 }
 ```
 

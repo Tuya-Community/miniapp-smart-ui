@@ -9,7 +9,7 @@ Smart UI 中默认包含了一些常用样式，可以直接通过 className 的
 在 app.wxss 中引入内置样式。
 
 ```css
-@import '@tuya-miniapp/smart-ui/common/index.wxss';
+@import '@tuya/miniapp-smart-ui/common/index.wxss';
 ```
 
 ## 代码演示

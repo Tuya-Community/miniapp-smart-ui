@@ -14,8 +14,8 @@ Introduce the component in `app.json` or `index.json`, detailed introduction can
 
 ```json
 "usingComponents": {
-  "smart-cell": "@tuya-miniapp/smart-ui/lib/cell/index",
-  "smart-cell-group": "@tuya-miniapp/smart-ui/lib/cell-group/index"
+  "smart-cell": "@tuya/miniapp-smart-ui/lib/cell/index",
+  "smart-cell-group": "@tuya/miniapp-smart-ui/lib/cell-group/index"
 }
 ```
 

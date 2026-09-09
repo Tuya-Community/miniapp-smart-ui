@@ -14,7 +14,7 @@ category: 展示
 
 ```json
 "usingComponents": {
-  "smart-overlay": "@tuya-miniapp/smart-ui/lib/overlay/index"
+  "smart-overlay": "@tuya/miniapp-smart-ui/lib/overlay/index"
 }
 ```
 

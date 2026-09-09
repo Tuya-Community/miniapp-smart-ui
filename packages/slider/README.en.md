@@ -14,7 +14,7 @@ Introduce the component in `app.json` or `index.json`. For detailed instructions
 
 ```json
 "usingComponents": {
-  "smart-slider": "@tuya-miniapp/smart-ui/lib/normal-slider/index"
+  "smart-slider": "@tuya/miniapp-smart-ui/lib/normal-slider/index"
 }
 ```
 
@@ -213,7 +213,7 @@ Slider with two thumbs requires:
 
 ```json
 "usingComponents": {
-  "smart-range-slider": "@tuya-miniapp/smart-ui/lib/slider/index"
+  "smart-range-slider": "@tuya/miniapp-smart-ui/lib/slider/index"
 }
 ```
 

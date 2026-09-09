@@ -14,8 +14,8 @@ Introduce the component in `app.json` or `index.json`, see [Quickstart](/materia
 
 ```json
 "usingComponents": {
-  "smart-grid": "@tuya-miniapp/smart-ui/lib/grid/index",
-  "smart-grid-item": "@tuya-miniapp/smart-ui/lib/grid-item/index"
+  "smart-grid": "@tuya/miniapp-smart-ui/lib/grid/index",
+  "smart-grid-item": "@tuya/miniapp-smart-ui/lib/grid-item/index"
 }
 ```
 

@@ -14,8 +14,8 @@ Introduce the component in `app.json` or `index.json`. For detailed instructions
 
 ```json
 "usingComponents": {
-  "smart-tab": "@tuya-miniapp/smart-ui/lib/tab/index",
-  "smart-tabs": "@tuya-miniapp/smart-ui/lib/tabs/index"
+  "smart-tab": "@tuya/miniapp-smart-ui/lib/tab/index",
+  "smart-tabs": "@tuya/miniapp-smart-ui/lib/tabs/index"
 }
 ```
 

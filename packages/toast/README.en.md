@@ -14,7 +14,7 @@ Introduce the component in `app.json` or `index.json`, for detailed introduction
 
 ```json
 "usingComponents": {
-  "smart-toast": "@tuya-miniapp/smart-ui/lib/toast/index"
+  "smart-toast": "@tuya/miniapp-smart-ui/lib/toast/index"
 }
 ```
 
@@ -23,7 +23,7 @@ Introduce the component in `app.json` or `index.json`, for detailed introduction
 ### Text Notification
 
 ```javascript
-import ToastInstance from '@tuya-miniapp/smart-ui/toast/toast';
+import ToastInstance from '@tuya/miniapp-smart-ui/toast/toast';
 
 ToastInstance('This is a notification, recommended not to exceed fifteen characters~');
 ```

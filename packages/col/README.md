@@ -14,8 +14,8 @@ Layout 提供了`smart-row`和`smart-col`两个组件来进行行列布局。
 
 ```json
 "usingComponents": {
-  "smart-row": "@tuya-miniapp/smart-ui/lib/row/index",
-  "smart-col": "@tuya-miniapp/smart-ui/lib/col/index"
+  "smart-row": "@tuya/miniapp-smart-ui/lib/row/index",
+  "smart-col": "@tuya/miniapp-smart-ui/lib/col/index"
 }
 ```
 

@@ -17,7 +17,7 @@ new: true
 
 ```json
 "usingComponents": {
-  "smart-calendar": "@tuya-miniapp/smart-ui/lib/calendar/index"
+  "smart-calendar": "@tuya/miniapp-smart-ui/lib/calendar/index"
 }
 ```
 

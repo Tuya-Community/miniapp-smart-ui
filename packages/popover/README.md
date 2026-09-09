@@ -16,7 +16,7 @@ v2.3.0 版本后开始加入，弹出层容器，用于展示弹窗、信息提�
 
 ```json
 "usingComponents": {
-  "smart-popover": "@tuya-miniapp/smart-ui/lib/popover/index"
+  "smart-popover": "@tuya/miniapp-smart-ui/lib/popover/index"
 }
 ```
 

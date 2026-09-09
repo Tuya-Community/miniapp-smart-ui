@@ -17,7 +17,7 @@ Introduce the component in `app.json` or `index.json`. For details, see [Quick S
 
 ```json
 "usingComponents": {
-  "smart-calendar": "@tuya-miniapp/smart-ui/lib/calendar/index"
+  "smart-calendar": "@tuya/miniapp-smart-ui/lib/calendar/index"
 }
 ```
 
