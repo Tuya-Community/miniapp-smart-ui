@@ -1,5 +1,10 @@
 # 升级注意事项
 
+## v2.13.5 (2026-9-10)
+
+### Features ✨
+- 包名从 `@tuya-miniapp/smart-ui` 修改为 `@tuya/miniapp-smart-ui`，升级时请同步修改 `package.json` 依赖与代码中的 import 路径
+
 ## v2.12.0 (2026-3-24)
 
 ### Features ✨

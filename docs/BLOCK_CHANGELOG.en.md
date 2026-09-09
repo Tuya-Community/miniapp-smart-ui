@@ -1,5 +1,10 @@
 # Upgrade Notes
 
+## v2.13.5 (2026-9-10)
+
+### Features ✨
+- Rename the package from `@tuya-miniapp/smart-ui` to `@tuya/miniapp-smart-ui`; update your `package.json` dependency and the import paths in your code accordingly when upgrading
+
 ## v2.12.0 (2026-3-24)
 
 ### Features ✨
