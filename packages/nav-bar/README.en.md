@@ -14,7 +14,7 @@ Import the component in `app.json` or `index.json`, for detailed introduction se
 
 ```json
 "usingComponents": {
-  "smart-nav-bar": "@tuya-miniapp/smart-ui/lib/nav-bar/index"
+  "smart-nav-bar": "@tuya/miniapp-smart-ui/lib/nav-bar/index"
 }
 ```
 

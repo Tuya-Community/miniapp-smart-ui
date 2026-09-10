@@ -14,7 +14,7 @@ Introduce the component in `app.json` or `index.json`, see [Quick Start](/materi
 
 ```json
 "usingComponents": {
-  "smart-rate": "@tuya-miniapp/smart-ui/lib/rate/index"
+  "smart-rate": "@tuya/miniapp-smart-ui/lib/rate/index"
 }
 ```
 

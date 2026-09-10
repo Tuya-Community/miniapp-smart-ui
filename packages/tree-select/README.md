@@ -14,7 +14,7 @@ category: 数据录入
 
 ```json
 "usingComponents": {
-  "smart-tree-select": "@tuya-miniapp/smart-ui/lib/tree-select/index"
+  "smart-tree-select": "@tuya/miniapp-smart-ui/lib/tree-select/index"
 }
 ```
 

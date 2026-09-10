@@ -1,5 +1,5 @@
 {
-  "projectname": "@tuya-miniapp/smart-ui-demo",
+  "projectname": "@tuya/miniapp-smart-ui-demo",
   "i18n": false,
   "description": "Smart UI 小程序组件浏览库",
   "baseversion": "2.28.6",

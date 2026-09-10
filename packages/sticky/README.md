@@ -14,7 +14,7 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 
 ```json
 "usingComponents": {
-  "smart-sticky": "@tuya-miniapp/smart-ui/lib/sticky/index"
+  "smart-sticky": "@tuya/miniapp-smart-ui/lib/sticky/index"
 }
 ```
 

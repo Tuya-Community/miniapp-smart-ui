@@ -14,7 +14,7 @@ category: 数据录入
 
 ```json
 "usingComponents": {
-  "smart-rate": "@tuya-miniapp/smart-ui/lib/rate/index"
+  "smart-rate": "@tuya/miniapp-smart-ui/lib/rate/index"
 }
 ```
 

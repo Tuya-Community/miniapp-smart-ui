@@ -14,7 +14,7 @@ category: 数据录入
 
 ```json
 "usingComponents": {
-  "smart-datetime-picker": "@tuya-miniapp/smart-ui/lib/datetime-picker/index"
+  "smart-datetime-picker": "@tuya/miniapp-smart-ui/lib/datetime-picker/index"
 }
 ```
 

@@ -14,7 +14,7 @@ Introduce the component in `app.json` or `index.json`. The default is the `ES6` 
 
 ```json
 "usingComponents": {
-  "smart-divider": "@tuya-miniapp/smart-ui/lib/divider/index"
+  "smart-divider": "@tuya/miniapp-smart-ui/lib/divider/index"
 }
 ```
 

@@ -1227,6 +1227,11 @@
     "value": "8px",
     "decs": ""
   },
+  "cell-value-flex": {
+    "name": "@cell-value-flex",
+    "value": "0 1 auto",
+    "decs": ""
+  },
   "cell-icon-size": {
     "name": "@cell-icon-size",
     "value": "24px",
@@ -1660,6 +1665,11 @@
   "field-left-body-padding-right": {
     "name": "@field-left-body-padding-right",
     "value": "16px",
+    "decs": ""
+  },
+  "field-value-margin-left": {
+    "name": "@field-value-margin-left",
+    "value": "0",
     "decs": ""
   },
   "field-card-border-radius": {

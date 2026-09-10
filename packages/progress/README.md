@@ -14,7 +14,7 @@ category: 展示
 
 ```json
 "usingComponents": {
-  "smart-progress": "@tuya-miniapp/smart-ui/lib/progress/index"
+  "smart-progress": "@tuya/miniapp-smart-ui/lib/progress/index"
 }
 ```
 

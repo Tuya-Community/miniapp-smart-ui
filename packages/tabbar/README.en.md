@@ -14,8 +14,8 @@ Import the component in `app.json` or `index.json`. For a detailed introduction,
 
 ```json
 "usingComponents": {
-  "smart-tabbar": "@tuya-miniapp/smart-ui/lib/tabbar/index",
-  "smart-tabbar-item": "@tuya-miniapp/smart-ui/lib/tabbar-item/index"
+  "smart-tabbar": "@tuya/miniapp-smart-ui/lib/tabbar/index",
+  "smart-tabbar-item": "@tuya/miniapp-smart-ui/lib/tabbar-item/index"
 }
 ```
 

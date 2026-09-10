@@ -9,7 +9,7 @@ Smart UI includes some common styles by default, which can be used directly thro
 Import built-in styles in app.wxss.
 
 ```css
-@import '@tuya-miniapp/smart-ui/common/index.wxss';
+@import '@tuya/miniapp-smart-ui/common/index.wxss';
 ```
 
 ## Code Examples

@@ -39,6 +39,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{true}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{3}}"
@@ -47,17 +48,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    "hangzhou",
-                    "ningbo",
-                    "wenzhou",
-                    "jiaxing",
-                    "huzhou",
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-0"
                 instanceId="smart-picker-column-0"
                 isdestroy="{{false}}"
@@ -75,6 +68,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -245,6 +239,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{0}}"
@@ -253,112 +248,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    0,
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7,
-                    8,
-                    9,
-                    10,
-                    11,
-                    12,
-                    13,
-                    14,
-                    15,
-                    16,
-                    17,
-                    18,
-                    19,
-                    20,
-                    21,
-                    22,
-                    23,
-                    24,
-                    25,
-                    26,
-                    27,
-                    28,
-                    29,
-                    30,
-                    31,
-                    32,
-                    33,
-                    34,
-                    35,
-                    36,
-                    37,
-                    38,
-                    39,
-                    40,
-                    41,
-                    42,
-                    43,
-                    44,
-                    45,
-                    46,
-                    47,
-                    48,
-                    49,
-                    50,
-                    51,
-                    52,
-                    53,
-                    54,
-                    55,
-                    56,
-                    57,
-                    58,
-                    59,
-                    60,
-                    61,
-                    62,
-                    63,
-                    64,
-                    65,
-                    66,
-                    67,
-                    68,
-                    69,
-                    70,
-                    71,
-                    72,
-                    73,
-                    74,
-                    75,
-                    76,
-                    77,
-                    78,
-                    79,
-                    80,
-                    81,
-                    82,
-                    83,
-                    84,
-                    85,
-                    86,
-                    87,
-                    88,
-                    89,
-                    90,
-                    91,
-                    92,
-                    93,
-                    94,
-                    95,
-                    96,
-                    97,
-                    98,
-                    99,
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-1"
                 instanceId="smart-picker-column-1"
                 isdestroy="{{false}}"
@@ -471,6 +363,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -614,6 +507,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column smart-picker-column--disabled custom-class"
                 data-activeindex="{{0}}"
@@ -622,13 +516,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    ".",
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-2"
                 instanceId="smart-picker-column-2"
                 isdestroy="{{false}}"
@@ -642,6 +532,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -785,6 +676,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{0}}"
@@ -793,32 +685,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    0,
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7,
-                    8,
-                    9,
-                    10,
-                    11,
-                    12,
-                    13,
-                    14,
-                    15,
-                    16,
-                    17,
-                    18,
-                    19,
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-3"
                 instanceId="smart-picker-column-3"
                 isdestroy="{{false}}"
@@ -851,6 +720,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -1037,6 +907,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{0}}"
@@ -1045,112 +916,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{true}}"
-                data-options="{{
-                  Array [
-                    0,
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7,
-                    8,
-                    9,
-                    10,
-                    11,
-                    12,
-                    13,
-                    14,
-                    15,
-                    16,
-                    17,
-                    18,
-                    19,
-                    20,
-                    21,
-                    22,
-                    23,
-                    24,
-                    25,
-                    26,
-                    27,
-                    28,
-                    29,
-                    30,
-                    31,
-                    32,
-                    33,
-                    34,
-                    35,
-                    36,
-                    37,
-                    38,
-                    39,
-                    40,
-                    41,
-                    42,
-                    43,
-                    44,
-                    45,
-                    46,
-                    47,
-                    48,
-                    49,
-                    50,
-                    51,
-                    52,
-                    53,
-                    54,
-                    55,
-                    56,
-                    57,
-                    58,
-                    59,
-                    60,
-                    61,
-                    62,
-                    63,
-                    64,
-                    65,
-                    66,
-                    67,
-                    68,
-                    69,
-                    70,
-                    71,
-                    72,
-                    73,
-                    74,
-                    75,
-                    76,
-                    77,
-                    78,
-                    79,
-                    80,
-                    81,
-                    82,
-                    83,
-                    84,
-                    85,
-                    86,
-                    87,
-                    88,
-                    89,
-                    90,
-                    91,
-                    92,
-                    93,
-                    94,
-                    95,
-                    96,
-                    97,
-                    98,
-                    99,
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-4"
                 instanceId="smart-picker-column-4"
                 isdestroy="{{false}}"
@@ -1263,6 +1031,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -1430,6 +1199,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{2}}"
@@ -1438,17 +1208,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    "hangzhou",
-                    "ningbo",
-                    "wenzhou",
-                    "jiaxing",
-                    "huzhou",
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-5"
                 instanceId="smart-picker-column-5"
                 isdestroy="{{false}}"
@@ -1466,6 +1228,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -1661,6 +1424,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{0}}"
@@ -1669,17 +1433,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    "hangzhou",
-                    "ningbo",
-                    "wenzhou",
-                    "jiaxing",
-                    "huzhou",
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-6"
                 instanceId="smart-picker-column-6"
                 isdestroy="{{false}}"
@@ -1697,6 +1453,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -1864,6 +1621,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{0}}"
@@ -1872,14 +1630,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    "zhejiang",
-                    "fujian",
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-7"
                 instanceId="smart-picker-column-7"
                 isdestroy="{{false}}"
@@ -1894,6 +1647,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -2056,6 +1810,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{2}}"
@@ -2064,17 +1819,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    "hangzhou",
-                    "ningbo",
-                    "wenzhou",
-                    "jiaxing",
-                    "huzhou",
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-8"
                 instanceId="smart-picker-column-8"
                 isdestroy="{{false}}"
@@ -2092,6 +1839,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -2278,6 +2026,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{1}}"
@@ -2286,22 +2035,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    Object {
-                      "disabled": true,
-                      "text": "hangzhou",
-                    },
-                    Object {
-                      "text": "ningbo",
-                    },
-                    Object {
-                      "text": "wenzhou",
-                    },
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-9"
                 instanceId="smart-picker-column-9"
                 isdestroy="{{false}}"
@@ -2324,6 +2060,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -2512,6 +2249,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{0}}"
@@ -2520,14 +2258,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    "zhejiang",
-                    "fujian",
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-10"
                 instanceId="smart-picker-column-10"
                 isdestroy="{{false}}"
@@ -2542,6 +2275,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -2704,6 +2438,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{2}}"
@@ -2712,17 +2447,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    "hangzhou",
-                    "ningbo",
-                    "wenzhou",
-                    "jiaxing",
-                    "huzhou",
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-11"
                 instanceId="smart-picker-column-11"
                 isdestroy="{{false}}"
@@ -2740,6 +2467,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -2924,6 +2652,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{0}}"
@@ -2932,14 +2661,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    "zhejiang",
-                    "fujian",
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-12"
                 instanceId="smart-picker-column-12"
                 isdestroy="{{false}}"
@@ -2954,6 +2678,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -3097,6 +2822,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{0}}"
@@ -3105,17 +2831,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{false}}"
-                data-options="{{
-                  Array [
-                    "hangzhou",
-                    "ningbo",
-                    "wenzhou",
-                    "jiaxing",
-                    "huzhou",
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-13"
                 instanceId="smart-picker-column-13"
                 isdestroy="{{false}}"
@@ -3133,6 +2851,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null
@@ -3267,6 +2986,18 @@ exports[`should render demo and match snapshot 1`] = `
     <wx-view
       class="custom-class demo-block smart-clearfix "
     >
+      <wx-view
+        class="big-data-btn"
+        bind:tap="loadBigData"
+      >
+        加载 10w 选项
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block smart-clearfix "
+    >
       <smart-picker
         bind:change="onChange1"
       >
@@ -3300,6 +3031,7 @@ exports[`should render demo and match snapshot 1`] = `
                 change:options="{{null}}"
                 change:valuekey="{{null}}"
                 change:visibleitemcount="{{null}}"
+                change:windowed="{{null}}"
                 changeanimation="{{false}}"
                 class="smart-picker-column custom-class"
                 data-activeindex="{{0}}"
@@ -3308,112 +3040,9 @@ exports[`should render demo and match snapshot 1`] = `
                 data-isdestroy="{{false}}"
                 data-itemheight="{{44}}"
                 data-loop="{{true}}"
-                data-options="{{
-                  Array [
-                    0,
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7,
-                    8,
-                    9,
-                    10,
-                    11,
-                    12,
-                    13,
-                    14,
-                    15,
-                    16,
-                    17,
-                    18,
-                    19,
-                    20,
-                    21,
-                    22,
-                    23,
-                    24,
-                    25,
-                    26,
-                    27,
-                    28,
-                    29,
-                    30,
-                    31,
-                    32,
-                    33,
-                    34,
-                    35,
-                    36,
-                    37,
-                    38,
-                    39,
-                    40,
-                    41,
-                    42,
-                    43,
-                    44,
-                    45,
-                    46,
-                    47,
-                    48,
-                    49,
-                    50,
-                    51,
-                    52,
-                    53,
-                    54,
-                    55,
-                    56,
-                    57,
-                    58,
-                    59,
-                    60,
-                    61,
-                    62,
-                    63,
-                    64,
-                    65,
-                    66,
-                    67,
-                    68,
-                    69,
-                    70,
-                    71,
-                    72,
-                    73,
-                    74,
-                    75,
-                    76,
-                    77,
-                    78,
-                    79,
-                    80,
-                    81,
-                    82,
-                    83,
-                    84,
-                    85,
-                    86,
-                    87,
-                    88,
-                    89,
-                    90,
-                    91,
-                    92,
-                    93,
-                    94,
-                    95,
-                    96,
-                    97,
-                    98,
-                    99,
-                  ]
-                }}"
                 data-valuekey="text"
                 data-visibleitemcount="{{5}}"
+                data-windowed="{{false}}"
                 id="smart-picker-column-14"
                 instanceId="smart-picker-column-14"
                 isdestroy="{{false}}"
@@ -3526,6 +3155,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="height:220px"
                 valuekey="text"
                 visibleitemcount="{{5}}"
+                windowed="{{false}}"
                 bind:touchcancel=null
                 bind:touchend=null
                 catch:touchmove=null

@@ -14,7 +14,7 @@ Import the component in `app.json` or `index.json`. For details, see [Getting St
 
 ```json
 "usingComponents": {
-  "smart-swipe-cell": "@tuya-miniapp/smart-ui/lib/swipe-cell/index"
+  "smart-swipe-cell": "@tuya/miniapp-smart-ui/lib/swipe-cell/index"
 }
 ```
 
@@ -100,7 +100,7 @@ Page({
 ```
 
 ```js
-import ToastInstance from '@tuya-miniapp/smart-ui/dist/toast/toast';
+import ToastInstance from '@tuya/miniapp-smart-ui/dist/toast/toast';
 
 Page({
   onOpen(event) {

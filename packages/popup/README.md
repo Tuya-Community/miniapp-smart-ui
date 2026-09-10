@@ -14,7 +14,7 @@ category: 反馈
 
 ```json
 "usingComponents": {
-  "smart-popup": "@tuya-miniapp/smart-ui/lib/popup/index"
+  "smart-popup": "@tuya/miniapp-smart-ui/lib/popup/index"
 }
 ```
 
@@ -160,3 +160,6 @@ Page({
 | --popup-close-icon-color | _#969799_ | 关闭图标颜色 |
 | --popup-close-icon-margin | _12px_ | 关闭图标边距 |
 | --popup-close-icon-z-index | _1_ | 关闭图标层级 |
+| --overlay-background-color  | _rgba(0,0,0,0.4)_ / _rgba(0,0,0,0.7)_        | 直接指定遮罩背景色时使用，设置后不再使用毛玻璃/半透明变量 |
+| --overlay-blur-background  `v2.12.0`  | _rgba(40,44,53,0.22)_ / _rgba(0,0,0,0.6)_ | 支持模糊时的毛玻璃遮罩背景色 |
+| --overlay-blur-radius  `v2.12.0`     | _16px_      | 毛玻璃模糊半径 |

@@ -14,8 +14,8 @@ Introduce the component in `app.json` or `index.json`, detailed introduction can
 
 ```json
 "usingComponents": {
-  "smart-sidebar": "@tuya-miniapp/smart-ui/lib/sidebar/index",
-  "smart-sidebar-item": "@tuya-miniapp/smart-ui/lib/sidebar-item/index"
+  "smart-sidebar": "@tuya/miniapp-smart-ui/lib/sidebar/index",
+  "smart-sidebar-item": "@tuya/miniapp-smart-ui/lib/sidebar-item/index"
 }
 ```
 
@@ -80,7 +80,7 @@ Set the `change` method to listen for events when switching navigation items.
 ```
 
 ```js
-import Notify from '@tuya-miniapp/smart-ui/notify/notify';
+import Notify from '@tuya/miniapp-smart-ui/notify/notify';
 
 Page({
   data: {

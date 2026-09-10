@@ -2,6 +2,12 @@
 
 .smart-field {
   --cell-icon-size: var(--field-icon-size, @field-icon-size);
+  // field 把 label 与 input 都放进 cell 的 value 区,需要 value 撑满整行,
+  // 输入框才能靠右对齐(cell 默认 value 不参与剩余空间分配,仅内容宽)
+  --cell-value-flex: 1;
+  // field 的 label 是 value 区最左内容,需与普通 cell 的 title 左对齐,
+  // 抵消 cell value 默认的 margin-left,避免 label 相对 title 右移
+  --cell-value-margin-left: var(--field-value-margin-left, @field-value-margin-left);
 
   &__left__body {
     display: flex;
@@ -65,7 +71,10 @@
     }
 
     &--limit {
-      padding-bottom: var(--field-textarea-limit-padding-bottom, @field-textarea-limit-padding-bottom);
+      padding-bottom: var(
+        --field-textarea-limit-padding-bottom,
+        @field-textarea-limit-padding-bottom
+      );
     }
   }
 
@@ -97,10 +106,7 @@
     &--textarea {
       text-align: left;
       height: var(--field-textarea-min-height, @field-textarea-min-height);
-      min-height: var(
-        --field-textarea-min-height,
-        @field-textarea-min-height
-      );
+      min-height: var(--field-textarea-min-height, @field-textarea-min-height);
     }
 
     &--card {
@@ -192,10 +198,7 @@
     text-align: right;
     font-weight: normal;
     line-height: var(--field-error-message-text-line-height, @field-error-message-text-line-height);
-    font-size: var(
-      --field-error-message-text-font-size,
-      @field-error-message-text-font-size
-    );
+    font-size: var(--field-error-message-text-font-size, @field-error-message-text-font-size);
     word-wrap: break-word;
     white-space: normal;
     color: var(--field-error-message-color, @field-error-message-color);
@@ -226,14 +229,10 @@
     margin-top: var(--padding-base, @padding-base);
     color: var(--field-word-limit-color, @field-word-limit-color);
     font-size: var(--field-word-limit-font-size, @field-word-limit-font-size);
-    line-height: var(
-      --field-word-limit-line-height,
-      @field-word-limit-line-height
-    );
+    line-height: var(--field-word-limit-line-height, @field-word-limit-line-height);
     position: absolute;
     right: 8px;
     bottom: 8px;
-
   }
 
   &__word-num {

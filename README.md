@@ -1,12 +1,12 @@
 English | [简体中文](./README-zh_CN.md)
 
-# @tuya-miniapp/smart-ui
+# @tuya/miniapp-smart-ui
 
-![CI status](https://github.com/Tuya-Community/miniapp-smart-ui/actions/workflows/test.yml/badge.svg) ![coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Tuya-Community/miniapp-smart-ui/release/2.x/.github/coverage/coverage-summary.json) ![npm](https://img.shields.io/npm/v/@tuya-miniapp/smart-ui) ![down](https://img.shields.io/npm/dt/@tuya-miniapp/smart-ui)
+![CI status](https://github.com/Tuya-Community/miniapp-smart-ui/actions/workflows/test.yml/badge.svg) ![coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Tuya-Community/miniapp-smart-ui/release/2.x/.github/coverage/coverage-summary.json) ![npm](https://img.shields.io/npm/v/@tuya/miniapp-smart-ui) ![down](https://img.shields.io/npm/dt/@tuya/miniapp-smart-ui)
 
 ## Introduction
 
-`@tuya-miniapp/smart-ui` is a **lightweight and reliable smart mini app component library**, implemented based on `vant-weapp`. It provides a complete set of UI components that comply with Tuya MiniApp mobile design specifications (currently does not support WeChat Mini Program, this component library only supports Tuya MiniApp).
+`@tuya/miniapp-smart-ui` is a **lightweight and reliable smart mini app component library**, implemented based on `vant-weapp`. It provides a complete set of UI components that comply with Tuya MiniApp mobile design specifications (currently does not support WeChat Mini Program, this component library only supports Tuya MiniApp).
 
 ## Preview
 
@@ -22,10 +22,10 @@ Before using Smart UI, make sure you have studied the official [Quick Start](htt
 
 ```bash
 # Install via yarn (recommended)
-yarn add @tuya-miniapp/smart-ui
+yarn add @tuya/miniapp-smart-ui
 
 # Install via npm
-npm i @tuya-miniapp/smart-ui
+npm i @tuya/miniapp-smart-ui
 ```
 
 ## Using Components
@@ -35,7 +35,7 @@ Take the button component as an example, you only need to introduce the correspo
 ```json
 {
   "usingComponents": {
-    "smart-button": "@tuya-miniapp/smart-ui/lib/button/index"
+    "smart-button": "@tuya/miniapp-smart-ui/lib/button/index"
   }
 }
 ```
@@ -60,7 +60,7 @@ Open [Tuya MiniApp Tools](https://developer.tuya.com/cn/miniapp/devtools/tools),
 
 ## Base Library Version
 
-`@tuya-miniapp/smart-ui` provides stable support starting from version `2.19.0` of the Tuya MiniApp base library.
+`@tuya/miniapp-smart-ui` provides stable support starting from version `2.19.0` of the Tuya MiniApp base library.
 
 ## Related Links
 

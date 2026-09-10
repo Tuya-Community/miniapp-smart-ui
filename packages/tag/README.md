@@ -17,7 +17,7 @@ new: true
 
 ```json
 "usingComponents": {
-  "smart-tag": "@tuya-miniapp/smart-ui/lib/tag/index"
+  "smart-tag": "@tuya/miniapp-smart-ui/lib/tag/index"
 }
 ```
 

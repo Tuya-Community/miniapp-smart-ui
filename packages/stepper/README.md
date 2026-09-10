@@ -14,7 +14,7 @@ category: 数据录入
 
 ```json
 "usingComponents": {
-  "smart-stepper": "@tuya-miniapp/smart-ui/lib/stepper/index"
+  "smart-stepper": "@tuya/miniapp-smart-ui/lib/stepper/index"
 }
 ```
 

@@ -17,7 +17,7 @@ Introduce the component in `app.json` or `index.json`, see [Quick Start](/materi
 
 ```json
 "usingComponents": {
-  "smart-notice-bar": "@tuya-miniapp/smart-ui/lib/notice-bar/index"
+  "smart-notice-bar": "@tuya/miniapp-smart-ui/lib/notice-bar/index"
 }
 ```
 

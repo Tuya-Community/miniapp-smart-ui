@@ -23,3 +23,7 @@ example/micro-app
 .npmrc
 typings/
 miniprogram_npm
+.clix/headless-mp-out
+.clix/headless-mp-out--*
+.clix/headless/device-snapshot.json
+.clix/headless/group-snapshot.json

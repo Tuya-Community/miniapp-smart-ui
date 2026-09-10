@@ -18,7 +18,7 @@ version: v2.3.0
 
 ```json
 "usingComponents": {
-  "smart-circle": "@tuya-miniapp/smart-ui/lib/circle/index"
+  "smart-circle": "@tuya/miniapp-smart-ui/lib/circle/index"
 }
 ```
 

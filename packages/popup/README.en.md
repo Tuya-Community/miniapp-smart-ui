@@ -14,7 +14,7 @@ Import the component in `app.json` or `index.json`. For details, see [Quick Star
 
 ```json
 "usingComponents": {
-  "smart-popup": "@tuya-miniapp/smart-ui/lib/popup/index"
+  "smart-popup": "@tuya/miniapp-smart-ui/lib/popup/index"
 }
 ```
 
@@ -160,3 +160,6 @@ The component provides the following CSS variables that can be used for custom s
 | --popup-close-icon-color | _#969799_ | Close icon color |
 | --popup-close-icon-margin | _12px_ | Close icon margin |
 | --popup-close-icon-z-index | _1_ | Close icon z-index |
+| --overlay-background-color     | _rgba(0,0,0,0.4)_ / _rgba(0,0,0,0.7)_    | Override overlay background; when set, blur/fallback variables are not used |
+| --overlay-blur-background `v2.12.0`      | _rgba(40,44,53,0.22)_ / _rgba(0,0,0,0.6)_ | Background when blur is supported |
+| --overlay-blur-radius  `v2.12.0`         | _16px_                                   | Blur radius for backdrop |

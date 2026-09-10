@@ -14,7 +14,7 @@ Introduce the component in `app.json` or `index.json`, detailed explanation can 
 
 ```json
 "usingComponents": {
-  "smart-count-down": "@tuya-miniapp/smart-ui/lib/count-down/index"
+  "smart-count-down": "@tuya/miniapp-smart-ui/lib/count-down/index"
 }
 ```
 

@@ -14,7 +14,7 @@ Introduce the component in `app.json` or `index.json`, for more details see [Qui
 
 ```json
 "usingComponents": {
-  "smart-transition": "@tuya-miniapp/smart-ui/lib/transition/index"
+  "smart-transition": "@tuya/miniapp-smart-ui/lib/transition/index"
 }
 ```
 
