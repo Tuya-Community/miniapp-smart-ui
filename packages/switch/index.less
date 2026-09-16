@@ -64,15 +64,18 @@
   &__node {
     position: absolute;
     top: 0;
-    left: 0;
+    left: var(--switch-node-size, @switch-node-size);
+    transform: translate3d(-100%, 0, 0);
     border-radius: 100%;
     z-index: var(--switch-node-z-index, @switch-node-z-index);
     width: var(--switch-node-size, @switch-node-size);
     height: var(--switch-node-size, @switch-node-size);
     background-color: var(--switch-node-background-color, @switch-node-background-color);
     box-shadow: var(--switch-node-box-shadow, @switch-node-box-shadow);
-    transition: var(--switch-transition-duration, @switch-transition-duration)
-      cubic-bezier(0.3, 1.05, 0.4, 1.05);
+    transition:
+      left var(--switch-transition-duration, @switch-transition-duration) cubic-bezier(0.3, 1.05, 0.4, 1.05),
+      background-color var(--switch-transition-duration, @switch-transition-duration);
+    will-change: left;
   }
 
   &__loading {
@@ -86,7 +89,7 @@
     background-color: var(--switch-on-background-color, @switch-on-background-color);
 
     .smart-switch__node {
-      left: calc(100% - var(--switch-node-size, @switch-node-size));
+      left: 100%;
       background-color: var(--switch-node-on-background-color, @switch-node-on-background-color);
     }
   }
