@@ -27,7 +27,7 @@
       windowed="{{ item._windowed || false }}"
       disabled="{{ item.disabled || false }}"
       unit="{{ item.unit || unit }}"
-      unit-gap="{{ item.unitGap }}"
+      unit-gap="{{ item.unitGap === undefined || item.unitGap === null ? '' : item.unitGap }}"
       changeAnimation="{{ changeAnimation }}"
       default-index="{{ item.defaultIndex || defaultIndex }}"
       active-index="{{ (item.activeIndex === null || item.activeIndex === undefined) ? activeIndex : item.activeIndex }}"

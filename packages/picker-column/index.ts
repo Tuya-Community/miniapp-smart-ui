@@ -72,7 +72,9 @@ SmartComponent({
     },
     unitGap: {
       type: null,
-      value: undefined,
+      // 默认空串而非 undefined：undefined 会触发运行时 setData 告警，
+      // 且在安卓容器上导致同批数据（含初始 activeIndex 定位）被整批拒绝
+      value: '',
     },
     animationTime: {
       type: Number,
