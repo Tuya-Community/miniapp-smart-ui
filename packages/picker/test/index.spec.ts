@@ -1124,5 +1124,84 @@ describe('picker', () => {
       expect(instance.data.renderColumns[0].values.length).toBe(overThreshold);
     });
   });
+
+  describe('autoReset 与安卓定位回归（PR #224）', () => {
+    // 挂载后用 mock 子列替换 selectAllComponents：setColumnValues 的落点全部可观测
+    const mountPicker = async (extraAttrs = '') => {
+      const comp = simulate.render(
+        simulate.load({
+          usingComponents: { 'smart-picker': SmartPicker },
+          template: `<smart-picker id="wrapper" columns="{{ columns }}" ${extraAttrs} />`,
+          data: {
+            columns: [{ values: [1, 2, 3], activeIndex: 2 }],
+          },
+        })
+      );
+      comp.attach(document.createElement('parent-wrapper'));
+      await simulate.sleep(10);
+      return comp;
+    };
+
+    // 下发 values 不同的新 columns：isSame 不短路，触发 columns observer → setColumns()
+    const triggerColumnsChange = async (comp: any) => {
+      comp.setData({ columns: [{ values: [9, 8, 7], activeIndex: 1 }] });
+      await simulate.sleep(20);
+    };
+
+    test('auto-reset=false：columns 变化不触发 setIndex(0)（datetime-picker 场景，安卓定位丢失回归）', async () => {
+      const comp = await mountPicker('auto-reset="{{ false }}"');
+      const instance = comp.querySelector('#wrapper')?.instance;
+      const mockChild = {
+        set: jest.fn(() => Promise.resolve()),
+        setIndex: jest.fn(),
+        data: { options: [1, 2, 3] },
+      };
+      instance.selectAllComponents = jest.fn(() => [mockChild]);
+
+      await triggerColumnsChange(comp);
+
+      expect(mockChild.set).toHaveBeenCalled();
+      expect(mockChild.setIndex).not.toHaveBeenCalled();
+    });
+
+    test('autoReset 默认 true：columns 变化保持既有重置行为（兼容既有调用方）', async () => {
+      const comp = await mountPicker();
+      const instance = comp.querySelector('#wrapper')?.instance;
+      const mockChild = {
+        set: jest.fn(() => Promise.resolve()),
+        setIndex: jest.fn(),
+        data: { options: [1, 2, 3] },
+      };
+      instance.selectAllComponents = jest.fn(() => [mockChild]);
+
+      await triggerColumnsChange(comp);
+
+      expect(mockChild.set).toHaveBeenCalled();
+      expect(mockChild.setIndex).toHaveBeenCalledWith(0);
+    });
+
+    test('调用方以 ...args 尾部追加 needReset 的包装方式不受 setColumnValues 参数形态影响', async () => {
+      const comp = await mountPicker();
+      const instance = comp.querySelector('#wrapper')?.instance;
+      const mockChild = {
+        set: jest.fn(() => Promise.resolve()),
+        setIndex: jest.fn(),
+        data: { options: [1, 2, 3] },
+      };
+      instance.selectAllComponents = jest.fn(() => [mockChild]);
+
+      // 复刻 datetime-picker 曾有的猴子补丁写法：包装后在参数尾部追加 false（needReset=false）。
+      // 公开方法 setColumnValues 的 (index, options, needReset) 契约必须保持稳定，
+      // 否则这类调用方的保护会被静默破坏（PR #224 review 指出的回归面）。
+      const { setColumnValues } = instance;
+      instance.setColumnValues = (...args: any[]) => setColumnValues.apply(instance, [...args, false]);
+
+      // 以 2 参形式调用（与旧版 datetime-picker 内部调用一致），values 与现 options 不同
+      await instance.setColumnValues(0, [9, 8, 7]);
+
+      expect(mockChild.set).toHaveBeenCalled();
+      expect(mockChild.setIndex).not.toHaveBeenCalled();
+    });
+  });
 });
 

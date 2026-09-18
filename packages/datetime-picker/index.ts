@@ -186,10 +186,6 @@ SmartComponent({
     getPicker() {
       if (this.picker == null) {
         this.picker = this.selectComponent('.smart-datetime-picker');
-
-        const { picker } = this;
-        const { setColumnValues } = picker;
-        picker.setColumnValues = (...args: any) => setColumnValues.apply(picker, [...args, false]);
       }
 
       return this.picker;

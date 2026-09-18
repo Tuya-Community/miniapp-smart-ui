@@ -284,7 +284,7 @@ Page({
 | active-index       | Current selected item index for single-column picker,<br>refer to Columns configuration for multi-column picker | _number_  | `-1`    |
 | cancel-button-text | Cancel button text                                                        | _string_  | `Cancel` |
 | columns            | Array of objects to configure data displayed in each column               | _Array_   | `[]`     |
-| autoReset `v2.13.6`     | Whether to reset changed columns back to index 0 when `columns` changes. On Android the internal async reset overrides `activeIndex` positioning (initial position lost when reusing a wheel across data sources), pass `false` in that case | _boolean_ | `true` |
+| auto-reset `v2.13.6`     | Whether to reset changed columns back to index 0 when `columns` changes. On Android the internal async reset overrides `activeIndex` positioning (initial position lost when reusing a wheel across data sources), pass `false` in that case | _boolean_ | `true` |
 | confirm-button-text| Confirm button text                                                       | _string_  | `Confirm`|
 | default-index      | Default selected item index for single-column picker,<br>refer to Columns configuration for multi-column picker | _number_  | `0`     |
 | item-height        | Option height                                                             | _number_  | `44`    |

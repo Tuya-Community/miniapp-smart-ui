@@ -284,7 +284,7 @@ Page({
 | active-index      | 单列选择器的当前选中项索引，<br>多列选择器请参考下方的 Columns 配置 | _number_  | `-1`    |
 | cancel-button-text  | 取消按钮文字          | _string_  | `取消`  |
 | columns             | 对象数组，配置每一列显示的数据        | _Array_   | `[]`    |
-| autoReset `v2.13.6`     | columns 变化时是否把发生变化的列重置回第 0 项。安卓容器上库内重置会异步覆盖 activeIndex 定位（跨数据源复用滚轮时初始档位丢失），此场景建议传 `false` | _boolean_ | `true` |
+| auto-reset `v2.13.6`     | columns 变化时是否把发生变化的列重置回第 0 项。安卓容器上库内重置会异步覆盖 activeIndex 定位（跨数据源复用滚轮时初始档位丢失），此场景建议传 `false` | _boolean_ | `true` |
 | confirm-button-text | 确认按钮文字               | _string_  | `确认`  |
 | default-index       | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | _number_  | `0`     |
 | item-height         | 选项高度                   | _number_  | `44`    |
