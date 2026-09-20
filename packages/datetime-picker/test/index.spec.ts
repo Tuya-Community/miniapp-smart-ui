@@ -1015,5 +1015,57 @@ describe('datetime-picker', () => {
     // 12HourClock, hour, minute
     expect(wrapper?.data.columns.map((column: any) => column.loop)).toEqual([true, false, true]);
   });
-});
 
+  // 回归锁：Picker 的列联动不得把 DatetimePicker 已经定位好的列清零。
+  //
+  // 断言落在 setColumnValues 的 needReset 入参上，而不是列的最终 currentIndex——库内重置走的是
+  // column.set({ options }).then(() => column.setIndex(0))，在 jsdom / iOS 这种「属性应用早于
+  // Promise 回调」的时序下 activeIndex 会把 setIndex(0) 覆盖回去，最终状态看不出差别；只有安卓
+  // 容器桥回执更慢时才会真的丢定位。所以这里锁的是调用契约，而不是可观测状态。
+  test('切换月份导致「日」列选项变化时，联动不得请求重置该列（安卓定位丢失回归）', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-datetime-picker': SmartDateTimePicker,
+        },
+        template: `<smart-datetime-picker id="wrapper" type="date" value="{{ value }}" />`,
+        data: {
+          // 2018-03-31：切到 4 月后「日」列由 31 项变 30 项，isSame 不短路，必然走下发路径
+          value: new Date(2018, 2, 31).getTime(),
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    const instance: any = wrapper?.instance;
+    await simulate.sleep(50);
+
+    // 直接取内层 picker，不调用 getPicker()——真实用户路径里是 onChange 自己去拿 picker 的，
+    // 这里提前调用会改变被测路径。
+    const picker: any = instance.selectComponent('.smart-datetime-picker');
+    expect(picker).toBeTruthy();
+    expect(picker.children[2].data.options.length).toBe(31);
+
+    // 包在最内层记录实现真正收到的入参：DatetimePicker 之后无论再包几层都盖不住。
+    const received: any[][] = [];
+    const impl = picker.setColumnValues;
+    picker.setColumnValues = function setColumnValuesProbe(...args: any[]) {
+      received.push(args);
+      return impl.apply(this, args);
+    };
+
+    // 模拟用户把「月」列从 03 滚到 04
+    picker.children[1].setIndex(3);
+    instance.onChange();
+    await simulate.sleep(80);
+
+    // 「日」列确实换了数据源（31 天 -> 30 天），否则这条用例就是空跑
+    expect(received.some(args => args[0] === 2 && args[1].length === 30)).toBe(true);
+
+    // 核心断言：每一次下发都必须要求「不要重置」，定位交给各列的 activeIndex
+    received.forEach(args => {
+      expect(args[2]).toBe(false);
+    });
+  });
+});

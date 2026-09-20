@@ -78,6 +78,24 @@
 </demo-block>
 
 
+<demo-block title="{{I18n.t('reuseAcrossDataSources')}}">
+  <view class="reuse-tip">{{ reuseTip }}</view>
+  <view class="reuse-btn" bind:tap="switchReuseSource">{{I18n.t('switchDataSource')}}</view>
+  <view class="reuse-tip">{{I18n.t('autoResetOn')}}</view>
+  <smart-picker
+    item-height="{{ isA11y ? 52 : 44 }}"
+    columns="{{ reuseColumns }}"
+    bind:change="onChange1"
+  />
+  <view class="reuse-tip">{{I18n.t('autoResetOff')}}</view>
+  <smart-picker
+    auto-reset="{{ false }}"
+    item-height="{{ isA11y ? 52 : 44 }}"
+    columns="{{ reuseColumns }}"
+    bind:change="onChange1"
+  />
+</demo-block>
+
 <demo-block title="{{I18n.t('bigDataUsage')}}">
   <view wx:if="{{ !bigColumn.length }}" class="big-data-btn" bind:tap="loadBigData">加载 10w 选项</view>
   <block wx:else>
