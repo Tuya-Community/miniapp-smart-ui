@@ -2,6 +2,20 @@ import tyApi from '../../common/ty';
 import { SmartComponent } from '../../common/component';
 import Toast from '../../toast/toast';
 
+// 跨数据源复用同一滚轮的两套数据源：列的量程与步长都不同，切换后档位完全由各列 activeIndex 决定。
+// 这是业务侧「开始时间 ↔ 补光时长」复用同一弹窗的最小复现。
+const pad = (n: number) => (n < 10 ? `0${n}` : `${n}`);
+const range = (len: number, step = 1) => new Array(len).fill(0).map((x, i) => pad(i * step));
+
+const startTimeColumns = () => [
+  { values: range(24), unit: I18n.t('hour'), activeIndex: 3 },
+  { values: range(60), unit: I18n.t('minute'), activeIndex: 30 },
+];
+const durationColumns = () => [
+  { values: range(12), unit: I18n.t('hour'), activeIndex: 2 },
+  { values: range(12, 5), unit: I18n.t('minute'), activeIndex: 4 },
+];
+
 SmartComponent({
   data: {
     isA11y: false,
@@ -92,6 +106,10 @@ SmartComponent({
         values: new Array(100).fill(1).map((x, i) => i),
       },
     ],
+    // 跨数据源复用同一滚轮：切换数据源后各列应停在新 columns 指定的 activeIndex 上
+    reuseIsStartTime: true,
+    reuseColumns: startTimeColumns(),
+    reuseTip: `${I18n.t('reuseStartTime')} · 03:30`,
     // 10w 大数据量：验证超长列表的初始化与滚动性能（点击按钮按需加载，避免每次进页面都灌 10w）
     bigColumn: [] as number[],
     bigDataCost: 0,
@@ -140,6 +158,17 @@ SmartComponent({
       picker.setColumnValues(1, this.data.column3[value[0]]);
       getApp().picker = picker;
     },
+    switchReuseSource() {
+      const toStartTime = !this.data.reuseIsStartTime;
+      this.setData({
+        reuseIsStartTime: toStartTime,
+        reuseColumns: toStartTime ? startTimeColumns() : durationColumns(),
+        reuseTip: toStartTime
+          ? `${I18n.t('reuseStartTime')} · 03:30`
+          : `${I18n.t('reuseDuration')} · 02:20`,
+      });
+    },
+
     // 按需生成 10w 选项并注入，记录 setData 往返耗时
     loadBigData() {
       const bigColumn = new Array(100000).fill(0).map((x, i) => i);

@@ -4,7 +4,7 @@ var addUnit = require('../wxs/add-unit.wxs');
 var wxUtils = require('../wxs/utils.wxs');
 
 function unitGapStyle(unitGap) {
-  if (unitGap === undefined || unitGap === null) {
+  if (unitGap === undefined || unitGap === null || unitGap === '') {
     return '';
   }
   return style({

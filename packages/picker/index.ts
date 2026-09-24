@@ -67,6 +67,15 @@ SmartComponent({
         }
       },
     },
+    /**
+     * 列数据（columns）变化时，是否把发生变化的列重置回第 0 项。默认 true 保持历史行为。
+     * 传 false 后定位由各列 activeIndex 驱动——安卓容器上库内重置（setIndex(0)）会
+     * 异步覆盖 activeIndex 定位，跨数据源复用滚轮时初始档位丢失，此场景建议传 false。
+     */
+    autoReset: {
+      type: Boolean,
+      value: true,
+    },
   },
 
   data: {
@@ -216,7 +225,9 @@ SmartComponent({
         if (this._windows[index] && this._windows[index].windowed) {
           return Promise.resolve();
         }
-        return this.setColumnValues(index, column.values);
+        // autoReset=false 时定位由各列 activeIndex 驱动：安卓容器上库内重置
+        // （setIndex(0)）会异步覆盖 activeIndex 定位，跨数据源复用滚轮时档位丢失
+        return this.setColumnValues(index, column.values, this.data.autoReset);
       });
       return Promise.all(stack);
     },

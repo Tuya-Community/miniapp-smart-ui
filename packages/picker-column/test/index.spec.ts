@@ -925,5 +925,28 @@ describe('picker-column', () => {
       expect(newIndex).toBe(1);
     }
   });
-});
 
+  // 回归锁：unitGap 的默认值必须是 '' 而不是 undefined。
+  // 安卓容器对含 undefined 字段的 setData 会整批拒绝，导致同批下发的
+  // activeIndex / currentIndex 一起丢失（滚轮打开即停在第 0 项）。
+  test('未传 unit-gap 时默认值为空串，不得为 undefined', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-picker-column': SmartPickerColumn,
+        },
+        template: `<smart-picker-column id="wrapper" options="{{ options }}" unit="Kg" />`,
+        data: {
+          options: ['选项1', '选项2'],
+        },
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#wrapper');
+    await simulate.sleep(10);
+
+    expect(wrapper?.data.unitGap).toBe('');
+    expect(wrapper?.data.unitGap).not.toBeUndefined();
+  });
+});
