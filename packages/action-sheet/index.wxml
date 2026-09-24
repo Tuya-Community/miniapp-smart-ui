@@ -21,12 +21,10 @@
   bind:leave="onLeave"
   bind:after-leave="onAfterLeave"
 >
-  <view wx:if="{{ title || useTitleSlot }}" class="smart-action-sheet__header">
-    <block wx:if="{{ title }}">{{ title }}</block>
-    <!-- slot外包一层view，防止与 wx:if 兄弟节点同时切换时渲染顺序错乱 -->
-    <view wx:else>
-      <slot name="title" />
-    </view>
+  <!-- 规避基础库 slot 与 wx:if/wx:else 兄弟节点并列时的渲染顺序问题，请勿合并回 header 内部做条件判断 -->
+  <view wx:if="{{ title }}" class="smart-action-sheet__header">{{ title }}</view>
+  <view wx:elif="{{ useTitleSlot }}" class="smart-action-sheet__header">
+    <slot name="title" />
   </view>
   <view wx:if="{{ description }}" class="smart-action-sheet__description smart-hairline--bottom">
     {{ description }}
@@ -64,10 +62,7 @@
       <smart-loading wx:else custom-class="smart-action-sheet__loading" size="22px" />
     </button>
   </scroll-view>
-  <!-- slot外包一层view，防止 actions/title 等 wx:if 节点变化时，slot 内容被渲染到错误位置 -->
-  <view>
-    <slot />
-  </view>
+  <slot />
   <block wx:if="{{ cancelText || confirmText }}">
     <view class="smart-action-sheet__gap" />
     <view class="smart-action-sheet__footer">
