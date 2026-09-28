@@ -106,6 +106,78 @@ describe('field', () => {
     expect(changeEvent).toBeTruthy();
   });
 
+  test('should not write back innerValue on plain input', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-field': SmartField,
+        },
+        template: `<smart-field id="field" type="textarea" value="abcdef" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#field');
+    const instance = wrapper?.instance;
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    const setDataSpy = jest.spyOn(instance, 'setData');
+    instance.onInput({ detail: { value: 'abdef' } });
+    await simulate.sleep(10);
+
+    expect(instance.value).toBe('abdef');
+    expect(setDataSpy.mock.calls.some(([data]: any[]) => 'innerValue' in data)).toBe(false);
+  });
+
+  test('should write back innerValue when input exceeds maxlength', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-field': SmartField,
+        },
+        template: `<smart-field id="field" maxlength="{{ 5 }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#field');
+    const instance = wrapper?.instance;
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onInput({ detail: { value: '123456' } });
+    await simulate.sleep(10);
+
+    expect(wrapper?.data.innerValue).toBe('12345');
+  });
+
+  test('should write back formatted innerValue on input with numberFormat', async () => {
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: {
+          'smart-field': SmartField,
+        },
+        template: `<smart-field id="field" type="number" numberFormat="{{ true }}" />`,
+      })
+    );
+    comp.attach(document.createElement('parent-wrapper'));
+
+    const wrapper = comp.querySelector('#field');
+    const instance = wrapper?.instance;
+    expect(instance).toBeTruthy();
+    await simulate.sleep(10);
+    if (!instance) return;
+
+    instance.onInput({ detail: { value: '1234567' } });
+    await simulate.sleep(10);
+
+    expect(instance.value).toBe('1234567');
+    expect(wrapper?.data.innerValue).not.toBe('1234567');
+  });
+
   test('should handle onInput with empty detail', async () => {
     const comp = simulate.render(
       simulate.load({
