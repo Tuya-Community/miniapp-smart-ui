@@ -1,8 +1,9 @@
 name: Publish Beta Package
 
 # 使用 pull_request_target 而非 pull_request：fork 仓库的 PR 在 pull_request 下拿不到 secrets，
-# 合并后无法发 beta。pull_request_target 在主仓库上下文运行，且只在合并后执行、检出的是
-# release/2.x（已审核合入的代码）。注意：禁止在本流程中检出 PR head（head.sha / head.ref），
+# 合并后无法发 beta。此 workflow 必须位于默认分支 main；pull_request_target 运行时
+# github.ref 指向 main，因此发布步骤必须显式检出 release/2.x（已审核合入的代码）。
+# 注意：禁止在本流程中检出 PR head（head.sha / head.ref），
 # 也禁止把 fork 可控的 head.ref / title / body 拼进脚本，否则会把 secrets 暴露给未审核代码。
 on:
   pull_request_target:
@@ -18,6 +19,10 @@ on:
         required: true
         type: string
 
+concurrency:
+  group: publish-beta-release-2x
+  cancel-in-progress: false
+
 jobs:
   publish_beta:
     runs-on: ubuntu-latest
@@ -31,6 +36,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+          ref: release/2.x
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -119,8 +125,8 @@ jobs:
       - name: Commit Changes
         run: |
           git config pull.rebase false
-          git pull origin ${{ github.event.pull_request.base.ref || 'release/2.x' }}
-          git add .
+          git pull origin release/2.x
+          git add package.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
@@ -131,7 +137,7 @@ jobs:
       - name: Push
         # 使用个人访问令牌来推送更改以避免保护分支限制
         run: |
-          git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{github.ref}}
+          git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:release/2.x
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
