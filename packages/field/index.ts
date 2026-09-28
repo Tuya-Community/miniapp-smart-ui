@@ -153,8 +153,11 @@ SmartComponent({
 
       this.value = formatValue;
 
-      // 更新显示值
-      this.updateDisplayValue();
+      // 仅在显示值需要与原生值不同时回写（数字格式化或超长截断）。
+      // 输入过程中回写 value 会让 iOS 原生 textarea 在连续删除时光标跳到末尾。
+      if (numberFormat || formatValue !== value) {
+        this.updateDisplayValue();
+      }
       this.setShowClear();
 
       return this.emitChange({
