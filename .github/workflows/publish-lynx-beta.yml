@@ -54,7 +54,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
 
       - name: Install locked build dependencies
-        run: yarn install --frozen-lockfile --ignore-scripts
+        run: yarn install --frozen-lockfile
 
       - name: Set Lynx package version only
         run: npm --prefix lynx version "$LYNX_VERSION" --no-git-tag-version --allow-same-version --ignore-scripts
