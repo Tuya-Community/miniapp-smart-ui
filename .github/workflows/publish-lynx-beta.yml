@@ -90,19 +90,26 @@ jobs:
           retention-days: 30
 
       - name: Publish the verified tarball to the independent beta package
-        run: npm publish "$PACKAGE_TARBALL" --ignore-scripts --access public --tag beta
+        run: |
+          existing_integrity=$(npm view "${PACKAGE_NAME}@${LYNX_VERSION}" dist.integrity --registry=https://registry.npmjs.org/ --prefer-online 2>/dev/null || true)
+          if [ -n "$existing_integrity" ]; then
+            test "$existing_integrity" = "$PACKAGE_INTEGRITY"
+            echo 'Identical version is already published; continuing registry verification'
+          else
+            npm publish "$PACKAGE_TARBALL" --ignore-scripts --access public --tag beta
+          fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Verify npm registry version and integrity
         run: |
-          for attempt in {1..12}; do
+          for attempt in {1..60}; do
             registry_integrity=$(npm view "${PACKAGE_NAME}@${LYNX_VERSION}" dist.integrity --registry=https://registry.npmjs.org/ --prefer-online 2>/dev/null || true)
             if [ "$registry_integrity" = "$PACKAGE_INTEGRITY" ]; then
               test "$(npm view "$PACKAGE_NAME" dist-tags.beta --registry=https://registry.npmjs.org/ --prefer-online)" = "$LYNX_VERSION"
               exit 0
             fi
-            sleep 5
+            sleep 10
           done
           echo 'Published version/integrity could not be confirmed in npm registry'
           exit 1
