@@ -1,0 +1,16 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function rootStyle(data) {
+  return style({
+    '--smart-col-width': ((data.span || 0) * 100 / 24) + '%',
+    '--smart-col-offset': ((data.offset || 0) * 100 / 24) + '%',
+    'padding-right': addUnit(data.gutter / 2),
+    'padding-left': addUnit(data.gutter / 2),
+  });
+}
+
+module.exports = {
+  rootStyle: rootStyle,
+};

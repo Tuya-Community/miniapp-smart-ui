@@ -1,0 +1,10 @@
+/dist/
+/example/dist/
+/build-output/
+/fixtures/dist/
+/build-fixtures-output/
+/build-*-output/
+/example/
+/*.tgz
+/release-output/
+/.dev/

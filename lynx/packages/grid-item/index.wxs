@@ -1,0 +1,30 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function wrapperStyle(data) {
+  var width = 100 / data.columnNum + '%';
+
+  return style({
+    width: '100%',
+    'box-sizing': 'border-box',
+    'padding-right': addUnit(data.gutter),
+    'margin-top':
+      data.index >= data.columnNum && !data.square
+        ? addUnit(data.gutter)
+        : null,
+  });
+}
+
+function contentStyle(data) {
+  return style({
+    'aspect-ratio': data.square ? 1 : null,
+    'border-right': data.border ? '0.5px solid var(--border-color, #ebedf0)' : null,
+    'border-bottom': data.border ? '0.5px solid var(--border-color, #ebedf0)' : null,
+  });
+}
+
+module.exports = {
+  wrapperStyle: wrapperStyle,
+  contentStyle: contentStyle,
+};

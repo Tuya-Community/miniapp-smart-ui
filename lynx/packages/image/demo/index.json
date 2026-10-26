@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-row": "../../row/index",
+    "smart-col": "../../col/index",
+    "smart-image": "../../image/index",
+    "smart-loading": "../../loading/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

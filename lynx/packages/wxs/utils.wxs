@@ -1,0 +1,85 @@
+/* eslint-disable */
+var bem = require('./bem.wxs');
+var memoize = require('./memoize.wxs');
+var addUnit = require('./add-unit.wxs');
+
+function queryComponent (ownerInstance, selector) {
+  var instance = ownerInstance && ownerInstance.selectComponent(selector);
+  return instance;
+};
+
+function isObj(x) {
+  var type = typeof x;
+  return x !== null && (type === 'object' || type === 'function');
+}
+
+function range(num, min, max) {
+  return Math.min(Math.max(num, min), max);
+}
+
+// 创建指定长度并填充默认值的数组
+function createArray(length, defaultValue) {
+  var arr = [];
+  for (var i = 0; i < length; i++) {
+    arr[i] = defaultValue;
+  }
+  return arr;
+}
+
+// 填充数组的所有元素为指定值
+function fillArray(arr, value) {
+  for (var i = 0; i < arr.length; i++) {
+    arr[i] = value;
+  }
+  return arr;
+}
+
+function isArray(array) {
+  return array && typeof array === 'object' && typeof array.length === 'number';
+}
+
+// 判断字符串是否全是数字（支持负数和小数）
+function isAllNumbers(str) {
+  if (str === null || str === undefined || str === '' || isNaN(str)) return false;
+  if( typeof str === 'number') return true;
+  var s = str + '';
+  var len = s.length;
+  if (len === 0) return false;
+
+  var i = 0;
+  // 检查开头的负号
+  if (s[0] === '-') {
+    i = 1;
+    if (len === 1) return false;
+  }
+
+  var hasDigit = false;
+  var hasDot = false;
+
+  for (; i < len; i++) {
+    var char = s[i];
+    if (char >= '0' && char <= '9') {
+      hasDigit = true;
+    } else if (char === '.') {
+      if (hasDot) return false; // 多个小数点
+      hasDot = true;
+    } else {
+      return false; // 非法字符
+    }
+  }
+
+  return hasDigit; // 至少有一个数字
+}
+
+module.exports = {
+  bem: memoize(bem),
+  memoize: memoize,
+  addUnit: addUnit,
+  queryComponent: queryComponent,
+  isObj: isObj,
+  range: range,
+  createArray: createArray,
+  fillArray: fillArray,
+  isArray: isArray,
+  isAllNumbers: isAllNumbers
+};

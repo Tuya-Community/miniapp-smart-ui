@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/batch/index",
+    "pages/forms/index",
+    "pages/touch/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "SmartUI Lynx batch 10",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#ffffff"
+  }
+}

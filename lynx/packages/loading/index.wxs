@@ -1,0 +1,43 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+var svg = require('../icon/svg.wxs');
+
+function textStyle(data) {
+  var ret = style({
+    'font-size': addUnit(data.textSize),
+    color: data.color || 'var(--loading-text-color, #1989FA)',
+  });
+
+  return ret;
+}
+
+function loadingStyle(data) {
+  var iconSrc = '';
+
+  if (data.type === 'spinner') {
+    iconSrc = data.spinner;
+  }
+
+  if (data.type === 'circular') {
+    iconSrc = data.circular;
+  }
+
+  var imageBase64Src = "url('" + iconSrc + "')";
+  var ret = style({
+    '-webkit-mask-image': imageBase64Src,
+    '-webkit-mask-size': addUnit(data.size),
+    width: addUnit(data.size),
+    height: addUnit(data.size),
+    background: data.iconColor || data.color || 'var(--loading-spinner-color, #1989FA)',
+  });
+
+  return ret;
+}
+
+module.exports = {
+  textStyle: textStyle,
+  loadingStyle: loadingStyle,
+  nativeSource: function (data) { return svg.getSource({ name: data.type === 'spinner' ? data.spinner : data.circular, color: data.iconColor || data.color || '#1989fa', themeColors: data.themeColors }); },
+  nativeSize: function (size) { return style({ width: addUnit(size), height: addUnit(size) }); },
+};

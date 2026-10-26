@@ -1,0 +1,10 @@
+.proof { padding: 16px; background-color: #ffffff; }
+.row { display: flex; flex-direction: row; align-items: center; min-height: 58px; border-bottom: 1px solid #eeeeee; }
+.label { width: 100px; flex-shrink: 0; font-size: 14px; color: #555555; }
+.samples { display: flex; flex-direction: row; align-items: center; flex: 1; gap: 16px; }
+.controls { display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; padding-top: 12px; }
+.control { background-color: #edf3ff; border-radius: 8px; padding: 12px; }
+.control text { color: #2458a6; font-size: 14px; }
+.events { font-size: 13px; color: #333333; margin-top: 12px; }
+.popup-body { padding: 24px; width: 300px; background-color: #ffffff; display:flex; flex-direction:column; }
+.popup-title { font-size: 18px; color: #222222; margin-bottom:16px; }

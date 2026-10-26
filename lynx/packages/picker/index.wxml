@@ -1,0 +1,50 @@
+<wxs src="./index.wxs" module="computed" />
+
+<view class="smart-picker custom-class">
+  <include wx:if="{{ toolbarPosition === 'top' }}" src="./toolbar.wxml" />
+
+  <view wx:if="{{ loading }}" class="smart-picker__loading">
+    <loading color="#1989fa"/>
+  </view>
+
+  <view
+    class="smart-picker__columns"
+    style="{{ computed.columnsStyle({ itemHeight, visibleItemCount, fullHeight }) }}"
+    catch:touchmove="noop"
+  >
+    <picker-column
+      class="smart-picker__column"
+      wx:for="{{ renderColumns }}"
+      wx:key="index"
+      data-index="{{ index }}"
+      animation-time="{{ animationTime }}"
+      custom-class="column-class"
+      value-key="{{ valueKey }}"
+      style="order: {{ item.order }}; {{ computed.style(item.style) }}"
+      active-style="{{ activeStyle }}"
+      font-style="{{fontStyle ? fontStyle + ';' + computed.style(item.fontStyle): computed.style(item.fontStyle)}}"
+      options="{{ item.values }}"
+      windowed="{{ item._windowed || false }}"
+      disabled="{{ item.disabled || false }}"
+      unit="{{ item.unit || unit }}"
+      unit-gap="{{ item.unitGap === undefined || item.unitGap === null ? '' : item.unitGap }}"
+      changeAnimation="{{ changeAnimation }}"
+      default-index="{{ item.defaultIndex || defaultIndex }}"
+      active-index="{{ (item.activeIndex === null || item.activeIndex === undefined) ? activeIndex : item.activeIndex }}"
+      item-height="{{ itemHeight }}"
+      loop="{{ loop || item.loop || false }}"
+      visible-item-count="{{ visibleItemCount }}"
+      active-class="active-class"
+      bind:change="onChange"
+      bind:animation-start="animationStart"
+      bind:animation-end="animationEnd"
+    />
+
+    <view
+      class="smart-picker__frame smart-hairline--top-bottom hairline-class"
+      style="{{ computed.frameStyle({ itemHeight }) }}"
+    />
+  </view>
+
+  <include wx:if="{{ toolbarPosition === 'bottom' }}" src="./toolbar.wxml" />
+</view>

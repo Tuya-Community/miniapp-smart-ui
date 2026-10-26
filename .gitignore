@@ -27,3 +27,6 @@ miniprogram_npm
 .clix/headless-mp-out--*
 .clix/headless/device-snapshot.json
 .clix/headless/group-snapshot.json
+.clix/headless/serve-runtime.json
+.clix/headless/mock*.log*
+.clix/test/e2e_temp/

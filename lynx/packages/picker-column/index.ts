@@ -1,0 +1,475 @@
+import { SmartComponent } from '../common/component';
+import { range } from '../common/utils';
+import { isObj } from '../common/validator';
+import tyApi from '../common/ty';
+
+const DEFAULT_DURATION = 400;
+
+let nextId = 0;
+const getId = () => `smart-picker-column-${nextId++}`;
+
+SmartComponent({
+  classes: ['active-class'],
+
+  props: {
+    valueKey: String,
+    className: String,
+    itemHeight: Number,
+    disabled: {
+      type: Boolean,
+      observer(value) {
+        if (value && this.data.isInit) this.onNativeTouchCancel();
+      },
+    },
+    // 是否为父级窗口化列：为 true 时对大幅度的 active-index 跳变强制关闭过渡（用于停稳回中的静默重定位）
+    windowed: {
+      type: Boolean,
+      value: false,
+    },
+    visibleItemCount: Number,
+    activeStyle: {
+      type: String,
+      value: '',
+    },
+    options: {
+      type: Array,
+      value: [],
+      observer(value) {
+        if (!this.data.isInit) return;
+        this.stopNativeMotion();
+        this.nativeDragging = false;
+        this.nativeStartY = undefined;
+        this.updateUint(value);
+        // 窗口化列：切片与 activeIndex（局部）在同一批 setData 到达，
+        // 此处直接采用新的 activeIndex，使「新切片 + 新下标」原子落地，避免差一帧的错位闪烁
+        const nextIndex =
+          this.data.windowed &&
+          this.data.activeIndex !== null &&
+          this.data.activeIndex !== undefined
+            ? this.data.activeIndex
+            : this.data.currentIndex;
+        this.updateCurrentIndex(nextIndex);
+        this.updateVisibleOptions();
+      },
+    },
+    defaultIndex: {
+      type: Number,
+      value: 0,
+    },
+    changeAnimation: {
+      type: Boolean,
+      value: false,
+    },
+    fontStyle: {
+      type: String,
+      value: '',
+    },
+    activeIndex: {
+      type: null,
+      observer(activeIndex) {
+        if (!this.data.isInit) return;
+        this.stopNativeMotion();
+        this.nativeDragging = false;
+        this.nativeStartY = undefined;
+        this.updateCurrentIndex(activeIndex);
+        this.updateVisibleOptions();
+      },
+    },
+    unit: {
+      type: String,
+      value: '',
+    },
+    unitGap: {
+      type: null,
+      // 默认空串而非 undefined：undefined 会触发运行时 setData 告警，
+      // 且在安卓容器上导致同批数据（含初始 activeIndex 定位）被整批拒绝
+      value: '',
+    },
+    animationTime: {
+      type: Number,
+      value: 300,
+    },
+    loop: {
+      type: Boolean,
+      value: false,
+      observer() {
+        if (!this.data.isInit) return;
+        this.stopNativeMotion();
+        this.nativeDragging = false;
+        this.nativeStartY = undefined;
+        this.updateCurrentIndex(this.data.currentIndex);
+        this.updateVisibleOptions();
+      },
+    },
+  },
+  data: {
+    isInit: false,
+    maxText: '',
+    optionsVIndexList: [] as any[], // 渲染的 options index 列表
+    animationIndex: 0, // 动画索引 会存在 小数，负数等情况
+    currentIndex: 0, // 当前索引 同 activeIndex
+    isDestroy: false,
+  },
+
+  created() {
+    this.setData({
+      instanceId: getId(),
+    });
+    this.updateUint(this.data.options);
+    const { activeIndex, defaultIndex } = this.data;
+    const currIndex = activeIndex !== null ? activeIndex : defaultIndex;
+    this.updateCurrentIndex(currIndex);
+    this.updateVisibleOptions();
+    this.setData({
+      isInit: true,
+    });
+  },
+  destroyed() {
+    this.stopNativeMotion();
+    clearInterval(this.data.vibrateTimer);
+  },
+
+  methods: {
+    stopNativeMotion() {
+      clearTimeout(this.nativeMotionTimer);
+      this.nativeMotionRevision = (this.nativeMotionRevision || 0) + 1;
+    },
+    animateNativeTo(target) {
+      this.stopNativeMotion();
+      const revision = this.nativeMotionRevision;
+      const start = this.data.animationIndex;
+      const startedAt = Date.now();
+      const duration =
+        this.data.animationTime === undefined ? 300 : Math.max(0, this.data.animationTime);
+      this.nativeDragging = true;
+      const frame = () => {
+        if (revision !== this.nativeMotionRevision) return;
+        if (this.data.disabled) {
+          this.onNativeTouchCancel();
+          return;
+        }
+        const progress = duration ? Math.min(1, (Date.now() - startedAt) / duration) : 1;
+        const ease = 1 - (1 - progress) * (1 - progress) * (1 - progress);
+        this.setData({ animationIndex: start + (target - start) * ease });
+        this.updateVisibleOptions();
+        if (progress < 1) this.nativeMotionTimer = setTimeout(frame, 16);
+        else {
+          this.updateCurrentIndex(target);
+          this.updateVisibleOptions();
+          this.nativeDragging = false;
+          this.nativeStartY = undefined;
+          this.activeIndexChange(target);
+          this.animationEnd();
+        }
+      };
+      frame();
+    },
+    onNativeTouchStart(event) {
+      if (this.data.disabled || !this.data.options.length) return;
+      this.stopNativeMotion();
+      this.nativeStartY = event.touches[0].pageY;
+      this.nativeLastY = this.nativeStartY;
+      this.nativeLastTime = Date.now();
+      this.nativeVelocity = 0;
+      this.nativeStartIndex = this.data.animationIndex;
+      this.nativeDragging = false;
+    },
+    onNativeTouchMove(event) {
+      if (this.data.disabled || this.nativeStartY === undefined) return;
+      if (!this.nativeDragging) this.animationStart();
+      this.nativeDragging = true;
+      const y = event.touches[0].pageY;
+      const now = Date.now();
+      this.nativeVelocity = (this.nativeLastY - y) / Math.max(1, now - this.nativeLastTime);
+      this.nativeLastY = y;
+      this.nativeLastTime = now;
+      let index = this.nativeStartIndex + (this.nativeStartY - y) / this.data.itemHeight;
+      if (!this.data.loop) index = Math.max(0, Math.min(this.data.options.length - 1, index));
+      if (Math.round(index) !== Math.round(this.data.animationIndex)) this.vibrateShort();
+      this.setData({ animationIndex: index });
+      this.updateVisibleOptions();
+    },
+    onNativeTouchEnd() {
+      if (!this.nativeDragging || this.data.disabled) {
+        this.nativeStartY = undefined;
+        return;
+      }
+      const cap = Math.min(Math.max(Math.floor(this.data.options.length / 4), 6), 100);
+      const velocity = Date.now() - this.nativeLastTime > 80 ? 0 : this.nativeVelocity;
+      const inertia = Math.max(-cap, Math.min(cap, (velocity * 150) / this.data.itemHeight));
+      let target = Math.round(this.data.animationIndex + inertia);
+      if (!this.data.loop) target = Math.max(0, Math.min(this.data.options.length - 1, target));
+      this.animateNativeTo(this.adjustIndex(target));
+    },
+    onNativeTouchCancel() {
+      this.stopNativeMotion();
+      if (this.nativeStartY === undefined && !this.nativeDragging) return;
+      this.updateCurrentIndex(this.data.currentIndex);
+      this.updateVisibleOptions();
+      if (this.nativeDragging) this.animationEnd();
+      this.nativeDragging = false;
+      this.nativeStartY = undefined;
+    },
+    onNativeTap(event) {
+      if (this.data.disabled || this.nativeDragging) return;
+      const optionIndex = this.data.optionsVIndexList[Number(event.currentTarget.dataset.index)];
+      const option = this.data.options[optionIndex];
+      if (optionIndex === '' || option === undefined || (option && option.disabled)) return;
+      const index = this.getNewAnimationIndex(
+        this.data.animationIndex,
+        optionIndex,
+        this.data.options.length,
+        this.data.loop
+      );
+      if (index === this.data.animationIndex) return;
+      this.animationStart();
+      this.vibrateShort();
+      this.animateNativeTo(index);
+    },
+    updateCurrentIndex(currIndex) {
+      const count = this.data.options.length;
+      let animationIndex = this.getAnimationIndex(currIndex);
+      animationIndex = this.adjustIndex(animationIndex);
+      let currActiveIndex =
+        this.data.loop && count > 1 ? ((animationIndex + 1) % count) - 1 : animationIndex;
+      if (currActiveIndex < 0) {
+        currActiveIndex += count;
+      }
+      this.setData({
+        currentIndex: currActiveIndex,
+        animationIndex: animationIndex,
+      });
+    },
+    updateVisibleOptions() {
+      const optionsVIndexList = this.getVisibleOptions(this.data.animationIndex);
+      this.setData({
+        optionsVIndexList: optionsVIndexList,
+      });
+    },
+    getAnimationIndex(currentIndex) {
+      const { animationIndex } = this.data;
+      const length = this.data.options.length || 1;
+      if (this.data.loop && length > 1) {
+        const newAnimationIndex = this.getNewAnimationIndex(
+          animationIndex,
+          currentIndex,
+          length,
+          this.data.loop
+        );
+        return newAnimationIndex;
+      }
+      return currentIndex;
+    },
+    getCount() {
+      return this.data.options.length;
+    },
+
+    vibrateShort(count?: number, time = DEFAULT_DURATION) {
+      if (this.data.vibrateTimer) {
+        clearInterval(this.data.vibrateTimer);
+        this.setData({
+          vibrateTimer: null,
+        });
+      }
+      if (!count) {
+        tyApi.vibrateShort({ type: 'light' });
+        return;
+      }
+      let has = 0;
+      const timer = setInterval(() => {
+        if (has >= count) {
+          clearInterval(timer);
+          return;
+        }
+        has++;
+        tyApi.vibrateShort({ type: 'light' });
+      }, time / count - 20);
+      this.setData({
+        vibrateTimer: timer,
+      });
+    },
+
+    updateUint(options: any[]) {
+      const { unit, valueKey } = this.data;
+      if (unit) {
+        let maxText = '';
+        options.forEach(option => {
+          const value = isObj(option) ? option[valueKey]?.toString() : option?.toString();
+          if (maxText.length < value.length) {
+            maxText = value;
+          }
+        });
+        this.setData({ maxText });
+      }
+    },
+
+    getVisibleOptions(currentIndex?: number) {
+      let animationIndex = Math.round(
+        currentIndex !== undefined ? currentIndex : this.data.animationIndex
+      );
+      const vOptionLength = this.data.visibleItemCount * 4 - 2;
+      const rotateAngle = 360 / vOptionLength;
+      const partCount = Math.floor(this.data.visibleItemCount / 2) + 3;
+      const newArr = new Array(vOptionLength).fill('');
+      const newValueArr = new Array(partCount * 2 + 1).fill('');
+      if (this.data.loop && this.data.options.length > 1) {
+        // 循环模式：根据 options 首尾填充 newValueArr 数组
+        const optionsLength = this.data.options.length;
+        if (optionsLength === 0) {
+          // 如果没有选项，填充空值
+          newValueArr.fill('');
+        } else {
+          newValueArr.forEach((item, index) => {
+            // 计算相对于中心的偏移量
+            const offset = index - partCount;
+            // 计算目标索引，支持循环
+            const targetAnimationIndex = animationIndex + offset;
+            let targetIndex = ((targetAnimationIndex + 1) % optionsLength) - 1;
+            if (targetIndex < 0) {
+              targetIndex += optionsLength;
+            }
+
+            newValueArr[index] = targetIndex;
+          });
+        }
+      } else {
+        if (animationIndex < 0) {
+          animationIndex = 0;
+        }
+        if (animationIndex > this.data.options.length - 1) {
+          animationIndex = this.data.options.length - 1;
+        }
+        newValueArr.forEach((item, index) => {
+          const valueIndex =
+            animationIndex - partCount + index >= 0
+              ? animationIndex - partCount + index
+              : undefined;
+          if (valueIndex === undefined) {
+            return;
+          }
+          newValueArr[index] = valueIndex;
+        });
+      }
+      let rotate = (animationIndex * rotateAngle) % 360;
+      if (rotate < 0) {
+        rotate += 360;
+      }
+      const rotateIndex = Math.round(rotate / rotateAngle);
+
+      // 环形结构填充：以rotateIndex为中心，向两边扩展填充newValueArr
+      const centerIndex = rotateIndex; // 中心位置
+      const halfLength = Math.floor(newValueArr.length / 2); // newValueArr的一半长度
+
+      // 从中心位置开始，向两边填充
+      for (let i = 0; i < newValueArr.length; i++) {
+        const targetIndex = (centerIndex - halfLength + i + vOptionLength) % vOptionLength; // 确保索引在0-17范围内
+        newArr[targetIndex] = newValueArr[i];
+      }
+      return newArr;
+    },
+    getNewAnimationIndex(animationIndex, currentIndex, length, loop) {
+      const curOptionsNewIndex = Math.floor((animationIndex + 1) / length) * length + currentIndex;
+      const preOptionsNewIndex = curOptionsNewIndex - length;
+      const afterOptionsNewIndex = curOptionsNewIndex + length;
+      const newAnimationIndex = !loop
+        ? currentIndex
+        : Math.abs(preOptionsNewIndex - animationIndex) >
+          Math.abs(curOptionsNewIndex - animationIndex)
+        ? Math.abs(curOptionsNewIndex - animationIndex) >
+          Math.abs(afterOptionsNewIndex - animationIndex)
+          ? afterOptionsNewIndex
+          : curOptionsNewIndex
+        : Math.abs(preOptionsNewIndex - animationIndex) >
+          Math.abs(afterOptionsNewIndex - animationIndex)
+        ? afterOptionsNewIndex
+        : preOptionsNewIndex;
+      return newAnimationIndex;
+    },
+    adjustIndex(index: number) {
+      const { data } = this;
+      const count = this.getCount();
+      if (this.data.loop && count > 1) {
+        for (let i = 0; i < count; i++) {
+          const targetIndex = index + i;
+          let optionIndex = ((targetIndex + 1) % count) - 1;
+          if (optionIndex < 0) {
+            optionIndex += count;
+          }
+          if (
+            !this.isDisabled(data.options[optionIndex]) &&
+            data.options[optionIndex] !== undefined
+          ) {
+            return targetIndex;
+          }
+        }
+        return 0;
+      }
+      const currentIndex = range(index, 0, count);
+      for (let i = currentIndex; i < count; i++) {
+        if (!this.isDisabled(data.options[i]) && data.options[i] !== undefined) return i;
+      }
+      for (let i = currentIndex - 1; i >= 0; i--) {
+        if (!this.isDisabled(data.options[i]) && data.options[i] !== undefined) return i;
+      }
+      return 0;
+    },
+
+    isDisabled(option: any) {
+      return isObj(option) && option.disabled;
+    },
+
+    getOptionText(option: any) {
+      const { data } = this;
+      return isObj(option) && data.valueKey in option ? option[data.valueKey] : option;
+    },
+
+    setValue(value: string) {
+      const { options } = this.data;
+      for (let i = 0; i < options.length; i++) {
+        if (this.getOptionText(options[i]) === value) {
+          return this.setIndex(i);
+        }
+      }
+      return Promise.resolve();
+    },
+
+    setIndex(index: number) {
+      this.stopNativeMotion();
+      this.nativeDragging = false;
+      this.nativeStartY = undefined;
+      this.updateCurrentIndex(index);
+      this.updateVisibleOptions();
+      return Promise.resolve();
+    },
+    getValue() {
+      const { data } = this;
+      return data.options[data.currentIndex];
+    },
+
+    activeIndexChange(index: number) {
+      let currentIndex = ((index + 1) % this.data.options.length) - 1;
+      if (currentIndex < 0) {
+        currentIndex += this.data.options.length;
+      }
+      const isSame = currentIndex === this.data.activeIndex;
+      this.setData({
+        currentIndex,
+        animationIndex: index,
+      });
+      !isSame && this.$emit('change', index);
+    },
+
+    animationIndexChange(index: number) {
+      this.setData({
+        animationIndex: index,
+      });
+    },
+
+    animationStart() {
+      this.$emit('animation-start');
+    },
+    animationEnd() {
+      this.$emit('animation-end');
+    },
+  },
+});

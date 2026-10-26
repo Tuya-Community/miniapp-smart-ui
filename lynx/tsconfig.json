@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { "definitions/*": ["packages/definitions/*"] },
+    "noEmit": true
+  },
+  "include": ["packages/**/*.ts", "../index.d.ts"]
+}

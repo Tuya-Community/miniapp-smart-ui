@@ -1,0 +1,12 @@
+{
+  "component": true,
+  "usingComponents": {
+    "header": "../calendar-header/index",
+    "month": "../calendar-month/index",
+    "month-list": "../calendar-month-list/index",
+    "year-list": "../calendar-year-list/index",
+    "smart-button": "../button/index",
+    "smart-popup": "../popup/index",
+    "smart-toast": "../toast/index"
+  }
+}

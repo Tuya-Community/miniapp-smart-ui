@@ -1,0 +1,43 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function rootStyle(data) {
+  var currentColor = data.checked === data.activeValue ? data.activeColor : data.inactiveColor;
+  var gradient = currentColor && currentColor.indexOf('gradient(') !== -1;
+
+  return style({
+    'font-size': addUnit(data.size),
+    'background-color': gradient ? 'transparent' : currentColor,
+    'background-image': gradient ? currentColor : 'none',
+  });
+}
+
+var BLUE = '#1989fa';
+var GRAY_DARK = '#969799';
+
+function loadingColor(data) {
+  var color = data.checked === data.activeValue
+    ? data.activeColor || BLUE
+    : data.inactiveColor || GRAY_DARK;
+  return color.indexOf('gradient(') !== -1 ? BLUE : color;
+}
+
+function loadingSize(size) {
+  var text = '' + (size || 30);
+  var number = parseFloat(text);
+  if (isNaN(number)) return text;
+  var i = 0;
+  while (i < text.length) {
+    var c = text.charAt(i);
+    if ((c >= '0' && c <= '9') || c === '.' || c === '-' || c === '+') i++;
+    else break;
+  }
+  return number + (text.slice(i) || 'px');
+}
+
+module.exports = {
+  rootStyle: rootStyle,
+  loadingColor: loadingColor,
+  loadingSize: loadingSize,
+};

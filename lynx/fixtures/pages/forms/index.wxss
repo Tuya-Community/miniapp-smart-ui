@@ -1,0 +1,6 @@
+.proof { padding:16px; background-color:#fff; }
+.label { font-size:14px; color:#444; margin:8px 0; }
+.control { background-color:#edf3ff; border-radius:8px; padding:12px; margin:8px; }
+.controls { display:flex; flex-direction:row; }
+.control text { color:#2458a6; font-size:14px; }
+.events { font-size:13px; color:#333; }

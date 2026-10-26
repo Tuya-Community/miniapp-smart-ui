@@ -1,0 +1,87 @@
+/* eslint-disable */
+function escapeAttribute(value) {
+  return value.replace(getRegExp('&', 'g'), '&amp;')
+    .replace(getRegExp('"', 'g'), '&quot;')
+    .replace(getRegExp('<', 'g'), '&lt;');
+}
+
+function decodeBase64(value) {
+  var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+  var bits = 0;
+  var count = 0;
+  var escaped = '';
+  for (var i = 0; i < value.length; i++) {
+    var digit = alphabet.indexOf(value.charAt(i));
+    if (digit < 0) continue;
+    bits = (bits << 6) | digit;
+    count += 6;
+    if (count >= 8) {
+      count -= 8;
+      var byte = (bits >> count) & 255;
+      escaped += '%' + (byte < 16 ? '0' : '') + byte.toString(16);
+    }
+  }
+  return decodeURIComponent(escaped);
+}
+
+function resolveColor(value, colors, fallback, depth) {
+  if (!value || depth > 8) return fallback;
+  value = ('' + value).trim();
+  if (value.indexOf('var(') !== 0) return value === 'currentColor' ? fallback : value;
+  var body = value.slice(4, -1);
+  var comma = body.indexOf(',');
+  var key = (comma < 0 ? body : body.slice(0, comma)).trim();
+  if (colors && colors[key]) return resolveColor(colors[key], colors, fallback, depth + 1);
+  return comma < 0 ? fallback : resolveColor(body.slice(comma + 1), colors, fallback, depth + 1);
+}
+
+function getColor(data) {
+  var fallback = (data.themeColors || {})['--app-B4-N2'] || 'rgba(0,0,0,0.7)';
+  if (data.color) return resolveColor(data.color, data.themeColors, fallback, 0);
+  var declarations = (data.customStyle || '').split(';');
+  for (var i = 0; i < declarations.length; i++) {
+    var colon = declarations[i].indexOf(':');
+    if (colon >= 0 && declarations[i].slice(0, colon).trim() === '--icon-color') {
+      return resolveColor(declarations[i].slice(colon + 1), data.themeColors, fallback, 0);
+    }
+  }
+  return fallback;
+}
+
+function getSource(data) {
+  var name = data.name || '';
+  var color = escapeAttribute(getColor(data));
+  var svg = '';
+  if (name.indexOf('data:image/svg+xml') === 0) {
+    var comma = name.indexOf(',');
+    if (comma < 0) return '';
+    var content = name.slice(comma + 1);
+    try {
+      svg = name.slice(0, comma).indexOf(';base64') !== -1
+        ? decodeBase64(content)
+        : decodeURIComponent(content);
+    } catch (error) {
+      return '';
+    }
+    var start = svg.indexOf('<svg');
+    var end = svg.lastIndexOf('</svg>');
+    if (start < 0 || end < start) return '';
+    svg = svg.slice(start, end + 6);
+  } else {
+    svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">' +
+      '<path d="' + escapeAttribute(name) + '" fill="currentColor" fill-rule="evenodd"/></svg>';
+  }
+  if (!data.preserveDefaultFill) {
+    svg = svg.replace(getRegExp('<svg([^>]*)>'), function (tag, attributes) {
+      // SVG's implicit fill is black. Give unstyled paths the Icon color while
+      // preserving explicit path/root fills and multicolor catalog assets.
+      if (getRegExp('(?:^|[\\s;])fill[\\s=:]').test(attributes)) return tag;
+      return '<svg' + attributes + ' fill="' + color + '">';
+    });
+  }
+  return svg.replace(getRegExp('currentColor', 'g'), color);
+}
+
+module.exports = {
+  getSource: getSource,
+};

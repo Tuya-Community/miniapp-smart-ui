@@ -1,0 +1,1 @@
+<view wx:if="{{show}}" class="smart-overlay custom-class" style="z-index:{{zIndex}};{{customStyle}}" bind:tap="onClick" catch:touchmove="{{lockScroll ? 'noop' : ''}}"><slot /></view>

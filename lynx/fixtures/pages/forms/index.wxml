@@ -1,0 +1,13 @@
+<view class="proof">
+  <text class="label">Picker / PickerColumn</text>
+  <smart-picker columns="{{columns}}" default-index="2" item-height="32" visible-item-count="3" full-height="{{true}}" show-toolbar="{{true}}" title="Picker" bind:change="onPicker" bind:confirm="onConfirmPicker"/>
+  <text class="label">DateTimePicker</text>
+  <smart-datetime-picker type="time" value="{{timeValue}}" item-height="32" visible-item-count="3" show-toolbar="{{true}}" title="Time" bind:change="onTime" bind:confirm="onConfirmTime"/>
+  <text class="label">Slider: {{sliderValue}}</text>
+  <view style="padding:20px;width:100%;"><smart-slider value="{{sliderValue}}" range="{{false}}" min="0" max="100" step="5" bind:change="onSlider" bind:drag="onDrag" bind:cancel="onCancelSlider"/></view>
+  <view class="controls"><view class="control" bindtap="openCalendar"><text>Calendar</text></view><view class="control" bindtap="openDialog"><text>Dialog</text></view></view>
+  <view class="controls"><view class="control" bindtap="setMidnight"><text>00:00</text></view><view class="control" bindtap="setLastMinute"><text>23:59</text></view><view class="control" bindtap="openMonth"><text>Month</text></view><view class="control" bindtap="openYear"><text>Year</text></view></view>
+  <text class="events">{{events}}</text>
+  <smart-popup show="{{calendar}}" position="bottom" custom-style="width:100%;height:480px;" bind:close="closeCalendar"><smart-calendar wx:if="{{calendar}}" poppable="{{false}}" type="{{calendarType}}" min-date="{{minDate}}" max-date="{{maxDate}}" default-date="{{minDate}}" header-icon-color="#333333" confirm-text="Save" show-confirm="{{true}}" bind:confirm="onCalendar" bind:select="onCalendarSelect"/></smart-popup>
+  <smart-dialog id="batch-dialog" show="{{dialog}}" title="Input dialog" message="Enter a name" value="Original" show-cancel-button="{{true}}" show-confirm-button="{{true}}" confirm-button-text="Save" cancel-button-text="Cancel" bind:confirm="onDialog" bind:cancel="closeDialog" bind:close="closeDialog"/>
+</view>

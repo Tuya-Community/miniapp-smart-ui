@@ -1,0 +1,25 @@
+@import './style/var.less';
+.smart-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.smart-hairline--top {
+  border-top: 0.5px solid var(--border-color, @border-color);
+}
+.smart-hairline--bottom {
+  border-bottom: 0.5px solid var(--border-color, @border-color);
+}
+.smart-hairline--left {
+  border-left: 0.5px solid var(--border-color, @border-color);
+}
+.smart-hairline--right {
+  border-right: 0.5px solid var(--border-color, @border-color);
+}
+.smart-hairline--surround {
+  border: 0.5px solid var(--border-color, @border-color);
+}
+.smart-hairline--top-bottom {
+  border-top: 0.5px solid var(--border-color, @border-color);
+  border-bottom: 0.5px solid var(--border-color, @border-color);
+}

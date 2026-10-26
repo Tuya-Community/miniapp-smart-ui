@@ -1,0 +1,8 @@
+<wxs src="./index.wxs" module="computed"/>
+<view wx:if="{{!hidden}}" class="contain {{className}}" style="{{hotAreaStyle}}">
+ <view class="smart-normal-slider__track" style="{{computed.track(direction,trackStyle,disable)}}" bind:tap="onNativeTap" bind:touchstart="onNativeStart" catch:touchmove="onNativeMove" bind:touchend="onNativeEnd" bind:touchcancel="onNativeCancel">
+  <view style="{{computed.bar({direction,reverse,nativeValue,min,max,barStyle,parcel,parcelMargin})}}"/>
+  <view wx:if="{{showSteps}}" wx:for="{{ticks}}" wx:key="*this" style="{{computed.tick({direction,reverse,nativeValue,min,max,value:item,stepStyle,activeStepStyle})}}"/>
+  <view wx:if="{{!hideThumbButton && !hideThumb}}" style="{{computed.thumb({direction,reverse,nativeValue,min,max,thumbStyle,parcel,parcelMargin,parcelThumbWidth,parcelThumbHeight})}}"/>
+ </view>
+</view>

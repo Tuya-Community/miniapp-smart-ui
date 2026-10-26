@@ -1,0 +1,53 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<view
+  class="{{ utils.bem('picker-column', { disabled }) }} custom-class"
+  style="{{ computed.rootStyle({ itemHeight, visibleItemCount }) }}"
+  instanceId="{{instanceId}}"
+  id="{{instanceId}}"
+  data-isdestroy="{{isDestroy}}"
+  data-changeanimation="{{changeAnimation}}"
+  data-valuekey="{{valueKey}}"
+  data-itemheight="{{itemHeight}}"
+  data-visibleitemcount="{{visibleItemCount}}"
+  data-activeindex="{{currentIndex}}"
+  data-loop="{{loop && options.length > 1}}"
+  data-animationtime="{{animationTime}}"
+  data-windowed="{{windowed}}"
+  isdestroy="{{isDestroy}}"
+  options="{{options}}"
+  activeindex="{{currentIndex}}"
+  changeanimation="{{changeAnimation}}"
+  loop="{{loop && options.length > 1}}"
+  valuekey="{{valueKey}}"
+  itemheight="{{itemHeight}}"
+  visibleitemcount="{{visibleItemCount}}"
+  animationtime="{{animationTime}}"
+  windowed="{{windowed}}"
+  bind:touchstart="onNativeTouchStart"
+  catch:touchmove="onNativeTouchMove"
+  bind:touchend="onNativeTouchEnd"
+  bind:touchcancel="onNativeTouchCancel"
+>
+  <view class="smart-picker-column__offset" style="{{ computed.wrapperStyle({ animationIndex, itemHeight, animationTime, unit, moving, optionsVIndexList, options, valueKey, visibleItemCount, loop: loop && options.length > 1, changeAnimation }) }}" id="options">
+    <view
+      wx:for="{{ optionsVIndexList }}"
+      wx:for-item="optionIndex"
+      wx:key="index"
+      data-index="{{index}}"
+      style="{{computed.wrapperItemStyle({ itemHeight, index, visibleItemCount, fontStyle, activeStyle, instanceId, optionsVIndexList, animationIndex, options })}}"
+      class="smart-picker-column__item_{{index}} {{ computed.wrapperItemClass({ index, animationIndex, optionsVIndexList, instanceId, options, valueKey })}}"
+      bind:tap="onNativeTap"
+    >
+      <text class="smart-picker-column__text" style="{{computed.wrapperItemTextStyle({fontStyle,activeStyle,index,instanceId,options,optionsVIndexList,animationIndex})}}">{{computed.nativeItemText({options,optionsVIndexList,animationIndex,instanceId,index,valueKey})}}</text>
+    </view>
+  </view>
+  <view wx:if="{{unit}}" class="smart-picker-column__unit" style="height: {{ itemHeight }}px">
+    <view class="smart-picker-column__max-text" style="{{computed.unitFontStyle(fontStyle)}}">
+      <text style="opacity:0">{{ maxText }}</text>
+      <view class="smart-picker-column__unit_text" style="{{computed.unitGapStyle(unitGap)}}">{{unit}}</view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,6 @@
+// Native builds replace this module in their output directory, never at runtime.
+var native = true;
+
+module.exports = {
+  isNative: function () { return native; },
+};

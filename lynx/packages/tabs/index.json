@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-info": "../info/index",
+    "smart-sticky": "../sticky/index"
+  }
+}

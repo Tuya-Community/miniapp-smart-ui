@@ -1,0 +1,14 @@
+.smart-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+// A Native custom-component host otherwise measures itself from its contents.
+// Percentage columns need the same full-width containing block as WebView.
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}

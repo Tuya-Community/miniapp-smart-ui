@@ -1,0 +1,14 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function boxStyle(data) {
+  if(!data.inset) return '';
+  return style({
+    'border-radius': addUnit(data.insetBorderRadius),
+  });
+}
+
+module.exports = {
+  boxStyle: boxStyle,
+};

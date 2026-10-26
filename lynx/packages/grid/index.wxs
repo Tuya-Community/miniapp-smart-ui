@@ -1,0 +1,14 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function rootStyle(data) {
+  return style({
+    'padding-left': addUnit(data.gutter),
+    '--smart-grid-item-width': (100 / (data.columnNum || 4)) + '%',
+  });
+}
+
+module.exports = {
+  rootStyle: rootStyle,
+};

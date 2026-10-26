@@ -1,0 +1,32 @@
+{
+  "name": "@tuya/miniapp-smart-ui-lynx",
+  "version": "0.1.0-beta.0",
+  "description": "SmartUI components for Tuya Lynx native MiniApp pages",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tuya-Community/miniapp-smart-ui.git",
+    "directory": "lynx"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "beta"
+  },
+  "miniprogram": "dist",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node build.cjs && tsc -p tsconfig.build.json && node tools/verify-package.cjs",
+    "prepack": "npm run build",
+    "verify:package": "node tools/verify-package.cjs",
+    "test": "node --test *.test.cjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "serve:fixtures": "node tools/svg-fixture.cjs"
+  },
+  "dependencies": {
+    "@ray-core/event-propagation": "^0.4.13",
+    "@tuya-miniapp/icons": "^2.3.0"
+  }
+}

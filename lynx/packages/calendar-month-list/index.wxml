@@ -1,0 +1,15 @@
+<view class="contain">
+  <view style="display:flex;flex-direction:row;flex-wrap:wrap;">
+    <view style="width:25%;" wx:for="{{months}}" wx:key="index" class="col_item">
+      <view wx:if="{{item.type === 'disabled'}}" class="item smart-manrope item_disabled" data-index="{{index}}">
+        <text>{{item.text}}</text>
+      </view>
+      <view wx:elif="{{date === item.value}}" class="item smart-manrope item_active" data-index="{{index}}" bindtap="onClick" style="background: {{ color }};">
+        <text>{{item.text}}</text>
+      </view>
+      <view wx:else class="item smart-manrope" data-index="{{index}}" bindtap="onClick">
+        <text>{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+</view>

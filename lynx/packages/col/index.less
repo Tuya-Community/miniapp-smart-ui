@@ -1,0 +1,20 @@
+.smart-col {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.generate(24);
+.generate(@n, @i: 1) when (@i =< @n) {
+  .smart-col--@{i} {
+    width: @i * (100% / 24);
+  }
+  .smart-col--offset-@{i} {
+    margin-left: @i * (100% / 24);
+  }
+  .generate(@n, (@i + 1));
+}
+
+:host {
+  display: flex;
+  flex-shrink: 0;
+}

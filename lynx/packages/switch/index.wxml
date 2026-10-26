@@ -1,0 +1,57 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<block wx:if="{{stopClickPropagation}}">
+  <view
+    role="switch"
+    aria-checked="{{ checked === activeValue ? 'true' : 'false' }}"
+    aria-disabled="{{ disabled ? 'true' : 'false' }}"
+    class="{{ utils.bem('switch', { on: checked === activeValue, disabled, label: activeText || inactiveText }) }} custom-class"
+    style="{{ computed.rootStyle({ size, checked, activeColor, inactiveColor, activeValue }) }}"
+    catch:tap="onClick"
+  >
+    <view class="smart-switch__center">
+      <view wx:if="{{ activeText }}" style="opacity: {{checked === activeValue ? '1' : '0'}}" class="smart-switch__label_active">
+        <text class="smart-switch__label_text">{{ activeText }}</text>
+      </view>
+      <view wx:if="{{ inactiveText }}" style="opacity: {{checked !== activeValue ? '1' : '0'}}" class="smart-switch__label_inactive">
+        <text class="smart-switch__label_text">{{ inactiveText }}</text>
+      </view>
+      <view class="smart-switch__node node-class">
+        <view wx:if="{{ loading }}" class="smart-switch__loading" style="width:{{computed.loadingSize(size)}};height:{{computed.loadingSize(size)}};">
+          <smart-loading
+            color="{{ computed.loadingColor({ checked, activeColor, inactiveColor, activeValue }) }}"
+            size="{{ computed.loadingSize(size) }}"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view
+    role="switch"
+    aria-checked="{{ checked === activeValue ? 'true' : 'false' }}"
+    aria-disabled="{{ disabled ? 'true' : 'false' }}"
+    class="{{ utils.bem('switch', { on: checked === activeValue, disabled, label: activeText || inactiveText }) }} custom-class"
+    style="{{ computed.rootStyle({ size, checked, activeColor, inactiveColor, activeValue }) }}"
+    bind:tap="onClick"
+  >
+    <view class="smart-switch__center">
+      <view wx:if="{{ activeText }}" style="opacity: {{checked === activeValue ? '1' : '0'}}" class="smart-switch__label_active">
+        <text class="smart-switch__label_text">{{ activeText }}</text>
+      </view>
+      <view wx:if="{{ inactiveText }}" style="opacity: {{checked !== activeValue ? '1' : '0'}}" class="smart-switch__label_inactive">
+        <text class="smart-switch__label_text">{{ inactiveText }}</text>
+      </view>
+      <view class="smart-switch__node node-class">
+        <view wx:if="{{ loading }}" class="smart-switch__loading" style="width:{{computed.loadingSize(size)}};height:{{computed.loadingSize(size)}};">
+          <smart-loading
+            color="{{ computed.loadingColor({ checked, activeColor, inactiveColor, activeValue }) }}"
+            size="{{ computed.loadingSize(size) }}"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+</block>

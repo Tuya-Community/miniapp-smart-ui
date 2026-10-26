@@ -1,0 +1,989 @@
+{
+  "scope": "16 priority migration items (15 public components plus internal PickerColumn); Calendar includes its four internal components",
+  "startedAt": "2026-10-23T18:54:18.602333+08:00",
+  "skill": "migrate-ray-business-to-lynx",
+  "targetLynxVersion": "4.0",
+  "targetBackends": [
+    "ios"
+  ],
+  "components": [
+    {
+      "name": "icon",
+      "sourceSha256": "419826cebde61f49b3312309acb4d47627e545348c6127ba270af0f10742ba16",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "SVG/color/size",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "badge/dot",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "PNG/path",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "click and dynamic update",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "theme",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "SVG/路径图标、badge/dot、点击及显式颜色动态变化已做历史冒烟；主题完整覆盖待验收。",
+      "convertedTreeSha256": "2cc8c7450897ec96008dcbae00de334d618bae3841408a0d33f0a54c36505d0e",
+      "convertedFileCount": 11,
+      "openIssues": [
+        "SVG-01",
+        "THEME-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮点击回调、SVG/路径、badge 及显式颜色变化通过；完整主题/字体图标待验收。",
+      "verifiedCaseIds": [
+        "icon-click"
+      ],
+      "convertedTreeIncludes": [
+        "icon"
+      ],
+      "latestAuditCaseIds": [
+        "icon-5"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "image",
+      "sourceSha256": "e4fc75f6f0715245aa4e9fcd07feedb5b085b9be936c89ac277a6ce7d7163e75",
+      "status": "PARTIAL_RUNTIME_VERIFIED_REMOTE_SVG_BLOCKED",
+      "cases": [
+        {
+          "name": "PNG and SVG",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "tint and dynamic color",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "fit/round",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "load/error callbacks",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "loading/error slots",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "PNG 显示及标准 mask 着色（蓝→橙）有历史运行证据；SVG 资源新实现尚未重跑。",
+      "convertedTreeSha256": "55cc519816a2c69885c575d6884897fa8f89cf979f855d9cabfe56b6adbeb3fa",
+      "convertedFileCount": 9,
+      "openIssues": [
+        "SVG-01",
+        "THEME-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "内联 SVG、PNG 显式着色显示通过；远程 SVG 返回宿主域名白名单 40013，成功路径待验收。",
+      "verifiedCaseIds": [],
+      "convertedTreeIncludes": [
+        "image"
+      ],
+      "latestAuditCaseIds": [
+        "image-1",
+        "image-2",
+        "image-3",
+        "image-4",
+        "image-5",
+        "image-6"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "loading",
+      "sourceSha256": "05294c3a0b55d9c95e5701a9340b463b7f5e11f35052df8b3b7018ca6feb5430",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "circular/spinner",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "rotation",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "color/size updates",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "horizontal/vertical text",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "circular/spinner 显示、转动与显式颜色变化有历史运行证据。",
+      "convertedTreeSha256": "20d9f5c44741f792463bdeb1f8c34556c68d8796c263dad87d3a23965fea6f41",
+      "convertedFileCount": 9,
+      "openIssues": [
+        "SVG-01",
+        "THEME-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮 circular/spinner 显示和显式颜色更新有运行截图；精确速度、主题/文字边界待验收。",
+      "verifiedCaseIds": [],
+      "convertedTreeIncludes": [
+        "loading"
+      ],
+      "incrementalRuntime": "移除 Text 套插槽和宿主 font-size:0，保留实际 Text 叶节点；三个加载中文字在横排/竖排原生示例均恢复。",
+      "latestAuditCaseIds": [
+        "loading-3"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "switch",
+      "sourceSha256": "e64fcf84699bce0a1981bd6d2dd8aea0a57809fcef0a777ff178c59d0fc70e8d",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "on/off controlled value",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "size/box model",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "disabled/loading",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "change callback",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "受控开关切换、change 回调、禁用点击无响应有历史运行证据。",
+      "convertedTreeSha256": "5d0d262286efc18141a2c28d42e6f45dc39710d508316a8a213d063f23964724",
+      "convertedFileCount": 9,
+      "openIssues": [
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮受控切换有回调，禁用项点击未触发回调；高级组合待验收。",
+      "verifiedCaseIds": [
+        "switch-change",
+        "switch-disabled"
+      ],
+      "convertedTreeIncludes": [
+        "switch"
+      ],
+      "incrementalRuntime": "用户指出前轮仍有偏差后重新对照。原版393px宽 headless 中文案为两行两列，行距51px；Lynx demo 增加独立整行容器并补回原 inline baseline 间距。Loading 空插槽仍有8px margin，导致图标偏左约4.17px；Switch 范围将该间距置0，并恢复原版30px/24px图标画布。最终开/关两种状态的两种尺寸，截图圆心偏差最大约0.33 CSS px（含抗锯齿取整）。",
+      "headlessParityEvidence": "/Users/xiaoqi/Documents/github/miniapp-smart-ui/.clix/test/e2e_temp/20261026-switch-parity/data/summary.json",
+      "latestAuditCaseIds": [
+        "switch-4"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "grid",
+      "sourceSha256": "f7c6eedb110911118d359e290023d6a115e5b8a738b359b6261fddc252adf75b",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "3/4/5 columns",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "gutter/square",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "dynamic parent options",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "三列布局及宿主宽度修复有历史运行证据；4/5 列、动态属性待验收。",
+      "convertedTreeSha256": "31cb208ad81512e891b5013249551e77b955212cb9de3f628fa7d68ad080d195",
+      "convertedFileCount": 8,
+      "openIssues": [
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮三列布局、图文显示有运行证据；4/5 列及动态属性待验收。",
+      "verifiedCaseIds": [
+        "grid-click"
+      ],
+      "convertedTreeIncludes": [
+        "grid"
+      ],
+      "latestAuditCaseIds": [
+        "grid-1",
+        "grid-2",
+        "grid-3",
+        "grid-4",
+        "grid-5",
+        "grid-6",
+        "grid-7",
+        "grid-8"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "grid-item",
+      "sourceSha256": "5fb1731462c0c27e784703bc8ed1f49ea6bb92aaea5b0aeb0e073a0f7fb38336",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "icon/text/slot",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "click",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "border/long text",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "图标/文案显示和点击回调有历史运行证据；插槽和长文案待验收。",
+      "convertedTreeSha256": "8a4ba521305fb8665458369f6d4e1e10209ea06898f2c5b739c6a0d5d4ab3152",
+      "convertedFileCount": 5,
+      "openIssues": [
+        "THEME-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮图文显示、点击回调通过；长文案、插槽边界待验收。",
+      "verifiedCaseIds": [
+        "grid-click"
+      ],
+      "convertedTreeIncludes": [
+        "grid-item"
+      ],
+      "latestAuditCaseIds": [
+        "grid-1",
+        "grid-2",
+        "grid-3",
+        "grid-4",
+        "grid-5",
+        "grid-6",
+        "grid-7",
+        "grid-8"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "popup",
+      "sourceSha256": "1ccc1cf2a1a29c46e2cbec01514f6e92e705fd6719eadec0dac99ec045b122a7",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "positions and nested popup",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "content/overlay hit test",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "rapid show/hide",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "after-leave and teardown",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "safe area",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "嵌套弹层关闭内层后外层仍可用，关闭全部后底层 Color 按钮可点有历史运行证据。",
+      "convertedTreeSha256": "bf13be32294c9e34c1688d78fa21e3f04b1663e97b92a02e3a14eef3b00bbb46",
+      "convertedFileCount": 9,
+      "openIssues": [
+        "LAYER-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮 center 嵌套开关、after-leave、关闭内层后外层可操作、全部关闭后底层点击通过。",
+      "verifiedCaseIds": [
+        "nested-close",
+        "popup-bottom-restored"
+      ],
+      "convertedTreeIncludes": [
+        "popup"
+      ],
+      "latestAuditCaseIds": [
+        "popup-2"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "overlay",
+      "sourceSha256": "9d63b2af8f75c297669866fa227c778e5c2076f9ba9c7bac3f74dab49b5f31b3",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "click/lock scroll",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "hidden cleanup",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "z-index",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "遮罩显示/关闭和底层恢复点击有历史证据；原生播放器/地图命中未验收。",
+      "convertedTreeSha256": "cbba945f898653a89ebf5541c2a0c4bcb64f75349904fe395cbe28e1d0078b72",
+      "convertedFileCount": 9,
+      "openIssues": [
+        "LAYER-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮遮罩点击关闭与底层恢复通过；真实播放器/地图上命中待验收。",
+      "verifiedCaseIds": [
+        "overlay-close"
+      ],
+      "convertedTreeIncludes": [
+        "overlay"
+      ],
+      "latestAuditCaseIds": [
+        "overlay-2"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "action-sheet",
+      "sourceSha256": "7697a7fc7b20150eb98c995179d6934cfe3a37b2be1fd9bb63322b2995d98fbd",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "selected/disabled/loading",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "select/confirm/cancel/close",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "repeated opening",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "选中 Option A 回调并关闭，禁用选项无回调有历史运行证据。",
+      "convertedTreeSha256": "5df80d5aa45db251129a4fb48004637ffb9620655bff6fa299d3d04fe2d0293f",
+      "convertedFileCount": 8,
+      "openIssues": [
+        "THEME-01",
+        "LAYER-01",
+        "FORMS-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮选中项回调关闭、禁用项无回调通过；loading/openType 等待验收。",
+      "verifiedCaseIds": [
+        "sheet-selection"
+      ],
+      "convertedTreeIncludes": [
+        "action-sheet"
+      ],
+      "latestAuditCaseIds": [
+        "action-sheet-4"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "toast",
+      "sourceSha256": "a864760ff80d1bae49d742227343c6e7f5bcca11a374ee4a7eea5f9e2bccb43d",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "success/fail/text/loading",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "continuous show and auto close",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "mask/forbidClick",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "instance API",
+          "status": "PENDING_SCOPE_COMPLETION"
+        }
+      ],
+      "historicalSmoke": "success 显示、自动关闭和重复触发有历史运行证据；实例 API 待验收。",
+      "convertedTreeSha256": "39efee638dc4b2ff84c2b96840fbb006a53f072db13c01c404612320e178f1bc",
+      "convertedFileCount": 9,
+      "openIssues": [
+        "LAYER-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮 success、自动关闭、关闭后底层点击通过；实例、HTML 及其他模式待验收。",
+      "verifiedCaseIds": [
+        "toast-success",
+        "toast-bottom-restored"
+      ],
+      "convertedTreeIncludes": [
+        "toast"
+      ],
+      "latestAuditCaseIds": [
+        "toast-3"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "picker",
+      "sourceSha256": "4a0e9624659c5c470f10fe8919be4ed1e43215fe4a8038825eb5400b6c33fb8a",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "columns/text/default value",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "gesture/change",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "confirm/cancel/disabled",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "实际显示选项、点击相邻项 03 后回调 index=3 有历史运行证据；拖动试验未产生有效移动。",
+      "convertedTreeSha256": "edb0e439d6bec07f6578128d25519ade4184b4430debed72bd679832c05c52a5",
+      "convertedFileCount": 11,
+      "openIssues": [
+        "GESTURE-01",
+        "FORMS-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮点击 03 并确认返回 value=03/index=3；用户确认基础手动拖动正常。",
+      "verifiedCaseIds": [
+        "picker-confirm",
+        "manual-drag"
+      ],
+      "convertedTreeIncludes": [
+        "picker"
+      ],
+      "latestAuditCaseIds": [
+        "picker-4",
+        "picker-10"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "picker-column",
+      "sourceSha256": "4a20a1b71b9bcd95622a675b7d7efe744b412ea9b93da3616c8794d046d5fa97",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "real text nodes",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "touch/loop",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "controlled activeIndex",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "真实文字及点击相邻项有历史证据；最新惯性代码和 loop 待运行验证。",
+      "convertedTreeSha256": "6a27c72c75a765f1c3cb59898db020bcff5cc51c33eae5c42bdd5fb1892d4c84",
+      "convertedFileCount": 5,
+      "openIssues": [
+        "GESTURE-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "用户确认手动拖动正常，时间列拖动后实际确认 18:38；loop/长列表/取消边界待验收。",
+      "verifiedCaseIds": [
+        "picker-confirm",
+        "time-manual-confirm",
+        "manual-drag"
+      ],
+      "convertedTreeIncludes": [
+        "picker-column"
+      ],
+      "latestAuditCaseIds": [
+        "datetime-picker-5",
+        "picker-4",
+        "picker-10"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "datetime-picker",
+      "sourceSha256": "4f556398d99f3ab9413ec4436c9e99f7c0b9daa6ac8abcb6396a0f9470af68f4",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "00:00/12:00/23:59",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "change/confirm/cancel",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "12:34 历史运行显示正确；尚无有效变更/确认回调记录。",
+      "convertedTreeSha256": "ee3fc345133edfeced1287fe353613d6b96bfd089100bcdd78240a90dcf50fa0",
+      "convertedFileCount": 7,
+      "openIssues": [
+        "GESTURE-01",
+        "FORMS-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮确认值 12:35、00:00、23:59、手动拖到 18:38 均正确；AMPM 等待验收。",
+      "verifiedCaseIds": [
+        "time-confirm",
+        "time-manual-confirm",
+        "time-midnight",
+        "time-last-minute",
+        "manual-drag"
+      ],
+      "convertedTreeIncludes": [
+        "datetime-picker"
+      ],
+      "latestAuditCaseIds": [
+        "datetime-picker-5"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "calendar",
+      "sourceSha256": "4ff317fed28a3961b1141e29ff6cbd699022593bd23d36c941cd04c7018abf26",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "first/repeated open and date limits",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "month arrows/date selection",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "confirm/close",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "日历日期显示、10→11→10 月切换、选择 10 月 24 日并 Save 返回对应本地日期有历史证据。",
+      "convertedTreeSha256": "3c932bd5259540e8b53a5cfeafbdb79adea4506542970ce2304b20e487089de8",
+      "convertedFileCount": 31,
+      "openIssues": [
+        "THEME-01",
+        "FORMS-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮单日、月、年模式选择/确认通过；月年选中文字偏移已修复并截图回归。范围/多选等待验收。",
+      "verifiedCaseIds": [
+        "calendar-date",
+        "calendar-month",
+        "calendar-year",
+        "calendar-month-alignment",
+        "calendar-year-alignment"
+      ],
+      "convertedTreeIncludes": [
+        "calendar",
+        "calendar-header",
+        "calendar-month",
+        "calendar-month-list",
+        "calendar-year-list",
+        "calendar-utils"
+      ],
+      "latestAuditCaseIds": [
+        "calendar-4"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "dialog",
+      "sourceSha256": "e749721314f02eb1972d92bb37ae70f23461a6722aeab85cbd9c351ebd61bbbf",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "input/confirm/cancel",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "close lifecycle",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "instance API",
+          "status": "PENDING_SCOPE_COMPLETION"
+        }
+      ],
+      "historicalSmoke": "输入 Lynx test 后保存回调、默认 Original 展示及不编辑保存回调有历史证据。",
+      "convertedTreeSha256": "cc9fc44876cffcc51c776328424fc2236a92d545d776f422ed909415afb86b26",
+      "convertedFileCount": 9,
+      "openIssues": [
+        "LAYER-01",
+        "FORMS-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "本轮默认 Original、不编辑保存、输入 Lynx verified 保存、取消关闭通过；实例/异步/软键盘待验收。",
+      "verifiedCaseIds": [
+        "dialog-default",
+        "dialog-input",
+        "dialog-cancel"
+      ],
+      "convertedTreeIncludes": [
+        "dialog"
+      ],
+      "incrementalRuntime": "原版独立示例实例 alert、异步取消拦截/确认关闭、输入提交与再次打开保留值已复验。",
+      "latestAuditCaseIds": [
+        "dialog-3"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    },
+    {
+      "name": "slider",
+      "sourceSha256": "58887997d8d6c5cd1fa94413aa95544969f2d2eba6ce34fc9f0a0e2bf17f9811",
+      "status": "BASIC_RUNTIME_VERIFIED_WITH_REMAINING_SCOPE",
+      "cases": [
+        {
+          "name": "min/max/step and controlled value",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "drag/end/cancel",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        },
+        {
+          "name": "disabled and readback",
+          "status": "PARTIAL_RUNTIME_VERIFIED_SEE_CASE_IDS"
+        }
+      ],
+      "historicalSmoke": "轨道点击 35→80 有历史运行证据；实际拖动试验未产生有效移动。",
+      "convertedTreeSha256": "d920682ab6a1c62f50ee56cfd5eda6f864c7e5e8a8748abd9cfb0bb16ff0888d",
+      "convertedFileCount": 5,
+      "openIssues": [
+        "GESTURE-01",
+        "BUILD-01",
+        "API-01",
+        "CSS-01",
+        "HOST-01",
+        "BUSINESS-01"
+      ],
+      "latestRuntime": "用户确认基础手动拖动正常（观察值 30），轨道点击按步长提交 80；高级 API 与手势边界仍有待办。",
+      "verifiedCaseIds": [
+        "slider-rail",
+        "manual-drag"
+      ],
+      "convertedTreeIncludes": [
+        "slider"
+      ],
+      "normalSliderDependencyFix": "事件恢复 detail.value；忽略乱序测量回调；松手坐标参与最终提交；parcel 端点映射与竖向进度比例修复。点击进度有模拟器证据，竖向和竞态由行为测试覆盖，自动拖动仍受工具限制。",
+      "latestAuditCaseIds": [
+        "normal-slider-7"
+      ],
+      "latestAuditStatus": "REPRESENTATIVE_CASES_CHECKED_FULL_API_INCOMPLETE",
+      "latestAuditEvidence": "../.clix/test/e2e_temp/20261026-component-audit/report.html",
+      "convertedHashAlgorithm": "sha256 of sorted relative-path to file-sha256 JSON, including demos"
+    }
+  ],
+  "supportDependencies": [
+    "info",
+    "transition"
+  ],
+  "notYetMigrated": [],
+  "businessAcceptance": "NOT_CHECKED",
+  "android": "NOT_CHECKED",
+  "batches": [
+    {
+      "id": 1,
+      "components": [
+        "icon",
+        "image",
+        "loading",
+        "switch",
+        "grid",
+        "grid-item",
+        "popup",
+        "overlay",
+        "action-sheet",
+        "toast"
+      ]
+    },
+    {
+      "id": 2,
+      "components": [
+        "picker",
+        "picker-column",
+        "datetime-picker",
+        "calendar",
+        "dialog",
+        "slider"
+      ]
+    }
+  ],
+  "updatedOn": "2026-10-26",
+  "overallStatus": "BASIC_CASES_VERIFIED_FULL_ACCEPTANCE_INCOMPLETE",
+  "runtimeEvidenceRevision": "Latest 2026-10-26 component cases and source/artifact manifests recorded; historical evidence retained separately.",
+  "checks": {
+    "originalMiniappTests": {
+      "status": "PASS",
+      "suites": 117,
+      "tests": 1094,
+      "snapshots": 51,
+      "log": "logs/webview-tests-final.log"
+    },
+    "originalIsolatedBuild": {
+      "status": "PASS",
+      "log": "logs/webview-build.log"
+    },
+    "lynxBehaviorTests": {
+      "status": "PASS",
+      "tests": 42,
+      "log": "/Users/xiaoqi/Documents/github/miniapp-smart-ui/.clix/test/e2e_temp/20261026-switch-parity/logs/tests.log"
+    },
+    "rayDispatchTests": {
+      "status": "PASS",
+      "tests": 3,
+      "log": "logs/ray-tests.log"
+    },
+    "lynxTypecheck": {
+      "status": "PASS",
+      "log": "/Users/xiaoqi/Documents/github/miniapp-smart-ui/.clix/test/e2e_temp/20261026-switch-parity/logs/typecheck.log"
+    },
+    "rayTypeBuild": {
+      "status": "PASS",
+      "outputs": [
+        "es",
+        "lib"
+      ]
+    },
+    "nativeHarnessBuild": {
+      "status": "PASS",
+      "log": "/Users/xiaoqi/Documents/github/miniapp-smart-ui/.clix/test/e2e_temp/20261026-switch-parity/logs/build-final.log"
+    },
+    "rayNativeBuild": {
+      "status": "PASS",
+      "logs": [
+        "/Users/xiaoqi/Documents/github/miniapp-smart-ui/.clix/test/e2e_temp/20261026-verification/logs/ray-native-build.log",
+        "/Users/xiaoqi/Documents/github/miniapp-smart-ui/.clix/test/e2e_temp/20261026-verification/logs/ray-native-minipack.log"
+      ]
+    },
+    "rayMixedBuild": {
+      "status": "FAIL",
+      "issue": "BUILD-01"
+    },
+    "finalRuntimeAcceptance": {
+      "status": "PARTIAL",
+      "summary": "Basic cases verified; full API/theme/business/Android acceptance remains incomplete.",
+      "report": "/Users/xiaoqi/Documents/github/miniapp-smart-ui/.clix/test/e2e_temp/20261026-verification/report.html"
+    }
+  },
+  "latestEvidenceRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+  "evidenceRoots": {
+    "historical": "../.clix/test/e2e_temp/20261023-batch-lynx",
+    "latest": "../.clix/test/e2e_temp/20261026-verification"
+  },
+  "latestIncrementalEvidenceRoot": "../.clix/test/e2e_temp/20261026-switch-parity",
+  "deferredByUser": [],
+  "previewPublish": {
+    "appId": "tysncznjawnyjkyean",
+    "version": "99.99.99",
+    "status": "PUBLISHED",
+    "artifactFiles": 130,
+    "mainSha256": "db77190b0c7a16e40013956ead275efd3cda8e8132de35f696d7ce4a4116a8fe",
+    "log": "logs/publish-preview.log",
+    "phoneVerification": "PENDING",
+    "evidenceRoot": "../.clix/test/e2e_temp/20261026-scroll-probe"
+  },
+  "normalSliderDependencyStatus": "Basic events and styles fixed; full advanced API acceptance remains open",
+  "state": "PER_COMPONENT_BASIC_PARITY_VERIFIED_FULL_ACCEPTANCE_INCOMPLETE",
+  "latestComponentAudit": {
+    "state": "PER_COMPONENT_BASIC_PARITY_VERIFIED_FULL_ACCEPTANCE_INCOMPLETE",
+    "date": "2026-10-26",
+    "scopeCount": 16,
+    "publicCount": 15,
+    "originalDemoPageCount": 14,
+    "demoSectionTotal": 99,
+    "reviewedSectionCount": 27,
+    "unreviewedSectionCount": 72,
+    "nodeTests": 53,
+    "typecheck": "PASS",
+    "stylelint": "PASS",
+    "eslint": {
+      "errors": 0,
+      "warnings": 14
+    },
+    "businessIntegration": "18 scenarios NOT RUN",
+    "cssCompatibility": {
+      "source-scan": {
+        "status": "COMPLETE",
+        "queries": 111,
+        "results": {
+          "SUPPORTED": 89,
+          "UNKNOWN": 17,
+          "UNSUPPORTED": 4,
+          "CONDITIONAL": 1
+        },
+        "dataset": "0.0.18",
+        "lynxVersion": "4.0"
+      },
+      "artifact-scan": {
+        "status": "COMPLETE",
+        "queries": 18,
+        "results": {
+          "SUPPORTED": 10,
+          "UNKNOWN": 8
+        },
+        "dataset": "0.0.18",
+        "lynxVersion": "4.0"
+      }
+    },
+    "preview": {
+      "appId": "tysncznjawnyjkyean",
+      "version": "99.99.99",
+      "status": "PUBLISHED",
+      "artifactFiles": 130
+    }
+  },
+  "latestScrollVerification": {
+    "summary": {
+      "date": "2026-10-26",
+      "issue": "SCROLL-01",
+      "status": "FIXED_SIMULATOR_USER_VERIFIED_PHONE_PENDING",
+      "rootCause": "带 z-index 的后代脱离 ScrollView 滚动层叠上下文",
+      "changes": [
+        "页面 ScrollView 加 z-index:0",
+        "单个普通 View 包裹内容",
+        "onReady 按 selectViewport 实测内容视口高度，保留原生命周期，忽略卸载后的异步测量"
+      ],
+      "measuredViewport": {
+        "systemWindowHeight": 852,
+        "contentHeight": 749,
+        "width": 393
+      },
+      "manualEvidence": {
+        "environment": "iOS 18.2 simulator",
+        "page": "真实 Icon 所有图标页（带测试控件的隔离副本）",
+        "answer": "现在可以正常滚动",
+        "programScrollTop": 600
+      },
+      "formalRuntime": [
+        "Popup 居中显示与遮罩关闭",
+        "Popup 底部固定位置",
+        "Overlay 内容区点击保持、外侧点击关闭"
+      ],
+      "verification": {
+        "nodeTests": 55,
+        "failures": 0,
+        "typecheck": "PASS",
+        "nativeBuild": "PASS",
+        "originalPackagesExampleDiff": "EMPTY",
+        "routes": 15,
+        "probeAbsent": true
+      },
+      "cssCompatibility": {
+        "formal-closure-scan": {
+          "status": "COMPLETE",
+          "queries": 117,
+          "results": {
+            "SUPPORTED": 89,
+            "UNKNOWN": 23,
+            "UNSUPPORTED": 4,
+            "CONDITIONAL": 1
+          },
+          "dataset": "0.0.18",
+          "lynxVersion": "4.0"
+        },
+        "formal-artifact-scan": {
+          "status": "COMPLETE",
+          "queries": 18,
+          "results": {
+            "SUPPORTED": 10,
+            "UNKNOWN": 8
+          },
+          "dataset": "0.0.18",
+          "lynxVersion": "4.0"
+        }
+      },
+      "preview": {
+        "appId": "tysncznjawnyjkyean",
+        "version": "99.99.99",
+        "status": "PUBLISHED",
+        "artifactFiles": 130,
+        "mainSha256": "db77190b0c7a16e40013956ead275efd3cda8e8132de35f696d7ce4a4116a8fe",
+        "log": "logs/publish-preview.log",
+        "phoneVerification": "PENDING"
+      },
+      "limits": [
+        "新包真机与 Android 未复验",
+        "模拟器自动拖动输入限制仍在",
+        "其余组件完整 API 与真实业务验收仍未完成"
+      ]
+    },
+    "report": "../.clix/test/e2e_temp/20261026-scroll-probe/report.html"
+  }
+}

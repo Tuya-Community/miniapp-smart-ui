@@ -1,0 +1,8 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+<view class="custom-class {{ utils.bem('loading', { vertical }) }}">
+  <view class="smart-loading__spinner smart-loading__spinner--{{ type }}" style="{{computed.nativeSize(size)}}">
+    <svg-render wx:if="{{spinner && circular}}" source="{{computed.nativeSource({type,spinner,circular,color,iconColor,themeColors})}}" style="width:100%;height:100%;" />
+  </view>
+  <view class="smart-loading__text" style="{{computed.textStyle({textSize,color})}}"><slot /></view>
+</view>

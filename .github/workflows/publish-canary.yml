@@ -19,6 +19,10 @@ on:
         description: 'npm dist-tag（默认 canary；禁止填 latest / beta）'
         required: false
         default: 'canary'
+      lynx_version:
+        description: 'codex/lynx 专用：Lynx beta 版本，其他分支忽略'
+        required: false
+        default: '0.1.0-beta.0'
 
 # 同一分支的 canary 发布串行执行，避免并发发布互相干扰
 concurrency:
@@ -26,7 +30,18 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Reuse the registered manual entry for the first Lynx branch release.
+  # The dedicated workflow does not need to be merged into main first.
+  publish_lynx:
+    if: github.ref == 'refs/heads/codex/lynx'
+    uses: ./.github/workflows/publish-lynx-beta.yml
+    with:
+      version: ${{ inputs.lynx_version || '0.1.0-beta.0' }}
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
   publish_canary:
+    if: github.ref != 'refs/heads/codex/lynx'
     runs-on: ubuntu-latest
 
     steps:

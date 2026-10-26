@@ -1,0 +1,79 @@
+.smart-transition {
+  transition-timing-function: ease;
+}
+
+.smart-fade-enter-active,
+.smart-fade-leave-active {
+  transition-property: opacity;
+}
+
+.smart-fade-enter,
+.smart-fade-leave-to {
+  opacity: 0;
+}
+
+.smart-fade-up-enter-active,
+.smart-fade-up-leave-active,
+.smart-fade-down-enter-active,
+.smart-fade-down-leave-active,
+.smart-fade-left-enter-active,
+.smart-fade-left-leave-active,
+.smart-fade-right-enter-active,
+.smart-fade-right-leave-active {
+  transition-property: opacity, transform;
+}
+
+.smart-fade-up-enter,
+.smart-fade-up-leave-to {
+  transform: translate3d(0, 100%, 0);
+  opacity: 0;
+}
+
+.smart-fade-down-enter,
+.smart-fade-down-leave-to {
+  transform: translate3d(0, -100%, 0);
+  opacity: 0;
+}
+
+.smart-fade-left-enter,
+.smart-fade-left-leave-to {
+  transform: translate3d(-100%, 0, 0);
+  opacity: 0;
+}
+
+.smart-fade-right-enter,
+.smart-fade-right-leave-to {
+  transform: translate3d(100%, 0, 0);
+  opacity: 0;
+}
+
+.smart-slide-up-enter-active,
+.smart-slide-up-leave-active,
+.smart-slide-down-enter-active,
+.smart-slide-down-leave-active,
+.smart-slide-left-enter-active,
+.smart-slide-left-leave-active,
+.smart-slide-right-enter-active,
+.smart-slide-right-leave-active {
+  transition-property: transform;
+}
+
+.smart-slide-up-enter,
+.smart-slide-up-leave-to {
+  transform: translate3d(0, 100%, 0);
+}
+
+.smart-slide-down-enter,
+.smart-slide-down-leave-to {
+  transform: translate3d(0, -100%, 0);
+}
+
+.smart-slide-left-enter,
+.smart-slide-left-leave-to {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.smart-slide-right-enter,
+.smart-slide-right-leave-to {
+  transform: translate3d(100%, 0, 0);
+}

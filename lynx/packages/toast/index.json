@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "smart-icon": "../icon/index",
+    "smart-loading": "../loading/index",
+    "smart-overlay": "../overlay/index",
+    "smart-transition": "../transition/index"
+  }
+}

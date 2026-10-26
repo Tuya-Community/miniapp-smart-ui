@@ -1,0 +1,56 @@
+/* eslint-disable */
+var utils = require('../wxs/utils.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function optionText(options, index, key) {
+  var item = options[index];
+  return item && typeof item === 'object' && item[key] != null ? item[key] : item;
+}
+function selected(data) {
+  var length = data.options.length || 1;
+  var index = Math.round(data.animationIndex) % length;
+  return index < 0 ? index + length : index;
+}
+function rootStyle(data) { return 'height:' + data.itemHeight * data.visibleItemCount + 'px'; }
+function wrapperStyle() { return 'position:relative;width:100%;height:100%;'; }
+function nativeProjection(data) {
+  var count = Math.max(2, data.visibleItemCount * 4 - 2);
+  var angle = ((data.index - data.animationIndex) * 360 / count) % 360;
+  if (angle > 180) angle -= 360;
+  if (angle < -180) angle += 360;
+  var radians = angle * Math.PI / 180;
+  var cosine = Math.cos(radians);
+  var y = Math.sin(radians) * data.itemHeight * data.visibleItemCount / 2;
+  return 'display:' + (cosine > 0.01 ? 'flex' : 'none') + ';height:' + data.itemHeight + 'px;top:50%;' +
+    'transform:translate(-50%, -50%) translateY(' + y + 'px) scaleY(' + Math.max(0.05, cosine) + ');transition:none';
+}
+function wrapperItemTextStyle(data) {
+  var index = data.optionsVIndexList[data.index];
+  return (data.fontStyle || '') + ';' + (index === selected(data) ? (data.activeStyle || '') : '');
+}
+function wrapperItemStyle(data) { return nativeProjection(data) + ';' + wrapperItemTextStyle(data); }
+function wrapperItemClass(data) {
+  var index = data.optionsVIndexList[data.index];
+  var option = data.options[index];
+  var active = typeof index === 'number' && index === selected(data);
+  return utils.bem('picker-column__item', { disabled: option && typeof option === 'object' && option.disabled, selected: active }) + (active ? ' active-class' : '');
+}
+function nativeItemText(data) {
+  var index = data.optionsVIndexList[data.index];
+  return index === '' || index === undefined ? '' : optionText(data.options, index, data.valueKey);
+}
+function unitGapStyle(value) { return value === undefined || value === null || value === '' ? '' : 'margin-left:' + addUnit(value); }
+function unitFontStyle(value) {
+  return (value || '').split(';').filter(function (item) { return item.indexOf('color:') === -1 && item.indexOf('text-shadow:') === -1; }).join(';');
+}
+module.exports = {
+  optionText: optionText,
+  rootStyle: rootStyle,
+  wrapperStyle: wrapperStyle,
+  wrapperItemStyle: wrapperItemStyle,
+  wrapperItemClass: wrapperItemClass,
+  wrapperItemTextStyle: wrapperItemTextStyle,
+  nativeItemText: nativeItemText,
+  unitGapStyle: unitGapStyle,
+  unitFontStyle: unitFontStyle,
+};

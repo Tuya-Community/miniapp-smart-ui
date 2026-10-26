@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "smart-icon": "../../dist/icon/index",
+    "smart-image": "../../dist/image/index",
+    "smart-loading": "../../dist/loading/index",
+    "smart-switch": "../../dist/switch/index",
+    "smart-grid": "../../dist/grid/index",
+    "smart-grid-item": "../../dist/grid-item/index",
+    "smart-popup": "../../dist/popup/index",
+    "smart-overlay": "../../dist/overlay/index",
+    "smart-action-sheet": "../../dist/action-sheet/index",
+    "smart-toast": "../../dist/toast/index"
+  }
+}

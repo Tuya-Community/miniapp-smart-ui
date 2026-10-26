@@ -1,0 +1,120 @@
+:root {
+  --smart-a11y-action-sheet-item-text-color: #000;
+
+  &[theme='dark'] {
+    --smart-a11y-action-sheet-item-text-color: #fff;
+  }
+}
+
+@B1-N1: var(--app-B1-N1, rgba(0, 0, 0, 0.9)); // 背景色 N1 字体色
+@B1-N2: var(--app-B1-N2, rgba(0, 0, 0, 0.7)); // 背景色 N2 字体色
+@B1-N3: var(--app-B1-N3, rgba(0, 0, 0, 0.5)); // 背景色 N3 字体色
+@B1-N4: var(--app-B1-N4, rgba(0, 0, 0, 0.4)); // 背景色 N4 字体色
+@B1-N5: var(--app-B1-N5, rgba(0, 0, 0, 0.3)); // 背景色 N5 字体色
+@B1-N6: var(--app-B1-N6, rgba(0, 0, 0, 0.2)); // 背景色 N6 字体色
+@B1-N7: var(--app-B1-N7, rgba(0, 0, 0, 0.1)); // 背景色 N7 字体色
+@B1-N8: var(--app-B1-N8, rgba(0, 0, 0, 0.4)); // 背景色 N8 字体色
+@B1-N9: var(--app-B1-N9, rgba(0, 0, 0, 0.05)); // 背景色 N9 字体色
+@B2-N1: var(--app-B2-N1, rgba(0, 0, 0, 1)); // 顶部导航栏 N1 字体色
+@B2-N2: var(--app-B2-N2, rgba(0, 0, 0, 0.7)); // 顶部导航栏 N2 字体色
+@B2-N3: var(--app-B2-N3, rgba(0, 0, 0, 0.5)); // 顶部导航栏 N3 字体色
+@B2-N4: var(--app-B2-N4, rgba(0, 0, 0, 0.4)); // 顶部导航栏 N4 字体色
+@B2-N5: var(--app-B2-N5, rgba(0, 0, 0, 0.3)); // 顶部导航栏 N5 字体色
+@B2-N6: var(--app-B2-N6, rgba(0, 0, 0, 0.2)); // 顶部导航栏 N6 字体色
+@B2-N7: var(--app-B2-N7, rgba(0, 0, 0, 0.1)); // 顶部导航栏 N7 字体色
+@B2-N8: var(--app-B2-N8, rgba(0, 0, 0, 0.4)); // 顶部导航栏 N8 字体色
+@B2-N9: var(--app-B2-N9, rgba(0, 0, 0, 0.05)); // 顶部导航栏 N9 字体色
+@B4-N1: var(--app-B4-N1, rgba(0, 0, 0, 1)); // 弹窗 N1 字体色
+@B4-N2: var(--app-B4-N2, rgba(0, 0, 0, 0.7)); // 弹窗 N2 字体色
+@B4-N3: var(--app-B4-N3, rgba(0, 0, 0, 0.5)); // 弹窗 N3 字体色
+@B4-N4: var(--app-B4-N4, rgba(0, 0, 0, 0.4)); // 弹窗 N4 字体色
+@B4-N5: var(--app-B4-N5, rgba(0, 0, 0, 0.3)); // 弹窗 N5 字体色
+@B4-N6: var(--app-B4-N6, rgba(0, 0, 0, 0.2)); // 弹窗 N6 字体色
+@B4-N7: var(--app-B4-N7, rgba(0, 0, 0, 0.08)); // 弹窗 N7 字体色
+@B4-N8: var(--app-B4-N8, rgba(0, 0, 0, 0.4)); // 弹窗 N8 字体色
+@B4-N9: var(--app-B4-N9, rgba(0, 0, 0, 0.05)); // 弹窗 N9 字体色
+@B6-N1: var(--app-B6-N1, rgba(0, 0, 0, 1)); // 列表 N1 字体色
+@B6-N2: var(--app-B6-N2, rgba(0, 0, 0, 0.7)); // 列表 N2 字体色
+@B6-N3: var(--app-B6-N3, rgba(0, 0, 0, 0.5)); // 列表 N3 字体色
+@B6-N4: var(--app-B6-N4, rgba(0, 0, 0, 0.4)); // 列表 N4 字体色
+@B6-N5: var(--app-B6-N5, rgba(0, 0, 0, 0.3)); // 列表 N5 字体色
+@B6-N6: var(--app-B6-N6, rgba(0, 0, 0, 0.2)); // 列表 N6 字体色
+@B6-N7: var(--app-B6-N7, rgba(0, 0, 0, 0.1)); // 列表 N7 字体色
+@B6-N8: var(--app-B6-N8, rgba(0, 0, 0, 0.4)); // 列表 N8 字体色
+@B6-N9: var(--app-B6-N9, rgba(0, 0, 0, 0.05)); // 列表 N9 字体色
+@Smart-a11y-action-sheet-item-text-color: var(--smart-a11y-action-sheet-item-text-color, #000);
+
+/** Toast */
+@a11y-toast-font-size: 18px;
+@a11y-toast-font-weight: 600;
+@a11y-toast-line-height: 27px;
+
+/** Dialog */
+@a11y-dialog-header-font-size: 20px;
+@a11y-dialog-header-font-weight: 600;
+@a11y-dialog-header-line-height: 30px;
+
+@a11y-dialog-has-title-message-font-size: 18px;
+@a11y-dialog-has-title-message-text-color: @B6-N2;
+
+@a11y-dialog-message-font-size: 18px;
+@a11y-dialog-message-line-height: 27px;
+@a11y-dialog-message-font-weight: 500;
+@a11y-dialog-message-text-color: @B6-N2;
+
+@a11y-dialog-confirm-font-weight: 500;
+@a11y-dialog-input-height: 47px;
+@a11y-dialog-input-font-size: 18px;
+@a11y-dialog-input-font-weight: 500;
+@a11y-dialog-input-background-color: @B4-N7;
+
+/** Button */
+@a11y-button-default-font-size: 20px;
+@a11y-button-line-height: 30px;
+@a11y-button-font-weight: 600;
+@a11y-button-default-height: 59px;
+@a11y-button-large-height: 59px;
+
+/** Action sheet */
+@a11y-action-sheet-header-font-size: 20px;
+@a11y-action-sheet-header-font-weight: 600;
+@a11y-action-sheet-header-height: 62px;
+@a11y-action-sheet-header-color: @B6-N2;
+@a11y-action-sheet-header-border-color: @B4-N6;
+@a11y-action-sheet-footer-padding-color: @B4-N7;
+
+@a11y-action-sheet-item-text-color: @Smart-a11y-action-sheet-item-text-color;
+@a11y-action-sheet-item-font-size: 20px;
+@a11y-action-sheet-item-line-height: 30px;
+@a11y-action-sheet-item-font-weight: 600;
+
+@a11y-action-sheet-confirm-font-weight: 500;
+
+@a11y-action-sheet-subname-font-size: 18px;
+@a11y-action-sheet-subname-line-height: 27px;
+@a11y-action-sheet-subname-color: @B6-N2;
+
+@a11y-action-sheet-description-font-size: 18px;
+@a11y-action-sheet-description-line-height: 27px;
+@a11y-action-sheet-description-color: @B6-N2;
+
+@a11y-action-sheet-item-icon-size: 32px;
+
+/** Picker */
+@a11y-picker-toolbar-height: 52px;
+@a11y-picker-title-font-size: 20px;
+@a11y-picker-action-font-size: 20px;
+@a11y-picker-action-font-weight: 600;
+@a11y-picker-confirm-font-weight: 500;
+@a11y-picker-option-font-size: 24px;
+@a11y-picker-option-line-height: 28px;
+@a11y-picker-option-font-weight: 600;
+@a11y-picker-option-unit-font-size: 18px;
+@a11y-picker-option-unit-line-height: 28px;
+@a11y-picker-option-unit-text-color: @B6-N2;
+@a11y-picker-frame-background: @B6-N7;
+
+/** Hairline */
+@a11y-hairline-top-width: 2px;
+@a11y-hairline-right-width: 2px;
+@a11y-hairline-color: @B6-N6;

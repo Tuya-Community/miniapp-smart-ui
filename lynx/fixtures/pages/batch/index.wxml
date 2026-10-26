@@ -1,0 +1,20 @@
+<view class="proof">
+  <view class="row"><text class="label">Icon</text><view class="samples"><smart-icon id="batch-icon" name="{{warning}}" color="{{color}}" size="36px" info="9" bind:click="onIcon"/><smart-icon name="{{alarm}}" color="#52b86b" size="36px"/></view></view>
+  <view class="row"><text class="label">Loading</text><view class="samples"><smart-loading size="30px" color="{{color}}"/><smart-loading size="30px" type="spinner" color="#52b86b"/></view></view>
+  <view class="row"><text class="label">Image</text><view class="samples"><smart-image src="{{warning}}" tint-color="{{color}}" width="32px" height="32px"/><smart-image id="bitmap-image" src="{{png}}" tint-color="{{color}}" width="32px" height="32px" bind:load="onImageLoad" bind:error="onImageError"/><smart-image src="http://127.0.0.1:9349/icon.svg" tint-color="{{color}}" width="32px" height="32px" bind:load="onRemoteLoad" bind:error="onRemoteError"/></view></view>
+  <view class="row"><text class="label">Switch</text><view class="samples"><smart-switch id="batch-switch" checked="{{checked}}" size="30px" bind:change="onSwitch"/><smart-switch checked="{{true}}" disabled="{{true}}" size="24px" bind:change="onDisabled"/><smart-switch checked="{{true}}" loading="{{true}}" size="24px"/></view></view>
+  <smart-grid column-num="3" border="{{true}}" square="{{true}}"><smart-grid-item text="Grid 1" icon="{{warning}}" icon-color="{{color}}" bind:click="onGrid"/><smart-grid-item text="Grid 2" icon="{{alarm}}" icon-color="#52b86b" bind:click="onGrid"/><smart-grid-item text="Grid 3" icon="{{warning}}" icon-color="#ee6633" bind:click="onGrid"/></smart-grid>
+  <view class="controls">
+    <view id="open-popup" class="control" bindtap="openPopup"><text>Popup</text></view>
+    <view id="open-sheet" class="control" bindtap="openSheet"><text>ActionSheet</text></view>
+    <view id="open-toast" class="control" bindtap="openToast"><text>Toast</text></view>
+    <view id="open-overlay" class="control" bindtap="openOverlay"><text>Overlay</text></view>
+    <view id="change-color" class="control" bindtap="changeColor"><text>Color</text></view>
+  </view>
+  <text class="events">{{events}}</text><text>{{remoteStatus}}</text>
+  <smart-popup id="batch-popup" show="{{popup}}" position="center" duration="100" z-index="200" closeable="{{true}}" bind:close="closePopup" bind:after-leave="onPopupLeave"><view class="popup-body"><text class="popup-title">Popup content</text><view id="nested-popup" class="control" bindtap="openNested"><text>Open nested</text></view><view id="close-popup" class="control" bindtap="closePopup"><text>Close popup</text></view></view></smart-popup>
+  <smart-popup show="{{nested}}" position="center" duration="100" z-index="400" bind:close="closeNested"><view class="popup-body"><text class="popup-title">Nested content</text><view id="close-nested" class="control" bindtap="closeNested"><text>Close nested</text></view></view></smart-popup>
+  <smart-action-sheet show="{{sheet}}" title="ActionSheet" cancel-text="Cancel" confirm-text="Confirm" actions="{{actions}}" safe-area-inset-bottom="{{false}}" z-index="300" bind:select="onSelect" bind:cancel="closeSheet" bind:confirm="closeSheet" bind:close="closeSheet"/>
+  <smart-toast id="batch-toast" show="{{toast}}" type="success" message="Success" icon-color="#ffffff"/>
+  <smart-overlay show="{{overlay}}" z-index="500" bind:click="closeOverlay"><view style="position:fixed;top:40%;left:25%;background-color:#fff;padding:20px;"><text>Tap to close overlay</text></view></smart-overlay>
+</view>

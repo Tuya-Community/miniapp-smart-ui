@@ -1,0 +1,654 @@
+{
+  "version": 1,
+  "updatedOn": "2026-10-26",
+  "state": "PER_COMPONENT_BASIC_PARITY_VERIFIED_FULL_ACCEPTANCE_INCOMPLETE",
+  "evidenceRoot": "../.clix/test/e2e_temp/20261023-batch-lynx",
+  "note": "OPEN/PENDING 不能视作无法解决；这里只汇总已复现阻塞、已知缺口和未完成验收。",
+  "issues": [
+    {
+      "id": "RUN-01",
+      "kind": "verification_blocked",
+      "priority": "P1",
+      "title": "Mac 锁屏阻塞已解除",
+      "components": [
+        "all"
+      ],
+      "status": "RESOLVED",
+      "detail": "2026-10-26 已重新推送并进入模拟器，完成基础运行态回归。",
+      "next": "无锁屏待办；未覆盖范围另列。"
+    },
+    {
+      "id": "GESTURE-01",
+      "kind": "automation_limitation",
+      "priority": "P2",
+      "title": "拖动基础功能手动通过，自动拖动输入仍缺 touchmove",
+      "components": [
+        "picker",
+        "picker-column",
+        "datetime-picker",
+        "slider"
+      ],
+      "status": "BASIC_GESTURE_USER_VERIFIED_AUTOMATION_LIMIT_REMAINS",
+      "detail": "最小原生 View 在自动拖动时只收到 start/end，原生 ScrollView 也未滚动。用户明确确认 Picker 和 Slider 两个都能手动拖动；之后界面 Slider 为 30，时间确认实际返回 18:38。暂不归为组件缺陷。",
+      "next": "保留最小诊断页供自动化工具/宿主排查；取消、卸载、loop 等边界仍待运行验收。",
+      "latestEvidence": [
+        "data/manual-gesture-confirmation.json",
+        "screenshots/forms-after-manual-drag.png",
+        "screenshots/touch-drag.png"
+      ]
+    },
+    {
+      "id": "BUILD-01",
+      "kind": "reproduced_build_failure",
+      "priority": "P1",
+      "title": "统一双端入口触发旧 WebView Slider RJS 打包错误",
+      "components": [
+        "ray-compat-entry",
+        "slider"
+      ],
+      "status": "OPEN_WITH_NATIVE_ENTRY_WORKAROUND",
+      "detail": "隔离混合页面工程 Ray 编译成功，但 MiniPack 在 vendor/web-ray/npm/_ray-js/components-ty-slider/lib/inner/index.rjs 报 Cannot read properties of undefined (reading 'schemaUrl')。未修改编译器或旧包。独立 /native 入口已通过 Ray→MiniPack。",
+      "next": "在真实业务工具链复现并定位旧 RJS 元数据收集；当前按页面分别导入原包和原生专用入口。",
+      "evidence": [
+        "logs/ray-integration-final.log",
+        "logs/ray-minipack.log",
+        "logs/ray-native-integration.log",
+        "logs/ray-native-minipack.log"
+      ]
+    },
+    {
+      "id": "SVG-01",
+      "kind": "environment_blocker",
+      "priority": "P1",
+      "title": "远程 SVG 成功路径被宿主请求域名白名单阻止",
+      "components": [
+        "image",
+        "icon",
+        "loading"
+      ],
+      "status": "BLOCKED_BY_REQUEST_DOMAIN_ALLOWLIST",
+      "detail": "内联 SVG、PNG 及动态显式着色有最新运行证据。本地 SVG 请求路径返回 SDK errorCode 40013 / domain is not configured。已保留完整错误，未修改平台白名单。新请求实现引入 request 域名要求，不能视作原生图片加载域名合同的等价替换。",
+      "next": "在实际已配置 request 合法域名的 SVG URL 下验证成功渲染、尺寸、颜色、load/error 与切换 src；确认业务是否接受新增域名要求。",
+      "latestEvidence": [
+        "screenshots/svg-error-reason.png",
+        "logs/svg-server.log"
+      ]
+    },
+    {
+      "id": "API-01",
+      "kind": "known_api_gap",
+      "priority": "P1",
+      "title": "Slider 高级 API 尚未完整映射",
+      "components": [
+        "slider"
+      ],
+      "status": "OPEN",
+      "detail": "Raw Slider双滑块与轨道点击已修复对照；Ray包装的高级刻度、样式、方向、全API和真实DP闭环仍未完整适配验收。",
+      "next": "按业务真实使用参数补齐适配及双端合同测试，或将不支持的参数从公开类型中明确收窄。"
+    },
+    {
+      "id": "THEME-01",
+      "kind": "verification_pending",
+      "priority": "P1",
+      "title": "主题、CSS 变量与字体图标完整覆盖待验收",
+      "components": [
+        "icon",
+        "image",
+        "loading",
+        "grid-item",
+        "calendar",
+        "action-sheet"
+      ],
+      "status": "PENDING",
+      "detail": "显式颜色变化已做历史验证；SVG 支持宿主主题字典和嵌套 var fallback。任意祖先自定义变量、仅 CSS 的实时主题切换、全部字体命名图标尚未验收。",
+      "next": "深浅主题、业务主题覆盖、不同字号及所有实际使用图标抽样验证。"
+    },
+    {
+      "id": "LAYER-01",
+      "kind": "verification_pending",
+      "priority": "P1",
+      "title": "弹层完整位置、原生岛命中与页面隐藏需补测",
+      "components": [
+        "popup",
+        "overlay",
+        "action-sheet",
+        "toast",
+        "dialog"
+      ],
+      "status": "PENDING",
+      "detail": "Popup四方向、遮罩关闭、Overlay内容区阻止冒泡已验证；Map/Video原生能力岛与完整多持有者禁用未验收。原版毛玻璃在当前Native使用半透明回退，视觉仍有差异。",
+      "next": "在真实业务含播放器的页面验证；不要把关闭卸载测试等同页面隐藏测试。"
+    },
+    {
+      "id": "FORMS-01",
+      "kind": "verification_pending",
+      "priority": "P1",
+      "title": "日期、表单及列表边界场景待验收",
+      "components": [
+        "calendar",
+        "datetime-picker",
+        "picker",
+        "dialog",
+        "action-sheet"
+      ],
+      "status": "PENDING",
+      "detail": "本轮已覆盖显式下标复用、AM/PM切换、Calendar基础范围选择、Dialog异步确认/取消与5项组件回调边界。loop/100k、全部filter/日期边界、实例API完整队列/卸载与真实输入场景仍未全验收。",
+      "next": "继续按未覆盖范围补测，已通过的基础用例见最新 verification-summary.json。"
+    },
+    {
+      "id": "CSS-01",
+      "kind": "compatibility_review_pending",
+      "priority": "P2",
+      "title": "官方 CSS 扫描仍有不支持/未知项",
+      "components": [
+        "common",
+        "button",
+        "image",
+        "all"
+      ],
+      "status": "OPEN",
+      "detail": "2026-10-26 最新独立示例递归源码扫描110项：88 SUPPORTED、17 UNKNOWN、4 UNSUPPORTED、1 CONDITIONAL；产物18项：10 SUPPORTED、8 UNKNOWN。官方数据0.0.18，Lynx4.0/iOS。已有 display/cursor 等候选仍待逐项审阅，扫描完成不表示兼容验收通过。",
+      "next": "结合真实命中的组件分支审阅，优先处理造成显示/命中偏差的规则；不得把扫描 COMPLETE 写成迁移验收 PASS。",
+      "evidence": [
+        "data/lynx-source-scan.json",
+        "data/artifact-scan.json",
+        "data/css-summary.json"
+      ],
+      "latestEvidenceRoot": "../.clix/test/e2e_temp/20261026-other-components",
+      "latestEvidence": [
+        "data/source-scan.json",
+        "data/artifact-scan.json"
+      ],
+      "latestAuditCompatibility": {
+        "source-scan": {
+          "status": "COMPLETE",
+          "queries": 111,
+          "results": {
+            "SUPPORTED": 89,
+            "UNKNOWN": 17,
+            "UNSUPPORTED": 4,
+            "CONDITIONAL": 1
+          },
+          "dataset": "0.0.18",
+          "lynxVersion": "4.0"
+        },
+        "artifact-scan": {
+          "status": "COMPLETE",
+          "queries": 18,
+          "results": {
+            "SUPPORTED": 10,
+            "UNKNOWN": 8
+          },
+          "dataset": "0.0.18",
+          "lynxVersion": "4.0"
+        }
+      }
+    },
+    {
+      "id": "HOST-01",
+      "kind": "environment_risk",
+      "priority": "P2",
+      "title": "宿主版本与调试器告警需核对",
+      "components": [
+        "all"
+      ],
+      "status": "OPEN",
+      "detail": "当前模拟器 ThingSmartPublic 7.9.5，日志容器 3.53.0；接入文档要求至少 3.54.0。多次重载出现导航/RenderViewController Memory Leak 调试告警，未证明由组件导致。 2026-10-26 重载表单页再次出现同类 Memory Leak 告警，保留截图。",
+      "next": "获取满足版本要求的模拟器宿主，复测告警与组件生命周期；不修改框架绕过。",
+      "latestEvidence": [
+        "screenshots/host-memory-alert.png"
+      ]
+    },
+    {
+      "id": "BUSINESS-01",
+      "kind": "scope_not_tested",
+      "priority": "P1",
+      "title": "业务 18 个入口与 Android 尚未验收",
+      "components": [
+        "all"
+      ],
+      "status": "NOT_RUN",
+      "detail": "提供的接入指南指向另一台机器的业务仓库；当前只有组件库和报告，未在真实业务入口联编运行。业务报告依赖版本与当前库版本也不同。当前运行证据限 iOS 模拟器，Android 未运行。",
+      "next": "业务接入时确认实际依赖版本、源码别名、页面 renderer，再执行 18 个入口回归；Android 单独验证。"
+    },
+    {
+      "id": "CAL-ALIGN-01",
+      "kind": "fixed_visual_defect",
+      "priority": "P2",
+      "components": [
+        "calendar"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "title": "Calendar 月、年列表选中文字偏离圆形背景",
+      "detail": "为 item/col_item 显式设置 Flex 居中、Text 颜色/字号继承和正常行高；重建后实际截图已居中，月/年确认回调正确。",
+      "latestEvidence": [
+        "screenshots/calendar-month-aligned.png",
+        "screenshots/calendar-year-aligned.png"
+      ]
+    },
+    {
+      "id": "SCROLL-01",
+      "kind": "fixed_runtime_defect_with_device_verification_pending",
+      "priority": "P1",
+      "title": "独立 example 长页面滚动层叠上下文已修复，真机新包待复验",
+      "components": [
+        "example",
+        "icon"
+      ],
+      "status": "FIXED_SIMULATOR_USER_VERIFIED_PHONE_PENDING",
+      "detail": "重新开启排查后，最小页证明普通内容可滚；带 z-index 的内容复现异常。页面 ScrollView 加 z-index:0 后真实 Icon 图标随程序滚动移动，用户手动确认“现在可以正常滚动”。已合入全部15条正式示例路由，并用实际内容视口高度替代系统窗口高度。",
+      "next": "使用已更新的99.99.99体验版复验真机 Icon 长页与其他长页；Android单独验收。",
+      "userEvidence": "最新确认：现在可以正常滚动（iOS模拟器真实Icon隔离副本）；历史真机失败发生在修复前。",
+      "latestEvidenceRoot": "../.clix/test/e2e_temp/20261026-scroll-probe",
+      "latestEvidence": [
+        "data/icon-manual-confirmation.json",
+        "screenshots/icon-context-manual.png",
+        "data/summary.json",
+        "logs/formal-tests.log",
+        "logs/publish-preview.log"
+      ],
+      "officialReference": "https://lynxjs.org/3.5/api/css/properties/z-index.html"
+    },
+    {
+      "id": "LOADING-SLOT-01",
+      "kind": "fixed_migration_defect",
+      "priority": "P2",
+      "title": "Loading 插槽文案缺失",
+      "components": [
+        "loading"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "移除 Text 套插槽和宿主 font-size:0，保留实际 Text 叶节点；三个加载中文字在横排/竖排原生示例均恢复。",
+      "latestEvidenceRoot": "../.clix/test/e2e_temp/20261026-other-components",
+      "latestEvidence": [
+        "screenshots/loading-before.png",
+        "screenshots/loading-after.png"
+      ]
+    },
+    {
+      "id": "NORMAL-SLIDER-01",
+      "kind": "fixed_migration_defect",
+      "priority": "P2",
+      "title": "普通 Slider 事件与值域行为偏差",
+      "components": [
+        "normal-slider"
+      ],
+      "status": "FIXED_BASIC_CONTRACT_ADVANCED_API_PENDING",
+      "detail": "事件恢复 detail.value；忽略乱序测量回调；松手坐标参与最终提交；parcel 端点映射与竖向进度比例修复。点击进度有模拟器证据，竖向和竞态由行为测试覆盖，自动拖动仍受工具限制。",
+      "latestEvidenceRoot": "../.clix/test/e2e_temp/20261026-other-components",
+      "latestEvidence": [
+        "screenshots/slider-before-tap.png",
+        "screenshots/slider-after-tap.png"
+      ]
+    },
+    {
+      "id": "SWITCH-VISUAL-01",
+      "kind": "fixed_migration_defect",
+      "priority": "P2",
+      "title": "Switch 渐变及加载图标偏差",
+      "components": [
+        "switch"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "渐变改用 background-image，并在纯色时清除；实际 View 包裹 loading、显式尺寸和居中；标签按 activeValue 比较。中间尺寸规则引发的 CSS 报错已修复，最终重新打开页面无该告警，基础/禁用/loading 点击复验通过。 后续用户指出 loading 仍偏左、文案分组不同；已用 headless 基线补充修复，最终以 SWITCH-PARITY-01 的量测结果为准。",
+      "latestEvidenceRoot": "../.clix/test/e2e_temp/20261026-other-components",
+      "latestEvidence": [
+        "screenshots/switch-final-interaction.png"
+      ],
+      "followUpIssue": "SWITCH-PARITY-01"
+    },
+    {
+      "id": "EXAMPLE-I18N-01",
+      "kind": "fixed_migration_defect",
+      "priority": "P2",
+      "title": "动作面板按钮显示原始多语言 key",
+      "components": [
+        "action-sheet"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "Lynx demo 统一语义相同的 popupMenu/popUpMenu 两个 key，保留原版中文文案与英文语义；模拟器可见按钮全部恢复。",
+      "latestEvidenceRoot": "../.clix/test/e2e_temp/20261026-other-components",
+      "latestEvidence": [
+        "screenshots/action-sheet-menu-labels-fixed.png"
+      ]
+    },
+    {
+      "id": "SWITCH-PARITY-01",
+      "kind": "fixed_visual_defect",
+      "priority": "P1",
+      "title": "Switch loading 偏左与文案区分组排列不一致",
+      "components": [
+        "switch",
+        "loading",
+        "example"
+      ],
+      "status": "FIXED_AND_COMPARED_WITH_HEADLESS",
+      "detail": "用户指出前轮仍有偏差后重新对照。原版393px宽 headless 中文案为两行两列，行距51px；Lynx demo 增加独立整行容器并补回原 inline baseline 间距。Loading 空插槽仍有8px margin，导致图标偏左约4.17px；Switch 范围将该间距置0，并恢复原版30px/24px图标画布。最终开/关两种状态的两种尺寸，截图圆心偏差最大约0.33 CSS px（含抗锯齿取整）。",
+      "evidenceRoot": "../.clix/test/e2e_temp/20261026-switch-parity",
+      "evidence": [
+        "screenshots/webview-393.png",
+        "screenshots/webview-393-off.png",
+        "screenshots/lynx-before-device.png",
+        "screenshots/lynx-final-on.png",
+        "screenshots/lynx-final-off.png",
+        "data/loading-center-measurements.json",
+        "data/summary.json"
+      ],
+      "remaining": "最新体验版已更新，真机复验仍待用户确认；背景主题来源不同，不声明整页像素一致。"
+    },
+    {
+      "id": "IMAGE-PARITY-02",
+      "title": "Image列间距、widthFix/heightFix比例",
+      "kind": "fixed_parity_or_behavior_defect",
+      "priority": "P1",
+      "components": [
+        "image"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "修复 gutter、Row 全宽包含块和固定宽高图片的 aspect-ratio 后，七种模式的列间距、widthFix/heightFix 比例与原版一致",
+      "evidenceRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+      "evidence": [
+        "screenshots/native-image-2.png",
+        "screenshots/web-image-2.png",
+        "logs/all-tests.log"
+      ]
+    },
+    {
+      "id": "SVG-FILL-02",
+      "title": "Icon隐式黑色fill与Image默认loading颜色",
+      "kind": "fixed_parity_or_behavior_defect",
+      "priority": "P1",
+      "components": [
+        "image"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "确认新包默认加载 SVG 已由黑色恢复为 #dcdee0 灰色，自定义蓝色加载图标保留；列尺寸和20px间距与原版相符",
+      "evidenceRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+      "evidence": [
+        "screenshots/native-image-4.png",
+        "screenshots/web-image-4.png",
+        "logs/all-tests.log"
+      ]
+    },
+    {
+      "id": "PICKER-REUSE-02",
+      "title": "Picker跨数据源显式下标被重置",
+      "kind": "fixed_parity_or_behavior_defect",
+      "priority": "P1",
+      "components": [
+        "picker"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "切换后两组均停在02:20，与原版实际显示一致；说明和按钮恢复块级布局，单位不再重复显示隐藏的00测量文本",
+      "evidenceRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+      "evidence": [
+        "screenshots/native-picker-10.png",
+        "screenshots/web-picker-10-switched.png",
+        "logs/all-tests.log"
+      ]
+    },
+    {
+      "id": "PICKER-COLUMN-02",
+      "title": "命令式下标变化未刷新滚轮窗口",
+      "kind": "fixed_parity_or_behavior_defect",
+      "priority": "P1",
+      "components": [
+        "datetime-picker"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "初始AM/11/00布局与原版一致；修复 PickerColumn.setIndex 后，切换PM仍显示11与00，并实际回调23:00，小时不再消失。原版RJS不支持此次点击等价自动操作，原版只核对初始态",
+      "evidenceRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+      "evidence": [
+        "screenshots/native-datetime-picker-5.png",
+        "screenshots/web-datetime-picker-5.png",
+        "logs/all-tests.log"
+      ]
+    },
+    {
+      "id": "CALENDAR-RANGE-02",
+      "title": "Calendar范围白字和空标题44px占位",
+      "kind": "fixed_parity_or_behavior_defect",
+      "priority": "P1",
+      "components": [
+        "calendar"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "空标题44px占位和范围白字均已修复；两端依次点击23、25，标题均变为1/23–1/25，范围连片与禁用状态正确。品牌色受各自宿主主题影响",
+      "evidenceRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+      "evidence": [
+        "screenshots/native-calendar-4.png",
+        "screenshots/web-calendar-4-selected.png",
+        "logs/all-tests.log"
+      ]
+    },
+    {
+      "id": "DIALOG-ASYNC-02",
+      "title": "Dialog旧回调误关重开弹窗、重复确认与异常卡住",
+      "kind": "fixed_parity_or_behavior_defect",
+      "priority": "P1",
+      "components": [
+        "dialog"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "原版与Lynx异步取消均保持弹窗、1秒后恢复操作，确认均可关闭；补充5项失败/重开/重复确认/卸载边界测试通过。毛玻璃回退差异仍在",
+      "evidenceRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+      "evidence": [
+        "screenshots/native-dialog-3.png",
+        "screenshots/web-dialog-3-confirmed.png",
+        "logs/all-tests.log"
+      ]
+    },
+    {
+      "id": "SLIDER-ASYNC-02",
+      "title": "Slider查询乱序与卸载后回调提交",
+      "kind": "fixed_parity_or_behavior_defect",
+      "priority": "P1",
+      "components": [
+        "slider"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "全宽宿主修复后两滑块回到10%/40%，两端点击约80%轨道均将上限移动到80%左右，下限保持10%；异步测量竞态与卸载防护已有回归测试",
+      "evidenceRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+      "evidence": [
+        "screenshots/native-normal-slider-7.png",
+        "screenshots/web-normal-slider-7-tapped.png",
+        "logs/all-tests.log"
+      ]
+    },
+    {
+      "id": "SLIDER-WIDTH-02",
+      "title": "双滑块宿主宽度塌缩",
+      "kind": "fixed_parity_or_behavior_defect",
+      "priority": "P1",
+      "components": [
+        "slider"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "全宽宿主修复后两滑块回到10%/40%，两端点击约80%轨道均将上限移动到80%左右，下限保持10%；异步测量竞态与卸载防护已有回归测试",
+      "evidenceRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+      "evidence": [
+        "screenshots/native-normal-slider-7.png",
+        "screenshots/web-normal-slider-7-tapped.png",
+        "logs/all-tests.log"
+      ]
+    },
+    {
+      "id": "OVERLAY-DEMO-02",
+      "title": "Overlay示例div导致Native白屏",
+      "kind": "fixed_parity_or_behavior_defect",
+      "priority": "P1",
+      "components": [
+        "overlay"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "div替换为View后示例不再白屏，120px内容块居中；两端点击内容块均保持遮罩，Lynx点击外侧遮罩正确关闭。毛玻璃回退差异保留",
+      "evidenceRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+      "evidence": [
+        "screenshots/native-overlay-2.png",
+        "screenshots/web-overlay-2.png",
+        "logs/all-tests.log"
+      ]
+    },
+    {
+      "id": "ACTION-LOADING-02",
+      "title": "ActionSheet加载色被额外灰色覆盖",
+      "kind": "fixed_parity_or_behavior_defect",
+      "priority": "P1",
+      "components": [
+        "action-sheet"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "移除迁移时额外灰色覆盖后，加载圆环已恢复原版默认蓝色；红色与禁用状态正常。与原版对照open截图；遮罩回退效果仍有差异",
+      "evidenceRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+      "evidence": [
+        "screenshots/native-action-sheet-4.png",
+        "screenshots/web-action-sheet-4-open.png",
+        "logs/all-tests.log"
+      ]
+    },
+    {
+      "id": "TOAST-DEMO-02",
+      "title": "Toast示例按钮间距丢失",
+      "kind": "fixed_parity_or_behavior_defect",
+      "priority": "P1",
+      "components": [
+        "toast"
+      ],
+      "status": "FIXED_AND_RECHECKED",
+      "detail": "成功/失败图标和文案已比对，示例按钮之间补回10px间距并复验；Toast背景颜色受宿主主题影响，未宣称整页像素一致",
+      "evidenceRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+      "evidence": [
+        "screenshots/native-toast-3.png",
+        "screenshots/web-toast-3.png",
+        "logs/all-tests.log"
+      ]
+    }
+  ],
+  "latestVerificationRoot": "../.clix/test/e2e_temp/20261026-verification",
+  "latestIncrementalVerificationRoot": "../.clix/test/e2e_temp/20261026-component-audit",
+  "latestAuditSummary": {
+    "state": "PER_COMPONENT_BASIC_PARITY_VERIFIED_FULL_ACCEPTANCE_INCOMPLETE",
+    "date": "2026-10-26",
+    "scopeCount": 16,
+    "publicCount": 15,
+    "originalDemoPageCount": 14,
+    "demoSectionTotal": 99,
+    "reviewedSectionCount": 27,
+    "unreviewedSectionCount": 72,
+    "nodeTests": 53,
+    "typecheck": "PASS",
+    "stylelint": "PASS",
+    "eslint": {
+      "errors": 0,
+      "warnings": 14
+    },
+    "businessIntegration": "18 scenarios NOT RUN",
+    "cssCompatibility": {
+      "source-scan": {
+        "status": "COMPLETE",
+        "queries": 111,
+        "results": {
+          "SUPPORTED": 89,
+          "UNKNOWN": 17,
+          "UNSUPPORTED": 4,
+          "CONDITIONAL": 1
+        },
+        "dataset": "0.0.18",
+        "lynxVersion": "4.0"
+      },
+      "artifact-scan": {
+        "status": "COMPLETE",
+        "queries": 18,
+        "results": {
+          "SUPPORTED": 10,
+          "UNKNOWN": 8
+        },
+        "dataset": "0.0.18",
+        "lynxVersion": "4.0"
+      }
+    },
+    "preview": {
+      "appId": "tysncznjawnyjkyean",
+      "version": "99.99.99",
+      "status": "PUBLISHED",
+      "artifactFiles": 130
+    }
+  },
+  "latestScrollVerification": {
+    "summary": {
+      "date": "2026-10-26",
+      "issue": "SCROLL-01",
+      "status": "FIXED_SIMULATOR_USER_VERIFIED_PHONE_PENDING",
+      "rootCause": "带 z-index 的后代脱离 ScrollView 滚动层叠上下文",
+      "changes": [
+        "页面 ScrollView 加 z-index:0",
+        "单个普通 View 包裹内容",
+        "onReady 按 selectViewport 实测内容视口高度，保留原生命周期，忽略卸载后的异步测量"
+      ],
+      "measuredViewport": {
+        "systemWindowHeight": 852,
+        "contentHeight": 749,
+        "width": 393
+      },
+      "manualEvidence": {
+        "environment": "iOS 18.2 simulator",
+        "page": "真实 Icon 所有图标页（带测试控件的隔离副本）",
+        "answer": "现在可以正常滚动",
+        "programScrollTop": 600
+      },
+      "formalRuntime": [
+        "Popup 居中显示与遮罩关闭",
+        "Popup 底部固定位置",
+        "Overlay 内容区点击保持、外侧点击关闭"
+      ],
+      "verification": {
+        "nodeTests": 55,
+        "failures": 0,
+        "typecheck": "PASS",
+        "nativeBuild": "PASS",
+        "originalPackagesExampleDiff": "EMPTY",
+        "routes": 15,
+        "probeAbsent": true
+      },
+      "cssCompatibility": {
+        "formal-closure-scan": {
+          "status": "COMPLETE",
+          "queries": 117,
+          "results": {
+            "SUPPORTED": 89,
+            "UNKNOWN": 23,
+            "UNSUPPORTED": 4,
+            "CONDITIONAL": 1
+          },
+          "dataset": "0.0.18",
+          "lynxVersion": "4.0"
+        },
+        "formal-artifact-scan": {
+          "status": "COMPLETE",
+          "queries": 18,
+          "results": {
+            "SUPPORTED": 10,
+            "UNKNOWN": 8
+          },
+          "dataset": "0.0.18",
+          "lynxVersion": "4.0"
+        }
+      },
+      "preview": {
+        "appId": "tysncznjawnyjkyean",
+        "version": "99.99.99",
+        "status": "PUBLISHED",
+        "artifactFiles": 130,
+        "mainSha256": "db77190b0c7a16e40013956ead275efd3cda8e8132de35f696d7ce4a4116a8fe",
+        "log": "logs/publish-preview.log",
+        "phoneVerification": "PENDING"
+      },
+      "limits": [
+        "新包真机与 Android 未复验",
+        "模拟器自动拖动输入限制仍在",
+        "其余组件完整 API 与真实业务验收仍未完成"
+      ]
+    },
+    "report": "../.clix/test/e2e_temp/20261026-scroll-probe/report.html"
+  }
+}
