@@ -1,15 +1,31 @@
 ---
 name: dual-repo-release
 description: >-
-  Drives the paired formal release of miniapp-smart-ui and ray-smart-ui: writes
+  Drives paired formal releases and current-branch canary previews of
+  miniapp-smart-ui and ray-smart-ui. For formal releases, writes
   the bilingual CHANGELOG from PLANS in miniapp-smart-ui and raises its release
-  PR to main, then bumps @tuya/miniapp-smart-ui in ray-smart-ui, syncs PLANS,
+  PR to main, then updates @tuya/miniapp-smart-ui in ray-smart-ui, syncs PLANS,
   writes the Ray-flavoured CHANGELOG and raises the matching PR. Use when the
-  user asks to release/发版 both repos, to sync the Ray repo after the miniapp
-  formal version is published, or to raise the "双仓库发布 MR".
+  user asks to release/发版 both repos, publish a temporary/test version from
+  the current branch (临时版本/当前分支发包), sync Ray after a miniapp release,
+  or raise the "双仓库发布 MR".
 ---
 
 # 双仓库发布（miniapp-smart-ui + ray-smart-ui）
+
+## 选择发布通道
+
+| 用户意图 | 通道与流程 |
+| --- | --- |
+| 正式版、双仓库发布 MR | 继续下方正式版阶段 A → B → C |
+| 基于当前分支发布临时版本、测试包、预览包，或当前分支 beta | 使用 **canary**，读取 [references/canary.md](references/canary.md)，先发 miniapp，再发精确依赖它的 Ray 包 |
+| 已合入 `release/2.x` 后发布官方 beta / 补发 beta | 使用现有 `publish-beta.yml`；miniapp 入口会通过 `publish-manual.yml` 同步 Ray。这条链路会写回版本、可能同步代码，不适用于未合并分支的临时包 |
+
+用户只说「发 beta」且上下文无法确定是当前分支预览还是合并后的官方 beta 时，先确认通道。临时版本默认 tag 为 `canary`，不占用官方 `beta` 或 `latest`。本 skill 的主包为 `@tuya/miniapp-smart-ui` 与 `@ray-js/smart-ui`；Lynx 独立包不套用此流程。
+
+请求修改 skill / 工作流本身不代表请求实际发包。执行发布请求时沿用会话已有授权，遵守仓库点名提交规则；远端只能构建已提交且已推送的代码，先检查并说明本地未提交改动。
+
+## 正式版流程
 
 正式发版时两个仓库要一起走：`miniapp-smart-ui` 是源仓库（原生小程序组件），`ray-smart-ui` 是它的 Ray/React 封装，依赖 npm 包 `@tuya/miniapp-smart-ui`。两边各自从 `release/2.x` 向 `main` 开一个标题为版本号的 PR。
 
