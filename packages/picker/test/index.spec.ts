@@ -1133,7 +1133,10 @@ describe('picker', () => {
           usingComponents: { 'smart-picker': SmartPicker },
           template: `<smart-picker id="wrapper" columns="{{ columns }}" ${extraAttrs} />`,
           data: {
-            columns: [{ values: [1, 2, 3], activeIndex: 2 }],
+            columns: [{ values: [1, 2, 3], activeIndex: 2 }] as Array<{
+              values: number[];
+              activeIndex?: number;
+            }>,
           },
         })
       );
@@ -1164,7 +1167,7 @@ describe('picker', () => {
       expect(mockChild.setIndex).not.toHaveBeenCalled();
     });
 
-    test('autoReset 默认 true：columns 变化保持既有重置行为（兼容既有调用方）', async () => {
+    test('autoReset 默认 true：未传 activeIndex 的列保持既有重置行为', async () => {
       const comp = await mountPicker();
       const instance = comp.querySelector('#wrapper')?.instance;
       const mockChild = {
@@ -1174,10 +1177,71 @@ describe('picker', () => {
       };
       instance.selectAllComponents = jest.fn(() => [mockChild]);
 
-      await triggerColumnsChange(comp);
+      comp.setData({ columns: [{ values: [9, 8, 7] }] });
+      await simulate.sleep(20);
 
       expect(mockChild.set).toHaveBeenCalled();
       expect(mockChild.setIndex).toHaveBeenCalledWith(0);
+    });
+
+    test.each(['', 'active-index="{{ 1 }}"'])(
+      'explicit activeIndex takes priority over automatic reset (%s)',
+      async extraAttrs => {
+        const comp = await mountPicker(extraAttrs);
+        const { instance } = comp.querySelector('#wrapper')!;
+        const mockChild = {
+          set: jest.fn(() => Promise.resolve()),
+          setIndex: jest.fn(),
+          data: { options: [1, 2, 3] },
+        };
+        instance.selectAllComponents = jest.fn(() => [mockChild]);
+
+        comp.setData({
+          columns: [{ values: [9, 8, 7], ...(extraAttrs ? {} : { activeIndex: 0 }) }],
+        });
+        await simulate.sleep(20);
+
+        expect(instance.data.autoReset).toBe(true);
+        expect(mockChild.set).toHaveBeenCalled();
+        expect(mockChild.setIndex).not.toHaveBeenCalled();
+      }
+    );
+
+    test('restoring saved timer keeps 03:06 with default autoReset and disabled columns', async () => {
+      const values = (count: number, start = 0) =>
+        Array.from({ length: count }, (_, index) => String(start + index).padStart(2, '0'));
+      const columnsFor = (time: number, power: boolean) => {
+        const seconds = time < 60 ? values(58, 2) : values(60);
+        return [
+          { values: values(61), activeIndex: Math.floor(time / 60), unit: 'm', disabled: power },
+          {
+            values: seconds,
+            activeIndex: seconds.indexOf(String(time % 60).padStart(2, '0')),
+            unit: 's',
+            disabled: power,
+          },
+        ];
+      };
+      const comp = simulate.render(
+        simulate.load({
+          usingComponents: { 'smart-picker': SmartPicker },
+          template: '<smart-picker id="wrapper" columns="{{ columns }}" />',
+          data: { columns: columnsFor(2, false) },
+        })
+      );
+      comp.attach(document.createElement('parent-wrapper'));
+      await simulate.sleep(10);
+      const { instance } = comp.querySelector('#wrapper')!;
+      expect(instance.getValues()).toEqual(['00', '02']);
+
+      comp.setData({ columns: columnsFor(186, true) });
+      await simulate.sleep(20);
+
+      expect(instance.data.autoReset).toBe(true);
+      expect(instance.getIndexes()).toEqual([3, 6]);
+      expect(instance.getValues()).toEqual(['03', '06']);
+      expect(instance.children.map(child => child.data.disabled)).toEqual([true, true]);
+      comp.detach();
     });
 
     test('调用方以 ...args 尾部追加 needReset 的包装方式不受 setColumnValues 参数形态影响', async () => {

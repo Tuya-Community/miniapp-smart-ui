@@ -68,9 +68,8 @@ SmartComponent({
       },
     },
     /**
-     * 列数据（columns）变化时，是否把发生变化的列重置回第 0 项。默认 true 保持历史行为。
-     * 传 false 后定位由各列 activeIndex 驱动——安卓容器上库内重置（setIndex(0)）会
-     * 异步覆盖 activeIndex 定位，跨数据源复用滚轮时初始档位丢失，此场景建议传 false。
+     * 列数据（columns）变化时，是否把未指定 activeIndex 的变化列重置回第 0 项。
+     * 默认 true；显式传入列级或全局 activeIndex 时始终由该索引定位。
      */
     autoReset: {
       type: Boolean,
@@ -225,9 +224,11 @@ SmartComponent({
         if (this._windows[index] && this._windows[index].windowed) {
           return Promise.resolve();
         }
-        // autoReset=false 时定位由各列 activeIndex 驱动：安卓容器上库内重置
-        // （setIndex(0)）会异步覆盖 activeIndex 定位，跨数据源复用滚轮时档位丢失
-        return this.setColumnValues(index, column.values, this.data.autoReset);
+        // 受控列由 activeIndex 定位，避免异步 setIndex(0) 覆盖同批下发的新索引。
+        const activeIndex = column.activeIndex ?? this.data.activeIndex;
+        const needReset =
+          this.data.autoReset && (activeIndex === null || activeIndex === undefined);
+        return this.setColumnValues(index, column.values, needReset);
       });
       return Promise.all(stack);
     },
