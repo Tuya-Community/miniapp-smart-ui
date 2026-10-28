@@ -243,6 +243,10 @@ function updateValue(instanceId, key) {
   return function(newOptions, oldOptions, ownerInstance) {
     if (!instanceId) return;
     updateState(instanceId, key, newOptions)
+    // options 不在 dataset 内：即使索引等 DOM 状态未变，也必须刷新选项文案。
+    if (key === 'options') {
+      delete preStateObj[instanceId];
+    }
     initDomState(instanceId, ownerInstance)
     updateListView(instanceId, ownerInstance)
   }
