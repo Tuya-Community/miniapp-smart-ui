@@ -1,0 +1,6 @@
+<wxs src="./index.wxs" module="computed" />
+<view class="smart-icon custom-class" style="{{computed.rootStyle({size, customStyle})}}" bindtap="onClick" role="{{ariaRole}}" aria-label="{{ariaLabel}}">
+  <smart-info wx:if="{{info !== null || dot}}" dot="{{dot}}" info="{{info}}" custom-class="smart-icon__info info-class" />
+  <svg-render wx:if="{{lynxIconSvg}}" class="smart-icon__image" source="{{lynxIconSvg}}" />
+  <image wx:elif="{{lynxIconSrc}}" class="smart-icon__image" src="{{lynxIconSrc}}" mode="aspectFit" />
+</view>

@@ -1,0 +1,4 @@
+<wxs src="../wxs/add-unit.wxs" module="unit" />
+<view class="smart-progress-circle custom-class {{className}}" style="width:{{unit(size)}};height:{{unit(size)}};{{customStyle}}">
+  <svg-render class="smart-progress-circle__image" source="{{lynxCircleSvg}}" />
+</view>

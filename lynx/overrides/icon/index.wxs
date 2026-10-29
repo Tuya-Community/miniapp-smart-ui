@@ -1,0 +1,6 @@
+var addUnit = require('../wxs/add-unit.wxs');
+function rootStyle(data) {
+  var size = data.size === null || data.size === undefined || data.size === '' ? '1em' : addUnit(data.size);
+  return 'width:' + size + ';height:' + size + ';' + (data.customStyle || '');
+}
+module.exports = {rootStyle: rootStyle};

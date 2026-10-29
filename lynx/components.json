@@ -1,0 +1,1486 @@
+{
+  "base": "45e7e1e",
+  "components": [
+    {
+      "name": "action-sheet",
+      "dependencies": {
+        "smart-icon": "../icon/index",
+        "smart-popup": "../popup/index",
+        "smart-loading": "../loading/index"
+      },
+      "risks": [
+        "::after",
+        "nativeDisabled",
+        "scroll-view"
+      ],
+      "override": [],
+      "source": "packages/action-sheet",
+      "target": "lynx/dist/action-sheet",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "battery",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/battery",
+      "target": "lynx/dist/battery",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "bottom-sheet",
+      "dependencies": {
+        "smart-icon": "../icon/index",
+        "smart-popup": "../popup/index",
+        "smart-loading": "../loading/index"
+      },
+      "risks": [
+        "change:",
+        "callMethod",
+        ".setStyle(",
+        "nativeDisabled",
+        "scroll-view"
+      ],
+      "override": [],
+      "source": "packages/bottom-sheet",
+      "target": "lynx/dist/bottom-sheet",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "button",
+      "dependencies": {
+        "smart-icon": "../icon/index",
+        "smart-loading": "../loading/index"
+      },
+      "risks": [
+        "::before",
+        "::after"
+      ],
+      "override": [],
+      "source": "packages/button",
+      "target": "lynx/dist/button",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "calendar",
+      "dependencies": {
+        "header": "../calendar-header/index",
+        "month": "../calendar-month/index",
+        "month-list": "../calendar-month-list/index",
+        "year-list": "../calendar-year-list/index",
+        "smart-button": "../button/index",
+        "smart-popup": "../popup/index",
+        "smart-toast": "../toast/index"
+      },
+      "risks": [],
+      "override": [
+        "overrides/calendar/index.wxs"
+      ],
+      "source": "packages/calendar",
+      "target": "lynx/dist/calendar",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "calendar-header",
+      "dependencies": {
+        "smart-icon": "../icon/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/calendar-header",
+      "target": "lynx/dist/calendar-header",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "calendar-month",
+      "dependencies": {},
+      "risks": [],
+      "override": [
+        "overrides/calendar-month/index.wxs"
+      ],
+      "source": "packages/calendar-month",
+      "target": "lynx/dist/calendar-month",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "calendar-month-list",
+      "dependencies": {
+        "smart-row": "../row/index",
+        "smart-col": "../col/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/calendar-month-list",
+      "target": "lynx/dist/calendar-month-list",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "calendar-year-list",
+      "dependencies": {
+        "smart-row": "../row/index",
+        "smart-col": "../col/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/calendar-year-list",
+      "target": "lynx/dist/calendar-year-list",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "cascader",
+      "dependencies": {
+        "smart-icon": "../icon/index",
+        "smart-tab": "../tab/index",
+        "smart-tabs": "../tabs/index"
+      },
+      "risks": [
+        "scroll-view"
+      ],
+      "override": [],
+      "source": "packages/cascader",
+      "target": "lynx/dist/cascader",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "cell",
+      "dependencies": {
+        "smart-icon": "../icon/index"
+      },
+      "risks": [
+        "::before",
+        "::after"
+      ],
+      "override": [],
+      "source": "packages/cell",
+      "target": "lynx/dist/cell",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "cell-group",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/cell-group",
+      "target": "lynx/dist/cell-group",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "checkbox",
+      "dependencies": {
+        "smart-icon": "../icon/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/checkbox",
+      "target": "lynx/dist/checkbox",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "checkbox-group",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/checkbox-group",
+      "target": "lynx/dist/checkbox-group",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "circle",
+      "dependencies": {},
+      "risks": [
+        ".rjs"
+      ],
+      "override": [
+        "overrides/circle/index.less",
+        "overrides/circle/index.ts",
+        "overrides/circle/index.wxml"
+      ],
+      "source": "packages/circle",
+      "target": "lynx/dist/circle",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "col",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/col",
+      "target": "lynx/dist/col",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "collapse",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/collapse",
+      "target": "lynx/dist/collapse",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "collapse-item",
+      "dependencies": {
+        "smart-cell": "../cell/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/collapse-item",
+      "target": "lynx/dist/collapse-item",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "config-provider",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/config-provider",
+      "target": "lynx/dist/config-provider",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "count-down",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/count-down",
+      "target": "lynx/dist/count-down",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "custom-keyboard",
+      "dependencies": {
+        "smart-popup": "../popup/index",
+        "smart-image": "../image/index",
+        "smart-button": "../button/index",
+        "smart-icon": "../icon/index"
+      },
+      "risks": [
+        "mask-"
+      ],
+      "override": [],
+      "source": "packages/custom-keyboard",
+      "target": "lynx/dist/custom-keyboard",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "datetime-picker",
+      "dependencies": {
+        "smart-picker": "../picker/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/datetime-picker",
+      "target": "lynx/dist/datetime-picker",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "dialog",
+      "dependencies": {
+        "smart-popup": "../popup/index",
+        "smart-button": "../button/index",
+        "smart-icon": "../icon/index",
+        "smart-goods-action": "../goods-action/index",
+        "smart-goods-action-button": "../goods-action-button/index"
+      },
+      "risks": [
+        "::after",
+        "nativeDisabled"
+      ],
+      "override": [],
+      "source": "packages/dialog",
+      "target": "lynx/dist/dialog",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "divider",
+      "dependencies": {},
+      "risks": [
+        "::before",
+        "::after"
+      ],
+      "override": [],
+      "source": "packages/divider",
+      "target": "lynx/dist/divider",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "dropdown-item",
+      "dependencies": {
+        "smart-popup": "../popup/index",
+        "smart-cell": "../cell/index",
+        "smart-icon": "../icon/index"
+      },
+      "risks": [
+        "::after",
+        "scroll-view"
+      ],
+      "override": [],
+      "source": "packages/dropdown-item",
+      "target": "lynx/dist/dropdown-item",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "dropdown-menu",
+      "dependencies": {
+        "smart-icon": "../icon/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/dropdown-menu",
+      "target": "lynx/dist/dropdown-menu",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "empty",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/empty",
+      "target": "lynx/dist/empty",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "field",
+      "dependencies": {
+        "smart-cell": "../cell/index",
+        "smart-icon": "../icon/index"
+      },
+      "risks": [
+        "::after"
+      ],
+      "override": [],
+      "source": "packages/field",
+      "target": "lynx/dist/field",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "goods-action",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/goods-action",
+      "target": "lynx/dist/goods-action",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "goods-action-button",
+      "dependencies": {
+        "smart-button": "../button/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/goods-action-button",
+      "target": "lynx/dist/goods-action-button",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "goods-action-icon",
+      "dependencies": {
+        "smart-icon": "../icon/index",
+        "smart-button": "../button/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/goods-action-icon",
+      "target": "lynx/dist/goods-action-icon",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "grid",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/grid",
+      "target": "lynx/dist/grid",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "grid-item",
+      "dependencies": {
+        "smart-icon": "../icon/index"
+      },
+      "risks": [
+        "::after"
+      ],
+      "override": [],
+      "source": "packages/grid-item",
+      "target": "lynx/dist/grid-item",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "icon",
+      "dependencies": {
+        "smart-info": "../info/index"
+      },
+      "risks": [
+        "::before",
+        "mask-"
+      ],
+      "override": [
+        "overrides/icon/index.less",
+        "overrides/icon/index.wxml",
+        "overrides/icon/index.wxs"
+      ],
+      "source": "packages/icon",
+      "target": "lynx/dist/icon",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "image",
+      "dependencies": {
+        "smart-icon": "../icon/index",
+        "smart-loading": "../loading/index"
+      },
+      "risks": [
+        "mask-"
+      ],
+      "override": [],
+      "source": "packages/image",
+      "target": "lynx/dist/image",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "index-anchor",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/index-anchor",
+      "target": "lynx/dist/index-anchor",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "index-bar",
+      "dependencies": {
+        "smart-icon": "../icon/index"
+      },
+      "risks": [
+        "createSelectorQuery"
+      ],
+      "override": [],
+      "source": "packages/index-bar",
+      "target": "lynx/dist/index-bar",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "info",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/info",
+      "target": "lynx/dist/info",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "loading",
+      "dependencies": {},
+      "risks": [
+        "mask-"
+      ],
+      "override": [
+        "overrides/loading/index.less",
+        "overrides/loading/index.wxml",
+        "overrides/loading/index.wxs"
+      ],
+      "source": "packages/loading",
+      "target": "lynx/dist/loading",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "nav-bar",
+      "dependencies": {
+        "smart-icon": "../icon/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/nav-bar",
+      "target": "lynx/dist/nav-bar",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "normal-slider",
+      "dependencies": {
+        "ty-slider": "@ray-js/components-ty-slider/lib/slider/index"
+      },
+      "risks": [],
+      "override": [
+        "overrides/normal-slider/index.json",
+        "overrides/normal-slider/index.less",
+        "overrides/normal-slider/index.wxml"
+      ],
+      "source": "packages/normal-slider",
+      "target": "lynx/dist/normal-slider",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "notice-bar",
+      "dependencies": {
+        "smart-icon": "../icon/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/notice-bar",
+      "target": "lynx/dist/notice-bar",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "notify",
+      "dependencies": {
+        "smart-transition": "../transition/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/notify",
+      "target": "lynx/dist/notify",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "overlay",
+      "dependencies": {
+        "smart-transition": "../transition/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/overlay",
+      "target": "lynx/dist/overlay",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "picker",
+      "dependencies": {
+        "picker-column": "../picker-column/index",
+        "loading": "../loading/index"
+      },
+      "risks": [
+        "::after",
+        "mask-"
+      ],
+      "override": [],
+      "source": "packages/picker",
+      "target": "lynx/dist/picker",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "picker-column",
+      "dependencies": {},
+      "risks": [
+        "::after",
+        "change:",
+        "callMethod",
+        ".setStyle(",
+        "rotateX("
+      ],
+      "override": [
+        "overrides/picker-column/index.less",
+        "overrides/picker-column/index.wxml",
+        "overrides/picker-column/index.wxs"
+      ],
+      "source": "packages/picker-column",
+      "target": "lynx/dist/picker-column",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "popover",
+      "dependencies": {
+        "smart-overlay": "../overlay/index",
+        "smart-icon": "../icon/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/popover",
+      "target": "lynx/dist/popover",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "popup",
+      "dependencies": {
+        "smart-icon": "../icon/index",
+        "smart-overlay": "../overlay/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/popup",
+      "target": "lynx/dist/popup",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "progress",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/progress",
+      "target": "lynx/dist/progress",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "radio",
+      "dependencies": {
+        "smart-icon": "../icon/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/radio",
+      "target": "lynx/dist/radio",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "radio-group",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/radio-group",
+      "target": "lynx/dist/radio-group",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "rate",
+      "dependencies": {
+        "smart-icon": "../icon/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/rate",
+      "target": "lynx/dist/rate",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "row",
+      "dependencies": {},
+      "risks": [
+        "::after"
+      ],
+      "override": [
+        "overrides/row/index.less"
+      ],
+      "source": "packages/row",
+      "target": "lynx/dist/row",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "search",
+      "dependencies": {
+        "smart-field": "../field/index",
+        "smart-icon": "../icon/index"
+      },
+      "risks": [
+        "::before"
+      ],
+      "override": [],
+      "source": "packages/search",
+      "target": "lynx/dist/search",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "sidebar",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/sidebar",
+      "target": "lynx/dist/sidebar",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "sidebar-item",
+      "dependencies": {
+        "smart-info": "../info/index"
+      },
+      "risks": [
+        "::after"
+      ],
+      "override": [],
+      "source": "packages/sidebar-item",
+      "target": "lynx/dist/sidebar-item",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "skeleton",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/skeleton",
+      "target": "lynx/dist/skeleton",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "slider",
+      "dependencies": {},
+      "risks": [
+        "::before"
+      ],
+      "override": [],
+      "source": "packages/slider",
+      "target": "lynx/dist/slider",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "stepper",
+      "dependencies": {
+        "smart-icon": "../icon/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/stepper",
+      "target": "lynx/dist/stepper",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "sticky",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/sticky",
+      "target": "lynx/dist/sticky",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "swipe-cell",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/swipe-cell",
+      "target": "lynx/dist/swipe-cell",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "switch",
+      "dependencies": {
+        "smart-loading": "../loading/index"
+      },
+      "risks": [
+        "change:"
+      ],
+      "override": [],
+      "source": "packages/switch",
+      "target": "lynx/dist/switch",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "tab",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/tab",
+      "target": "lynx/dist/tab",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "tabbar",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/tabbar",
+      "target": "lynx/dist/tabbar",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "tabbar-item",
+      "dependencies": {
+        "smart-icon": "../icon/index",
+        "smart-info": "../info/index"
+      },
+      "risks": [],
+      "override": [],
+      "source": "packages/tabbar-item",
+      "target": "lynx/dist/tabbar-item",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "tabs",
+      "dependencies": {
+        "smart-info": "../info/index",
+        "smart-sticky": "../sticky/index"
+      },
+      "risks": [
+        "scroll-view",
+        "createSelectorQuery"
+      ],
+      "override": [],
+      "source": "packages/tabs",
+      "target": "lynx/dist/tabs",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "tag",
+      "dependencies": {
+        "smart-icon": "../icon/index"
+      },
+      "risks": [
+        "::before",
+        "::after"
+      ],
+      "override": [],
+      "source": "packages/tag",
+      "target": "lynx/dist/tag",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "toast",
+      "dependencies": {
+        "smart-icon": "../icon/index",
+        "smart-loading": "../loading/index",
+        "smart-overlay": "../overlay/index",
+        "smart-transition": "../transition/index"
+      },
+      "risks": [
+        "nativeDisabled"
+      ],
+      "override": [],
+      "source": "packages/toast",
+      "target": "lynx/dist/toast",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "transition",
+      "dependencies": {},
+      "risks": [],
+      "override": [],
+      "source": "packages/transition",
+      "target": "lynx/dist/transition",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    },
+    {
+      "name": "tree-select",
+      "dependencies": {
+        "smart-icon": "../icon/index",
+        "smart-sidebar": "../sidebar/index",
+        "smart-sidebar-item": "../sidebar-item/index"
+      },
+      "risks": [
+        "scroll-view"
+      ],
+      "override": [],
+      "source": "packages/tree-select",
+      "target": "lynx/dist/tree-select",
+      "status": "IMPLEMENTED_RUNTIME_PENDING",
+      "cases": [
+        "light/dark + theme change",
+        "default/active/disabled/loading/empty",
+        "props + slots + external classes",
+        "events + controlled updates",
+        "open/close/reenter + cleanup",
+        "phone/tablet + long text"
+      ],
+      "runtimeEvidence": []
+    }
+  ]
+}

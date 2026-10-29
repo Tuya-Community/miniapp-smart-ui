@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-27",
+  "branch": "codex/lynx-smart-ui",
+  "base": "45e7e1e30529f79f86f4876f1af42523286c76a1",
+  "package": "@tuya/miniapp-smart-ui",
+  "version": "2.13.7",
+  "reactWrapperVersion": "2.13.3",
+  "tySliderVersion": "0.3.10-beta.3",
+  "stages": [
+    {
+      "stage": "webview-rebuild",
+      "exitCode": 0
+    },
+    {
+      "stage": "webview-tests",
+      "exitCode": 0
+    },
+    {
+      "stage": "build",
+      "exitCode": 0
+    },
+    {
+      "stage": "node-tests",
+      "exitCode": 0
+    },
+    {
+      "stage": "ray",
+      "exitCode": 0
+    },
+    {
+      "stage": "render-tests",
+      "exitCode": 0
+    },
+    {
+      "stage": "verify",
+      "exitCode": 0
+    },
+    {
+      "stage": "fixture",
+      "exitCode": 0
+    },
+    {
+      "stage": "pack-dry-run",
+      "exitCode": 0
+    }
+  ],
+  "additionalChecks": {
+    "changedSourceESLint": "PASS",
+    "reactModeTypeSmoke": "PASS",
+    "webviewSHA256Isolation": "PASS",
+    "npmAll70EntryCompleteness": "PASS",
+    "npmBuildAndTestSourcesExcluded": "PASS"
+  },
+  "tests": {
+    "webview": {
+      "suites": 117,
+      "tests": 1094,
+      "snapshots": 51
+    },
+    "lynxLogicStructureLifecycleDispatch": 26,
+    "lynxSimulatedMount": 8,
+    "note": "SVG host is stubbed in mount tests; compiler fixture is not interactive acceptance."
+  },
+  "nativeComponentCount": 70,
+  "reactExportCount": 61,
+  "packDryRun": {
+    "name": "@tuya/miniapp-smart-ui",
+    "version": "2.13.7",
+    "size": 906828,
+    "unpackedSize": 5721771,
+    "entryCount": 2337
+  },
+  "artifacts": {
+    "lynx/.generated/compiler-output/miniprogram/main.lynx.bundle": {
+      "bytes": 1289390,
+      "sha256": "2aa6b04ae39fb9a18b096274b6efcc83d97b3beec25d033a75bac134fd01a2d4"
+    },
+    "lynx/.generated/compiler-output/miniprogram/app-config.json": {
+      "bytes": 249,
+      "sha256": "449d77783dbef9d25bf3cc1352a3eca908d8386cd726e801db9dbf1b7ec0e110"
+    },
+    "lynx/build-receipt.json": {
+      "bytes": 47067,
+      "sha256": "9b03ec06e0963d4eaa63bce5e5c5abd030ea0478821d325992db9a23ab84e004"
+    }
+  },
+  "logDigests": {
+    "smart-ui-final-pack-dry-run.log": {
+      "sha256": "05e0b0f7934b271c5bf9cb5adaa6132cf2e0e8245667227020263716959ed483"
+    },
+    "smart-ui-final-react-types.log": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "smart-ui-final-build.log": {
+      "sha256": "cc9a5e66568a1239e130841d9c1fca755f7566bbc3242fbae9ab174171a938cb"
+    },
+    "smart-ui-final-ray.log": {
+      "sha256": "dd117ac88e4ffc92bc22f168046c16cb1529b7cdb71a200b32fb9f61b87dbf3c"
+    },
+    "smart-ui-final-webview-tests.log": {
+      "sha256": "2fa86a4f292c8e7bd0cb6f5456a05b4888100e03baa4aa26d012d9852fefae1c"
+    },
+    "smart-ui-final-render-tests.log": {
+      "sha256": "bcde71310dad338985c24fb954542bc48ae5bed0e461ff4baed0a52c96ddf84c"
+    },
+    "smart-ui-final-webview-rebuild.log": {
+      "sha256": "c58e666e9ec9005e725077ca2c276b2334efbbc91ec025d58cf0210df9c35c24"
+    },
+    "smart-ui-final-verify.log": {
+      "sha256": "cc9a5e66568a1239e130841d9c1fca755f7566bbc3242fbae9ab174171a938cb"
+    },
+    "smart-ui-final-fixture.log": {
+      "sha256": "24f9fe1eec93bfcce3249a989b2c0931e8d758d5e49b08d67eb27d64c45b0c26"
+    },
+    "smart-ui-final-node-tests.log": {
+      "sha256": "294b152b629c99f7a01eb7bebaf3dc62d15ecca03705d1969a6233dc8c2d23a3"
+    }
+  },
+  "compilerFilteredDeclarations": [
+    "text-align:justify",
+    "white-space:pre-wrap",
+    "word-wrap:break-word"
+  ],
+  "runtimeVerified": false,
+  "published": false,
+  "pushedToDevice": false,
+  "businessDependencyChanged": false
+}

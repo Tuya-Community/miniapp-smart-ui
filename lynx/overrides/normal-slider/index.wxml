@@ -1,0 +1,11 @@
+<view wx:if="{{!hidden}}" class="smart-normal-slider contain custom-class {{className}} {{normalVertical ? 'smart-normal-slider--vertical' : ''}}" style="opacity:{{disable ? 0.5 : 1}};{{parcel ? 'padding:' + parcelMargin + 'px;' : ''}};{{hotAreaStyle}}" aria-valuemin="{{min}}" aria-valuemax="{{max}}" aria-valuenow="{{normalValue}}" aria-disabled="{{disable}}" bind:touchstart="onNormalStart" catch:touchmove="onNormalMove" bind:touchend="onNormalEnd" bind:touchcancel="onNormalCancel">
+  <view class="smart-normal-slider__track" style="{{trackStyle}}">
+    <view wx:if="{{!hideBarOnFirstRender || normalTouched}}" class="smart-normal-slider__bar" style="{{normalVertical ? 'height:' : 'width:'}}{{normalProgress}}%;{{normalVertical ? 'top:' : 'left:'}}{{normalStart}}%;{{barStyle}}" />
+    <view wx:for="{{normalSteps}}" wx:key="index" class="smart-normal-slider__step" style="{{normalVertical ? 'top:' : 'left:'}}{{item.position}}%;{{stepStyle}};{{item.active ? activeStepStyle : ''}}" />
+    <view wx:if="{{!hideThumbButton && !hideThumb}}" class="smart-normal-slider__thumb-wrap" style="{{normalVertical ? 'top:' : 'left:'}}{{normalRatio}}%;{{thumbWrapStyle}}" data-thumb="{{true}}" catch:touchstart="onNormalStart" catch:touchmove="onNormalMove" bind:touchend="onNormalEnd" bind:touchcancel="onNormalCancel">
+      <view class="smart-normal-slider__thumb" style="{{thumbStyle}};{{normalThumbExtra}};{{thumbWidth ? 'width:' + thumbWidth + 'px;' : ''}}{{thumbHeight ? 'height:' + thumbHeight + 'px;' : ''}}">
+        <text wx:if="{{showText}}" style="{{textStyle}}">{{normalLabel}}</text>
+      </view>
+    </view>
+  </view>
+</view>
