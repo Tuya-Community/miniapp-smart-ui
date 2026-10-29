@@ -1,0 +1,11 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+<view class="custom-class {{utils.bem('loading',{vertical})}}">
+  <view class="smart-loading__spinner" style="{{computed.size(size)}}">
+    <view wx:if="{{type !== 'spinner'}}" class="smart-loading__ring" style="border-color:{{lynxLoadingColor}};border-top-color:transparent;" />
+    <block wx:else><view wx:for="{{lynxLoadingSpokes}}" wx:key="*this" class="smart-loading__spoke" style="transform:rotate({{item * 45}}deg);opacity:{{(item + 1) / 8}};">
+      <view class="smart-loading__spoke-tip" style="background-color:{{lynxLoadingColor}};" />
+    </view></block>
+  </view>
+  <view class="smart-loading__text" style="{{computed.textStyle({textSize,color})}}"><slot /></view>
+</view>

@@ -27,3 +27,9 @@ miniprogram_npm
 .clix/headless-mp-out--*
 .clix/headless/device-snapshot.json
 .clix/headless/group-snapshot.json
+
+lynx/.generated/
+lynx/dist/
+lynx/lib/
+lynx/ray/
+lynx/build-receipt.json
