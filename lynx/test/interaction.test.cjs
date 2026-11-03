@@ -11,8 +11,9 @@ function component(options, data = {}) {
   const instance = {
     data,
     events: [],
-    setData(value) {
+    setData(value, callback) {
       Object.assign(this.data, value);
+      callback?.();
     },
     $emit(...event) {
       this.events.push(event);
@@ -333,4 +334,46 @@ test('page hide cancels overlay timers; background show changes do not acquire n
   assert.equal(locks.at(-1), false);
   behavior.pageLifetimes.show.call(comp);
   assert.equal(locks.at(-1), true);
+});
+
+test('transition waits for the initial render acknowledgement before changing animation frames', () => {
+  const clock = fakeTimers();
+  const transition = sourceModule('mixins/transition.ts', {
+    '../lynx-runtime/layers': { holdNative() {}, releaseNative() {} },
+  }, { Behavior: value => value, ...clock });
+  const behavior = transition.transition(false);
+  const comp = component(behavior, { ...behavior.data, show: true, name: 'bottom', duration: 300 });
+  const acknowledgements = [];
+  comp.setData = function(value, callback) { Object.assign(this.data, value); if (callback) acknowledgements.push(callback); };
+  comp.observeShow(true, false);
+  assert.equal(clock.size, 0, 'enter-to must not be queued before the native initial frame is acknowledged');
+  assert.equal(acknowledgements.length, 1);
+  acknowledgements[0]();
+  clock.flush();
+  assert.equal(comp.data.animating, false);
+  assert.match(comp.data.classes, /bottom-enter-to/);
+});
+
+
+test('late initial-render acknowledgement cannot revive a closed or detached transition', () => {
+  for (const action of ['close', 'detach', 'hide']) {
+    const clock = fakeTimers();
+    const transition = sourceModule('mixins/transition.ts', {
+      '../lynx-runtime/layers': { holdNative() {}, releaseNative() {} },
+    }, { Behavior: value => value, ...clock });
+    const behavior = transition.transition(false);
+    const comp = component(behavior, { ...behavior.data, show: true, name: 'bottom', duration: 300 });
+    const acknowledgements = [];
+    comp.setData = function(value, callback) {
+      Object.assign(this.data, value);
+      if (callback) acknowledgements.push(callback);
+    };
+    comp.observeShow(true, false);
+    if (action === 'close') comp.observeShow(false, true);
+    if (action === 'detach') behavior.detached.call(comp);
+    if (action === 'hide') behavior.pageLifetimes.hide.call(comp);
+    acknowledgements[0]();
+    assert.equal(clock.size, 0, action + ': stale enter must not schedule another frame');
+    assert.equal(comp.events.filter(event => event[0] === 'enter').length, 0);
+  }
 });

@@ -118,6 +118,10 @@ test('Picker drawing viewport contains columns but leaves both toolbars in norma
   const columns = nodes.find(node => has(node, 'smart-picker__columns'));
   assert.ok(viewport && columns, 'native drawing bounds must be present in emitted WXML');
   assert.equal(columns.parent, viewport);
+  assert.ok(
+    has(columns, 'smart-lynx-picker-columns'),
+    'native columns must be distinguishable from WebView mask resets'
+  );
   const css = fs.readFileSync(path.join(root, 'lynx/lib/picker/index.css'), 'utf8');
   assert.match(
     css,
@@ -135,16 +139,75 @@ test('Picker drawing viewport contains columns but leaves both toolbars in norma
 
 // Platform pan recognizers do not honor JavaScript touch bubbling alone.
 test('PickerColumn intercepts ancestor vertical pans using scalar native properties', () => {
-  const source = fs.readFileSync(path.join(root, 'lynx/overrides/picker-column/index.wxml'), 'utf8');
+  const source = fs.readFileSync(
+    path.join(root, 'lynx/overrides/picker-column/index.wxml'),
+    'utf8'
+  );
   const built = fs.readFileSync(path.join(root, 'lynx/lib/picker-column/index.wxml'), 'utf8');
   for (const markup of [source, built]) {
     const { parseDocument } = require('htmlparser2');
     const doc = parseDocument(markup, { xmlMode: true });
     const column = doc.children.find(node => node.name === 'view');
-    assert.equal(column.attribs['pan-intercept-direction'], '{{disabled || !options.length ? 2 : 1}}');
+    assert.equal(
+      column.attribs['pan-intercept-direction'],
+      '{{disabled || !options.length ? 2 : 1}}'
+    );
     assert.equal(column.attribs['pan-intercept-scope'], '{{disabled || !options.length ? 6 : 1}}');
-    assert.equal(column.attribs['consume-slide-event'], undefined, 'MiniApp stringifies this array-valued native property');
+    assert.equal(
+      column.attribs['consume-slide-event'],
+      undefined,
+      'MiniApp stringifies this array-valued native property'
+    );
     assert.equal(column.attribs.flatten, '{{false}}');
     assert.equal(column.attribs['catch:touchmove'], 'onLynxMove');
   }
+});
+
+
+test('Lynx Popup owns its overlay and content in the same conditional host', () => {
+  const template = fs.readFileSync(path.join(root, 'lynx/overrides/popup/index.wxml'), 'utf8');
+  assert.match(template, /<block wx:if="{{ isShowed }}">/);
+  assert.match(template, /<view wx:if="{{ overlay }}"[^>]*class="smart-lynx-popup-host"[\s\S]*<smart-overlay[\s\S]*<include src="\.\/popup.wxml" \/>[\s\S]*<\/view>/);
+  assert.match(template, /<include wx:else src="\.\/popup.wxml" \/>/);
+});
+
+test('Field dynamic input slot receives an empty marker without hiding the native input itself', () => {
+  const { parseDocument } = require('htmlparser2');
+  const source = fs.readFileSync(path.join(root, 'packages/field/cell-input.wxml'), 'utf8');
+  const output = template(source);
+  const doc = parseDocument(output, { xmlMode: true, decodeEntities: false });
+  const nodes = [];
+  const visit = node => { nodes.push(node); (node.children || []).forEach(visit); };
+  visit(doc);
+  const custom = nodes.find(node => node.name === 'view' && /field__control/.test(node.attribs?.class || '') && /custom/.test(node.attribs?.class || ''));
+  assert.ok(custom, 'actual Field custom input slot wrapper must be present');
+  assert.match(custom.attribs.class, /smart-lynx-empty/);
+  assert.match(custom.attribs.class, /smartLynxStyle.slot\(lynxSlotNames, 'input', lynxHasDefaultSlot\)/);
+});
+
+test('Field native controls select their own visibility instead of relying on adjacent sibling CSS', () => {
+  const { parseDocument } = require('htmlparser2');
+  for (const name of ['input', 'textarea']) {
+    const output = template(fs.readFileSync(path.join(root, `packages/field/${name}.wxml`), 'utf8'));
+    const doc = parseDocument(output, { xmlMode: true, decodeEntities: false });
+    const node = doc.children.find(child => child.name === name);
+    assert.ok(node);
+    assert.doesNotMatch(node.attribs.class, /smart-lynx-empty/);
+    assert.match(node.attribs.style || '', /smartLynxStyle.slot\(lynxSlotNames, 'input', lynxHasDefaultSlot\)/);
+    assert.match(node.attribs.style, /'none'\s*:\s*'flex'/);
+  }
+});
+
+test('Field text control and its background share one native root rather than a nested Cell slot', () => {
+  const { parseDocument } = require('htmlparser2');
+  const markup = fs.readFileSync(path.join(root, 'lynx/lib/field/cell-input.wxml'), 'utf8');
+  const doc = parseDocument(markup.replace(/\{\{[\s\S]*?\}\}/g, 'EXPR'), { xmlMode: true });
+  const field = doc.children.find(node => node.name === 'view' && /smart-field/.test(node.attribs?.class || ''));
+  assert.ok(field, 'Field needs its own background and control layout host');
+  const all = []; const visit = node => { all.push(node); (node.children || []).forEach(visit); }; visit(field);
+  assert.ok(all.some(node => node.name === 'include' && node.attribs?.src === './input.wxml'));
+  assert.equal(all.filter(node => node.name === 'smart-cell').length, 1, 'only optional trailing arrow may use Cell; it must not own the input slot');
+  const arrow = all.find(node => node.name === 'smart-cell');
+  assert.equal(arrow.attribs['wx:if'], 'EXPR');
+  assert.ok(!(arrow.children || []).some(node => node.name));
 });

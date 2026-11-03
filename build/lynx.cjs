@@ -218,7 +218,8 @@ function template(input, pseudoClasses) {
         node.attribs['show-scrollbar'] = mask('{{false}}');
       if (
         /smart-(cell|button|calendar|empty|checkbox|radio|field|bottom-sheet|loading)/.test(cls) ||
-        /bem\('(cell|button|checkbox|radio)/.test(cls)
+        /bem\('(cell|button|checkbox|radio)/.test(cls) ||
+        (node.name === 'view' && /bem\('field__/.test(cls))
       )
         joinClass(node, `{{(${childrenPresent(original)}) ? '' : 'smart-lynx-empty'}}`);
       if (
@@ -244,6 +245,13 @@ function template(input, pseudoClasses) {
         if (cls.includes('smart-multi-ellipsis--l2')) node.attribs['text-maxline'] = '2';
         else if (cls.includes('smart-multi-ellipsis--l3')) node.attribs['text-maxline'] = '3';
         else if (cls.includes('smart-ellipsis')) node.attribs['text-maxline'] = '1';
+      }
+      // Field's WebView visibility uses :empty + sibling CSS. Native inputs must
+      // select visibility from slot metadata; void controls are not empty views.
+      if (['input', 'textarea'].includes(node.name) && /bem\('field__control'/.test(cls)) {
+        node.attribs.style =
+          (node.attribs.style || '') +
+          mask(";display:{{smartLynxStyle.slot(lynxSlotNames, 'input', lynxHasDefaultSlot) ? 'none' : 'flex'}};");
       }
       // Expose inline visual styles as inherited CSS variables. Literal and
       // mixed interpolation are handled by the same concatenation expression.
@@ -533,6 +541,21 @@ async function prepare() {
     const file = path.join(staged, rel);
     write(file, fn(fs.readFileSync(file, 'utf8')));
   };
+  // Native slot projection must not split a Field's background and input into
+  // separate layout hosts. Keep its children in one Field-owned Cell layout;
+  // an empty optional Cell is used only for the unchanged trailing arrow.
+  change('field/cell-input.wxml', s =>
+    s.replace(
+      /<smart-cell[\s\S]*?>/,
+      `<view class="custom-class smart-field {{ utils.bem('cell', [{ borderless: !border, clickable: isLink || clickable }]) }}" style="{{ customStyle }}">
+  <smart-icon wx:if="{{ leftIcon }}" name="{{ leftIcon }}" class="smart-cell__left-icon-wrap" custom-class="smart-cell__left-icon" />`
+    ).replace(
+      '</smart-cell>',
+      `<smart-cell wx:if="{{ isLink }}" is-link="{{true}}" border="{{false}}" arrow-direction="{{ arrowDirection }}" custom-style="padding:0;width:24px;flex-shrink:0;background-color:transparent;" />
+</view>`
+    )
+  );
+  change('field/index.less', s => s + "\n@import '../cell/index.less';\n.smart-field { z-index:0; }\n");
   change('wxs/utils.wxs', s =>
     s
       .replace(/function queryComponent[\s\S]*?\};/, '')
@@ -563,6 +586,14 @@ async function prepare() {
         'style="{{ computed.frameStyle({ itemHeight }) }}"',
         'style="{{ computed.frameStyle({ itemHeight }) }};border-top-width:0;border-bottom-width:0;"'
       )
+  );
+  // Consumers can keep WebView-only mask resets out of the native renderer.
+  // Android hosts can paint an explicit mask-image:none as an empty mask.
+  change('picker/index.wxml', s =>
+    s.replace(
+      'class="smart-picker__columns"',
+      'class="smart-picker__columns smart-lynx-picker-columns"'
+    )
   );
   change('datetime-picker/index.wxml', s =>
     s.replace('<smart-picker', '<smart-picker lynx-datetime="{{true}}"')

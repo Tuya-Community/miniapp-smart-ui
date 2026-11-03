@@ -87,28 +87,35 @@ export function transition(showDefaultValue: boolean) {
         );
         if (value && this.data.nativeDisabled) holdNative(this);
         this.$emit('before-' + phase);
-        this.setData({
-          inited: true,
-          isShowed: true,
-          display: true,
-          animating: true,
-          status: phase,
-          currentDuration,
-          classes: `smart-${name}-${phase} smart-${name}-${phase}-active ${phase}-class ${phase}-active-class`,
-        });
-        this.$emit(phase);
-        this._lynxFrame = setTimeout(() => {
-          if (this._lynxDisposed || revision !== this._lynxTransitionRevision) return;
-          this.setData({
-            classes: `smart-${name}-${phase}-to smart-${name}-${phase}-active ${phase}-to-class ${phase}-active-class`,
-          });
-          this._lynxTransition = setTimeout(() => {
+        this.setData(
+          {
+            inited: true,
+            isShowed: true,
+            display: true,
+            animating: true,
+            status: phase,
+            currentDuration,
+            classes: `smart-${name}-${phase} smart-${name}-${phase}-active ${phase}-class ${phase}-active-class`,
+          },
+          () => {
+            // Preserve an actual initial frame: a timer started before setData acknowledgement
+            // may collapse both class updates into the same native render commit.
             if (this._lynxDisposed || revision !== this._lynxTransitionRevision) return;
-            this.setData({ display: value, isShowed: value, animating: false });
-            if (!value) releaseNative(this);
-            this.$emit('after-' + phase);
-          }, currentDuration);
-        }, 16);
+            this.$emit(phase);
+            this._lynxFrame = setTimeout(() => {
+              if (this._lynxDisposed || revision !== this._lynxTransitionRevision) return;
+              this.setData({
+                classes: `smart-${name}-${phase}-to smart-${name}-${phase}-active ${phase}-to-class ${phase}-active-class`,
+              });
+              this._lynxTransition = setTimeout(() => {
+                if (this._lynxDisposed || revision !== this._lynxTransitionRevision) return;
+                this.setData({ display: value, isShowed: value, animating: false });
+                if (!value) releaseNative(this);
+                this.$emit('after-' + phase);
+              }, currentDuration);
+            }, 32);
+          }
+        );
       },
       enter(this: any) {
         this.observeShow(true);

@@ -1020,7 +1020,9 @@
         "smart-overlay": "../overlay/index"
       },
       "risks": [],
-      "override": [],
+      "override": [
+        "overrides/popup/index.wxml"
+      ],
       "source": "packages/popup",
       "target": "lynx/dist/popup",
       "status": "IMPLEMENTED_RUNTIME_PENDING",
