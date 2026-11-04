@@ -19,7 +19,14 @@
     "test:watch": "jest --watch",
     "test:cover": "jest --coverage",
     "preMinipackBuild": "yarn && MODE=build NODE_OPTIONS=--no-experimental-fetch npx gulp -f build/compiler.js --series buildEs buildLib buildExample",
-    "changelog": "conventional-changelog -p -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p -i CHANGELOG.md -s",
+    "build:lynx": "node build/lynx.cjs build",
+    "test:lynx": "node --test lynx/test/*.test.cjs",
+    "verify:lynx": "node build/lynx.cjs verify",
+    "inventory:lynx": "node build/lynx.cjs inventory",
+    "test:lynx:render": "TZ=Asia/Shanghai jest --config jest.lynx.config.cjs --runInBand",
+    "build:lynx:fixture": "node build/lynx-fixture.cjs",
+    "build:lynx:ray": "node build/lynx-ray.cjs"
   },
   "files": [
     "dist",
@@ -27,7 +34,16 @@
     "lib",
     "!lib/**/demo/",
     "README-zh_CN.md",
-    "README.md"
+    "README.md",
+    "lynx",
+    "!lynx/.generated",
+    "!lynx/overrides",
+    "!lynx/test",
+    "README-LYNX.md",
+    "!lynx/webview-baseline.json",
+    "!lynx/components.json",
+    "!lynx/evidence",
+    "!lynx/ray"
   ],
   "husky": {
     "hooks": {
@@ -80,7 +96,11 @@
     "ts-jest": "^27.0.7",
     "tscpaths": "^0.0.9",
     "typescript": "^4.4.4",
-    "vue": "^3.2.30"
+    "vue": "^3.2.30",
+    "htmlparser2": "^8.0.2",
+    "postcss": "^8.5.6",
+    "domhandler": "^5.0.3",
+    "dom-serializer": "^2.0.0"
   },
   "browserslist": [
     "Chrome >= 53",
