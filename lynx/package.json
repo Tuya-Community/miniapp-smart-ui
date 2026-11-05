@@ -1,0 +1,7 @@
+{
+  "name": "@tuya/miniapp-smart-ui",
+  "version": "2.13.7",
+  "miniprogram": "lib",
+  "private": true,
+  "description": "Isolated Lynx entry; default package remains WebView"
+}

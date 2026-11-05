@@ -1,0 +1,4 @@
+var addUnit = require('../wxs/add-unit.wxs');
+function size(value) { var s = addUnit(value || 30); return 'width:' + s + ';height:' + s + ';'; }
+function textStyle(data) { return 'font-size:' + addUnit(data.textSize || 14) + ';color:' + (data.color || 'var(--loading-text-color, #1989FA)') + ';'; }
+module.exports = {size:size,textStyle:textStyle};

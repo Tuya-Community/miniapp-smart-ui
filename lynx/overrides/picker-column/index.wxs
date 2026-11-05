@@ -1,0 +1,2 @@
+// No render-thread DOM mutation. Values and gestures live in the logic layer.
+module.exports = {};

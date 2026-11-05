@@ -1,0 +1,20 @@
+var fontProps = ['color', 'font-size', 'line-height', 'font-weight', 'font-family', 'font-style', 'letter-spacing', 'text-align', 'border-radius', 'border-color', 'border-style', 'border'];
+function decorate(source) {
+  if (!source || typeof source !== 'string') return source || '';
+  var extra = '';
+  source.split(';').forEach(function(entry) {
+    var colon = entry.indexOf(':');
+    if (colon < 0) return;
+    var name = entry.slice(0, colon).trim();
+    var value = entry.slice(colon + 1).trim();
+    if (value && value !== 'inherit' && fontProps.indexOf(name) >= 0) extra += ';--smart-lynx-' + name + ':' + value;
+  });
+  return source + extra;
+}
+function slot(names, name, hasDefault) {
+  if (!name) return hasDefault !== false;
+  return names === null || names === undefined || names.indexOf(name) >= 0;
+}
+function content(value) { return value !== null && value !== undefined && value !== ''; }
+function length(value) { return value ? value.length : 0; }
+module.exports = { length: length, decorate: decorate, slot: slot, content: content };
