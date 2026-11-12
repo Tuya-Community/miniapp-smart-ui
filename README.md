@@ -16,6 +16,8 @@ Scan the MiniApp QR code below to experience the component library examples.
 
 ## Before Using
 
+For projects using both Lynx and WebView, see the [dual-renderer integration guide (Chinese)](./GUIDE-LYNX-WEBVIEW.md). Native component entries and the Ray React adapter require separate setup.
+
 Before using Smart UI, make sure you have studied the official [Quick Start](https://developer.tuya.com/cn/miniapp/develop/miniapp/guide/start/smart) and [MiniApp Component Introduction](https://developer.tuya.com/cn/miniapp/develop/miniapp/framework/component/intro).
 
 ## Installation

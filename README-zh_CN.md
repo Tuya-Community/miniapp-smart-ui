@@ -23,6 +23,8 @@
 
 ## 使用之前
 
+新项目需要同时支持 Lynx 与 WebView 时，请先阅读 [双渲染接入指南](./GUIDE-LYNX-WEBVIEW.md)。底层独立入口与 Ray React 适配器需要分别接入。
+
 使用 Smart UI 前，请确保你已经学习过智能小程序官方的 [快速开始](https://developer.tuya.com/cn/miniapp/develop/miniapp/guide/start/smart) 和 [小程序组件介绍](https://developer.tuya.com/cn/miniapp/develop/miniapp/framework/component/intro)。
 
 ## 安装

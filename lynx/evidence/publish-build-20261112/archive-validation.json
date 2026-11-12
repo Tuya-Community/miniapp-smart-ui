@@ -1,0 +1,31 @@
+{
+  "archives": [
+    {
+      "format": "npm",
+      "path": "/tmp/smart-ui-publish-archives-20261112-5xk8fjkn/npm/tuya-miniapp-smart-ui-2.13.7.tgz",
+      "archiveBytes": 895450,
+      "sha256": "aef76c317e02920ee45de1bbb7e2ac79a46e15cee9d65e8c61d873b5c88d86a2",
+      "totalFiles": 2340,
+      "nativeFilesMatched": 1135,
+      "componentsPerFormat": 70,
+      "missing": [],
+      "mismatches": [],
+      "unchangedWebViewFiles": 1200
+    },
+    {
+      "format": "yarn",
+      "path": "/tmp/smart-ui-publish-archives-20261112-5xk8fjkn/yarn-pack.tgz",
+      "archiveBytes": 1053563,
+      "sha256": "1efca32940876670cc13abb21e854d50ba27c3f732fe9da5fd60af08e67e0d1f",
+      "totalFiles": 2341,
+      "nativeFilesMatched": 1135,
+      "componentsPerFormat": 70,
+      "missing": [],
+      "mismatches": [],
+      "unchangedWebViewFiles": 1200
+    }
+  ],
+  "requiredNativeFiles": 1135,
+  "node": "v24.19.0",
+  "published": false
+}
