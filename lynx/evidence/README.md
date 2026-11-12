@@ -26,3 +26,7 @@ Picker 手势/联动、嵌套弹层、播放器及地图命中、双端深浅主
 本次收口 Picker 遮罩标记隔离、Popup 同树遮罩及首帧确认时序、Field 空插槽/原生输入可见性与背景根布局。`packages/**` 原 WebView 源码未修改，70组件隔离构建及 verify 通过；Lynx逻辑/产物50项、真实组件挂载11项通过，变更的Transition TypeScript ESLint零error。运行验收按上述各场景记录，不扩大为全部组件通过；未发布npm。
 
 本次原版全量回归：117 suites、1094 tests、51 snapshots 全部通过。
+
+- [默认云构建与发布归档修复](publish-build-2026-11-12.md)：默认构建包含Lynx，实际npm/Yarn归档核对，原有WebView发布文件字节保持。未发布npm。
+
+- [新项目双渲染接入指南验证](dual-renderer-guide-2026-11-12.md)：原生与 Ray 两种接入、页面级分流、CI；真实生成适配器、示例类型与 npm 归档检查通过。未部署业务或发布 npm。

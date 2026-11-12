@@ -1,5 +1,7 @@
 # Smart UI Lynx 适配
 
+新项目接入请先阅读 [四步快速接入](GUIDE-LYNX-WEBVIEW.md)；原生小程序、CI 与排查说明见 [详细附录](GUIDE-LYNX-WEBVIEW-DETAILS.md)。
+
 本地分支：`codex/lynx-smart-ui`。基线为 `origin/main` 的
 `45e7e1e30529f79f86f4876f1af42523286c76a1`，原包版本 `2.13.7`。
 
@@ -45,13 +47,12 @@
 ## 本地构建与检查
 
 集成编译使用 Node `>=24.11`（本机 `24.19.0`）和 MiniPack `5.0.0-alpha39.0`。
-先安装仓库依赖，再建立 WebView 产物，保留可比对基线：
+默认构建现在同时生成 WebView 与 Lynx 产物，并核对 npm 归档清单：
 
 ```bash
-yarn install
-MODE=build yarn gulp -f build/compiler.js --series buildEs buildLib
-yarn build:lynx
-yarn verify:lynx
+yarn build
+yarn verify:package
+yarn test:package
 yarn test:lynx
 yarn test:lynx:render
 ```
@@ -154,3 +155,15 @@ React 适配器和库内部组件调用会补充这些元数据。
 本轮检查及验收边界见 [提交前验证记录](lynx/evidence/precommit-2026-10-29.md)。
 提交与推送不包含 npm 发布，版本仍为 `2.13.7`；此前记录的 Picker 首帧文案延迟
 仍待优化，70 组件的全量真机验收状态保持待验证。
+
+## 2026-11-12 默认构建与发布归档门禁
+
+`yarn build` 依次执行原有WebView的buildEs/buildLib/buildExample、独立build:lynx和verify:package；平台的preMinipackBuild统一调用同一build。原构建命令中的旧NODE_OPTIONS=--no-experimental-fetch已移除，避免Node24拒绝该选项；dev启动命令本轮未调整。
+
+prepublishOnly先执行verify:package，再保留原CSS变量/图片JSON后处理。它不会自动补编译；未先构建、缺少Lynx产物或实际npm文件清单漏文件时直接失败，防止发布只有lynx/package.json的空入口。verify:package调用既有70组件/WebView哈希隔离校验，再检查npm真实pack清单，覆盖全部lynx/dist、lynx/lib、公共运行时和入口元数据，并排除开发目录、构建回执及demo。
+
+发布files采用正向白名单：显式纳入lynx/package.json、lynx/dist和lynx/lib。WebView按组件文件及非demo子目录纳入，不使用以!开头的files条目。本机Yarn1.22.22在原配置下会将这些条目再次转成反选规则，实际归档包含源码及开发目录；调整后npm和Yarn归档均带齐1135个Lynx文件，且原有1200个WebView文件路径/字节一致。实现依据可对照[Yarn1 pack源码](https://github.com/yarnpkg/yarn/blob/v1.22.22/src/cli/commands/pack.js)。
+
+本轮Node24.19完整构建通过；归档校验也在Node22.14/npm10.9.2上通过。npm10可能在JSON前输出prepare日志，校验器会识别真正的文件清单，保留ignore-scripts参数且不执行发布。
+
+这只修复编译/发布产物遗漏，不改变组件业务逻辑、不生成或发布依赖消费方版本的Ray分流适配器。业务仍需正确引用独立Lynx入口。未修改版本号、未发布npm；验收详见[本轮记录](lynx/evidence/publish-build-2026-11-12.md)。
