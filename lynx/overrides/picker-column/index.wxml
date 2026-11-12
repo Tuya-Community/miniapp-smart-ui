@@ -1,0 +1,8 @@
+<view pan-intercept-direction="{{disabled || !options.length ? 2 : 1}}" pan-intercept-scope="{{disabled || !options.length ? 6 : 1}}" flatten="{{false}}" class="smart-picker-column custom-class {{disabled ? 'smart-picker-column--disabled' : ''}}" style="height:{{(itemHeight || 44) * (visibleItemCount || 5)}}px;color:{{lynxTextColor}};font-weight:{{lynxTextWeight}};" bind:touchstart="onLynxStart" catch:touchmove="onLynxMove" bind:touchend="onLynxEnd" bind:touchcancel="onLynxCancel">
+  <view class="smart-picker-column__track" style="transform:translateY({{lynxOffset}}px);transition:{{changeAnimation && !lynxDragging ? 'transform ' + animationTime + 'ms ease-out' : 'none'}};">
+  <view wx:for="{{lynxRows}}" wx:key="virtual" class="smart-picker-column__item {{item.selected ? 'smart-picker-column__item--selected active-class' : ''}} {{item.disabled ? 'smart-picker-column__item--disabled' : ''}}" style="height:{{itemHeight || 44}}px;opacity:{{item.opacity}};{{fontStyle}};{{item.selected ? activeStyle : ''}};color:{{item.textColor}};font-weight:{{item.textWeight}};" data-virtual="{{item.virtual}}" bind:tap="onLynxTap">
+    <text class="smart-picker-column__text" style="color:{{item.textColor}};font-weight:{{item.textWeight}};">{{item.text}}</text>
+    <text wx:if="{{unit}}" class="smart-picker-column__unit" style="color:{{item.textColor}};font-weight:{{item.textWeight}};margin-left:{{unitGap === '' ? 0 : unitGap}}px;">{{unit}}</text>
+  </view>
+  </view>
+</view>

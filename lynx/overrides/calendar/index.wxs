@@ -1,0 +1,17 @@
+// All calendar date construction is performed in the logic layer.
+function getVisible(visibleIndex, curIndex) { return visibleIndex === curIndex; }
+function getButtonDisabled(type, currentDate, minRange) {
+  if (currentDate == null) return true;
+  if (type === 'range') return !currentDate[0] || !currentDate[1];
+  if (type === 'multiple') return currentDate.length < minRange;
+  return !currentDate;
+}
+function formatMonthTitle(date, formatter) {
+  if (!date) return '';
+  return (formatter || 'YYYY-MM').replace('YYYY', date.year + '').replace('MM', date.month < 10 ? '0' + date.month : date.month + '');
+}
+function formatYearTitle(date, offset, formatter) {
+  if (!date) return '';
+  return (formatter || 'YYYY').replace('YYYY', date.year + '');
+}
+module.exports = { getVisible: getVisible, getButtonDisabled: getButtonDisabled, formatMonthTitle: formatMonthTitle, formatYearTitle: formatYearTitle };
