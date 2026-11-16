@@ -40,7 +40,8 @@
 - Slider / NormalSlider：独立逻辑层手势，保留范围、步长、方向和事件；处理取消、多指、异步测量、页面隐藏与销毁。React 单值 Slider 继续使用已适配的 TySlider。
 - Popup / Overlay / Dialog / ActionSheet / BottomSheet / Toast：遮罩低于内容；快速切换清理旧动画；嵌套原生锁按持有者计数；关闭、隐藏和销毁清理。
 - Circle：用现有 SvgRender 替换 RJS canvas，保留模式、进度、渐变、颜色、圆角线帽和线宽。
-- Image：保留加载、错误、占位及事件；位图 `tintColor` 使用标准 CSS Mask（含 fit 对应的 size、居中和禁止重复）。可解析的 SVG data URI 使用 `svg-render`，单色图显式改色、多色图保留各路径颜色；远程 SVG / base64 SVG 暂保留原图，不走不受支持的 SVG Mask，着色需提供可解析 SVG XML 或位图。
+- Image：保留加载、错误、占位及事件；位图 `tintColor` 使用原生 Image 的 `tint-color`，不隐藏位图或创建 CSS URL Mask，缩放仍由原 `fit` / `mode` 控制。颜色从宿主主题变量、ConfigProvider 和嵌套 `var()` 回退解析；业务私有 CSS 变量应通过 ConfigProvider 提供，或在 `var()` 中声明具体回退值。可解析的 SVG data URI 使用 `svg-render`，单色图显式改色、多色图保留各路径颜色；远程 SVG / base64 SVG 暂保留原图，不传位图原生 tint。
+- Field：`maxlength=-1` 保留公开属性和 JS 不限长语义，Lynx 原生 input/textarea 使用安全正上限 `1000000000`，避开当前安卓负数及 INT_MAX 边界问题；显式 0/正数保持原值。业务自行校验时仍需在事件层保留限制。
 - ConfigProvider：与 SVG/Loading 的颜色刷新关联，复用原深浅色变量与覆盖顺序。
 - 其余组件保留原逻辑层，在独立模板、样式及依赖闭包内做公共适配。
 

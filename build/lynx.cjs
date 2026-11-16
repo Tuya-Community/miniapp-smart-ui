@@ -556,6 +556,14 @@ async function prepare() {
     )
   );
   change('field/index.less', s => s + "\n@import '../cell/index.less';\n.smart-field { z-index:0; }\n");
+  // MiniApp uses -1 for unlimited, but Android's native length filter rejects
+  // every character for a negative bound. Keep below the 32-bit boundary:
+  // INT_MAX is unsafe through the current bridge. JS keeps -1; explicit bounds stay.
+  for (const name of ['input', 'textarea']) {
+    change(`field/${name}.wxml`, s =>
+      s.replace('maxlength="{{ maxlength }}"', 'maxlength="{{ maxlength === -1 ? 1000000000 : maxlength }}"')
+    );
+  }
   change('wxs/utils.wxs', s =>
     s
       .replace(/function queryComponent[\s\S]*?\};/, '')
@@ -675,12 +683,12 @@ async function prepare() {
   );
   change('image/index.wxml', s =>
     s
+      .replace('src="{{ src }}"', 'src="{{ src }}" tint-color="{{ lynxImageTint }}"')
       .replace(
         "style=\"visibility:{{ tintColor ? 'hidden' : '' }};\"",
-        "style=\"visibility:{{ lynxImageMask || lynxImageSvg ? 'hidden' : '' }};\""
+        "style=\"visibility:{{ lynxImageSvg ? 'hidden' : '' }};\""
       )
-      .replace('wx:if="{{ tintColor }}"', 'wx:if="{{ lynxImageMask && !error }}"')
-      .replace('computed.maskStyle(src, tintColor)', 'lynxImageMask')
+      .replace(/  <view\s+wx:if="{{ tintColor }}"[\s\S]*?<\/view>/, '')
       .replace(
         '  <view\n    wx:if="{{ loading && showLoading }}"',
         '  <svg-render wx:if="{{lynxImageSvg && !error}}" source="{{lynxImageSvg}}" class="image-class smart-image__img smart-image__tint-color" />\n  <view\n    wx:if="{{ loading && showLoading }}"'

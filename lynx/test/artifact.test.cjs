@@ -6,6 +6,23 @@ const ts = require('typescript');
 const root = path.resolve(__dirname, '../..');
 const { template, styles, verify } = require('../../build/lynx.cjs');
 
+test('Field unlimited maxlength is translated for both native input variants without changing WebView', () => {
+  const { parseDocument } = require('htmlparser2');
+  const vm = require('node:vm');
+  for (const [file, tag] of [['input.wxml', 'input'], ['textarea.wxml', 'textarea']]) {
+    const markup = fs.readFileSync(path.join(root, 'lynx/lib/field', file), 'utf8');
+    const doc = parseDocument(markup, { xmlMode: true });
+    const element = doc.children.find(node => node.name === tag);
+    const attribute = element.attribs.maxlength;
+    const expression = attribute.slice(2, -2);
+    for (const maxlength of [-1, 0, 1, 50, 1000]) {
+      assert.equal(vm.runInNewContext(expression, { maxlength }), maxlength === -1 ? 1000000000 : maxlength);
+    }
+    const original = fs.readFileSync(path.join(root, 'packages/field', file), 'utf8');
+    assert.match(original, /maxlength="{{ maxlength }}"/);
+  }
+});
+
 test('implicit template text drops formatting newlines without touching explicit multiline text', () => {
   const output = template(
     '<view class="smart-calendar__selected-day">\n  {{ item.text }}\n</view>'
@@ -17,7 +34,12 @@ test('implicit template text drops formatting newlines without touching explicit
   assert.match(data, /\{\{ message \}\}/);
 });
 
-test('Image tint layer keeps full-size absolute positioning after style conversion', () => {
+test('Image emits native bitmap tint and reserves its full-size layer for SVG', () => {
+  const wxml = fs.readFileSync(path.join(root, 'lynx/lib/image/index.wxml'), 'utf8');
+  assert.match(wxml, /<image\b[^>]*src="{{ src }}"[^>]*tint-color="{{ lynxImageTint }}"/);
+  assert.match(wxml, /mode="{{ computed.mode\(fit\) }}"/);
+  assert.doesNotMatch(wxml, /lynxImageMask|maskStyle/);
+  assert.match(wxml, /visibility:[^;]*lynxImageSvg/);
   const css = fs.readFileSync(path.join(root, 'lynx/lib/image/index.css'), 'utf8');
   const postcss = require('postcss');
   const declarations = selector => {

@@ -13,6 +13,8 @@ const variants = {
   picker: 'columns="{{props.columns}}" value-key="{{props.valueKey}}"',
   image:
     'src="{{props.src}}" width="{{props.width}}" height="{{props.height}}" tint-color="{{props.tintColor}}"',
+  field:
+    'value="{{props.value}}" maxlength="{{props.maxlength}}" type="{{props.type}}" hidden-label="{{true}}" extra-event-params="{{true}}"',
   calendar:
     'min-date="{{props.minDate}}" max-date="{{props.maxDate}}" default-date="{{props.defaultDate}}" show-title="{{false}}"',
   circle: 'percent="{{props.percent}}" size="{{props.size}}"',
@@ -120,7 +122,23 @@ test('Picker parent preserves linked column APIs', async () => {
   await simulate.sleep(20);
   expect(comp.instance.getValues()).toEqual(['B', '2']);
 });
-test('Image bitmap tint renders a mask, updates color, and preserves load/error API', async () => {
+test.each(['text', 'textarea'])(
+  'Field %s keeps unlimited Unicode input and explicit limits',
+  async type => {
+    const comp = mount('field', { value: '', maxlength: -1, type });
+    await simulate.sleep(10);
+    const value = '𠮷'.repeat(100);
+    comp.instance.onInput({ detail: { value, cursor: value.length } });
+    await simulate.sleep(10);
+    expect(comp.data.maxlength).toBe(-1);
+    expect(comp.data.value).toBe(value);
+    comp.setData({ maxlength: 3 });
+    comp.instance.onInput({ detail: { value: 'abcd', cursor: 4 } });
+    expect(comp.data.value).toBe('abc');
+  }
+);
+
+test('Image bitmap tint uses its native attribute and preserves load/error API', async () => {
   const comp = mount('image', {
     src: 'https://example.com/icon.png',
     width: 24,
@@ -129,12 +147,14 @@ test('Image bitmap tint renders a mask, updates color, and preserves load/error 
   });
   await simulate.sleep(10);
   expect(comp.data.lynxImageTint).toBe('#ff0000');
-  expect(comp.querySelectorAll('.smart-image__tint-color').length).toBe(1);
-  expect(comp.data.lynxImageMask).toContain('mask-image:url("https://example.com/icon.png")');
-  expect(comp.data.lynxImageMask).toContain('background-color:#ff0000;');
+  expect(comp.querySelectorAll('.smart-image__tint-color').length).toBe(0);
+  const image = comp.dom.querySelector('wx-image');
+  // miniprogram-simulate's WeChat Image drops Lynx-only attributes. The emitted
+  // tint-color binding is checked in artifact.test.cjs and on the real device.
+  expect(image.style.visibility).not.toBe('hidden');
   comp.setData({ tintColor: 'white' });
   await simulate.sleep(10);
-  expect(comp.data.lynxImageMask).toContain('background-color:white;');
+  expect(comp.data.lynxImageTint).toBe('white');
   comp.instance.onLoad({ detail: { width: 24, height: 24 } });
   expect(comp.data.loading).toBe(false);
   comp.instance.onError({ detail: { errMsg: 'test' } });
@@ -142,6 +162,7 @@ test('Image bitmap tint renders a mask, updates color, and preserves load/error 
   expect(comp.data.error).toBe(true);
   expect(comp.data.loading).toBe(false);
   expect(comp.querySelectorAll('.smart-image__tint-color').length).toBe(0);
+  expect(comp.dom.querySelector('wx-image.smart-image__img')).toBeNull();
 });
 test('Image without tint displays original; SVG XML uses svg-render instead of mask', async () => {
   const plain = mount('image', { src: 'icon.png', width: 24, height: 24 });
@@ -154,7 +175,7 @@ test('Image without tint displays original; SVG XML uses svg-render instead of m
     height: 24,
   });
   await simulate.sleep(10);
-  expect(svg.data.lynxImageMask).toBe('');
+  expect(svg.data.lynxImageTint).toBe('');
   expect(svg.data.lynxImageSvg).toContain('fill="white"');
   expect(svg.querySelectorAll('.smart-image__tint-color').length).toBe(1);
 });
