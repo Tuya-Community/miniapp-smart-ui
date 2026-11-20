@@ -40,3 +40,19 @@ test('Calendar month helpers lay out seven columns and handle leap-year February
   assert.equal(model.calendarParts(new Date(2024, 1, 1).getTime()).days, 29);
   assert.equal(model.calendarParts(new Date(2025, 1, 1).getTime()).days, 28);
 });
+
+test('Calendar only renders the visible day month across a 73-year date range', () => {
+  const calendar = helper('calendar/index.wxs');
+  const months = Array.from({ length: 878 }, (_, i) => new Date(2026, 10 + i, 1).getTime());
+  for (const index of [0, 1, 400, 877]) {
+    assert.deepEqual(Array.from(calendar.getVisibleMonths(months, index)), [months[index]]);
+  }
+  assert.equal(calendar.getVisibleMonths([], 0).length, 0);
+  assert.equal(calendar.getVisibleMonths(months, -1).length, 0);
+  assert.equal(calendar.getVisibleMonths(months, 878).length, 0);
+  const template = fs.readFileSync(path.join(root, 'calendar/calendar.wxml'), 'utf8');
+  assert.match(template, /wx:for="{{\s*computed\.getVisibleMonths\(months, visibleIndex\)\s*}}"/);
+  assert.doesNotMatch(template, /wx:for="{{\s*months\s*}}"/);
+  assert.match(template, /data-index="{{\s*visibleIndex\s*}}"/);
+  assert.match(template, /id="month{{\s*visibleIndex\s*}}"/);
+});

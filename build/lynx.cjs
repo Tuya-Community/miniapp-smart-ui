@@ -651,6 +651,16 @@ async function prepare() {
     s
       .replace('formatYearTitle(originCurrentDateMonthly,', 'formatYearTitle(lynxCalendarDate,')
       .replace('formatMonthTitle(months[visibleIndex],', 'formatMonthTitle(lynxCalendarDate,')
+      .replace(
+        /<block wx:for="{{ months }}" wx:key="index">([\s\S]*?)<\/block>/,
+        (_, month) =>
+          '<block wx:for="{{ computed.getVisibleMonths(months, visibleIndex) }}" wx:key="*this">' +
+          month
+            .replace('wx:if="{{ computed.getVisible(visibleIndex, index) }}"', '')
+            .replace(/{{\s*index\s*}}/g, '{{ visibleIndex }}')
+            .replace('index !== 0', 'visibleIndex !== 0') +
+          '</block>'
+      )
   );
   change('calendar-month/index.wxml', s =>
     s
