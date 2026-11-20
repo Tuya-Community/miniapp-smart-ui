@@ -3,30 +3,28 @@ const assert = require('node:assert/strict');
 const { sourceModule, model } = require('./helpers.cjs');
 const decode = uri => decodeURIComponent(uri.split(',').slice(1).join(','));
 
-test('Image bitmap tint uses standard masks, preserves signed URLs and follows fit', () => {
+test('Image bitmap tint uses the native image attribute without a CSS URL mask', () => {
   const src = 'https://example.com/icon.png?signature=a+b%2Fc&v=1';
-  const visual = model.imageVisual(src, 'white', 'contain');
+  const visual = model.imageVisual(src, 'white');
   assert.equal(visual.svg, '');
-  assert.ok(visual.mask.includes(`mask-image:url("${src}")`));
-  assert.ok(visual.mask.includes('mask-size:contain;mask-position:center;mask-repeat:no-repeat;'));
-  assert.ok(visual.mask.includes('background-color:white;'));
-  assert.ok(model.imageVisual(src, 'black', 'fill').mask.includes('mask-size:100% 100%'));
-  assert.equal(model.imageVisual(src, '').mask, '');
-  assert.equal(model.imageVisual('', 'red').mask, '');
-  assert.ok(model.imageVisual('a"b\\c.png', 'red').mask.includes('a\\"b\\\\c.png'));
+  assert.equal(visual.tint, 'white');
+  assert.equal(visual.mask, undefined);
+  assert.equal(model.imageVisual(src, 'black').tint, 'black');
+  assert.equal(model.imageVisual(src, '').tint, '');
+  assert.equal(model.imageVisual('', 'red').tint, '');
 });
 test('Image never masks SVG; inline monochrome SVG changes paint and multicolor is preserved', () => {
   const mono = model.svgUri('<svg><path fill="#000" d="M0 0"/></svg>');
   assert.equal(model.imageVisual(mono, '').svg, '');
   const visual = model.imageVisual(mono, '#fff');
-  assert.equal(visual.mask, '');
+  assert.equal(visual.tint, '');
   assert.match(visual.svg, /fill="#fff"/);
   const multi = '<svg><path fill="#f00"/><path fill="#00f"/></svg>';
   const colored = model.imageVisual(model.svgUri(multi), '#fff').svg;
   assert.match(colored, /fill="#f00"/);
   assert.match(colored, /fill="#00f"/);
   for (const src of ['https://example.com/icon.svg?v=1', 'data:image/svg+xml;base64,PHN2Zy8+']) {
-    assert.equal(model.imageVisual(src, 'red').mask, '');
+    assert.equal(model.imageVisual(src, 'red').tint, '');
     assert.equal(model.imageVisual(src, 'red').svg, '');
   }
 });

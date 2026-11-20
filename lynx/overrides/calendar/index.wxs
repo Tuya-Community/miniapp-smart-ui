@@ -1,5 +1,10 @@
 // All calendar date construction is performed in the logic layer.
 function getVisible(visibleIndex, curIndex) { return visibleIndex === curIndex; }
+// Filter before the native loop: a wide date range must not create hundreds of empty fragments.
+function getVisibleMonths(months, visibleIndex) {
+  if (!months || months[visibleIndex] == null) return [];
+  return [months[visibleIndex]];
+}
 function getButtonDisabled(type, currentDate, minRange) {
   if (currentDate == null) return true;
   if (type === 'range') return !currentDate[0] || !currentDate[1];
@@ -14,4 +19,4 @@ function formatYearTitle(date, offset, formatter) {
   if (!date) return '';
   return (formatter || 'YYYY').replace('YYYY', date.year + '');
 }
-module.exports = { getVisible: getVisible, getButtonDisabled: getButtonDisabled, formatMonthTitle: formatMonthTitle, formatYearTitle: formatYearTitle };
+module.exports = { getVisible: getVisible, getVisibleMonths: getVisibleMonths, getButtonDisabled: getButtonDisabled, formatMonthTitle: formatMonthTitle, formatYearTitle: formatYearTitle };

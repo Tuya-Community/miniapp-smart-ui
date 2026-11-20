@@ -255,36 +255,19 @@ export function iconSource(name: string, color: string) {
   return name;
 }
 
-// Bitmap masks and SVG rendering are separate Lynx capabilities. Never feed an
-// SVG URL/data URI into mask-image (unsupported by the native renderer).
-export function imageVisual(src: string, tint: string, fit = 'fill') {
+// Native tint applies to bitmaps. SVG XML keeps its separate rendering path;
+// remote/base64 SVG must not be passed to native bitmap tinting.
+export function imageVisual(src: string, tint: string) {
   const svg = tint ? svgSource(src) : '';
   if (svg) {
-    return { svg: tint ? svgSource(iconSource(src, tint)) : svg, mask: '' };
+    return { svg: svgSource(iconSource(src, tint)), tint: '' };
   }
   if (!src || !tint || /^data:image\/svg\+xml/i.test(src) || /\.svg(?:[?#]|$)/i.test(src)) {
     // Remote/base64 SVG remains an ordinary Image. It needs SVG XML (or a
     // bitmap resource) before it can be safely recolored by svg-render.
-    return { svg: '', mask: '' };
+    return { svg: '', tint: '' };
   }
-  const size =
-    {
-      fill: '100% 100%',
-      contain: 'contain',
-      cover: 'cover',
-      none: 'auto',
-      widthFix: '100% auto',
-      heightFix: 'auto 100%',
-    }[fit] || '100% 100%';
-  const url = src
-    .replace(/\\/g, '\\\\')
-    .replace(/"/g, '\\"')
-    .replace(/\r/g, '%0D')
-    .replace(/\n/g, '%0A');
-  return {
-    svg: '',
-    mask: `mask-image:url("${url}");mask-size:${size};mask-position:center;mask-repeat:no-repeat;background-color:${tint};`,
-  };
+  return { svg: '', tint };
 }
 
 export function circleSvg(data: any) {

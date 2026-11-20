@@ -80,10 +80,10 @@ function icon(options: Options) {
 function image(options: Options) {
   options.methods.refreshLynxImage = function (this: any) {
     const tint = this.data.tintColor ? color(this, this.data.tintColor) : '';
-    const visual = imageVisual(this.data.src, tint, this.data.fit);
-    this.setData({ lynxImageTint: tint, lynxImageMask: visual.mask, lynxImageSvg: visual.svg });
+    const visual = imageVisual(this.data.src, tint);
+    this.setData({ lynxImageTint: visual.tint, lynxImageSvg: visual.svg });
   };
-  observe(options, ['src', 'tintColor', 'fit'], 'refreshLynxImage');
+  observe(options, ['src', 'tintColor'], 'refreshLynxImage');
   theme(options, 'refreshLynxImage');
 }
 
