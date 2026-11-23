@@ -7,6 +7,8 @@
   align-items: center;
   justify-content: center;
   box-sizing: content-box;
+  margin: auto;
+  pointer-events: auto;
   color: var(--toast-text-color, @toast-text-color);
   font-size: var(--toast-font-size, @toast-font-size);
   line-height: var(--toast-line-height, @toast-line-height);
@@ -14,19 +16,27 @@
   // allow newline charactor
   white-space: pre-wrap;
   word-wrap: break-word;
+  overflow-wrap: anywhere;
   background-color: var(--toast-background-color, @toast-background-color);
   border-radius: var(--toast-border-radius, @toast-border-radius);
   border: var(--toast-border, @toast-border);
   box-shadow: var(--toast-box-shadow, @toast-box-shadow);
 
   &__container {
+    /* stylelint-disable length-zero-no-unit -- Unit-bearing fallbacks are used in calc(). */
+    --toast-safe-top: var(--safe-area-inset-top, 0px);
+    --toast-safe-bottom: var(--safe-area-inset-bottom, 0px);
+    --toast-safe-height: calc(100% - var(--toast-safe-top) - var(--toast-safe-bottom));
+
     position: fixed;
-    top: 50%;
-    left: 50%;
-    right: -1000px;
-    // hack for avoid max-width when use left & fixed
-    width: fit-content;
-    transform: translate(-50%, -50%);
+    top: var(--toast-safe-top);
+    right: var(--safe-area-inset-right, 0px);
+    bottom: var(--toast-safe-bottom);
+    left: var(--safe-area-inset-left, 0px);
+    /* stylelint-enable length-zero-no-unit */
+    display: flex;
+    overflow: auto;
+    pointer-events: none;
   }
 
   &--text {
@@ -58,11 +68,11 @@
 }
 
 .smart-toast--top {
-  transform: translate(0, -30vh) translate(-50%, -50%);
+  bottom: calc(var(--toast-safe-bottom) + var(--toast-safe-height) * 0.6);
 }
 
 .smart-toast--bottom {
-  transform: translateY(30vh) translate(-50%, -50%);
+  top: calc(var(--toast-safe-top) + var(--toast-safe-height) * 0.6);
 }
 
 :root[data-a11y='true'] {

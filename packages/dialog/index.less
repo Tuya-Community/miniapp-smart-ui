@@ -5,12 +5,20 @@
   --button-default-background-color: transparent;
   --goods-action-background-color: transparent;
 
-  top: 50%;
   overflow: hidden;
   width: var(--dialog-width, @dialog-width);
   font-size: var(--dialog-font-size, @dialog-font-size);
   border-radius: var(--dialog-border-radius, @dialog-border-radius);
   background: var(--dialog-background-color, @dialog-background-color);
+
+  // Override the centered Popup's geometry while keeping its entrance and exit transitions.
+  && {
+    top: calc(50% + (var(--safe-area-inset-top, 0px) - var(--safe-area-inset-bottom, 0px)) / 2);
+    left: calc(50% + (var(--safe-area-inset-left, 0px) - var(--safe-area-inset-right, 0px)) / 2);
+    max-width: calc(100% - var(--safe-area-inset-left, 0px) - var(--safe-area-inset-right, 0px));
+    max-height: calc(100% - var(--safe-area-inset-top, 0px) - var(--safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+  }
 
   @media (max-width: 321px) {
     width: var(--dialog-small-screen-width, @dialog-small-screen-width);
