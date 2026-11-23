@@ -23,20 +23,20 @@
   box-shadow: var(--toast-box-shadow, @toast-box-shadow);
 
   &__container {
-    /* stylelint-disable length-zero-no-unit -- Unit-bearing fallbacks are used in calc(). */
-    --toast-safe-top: var(--safe-area-inset-top, 0px);
-    --toast-safe-bottom: var(--safe-area-inset-bottom, 0px);
-    --toast-safe-height: calc(100% - var(--toast-safe-top) - var(--toast-safe-bottom));
-
     position: fixed;
-    top: var(--toast-safe-top);
-    right: var(--safe-area-inset-right, 0px);
-    bottom: var(--toast-safe-bottom);
-    left: var(--safe-area-inset-left, 0px);
-    /* stylelint-enable length-zero-no-unit */
+    top: 0;
+    right: var(--safe-area-inset-right, 0);
+    bottom: 0;
+    left: var(--safe-area-inset-left, 0);
     display: flex;
     overflow: auto;
     pointer-events: none;
+
+    // The miniapp's full-width large-screen layout starts at 600px.
+    @media (min-width: 600px) {
+      right: 0;
+      left: 0;
+    }
   }
 
   &--text {
@@ -68,11 +68,11 @@
 }
 
 .smart-toast--top {
-  bottom: calc(var(--toast-safe-bottom) + var(--toast-safe-height) * 0.6);
+  bottom: 60%;
 }
 
 .smart-toast--bottom {
-  top: calc(var(--toast-safe-top) + var(--toast-safe-height) * 0.6);
+  top: 60%;
 }
 
 :root[data-a11y='true'] {
