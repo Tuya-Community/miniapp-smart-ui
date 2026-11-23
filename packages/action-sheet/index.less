@@ -4,10 +4,7 @@
 .smart-action-sheet {
   left: var(--action-sheet-left, @action-sheet-left) !important;
   width: var(--action-sheet-width, @action-sheet-width) !important;
-  max-height: min(
-    var(--action-sheet-max-height, @action-sheet-max-height),
-    var(--smart-popup-sheet-max-height, 100%)
-  ) !important;
+  max-height: var(--action-sheet-max-height, @action-sheet-max-height) !important;
   margin: var(--action-sheet-margin, @action-sheet-margin);
   color: var(--action-sheet-item-text-color, @action-sheet-item-text-color);
   border-radius: var(

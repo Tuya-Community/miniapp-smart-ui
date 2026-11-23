@@ -9,13 +9,13 @@ function getHeight(contentHeight) {
 
 function getCustomStyle(draggable, contentHeight, maxHeight) {
   if (draggable) {
-    return 'max-height: var(--smart-popup-sheet-max-height, 100%);min-height: unset;';
+    return 'max-height: unset;min-height: unset;';
   }
   if (contentHeight) {
-    return 'max-height: var(--smart-popup-sheet-max-height, fit-content);';
+    return 'max-height: fit-content;';
   }
   if (maxHeight) {
-    return 'max-height: ' + maxHeight + ';max-height: min(' + maxHeight + ', var(--smart-popup-sheet-max-height, 100%));';
+    return 'max-height: ' + maxHeight + ';';
   }
   return '';
 }

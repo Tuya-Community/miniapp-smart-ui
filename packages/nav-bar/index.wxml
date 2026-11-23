@@ -7,7 +7,7 @@
 />
 
 <view
-  class="{{ utils.bem('nav-bar', { fixed, round, safe: safeAreaInsetTop, avoidMenu: avoidMenuButton == null ? leftTextType === 'home' : avoidMenuButton }) }} custom-class {{ border ? 'smart-hairline--bottom' : '' }}"
+  class="{{ utils.bem('nav-bar', { fixed, round, safe: safeAreaInsetTop, avoidMenu: avoidMenuButton == null ? leftTextType === 'home' : avoidMenuButton, duoPortraitMenu }) }} custom-class {{ border ? 'smart-hairline--bottom' : '' }}"
   style="{{ computed.barStyle({ zIndex, background, menuReservedWidth }) }}; {{ customStyle }}"
 >
   <view class="smart-nav-bar__content">

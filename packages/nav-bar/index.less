@@ -37,6 +37,15 @@
     padding-right: var(--nav-bar-menu-reserved-width, 98px);
   }
 
+  &--duoPortraitMenu &__content:has(> .smart-nav-bar__right:not(:empty)) {
+    box-sizing: border-box;
+    padding-right: var(--nav-bar-menu-reserved-width, 0px);
+  }
+
+  &--duoPortraitMenu &__right {
+    padding-right: 0;
+  }
+
   &--avoidMenu &__left--home {
     min-width: 0;
     max-width: var(--nav-bar-home-max-width, calc(100% - 16px));

@@ -2,6 +2,10 @@ import closeIcon from '@tuya-miniapp/icons/dist/svg/Xmark';
 import { SmartComponent } from '../common/component';
 import { transition } from '../mixins/transition';
 
+declare const ty: {
+  getSystemInfoSync?: () => { model?: string };
+};
+
 SmartComponent({
   classes: [
     'enter-class',
@@ -85,10 +89,23 @@ SmartComponent({
 
   data: {
     closeIcon,
+    duoFullHeight: false,
+    duoPortraitPopup: false,
+  },
+
+  watch: {
+    'position, customStyle'() {
+      this.updateDuoLayout();
+    },
   },
 
   created() {
     this.observeClass();
+    if (typeof ty !== 'undefined') {
+      const model = ty.getSystemInfoSync?.()?.model?.trim().toLowerCase();
+      this.isIPhoneDuo = model === 'iphone19,4' || model === 'iphone duo';
+    }
+    this.updateDuoLayout();
   },
 
   methods: {
@@ -104,6 +121,23 @@ SmartComponent({
 
       if (this.data.closeOnClickOverlay) {
         this.$emit('close');
+      }
+    },
+
+    updateDuoLayout() {
+      const { position, customStyle } = this.data;
+      const duoBottomPopup = position === 'bottom' && !!this.isIPhoneDuo;
+      const height = customStyle?.match(/(?:^|;)\s*height\s*:[^;]*/gi)?.pop();
+      const fullHeight = /:\s*100(?:%|[dls]?vh)\s*(?:!important\s*)?$/i.test(height || '');
+      const duoFullHeight = duoBottomPopup && fullHeight;
+      const duoPortraitPopup =
+        duoBottomPopup && !/(?:^|;)\s*position\s*:\s*absolute\b/i.test(customStyle || '');
+
+      if (
+        duoFullHeight !== this.data.duoFullHeight ||
+        duoPortraitPopup !== this.data.duoPortraitPopup
+      ) {
+        this.setData({ duoFullHeight, duoPortraitPopup });
       }
     },
 

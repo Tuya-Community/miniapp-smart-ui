@@ -23,7 +23,6 @@ function popupStyle(data) {
   return style([
     {
       'margin-bottom': safeBottom,
-      '--smart-popup-bottom-distance': bottom ? safeBottom : null,
       'z-index': data.zIndex,
       '-webkit-transition-duration': data.currentDuration + 'ms',
       'transition-duration': data.currentDuration + 'ms',

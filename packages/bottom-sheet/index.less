@@ -5,16 +5,29 @@
   flex-direction: column;
   width: var(--bottom-sheet-width, @bottom-sheet-width);
   min-height: var(--bottom-sheet-min-height, @bottom-sheet-min-height);
-  max-height: min(
-    var(--bottom-sheet-max-height, @bottom-sheet-max-height),
-    var(--smart-popup-sheet-max-height, 100%)
-  );
+  max-height: var(--bottom-sheet-max-height, @bottom-sheet-max-height);
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
   color: var(--bottom-sheet-font-color, @bottom-sheet-font-color);
 
   @media (min-width: 600px) {
     width: var(--bottom-sheet-width, var(--smart-popup-sheet-width));
+
+    &[class~='smart-popup--bottom'] {
+      --smart-popup-sheet-gap: 0px;
+
+      &[class~='smart-popup--round'] {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  @media (min-width: 600px) and (orientation: portrait) {
+    &[class~='smart-popup--duoPortraitPopup'] {
+      width: var(--bottom-sheet-width, calc(100% - 16px));
+      max-width: calc(100% - 16px);
+    }
   }
 
   &__header {

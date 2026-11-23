@@ -291,7 +291,7 @@ Page({
 | left-arrow-aria-label `v2.13.0` | Accessible label for the left back arrow | _string_  | -       |
 | left-text           | Left text                           | _string_  | `''`    |
 | left-text-type `v2.0.0`          | The style type of the left text, can be `home`, `title`, `back`                           | _string_  | `back`    |
-| avoid-menu-button   | Reserve space for the host capsule. On by default in `home` mode. Pass `{{ true }}` to enable it on secondary pages or `{{ false }}` to disable it on the home page | _boolean_ | Based on `left-text-type` |
+| avoid-menu-button   | Reserve space for the host capsule. When omitted, `home` mode reserves space for the capsule. On iPhone Duo unfolded in portrait, secondary pages with a hidden capsule align right-side content to the capsule's original right edge. An explicit value takes precedence | _boolean_ | Automatic |
 | left-icon `v2.0.0`         | Left icon                           | _string_  | `''`    |
 | left-icon-aria-label `v2.13.0` | Accessible label for the left icon button | _string_  | -       |
 | left-icon-size `v2.0.0`        | Left icon size, default is 32                           | _string \| number_  | `32`    |

@@ -2,7 +2,7 @@
 <wxs src="./index.wxs" module="computed" />
 <view
   wx:if="{{ inited }}"
-  class="custom-class {{ classes }} {{ utils.bem('popup', [position, { round, safeTop: safeAreaInsetTop, safeTabBar: safeAreaTabBar }]) }}"
+  class="custom-class {{ classes }} {{ utils.bem('popup', [position, { round, safeTop: safeAreaInsetTop, safeTabBar: safeAreaTabBar, duoFullHeight, duoPortraitPopup }]) }}"
   style="{{ computed.popupStyle({ position, status, zIndex, currentDuration, display, customStyle, safeAreaInsetBottom, safeAreaInsetBottomMin }) }}"
   catch:touchmove="{{ lockScroll ? 'noop' : ''}}"
 >
