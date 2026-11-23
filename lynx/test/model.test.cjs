@@ -219,3 +219,15 @@ test('slider thumb formatter preserves reverse/scale/offset order and HSL conver
   assert.equal(model.nativeHsl('hsl(0,100%,50%)'), 'rgb(255,0,0)');
   assert.equal(model.nativeHsl('hsla(120,100%,50%,0.5)'), 'rgba(0,255,0,0.5)');
 });
+
+test('picker opacity stays continuous when its cached row window crosses an index boundary', () => {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const vm = require('node:vm');
+  const module = { exports: {} };
+  vm.runInNewContext(fs.readFileSync(path.resolve(__dirname, '../overrides/picker-column/index.wxs'), 'utf8'), { module });
+  for (const position of [-0.51, -0.49, 0, 4.49, 4.51, 60.2]) {
+    const rows = model.pickerRows({ options: Array.from({ length: 60 }, (_, i) => i), animationIndex: position, currentIndex: 0, loop: true, itemHeight: 44, visibleItemCount: 5 });
+    rows.forEach(row => assert.equal(module.exports.opacity(row.virtual, position, 5), row.opacity));
+  }
+});

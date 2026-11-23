@@ -128,6 +128,7 @@ test('slot names and default slot API are retained in all isolated templates', (
 test('Picker drawing viewport contains columns but leaves both toolbars in normal flow', () => {
   const { parseDocument } = require('htmlparser2');
   const input = fs.readFileSync(path.join(root, 'lynx/lib/picker/index.wxml'), 'utf8');
+  assert.doesNotMatch(input, /lynxLayerReady/, 'sized columns must not wait for async measurement to become visible');
   const doc = parseDocument(input.replace(/\{\{[\s\S]*?\}\}/g, 'EXPR'), { xmlMode: true });
   const nodes = [];
   const walk = node => {

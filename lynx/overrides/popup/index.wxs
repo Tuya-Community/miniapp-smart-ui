@@ -1,0 +1,32 @@
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+
+function popupStyle(data) {
+  // Resolve the native safe area in the logic layer; nested env()/max() is
+  // not consistently supported by native style parsing. Keep caller overrides last.
+  var safeBottom = data.safeAreaInsetBottom ? data.lynxSafeBottomOffset + 'px' : null;
+
+  var transformStyle = null;
+  if (data.position === 'bottom') {
+    // 隐藏态需在自身高度基础上再位移底部安全距离，保证弹层完全移出屏幕
+    transformStyle = safeBottom
+      ? 'transform: translate3d(0, calc(100% + ' + safeBottom + '), 0)'
+      : 'transform: translate3d(0, 100%, 0)';
+  }
+
+  return style([
+    {
+      'margin-bottom': safeBottom,
+      'z-index': data.zIndex,
+      '-webkit-transition-duration': data.currentDuration + 'ms',
+      'transition-duration': data.currentDuration + 'ms',
+    },
+    data.status === 'enter' ? null : transformStyle,
+    data.display ? null : 'display: none',
+    data.customStyle,
+  ]);
+}
+
+module.exports = {
+  popupStyle: popupStyle,
+};

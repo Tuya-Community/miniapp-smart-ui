@@ -133,7 +133,6 @@ function loading(options: Options) {
 }
 
 function picker(options: Options) {
-  options.data = { ...(options.data || {}), lynxLayerReady: false };
   options.props.lynxDatetime = {
     type: Boolean,
     value: false,
@@ -144,34 +143,60 @@ function picker(options: Options) {
     this.setData({ lynxPickerEdgeColor: edge.color, lynxPickerEdgeImage: edge.image });
   };
   theme(options, 'refreshLynxPicker');
-  // The columns have an explicitly sized viewport and a local absolute origin.
-  // Reveal their native drawing layer only after that viewport has been laid out.
-  hook(options, 'mounted', function (this: any) {
-    getRect(this, '.smart-picker__columns').then(rect => {
-      if (!this._lynxDisposed && rect?.height > 0) this.setData({ lynxLayerReady: true });
-    });
-  });
-  hook(options, 'destroyed', function (this: any) {
-    this._lynxDisposed = true;
-  });
 }
 
 function pickerColumn(options: Options) {
   const { methods } = options;
-  methods.refreshLynxRows = function (this: any) {
+  methods.refreshLynxRows = function (this: any, patch: Record<string, any> = {}) {
     if (this._lynxDisposed) return;
-    const vars = themeVars(this);
-    const rows = pickerRows(this.data);
-    this.setData({
-      lynxTextColor: pickerTextColor(this.data, vars, false),
-      lynxTextWeight: pickerTextWeight(this.data, vars, false),
-      lynxOffset: rows[0]?.top || 0,
-      lynxRows: rows.map(row => ({
-        ...row,
-        textColor: pickerTextColor(this.data, vars, row.selected),
-        textWeight: pickerTextWeight(this.data, vars, row.selected),
-      })),
-    });
+    const data = { ...this.data, ...patch };
+    const visible = Math.max(1, data.visibleItemCount || 5);
+    const height = Math.max(1, data.itemHeight || 44);
+    const position = data.animationIndex || 0;
+    const center = Math.round(position);
+    const first = center - (Math.ceil(visible / 2) + 1);
+    const offset = data.options.length
+      ? ((data.loop ? first : Math.max(0, first)) - position + (visible - 1) / 2) * height
+      : 0;
+    // Fractional movement keeps the same native row window and resolved styles.
+    const key = [
+      data.options,
+      center,
+      data.currentIndex,
+      height,
+      visible,
+      data.valueKey,
+      data.fontStyle,
+      data.activeStyle,
+      data.loop,
+    ];
+    const changed = !this._lynxRowsKey || key.some((value, i) => value !== this._lynxRowsKey[i]);
+    const update: Record<string, any> = { ...patch };
+    if (offset !== this.data.lynxOffset) update.lynxOffset = offset;
+    if (changed) {
+      this._lynxRowsKey = key;
+      const vars = themeVars(this);
+      const normalColor = pickerTextColor(data, vars, false);
+      const normalWeight = pickerTextWeight(data, vars, false);
+      const selectedColor = pickerTextColor(data, vars, true);
+      const selectedWeight = pickerTextWeight(data, vars, true);
+      update.lynxTextColor = normalColor;
+      update.lynxTextWeight = normalWeight;
+      update.lynxRows = pickerRows(data).map(row => ({
+        index: row.index,
+        virtual: row.virtual,
+        text: row.text,
+        disabled: row.disabled,
+        selected: row.selected,
+        textColor: row.selected ? selectedColor : normalColor,
+        textWeight: row.selected ? selectedWeight : normalWeight,
+      }));
+    }
+    if (Object.keys(update).length) this.setData(update);
+  };
+  methods.refreshLynxPickerTheme = function (this: any) {
+    this._lynxRowsKey = null;
+    this.refreshLynxRows();
   };
   [
     'updateCurrentIndex',
@@ -190,7 +215,7 @@ function pickerColumn(options: Options) {
   // Empty data and negative/out-of-bounds updates must not produce NaN.
   methods.setIndex = function (this: any, virtual: number) {
     const index = selectIndex(this.data.options, virtual, this.data.loop);
-    this.setData({
+    this.refreshLynxRows({
       currentIndex: Math.max(0, index),
       animationIndex:
         this.data.loop && index >= 0
@@ -200,7 +225,6 @@ function pickerColumn(options: Options) {
               this.data.options.length)
           : Math.max(0, index),
     });
-    this.refreshLynxRows();
     return Promise.resolve();
   };
   methods.onLynxStart = function (this: any, event: any) {
@@ -228,12 +252,11 @@ function pickerColumn(options: Options) {
     gesture.time = now;
     const height = Math.max(1, this.data.itemHeight || 44);
     const value = gesture.start + (gesture.value - p.value) / height;
-    this.setData({
+    this.refreshLynxRows({
       animationIndex: this.data.loop
         ? value
         : clamp(value, 0, Math.max(0, this.data.options.length - 1)),
     });
-    this.refreshLynxRows();
   };
   methods.settleLynx = function (this: any, virtual: number) {
     const old = this.data.currentIndex;
@@ -283,7 +306,7 @@ function pickerColumn(options: Options) {
     ],
     'refreshLynxRows'
   );
-  theme(options, 'refreshLynxRows');
+  theme(options, 'refreshLynxPickerTheme');
   hook(options, 'destroyed', function (this: any) {
     this._lynxDisposed = true;
     this._lynxTouch = null;
@@ -440,6 +463,34 @@ function bottomSheet(options: Options) {
   });
 }
 
+function popup(options: Options) {
+  options.data = { ...options.data, lynxSafeBottomOffset: 16 };
+  options.methods.refreshLynxPopupInsets = function (this: any) {
+    const host = typeof ty !== 'undefined' ? ty : wx;
+    const info = host.getSystemInfoSync?.() || {};
+    // Android's navigation area may already be outside the drawable viewport.
+    const height = Number(info.useableWindowHeight ?? info.screenHeight ?? info.windowHeight);
+    const safeBottom = Number(info.safeArea?.bottom);
+    const inset =
+      Number.isFinite(height) && Number.isFinite(safeBottom) ? Math.max(0, height - safeBottom) : 0;
+    const minimum = Number(this.data.safeAreaInsetBottomMin) || 0;
+    this.setData({ lynxSafeBottomOffset: Math.max(inset + 16, minimum) });
+  };
+  // `show` belongs to the transition Behavior. Do not shadow its observer.
+  observe(options, ['safeAreaInsetBottom', 'safeAreaInsetBottomMin'], 'refreshLynxPopupInsets');
+  hook(options, 'created', function (this: any) {
+    const host = typeof ty !== 'undefined' ? ty : wx;
+    this._lynxPopupResize = () => this.refreshLynxPopupInsets();
+    host.onWindowResize?.(this._lynxPopupResize);
+    this.refreshLynxPopupInsets();
+  });
+  hook(options, 'destroyed', function (this: any) {
+    const host = typeof ty !== 'undefined' ? ty : wx;
+    if (this._lynxPopupResize) host.offWindowResize?.(this._lynxPopupResize);
+    this._lynxPopupResize = null;
+  });
+}
+
 export function adapt<T>(name: string | undefined, options: T): T {
   const adapters: Record<string, (options: Options) => void> = {
     icon,
@@ -454,6 +505,7 @@ export function adapt<T>(name: string | undefined, options: T): T {
     'picker-column': pickerColumn,
     picker,
     'bottom-sheet': bottomSheet,
+    popup,
   };
   const mutable = options as Options;
   if (name) adapters[name]?.(mutable);

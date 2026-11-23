@@ -1,2 +1,5 @@
-// No render-thread DOM mutation. Values and gestures live in the logic layer.
-module.exports = {};
+// Pure visual calculation: no timers, bridge calls or DOM mutation.
+function opacity(virtual, position, visible) {
+  return Math.max(0.15, 1 - Math.abs(virtual - position) / ((visible || 5) / 2 + 1));
+}
+module.exports = { opacity: opacity };

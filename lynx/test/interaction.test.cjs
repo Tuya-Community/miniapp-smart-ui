@@ -149,29 +149,74 @@ test('picker preserves disabled options and change payload on drag and cancel', 
   assert.equal(comp.data.currentIndex, 2);
   assert.equal(comp.events.find(e => e[0] === 'change')[1], 2);
 });
-test('picker commits its drawing layer after native layout and ignores a detached callback', async () => {
-  let complete;
-  const options = adapters(
-    () =>
-      new Promise(resolve => {
-        complete = resolve;
-      })
-  ).adapt('picker', {
+test('picker can paint its explicitly sized columns without waiting for a geometry round trip', () => {
+  let measurements = 0;
+  const options = adapters(() => { measurements++; return new Promise(() => {}); }).adapt('picker', {
     props: {},
     methods: {},
   });
   const comp = component(options, { ...options.data });
-  options.mounted.call(comp);
-  assert.equal(comp.data.lynxLayerReady, false);
-  complete({ height: 198, width: 300 });
-  await Promise.resolve();
-  assert.equal(comp.data.lynxLayerReady, true);
-  comp.data.lynxLayerReady = false;
-  options.mounted.call(comp);
+  options.mounted?.call(comp);
+  assert.equal(measurements, 0);
+  assert.notEqual(comp.data.lynxLayerReady, false);
+});
+
+test('small picker moves use one position update and retain the same visible row window', () => {
+  const options = adapters().adapt('picker-column', {
+    props: {}, methods: { animationStart() {}, animationEnd() {}, vibrateShort() {} },
+  });
+  const comp = component(options, {
+    options: Array.from({ length: 60 }, (_, i) => String(i)),
+    itemHeight: 44, visibleItemCount: 5, valueKey: 'text',
+    currentIndex: 10, animationIndex: 10, loop: true,
+  });
+  comp.refreshLynxRows();
+  comp.onLynxStart(event(0, 200));
+  const updates = [];
+  const setData = comp.setData;
+  comp.setData = function (patch) { updates.push(patch); setData.call(this, patch); };
+  for (let i = 1; i <= 120; i++) comp.onLynxMove(event(0, 200 - i / 10));
+  assert.equal(comp.data.animationIndex, 10 + 12 / 44);
+  assert.ok(updates.length <= 120, `${updates.length} bridge writes for 120 moves`);
+  assert.equal(updates.filter(p => p.lynxRows).length, 0, 'no row window changed');
+  comp.onLynxCancel();
+  assert.equal(comp.data.animationIndex, 10);
   options.destroyed.call(comp);
-  complete({ height: 198, width: 300 });
-  await Promise.resolve();
-  assert.equal(comp.data.lynxLayerReady, false);
+  const count = updates.length;
+  comp.refreshLynxRows();
+  assert.equal(updates.length, count, 'detached picker must not paint');
+});
+test('picker window changes, cyclic positions and theme/style invalidation preserve row geometry', () => {
+  const options = adapters().adapt('picker-column', { props: {}, methods: {} });
+  const comp = component(options, {
+    options: ['A', 'B', 'C'], itemHeight: 44, visibleItemCount: 5,
+    valueKey: 'text', currentIndex: 0, animationIndex: 0, loop: true,
+  });
+  for (const position of [-6.8, -0.6, 0, 2.7, 30.2]) {
+    comp.refreshLynxRows({ animationIndex: position });
+    const expected = model.pickerRows(comp.data);
+    assert.deepEqual(Array.from(comp.data.lynxRows, r => r.virtual), Array.from(expected, r => r.virtual));
+    comp.data.lynxRows.forEach((row, i) => {
+      assert.ok(Math.abs(comp.data.lynxOffset + i * 44 - expected[i].top) < 1e-9);
+      assert.equal(row.text, expected[i].text);
+    });
+  }
+  comp.data.fontStyle = 'color: red; font-weight: 400';
+  comp.data.activeStyle = 'color: blue; font-weight: 600';
+  comp.refreshLynxRows();
+  assert.ok(comp.data.lynxRows.filter(r => r.selected).every(r => r.textColor === 'blue' && r.textWeight === '600'));
+  assert.ok(comp.data.lynxRows.filter(r => !r.selected).every(r => r.textColor === 'red' && r.textWeight === '400'));
+  const rows = comp.data.lynxRows;
+  comp.refreshLynxPickerTheme();
+  assert.notEqual(comp.data.lynxRows, rows, 'theme invalidation must repaint cached text styles');
+  comp.data.loop = false;
+  comp.refreshLynxRows({ animationIndex: 0 });
+  assert.equal(comp.data.lynxRows[0].virtual, 0);
+  assert.equal(comp.data.lynxOffset, 88);
+  comp.data.options = [];
+  comp.refreshLynxRows();
+  assert.equal(comp.data.lynxRows.length, 0);
+  assert.equal(comp.data.lynxOffset, 0);
 });
 test('normal slider preserves change/end contracts, reverse and fractional steps', async () => {
   const options = { props: {}, methods: {} };
