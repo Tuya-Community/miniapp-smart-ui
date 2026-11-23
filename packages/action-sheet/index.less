@@ -4,13 +4,24 @@
 .smart-action-sheet {
   left: var(--action-sheet-left, @action-sheet-left) !important;
   width: var(--action-sheet-width, @action-sheet-width) !important;
-  max-height: var(--action-sheet-max-height, @action-sheet-max-height) !important;
+  max-height: min(
+    var(--action-sheet-max-height, @action-sheet-max-height),
+    var(--smart-popup-sheet-max-height, 100%)
+  ) !important;
   margin: var(--action-sheet-margin, @action-sheet-margin);
   color: var(--action-sheet-item-text-color, @action-sheet-item-text-color);
   border-radius: var(
     --popup-round-border-radius,
     var(--popup-round-border-radius, @popup-round-border-radius)
   ) !important;
+
+  @media (min-width: 600px) {
+    left: var(--action-sheet-left, 0) !important;
+    width: var(--action-sheet-width, var(--smart-popup-sheet-width)) !important;
+    margin-right: auto;
+    margin-bottom: var(--smart-popup-sheet-gap, 32px);
+    margin-left: auto;
+  }
 
   &__list {
     // max-height: 325px;

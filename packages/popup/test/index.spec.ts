@@ -349,7 +349,7 @@ describe('popup', () => {
 
     const html = wrapper?.dom?.innerHTML || '';
     expect(html).toContain(
-      'margin-bottom:max(calc(env(safe-area-inset-bottom) + 16px), 16px)'
+      'margin-bottom:max(var(--smart-popup-sheet-gap, calc(env(safe-area-inset-bottom) + 16px)), 16px)'
     );
   });
 

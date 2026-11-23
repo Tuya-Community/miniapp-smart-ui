@@ -59,12 +59,36 @@
   }
 
   &--bottom {
+    --smart-popup-sheet-max-height: calc(
+      100% - max(8px, var(--safe-area-inset-top, 0px)) -
+        var(--smart-popup-bottom-distance, var(--smart-popup-sheet-gap, 0px)) -
+        var(--smart-popup-sheet-anchor, 0px)
+    );
+
     bottom: 0;
     left: 0;
     width: 100%;
+    max-height: var(--smart-popup-sheet-max-height);
+    overflow-y: auto;
+
+    @media (min-width: 600px) {
+      // The sheets use a phone-width card and leave room above tall content.
+      --smart-popup-sheet-width: 450px;
+      --smart-popup-sheet-gap: max(32px, var(--safe-area-inset-bottom, 0px));
+      --smart-popup-sheet-max-height: calc(
+        100% - max(12.5vmin, var(--safe-area-inset-top, 0px)) -
+          var(--smart-popup-bottom-distance, var(--smart-popup-sheet-gap)) -
+          var(--smart-popup-sheet-anchor, 0px)
+      );
+
+      right: 0;
+      width: var(--smart-popup-sheet-width);
+      max-width: min(100%, calc(100vmin - 16px));
+      margin: 0 auto var(--smart-popup-sheet-gap);
+    }
 
     &.smart-popup--round {
-      overflow: hidden;
+      overflow-x: hidden;
       border-radius: var(
           --popup-round-border-radius,
           var(--popup-round-border-radius, @popup-round-border-radius)
@@ -74,6 +98,10 @@
           var(--popup-round-border-radius, @popup-round-border-radius)
         )
         0 0;
+
+      @media (min-width: 600px) {
+        border-radius: var(--popup-round-border-radius, @popup-round-border-radius);
+      }
     }
   }
 
@@ -105,6 +133,10 @@
   &--bottom&--safeTabBar,
   &--top&--safeTabBar {
     bottom: var(--tabbar-height, @tabbar-height);
+  }
+
+  &--bottom&--safeTabBar {
+    --smart-popup-sheet-anchor: var(--tabbar-height, @tabbar-height);
   }
 
   &--safeTop {
