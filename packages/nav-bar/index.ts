@@ -1,6 +1,7 @@
 import Left from '@tuya-miniapp/icons/dist/svg/Left';
 import { SmartComponent } from '../common/component';
-import { getRect } from '../common/utils';
+import { getCurrentPage, getRect } from '../common/utils';
+import { PageWithShow, subscribeToPageShow } from './page-show';
 
 declare const ty: {
   getMenuButtonBoundingClientRectSync?: () => { left: number; right: number } | undefined;
@@ -8,19 +9,7 @@ declare const ty: {
   offWindowResize?: (callback: () => void) => void;
 };
 
-const menuLayout = Behavior({
-  definitionFilter(options) {
-    options.pageLifetimes = {
-      ...options.pageLifetimes,
-      show(this: { updateMenuLayout(): void }) {
-        this.updateMenuLayout();
-      },
-    };
-  },
-});
-
 SmartComponent({
-  mixins: [menuLayout],
   classes: [
     'title-class',
     'right-text-class',
@@ -100,11 +89,16 @@ SmartComponent({
 
   watch: {
     'leftTextType, avoidMenuButton'() {
+      this.syncMenuPageShow();
       this.updateMenuLayout();
     },
   },
 
   mounted() {
+    if (typeof ty !== 'undefined' && ty.getMenuButtonBoundingClientRectSync) {
+      this.menuLayoutPage = getCurrentPage<PageWithShow>();
+      this.syncMenuPageShow();
+    }
     this.updateMenuLayout();
     if (typeof ty !== 'undefined' && ty.onWindowResize && ty.offWindowResize) {
       this.menuResizeHandler = () => this.updateMenuLayout();
@@ -114,20 +108,39 @@ SmartComponent({
 
   destroyed() {
     this.menuLayoutRevision = (this.menuLayoutRevision || 0) + 1;
+    this.stopMenuPageShow?.();
     if (typeof ty !== 'undefined' && this.menuResizeHandler) {
       ty.offWindowResize?.(this.menuResizeHandler);
     }
   },
 
   methods: {
+    shouldAvoidMenu() {
+      const { avoidMenuButton, leftTextType } = this.data;
+      return avoidMenuButton ?? leftTextType === 'home';
+    },
+
+    syncMenuPageShow() {
+      if (!this.menuLayoutPage) return;
+      if (this.shouldAvoidMenu()) {
+        // Some hosts skip component pageLifetimes for nested components.
+        if (!this.stopMenuPageShow) {
+          this.stopMenuPageShow = subscribeToPageShow(this.menuLayoutPage, () =>
+            this.updateMenuLayout()
+          );
+        }
+      } else if (this.stopMenuPageShow) {
+        this.stopMenuPageShow();
+        this.stopMenuPageShow = undefined;
+      }
+    },
+
     async updateMenuLayout() {
       const revision = (this.menuLayoutRevision || 0) + 1;
       this.menuLayoutRevision = revision;
-      const { avoidMenuButton, leftTextType } = this.data;
-      const shouldAvoidMenu = avoidMenuButton ?? leftTextType === 'home';
       let menuReservedWidth: number | null = null;
 
-      if (shouldAvoidMenu && typeof ty !== 'undefined') {
+      if (this.shouldAvoidMenu() && typeof ty !== 'undefined') {
         try {
           const menu = ty.getMenuButtonBoundingClientRectSync?.();
           if (menu && Number.isFinite(menu.left) && menu.left > 0 && menu.right > menu.left) {
