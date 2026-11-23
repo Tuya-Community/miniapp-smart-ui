@@ -31,6 +31,22 @@
     align-items: center;
   }
 
+  &--avoidMenu &__content {
+    box-sizing: border-box;
+    // The existing 16px inner spacing completes the 114px fallback.
+    padding-right: var(--nav-bar-menu-reserved-width, 98px);
+  }
+
+  &--avoidMenu &__left--home {
+    min-width: 0;
+    max-width: var(--nav-bar-home-max-width, calc(100% - 16px));
+  }
+
+  &--avoidMenu &__left--home ~ &__title:empty,
+  &--avoidMenu &__left--home ~ &__right:empty {
+    display: none;
+  }
+
   &__text {
     .ellipsis();
 

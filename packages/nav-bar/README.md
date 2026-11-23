@@ -291,6 +291,7 @@ Page({
 | left-arrow-aria-label `v2.13.0` | 左侧返回箭头的无障碍读屏文案 | _string_  | -       |
 | left-text           | 左侧文案                           | _string_  | `''`    |
 | left-text-type `v2.0.0`          | 左侧文本的样式类型，范围为 `home`、`title`、`back`                           | _string_  | `back`    |
+| avoid-menu-button   | 是否避让宿主胶囊。未传时仅 `home` 模式开启。传 `{{ true }}` 可在二级页开启，传 `{{ false }}` 可在首页关闭 | _boolean_ | 随 `left-text-type` |
 | left-icon `v2.0.0`         | 左侧 Icon                           | _string_  | `''`    |
 | left-icon-aria-label `v2.13.0` | 左侧图标按钮的无障碍读屏文案 | _string_  | -       |
 | left-icon-size `v2.0.0`        | 左侧 Icon 大小，默认为 32                           | _string \| number_  | `32`    |

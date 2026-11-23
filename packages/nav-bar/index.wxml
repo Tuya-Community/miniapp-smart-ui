@@ -7,8 +7,8 @@
 />
 
 <view
-  class="{{ utils.bem('nav-bar', { fixed, round, safe: safeAreaInsetTop }) }} custom-class {{ border ? 'smart-hairline--bottom' : '' }}"
-  style="{{ computed.barStyle({ zIndex, background }) }}; {{ customStyle }}"
+  class="{{ utils.bem('nav-bar', { fixed, round, safe: safeAreaInsetTop, avoidMenu: avoidMenuButton == null ? leftTextType === 'home' : avoidMenuButton }) }} custom-class {{ border ? 'smart-hairline--bottom' : '' }}"
+  style="{{ computed.barStyle({ zIndex, background, menuReservedWidth }) }}; {{ customStyle }}"
 >
   <view class="smart-nav-bar__content">
     <view class="{{ computed.leftClass({ sideWidth, leftTextType, leftText, leftArrow, leftIcon }) }}" style="{{ computed.sideStyle({ sideWidth }) }}" bind:tap="onClickLeft">

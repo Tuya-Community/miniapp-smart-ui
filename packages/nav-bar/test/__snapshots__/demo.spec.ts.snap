@@ -10,7 +10,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click-left-text="onClickLeftText"
       >
         <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class "
+          class="smart-nav-bar smart-nav-bar--safe smart-nav-bar--avoidMenu custom-class "
           style="z-index:1; "
         >
           <wx-view
@@ -51,7 +51,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click-left-text="onClickLeftText"
       >
         <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class "
+          class="smart-nav-bar smart-nav-bar--safe smart-nav-bar--avoidMenu custom-class "
           style="z-index:1;background:#E4EDFF; "
         >
           <wx-view
@@ -92,7 +92,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click-left-text="onClickLeftText"
       >
         <wx-view
-          class="smart-nav-bar smart-nav-bar--safe custom-class "
+          class="smart-nav-bar smart-nav-bar--safe smart-nav-bar--avoidMenu custom-class "
           style="z-index:1;background:#E4EDFF; "
         >
           <wx-view
