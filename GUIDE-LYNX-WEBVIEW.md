@@ -1,86 +1,28 @@
-# 其它 Ray 项目如何接入
+# Ray 项目接入 Smart UI Lynx
 
-项目已能运行 Lynx 页面时，按下面 4 步接入，WebView 页面继续保留。
+React/Ray 业务优先安装配套的 `@ray-js/smart-ui`，由包装层精确依赖本底层库；不再要求每个业务复制适配器或访问组件库源码。
 
-**当前需要配套适配器；只升级 npm 包还不够。** 底层完整包的构建修复尚未发布，下面的版本号要换成后续确认的完整版本。
+当前新接口在包装层源码候选 `2.13.7-lynx.2` 中，尚未发布 npm。已发布的 `2.13.7-canary.bcodex-pr-240-ray-canary.s6a37075.44710305558.1` 只固定了底层依赖，尚没有 withSmartUI / SmartUIPage，不能套用新接口。旧业务可继续保留已验证的 bridge，待安装新候选或其正式发布版本再移除。
 
-## 1. 安装依赖
+## 三步接入
 
-在业务项目执行：
+1. 安装新包装层版本；本地候选使用构建打出的 tgz，并随业务仓库保存以供 CI 重装。底层包自动安装，业务不再额外锁底层版本。
+2. `ray.config.ts` 用 `withSmartUI(existingConfig)` 合并配置。纯 WebView 对照构建传 `{ renderer: 'webview' }`；默认 mixed 保留双端实现，不承诺组件资产已逐页面裁剪。
+3. 每个页面静态包一层 `SmartUIPage`，renderer 复用该页面的 native/webview 配置。组件和 ToastInstance/DialogInstance 导入及用法保持原样。
 
-```bash
-yarn add --exact '@tuya/miniapp-smart-ui@填写完整版本' @ray-js/smart-ui@2.13.3 @ray-js/components-ty-slider@0.3.10-beta.3
-```
+```tsx
+import { SmartUIPage, Popup, Picker } from '@ray-js/smart-ui';
+import pageConfig from './index.config';
 
-## 2. 准备适配器
-
-在业务项目目录执行，替换组件库源码路径（使用与安装包对应的源码）：
-
-```bash
-export BUSINESS_PROJECT="$PWD"
-cd /你的路径/miniapp-smart-ui
-yarn build
-SMART_UI_RAY_WRAPPER_ROOT="$BUSINESS_PROJECT/node_modules/@ray-js/smart-ui" \
-SMART_UI_TY_SLIDER_ROOT="$BUSINESS_PROJECT/node_modules/@ray-js/components-ty-slider" \
-SMART_UI_RAY_OUTPUT_ROOT="$BUSINESS_PROJECT/.generated/smart-ui-bridge" \
-yarn build:lynx:ray
-```
-
-这一步在当前机器生成双渲染包装层；CI 打包时也执行，换机器后重新生成。
-
-## 3. 配置引用
-
-业务 `ray.config.ts` 合并以下配置，保留已有别名和转换器：
-
-```ts
-import path from 'node:path';
-import { createRequire } from 'node:module';
-import SmartUIAutoImport from '@ray-js/smart-ui/lib/auto-import';
-
-const nodeRequire = createRequire(__filename);
-
-export default {
-  importTransformer: [SmartUIAutoImport],
-  resolveAlias: {
-    '@ray-js/smart-ui': path.resolve(__dirname, '.generated/smart-ui-bridge'),
-    '@tuya-miniapp/smart-ui': path.dirname(
-      nodeRequire.resolve('@tuya/miniapp-smart-ui/package.json')
-    ),
-  },
-};
-```
-
-`tsconfig.json` 合并以下类型路径（`baseUrl` 为项目根目录）：
-
-```json
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@ray-js/smart-ui": [".generated/smart-ui-bridge/es/index.d.ts"],
-      "@ray-js/smart-ui/*": [".generated/smart-ui-bridge/es/*"]
-    }
-  }
+export default function Page() {
+  return <SmartUIPage renderer={pageConfig.renderer}><Content /></SmartUIPage>;
 }
 ```
 
-## 4. 组件按页面传模式
+页面配置没有 renderer 字段时，可省略边界上的 renderer（默认 webview），或先在配置里显式声明 webview。不要为 Smart UI 新建另一份路由模式表。边界静态挂载 Dialog/Toast；Notify 如有使用，在同一边界内静态挂载相应 id 的 Notify。
 
-导入方式保持原样，Lynx 页面显式传 `renderMode="lynx"`：
+详细的配置、实例 context、宿主检查、依赖 registry 和验收要求以包装层的 `README-LYNX.md` 为准。本底层库继续提供默认 dist/lib 和隔离的 lynx/dist、lynx/lib。原生小程序直接接入仍可使用 `@tuya/miniapp-smart-ui/lynx/lib/<组件>/index`，不依赖 React 包装层。
 
-```tsx
-import { Popup, Picker } from '@ray-js/smart-ui';
+## 历史接法
 
-// show、columns、close 沿用业务自己的状态和回调。
-<Popup renderMode="lynx" show={show} position="bottom" onClickOverlay={close}>
-  <Picker renderMode="lynx" columns={columns} />
-</Popup>
-```
-
-WebView 页面不传，默认就是 WebView。两种页面共用的业务组件，根据**当前页面 renderer** 传 `'lynx'` 或 `'webview'`；Popup 和里面的 Picker 都要传。
-
-另外记住一项：Lynx 页面的 Toast / Dialog / Notify，实例调用分别使用 `LynxToastInstance` / `LynxDialogInstance` / `LynxNotifyInstance`，并挂载同模式的对应组件。
-
-接完分别打开一个 Lynx 页面和一个 WebView 页面，确认弹层能打开、文字能显示、选择能操作。
-
-原生小程序接法、完整示例和排查说明，需要时看 [详细附录](GUIDE-LYNX-WEBVIEW-DETAILS.md)。
+[旧适配器附录](GUIDE-LYNX-WEBVIEW-DETAILS.md) 仅供尚未升级包装层的既有项目维护，不是新版本的接入前置。源码构建、npm 发布、业务采用和真机生效是独立阶段；安装新包后须重新验证目标平台、主题、页面交互及原生层命中。
