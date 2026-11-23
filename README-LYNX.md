@@ -1,5 +1,7 @@
 # Smart UI Lynx 适配
 
+> 2026-11-23：Ray 包装层已新增 withSmartUI / SmartUIPage 的源码候选，业务无需自行生成 bridge；新接法见 [当前引入指南](GUIDE-LYNX-WEBVIEW.md)。本页后续本地适配器说明为历史实现记录，不代表新包的接入要求；新候选尚未发布 npm。
+
 新项目接入请先阅读 [四步快速接入](GUIDE-LYNX-WEBVIEW.md)；原生小程序、CI 与排查说明见 [详细附录](GUIDE-LYNX-WEBVIEW-DETAILS.md)。
 
 本地分支：`codex/lynx-smart-ui`。基线为 `origin/main` 的

@@ -1,3 +1,5 @@
+> 历史适配器接法：新包装层候选的简化接入见 [当前引入指南](GUIDE-LYNX-WEBVIEW.md)。以下旧源码联编步骤不适用于新包装层。
+
 # Lynx / WebView 接入附录
 
 简明步骤见 [快速接入](GUIDE-LYNX-WEBVIEW.md)。

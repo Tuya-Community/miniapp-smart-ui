@@ -1021,7 +1021,8 @@
       },
       "risks": [],
       "override": [
-        "overrides/popup/index.wxml"
+        "overrides/popup/index.wxml",
+        "overrides/popup/index.wxs"
       ],
       "source": "packages/popup",
       "target": "lynx/dist/popup",

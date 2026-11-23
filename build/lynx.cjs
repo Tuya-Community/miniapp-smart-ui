@@ -455,6 +455,7 @@ async function prepare() {
     'slider',
     'normal-slider',
     'bottom-sheet',
+    'popup',
     'icon',
     'image',
     'loading',
@@ -575,10 +576,6 @@ async function prepare() {
   change('picker/index.wxml', s =>
     s
       .replace(
-        'style="{{ computed.columnsStyle({ itemHeight, visibleItemCount, fullHeight }) }}"',
-        'style="{{ computed.columnsStyle({ itemHeight, visibleItemCount, fullHeight }) }};z-index:{{lynxLayerReady ? 2 : 0}};opacity:{{lynxLayerReady ? 1 : 0}};"'
-      )
-      .replace(
         /<view\s+class="smart-picker__columns"/,
         '<view class="smart-picker__viewport" style="{{ computed.columnsStyle({ itemHeight, visibleItemCount, fullHeight }) }}">\n  <view class="smart-picker__columns"'
       )
@@ -689,7 +686,12 @@ async function prepare() {
     s.replace('right: -1000px;', 'right: auto;').replace('width: fit-content;', 'max-width: 90%;')
   );
   change('popup/popup.wxml', s =>
-    s.replace('zIndex, currentDuration', 'zIndex: zIndex + 1, currentDuration')
+    s
+      .replace('zIndex, currentDuration', 'zIndex: zIndex + 1, currentDuration')
+      .replace(
+        'safeAreaInsetBottomMin })',
+        'safeAreaInsetBottomMin, safeAreaTabBar, lynxSafeBottomOffset })'
+      )
   );
   change('image/index.wxml', s =>
     s
