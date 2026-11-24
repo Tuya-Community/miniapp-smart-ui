@@ -7,8 +7,6 @@
   align-items: center;
   justify-content: center;
   box-sizing: content-box;
-  margin: auto;
-  pointer-events: auto;
   color: var(--toast-text-color, @toast-text-color);
   font-size: var(--toast-font-size, @toast-font-size);
   line-height: var(--toast-line-height, @toast-line-height);
@@ -16,7 +14,6 @@
   // allow newline charactor
   white-space: pre-wrap;
   word-wrap: break-word;
-  overflow-wrap: anywhere;
   background-color: var(--toast-background-color, @toast-background-color);
   border-radius: var(--toast-border-radius, @toast-border-radius);
   border: var(--toast-border, @toast-border);
@@ -24,11 +21,28 @@
 
   &__container {
     position: fixed;
+    top: 50%;
+    left: 50%;
+    right: -1000px;
+    // hack for avoid max-width when use left & fixed
+    width: fit-content;
+    transform: translate(-50%, -50%);
+  }
+
+  &[class~='smart-toast--duo'] {
+    margin: auto;
+    pointer-events: auto;
+    overflow-wrap: anywhere;
+  }
+
+  &__container[class~='smart-toast--duo'] {
     top: 0;
     right: var(--safe-area-inset-right, 0);
     bottom: 0;
     left: var(--safe-area-inset-left, 0);
     display: flex;
+    width: auto;
+    transform: none;
     overflow: auto;
     pointer-events: none;
 
@@ -36,6 +50,14 @@
     @media (min-width: 600px) {
       right: 0;
       left: 0;
+    }
+
+    &[class~='smart-toast--top'] {
+      bottom: 60%;
+    }
+
+    &[class~='smart-toast--bottom'] {
+      top: 60%;
     }
   }
 
@@ -68,11 +90,11 @@
 }
 
 .smart-toast--top {
-  bottom: 60%;
+  transform: translate(0, -30vh) translate(-50%, -50%);
 }
 
 .smart-toast--bottom {
-  top: 60%;
+  transform: translateY(30vh) translate(-50%, -50%);
 }
 
 :root[data-a11y='true'] {

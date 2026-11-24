@@ -2,8 +2,8 @@
 <wxs src="./index.wxs" module="computed" />
 <view
   wx:if="{{ inited }}"
-  class="custom-class {{ classes }} {{ utils.bem('popup', [position, { round, safeTop: safeAreaInsetTop, safeTabBar: safeAreaTabBar, duoFullHeight, duoPortraitPopup }]) }}"
-  style="{{ computed.popupStyle({ position, status, zIndex, currentDuration, display, customStyle, safeAreaInsetBottom, safeAreaInsetBottomMin }) }}"
+  class="custom-class {{ classes }} {{ utils.bem('popup', [position, { round, safeTop: safeAreaInsetTop, safeTabBar: safeAreaTabBar, duoFullHeight, duoBottomPopup, duoTopPopup, duoOuterDisplay }]) }}"
+  style="{{ computed.popupStyle({ position, status, zIndex, currentDuration, display, customStyle, safeAreaInsetBottom, safeAreaInsetBottomMin, duoBottomPopup }) }}"
   catch:touchmove="{{ lockScroll ? 'noop' : ''}}"
 >
   <slot />

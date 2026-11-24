@@ -1,5 +1,6 @@
 import warningIcon from '@tuya-miniapp/icons/dist/svg/Warning';
 import { SmartComponent } from '../common/component';
+import { isIPhoneDuo } from '../common/iphone-duo';
 import { button } from '../mixins/button';
 import appLog from '../common/appLog';
 import { getCurrentPage, toPromise } from '../common/utils';
@@ -103,6 +104,7 @@ SmartComponent({
 
   data: {
     warningIcon,
+    duo: false,
     inputValue: '',
     loading: {
       confirm: false,
@@ -114,6 +116,9 @@ SmartComponent({
       context: WechatMiniprogram.Component.TrivialInstance
     ) => void,
     onInput: (() => {}) as (value: string) => void,
+  },
+  created() {
+    if (isIPhoneDuo()) this.setData({ duo: true });
   },
   mounted: function () {
     if (!this.id) return;

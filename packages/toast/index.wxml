@@ -7,10 +7,10 @@
 <smart-transition
   show="{{ show }}"
   custom-style="z-index: {{ zIndex }}"
-  custom-class="smart-toast__container smart-toast--{{ position }}"
+  custom-class="smart-toast__container smart-toast--{{ position }}{{ duo ? ' smart-toast--duo' : '' }}"
 >
   <view
-    class="smart-toast smart-toast--{{ (type === 'text' || type === 'html') ? 'text' : 'icon' }}"
+    class="smart-toast smart-toast--{{ (type === 'text' || type === 'html') ? 'text' : 'icon' }}{{ duo ? ' smart-toast--duo' : '' }}"
     catch:touchmove="noop"
     style="{{ width ? ('width: ' + width + 'px') : '' }}"
   >

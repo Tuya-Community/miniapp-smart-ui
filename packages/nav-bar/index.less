@@ -39,7 +39,7 @@
 
   &--duoPortraitMenu &__content:has(> .smart-nav-bar__right:not(:empty)) {
     box-sizing: border-box;
-    padding-right: var(--nav-bar-menu-reserved-width, 0px);
+    padding-right: var(--nav-bar-menu-reserved-width, calc(0px));
   }
 
   &--duoPortraitMenu &__right {
@@ -116,6 +116,42 @@
     color: var(--nav-bar-title-text-color, @nav-bar-title-text-color);
     font-weight: var(--nav-bar-title-font-weight, @nav-bar-title-font-weight);
     font-size: var(--nav-bar-title-font-size, @nav-bar-title-font-size);
+  }
+
+  &--duoCenteredTitle &__title {
+    position: absolute;
+    left: 50%;
+    width: max(0px, calc(100% - 2 * var(--nav-bar-title-inset, 50%)));
+    margin: 0;
+    transform: translateX(-50%);
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &--duoCenteredTitle &__left,
+  &--duoCenteredTitle &__right {
+    width: auto;
+    max-width: var(--nav-bar-side-width, @nav-bar-side-width);
+
+    &--min {
+      max-width: var(--nav-bar-side-width-min, var(--nav-bar-side-width, @nav-bar-side-width-min));
+    }
+
+    &--max {
+      max-width: var(--nav-bar-side-width-max, var(--nav-bar-side-width, @nav-bar-side-width-max));
+    }
+  }
+
+  &--duoCenteredTitle &__right {
+    margin-left: auto;
+  }
+
+  &__centered-left-text {
+    .ellipsis();
+
+    font-size: var(--nav-bar-home-font-size, @nav-bar-home-font-size);
   }
 
   &__left,

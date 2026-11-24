@@ -5,7 +5,7 @@
   z-index="{{ zIndex }}"
   overlay="{{ overlay }}"
   transition="{{ transition }}"
-  custom-class="smart-dialog smart-dialog--{{ theme }} {{ className }} custom-class"
+  custom-class="smart-dialog smart-dialog--{{ theme }} {{ className }} custom-class{{ duo ? ' smart-dialog--duo' : '' }}"
   custom-style="width: {{ utils.addUnit(width) }};{{ customStyle }}"
   overlay-style="{{ overlayStyle }}"
   native-disabled="{{ nativeDisabled }}"

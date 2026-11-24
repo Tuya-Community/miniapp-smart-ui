@@ -1,4 +1,5 @@
 import { SmartComponent } from '../common/component';
+import { isIPhoneDuo } from '../common/iphone-duo';
 import { touch } from '../mixins/touch';
 import {
   getAllRect,
@@ -127,7 +128,7 @@ SmartComponent({
       this.scrollIntoView();
     });
 
-    if (typeof ty !== 'undefined' && ty.onWindowResize && ty.offWindowResize) {
+    if (isIPhoneDuo() && ty.onWindowResize && ty.offWindowResize) {
       let pending = false;
       const onWindowResize = () => {
         if (pending) return;
@@ -271,7 +272,7 @@ SmartComponent({
       ]).then(([rects = [], lineRect]) => {
         const rect = rects?.[currentIndex];
 
-        if (rect == null || (type === 'line' && lineRect == null)) {
+        if (rect == null || (this.windowResizeHandler && type === 'line' && lineRect == null)) {
           return;
         }
 

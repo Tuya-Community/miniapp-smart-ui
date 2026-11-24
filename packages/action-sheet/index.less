@@ -12,12 +12,45 @@
     var(--popup-round-border-radius, @popup-round-border-radius)
   ) !important;
 
-  @media (min-width: 600px) {
+  &[class~='smart-popup--duoBottomPopup'] {
+    --smart-popup-sheet-gap: 30px;
+
+    margin-bottom: var(--smart-popup-sheet-gap);
+  }
+
+  .folded-layout() {
+    --smart-popup-sheet-gap: calc(0px);
+
+    right: 0;
     left: var(--action-sheet-left, 0) !important;
-    width: var(--action-sheet-width, var(--smart-popup-sheet-width)) !important;
+    width: var(--action-sheet-width, 450px) !important;
+    max-width: calc(100% - 16px);
     margin-right: auto;
-    margin-bottom: var(--smart-popup-sheet-gap, 32px);
+    // The folded design sits flush even when Popup adds its inline safe-area margin.
+    margin-bottom: 0 !important;
     margin-left: auto;
+  }
+
+  @media (max-width: 599px) and (orientation: portrait) {
+    &[class~='smart-popup--duoBottomPopup'] {
+      &[class~='smart-popup--duoOuterDisplay'] {
+        .folded-layout();
+      }
+
+      @media (min-width: 420px) {
+        .folded-layout();
+      }
+    }
+  }
+
+  @media (min-width: 600px) {
+    &[class~='smart-popup--duoBottomPopup'] {
+      left: var(--action-sheet-left, 0) !important;
+      width: var(--action-sheet-width, var(--smart-popup-sheet-width)) !important;
+      margin-right: auto;
+      margin-bottom: var(--smart-popup-sheet-gap, 32px);
+      margin-left: auto;
+    }
   }
 
   &__list {

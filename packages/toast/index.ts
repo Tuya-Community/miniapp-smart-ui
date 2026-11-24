@@ -1,5 +1,6 @@
 import { Success, Alarm, Error } from './icons';
 import { SmartComponent } from '../common/component';
+import { isIPhoneDuo } from '../common/iphone-duo';
 import { registerToastContext, unregisterToastContext } from './toast';
 import appLog from '../common/appLog';
 
@@ -36,9 +37,13 @@ SmartComponent({
     },
   },
   data: {
+    duo: false,
     success: Success,
     error: Error,
     warn: Alarm,
+  },
+  created() {
+    if (isIPhoneDuo()) this.setData({ duo: true });
   },
   mounted: function () {
     if (!this.id) return;

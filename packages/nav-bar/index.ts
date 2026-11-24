@@ -1,5 +1,6 @@
 import Left from '@tuya-miniapp/icons/dist/svg/Left';
 import { SmartComponent } from '../common/component';
+import { isIPhoneDuo } from '../common/iphone-duo';
 import { getCurrentPage, getRect } from '../common/utils';
 import { PageWithShow, subscribeToPageShow } from './page-show';
 
@@ -10,7 +11,6 @@ type WindowResize = {
 
 declare const ty: {
   getSystemInfoSync?: () => {
-    model?: string;
     deviceOrientation?: string;
     useableWindowWidth?: number;
     windowWidth?: number;
@@ -95,24 +95,27 @@ SmartComponent({
 
   data: {
     leftArrowIcon: Left,
+    duo: false,
     menuReservedWidth: null as number | null,
+    titleInset: null as number | null,
+    duoCenteredTitle: false,
     duoPortraitMenu: false,
   },
 
   watch: {
     'leftTextType, avoidMenuButton'() {
-      this.syncMenuPageShow();
-      this.updateMenuLayout();
+      if (this.data.duo) this.updateMenuLayout();
+    },
+    'title, leftText, leftArrow, leftIcon, leftIconSize, rightText, rightIcon, rightIconSize, sideWidth'() {
+      if (this.data.duo) this.updateMenuLayout();
     },
   },
 
   mounted() {
-    if (typeof ty !== 'undefined' && ty.getMenuButtonBoundingClientRectSync) {
-      const model = ty.getSystemInfoSync?.()?.model;
-      this.isIPhoneDuo = model === 'iPhone19,4' || model === 'iPhone Duo';
-      this.menuLayoutPage = getCurrentPage<PageWithShow>();
-      this.syncMenuPageShow();
-    }
+    if (!isIPhoneDuo()) return;
+    this.setData({ duo: true });
+    const page = getCurrentPage<PageWithShow>();
+    if (page) this.stopMenuPageShow = subscribeToPageShow(page, () => this.updateMenuLayout());
     this.updateMenuLayout();
     if (typeof ty !== 'undefined' && ty.onWindowResize && ty.offWindowResize) {
       this.menuResizeHandler = (event?: WindowResize) => this.updateMenuLayout(event);
@@ -134,40 +137,24 @@ SmartComponent({
       return avoidMenuButton ?? leftTextType === 'home';
     },
 
-    syncMenuPageShow() {
-      if (!this.menuLayoutPage) return;
-      if (this.shouldAvoidMenu() || (this.isIPhoneDuo && this.data.avoidMenuButton == null)) {
-        // Some hosts skip component pageLifetimes for nested components.
-        if (!this.stopMenuPageShow) {
-          this.stopMenuPageShow = subscribeToPageShow(this.menuLayoutPage, () =>
-            this.updateMenuLayout()
-          );
-        }
-      } else if (this.stopMenuPageShow) {
-        this.stopMenuPageShow();
-        this.stopMenuPageShow = undefined;
-      }
-    },
-
     async updateMenuLayout(event?: WindowResize) {
       const revision = (this.menuLayoutRevision || 0) + 1;
       this.menuLayoutRevision = revision;
       let menuReservedWidth: number | null = null;
+      let duoPortrait = false;
       let duoPortraitMenu = false;
 
       if (typeof ty !== 'undefined') {
         try {
           const avoidMenu = this.shouldAvoidMenu();
-          let alignMenuRight = false;
-          if (!avoidMenu && this.isIPhoneDuo && this.data.avoidMenuButton == null) {
-            const info = ty.getSystemInfoSync?.();
-            const orientation = event?.type ?? info?.deviceOrientation;
-            const width = Number(
-              event?.size?.windowWidth ?? info?.useableWindowWidth ?? info?.windowWidth
-            );
-            alignMenuRight = orientation === 'portrait' && Number.isFinite(width) && width >= 600;
-          }
+          const info = ty.getSystemInfoSync?.();
+          const orientation = event?.type ?? info?.deviceOrientation;
+          const width = Number(
+            event?.size?.windowWidth ?? info?.useableWindowWidth ?? info?.windowWidth
+          );
+          duoPortrait = orientation === 'portrait' && Number.isFinite(width) && width >= 600;
 
+          const alignMenuRight = duoPortrait && !avoidMenu && this.data.avoidMenuButton == null;
           if (avoidMenu || alignMenuRight) {
             const menu = ty.getMenuButtonBoundingClientRectSync?.();
             if (
@@ -190,13 +177,40 @@ SmartComponent({
         }
       }
 
+      if (revision !== this.menuLayoutRevision) return;
+      const duoCenteredTitle = duoPortrait && this.data.leftTextType !== 'home';
+      const measureTitle = () => {
+        if (duoCenteredTitle) this.updateTitleInset(revision);
+      };
       if (
-        revision === this.menuLayoutRevision &&
-        (menuReservedWidth !== this.data.menuReservedWidth ||
-          duoPortraitMenu !== this.data.duoPortraitMenu)
+        menuReservedWidth !== this.data.menuReservedWidth ||
+        duoCenteredTitle !== this.data.duoCenteredTitle ||
+        duoPortraitMenu !== this.data.duoPortraitMenu
       ) {
-        this.setData({ menuReservedWidth, duoPortraitMenu });
+        const titleInset = duoCenteredTitle ? this.data.titleInset : null;
+        this.setData(
+          { menuReservedWidth, duoCenteredTitle, duoPortraitMenu, titleInset },
+          measureTitle
+        );
+      } else {
+        measureTitle();
       }
+    },
+
+    async updateTitleInset(revision: number) {
+      if (revision !== this.menuLayoutRevision) return;
+      const [bar, left, right] = await Promise.all([
+        getRect(this, '.smart-nav-bar__content'),
+        getRect(this, '.smart-nav-bar__left'),
+        getRect(this, '.smart-nav-bar__right'),
+      ]);
+      if (revision !== this.menuLayoutRevision || !bar?.width || !left) return;
+
+      // Reserve the same space on both sides of the title, including the host controls.
+      const hostInset = this.shouldAvoidMenu() ? (this.data.menuReservedWidth ?? 98) : 0;
+      const rightInset = right?.height ? bar.right - right.left : hostInset;
+      const titleInset = Math.max(left.right - bar.left, rightInset) + 16;
+      if (titleInset !== this.data.titleInset) this.setData({ titleInset });
     },
 
     onClickLeft() {

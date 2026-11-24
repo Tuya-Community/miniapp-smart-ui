@@ -5,7 +5,7 @@ function popupStyle(data) {
   // 大屏底部弹层优先使用其布局间距，小屏保留原有安全距离算法。
   var bottom = data.position === 'bottom';
   var safeBottomBase = 'calc(env(safe-area-inset-bottom) + 16px)';
-  if (bottom) {
+  if (data.duoBottomPopup) {
     safeBottomBase = 'var(--smart-popup-sheet-gap, ' + safeBottomBase + ')';
   }
   var safeBottom = data.safeAreaInsetBottom
@@ -17,7 +17,9 @@ function popupStyle(data) {
     // 隐藏态需在自身高度基础上再位移底部安全距离，保证弹层完全移出屏幕
     transformStyle = safeBottom
       ? 'transform: translate3d(0, calc(100% + ' + safeBottom + '), 0)'
-      : 'transform: translate3d(0, calc(100% + var(--smart-popup-sheet-gap, 0px)), 0)';
+      : data.duoBottomPopup
+        ? 'transform: translate3d(0, calc(100% + var(--smart-popup-sheet-gap, 0px)), 0)'
+        : 'transform: translate3d(0, 100%, 0)';
   }
 
   return style([

@@ -7,11 +7,11 @@
 />
 
 <view
-  class="{{ utils.bem('nav-bar', { fixed, round, safe: safeAreaInsetTop, avoidMenu: avoidMenuButton == null ? leftTextType === 'home' : avoidMenuButton, duoPortraitMenu }) }} custom-class {{ border ? 'smart-hairline--bottom' : '' }}"
-  style="{{ computed.barStyle({ zIndex, background, menuReservedWidth }) }}; {{ customStyle }}"
+  class="{{ utils.bem('nav-bar', { fixed, round, safe: safeAreaInsetTop, avoidMenu: duo && (avoidMenuButton == null ? leftTextType === 'home' : avoidMenuButton), duoCenteredTitle, duoPortraitMenu }) }} custom-class {{ border ? 'smart-hairline--bottom' : '' }}"
+  style="{{ computed.barStyle({ zIndex, background, menuReservedWidth, titleInset }) }}; {{ customStyle }}"
 >
   <view class="smart-nav-bar__content">
-    <view class="{{ computed.leftClass({ sideWidth, leftTextType, leftText, leftArrow, leftIcon }) }}" style="{{ computed.sideStyle({ sideWidth }) }}" bind:tap="onClickLeft">
+    <view class="{{ computed.leftClass({ sideWidth, leftTextType, leftText, leftArrow, leftIcon }) }}" style="{{ computed.sideStyle({ sideWidth, duoCenteredTitle }) }}" bind:tap="onClickLeft">
       <smart-icon
         wx:if="{{ leftArrow }}"
         size="24px"
@@ -43,7 +43,7 @@
         />
       </view>
       <view
-        wx:if="{{ leftText }}"
+        wx:if="{{ leftText && !(duoCenteredTitle && !title && leftTextType === 'title') }}"
         class="smart-nav-bar__text left-text-class"
         catch:tap="onClickLeftText"
         hover-class="{{ leftTextType === 'back' ? 'smart-nav-bar__text--hover' : '' }}"
@@ -54,10 +54,17 @@
       <slot name="left" />
     </view>
     <view class="smart-nav-bar__title title-class smart-ellipsis" bind:tap="onClickTitle">
-      <block>{{ title }}</block>
+      <view
+        wx:if="{{ duoCenteredTitle && !title && leftText && leftTextType === 'title' }}"
+        class="smart-nav-bar__centered-left-text left-text-class"
+        catch:tap="onClickLeftText"
+      >
+        {{ leftText }}
+      </view>
+      <block wx:else>{{ title }}</block>
       <slot name="title" />
     </view>
-    <view class="{{ computed.rightClass({ sideWidth, rightText }) }}" style="{{ computed.sideStyle({ sideWidth }) }}" bind:tap="onClickRight">
+    <view class="{{ computed.rightClass({ sideWidth, rightText }) }}" style="{{ computed.sideStyle({ sideWidth, duoCenteredTitle }) }}" bind:tap="onClickRight">
       <view
         wx:if="{{ rightIcon }}"
         data-type="rightIcon"
