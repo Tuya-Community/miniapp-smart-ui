@@ -9,16 +9,42 @@ type WindowResize = {
   size?: { windowWidth?: number | string };
 };
 
+type WindowInfo = {
+  deviceOrientation?: string;
+  useableWindowWidth?: number;
+  windowWidth?: number;
+};
+
+type MenuRect = { left: number; right: number; top?: number; height?: number };
+
 declare const ty: {
-  getSystemInfoSync?: () => {
-    deviceOrientation?: string;
-    useableWindowWidth?: number;
-    windowWidth?: number;
-  };
-  getMenuButtonBoundingClientRectSync?: () => { left: number; right: number } | undefined;
+  getSystemInfoSync?: () => WindowInfo;
+  getMenuButtonBoundingClientRectSync?: () => MenuRect | undefined;
   onWindowResize?: (callback: (event?: WindowResize) => void) => void;
   offWindowResize?: (callback: (event?: WindowResize) => void) => void;
 };
+
+const DUO_PORTRAIT_MENU_CENTER = 48;
+
+function isDuoPortrait(info?: WindowInfo, event?: WindowResize) {
+  const orientation = event?.type ?? info?.deviceOrientation;
+  const width = Number(event?.size?.windowWidth ?? info?.useableWindowWidth ?? info?.windowWidth);
+  return orientation === 'portrait' && Number.isFinite(width) && width >= 600;
+}
+
+function getMenuCenter(menu?: MenuRect | null) {
+  const { top, height } = menu || {};
+  if (
+    typeof top === 'number' &&
+    Number.isFinite(top) &&
+    typeof height === 'number' &&
+    Number.isFinite(height) &&
+    height > 0
+  ) {
+    return top + height / 2;
+  }
+  return null;
+}
 
 SmartComponent({
   classes: [
@@ -97,6 +123,7 @@ SmartComponent({
     leftArrowIcon: Left,
     duo: false,
     menuReservedWidth: null as number | null,
+    menuCenter: null as number | null,
     titleInset: null as number | null,
     duoCenteredTitle: false,
     duoPortraitMenu: false,
@@ -111,9 +138,28 @@ SmartComponent({
     },
   },
 
-  mounted() {
+  created() {
     if (!isIPhoneDuo()) return;
-    this.setData({ duo: true });
+    const duoPortrait = isDuoPortrait(ty.getSystemInfoSync?.());
+    let menuCenter: number | null = null;
+    if (this.data.fixed && duoPortrait) {
+      // A fixed bar starts at the same viewport origin as the system controls.
+      menuCenter = DUO_PORTRAIT_MENU_CENTER;
+      try {
+        menuCenter = getMenuCenter(ty.getMenuButtonBoundingClientRectSync?.()) ?? menuCenter;
+      } catch {
+        // Keep the portrait center until the host can return the menu rectangle.
+      }
+    }
+    this.setData({
+      duo: true,
+      menuCenter,
+      duoCenteredTitle: duoPortrait && this.data.leftTextType !== 'home',
+    });
+  },
+
+  mounted() {
+    if (!this.data.duo) return;
     const page = getCurrentPage<PageWithShow>();
     if (page) this.stopMenuPageShow = subscribeToPageShow(page, () => this.updateMenuLayout());
     this.updateMenuLayout();
@@ -141,24 +187,33 @@ SmartComponent({
       const revision = (this.menuLayoutRevision || 0) + 1;
       this.menuLayoutRevision = revision;
       let menuReservedWidth: number | null = null;
+      let menuCenter: number | null = null;
       let duoPortrait = false;
       let duoPortraitMenu = false;
 
       if (typeof ty !== 'undefined') {
         try {
           const avoidMenu = this.shouldAvoidMenu();
-          const info = ty.getSystemInfoSync?.();
-          const orientation = event?.type ?? info?.deviceOrientation;
-          const width = Number(
-            event?.size?.windowWidth ?? info?.useableWindowWidth ?? info?.windowWidth
-          );
-          duoPortrait = orientation === 'portrait' && Number.isFinite(width) && width >= 600;
+          duoPortrait = isDuoPortrait(ty.getSystemInfoSync?.(), event);
+          if (duoPortrait && this.data.fixed) menuCenter = DUO_PORTRAIT_MENU_CENTER;
 
           const alignMenuRight = duoPortrait && !avoidMenu && this.data.avoidMenuButton == null;
-          if (avoidMenu || alignMenuRight) {
-            const menu = ty.getMenuButtonBoundingClientRectSync?.();
+          const menu = avoidMenu || duoPortrait ? ty.getMenuButtonBoundingClientRectSync?.() : null;
+          if (menu) {
+            const center = duoPortrait ? getMenuCenter(menu) : null;
+            if (center !== null) {
+              if (this.data.fixed) {
+                menuCenter = center;
+              } else {
+                const bar = await getRect(this, '.smart-nav-bar');
+                // Inline nav bars below the system controls keep their own vertical alignment.
+                if (bar?.height > 0 && center >= bar.top && center <= bar.bottom) {
+                  menuCenter = center - bar.top;
+                }
+              }
+            }
             if (
-              menu &&
+              (avoidMenu || alignMenuRight) &&
               Number.isFinite(menu.left) &&
               menu.left > 0 &&
               menu.right > menu.left &&
@@ -184,12 +239,13 @@ SmartComponent({
       };
       if (
         menuReservedWidth !== this.data.menuReservedWidth ||
+        menuCenter !== this.data.menuCenter ||
         duoCenteredTitle !== this.data.duoCenteredTitle ||
         duoPortraitMenu !== this.data.duoPortraitMenu
       ) {
         const titleInset = duoCenteredTitle ? this.data.titleInset : null;
         this.setData(
-          { menuReservedWidth, duoCenteredTitle, duoPortraitMenu, titleInset },
+          { menuReservedWidth, menuCenter, duoCenteredTitle, duoPortraitMenu, titleInset },
           measureTitle
         );
       } else {

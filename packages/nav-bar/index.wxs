@@ -6,6 +6,7 @@ function barStyle(data) {
   return style({
     'z-index': data.zIndex,
     background: data.background,
+    '--nav-bar-menu-center': data.menuCenter == null ? null : data.menuCenter + 'px',
     '--nav-bar-title-inset': data.titleInset == null ? null : data.titleInset + 'px',
     '--nav-bar-menu-reserved-width': data.menuReservedWidth === null ? null : data.menuReservedWidth + 'px',
   });

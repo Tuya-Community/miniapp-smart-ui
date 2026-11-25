@@ -7,8 +7,8 @@
 />
 
 <view
-  class="{{ utils.bem('nav-bar', { fixed, round, safe: safeAreaInsetTop, avoidMenu: duo && (avoidMenuButton == null ? leftTextType === 'home' : avoidMenuButton), duoCenteredTitle, duoPortraitMenu }) }} custom-class {{ border ? 'smart-hairline--bottom' : '' }}"
-  style="{{ computed.barStyle({ zIndex, background, menuReservedWidth, titleInset }) }}; {{ customStyle }}"
+  class="{{ utils.bem('nav-bar', { fixed, round, safe: safeAreaInsetTop, avoidMenu: duo && (avoidMenuButton == null ? leftTextType === 'home' : avoidMenuButton), duoCenteredTitle, duoPortraitMenu, duoAlignMenuCenter: menuCenter != null }) }} custom-class {{ border ? 'smart-hairline--bottom' : '' }}"
+  style="{{ computed.barStyle({ zIndex, background, menuReservedWidth, menuCenter, titleInset }) }}; {{ customStyle }}"
 >
   <view class="smart-nav-bar__content">
     <view class="{{ computed.leftClass({ sideWidth, leftTextType, leftText, leftArrow, leftIcon }) }}" style="{{ computed.sideStyle({ sideWidth, duoCenteredTitle }) }}" bind:tap="onClickLeft">

@@ -2,6 +2,8 @@
 @import '../common/style/mixins/ellipsis.less';
 
 .smart-nav-bar {
+  --smart-nav-bar-top-inset: 0px;
+
   position: relative;
   text-align: center;
   user-select: none;
@@ -35,6 +37,10 @@
     box-sizing: border-box;
     // The existing 16px inner spacing completes the 114px fallback.
     padding-right: var(--nav-bar-menu-reserved-width, 98px);
+  }
+
+  &--duoAlignMenuCenter &__content {
+    transform: translateY(calc(var(--nav-bar-menu-center) - var(--smart-nav-bar-top-inset) - 50%));
   }
 
   &--duoPortraitMenu &__content:has(> .smart-nav-bar__right:not(:empty)) {
@@ -94,7 +100,8 @@
   }
 
   &--safe {
-    padding-top: var(--app-device-status-height, 20px);
+    --smart-nav-bar-top-inset: var(--app-device-status-height, 20px);
+    padding-top: var(--smart-nav-bar-top-inset);
   }
 
   &--fixed {
@@ -121,7 +128,8 @@
   &--duoCenteredTitle &__title {
     position: absolute;
     left: 50%;
-    width: max(0px, calc(100% - 2 * var(--nav-bar-title-inset, 50%)));
+    // Keep the title visible while the side controls are being measured.
+    width: max(0px, calc(100% - 2 * var(--nav-bar-title-inset, 33.333%)));
     margin: 0;
     transform: translateX(-50%);
 
