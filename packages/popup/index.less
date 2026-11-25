@@ -37,6 +37,10 @@
         .centered-top-popup(calc(100% - 16px));
       }
 
+      @media (min-width: 600px) and (orientation: portrait) {
+        .centered-top-popup(calc(100% - 16px));
+      }
+
       @media (min-width: 600px) and (orientation: landscape) {
         .centered-top-popup(min(653px, calc(100% - 16px)));
       }
@@ -109,6 +113,10 @@
       [class~='smart-bottom-sheet'],
       [class~='smart-calendar__popup--bottom'],
       :has([class~='keyboard-popup-container'])) {
+      @media (min-width: 600px) {
+        --smart-popup-sheet-gap: var(--safe-area-inset-bottom, calc(0px));
+      }
+
       @media (min-width: 420px) and (orientation: portrait) {
         right: 0;
         width: calc(100% - 16px);
