@@ -1,4 +1,4 @@
-name: Publish Canary (standalone preview)
+name: Publish Lynx 2.13.7-lynx.0
 
 # 独立预览通道：可以从「任意分支」手动发一个 canary 预览包，
 # 无需先合并进 release/2.x。用于功能合并前的单点验证。
@@ -37,7 +37,8 @@ jobs:
         env:
           DIST_TAG: ${{ github.event.inputs.dist_tag }}
         run: |
-          DIST_TAG=${DIST_TAG:-canary}
+          test "$DIST_TAG" = "lynx"
+          DIST_TAG=${DIST_TAG:-lynx}
           if ! [[ "$DIST_TAG" =~ ^[a-z][a-z0-9-]*$ ]] || [[ "$DIST_TAG" =~ ^v[0-9] ]] || [ "$DIST_TAG" = "latest" ] || [ "$DIST_TAG" = "beta" ]; then
             echo "❌ dist-tag 格式无效，或占用 latest / beta"
             exit 1
@@ -63,6 +64,9 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Test Lynx regressions
+        run: yarn test:lynx && yarn test:lynx:render
+
       - name: Compute Canary Version
         run: |
           PACKAGE_NAME=$(node -p "require('./package.json').name")
@@ -72,7 +76,7 @@ jobs:
           # 分支名清洗成 npm 预发布标识符允许的字符集 [0-9A-Za-z-]
           SLUG=$(printf '%s' "$GITHUB_REF_NAME" | sed 's#[/._]#-#g' | tr -cd 'A-Za-z0-9-' | cut -c1-24)
           [ -z "$SLUG" ] && SLUG="branch"
-          CANARY_VERSION="${BASE_VERSION}-canary.b${SLUG}.s${SHORT_SHA}.${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}"
+          CANARY_VERSION="2.13.7-lynx.0"
           echo "PACKAGE_NAME=${PACKAGE_NAME}" >> $GITHUB_ENV
           echo "CANARY_VERSION=${CANARY_VERSION}" >> $GITHUB_ENV
           echo "✅ Canary version: ${CANARY_VERSION}"
