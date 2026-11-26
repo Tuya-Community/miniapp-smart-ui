@@ -12,6 +12,19 @@
   border-radius: var(--dialog-border-radius, @dialog-border-radius);
   background: var(--dialog-background-color, @dialog-background-color);
 
+  // Override the centered Popup's geometry while keeping its entrance and exit transitions.
+  &&[class~='smart-dialog--duo'] {
+    left: calc(50% + (var(--safe-area-inset-left, 0px) - var(--safe-area-inset-right, 0px)) / 2);
+    max-width: calc(100% - var(--safe-area-inset-left, 0px) - var(--safe-area-inset-right, 0px));
+    overflow-y: auto;
+
+    // The miniapp's full-width large-screen layout starts at 600px.
+    @media (min-width: 600px) {
+      left: 50%;
+      max-width: 100%;
+    }
+  }
+
   @media (max-width: 321px) {
     width: var(--dialog-small-screen-width, @dialog-small-screen-width);
   }

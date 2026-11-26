@@ -1,4 +1,5 @@
 import { SmartComponent } from '../common/component';
+import { isIPhoneDuo } from '../common/iphone-duo';
 import { touch } from '../mixins/touch';
 import {
   getAllRect,
@@ -12,6 +13,11 @@ import { useChildren } from '../common/relation';
 import tyApi from '../common/ty';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
+
+declare const ty: {
+  onWindowResize?: (callback: () => void) => void;
+  offWindowResize?: (callback: () => void) => void;
+};
 
 SmartComponent({
   mixins: [touch],
@@ -121,6 +127,31 @@ SmartComponent({
       this.resize();
       this.scrollIntoView();
     });
+
+    if (isIPhoneDuo() && ty.onWindowResize && ty.offWindowResize) {
+      let pending = false;
+      const onWindowResize = () => {
+        if (pending) return;
+
+        pending = true;
+        requestAnimationFrame(() => {
+          pending = false;
+          if (this.windowResizeHandler !== onWindowResize) return;
+
+          this.resize();
+          this.scrollIntoView();
+        });
+      };
+      this.windowResizeHandler = onWindowResize;
+      ty.onWindowResize(onWindowResize);
+    }
+  },
+
+  destroyed() {
+    if (typeof ty !== 'undefined' && this.windowResizeHandler) {
+      ty.offWindowResize?.(this.windowResizeHandler);
+      this.windowResizeHandler = undefined;
+    }
   },
 
   methods: {
@@ -241,7 +272,7 @@ SmartComponent({
       ]).then(([rects = [], lineRect]) => {
         const rect = rects?.[currentIndex];
 
-        if (rect == null || rect === undefined) {
+        if (rect == null || (this.windowResizeHandler && type === 'line' && lineRect == null)) {
           return;
         }
 

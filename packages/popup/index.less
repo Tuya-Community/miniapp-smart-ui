@@ -25,6 +25,27 @@
     left: 0;
     width: 100%;
 
+    &.smart-popup--duoTopPopup:not([class~='smart-calendar__popup--top']) {
+      .centered-top-popup(@max-width) {
+        right: 0;
+        max-width: @max-width;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &.smart-popup--duoOuterDisplay {
+        .centered-top-popup(calc(100% - 16px));
+      }
+
+      @media (min-width: 600px) and (orientation: portrait) {
+        .centered-top-popup(calc(100% - 16px));
+      }
+
+      @media (min-width: 600px) and (orientation: landscape) {
+        .centered-top-popup(min(653px, calc(100% - 16px)));
+      }
+    }
+
     &.smart-popup--round {
       overflow: hidden;
       border-radius: 0 0
@@ -62,9 +83,70 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    overflow-y: auto;
+
+    // The Duo's folded canvas is wider than the contained inner-screen canvas.
+    @media (min-width: 420px) and (max-width: 599px) and (orientation: portrait) {
+      &.smart-popup--duoFullHeight {
+        right: 0;
+        max-width: calc(100% - 16px);
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media (min-width: 600px) {
+      &.smart-popup--duoBottomPopup {
+        --smart-popup-sheet-width: 450px;
+        --smart-popup-sheet-gap: max(32px, var(--safe-area-inset-bottom, 0px));
+
+        right: 0;
+        width: var(--smart-popup-sheet-width);
+        max-width: min(100%, calc(100vmin - 16px));
+        margin: 0 auto var(--smart-popup-sheet-gap);
+      }
+    }
+
+    // Shared Popup consumers control their own sheet widths.
+    &.smart-popup--duoBottomPopup:not(
+      [class~='smart-action-sheet'],
+      [class~='smart-bottom-sheet'],
+      [class~='smart-calendar__popup--bottom'],
+      :has([class~='keyboard-popup-container'])) {
+      @media (min-width: 600px) {
+        --smart-popup-sheet-gap: var(--safe-area-inset-bottom, calc(0px));
+      }
+
+      @media (min-width: 420px) and (orientation: portrait) {
+        right: 0;
+        width: calc(100% - 16px);
+        max-width: calc(100% - 16px);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @media (min-width: 600px) and (orientation: landscape) {
+        --smart-popup-sheet-width: 653px;
+
+        max-width: min(653px, calc(100% - 16px));
+      }
+    }
+
+    // On a narrower WebView, preserve the outer-display inset for Popup and BottomSheet.
+    @media (max-width: 419px) and (orientation: portrait) {
+      &.smart-popup--duoBottomPopup.smart-popup--duoOuterDisplay:not(
+        [class~='smart-action-sheet'],
+        [class~='smart-calendar__popup--bottom'],
+        :has([class~='keyboard-popup-container'])) {
+        right: 0;
+        max-width: calc(100% - 16px);
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
 
     &.smart-popup--round {
-      overflow: hidden;
+      overflow-x: hidden;
       border-radius: var(
           --popup-round-border-radius,
           var(--popup-round-border-radius, @popup-round-border-radius)
@@ -74,6 +156,12 @@
           var(--popup-round-border-radius, @popup-round-border-radius)
         )
         0 0;
+
+      @media (min-width: 600px) {
+        &.smart-popup--duoBottomPopup {
+          border-radius: var(--popup-round-border-radius, @popup-round-border-radius);
+        }
+      }
     }
   }
 

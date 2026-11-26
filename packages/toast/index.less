@@ -29,6 +29,38 @@
     transform: translate(-50%, -50%);
   }
 
+  &[class~='smart-toast--duo'] {
+    margin: auto;
+    pointer-events: auto;
+    overflow-wrap: anywhere;
+  }
+
+  &__container[class~='smart-toast--duo'] {
+    top: 0;
+    right: var(--safe-area-inset-right, 0);
+    bottom: 0;
+    left: var(--safe-area-inset-left, 0);
+    display: flex;
+    width: auto;
+    transform: none;
+    overflow: auto;
+    pointer-events: none;
+
+    // The miniapp's full-width large-screen layout starts at 600px.
+    @media (min-width: 600px) {
+      right: 0;
+      left: 0;
+    }
+
+    &[class~='smart-toast--top'] {
+      bottom: 60%;
+    }
+
+    &[class~='smart-toast--bottom'] {
+      top: 60%;
+    }
+  }
+
   &--text {
     padding: var(--toast-text-padding, @toast-text-padding);
     min-width: var(--toast-text-min-width, @toast-text-min-width);

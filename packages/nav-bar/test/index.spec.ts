@@ -10,6 +10,37 @@ describe('nav-bar', () => {
     }
   );
 
+  test.each([
+    ['iPhone19,4', 669, 'back', { top: 35, height: 32 }, 51, true],
+    ['iPhone19,4', 669, 'back', undefined, 48, true],
+    ['iPhone19,4', 669, 'home', undefined, 48, false],
+    ['iPhone19,4', 466, 'back', undefined, null, false],
+    ['iPad', 669, 'back', undefined, null, false],
+  ])('initializes the fixed bar before measuring the view (%s, %s, %s)', (model, width, type, menu, center, centeredTitle) => {
+    const host = (global as typeof global & { ty: Record<string, unknown> }).ty;
+    const originalSystemInfo = host.getSystemInfoSync;
+    const originalMenuRect = host.getMenuButtonBoundingClientRectSync;
+    host.getSystemInfoSync = () => ({ model, deviceOrientation: 'portrait', windowWidth: width });
+    host.getMenuButtonBoundingClientRectSync = () => menu;
+    const comp = simulate.render(
+      simulate.load({
+        usingComponents: { 'smart-nav-bar': SmartNavBar },
+        template: `<smart-nav-bar id="nav-bar" fixed left-text-type="${type}" />`,
+      })
+    );
+    try {
+      comp.attach(document.createElement('parent-wrapper'));
+      expect(comp.querySelector('#nav-bar')?.instance.data).toMatchObject({
+        menuCenter: center,
+        duoCenteredTitle: centeredTitle,
+      });
+    } finally {
+      comp.detach();
+      host.getSystemInfoSync = originalSystemInfo;
+      host.getMenuButtonBoundingClientRectSync = originalMenuRect;
+    }
+  });
+
   test('should handle onClickLeft', async () => {
     let clickLeftEvent = false;
 

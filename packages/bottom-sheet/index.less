@@ -10,6 +10,35 @@
   padding-bottom: env(safe-area-inset-bottom);
   color: var(--bottom-sheet-font-color, @bottom-sheet-font-color);
 
+  @media (min-width: 600px) {
+    &[class~='smart-popup--duoBottomPopup'] {
+      --smart-popup-sheet-gap: calc(0px);
+
+      width: var(--bottom-sheet-width, var(--smart-popup-sheet-width));
+
+      &[class~='smart-popup--round'] {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  &[class~='smart-popup--duoBottomPopup'] {
+    @media (min-width: 420px) and (orientation: portrait) {
+      right: 0;
+      width: var(--bottom-sheet-width, calc(100% - 16px));
+      max-width: calc(100% - 16px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: 600px) and (orientation: landscape) {
+      --smart-popup-sheet-width: 653px;
+
+      max-width: min(653px, calc(100% - 16px));
+    }
+  }
+
   &__header {
     text-align: center;
     font-weight: var(

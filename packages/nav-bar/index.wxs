@@ -6,6 +6,9 @@ function barStyle(data) {
   return style({
     'z-index': data.zIndex,
     background: data.background,
+    '--nav-bar-menu-center': data.menuCenter == null ? null : data.menuCenter + 'px',
+    '--nav-bar-title-inset': data.titleInset == null ? null : data.titleInset + 'px',
+    '--nav-bar-menu-reserved-width': data.menuReservedWidth === null ? null : data.menuReservedWidth + 'px',
   });
 }
 
@@ -40,15 +43,13 @@ function rightClass(data) {
 
 function sideStyle(data) {
   var isDefaultWidth = ['min', 'max', 'mid'].includes(data.sideWidth);
-  var width = '';
-  if (!isDefaultWidth && data.sideWidth) { 
-    if (typeof data.sideWidth === 'string' && data.sideWidth.includes('px')) { 
-      width = data.sideWidth;
-    } else {
-      width = data.sideWidth + 'px';
-    }
+  if (isDefaultWidth || !data.sideWidth) {
+    return '';
   }
-  return width ? 'width: ' + width + ';' : '';
+  var width = typeof data.sideWidth === 'string' && data.sideWidth.includes('px')
+    ? data.sideWidth
+    : data.sideWidth + 'px';
+  return (data.duoCenteredTitle ? 'max-width: ' : 'width: ') + width + ';';
 }
 
 module.exports = {

@@ -291,6 +291,7 @@ Page({
 | left-arrow-aria-label `v2.13.0` | 左侧返回箭头的无障碍读屏文案 | _string_  | -       |
 | left-text           | 左侧文案                           | _string_  | `''`    |
 | left-text-type `v2.0.0`          | 左侧文本的样式类型，范围为 `home`、`title`、`back`                           | _string_  | `back`    |
+| avoid-menu-button   | iPhone Duo 上是否避让宿主胶囊。未传时，`home` 模式默认避让胶囊，展开竖放且二级页隐藏胶囊时，右侧内容默认对齐原胶囊右边缘。显式传值优先 | _boolean_ | 自动判断 |
 | left-icon `v2.0.0`         | 左侧 Icon                           | _string_  | `''`    |
 | left-icon-aria-label `v2.13.0` | 左侧图标按钮的无障碍读屏文案 | _string_  | -       |
 | left-icon-size `v2.0.0`        | 左侧 Icon 大小，默认为 32                           | _string \| number_  | `32`    |

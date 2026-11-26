@@ -2,6 +2,8 @@
 @import '../common/style/mixins/ellipsis.less';
 
 .smart-nav-bar {
+  --smart-nav-bar-top-inset: 0px;
+
   position: relative;
   text-align: center;
   user-select: none;
@@ -29,6 +31,35 @@
     height: 100%;
     display: flex;
     align-items: center;
+  }
+
+  &--avoidMenu &__content {
+    box-sizing: border-box;
+    // The existing 16px inner spacing completes the 114px fallback.
+    padding-right: var(--nav-bar-menu-reserved-width, 98px);
+  }
+
+  &--duoAlignMenuCenter &__content {
+    transform: translateY(calc(var(--nav-bar-menu-center) - var(--smart-nav-bar-top-inset) - 50%));
+  }
+
+  &--duoPortraitMenu &__content:has(> .smart-nav-bar__right:not(:empty)) {
+    box-sizing: border-box;
+    padding-right: var(--nav-bar-menu-reserved-width, calc(0px));
+  }
+
+  &--duoPortraitMenu &__right {
+    padding-right: 0;
+  }
+
+  &--avoidMenu &__left--home {
+    min-width: 0;
+    max-width: var(--nav-bar-home-max-width, calc(100% - 16px));
+  }
+
+  &--avoidMenu &__left--home ~ &__title:empty,
+  &--avoidMenu &__left--home ~ &__right:empty {
+    display: none;
   }
 
   &__text {
@@ -69,7 +100,8 @@
   }
 
   &--safe {
-    padding-top: var(--app-device-status-height, 20px);
+    --smart-nav-bar-top-inset: var(--app-device-status-height, 20px);
+    padding-top: var(--smart-nav-bar-top-inset);
   }
 
   &--fixed {
@@ -91,6 +123,43 @@
     color: var(--nav-bar-title-text-color, @nav-bar-title-text-color);
     font-weight: var(--nav-bar-title-font-weight, @nav-bar-title-font-weight);
     font-size: var(--nav-bar-title-font-size, @nav-bar-title-font-size);
+  }
+
+  &--duoCenteredTitle &__title {
+    position: absolute;
+    left: 50%;
+    // Keep the title visible while the side controls are being measured.
+    width: max(0px, calc(100% - 2 * var(--nav-bar-title-inset, 33.333%)));
+    margin: 0;
+    transform: translateX(-50%);
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &--duoCenteredTitle &__left,
+  &--duoCenteredTitle &__right {
+    width: auto;
+    max-width: var(--nav-bar-side-width, @nav-bar-side-width);
+
+    &--min {
+      max-width: var(--nav-bar-side-width-min, var(--nav-bar-side-width, @nav-bar-side-width-min));
+    }
+
+    &--max {
+      max-width: var(--nav-bar-side-width-max, var(--nav-bar-side-width, @nav-bar-side-width-max));
+    }
+  }
+
+  &--duoCenteredTitle &__right {
+    margin-left: auto;
+  }
+
+  &__centered-left-text {
+    .ellipsis();
+
+    font-size: var(--nav-bar-home-font-size, @nav-bar-home-font-size);
   }
 
   &__left,
