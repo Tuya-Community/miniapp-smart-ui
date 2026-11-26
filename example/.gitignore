@@ -1,0 +1,9 @@
+/.clix/run-logs/
+/.clix/headless/auth.json
+/node_modules/.cache/clix/
+.clix/headless-mp-out
+.clix/headless-mp-out--*
+.clix/headless/device-snapshot.json
+.clix/headless/group-snapshot.json
+.clix/headless/serve-runtime.json
+.clix/headless/mock*.log*

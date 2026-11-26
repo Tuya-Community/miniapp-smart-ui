@@ -27,3 +27,7 @@ miniprogram_npm
 .clix/headless-mp-out--*
 .clix/headless/device-snapshot.json
 .clix/headless/group-snapshot.json
+
+.clix/tmp/
+.clix/event-evidence/
+/.clix/run-logs/

@@ -1,0 +1,7 @@
+{
+  "_comment": "clix headless 项目级配置。functionalPages: 把功能页(__functional__ 子模块)指到本地源码仓库，serve 启动构建并覆盖云端下载版；miniPrograms: 把 navigateToMiniProgram 跳转的独立小程序指到本地源码仓库，serve 启动构建并起独立产物 server，从而支持 headless 里 A 小程序跳转到本地 B 小程序。两者键都是 appid，值={ \"local\": \"源码仓库路径\" }。serve: headless serve 的项目级缺省参数（route/deviceId/groupId/region/env/lang/theme/storageFile/deviceModel/gpu/screenWidth/screenHeight/dpr/debug），优先级 命令行 > 这里 > IDE 当前状态 > 内置缺省。tttMocks: 给 ttt 方法配自定义/mock 返回，命中 method(+可选 className/matchBy) 就短路返回 respond；仅限 ttt native 能力（缩略图/码率/方向等替身），atop/highway 等云通道在 tttMocks 中会被硬拦；明确需要项目云 fixture 时使用独立 cloudMockFile。dpMocks: 按设备 schema 的 DP code 覆盖启动快照中的 DP 值，用于首屏状态模拟。tttMockFile/dpMockFile/cloudMockFile: 可选的同目录 TS 动态 mock 文件，初始化后状态只存在本次 headless 进程内。repairInitialPageShow: 仅已确认框架漏发首屏 onShow 的项目设 true；默认不补发。",
+  "functionalPages": {},
+  "miniPrograms": {},
+  "dpMocks": {},
+  "serve": {}
+}
